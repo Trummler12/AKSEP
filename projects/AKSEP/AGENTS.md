@@ -8,7 +8,7 @@ Diese Datei beschreibt die Struktur, Konventionen und Regeln für das Partei-Web
 
 Wir befinden uns im Wurzelverzeichnis:
 ```
-m293-HTMLZeugs/m293-vm-starter/src/AKSEP
+AKSEP/projects/AKSEP
 ```
 
 ---
@@ -25,8 +25,8 @@ AKSEP/de/Begriffe/<begriff>/index.html
                                   → Begriffserklärungen
 ```
 
-(Temporäre) Übersicht der aktuellen Ordnerstruktur:  
-m293-HTMLZeugs\m293-vm-starter\src\AKSEP\local-Tree.txt  
+(Temporäre) Übersicht der aktuellen Ordnerstruktur:
+AKSEP\projects\AKSEP\local-Tree.txt
 WICHTIG: Diese Datei wird durch einen PowerShell-Befehl erzeugt; sie kann zwar zur temporären Dokumentation von Änderungen an der Dateistruktur verwendet werden, wird aber regelmäßig mit dem Status quo überschrieben.
 
 ---
