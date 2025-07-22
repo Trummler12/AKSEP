@@ -1,0 +1,1 @@
+(Platzhalter für die Unterrichtsressourcen-Datenbank für das Kompetenzlevel-basierte Bildungssystem)
