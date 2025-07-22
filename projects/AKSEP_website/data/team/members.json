@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Alice Example",
+    "role": "Project Manager",
+    "image": "/AKSEP/assets/images/alice.jpg"
+  },
+  {
+    "name": "Bob Example",
+    "role": "Developer",
+    "image": "/AKSEP/assets/images/bob.jpg"
+  },
+  {
+    "name": "Charlie Example",
+    "role": "Designer",
+    "image": "/AKSEP/assets/images/charlie.jpg"
+  }
+]

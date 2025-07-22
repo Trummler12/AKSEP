@@ -1,0 +1,273 @@
+﻿
+
+Folder PATH listing for volume Windows
+Volume serial number is AA0F-5FCF
+C:.
+|   .gitkeep
+|   AGENTS.md
+|   datenschutz.html
+|   impressum.html
+|   index.html
+|   local-Tree.txt
+|
++---assets
+|   |   .gitkeep
+|   |
+|   +---css
+|   |       .gitkeep
+|   |       base.css
+|   |       layout.css
+|   |       variables.css
+|   |
+|   +---images
+|   |       .gitkeep
+|   |
+|   \---js
+|           .gitkeep
+|           cookie-banner.js
+|           theme-toggle.js
+|
++---data
+|   |   .gitkeep
+|   |
+|   +---ag
+|   |       .gitkeep
+|   |
+|   +---program
+|   |       .gitkeep
+|   |
+|   \---team
+|           members.json
+|
++---de
+|   |   .gitkeep
+|   |   index.html
+|   |   Programm-google-docs.html
+|   |
+|   +---Begriffe
+|   |   |   index.html
+|   |   |
+|   |   +---AG
+|   |   |       index.html
+|   |   |
+|   |   +---cancel-culture
+|   |   |       index.html
+|   |   |
+|   |   +---demokratie
+|   |   |       index.html
+|   |   |
+|   |   +---extremismus
+|   |   |       index.html
+|   |   |
+|   |   +---faschismus
+|   |   |       index.html
+|   |   |
+|   |   +---identitõtspolitik
+|   |   |       index.html
+|   |   |
+|   |   +---liberalismus
+|   |   |       index.html
+|   |   |
+|   |   +---meinungsfreiheit
+|   |   |       index.html
+|   |   |
+|   |   +---nationalsozialismus
+|   |   |       index.html
+|   |   |
+|   |   +---neoliberalismus
+|   |   |       index.html
+|   |   |
+|   |   +---paedophil-paedokriminell
+|   |   |       index.html
+|   |   |
+|   |   +---populismus
+|   |   |       index.html
+|   |   |
+|   |   +---radikal
+|   |   |       index.html
+|   |   |
+|   |   +---rechts-links
+|   |   |       index.html
+|   |   |
+|   |   +---toleranz
+|   |   |       index.html
+|   |   |
+|   |   \---wokeness
+|   |           index.html
+|   |
+|   +---Finanzen-Transparenz
+|   |       index.html
+|   |
+|   +---Kontact
+|   |       index.html
+|   |
+|   +---Mitglied-werden
+|   |       index.html
+|   |
+|   +---Partner-Projekte
+|   |       index.html
+|   |
+|   +---Praeambel
+|   |       index.html
+|   |
+|   +---Presse
+|   |       index.html
+|   |
+|   +---Programm
+|   |   |   index.html
+|   |   |
+|   |   +---kurz
+|   |   |   +---AG-Agrarpolitik
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Aussenpolitik
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Europa-und-Migration
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Forschung-und-KI
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Gesundheit
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Innere-Sicherheit
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Klima-und-Umweltschutz
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Regierung
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Soziales
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Tierrechte
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   +---AG-Weiter-Bildung
+|   |   |   |       index.html
+|   |   |   |
+|   |   |   \---AG-Wirtschaft
+|   |   |           index.html
+|   |   |
+|   |   +---lang
+|   |   |   +---AG-Agrarpolitik
+|   |   |   |   \---warum-eine-ernaehrungsreform-notwendig
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   +---AG-Aussenpolitik
+|   |   |   |   \---aktive-neutralitaet
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   +---AG-Europa-und-Migration
+|   |   |   |   \---fluechtlings-und-integrationspolitik-unser
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   +---AG-Gesundheit
+|   |   |   |   +---oeffentliche-oder-gemeinschaftlich-genutzte
+|   |   |   |   |       index.html
+|   |   |   |   |
+|   |   |   |   +---reservepool-fuer-pflegefachkraefte
+|   |   |   |   |       index.html
+|   |   |   |   |
+|   |   |   |   \---versorgungseinrichtungen
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   +---AG-Innere-Sicherheit
+|   |   |   |   \---drogenpolitik
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   +---AG-Klima-und-Umweltschutz
+|   |   |   |   \---klimaschutz
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   +---AG-Regierung
+|   |   |   |   +---regierungsform
+|   |   |   |   |       index.html
+|   |   |   |   |
+|   |   |   |   +---verguetungssystem-fuer-amtsinhaber
+|   |   |   |   |       index.html
+|   |   |   |   |
+|   |   |   |   \---wahlsystem
+|   |   |   |           index.html
+|   |   |   |
+|   |   |   \---AG-Weiter-Bildung
+|   |   |       \---reform-des-bildungssystems-in
+|   |   |               index.html
+|   |   |
+|   |   \---mittel
+|   |       +---AG-Agrarpolitik
+|   |       |   \---warum-eine-ernaehrungsreform-notwendig
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Aussenpolitik
+|   |       |   \---aktive-neutralitaet
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Europa-und-Migration
+|   |       |   \---fluechtlings-und-integrationspolitik-unser
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Gesundheit
+|   |       |   +---oeffentliche-versorgungseinrichtungen
+|   |       |   |       index.html
+|   |       |   |
+|   |       |   \---reservepool-fuer-pflegefachkraefte
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Innere-Sicherheit
+|   |       |   \---drogenpolitik
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Klima-und-Umweltschutz
+|   |       |   \---klimaschutz
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Regierung
+|   |       |   +---regierungsform
+|   |       |   |       index.html
+|   |       |   |
+|   |       |   +---verguetungssystem-fuer-amtsinhaber
+|   |       |   |       index.html
+|   |       |   |
+|   |       |   \---wahlsystem
+|   |       |           index.html
+|   |       |
+|   |       +---AG-Tierrechte
+|   |       |   \---grundsatzposition
+|   |       |           index.html
+|   |       |
+|   |       \---AG-Weiter-Bildung
+|   |           \---reform-des-bildungssystems-in
+|   |                   index.html
+|   |
+|   +---Projekte
+|   |       index.html
+|   |
+|   +---Satzung
+|   |       index.html
+|   |
+|   +---Termine
+|   |       index.html
+|   |
+|   +---ueber-uns
+|   |   |   index.html
+|   |   |
+|   |   +---Geschichte
+|   |   |       index.html
+|   |   |
+|   |   \---Personen
+|   |           index.html
+|   |
+|   \---unterstuetzen
+|           index.html
+|
+\---templates
+        .gitkeep
+        footer.html
+        header.html
+        layout.html
+
