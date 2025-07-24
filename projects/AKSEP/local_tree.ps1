@@ -1,11 +1,11 @@
-Set-Location AKSEP\projects\AKSEP_website
+Set-Location AKSEP\projects\AKSEP
 
 # HIDE FOLDERS
 $foldersToHide = @("node_modules", "Lib", ".JavaZeugs", "m293-HTMLZeugs", "VueDemo", "m346-ablage-Trummler12")
 
 # Optional settings
 $saveTreeToTxt       = $true
-$treeTxtPath         = "..\local-Tree.txt"
+$treeTxtPath         = ".\local-Tree.txt"
 # "ProgrammierZeugs" = "Tree"; "ListPuzzle" = "LPTree"; etc.
 $treeTxtFileName     = "local-Tree"
 $replaceOldTreeFile  = $true
