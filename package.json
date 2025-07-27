@@ -1,0 +1,7 @@
+{
+  "name": "programmierzeugs-root",
+  "private": true,
+  "scripts": {
+    "AKSEP": "cd projects/AKSEP/src && npm install && npm run serve"
+  }
+}
