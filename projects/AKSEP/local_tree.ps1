@@ -1,11 +1,11 @@
-Set-Location AKSEP\projects\AKSEP
+Set-Location $PSScriptRoot
 
 # HIDE FOLDERS
 $foldersToHide = @("node_modules", "Lib", ".JavaZeugs", "m293-HTMLZeugs", "VueDemo", "m346-ablage-Trummler12")
 
 # Optional settings
 $saveTreeToTxt       = $true
-$treeTxtPath         = ".\local-Tree.txt"
+$treeTxtPath         = "."
 # "ProgrammierZeugs" = "Tree"; "ListPuzzle" = "LPTree"; etc.
 $treeTxtFileName     = "local-Tree"
 $replaceOldTreeFile  = $true
@@ -97,5 +97,6 @@ if ($saveTreeToTxt) {
     }
 
     $filteredContent | Out-File -FilePath $fullPath -Encoding UTF8
-    Write-Host "`n🔖 Filtered tree saved to `"$fullPath`""
+        # Avoid Unicode issues on Windows consoles
+    Write-Host "`nFiltered tree saved to `"$fullPath`""
 }
