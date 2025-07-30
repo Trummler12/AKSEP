@@ -9,7 +9,7 @@ Run the AKSEP preview server from the repository root:
 npm run AKSEP
 ```
 
-This installs dependencies inside `projects/AKSEP/src` and starts Eleventy in serve mode so you can view the site at `http://localhost:8080` (default). The generated files appear directly in `projects/AKSEP`.
+The command installs dependencies and starts Eleventy from the `projects/AKSEP` directory. The `src` folder merely holds the deployable files that Eleventy processes. You can view the site at `http://localhost:8080` (default). The generated files appear directly in `projects/AKSEP`.
 
 ### Ausblick
 
