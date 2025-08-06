@@ -29,6 +29,8 @@ AKSEP/de/Begriffe/<begriff>/index.html
 AKSEP\projects\AKSEP\local-Tree.txt
 WICHTIG: Diese Datei wird durch einen PowerShell-Befehl erzeugt; sie kann zwar zur temporären Dokumentation von Änderungen an der Dateistruktur verwendet werden, wird aber regelmäßig mit dem Status quo überschrieben.
 
+Zusätzlich fasst `Planung.md` die bisherigen technischen Diskussionen zusammen und dient bei Fragen zur Webseiten-Struktur oder weiterführenden Planungen als Referenz.
+
 ---
 
 ### 2. Parteiprogrammstruktur
