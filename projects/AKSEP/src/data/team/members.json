@@ -1,17 +1,20 @@
 [
   {
-    "name": "Alice Example",
-    "role": "Project Manager",
-    "image": "/AKSEP/assets/images/alice.jpg"
-  },
-  {
-    "name": "Bob Example",
-    "role": "Developer",
+    "name": "Nawar Alassad",
+    "alias": ["lordnawar"],
+    "role": ["Partei-Vorsitzender", "Vorzeige-Ausländer"],
     "image": "/AKSEP/assets/images/bob.jpg"
   },
   {
-    "name": "Charlie Example",
-    "role": "Designer",
+    "name": "Tobias Nussbaumer",
+    "alias": ["Trummler"],
+    "role": ["Stellvertretender Partei-Vorsitzender"],
+    "image": "/AKSEP/assets/images/alice.jpg"
+  },
+  {
+    "name": "Marcel",
+    "alias": ["Marcel123","sallamon1234745"],
+    "role": ["SPD-ler"],
     "image": "/AKSEP/assets/images/charlie.jpg"
   }
 ]
