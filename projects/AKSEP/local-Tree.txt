@@ -1,11 +1,13 @@
 ﻿
 
-Folder PATH listing for volume Windows
-Volume serial number is AA0F-5FCF
+Auflistung der Ordnerpfade für Volume WINDOWS
+Volumeseriennummer : 9AF3-4876
 C:.
+|   .eleventy.js
 |   AGENTS.md
 |   local-Tree.txt
 |   local_tree.ps1
+|   package.json
 |
 \---src
     |   datenschutz.html
@@ -64,7 +66,7 @@ C:.
     |   |   +---faschismus
     |   |   |       index.html
     |   |   |
-    |   |   +---Identitõtspolitik
+    |   |   +---Identitätspolitik
     |   |   |       index.html
     |   |   |
     |   |   +---liberalismus
@@ -137,7 +139,7 @@ C:.
     |   |   |   +---AG-Innere-Sicherheit
     |   |   |   |       index.html
     |   |   |   |
-    |   |   |   +---AG-Klima-und-Umweltschutz
+    |   |   |   +---AG-Klimaschutz
     |   |   |   |       index.html
     |   |   |   |
     |   |   |   +---AG-Regierung
@@ -150,6 +152,9 @@ C:.
     |   |   |   |       index.html
     |   |   |   |
     |   |   |   +---AG-Tierrechte
+    |   |   |   |       index.html
+    |   |   |   |
+    |   |   |   +---AG-Umweltschutz
     |   |   |   |       index.html
     |   |   |   |
     |   |   |   +---AG-Weiter-Bildung
@@ -185,8 +190,8 @@ C:.
     |   |   |   |   \---drogenpolitik
     |   |   |   |           index.html
     |   |   |   |
-    |   |   |   +---AG-Klima-und-Umweltschutz
-    |   |   |   |   \---klimaschutz
+    |   |   |   +---AG-Klimaschutz
+    |   |   |   |   \---project-drawdown
     |   |   |   |           index.html
     |   |   |   |
     |   |   |   +---AG-Regierung
@@ -205,6 +210,10 @@ C:.
     |   |   |   |
     |   |   |   +---AG-Tierrechte
     |   |   |   |   \---grundsatzposition
+    |   |   |   |           index.html
+    |   |   |   |
+    |   |   |   +---AG-Umweltschutz
+    |   |   |   |   \---zentralisierte-feuerwerk-events
     |   |   |   |           index.html
     |   |   |   |
     |   |   |   \---AG-Weiter-Bildung
@@ -238,8 +247,8 @@ C:.
     |   |       |   \---drogenpolitik
     |   |       |           index.html
     |   |       |
-    |   |       +---AG-Klima-und-Umweltschutz
-    |   |       |   \---klimaschutz
+    |   |       +---AG-Klimaschutz
+    |   |       |   \---project-drawdown
     |   |       |           index.html
     |   |       |
     |   |       +---AG-Regierung
@@ -258,6 +267,10 @@ C:.
     |   |       |
     |   |       +---AG-Tierrechte
     |   |       |   \---grundsatzposition
+    |   |       |           index.html
+    |   |       |
+    |   |       +---AG-Umweltschutz
+    |   |       |   \---zentralisierte-feuerwerk-events
     |   |       |           index.html
     |   |       |
     |   |       \---AG-Weiter-Bildung
