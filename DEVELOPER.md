@@ -3,22 +3,13 @@
 - **Pull**: Fetch then merge remote changes into your current branch in one step.
 - **Push**: Upload your local commits to the remote repository.
 
-!! PROVISIONAL COPY FROM PROGRAMMIERZEUGS - SOME INFORMATION DOESN'T FIT HERE !!
-
 ---
 
-## 0. Deploy Files to Website
+## 0. Start Local Preview
 
 ```bash
-cd C:\Users\tnu01\Desktop\ProgrammierZeugs\zProjektZeugs
-```
-OR
-```bash
-cd C:\Users\tobia\Documents\GitHub\ProgrammierZeugs
-```
-then
-```bash
-npm run deploy
+cd C:\path\to\AKSEP
+npm run AKSEP
 ```
 
 ## 1. Visual Studio Code
