@@ -1,9 +1,10 @@
 module.exports = function(eleventyConfig) {
   return {
+    templateFormats: ["html", "md", "njk"],
     dir: {
       input: 'src',
-      includes: 'src/templates',
-      output: '.'
+      includes: 'templates',
+      output: '_site'
     }
   };
 };
