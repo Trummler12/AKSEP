@@ -1,14 +1,14 @@
 Folgendes ist der Inhalt einer Konversation mit Codex, in welchem wir uns über die für unser Projekt empfohlenen Frameworks und Aufbau-Strategien beraten haben;
 Die abschliessenden Ansätze sollen uns zur Orientierung dienen, wie wir unsere Webseite (Programmier-technisch) aufbauen wollen:
 
-<prompt1>
-Ein Kollege hat mir empfohlen, für die Erstellung unserer Webseite Frameworks zu verwendet;
-Findest du das ebenfalls sinnvoll?
-Und falls ja, welche Frameworks kannst du empfehlen?
-Gibt es welche, die positiv herausstechen und/oder speziell für unser Vorhaben geeignet sind?
-</prompt1>
+\<prompt1\>  
+Ein Kollege hat mir empfohlen, für die Erstellung unserer Webseite Frameworks zu verwendet;  
+Findest du das ebenfalls sinnvoll?  
+Und falls ja, welche Frameworks kannst du empfehlen?  
+Gibt es welche, die positiv herausstechen und/oder speziell für unser Vorhaben geeignet sind?  
+\</prompt1\>
 
-<antwort1>
+\<antwort1\>  
 Ja, der Einsatz eines Frameworks für die Entwicklung einer Webseite ist in den meisten Fällen sinnvoll. Frameworks übernehmen viele Standardaufgaben (Routing, Vorlagen, State-Management, Build-Prozess etc.) und ermöglichen es, schneller, strukturierter und wartbarer zu entwickeln. Welche Lösung sich am besten eignet, hängt aber stark vom geplanten Funktionsumfang, dem technischen Umfeld und euren Teampräferenzen ab.
 
 **Front‑End Frameworks (Client-seitige Entwicklung)**
@@ -94,10 +94,10 @@ Um passgenaue Empfehlungen zu geben, wäre es hilfreich zu wissen:
 
 
 
-Mit diesen Informationen kann ich euch gezielter weiterhelfen und konkrete Framework-Kombinationen vorschlagen.
-</antwort1>
+Mit diesen Informationen kann ich euch gezielter weiterhelfen und konkrete Framework-Kombinationen vorschlagen.  
+\</antwort1\>
 
-<prompt2>
+\<prompt2\>  
 1. Welche Art von Webseite plant ihr? (z. B. Unternehmenspräsenz, E-Commerce-Shop, interaktive App, Blog)
 > Eine Partei-Webseite für die werdende Partei DIE AKSEP, welche ihren Fokus auf Informationspolitik legen möchte; Wir wollen eine umfassende Begriffsklärung hosten zu Begriffen, die im politischen oder auch allgemeinen Diskurs häufig missverstanden, verzerrt oder unterschiedlich aufgefasst werden;
 Auch wollen wir unser mittlerweile über 170-seitiges Parteiprogramm hosten, welches in 3 verschiedenen Längen-Versionen (lang, mittel und kurz) und dann jeweils nochmals in einfacher Sprache vorliegen soll.
@@ -113,11 +113,11 @@ Langfristig soll dies natürlich jeweils über eine einfach wartbare Datenbank g
 > Vorerst nicht viel; Informationen fliessen vor allem von mir an die Besucher; Natürlich würden wir später dann synamische Elemente hinzufügen wie Kommentar-Funktionen, einen Feedback-Dienst, vielleicht sogar ein Forum... aber vorerst soll uns etwas Statischen ausreichen, was Ich als Entwickler verwalte.
 Dass Autorisierte Mitglieder unseres Vorstands eigenständig Beiträge hinzufügen können, das ist aktuell noch ferne Zukunftsmusik und nicht Teil unserer vorläufiger Ziele & UseCases
 
-Reicht dir dies für eine bessere Einschätzung?
-Den vorläufigen Aufbau der Webseite (Pfad-/URL-Struktur) kannst du der Datei AKSEP\projects\AKSEP\local-Tree.txt entnehmen
-</prompt2>
+Reicht dir dies für eine bessere Einschätzung?  
+Den vorläufigen Aufbau der Webseite (Pfad-/URL-Struktur) kannst du der Datei AKSEP\projects\AKSEP\local-Tree.txt entnehmen  
+\</prompt2\>
 
-<antwort2>
+\<antwort2\>  
 Ja, die Angaben reichen völlig aus, um eine gezieltere Einschätzung zu geben.
 
 ## Kurzfristiger Ansatz (GitHub Pages, statisch)
@@ -179,10 +179,10 @@ Eure aktuelle Struktur (`projects/AKSEP/src/...`) zeigt bereits eine Eleventy-Ko
 
 
 
-Wenn euch zu einzelnen Punkten (z. B. Eleventy-Layouts, Metadatenstruktur, Wahl eines CMS) weitere Detailfragen einfallen, sag gern Bescheid; ich unterstütze euch gern Schritt für Schritt.
-</antwort2>
+Wenn euch zu einzelnen Punkten (z. B. Eleventy-Layouts, Metadatenstruktur, Wahl eines CMS) weitere Detailfragen einfallen, sag gern Bescheid; ich unterstütze euch gern Schritt für Schritt.  
+\</antwort2\>
 
-<prompt3>
+\<prompt3\>  
 "1. Eleventy ausbauen – nutzt Markdown + Front Matter, um die Vielzahl an Programmseiten und Begriffsklärungen strukturiert zu pflegen."
 > Wie würde das dann aussehen? Hätten wir dann den gesamten Inhalt unseres Parteiprogramms in EINEM .md drin? Oder würden wir dann einfach in der in AKSEP\projects\AKSEP\src\de\Programm\... bereits vorliegenden Struktur die .html-Dateien durch .md-Dateien ersetzen?
 Wie genau baut Eleventy aus .md-Dateien HTML-Inhalt unter Anwendung zentralisiert definierter Styles? Worauf müssen wir achten?
@@ -199,10 +199,10 @@ Wie genau baut Eleventy aus .md-Dateien HTML-Inhalt unter Anwendung zentralisier
 "5. Zukunftssicherheit – behaltet im Hinterkopf, welche Features (Kommentare, Accounts, Forum) ihr später wollt. So könnt ihr später auf ein dynamisches Framework migrieren, ohne komplett neu zu beginnen."
 > Ja, entsprechende sinnvolle Platzhalter mit einzubauen als Hinweis auf eine spätere geplante Addition ist schon sehr sinnvoll
 
-Hast du noch Ergänzungen/Klarstellungen/Einordnungen zu meinen Antworten (zusätzlich zu meinen expliziten Fragen)?
-</prompt3>
+Hast du noch Ergänzungen/Klarstellungen/Einordnungen zu meinen Antworten (zusätzlich zu meinen expliziten Fragen)?  
+\</prompt3\>
 
-<antwort3>
+\<antwort3\>  
 ### 1\. Markdown + Front Matter in Eleventy
 
   * **Struktur** : Ihr könnt die bestehende Ordnerhierarchie (`src/de/Programm/...`) beibehalten und darin die bisherigen `.html`‑Dateien durch `.md`‑Dateien ersetzen.
@@ -211,14 +211,14 @@ Hast du noch Ergänzungen/Klarstellungen/Einordnungen zu meinen Antworten (zusä
 
   * **Front Matter** : Oben in jeder Markdown-Datei steht ein YAML-Block mit Metadaten, z. B.:
 
-        ```yaml
-        ---
-        title: "Parteiprogramm – Langfassung"
-        layout: "layouts/program.html"
-        permalink: "/de/Programm/lang/"
-        description: "Langfassung des Parteiprogramms der AKSEP …"
-        ---
-        ```
+```yaml
+    ---
+    title: "Parteiprogramm – Langfassung"
+    layout: "layouts/program.html"
+    permalink: "/de/Programm/lang/"
+    description: "Langfassung des Parteiprogramms der AKSEP …"
+    ---
+```
 
 
 Der `layout`-Wert verweist auf eine zentrale HTML-Vorlage, die eure Styles (`/assets/css/*.css`) einbindet. Der Markdown-Body wird automatisch in den `<main>`‑Bereich dieses Layouts gerendert.
@@ -286,5 +286,5 @@ Korrekt – ihr könnt Metadaten Schritt für Schritt ergänzen. Eleventy erlaub
 
 * * *
 
-Falls du zu einzelnen Punkten konkretere Anleitungen brauchst (z. B. Beispiel-Layout-Datei oder Eleventy-Build-Konfiguration), sag gerne Bescheid!
-</antwort3>
+Falls du zu einzelnen Punkten konkretere Anleitungen brauchst (z. B. Beispiel-Layout-Datei oder Eleventy-Build-Konfiguration), sag gerne Bescheid!  
+\</antwort3>
