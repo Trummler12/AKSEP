@@ -5,7 +5,7 @@ These instructions apply globally unless a nested `AGENTS.md` overrides them.
 - **Before each task**, ensure `main` matches the remote. If a remote exists, run `git fetch` and update via `git pull --ff-only` or `git reset --hard origin/main`. Note fetch errors in the summary.
 - You may add new documentation pages and edit any file in /docs. Coordinate if subfolders are auto-synced.
 - New tests are allowed. Mention them informally in the PR description.
-- For significant restructures, suggest architecture changes rather than applying them directly. Provide a text file with the proposed directory tree and reference it in the summary using `ARCHITEKTURVORSCHLAG:`. Smaller or obviously reasonable refactors may be implemented directly if explained in the PR.
+- For significant restructures that have not yet explicitely been described by the Developer, suggest architecture changes rather than applying them directly. Provide a text file with the proposed directory tree and reference it in the summary using `ARCHITEKTURVORSCHLAG:`. Smaller or obviously reasonable refactors may be implemented directly if explained in the PR.
 
 ## Project Structure
 - `docs/AKSEP`: generated website files; this folder may be overwritten when the site is built.
