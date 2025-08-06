@@ -1,0 +1,9 @@
+FARBEN DES LOGOS:
+
+#7E65B9 - Primärfarbe a, dunkel, "True Lavendar" (inoffiziell)
+#5A8FA8 - Mittel-Farbe, "Horizon"
+#3EB694 - Primärfarbe b, hell, "Clover" mit etwas Meer-Grün
+
+#322A45 - Hintergrundfarbe 1
+#423A51 - Hintergrundfarbe 2
+
