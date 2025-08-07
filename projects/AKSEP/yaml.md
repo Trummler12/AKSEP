@@ -32,10 +32,10 @@ tags:
 Content …
 ```
 
-To render a complete theme page, create  
+To render a complete Thema page, create  
 `AKSEP/projects/AKSEP/src/de/Programm/lang/<AG>/<Thema>/index.md`:
 
-```markdown
+```yaml
 ---
 layout: <layout-file>
 ag: "<AG>"
