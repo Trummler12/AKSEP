@@ -183,15 +183,11 @@ C:.
 |   |   |   |   |   |       01-was-wir-fordern.md
 |   |   |   |   |   |       02-beispiele.md
 |   |   |   |   |   |       03-politische-umsetzung.md
-|   |   |   |   |   |       03-politische-umsetzungsmoeglichkeiten.md
 |   |   |   |   |   |       z-zielsetzung.md
 |   |   |   |   |   |
 |   |   |   |   |   +---reservepool-fuer-pflegefachkraefte
-|   |   |   |   |   |       01-kernidee-funktionsweise.md
 |   |   |   |   |   |       01-kernidee.md
 |   |   |   |   |   |       02-kritik.md
-|   |   |   |   |   |       02-kritikpunkte-alternativansaetze.md
-|   |   |   |   |   |       03-ausblick-weitere-schritte.md
 |   |   |   |   |   |       03-ausblick.md
 |   |   |   |   |   |       04-schlussfolgerung.md
 |   |   |   |   |   |
@@ -201,19 +197,12 @@ C:.
 |   |   |   |   +---AG-Innere-Sicherheit
 |   |   |   |   |   \---drogenpolitik
 |   |   |   |   |           00-grundsatzposition.md
-|   |   |   |   |           01-kontrollierte-verschreibung-ritalin.md
 |   |   |   |   |           01-lernen.md
-|   |   |   |   |           02-legalisierung-schadensminimierung.md
 |   |   |   |   |           02-vergleichende-analyse.md
 |   |   |   |   |           03-evidenzbasiertes-regulierungskonzept.md
-|   |   |   |   |           03-regulierungskonzept-psychoaktive-substanzen.md
 |   |   |   |   |           04-forschung-medizin.md
-|   |   |   |   |           04-forschung-medizinische-nutzung.md
-|   |   |   |   |           05-historische-entwicklung-perspektiven.md
 |   |   |   |   |           05-historische-entwicklung.md
 |   |   |   |   |           06-chancen-nutzen.md
-|   |   |   |   |           06-wirtschaftliche-chancen-nutzen.md
-|   |   |   |   |           07-kontrolle-kriminalisierung.md
 |   |   |   |   |           07-kontrolle-statt-kriminalisierung.md
 |   |   |   |   |           Q-quellen-literatur.md
 |   |   |   |   |           z-analyse-bewertungsfaktoren.md
@@ -222,12 +211,10 @@ C:.
 |   |   |   |   |   \---project-drawdown
 |   |   |   |   |           00-einleitung.md
 |   |   |   |   |           01-pflanzenbasiert.md
-|   |   |   |   |           01-pflanzenbasierte-ernaehrung.md
 |   |   |   |   |           02-lebensmittelverschwendung.md
 |   |   |   |   |           03-waelder-moore.md
 |   |   |   |   |           04-erneuerbare-energien.md
 |   |   |   |   |           05-bildung-familienplanung.md
-|   |   |   |   |           05-bildungs-familienplanungsprogramme.md
 |   |   |   |   |           06-saubere-kochtechnologien.md
 |   |   |   |   |           07-landnutzungspraktiken.md
 |   |   |   |   |           08-methanemissionen.md
@@ -247,11 +234,9 @@ C:.
 |   |   |   |   |   +---verguetungssystem-fuer-amtsinhaber
 |   |   |   |   |   |       00-einleitung.md
 |   |   |   |   |   |       01-im-detail.md
-|   |   |   |   |   |       01-verguetungsmodell-detail.md
 |   |   |   |   |   |
 |   |   |   |   |   \---wahlsystem
 |   |   |   |   |           a-approval-system.md
-|   |   |   |   |           a-einfuehrung-approval-system.md
 |   |   |   |   |
 |   |   |   |   +---AG-Sonstiges
 |   |   |   |   |   \---religioese-erziehung
