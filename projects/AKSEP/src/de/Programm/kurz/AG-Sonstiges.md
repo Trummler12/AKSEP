@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "'AG' Sonstiges"
+ag: "'AG' Sonstiges"
+ag_id: 13
+tags: []
 ---
 
-# {{ title }}
-
-AG 13
-
+# {{ ag }}

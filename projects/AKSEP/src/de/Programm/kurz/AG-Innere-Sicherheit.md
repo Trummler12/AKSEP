@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Innere Sicherheit"
+ag: "AG Innere Sicherheit"
+ag_id: 2
+tags: []
 ---
 
-# {{ title }}
-
-AG 2
-
+# {{ ag }}

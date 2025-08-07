@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Umweltschutz"
+ag: "AG Umweltschutz"
+ag_id: 3
+tags: []
 ---
 
-# {{ title }}
-
-AG 3
-
+# {{ ag }}

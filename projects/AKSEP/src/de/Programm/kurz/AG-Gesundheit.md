@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Gesundheit"
+ag: "AG Gesundheit"
+ag_id: 5
+tags: []
 ---
 
-# {{ title }}
-
-AG 5
-
+# {{ ag }}

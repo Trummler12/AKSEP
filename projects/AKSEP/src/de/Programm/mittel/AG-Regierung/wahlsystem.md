@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Wahlsystem"
+ag: "AG Regierung"
+ag_id: 1
+thema: "Wahlsystem"
+thema_id: 2
+tags:
+  - "Wahlsystem"
 ---
 
-# {{ title }}
-
-AG 1
-
-Thema 2
-
+# {{ thema }}

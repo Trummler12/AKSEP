@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Tierrechte"
+ag: "AG Tierrechte"
+ag_id: 12
+tags: []
 ---
 
-# {{ title }}
-
-AG 12
-
+# {{ ag }}

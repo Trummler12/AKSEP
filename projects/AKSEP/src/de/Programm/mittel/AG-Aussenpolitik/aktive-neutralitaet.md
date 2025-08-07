@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Aktive Neutralitaet "
+ag: "AG Aussenpolitik"
+ag_id: 11
+thema: "Aktive Neutralitaet "
+thema_id: 1
+tags:
+  - "Aktive Neutralitaet "
 ---
 
-# {{ title }}
-
-AG 11
-
-Thema 1
-
+# {{ thema }}

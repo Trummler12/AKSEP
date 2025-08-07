@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Weiter-Bildung"
+ag: "AG Weiter-Bildung"
+ag_id: 8
+tags: []
 ---
 
-# {{ title }}
-
-AG 8
-
+# {{ ag }}

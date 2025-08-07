@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Regierung"
+ag: "AG Regierung"
+ag_id: 1
+tags: []
 ---
 
-# {{ title }}
-
-AG 1
-
+# {{ ag }}

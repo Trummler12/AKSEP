@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Project Drawdown"
+ag: "AG Klimaschutz"
+ag_id: 4
+thema: "Project Drawdown"
+thema_id: 1
+tags:
+  - "Project Drawdown"
 ---
 
-# {{ title }}
-
-AG 4
-
-Thema 1
-
+# {{ thema }}

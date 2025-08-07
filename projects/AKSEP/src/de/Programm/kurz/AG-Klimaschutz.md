@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Klimaschutz"
+ag: "AG Klimaschutz"
+ag_id: 4
+tags: []
 ---
 
-# {{ title }}
-
-AG 4
-
+# {{ ag }}
