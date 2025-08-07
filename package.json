@@ -2,6 +2,6 @@
   "name": "programmierzeugs-root",
   "private": true,
   "scripts": {
-    "AKSEP": "cd projects/AKSEP && npm install && npm run serve"
+    "AKSEP": "cd projects/AKSEP && npm install && npm run aggregate-lang && npm run serve"
   }
 }
