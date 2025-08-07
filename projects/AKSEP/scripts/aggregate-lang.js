@@ -31,7 +31,7 @@ function aggregate() {
         return `## ${ch.data.kapitel}\n${body}`;
       }).join('\n\n');
       const full = matter.stringify(`# ${meta.thema}\n\n${chapterContent}\n`, {
-        layout: 'layout.html',
+        layout: 'layout.njk',
         ag: meta.ag,
         ag_id: meta.ag_id,
         thema: meta.thema,

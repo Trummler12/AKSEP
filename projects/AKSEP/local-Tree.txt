@@ -326,9 +326,9 @@ C:.
 |   |           index.html
 |   |
 |   \---templates
-|           footer.html
-|           header.html
-|           layout.html
+|           footer.njk
+|           header.njk
+|           layout.njk
 |
 \---_site
     |   index.html

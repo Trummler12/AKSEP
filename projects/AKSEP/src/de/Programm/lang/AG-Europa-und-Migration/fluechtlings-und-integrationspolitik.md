@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 ag: AG Europa und Migration
 ag_id: 10
 thema: >-

@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 ag: AG Agrarpolitik
 ag_id: 14
 thema: Warum eine Ernaehrungsreform notwendig ist

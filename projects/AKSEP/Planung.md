@@ -131,7 +131,7 @@ Eure aktuelle Struktur (`projects/AKSEP/src/...`) zeigt bereits eine Eleventy-Ko
 
     * **Begriffsklärungen** : Ihr habt bereits `src/de/Begriffe/<Begriff>/index.html`. Um spätere Pflege zu erleichtern, könnt ihr diese Begriffe als Markdown-Dateien plus Metadaten (Front Matter) speichern. Eleventy erzeugt dann die HTML-Dateien automatisch.
 
-    * **Zentrale Styles & Skripte**: Die vorhandenen `base.css`, `layout.css`, `variables.css` und JS-Dateien (`cookie-banner.js`, `theme-toggle.js`) lassen sich in Eleventy-Layouts (`src/templates/layout.html`) einbinden, sodass ihr jede Inhaltsseite schlank halten könnt.
+    * **Zentrale Styles & Skripte**: Die vorhandenen `base.css`, `layout.css`, `variables.css` und JS-Dateien (`cookie-banner.js`, `theme-toggle.js`) lassen sich in Eleventy-Layouts (`src/templates/layout.njk`) einbinden, sodass ihr jede Inhaltsseite schlank halten könnt.
 
     * **Deployment** : GitHub Pages kann direkt aus dem `docs/`-Ordner oder einem `gh-pages`-Branch veröffentlichen. Eleventy kann per Build-Schritt (z. B. `npm run build`) den Inhalt von `src` nach `docs` ausgeben.
 
@@ -223,7 +223,7 @@ Hast du noch Ergänzungen/Klarstellungen/Einordnungen zu meinen Antworten (zusä
 
 Der `layout`-Wert verweist auf eine zentrale HTML-Vorlage, die eure Styles (`/assets/css/*.css`) einbindet. Der Markdown-Body wird automatisch in den `<main>`‑Bereich dieses Layouts gerendert.
 
-  * **Zentrale Styles** : Alle Seiten nutzen dieselben Styles, weil ihr in `layouts/program.html` (oder einem generischen `layout.html`) die CSS-Dateien (`base.css`, `layout.css`, `variables.css`) einmalig referenziert. Jede Markdown-Seite erbt dieses Layout über ihr Front Matter.
+  * **Zentrale Styles** : Alle Seiten nutzen dieselben Styles, weil ihr in `layouts/program.html` (oder einem generischen `layout.njk`) die CSS-Dateien (`base.css`, `layout.css`, `variables.css`) einmalig referenziert. Jede Markdown-Seite erbt dieses Layout über ihr Front Matter.
 
 
 

@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 ag: "AG Tierrechte"
 ag_id: 12
 thema: "Grundsatzposition"

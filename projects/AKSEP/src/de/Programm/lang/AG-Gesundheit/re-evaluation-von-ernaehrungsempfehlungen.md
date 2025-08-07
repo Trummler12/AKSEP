@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 ag: AG Gesundheit
 ag_id: 5
 thema: Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen

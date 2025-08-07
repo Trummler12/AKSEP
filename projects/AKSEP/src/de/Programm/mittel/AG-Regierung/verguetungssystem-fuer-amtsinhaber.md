@@ -1,5 +1,5 @@
 ---
-layout: layout.html
+layout: layout.njk
 ag: "AG Regierung"
 ag_id: 1
 thema: "Verguetungssystem fuer Amtsinhaber"
