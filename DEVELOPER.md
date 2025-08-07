@@ -8,7 +8,7 @@
 ## 0. Start Local Preview
 
 ```bash
-cd C:\path\to\AKSEP
+cd AKSEP
 npm run AKSEP
 ```
 
