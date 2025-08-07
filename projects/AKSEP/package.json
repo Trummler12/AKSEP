@@ -3,9 +3,11 @@
   "private": true,
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "aggregate-lang": "node scripts/aggregate-lang.js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0"
+    "@11ty/eleventy": "^2.0.0",
+    "gray-matter": "^4.0.3"
   }
 }
