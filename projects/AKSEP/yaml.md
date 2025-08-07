@@ -6,7 +6,7 @@ This document captures the agreed-upon YAML variables and Eleventy settings for 
 - Directory names `<AG>`, `<Thema>`, and `<Kapitel>` provide the slugs; explicit `ag_slug` or `thema_slug` variables are not stored.
 - `ag`, `thema`, and `kapitel` contain the full titles exactly as written in `Programm-google-docs.html`.
 - `ag_id`, `thema_id`, and `kapitel_id` are numeric indices used for navigation and ordering.
-- `permalink: false` prevents Eleventy from generating standalone pages for these source files.
+- `permalink: false` prevents Eleventy from generating standalone pages for these chapter source files.
 - A synchronisation script will later propagate title changes from the `kurz` level to all `mittel` and `lang` files.
 
 ## Detailed level: `lang`
@@ -70,7 +70,6 @@ ag: "<AG>"              # full AG title
 ag_id: <id>             # AG navigation ID
 thema: "<Thema>"        # full theme title
 thema_id: <id>          # theme navigation ID
-permalink: false
 tags:
   - "<Thema>"
 ---
@@ -91,7 +90,6 @@ Front matter:
 layout: <layout-file>
 ag: "<AG>"              # full AG title
 ag_id: <id>             # navigation ID between AGs
-permalink: false
 tags:
   - "<Thema>"           # optional tag referencing a key theme of this AG
 ---
