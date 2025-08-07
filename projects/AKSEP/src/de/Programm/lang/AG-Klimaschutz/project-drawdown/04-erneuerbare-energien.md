@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Ausbau erneuerbarer Energien"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
+kapitel: "Ausbau erneuerbarer Energien"
 kapitel_id: 4
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Ausbau erneuerbarer Energien
+## {{ kapitel }}

@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Abstimmungs-Vertretung"
+layout: null
+ag: "AG Regierung"
 ag_id: 1
+thema: "Regierungsform"
 thema_id: 1
-kapitel_id: 'c'
+kapitel: "Abstimmungs-Vertretung"
+kapitel_id: 3
+permalink: false
+tags:
+- "Regierungsform"
 ---
 
-# Regierungsform
-
-## Abstimmungs-Vertretung
+## {{ kapitel }}

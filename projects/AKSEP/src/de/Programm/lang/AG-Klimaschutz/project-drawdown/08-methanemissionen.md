@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Management von Methanemissionen"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
+kapitel: "Management von Methanemissionen"
 kapitel_id: 8
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Management von Methanemissionen
+## {{ kapitel }}

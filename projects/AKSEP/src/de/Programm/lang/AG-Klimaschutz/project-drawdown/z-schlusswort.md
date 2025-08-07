@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Schlusswort"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
-kapitel_id: 'z'
+kapitel: "Schlusswort"
+kapitel_id: 11
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Schlusswort
+## {{ kapitel }}

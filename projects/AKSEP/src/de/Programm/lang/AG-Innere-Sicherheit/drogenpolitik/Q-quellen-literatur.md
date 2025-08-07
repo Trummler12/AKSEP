@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Quellen und weiterführende Literatur"
+layout: null
+ag: "AG Innere Sicherheit"
 ag_id: 2
+thema: "Drogenpolitik "
 thema_id: 1
-kapitel_id: 'Q'
+kapitel: "Quellen und weiterführende Literatur"
+kapitel_id: 8
+permalink: false
+tags:
+- "Drogenpolitik "
 ---
 
-# Drogenpolitik
-
-## Quellen und weiterführende Literatur
+## {{ kapitel }}

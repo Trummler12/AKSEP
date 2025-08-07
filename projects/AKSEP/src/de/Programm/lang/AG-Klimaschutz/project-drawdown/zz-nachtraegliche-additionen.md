@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Nachträgliche Additionen"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
-kapitel_id: 'zz'
+kapitel: "Nachträgliche Additionen"
+kapitel_id: 12
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Nachträgliche Additionen
+## {{ kapitel }}

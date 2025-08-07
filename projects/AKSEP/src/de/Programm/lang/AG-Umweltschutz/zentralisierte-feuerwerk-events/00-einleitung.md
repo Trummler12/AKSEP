@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Einleitung"
+layout: null
+ag: "AG Umweltschutz"
 ag_id: 3
+thema: "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
 thema_id: 1
+kapitel: "Einleitung"
 kapitel_id: 0
+permalink: false
+tags:
+- "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
 ---
 
-# Zentralisierte Feuerwerk-Events & Förderung alternativer Shows
-
-## Einleitung
+## {{ kapitel }}

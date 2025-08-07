@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Kritik & Antworten (FAQ)"
+layout: null
+ag: "AG Umweltschutz"
 ag_id: 3
+thema: "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
 thema_id: 1
-kapitel_id: 'Q'
+kapitel: "Kritik & Antworten (FAQ)"
+kapitel_id: 13
+permalink: false
+tags:
+- "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
 ---
 
-# Zentralisierte Feuerwerk-Events & Förderung alternativer Shows
-
-## Kritik & Antworten (FAQ)
+## {{ kapitel }}

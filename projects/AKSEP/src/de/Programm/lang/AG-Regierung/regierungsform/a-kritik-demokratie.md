@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Kritik an der (direkten) Demokratie"
+layout: null
+ag: "AG Regierung"
 ag_id: 1
+thema: "Regierungsform"
 thema_id: 1
-kapitel_id: 'a'
+kapitel: "Kritik an der (direkten) Demokratie"
+kapitel_id: 1
+permalink: false
+tags:
+- "Regierungsform"
 ---
 
-# Regierungsform
-
-## Kritik an der (direkten) Demokratie
+## {{ kapitel }}

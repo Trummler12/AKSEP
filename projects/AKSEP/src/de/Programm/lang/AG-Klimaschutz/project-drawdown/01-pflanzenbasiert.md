@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Förderung einer pflanzenbasierten Ernährung"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
+kapitel: "Förderung einer pflanzenbasierten Ernährung"
 kapitel_id: 1
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Förderung einer pflanzenbasierten Ernährung
+## {{ kapitel }}
