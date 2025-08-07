@@ -1,11 +1,16 @@
 ---
-layout: layout.html
-title: "Soziale Unterstützung und Integration"
+layout: null
+ag: AG Europa und Migration
 ag_id: 10
+thema: Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 thema_id: 1
+kapitel: Soziale Unterstützung und Integration
 kapitel_id: 3
+permalink: false
+tags:
+- Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 ---
 
-# Flüchtlings- und Integrationspolitik – Unser Konzept für ein sicheres, integriertes Europa
-
-## Soziale Unterstützung und Integration
+## {{ kapitel }}

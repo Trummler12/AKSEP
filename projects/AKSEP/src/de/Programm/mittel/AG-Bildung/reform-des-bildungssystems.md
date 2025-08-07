@@ -1,6 +1,6 @@
 ---
 layout: layout.html
-ag: "AG Weiter-Bildung"
+ag: "AG Bildung"
 ag_id: 8
 thema: "Reform des Bildungssystems [IN UeBERARBEITUNG]"
 thema_id: 1

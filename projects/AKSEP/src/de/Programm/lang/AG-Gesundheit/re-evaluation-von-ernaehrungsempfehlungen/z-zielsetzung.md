@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Zielsetzung"
+layout: null
+ag: AG Gesundheit
 ag_id: 5
+thema: Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen
 thema_id: 3
-kapitel_id: 'z'
+kapitel: Zielsetzung
+kapitel_id: 4
+permalink: false
+tags:
+- Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen
 ---
 
-# Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen
-
-## Zielsetzung
+## {{ kapitel }}

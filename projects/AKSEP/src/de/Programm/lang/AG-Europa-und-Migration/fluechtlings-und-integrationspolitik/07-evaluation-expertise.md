@@ -1,11 +1,16 @@
 ---
-layout: layout.html
-title: "Wissenschaftliche Evaluation und unabhängige Expertise"
+layout: null
+ag: AG Europa und Migration
 ag_id: 10
+thema: Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 thema_id: 1
+kapitel: Wissenschaftliche Evaluation und unabhängige Expertise
 kapitel_id: 7
+permalink: false
+tags:
+- Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 ---
 
-# Flüchtlings- und Integrationspolitik – Unser Konzept für ein sicheres, integriertes Europa
-
-## Wissenschaftliche Evaluation und unabhängige Expertise
+## {{ kapitel }}
