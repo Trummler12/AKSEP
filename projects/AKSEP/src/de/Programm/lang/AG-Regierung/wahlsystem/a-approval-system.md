@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Einführung eines Approval-Systems für Einzelpositionen"
+layout: null
+ag: "AG Regierung"
 ag_id: 1
+thema: "Wahlsystem"
 thema_id: 2
-kapitel_id: 'a'
+kapitel: "Einführung eines Approval-Systems für Einzelpositionen"
+kapitel_id: 1
+permalink: false
+tags:
+- "Wahlsystem"
 ---
 
-# Wahlsystem
-
-## Einführung eines Approval-Systems für Einzelpositionen
+## {{ kapitel }}

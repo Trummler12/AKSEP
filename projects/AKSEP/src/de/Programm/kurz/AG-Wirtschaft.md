@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Wirtschaft"
+ag: "AG Wirtschaft"
+ag_id: 7
+tags: []
 ---
 
-# {{ title }}
-
-AG 7
-
+# {{ ag }}

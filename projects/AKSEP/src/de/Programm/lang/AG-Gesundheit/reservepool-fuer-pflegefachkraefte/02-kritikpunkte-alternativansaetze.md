@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Berücksichtigung von Kritikpunkten und Alternativansätzen"
+layout: null
+ag: AG Gesundheit
 ag_id: 5
+thema: Reservepool für Pflegefachkräfte
 thema_id: 2
+kapitel: Berücksichtigung von Kritikpunkten und Alternativansätzen
 kapitel_id: 2
+permalink: false
+tags:
+- Reservepool für Pflegefachkräfte
 ---
 
-# Reservepool für Pflegefachkräfte
-
-## Berücksichtigung von Kritikpunkten und Alternativansätzen
+## {{ kapitel }}

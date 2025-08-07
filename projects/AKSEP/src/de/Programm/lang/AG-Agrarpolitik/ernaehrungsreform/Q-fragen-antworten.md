@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Fragen & Antworten zur Umsetzung (Q&A)"
-ag_id: 13
+layout: null
+ag: AG Agrarpolitik
+ag_id: 14
+thema: Warum eine Ernaehrungsreform notwendig ist
 thema_id: 1
-kapitel_id: 'Q'
+kapitel: Fragen & Antworten zur Umsetzung (Q&A)
+kapitel_id: 9
+permalink: false
+tags:
+- Warum eine Ernaehrungsreform notwendig ist
 ---
 
-# Warum eine Ernährungsreform notwendig ist
-
-## Fragen & Antworten zur Umsetzung (Q&A)
+## {{ kapitel }}

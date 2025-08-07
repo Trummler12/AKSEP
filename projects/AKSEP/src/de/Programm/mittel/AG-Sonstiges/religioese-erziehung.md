@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Religiöse Erziehung"
+ag: "'AG' Sonstiges"
+ag_id: 13
+thema: "Religiöse Erziehung"
+thema_id: 1
+tags:
+  - "Religiöse Erziehung"
 ---
 
-# {{ title }}
-
-AG 13
-
-Thema 1
-
+# {{ thema }}

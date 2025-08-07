@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Zusammenfassung und Ausblick"
+layout: null
+ag: "AG Regierung"
 ag_id: 1
+thema: "Regierungsform"
 thema_id: 1
-kapitel_id: 'e'
+kapitel: "Zusammenfassung und Ausblick"
+kapitel_id: 5
+permalink: false
+tags:
+- "Regierungsform"
 ---
 
-# Regierungsform
-
-## Zusammenfassung und Ausblick
+## {{ kapitel }}

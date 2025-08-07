@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Erweiterte Gedanken"
+layout: null
+ag: "AG Regierung"
 ag_id: 1
+thema: "Regierungsform"
 thema_id: 1
-kapitel_id: 'd'
+kapitel: "Erweiterte Gedanken"
+kapitel_id: 4
+permalink: false
+tags:
+- "Regierungsform"
 ---
 
-# Regierungsform
-
-## Erweiterte Gedanken
+## {{ kapitel }}

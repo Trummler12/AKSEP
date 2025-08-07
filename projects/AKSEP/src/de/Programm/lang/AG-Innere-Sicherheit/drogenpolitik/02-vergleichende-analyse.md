@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Vergleichende Analyse: Legalisierung als Instrument der Schadensminimierung"
+layout: null
+ag: "AG Innere Sicherheit"
 ag_id: 2
+thema: "Drogenpolitik "
 thema_id: 1
+kapitel: "Vergleichende Analyse: Legalisierung als Instrument der Schadensminimierung"
 kapitel_id: 2
+permalink: false
+tags:
+- "Drogenpolitik "
 ---
 
-# Drogenpolitik
-
-## Vergleichende Analyse: Legalisierung als Instrument der Schadensminimierung
+## {{ kapitel }}

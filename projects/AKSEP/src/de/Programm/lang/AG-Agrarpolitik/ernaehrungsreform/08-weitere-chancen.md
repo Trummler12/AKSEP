@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Weitere Chancen einer Ernährungsreform"
-ag_id: 13
+layout: null
+ag: AG Agrarpolitik
+ag_id: 14
+thema: Warum eine Ernaehrungsreform notwendig ist
 thema_id: 1
+kapitel: Weitere Chancen einer Ernährungsreform
 kapitel_id: 8
+permalink: false
+tags:
+- Warum eine Ernaehrungsreform notwendig ist
 ---
 
-# Warum eine Ernährungsreform notwendig ist
-
-## Weitere Chancen einer Ernährungsreform
+## {{ kapitel }}

@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Verbesserte Landnutzungspraktiken"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
+kapitel: "Verbesserte Landnutzungspraktiken"
 kapitel_id: 7
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Verbesserte Landnutzungspraktiken
+## {{ kapitel }}

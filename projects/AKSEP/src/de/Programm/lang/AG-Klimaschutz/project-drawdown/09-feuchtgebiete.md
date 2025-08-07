@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Schutz und Wiederherstellung von Feuchtgebieten"
+layout: null
+ag: "AG Klimaschutz"
 ag_id: 4
+thema: "Project Drawdown"
 thema_id: 1
+kapitel: "Schutz und Wiederherstellung von Feuchtgebieten"
 kapitel_id: 9
+permalink: false
+tags:
+- "Project Drawdown"
 ---
 
-# Project Drawdown
-
-## Schutz und Wiederherstellung von Feuchtgebieten
+## {{ kapitel }}

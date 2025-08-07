@@ -1,11 +1,16 @@
 ---
-layout: layout.html
-title: "Schlusswort"
+layout: null
+ag: AG Europa und Migration
 ag_id: 10
+thema: Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 thema_id: 1
-kapitel_id: 'z'
+kapitel: Schlusswort
+kapitel_id: 8
+permalink: false
+tags:
+- Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 ---
 
-# Flüchtlings- und Integrationspolitik – Unser Konzept für ein sicheres, integriertes Europa
-
-## Schlusswort
+## {{ kapitel }}

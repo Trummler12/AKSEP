@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Alternative Bildungswege und innovative Ansätze"
+layout: null
+ag: AG Bildung
 ag_id: 8
+thema: Reform des Bildungssystems [IN UeBERARBEITUNG]
 thema_id: 1
+kapitel: Alternative Bildungswege und innovative Ansätze
 kapitel_id: 8
+permalink: false
+tags:
+- Reform des Bildungssystems [IN UeBERARBEITUNG]
 ---
 
-# Reform des Bildungssystems [IN UeBERARBEITUNG]
-
-## Alternative Bildungswege und innovative Ansätze
+## {{ kapitel }}

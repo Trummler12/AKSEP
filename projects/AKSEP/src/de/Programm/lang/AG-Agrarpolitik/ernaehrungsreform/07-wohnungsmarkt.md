@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Chancen für den Wohnungsmarkt"
-ag_id: 13
+layout: null
+ag: AG Agrarpolitik
+ag_id: 14
+thema: Warum eine Ernaehrungsreform notwendig ist
 thema_id: 1
+kapitel: Chancen für den Wohnungsmarkt
 kapitel_id: 7
+permalink: false
+tags:
+- Warum eine Ernaehrungsreform notwendig ist
 ---
 
-# Warum eine Ernährungsreform notwendig ist
-
-## Chancen für den Wohnungsmarkt
+## {{ kapitel }}
