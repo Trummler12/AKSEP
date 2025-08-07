@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Agrarpolitik"
+ag: "AG Agrarpolitik"
+ag_id: 14
+tags: []
 ---
 
-# {{ title }}
-
-AG 14
-
+# {{ ag }}

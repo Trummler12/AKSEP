@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Soziales"
+ag: "AG Soziales"
+ag_id: 9
+tags: []
 ---
 
-# {{ title }}
-
-AG 9
-
+# {{ ag }}

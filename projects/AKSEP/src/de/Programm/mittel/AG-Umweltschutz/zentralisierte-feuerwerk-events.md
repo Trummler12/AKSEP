@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
+ag: "AG Umweltschutz"
+ag_id: 3
+thema: "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
+thema_id: 1
+tags:
+  - "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
 ---
 
-# {{ title }}
-
-AG 3
-
-Thema 1
-
+# {{ thema }}

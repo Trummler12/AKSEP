@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Reservepool für Pflegefachkräfte"
+ag: "AG Gesundheit"
+ag_id: 5
+thema: "Reservepool für Pflegefachkräfte"
+thema_id: 2
+tags:
+  - "Reservepool für Pflegefachkräfte"
 ---
 
-# {{ title }}
-
-AG 5
-
-Thema 2
-
+# {{ thema }}

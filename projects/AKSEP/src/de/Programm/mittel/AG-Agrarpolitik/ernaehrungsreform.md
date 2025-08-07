@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Warum eine Ernaehrungsreform notwendig ist"
+ag: "AG Agrarpolitik"
+ag_id: 14
+thema: "Warum eine Ernaehrungsreform notwendig ist"
+thema_id: 1
+tags:
+  - "Warum eine Ernaehrungsreform notwendig ist"
 ---
 
-# {{ title }}
-
-AG 13
-
-Thema 1
-
+# {{ thema }}

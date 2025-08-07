@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Europa und Migration"
+ag: "AG Europa und Migration"
+ag_id: 10
+tags: []
 ---
 
-# {{ title }}
-
-AG 10
-
+# {{ ag }}

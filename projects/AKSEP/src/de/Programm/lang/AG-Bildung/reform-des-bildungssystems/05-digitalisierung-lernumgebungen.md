@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Digitalisierung und innovative Lernumgebungen"
+layout: null
+ag: AG Bildung
 ag_id: 8
+thema: Reform des Bildungssystems [IN UeBERARBEITUNG]
 thema_id: 1
+kapitel: Digitalisierung und innovative Lernumgebungen
 kapitel_id: 5
+permalink: false
+tags:
+- Reform des Bildungssystems [IN UeBERARBEITUNG]
 ---
 
-# Reform des Bildungssystems [IN UeBERARBEITUNG]
-
-## Digitalisierung und innovative Lernumgebungen
+## {{ kapitel }}

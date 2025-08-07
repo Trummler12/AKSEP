@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Forschung und KI"
+ag: "AG Forschung und KI"
+ag_id: 6
+tags: []
 ---
 
-# {{ title }}
-
-AG 6
-
+# {{ ag }}

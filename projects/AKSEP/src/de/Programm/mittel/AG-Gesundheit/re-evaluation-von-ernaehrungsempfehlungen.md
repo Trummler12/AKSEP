@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen"
+ag: "AG Gesundheit"
+ag_id: 5
+thema: "Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen"
+thema_id: 3
+tags:
+  - "Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen"
 ---
 
-# {{ title }}
-
-AG 5
-
-Thema 3
-
+# {{ thema }}

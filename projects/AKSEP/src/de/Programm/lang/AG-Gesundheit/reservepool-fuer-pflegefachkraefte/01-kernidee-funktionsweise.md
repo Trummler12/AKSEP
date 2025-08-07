@@ -1,11 +1,14 @@
 ---
-layout: layout.html
-title: "Kernidee und Funktionsweise"
+layout: null
+ag: AG Gesundheit
 ag_id: 5
+thema: Reservepool für Pflegefachkräfte
 thema_id: 2
+kapitel: Kernidee und Funktionsweise
 kapitel_id: 1
+permalink: false
+tags:
+- Reservepool für Pflegefachkräfte
 ---
 
-# Reservepool für Pflegefachkräfte
-
-## Kernidee und Funktionsweise
+## {{ kapitel }}

@@ -1,9 +1,8 @@
 ---
 layout: layout.html
-title: "AG Aussenpolitik"
+ag: "AG Aussenpolitik"
+ag_id: 11
+tags: []
 ---
 
-# {{ title }}
-
-AG 11
-
+# {{ ag }}

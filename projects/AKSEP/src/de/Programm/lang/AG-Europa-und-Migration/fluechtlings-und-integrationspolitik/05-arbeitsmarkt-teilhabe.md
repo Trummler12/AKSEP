@@ -1,11 +1,16 @@
 ---
-layout: layout.html
-title: "Arbeitsmarktintegration und wirtschaftliche Teilhabe"
+layout: null
+ag: AG Europa und Migration
 ag_id: 10
+thema: Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 thema_id: 1
+kapitel: Arbeitsmarktintegration und wirtschaftliche Teilhabe
 kapitel_id: 5
+permalink: false
+tags:
+- Fluechtlings- und Integrationspolitik – Unser Konzept fuer ein sicheres, integriertes
+  Europa
 ---
 
-# Flüchtlings- und Integrationspolitik – Unser Konzept für ein sicheres, integriertes Europa
-
-## Arbeitsmarktintegration und wirtschaftliche Teilhabe
+## {{ kapitel }}

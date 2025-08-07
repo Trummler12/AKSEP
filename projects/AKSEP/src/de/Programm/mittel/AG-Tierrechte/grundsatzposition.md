@@ -1,11 +1,11 @@
 ---
 layout: layout.html
-title: "Grundsatzposition"
+ag: "AG Tierrechte"
+ag_id: 12
+thema: "Grundsatzposition"
+thema_id: 1
+tags:
+  - "Grundsatzposition"
 ---
 
-# {{ title }}
-
-AG 12
-
-Thema 1
-
+# {{ thema }}
