@@ -10,11 +10,11 @@ angular-app/
 │  │  └─ data/
 │  │     ├─ globals.yaml
 │  │     └─ programm/
-│  │        ├─ programm.yaml
+│  │        ├─ _programm.yaml
 │  │        └─ ag-beispiel/
-│  │           ├─ ag-beispiel.yaml
+│  │           ├─ _ag.yaml
 │  │           └─ thema-a/
-│  │              ├─ thema-a.yaml
+│  │              ├─ _thema.yaml
 │  │              └─ kapitel-1.yaml
 │  ├─ app/
 │  │  ├─ app-routing.module.ts

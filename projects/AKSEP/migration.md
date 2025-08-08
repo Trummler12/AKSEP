@@ -36,24 +36,30 @@ This document describes how the AKSEP web project migrates from the current Elev
 Three variable scopes govern YAML files:
 
 1. **Project‑wide globals** – reusable across the entire site (party name, navigation). Maintain them in `angular-app/src/assets/data/globals.yaml`.
-2. **File‑level globals** – identifiers constant across languages within a content file. Typical keys: `layout`, `ag_id`, `thema_id`, `kapitel_id` (all integers).
+2. **File‑level globals** – identifiers constant across languages within a content file. Typical keys: `layout`, `ag_id`, `thema_id`, `kapitel_id` ("_id" are all integers).
 3. **Language‑specific fields** – text and tags that vary by language. Use a `languages` object where each key is a language code.
 
 Higher-level YAML files can provide defaults (e.g. `Programm/Programm.yaml` sets `layout: "layout.njk"`). Child files inherit these values via Eleventy's data cascade or by merging parent objects in Angular's data service.
 
 ### Examples
 
-#### `Programm/AG-Beispiel.yaml` (kurz)
+#### `Programm/_programm.yaml` (kurz)
+```yaml
+layout: "layout.njk"
+```
+
+#### `Programm/AG-Beispiel/_ag.yaml` (kurz)
 ```yaml
 # layout inherited from Programm.yaml
 ag_id: 1
+version: "kurz"  # defines the URL for the Wahlprogramm-Fassung: "/{language}/Programm/{version}+(simple?"-einfach":"")/<AG>"
 languages:
   de:
     ag: "AG Beispiel"
     contents: |
       # {{ ag }}
 
-      Deutsche Wahlprogramm-Fassung (in einfacher Sprache)
+      Deutsche Wahlprogramm-Fassung
     simple: |
       # {{ ag }}
 
@@ -64,18 +70,19 @@ languages:
     contents: |
       # {{ ag }}
 
-      English manifesto version (plain language)
+      Englische Wahlprogramm-Fassung
     simple: |
       # {{ ag }}
 
-      English manifesto version (plain language)
+      Englische Wahlprogramm-Fassung (in einfacher Sprache)
     tags: []
 ```
 
-#### `Programm/AG-Beispiel/thema-a.yaml` (mittel)
+#### `Programm/AG-Beispiel/thema-a/_thema.yaml` (mittel)
 ```yaml
 # layout and ag_id inherited from AG-Beispiel.yaml
 thema_id: 2
+version: "mittel" # defines the URL for the zusammengefasste Fassung: "/{language}/Programm/{version}+(simple?"-einfach":"")/<AG>/<Thema>"
 languages:
   de:
     # ag inherited from AG-Beispiel.yaml
@@ -83,7 +90,7 @@ languages:
     contents: |
       # {{ thema }}
 
-      Zusammengefasste Deutsche Fassung (in einfacher Sprache)
+      Zusammengefasste Deutsche Fassung
     simple: |
       # {{ thema }}
 
@@ -95,11 +102,11 @@ languages:
     contents: |
       # {{ thema }}
 
-      Condensed English version (plain language)
+      Zusammengefasste Englische Fassung
     simple: |
       # {{ thema }}
 
-      Condensed English version (plain language)
+      Zusammengefasste Englische Fassung (in einfacher Sprache)
     tags: []
 ```
 
@@ -107,6 +114,7 @@ languages:
 ```yaml
 # layout, ag_id and thema_id inherited from thema-a.yaml
 kapitel_id: 1
+version: "lang" # defines the URL for the zusammengefasste Fassung: "/{language}/Programm/{version}+(simple?"-einfach":"")/<AG>/<Thema>"
 languages:
   de:
     # ag and thema inherited from thema-a.yaml
@@ -114,7 +122,7 @@ languages:
     contents: |
       # {{ kapitel }}
 
-      Ausführliche Deutsche Fassung (in einfacher Sprache)
+      Ausführliche Deutsche Fassung
     simple: |
       # {{ kapitel }}
 
@@ -126,11 +134,11 @@ languages:
     contents: |
       # {{ kapitel }}
 
-      Comprehensive English version (plain language)
+      Ausführliche Englische Fassung
     simple: |
       # {{ kapitel }}
 
-      Comprehensive English version (plain language)
+      Ausführliche Englische Fassung (in einfacher Sprache)
     tags: []
 ```
 
