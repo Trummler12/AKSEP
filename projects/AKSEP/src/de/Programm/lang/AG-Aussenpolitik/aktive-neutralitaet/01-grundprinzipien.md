@@ -1,5 +1,6 @@
 ---
 layout: null
+lang: de
 ag: AG Aussenpolitik
 ag_id: 11
 thema: 'Aktive Neutralitaet '
