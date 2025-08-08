@@ -1,20 +1,15 @@
----
-templateEngineOverride: njk
----
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/base.css' | url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/variables.css' | url }}">
-  </head>
-  <body>
-    {% include 'header.njk' %}
-    <main>
-      {{ content | safe }}
-    </main>
-    {% include 'footer.njk' %}
-  </body>
-</html>
+<header>
+  <nav>
+    <ul>
+      <li><a href="/start/">Start</a></li>
+      <li><a href="/Programm/">Programm</a></li>
+      <li><a href="/Projekte/">Projekte</a></li>
+      <li><a href="/Termine/">Termine</a></li>
+      <li><a href="/ueber-uns/">Über uns</a></li>
+      <li><a href="/unterstuetzen/">Unterstützen</a></li>
+      <li><a href="/Presse/">Presse</a></li>
+      <li><a href="/Mitglied-werden/">Mitglied werden</a></li>
+      <li><a href="/Kontact/">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
