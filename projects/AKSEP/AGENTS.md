@@ -23,10 +23,10 @@ AKSEP/projects/AKSEP
 ### 1. Hauptseiten
 
 ```plaintext
-AKSEP/de/index.html               → (deutsche) Startseite
-AKSEP/de/*/index.html             → Einfache Kern-Seiten
-AKSEP/de/Programm/index.html      → Übersichtsseite zum Parteiprogramm
-AKSEP/de/Begriffe/<begriff>/index.html
+AKSEP/index.html               → (deutsche) Startseite
+AKSEP/*/index.html             → Einfache Kern-Seiten
+AKSEP/Programm/index.html      → Übersichtsseite zum Parteiprogramm
+AKSEP/Begriffe/<begriff>/index.html
                                   → Begriffserklärungen
 ```
 
@@ -43,7 +43,7 @@ Zusätzlich fasst `Planung.md` die bisherigen technischen Diskussionen zusammen 
 #### `kurz` (Wahlprogramm-Ebene, 1 Tiefe)
 
 ```plaintext
-AKSEP/de/Programm/kurz/<AG>/index.html
+AKSEP/Programm/kurz/<AG>/index.html
 ```
 
 * Pro Arbeitsgruppe (AG) eine Seite.
@@ -52,7 +52,7 @@ AKSEP/de/Programm/kurz/<AG>/index.html
 #### `mittel` (Themenebene, 2 Tiefen)
 
 ```plaintext
-AKSEP/de/Programm/mittel/<AG>/<Thema>/index.html
+AKSEP/Programm/mittel/<AG>/<Thema>/index.html
 ```
 
 * Pro AG → mehrere Themen
@@ -64,7 +64,7 @@ AKSEP/de/Programm/mittel/<AG>/<Thema>/index.html
 #### `lang` (Kapitelebene, 3 Tiefen)
 
 ```plaintext
-AKSEP/de/Programm/lang/<AG>/<Thema>/<Kapitel>/index.html
+AKSEP/Programm/lang/<AG>/<Thema>/<Kapitel>/index.html
 ```
 
 * Tiefste Detailstufe
@@ -105,7 +105,7 @@ Alle `<AG>`, `<Thema>` und `<Kapitel>`-Pfadsegmente folgen **diesen Regeln**:
 ### Beispiel: lang
 
 ```plaintext
-AKSEP/de/Programm/lang/AG-Gesundheit/Reservepool-fuer-Pflegefachkraefte/Kernidee/index.html
+AKSEP/Programm/lang/AG-Gesundheit/Reservepool-fuer-Pflegefachkraefte/Kernidee/index.html
 ```
 
 ```html
@@ -117,7 +117,7 @@ AKSEP/de/Programm/lang/AG-Gesundheit/Reservepool-fuer-Pflegefachkraefte/Kernidee
 ### Beispiel: mittel
 
 ```plaintext
-AKSEP/de/Programm/mittel/AG-Tierrechte/Umsetzungsstrategie/index.html
+AKSEP/Programm/mittel/AG-Tierrechte/Umsetzungsstrategie/index.html
 ```
 
 ```html
@@ -128,7 +128,7 @@ AKSEP/de/Programm/mittel/AG-Tierrechte/Umsetzungsstrategie/index.html
 ### Beispiel: kurz
 
 ```plaintext
-AKSEP/de/Programm/kurz/AG-Europa-und-Migration/index.html
+AKSEP/Programm/kurz/AG-Europa-und-Migration/index.html
 ```
 
 ```html

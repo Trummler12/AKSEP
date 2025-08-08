@@ -1,6 +1,6 @@
 # YAML Front Matter Reference
 
-This document captures the agreed-upon YAML variables and Eleventy settings for the program pages under `AKSEP/projects/AKSEP/src/de/Programm`.
+This document captures the agreed-upon YAML variables and Eleventy settings for the program pages under `AKSEP/projects/AKSEP/src/Programm`.
 
 ## General Notes
 - Directory names `<AG>`, `<Thema>`, and `<Kapitel>` provide the slugs; explicit `ag_slug` or `thema_slug` variables are not stored.
@@ -11,7 +11,7 @@ This document captures the agreed-upon YAML variables and Eleventy settings for 
 
 ## Detailed level: `lang`
 Files live at  
-`AKSEP/projects/AKSEP/src/de/Programm/lang/<AG>/<Thema>/<Kapitel>.md`.
+`AKSEP/projects/AKSEP/src/Programm/lang/<AG>/<Thema>/<Kapitel>.md`.
 
 Each chapter carries the following front matter:
 
@@ -33,7 +33,7 @@ Content …
 ```
 
 To render a complete Thema page, create  
-`AKSEP/projects/AKSEP/src/de/Programm/lang/<AG>/<Thema>/index.md`:
+`AKSEP/projects/AKSEP/src/Programm/lang/<AG>/<Thema>/index.md`:
 
 ```yaml
 ---
@@ -59,7 +59,7 @@ This `index.md` aggregates all chapter files tagged with `<Thema>` and sorted by
 
 ## Medium level: `mittel`
 Files live at  
-`AKSEP/projects/AKSEP/src/de/Programm/mittel/<AG>/<Thema>.md`.
+`AKSEP/projects/AKSEP/src/Programm/mittel/<AG>/<Thema>.md`.
 
 Front matter:
 
@@ -81,7 +81,7 @@ Each file corresponds to exactly one theme; no additional aggregation is require
 
 ## Short level: `kurz`
 Files live at  
-`AKSEP/projects/AKSEP/src/de/Programm/kurz/<AG>.md`.
+`AKSEP/projects/AKSEP/src/Programm/kurz/<AG>.md`.
 
 Front matter:
 

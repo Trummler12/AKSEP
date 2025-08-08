@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const baseDir = path.join(__dirname, '..', 'src/de/Programm/lang');
+const baseDir = path.join(__dirname, '..', 'src/Programm/lang');
 
 function aggregate() {
   const agDirs = fs.readdirSync(baseDir, { withFileTypes: true }).filter(d => d.isDirectory());

@@ -129,7 +129,7 @@ Eure aktuelle Struktur (`projects/AKSEP/src/...`) zeigt bereits eine Eleventy-Ko
 
     * **Mehrere Versionen des Programms** : Legt pro Version (lang/mittel/kurz/leichte Sprache) Unterordner an, wie es schon für `Programm/kurz` bzw. `Programm/mittel` geschieht. Eine kleine JSON-Datei in `src/data/program/` kann Metadaten (Titel, Sprache, Länge) bündeln, sodass Eleventy automatisch passende Seiten erstellt.
 
-    * **Begriffsklärungen** : Ihr habt bereits `src/de/Begriffe/<Begriff>/index.html`. Um spätere Pflege zu erleichtern, könnt ihr diese Begriffe als Markdown-Dateien plus Metadaten (Front Matter) speichern. Eleventy erzeugt dann die HTML-Dateien automatisch.
+    * **Begriffsklärungen** : Ihr habt bereits `src/Begriffe/<Begriff>/index.html`. Um spätere Pflege zu erleichtern, könnt ihr diese Begriffe als Markdown-Dateien plus Metadaten (Front Matter) speichern. Eleventy erzeugt dann die HTML-Dateien automatisch.
 
     * **Zentrale Styles & Skripte**: Die vorhandenen `base.css`, `layout.css`, `variables.css` und JS-Dateien (`cookie-banner.js`, `theme-toggle.js`) lassen sich in Eleventy-Layouts (`src/templates/layout.njk`) einbinden, sodass ihr jede Inhaltsseite schlank halten könnt.
 
@@ -140,7 +140,7 @@ Eure aktuelle Struktur (`projects/AKSEP/src/...`) zeigt bereits eine Eleventy-Ko
 
 ## Mittelfristiger Ausbau (Content-Pflege, SEO, Struktur)
 
-  * **Versionierung & einfache Sprache**: Um die drei Längen plus „leichte Sprache“ sauber zu verwalten, lohnt sich eine dateibasierte Struktur wie `programm/lang/de.md`, `programm/lang/de-leichte-sprache.md` usw. Eleventy kann aus den Dateinamen oder Front-Matter-Feldern (z. B. `length: long`, `lang: de`, `level: simple`) URLs generieren (`/de/programm/lang`, `/de/programm/lang/einfach` …).
+  * **Versionierung & einfache Sprache**: Um die drei Längen plus „leichte Sprache“ sauber zu verwalten, lohnt sich eine dateibasierte Struktur wie `programm/lang/de.md`, `programm/lang/de-leichte-sprache.md` usw. Eleventy kann aus den Dateinamen oder Front-Matter-Feldern (z. B. `length: long`, `lang: de`, `level: simple`) URLs generieren (`/programm/lang`, `/programm/lang/einfach` …).
 
   * **SEO** : Achtet auf eindeutige `title`‑ und `meta description`‑Felder; Eleventy erlaubt Front-Matter-Variablen, die ihr im Layout ausgebt. Für Suchmaschinenfreundlichkeit könnt ihr zusätzlich eine Sitemap generieren (`@11ty/eleventy-plugin-sitemap`).
 
@@ -168,7 +168,7 @@ Eure aktuelle Struktur (`projects/AKSEP/src/...`) zeigt bereits eine Eleventy-Ko
 
   1. **Eleventy ausbauen** – nutzt Markdown + Front Matter, um die Vielzahl an Programmseiten und Begriffsklärungen strukturiert zu pflegen.
 
-  2. **Strikte Ordner-/URL-Konvention** – spiegelt eure geplante Navigation („/de/Programm/mittel/…“, „/de/Begriffe/Faschismus/…“ usw.), damit Links stabil bleiben, wenn ihr später umzieht.
+  2. **Strikte Ordner-/URL-Konvention** – spiegelt eure geplante Navigation („/Programm/mittel/…“, „/Begriffe/Faschismus/…“ usw.), damit Links stabil bleiben, wenn ihr später umzieht.
 
   3. **SEO & Metadaten** – füllt für jede Seite `title`, `description`, Open-Graph‑Tags, und prüft eine Sitemap.
 
@@ -187,7 +187,7 @@ Wenn euch zu einzelnen Punkten (z. B. Eleventy-Layouts, Metadatenstruktur, Wahl 
 > Wie würde das dann aussehen? Hätten wir dann den gesamten Inhalt unseres Parteiprogramms in EINEM .md drin? Oder würden wir dann einfach in der in AKSEP\projects\AKSEP\src\de\Programm\... bereits vorliegenden Struktur die .html-Dateien durch .md-Dateien ersetzen?
 Wie genau baut Eleventy aus .md-Dateien HTML-Inhalt unter Anwendung zentralisiert definierter Styles? Worauf müssen wir achten?
 
-"2. Strikte Ordner-/URL-Konvention – spiegelt eure geplante Navigation („/de/Programm/mittel/…“, „/de/Begriffe/Faschismus/…“ usw.), damit Links stabil bleiben, wenn ihr später umzieht."
+"2. Strikte Ordner-/URL-Konvention – spiegelt eure geplante Navigation („/Programm/mittel/…“, „/Begriffe/Faschismus/…“ usw.), damit Links stabil bleiben, wenn ihr später umzieht."
 > Die Pfad-/URL-Elemente folgen einer einfachen Konvention: Für die Themen verwenden wir hier eine Schlagwort-basierte Zusammenfassung des Themen-Titels, gekürzt auf maximal 3 (in seltenen Ausnahmen auch 4) Wörter. Ich wüsste jetzt zudem eh nicht, warum wir irgendetwas spiegeln müssten; Die Datei-Struktur ist automatisch in AKSEP\projects\AKSEP\local-Tree.txt beschrieben, was wir im Zweifel als Vorlage zum Wiederaufbau verwenden könnten; Und sonst würden wir einfach ALLES rüberkopieren, warum nicht.
 
 "3. SEO & Metadaten – füllt für jede Seite title, description, Open-Graph‑Tags, und prüft eine Sitemap."
@@ -205,7 +205,7 @@ Hast du noch Ergänzungen/Klarstellungen/Einordnungen zu meinen Antworten (zusä
 \<antwort3\>  
 ### 1\. Markdown + Front Matter in Eleventy
 
-  * **Struktur** : Ihr könnt die bestehende Ordnerhierarchie (`src/de/Programm/...`) beibehalten und darin die bisherigen `.html`‑Dateien durch `.md`‑Dateien ersetzen.
+  * **Struktur** : Ihr könnt die bestehende Ordnerhierarchie (`src/Programm/...`) beibehalten und darin die bisherigen `.html`‑Dateien durch `.md`‑Dateien ersetzen.
 
   * **Zerlegung** : Statt das komplette Parteiprogramm in eine einzige `.md` zu packen, ist es sinnvoll, für jede Variante (lang/mittel/kurz, jeweils in einfacher Sprache) einen Ordner bzw. Unterordner zu führen. Innerhalb dieser Ordner könnt ihr das Programm kapitelweise aufteilen (`01-einleitung.md`, `02-grundwerte.md` usw.), sodass jede Seite leichter wartbar bleibt.
 
@@ -215,7 +215,7 @@ Hast du noch Ergänzungen/Klarstellungen/Einordnungen zu meinen Antworten (zusä
     ---
     title: "Parteiprogramm – Langfassung"
     layout: "layouts/program.html"
-    permalink: "/de/Programm/lang/"
+    permalink: "/Programm/lang/"
     description: "Langfassung des Parteiprogramms der AKSEP …"
     ---
 ```
@@ -247,7 +247,7 @@ Der `layout`-Wert verweist auf eine zentrale HTML-Vorlage, die eure Styles (`/as
 
 Die Empfehlung, Struktur und URLs zu spiegeln, zielt darauf ab, dass **Dateipfad und endgültige URL synchron bleiben** , damit:
 
-  * interne Links (z. B. `/de/Programm/mittel/`) stabil funktionieren,
+  * interne Links (z. B. `/Programm/mittel/`) stabil funktionieren,
 
   * ein späterer Umzug auf ein anderes Hosting oder Framework einfacher ist (ihr könnt die Ordner direkt übernehmen oder automatisiert exportieren).
 
