@@ -1,5 +1,6 @@
 ---
 layout: null
+lang: de
 ag: "AG Tierrechte"
 ag_id: 12
 thema: "Grundsatzposition"

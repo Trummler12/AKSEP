@@ -1,5 +1,6 @@
 ---
 layout: null
+lang: de
 ag: AG Gesundheit
 ag_id: 5
 thema: Reservepool für Pflegefachkräfte
