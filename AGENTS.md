@@ -12,6 +12,10 @@ These instructions apply globally unless a nested `AGENTS.md` overrides them.
 - `projects/AKSEP`: Eleventy-based website source.
 - `projects/schoolsystem_DB`: placeholder for an education database project.
 
+## Dynamic Web Principle
+- Webpages in this project should strive to be dynamic rather than purely static.
+- Explore options such as Eleventy with YAML or other approaches to maintain dynamic behavior; specifics are still under consideration.
+
 ## Coding Conventions
 - Indentation: 2 spaces (no tabs).
 - File naming: kebab-case for files, PascalCase for classes/components.

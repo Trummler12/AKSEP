@@ -13,6 +13,11 @@ AKSEP/projects/AKSEP
 
 ---
 
+## Dynamischer Webansatz
+
+- Ziel ist, die Webseite grundsätzlich dynamisch zu gestalten; eine rein statische Umsetzung gilt als No-Go.
+- Unklarheiten, etwa zur Nutzung von Eleventy mit YAML, werden zu einem späteren Zeitpunkt geklärt.
+
 ## Strukturübersicht
 
 ### 1. Hauptseiten
