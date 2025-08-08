@@ -1,0 +1,47 @@
+angular-app/
+├─ angular.json
+├─ package.json
+├─ tsconfig.json
+├─ src/
+│  ├─ index.html
+│  ├─ main.ts
+│  ├─ assets/
+│  │  ├─ (migrated assets from src_alt/assets)
+│  │  └─ data/
+│  │     ├─ globals.yaml
+│  │     └─ programm/
+│  │        ├─ programm.yaml
+│  │        └─ ag-beispiel/
+│  │           ├─ ag-beispiel.yaml
+│  │           └─ thema-a/
+│  │              ├─ thema-a.yaml
+│  │              └─ kapitel-1.yaml
+│  ├─ app/
+│  │  ├─ app-routing.module.ts
+│  │  ├─ app.module.ts
+│  │  ├─ core/
+│  │  │  ├─ services/
+│  │  │  └─ guards/
+│  │  ├─ shared/
+│  │  │  └─ components/
+│  │  └─ features/
+│  │     ├─ start/
+│  │     │  ├─ start.module.ts
+│  │     │  └─ start.component.ts
+│  │     ├─ begriffe/
+│  │     │  ├─ begriffe.module.ts
+│  │     │  └─ begriffe.component.ts
+│  │     ├─ programm/
+│  │     │  ├─ programm.module.ts
+│  │     │  ├─ ag/
+│  │     │  │  └─ ag.component.ts
+│  │     │  ├─ thema/
+│  │     │  │  └─ thema.component.ts
+│  │     │  └─ kapitel/
+│  │     │     └─ kapitel.component.ts
+│  │     ├─ kontakt/
+│  │     ├─ mitglied-werden/
+│  │     └─ presse/
+│  ├─ environments/
+│  │  ├─ environment.ts
+│  │  └─ environment.prod.ts
