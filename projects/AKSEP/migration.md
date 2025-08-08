@@ -1,6 +1,6 @@
 # Migration Plan: Eleventy to Angular
 
-This document describes how the AKSEP web project migrates from the current Eleventy setup in `src_alt` to a new Angular application. It supplements `src/Verzeichnisbaum.txt`, which sketches the target directory tree.
+This document describes how the AKSEP web project migrates from the current Eleventy setup in `src_alt` to a new Angular application. It supplements `Verzeichnisbaum.txt`, which sketches the target directory tree.
 
 ## Overall Strategy
 
@@ -39,73 +39,98 @@ Three variable scopes govern YAML files:
 2. **File‑level globals** – identifiers constant across languages within a content file. Typical keys: `layout`, `ag_id`, `thema_id`, `kapitel_id` (all integers).
 3. **Language‑specific fields** – text and tags that vary by language. Use a `languages` object where each key is a language code.
 
-To minimise duplication, higher-level YAML files can provide defaults (e.g. `Programm/Programm.yaml` sets `layout: "layout.njk"`). Child files inherit these values, either via Eleventy's data cascade or by merging parent objects in Angular's data service.
+Higher-level YAML files can provide defaults (e.g. `Programm/Programm.yaml` sets `layout: "layout.njk"`). Child files inherit these values via Eleventy's data cascade or by merging parent objects in Angular's data service.
 
 ### Examples
 
 #### `Programm/AG-Beispiel.yaml` (kurz)
 ```yaml
-layout: "layout.njk"
+# layout inherited from Programm.yaml
 ag_id: 1
 languages:
   de:
     ag: "AG Beispiel"
     contents: |
-      Kurze Zusammenfassung in deutscher Sprache …
+      # {{ ag }}
+
+      Deutsche Wahlprogramm-Fassung (in einfacher Sprache)
     simple: |
-      Einfache Sprache der kurzen Fassung …
+      # {{ ag }}
+
+      Deutsche Wahlprogramm-Fassung (in einfacher Sprache)
     tags: []
   en:
-    ag: "Example Working Group"
+    ag: "AG Example"
     contents: |
-      Concise English version …
+      # {{ ag }}
+
+      English manifesto version (plain language)
     simple: |
-      Plain‑language English summary …
+      # {{ ag }}
+
+      English manifesto version (plain language)
     tags: []
 ```
 
 #### `Programm/AG-Beispiel/thema-a.yaml` (mittel)
 ```yaml
-layout: "layout.njk"          # inherited from Programm.yaml if omitted
-ag_id: 1                       # inherited from AG-Beispiel.yaml if omitted
+# layout and ag_id inherited from AG-Beispiel.yaml
 thema_id: 2
 languages:
   de:
+    # ag inherited from AG-Beispiel.yaml
     thema: "Thema A"
     contents: |
-      Deutscher Text mittlerer Länge …
+      # {{ thema }}
+
+      Zusammengefasste Deutsche Fassung (in einfacher Sprache)
     simple: |
-      Deutsche Fassung in einfacher Sprache …
+      # {{ thema }}
+
+      Zusammengefasste Deutsche Fassung (in einfacher Sprache)
     tags: []
   en:
+    # ag inherited from AG-Beispiel.yaml
     thema: "Topic A"
     contents: |
-      English medium-length text …
+      # {{ thema }}
+
+      Condensed English version (plain language)
     simple: |
-      Easy English version …
+      # {{ thema }}
+
+      Condensed English version (plain language)
     tags: []
 ```
 
 #### `Programm/AG-Beispiel/thema-a/kapitel-1.yaml` (lang)
 ```yaml
-layout: "layout.njk"
-ag_id: 1
-thema_id: 2
+# layout, ag_id and thema_id inherited from thema-a.yaml
 kapitel_id: 1
 languages:
   de:
+    # ag and thema inherited from thema-a.yaml
     kapitel: "Kapitel 1"
     contents: |
-      Ausführlicher Fließtext in deutscher Sprache …
+      # {{ kapitel }}
+
+      Ausführliche Deutsche Fassung (in einfacher Sprache)
     simple: |
-      Lange Version in einfacher Sprache …
+      # {{ kapitel }}
+
+      Ausführliche Deutsche Fassung (in einfacher Sprache)
     tags: []
   en:
+    # ag and thema inherited from thema-a.yaml
     kapitel: "Chapter 1"
     contents: |
-      Detailed English text …
+      # {{ kapitel }}
+
+      Comprehensive English version (plain language)
     simple: |
-      Plain-language English chapter …
+      # {{ kapitel }}
+
+      Comprehensive English version (plain language)
     tags: []
 ```
 
@@ -126,7 +151,7 @@ languages:
 #### Mitglied werden (`Mitglied-werden/index`)
 ```yaml
 layout: "layout.njk"
-page_id: mitglied-werden
+page: mitglied-werden
 languages:
   de:
     title: "Mitglied werden"
@@ -141,7 +166,7 @@ languages:
 #### Presse (`Presse/index`)
 ```yaml
 layout: "layout.njk"
-page_id: presse
+page: presse
 languages:
   de:
     title: "Presse"
@@ -153,11 +178,9 @@ languages:
       Contacts, logos and current releases …
 ```
 
-These examples use `languages` instead of `translations`, rely on `layout.njk`, and store all textual content under `contents` (plus optional `simple`).
-
 ## Next Steps
 
-1. Review and refine `src/Verzeichnisbaum.txt`.
+1. Review and refine `Verzeichnisbaum.txt`.
 2. Execute the Angular CLI command from the top-level `projects/AKSEP` directory.
 3. Gradually migrate content from `src_alt` into Angular components and YAML data files using the structures above.
 4. Remove Eleventy tooling once the Angular app can serve all pages with dynamic content and live preview.
