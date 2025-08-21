@@ -1,51 +1,228 @@
-angular-app/
-├─ angular.json
+# Projektwurzel
+.
+├─ .gitignore                               # u.a. .nuxt/, .output/, node_modules/
+├─ README.md
 ├─ package.json
+├─ nuxt.config.ts                           # Nuxt 3 + @nuxt/content + @nuxtjs/i18n Konfiguration
+├─ app.vue                                  # globaler Rahmen (Header/Footer via Komponenten)
 ├─ tsconfig.json
-├─ src/
-│  ├─ index.html
-│  ├─ main.ts
-│  ├─ assets/
-│  │  └─ data/  # Könnte je nach Architektur auch "src" sein
-│  │     ├─ globals.yml     # Globale Variablen (kann jedoch gerade keine sinnvolle Beispiele nennen)
-│  │     └─ programm/               # 1 Ordner für jede der >15 Primär-Seiten, sowie für "begriffe" und für "programm"
-│  │        ├─ _index.mdc           # Start-File für die Web-Page zur Programm-Startseite
-│  │        └─ ag-beispiel/         # 1 Ordner für jede AG
-│  │           ├─ _index.mdc        # Träger der kurzen Programm-Version zu "ag-beispiel"
-│  │           └─ thema-a/          # 1 Ordner für jedes Theme der AG
-│  │              ├─ _index.mdc     # Träger der mittleren Programm-Version zu "thema-a"
-│  │              ├─ 01.mdc         # Träger der langen Programm-Version zu "Kapitel 1" (im Regelfall auf ein einziges Zeichen gekürzt, welches für den Kapitel-Index steht)
-│  │              ├─ 02.mdc         # Träger der langen Programm-Version zu "Kapitel 2"
-│  │              ├─ 03.mdc         # Träger der langen Programm-Version zu "Kapitel 3"
-│  │              ├─ 04.mdc         # Träger der langen Programm-Version zu "Kapitel 4"
-│  │              ├─ Q.mdc          # Träger der langen Programm-Version zu "Kapitel Q" (Q&A-Kapitel, um direkt vor Ort mögliche Unklarheiten zu klären)
-│  │              └─ z.mdc          # Träger der langen Programm-Version zu "Kapitel z" (Abschluss-Kapitel)
-│  ├─ app/
-│  │  ├─ app-routing.module.ts
-│  │  ├─ app.module.ts
-│  │  ├─ core/
-│  │  │  ├─ services/
-│  │  │  └─ guards/
-│  │  ├─ shared/
-│  │  │  └─ components/
-│  │  └─ features/
-│  │     ├─ start/
-│  │     │  ├─ start.module.ts
-│  │     │  └─ start.component.ts
-│  │     ├─ begriffe/
-│  │     │  ├─ begriffe.module.ts
-│  │     │  └─ begriffe.component.ts
-│  │     ├─ programm/
-│  │     │  ├─ programm.module.ts
-│  │     │  ├─ ag/
-│  │     │  │  └─ ag.component.ts
-│  │     │  ├─ thema/
-│  │     │  │  └─ thema.component.ts
-│  │     │  └─ kapitel/
-│  │     │     └─ kapitel.component.ts
-│  │     ├─ kontakt/
-│  │     ├─ mitglied-werden/
-│  │     └─ presse/
-│  ├─ environments/
-│  │  ├─ environment.ts
-│  │  └─ environment.prod.ts
+├─ .eslintrc.cjs
+├─ .prettierrc
+├─ .env.example
+│
+├─ public/                                   # statische Assets (direkt auslieferbar)
+│  ├─ favicon.ico
+│  ├─ robots.txt
+│  ├─ og-image.png
+│  ├─ admin/                                 # Decap CMS (Git‑basiertes CMS)
+│  │  ├─ index.html                          # Decap Mount (Standardsetup)
+│  │  └─ config.yml                          # Decap-Konfiguration (Collections für content/)
+│  └─ _redirects                             # optional (Netlify) für Redirect-Regeln
+│
+├─ assets/                                   # gebundelte Assets (CSS, Fonts, Bilder)
+│  ├─ css/
+│  │  └─ main.css
+│  └─ images/
+│     └─ placeholders/
+│
+├─ components/                               # Auto‑import durch Nuxt
+│  ├─ AppHeader.vue
+│  ├─ AppFooter.vue
+│  ├─ Variant.vue                            # Wrap für ::variant{lang, simple}
+│  ├─ VariantToolbar.vue                     # Sprach-/„Leichte Sprache“-Schalter
+│  ├─ Chapter.vue                            # kapselt Kapitel-Heading + Anker (#<kapitel_id>)
+│  └─ TermHint.vue                           # Glossar‑Tooltip/Popover
+│
+├─ layouts/
+│  ├─ default.vue                            # Standardlayout (Header/Footer + <NuxtPage/>)
+│  └─ program.vue                            # Layout für Programm-Routen
+│
+├─ pages/                                    # explizite Seitenrouten (Nuxt erzeugt automatisch Routen) 
+│  ├─ index.vue                              # Redirect → /start
+│  ├─ programm/
+│  │  ├─ kurz/
+│  │  │  └─ [ag].vue                         # /programm/kurz/<AG> (rendert AG/_index.mdc)
+│  │  ├─ mittel/
+│  │  │  └─ [ag]/
+│  │  │     └─ [thema].vue                   # /programm/mittel/<AG>/<Thema> (rendert Thema/_index.mdc)
+│  │  └─ lang/
+│  │        └─ [ag]/
+│  │           └─ [thema].vue                # /programm/lang/<AG>/<Thema> (+ #<kapitel_id>)
+│  └─ error.vue                              # Fehlerseite (optional)
+│
+├─ modules/                                  # lokale Nuxt‑Module (auto‑registriert)
+│  ├─ content-aliases.ts                     # EN‑Slug‑Aliases (pfadlokalisierte URLs mit Fallback)
+│  ├─ content-edited-git.ts                  # setzt/füllt `edited` aus Git‑Commit-Zeitstempeln
+│  ├─ glossary-autolink.ts                   # Autolink erster Glossar‑Begriffsvorkommen (Hover)
+│  └─ content-ensure.ts                      # Validierung/Injection (ag_id/thema_id/kapitel_id vorhanden?)
+│
+├─ plugins/
+│  └─ variant-filter.client.ts               # rendert nur passenden ::variant‑Block (lang/simple)
+│
+├─ stores/                                   # Pinia Stores (globaler Zustand)
+│  └─ prefs.ts                               # { simple: boolean } + evtl. persistentes Locale
+│
+├─ locales/                                  # UI‑Strings, nicht Content (für Toolbar, Labels etc.)
+│  ├─ de.json
+│  └─ en.json
+│
+├─ content/                                  # Content‑CMS (Markdown/MDC/YAML) – Document‑Driven
+│  ├─ start/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc                          # Startseite (DE ohne /de/, EN mit /en/)
+│  │
+│  ├─ begriffe/
+│  │  ├─ _dir.yml                            # z.B. { layout: default, path: {en: "glossary"} }
+│  │  ├─ _index.mdc                          # Glossar‑Landing (Filter, A‑Z, Suche)
+│  │  └─ _terms/                             # einzelne Begriffseinträge (je Datei ein Begriff)
+│  │     ├─ ag.mdc
+│  │     ├─ cancel-culture.mdc
+│  │     ├─ demokratie.mdc
+│  │     ├─ extremismus.mdc
+│  │     ├─ faschismus.mdc
+│  │     ├─ identitaetspolitik.mdc
+│  │     ├─ liberalismus.mdc
+│  │     ├─ meinungsfreiheit.mdc
+│  │     ├─ nationalsozialismus.mdc
+│  │     ├─ neoliberalismus.mdc
+│  │     ├─ paedophil-paedokriminell.mdc
+│  │     ├─ populismus.mdc
+│  │     ├─ radikal.mdc
+│  │     ├─ rechts-links.mdc
+│  │     ├─ toleranz.mdc
+│  │     └─ wokeness.mdc
+│  │
+│  ├─ finanzen-transparenz/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ kontakt/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ mitglied-werden/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ partner-projekte/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ praeambel/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ presse/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ programm/
+│  │  ├─ _index.mdc                          # Programm-Startseite
+│  │  ├─ CHANGELOG.mdc                       # manuelles Änderungsprotokoll
+│  │  │
+│  │  ├─ ag-regierung/
+│  │  │  ├─ _dir.yml                         # { ag_id: 1, path:{en:"government"} , ... }
+│  │  │  ├─ _index.mdc                       # KURZ (AG)
+│  │  │  ├─ regierungsform/
+│  │  │  │  ├─ _dir.yml                      # { thema_id: 1, highlighted: true, ... }
+│  │  │  │  ├─ _index.mdc                    # MITTEL (Thema)
+│  │  │  │  ├─ 01.mdc                        # LANG Kapitel 01  (## …, ::variant{de/en, simple})
+│  │  │  │  ├─ 02.mdc                        # LANG Kapitel 02
+│  │  │  │  ├─ …
+│  │  │  │  ├─ Q.mdc                         # Q&A
+│  │  │  │  └─ Z.mdc                         # Schluss
+│  │  │  ├─ wahlsystem/
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  ├─ 01.mdc
+│  │  │  │  └─ …
+│  │  │  └─ verguetungssystem-amtsinhaber/
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     └─ …
+│  │  │
+│  │  ├─ ag-innere-sicherheit/               # Platzhalter (AG 2)
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ …/                               # themen/* (analog)
+│  │  │
+│  │  ├─ ag-umweltschutz/
+│  │  │  ├─ _dir.yml                         # { ag_id: 3, path:{en:"environmental-protection"} }
+│  │  │  ├─ _index.mdc
+│  │  │  ├─ feuerwerk-events/
+│  │  │  │  ├─ _dir.yml                      # { thema_id: 1, highlighted: false }
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  ├─ 01.mdc
+│  │  │  │  ├─ 02.mdc
+│  │  │  │  ├─ 03.mdc
+│  │  │  │  ├─ 04.mdc
+│  │  │  │  ├─ 05.mdc
+│  │  │  │  ├─ 06.mdc
+│  │  │  │  ├─ 07.mdc
+│  │  │  │  ├─ 08.mdc
+│  │  │  │  ├─ 09.mdc
+│  │  │  │  ├─ 10.mdc
+│  │  │  │  ├─ 11.mdc
+│  │  │  │  ├─ 12.mdc
+│  │  │  │  ├─ 13.mdc
+│  │  │  │  └─ …
+│  │  │  └─ extensivwiesen/
+│  │  │     ├─ _dir.yml                      # { thema_id: 2 }
+│  │  │     ├─ _index.mdc
+│  │  │     └─ …
+│  │  │
+│  │  ├─ ag-klimaschutz/
+│  │  │  ├─ _dir.yml                         # { ag_id: 4, path:{en:"climate-protection"} }
+│  │  │  ├─ _index.mdc
+│  │  │  └─ project-drawdown/
+│  │  │     ├─ _dir.yml                      # { thema_id: 1 }
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     ├─ 03.mdc
+│  │  │     ├─ 04.mdc
+│  │  │     ├─ 05.mdc
+│  │  │     ├─ 06.mdc
+│  │  │     ├─ 07.mdc
+│  │  │     ├─ 08.mdc
+│  │  │     ├─ 09.mdc
+│  │  │     ├─ 10.mdc
+│  │  │     ├─ 11.mdc
+│  │  │     ├─ 12.mdc
+│  │  │     └─ 13.mdc
+│  │  │
+│  │  └─ …/                                  # ags/* (analog)
+│  │
+│  ├─ projekte/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ satzung/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ termine/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ ueber-uns/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ unterstuetzen/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc
+│  │
+│  ├─ datenschutz/
+│  │  ├─ _dir.yml
+│  │  └─ _index.mdc                          # statt .html → einheitlich als Markdown
+│  │
+│  └─ impressum/
+│     ├─ _dir.yml
+│     └─ _index.mdc                          # statt .html → einheitlich als Markdown
+│
+└─ scripts/                                   # optionale Hilfsskripte (Migrations‑/Checks)
+   ├─ check-missing-variants.mjs              # prüft, ob DE/EN & simple vorhanden; sonst warnen
+   ├─ generate-en-aliases.mjs                 # generiert slug_en‑Aliases aus _dir.yml
+   └─ build-chapters-toc.mjs                  # erzeugt Themen‑Inhaltsverzeichnis
