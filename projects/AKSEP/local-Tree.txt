@@ -1,18 +1,25 @@
 ﻿
 
-Folder PATH listing for volume Windows
-Volume serial number is AA0F-5FCF
+Auflistung der Ordnerpfade für Volume WINDOWS
+Volumeseriennummer : 9AF3-4876
 C:.
 |   .eleventy.js
 |   .gitignore
 |   AGENTS.md
+|   firebase.json
+|   firebase.json.txt
 |   local-Tree.txt
 |   local_tree.ps1
 |   migration.md
+|   package-lock.json
 |   package.json
 |   Planung.md
+|   Promptwerkstatt.yaml
 |   Verzeichnisbaum.txt
 |   yaml.md
+|
++---node_modules
+|       [Contents excluded]
 |
 +---scripts
 |       aggregate-lang.js

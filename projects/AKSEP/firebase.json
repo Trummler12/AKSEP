@@ -1,0 +1,1219 @@
+{
+  "start": {
+    "languages": {
+      "de": {
+        "title": "Startseite",
+        "contents": "(Deutscher Inhalt Startseite)",
+        "simple": "(Deutscher Inhalt Startseite in einfacher Sprache)"
+      },
+      "en": {
+        "title": "Homepage",
+        "contents": "(Englischer Inhalt Startseite)",
+        "simple": "(Englischer Inhalt Startseite in einfacher Sprache)"
+      }
+    }
+  },
+  "begriffe": {
+    "ag": {
+      "languages": {
+        "de": {
+          "title": "AG",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "AG",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "cancel-culture": {
+      "languages": {
+        "de": {
+          "title": "Cancel-Culture",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Cancel Culture",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "demokratie": {
+      "languages": {
+        "de": {
+          "title": "Demokratie",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Democracy",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "extremismus": {
+      "languages": {
+        "de": {
+          "title": "Extremismus",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Extremism",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "faschismus": {
+      "languages": {
+        "de": {
+          "title": "Faschismus",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Fascism",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "identitaetspolitik": {
+      "languages": {
+        "de": {
+          "title": "Identitätspolitik",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Identity Politics",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "liberalismus": {
+      "languages": {
+        "de": {
+          "title": "Liberalismus",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Liberalism",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "meinungsfreiheit": {
+      "languages": {
+        "de": {
+          "title": "Meinungsfreiheit",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Freedom of Speech",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "nationalsozialismus": {
+      "languages": {
+        "de": {
+          "title": "Nationalsozialismus",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "National Socialism",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "neoliberalismus": {
+      "languages": {
+        "de": {
+          "title": "Neoliberalismus",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Neoliberalism",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "paedophil-paedokriminell": {
+      "languages": {
+        "de": {
+          "title": "Pädophil vs. Pädokriminell",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Pedophilic vs. Pedocriminal",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "populismus": {
+      "languages": {
+        "de": {
+          "title": "Populismus",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Populism",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "radikal": {
+      "languages": {
+        "de": {
+          "title": "Radikal",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Radical",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "rechts-links": {
+      "languages": {
+        "de": {
+          "title": "Rechts vs. Links",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Right vs. Left",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "toleranz": {
+      "languages": {
+        "de": {
+          "title": "Toleranz",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Tolerance",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    },
+    "wokeness": {
+      "languages": {
+        "de": {
+          "title": "Wokeness",
+          "contents": "(Deutscher Inhalt Begriffsklärung)",
+          "simple": "(Deutscher Inhalt Begriffsklärung in einfacher Sprache)"
+        },
+        "en": {
+          "title": "Wokeness",
+          "contents": "(Englischer Inhalt Begriffsklärung)",
+          "simple": "(Englischer Inhalt Begriffsklärung in einfacher Sprache)"
+        }
+      }
+    }
+  },
+  "programm": {
+    "layout": "layout.njk",
+    "ags": {
+      "ag-regierung": {
+        "ag_id": 1,
+        "languages": {
+          "de": {
+            "title": "AG Regierung",
+            "contents": "(Deutscher zusammengefasster Inhalt)",
+            "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          },
+          "en": {
+            "title": "AG Government",
+            "contents": "(Englischer zusammengefasster Inhalt)",
+            "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          }
+        },
+        "themen": {
+          "regierungsform": {
+            "thema_id": 1,
+            "languages": {
+              "de": {
+                "title": "Regierungsform",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Form of Government",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            },
+            "kapitel": {
+              "1": {
+                "kapitel_id": 1,
+                "languages": {
+                  "de": {
+                    "title": "a) Kritik an der (direkten) Demokratie",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "a) Criticism of (Direct) Democracy",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "2": {
+                "kapitel_id": 2,
+                "languages": {
+                  "de": {
+                    "title": "b) Die Politie als mögliches Ideal",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "b) The Politie as a Possible Ideal",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "3": {
+                "kapitel_id": 3,
+                "languages": {
+                  "de": {
+                    "title": "c) Abstimmungs-Vertretung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "c) Voting Representation",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "4": {
+                "kapitel_id": 4,
+                "languages": {
+                  "de": {
+                    "title": "d) Erweiterte Gedanken",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "d) Extended Thoughts",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "5": {
+                "kapitel_id": 5,
+                "languages": {
+                  "de": {
+                    "title": "e) Zusammenfassung und Ausblick",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "e) Summary and Outlook",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              }
+            }
+          },
+          "wahlsystem": {
+            "thema_id": 2,
+            "languages": {
+              "de": {
+                "title": "Wahlsystem",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Electoral System",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            },
+            "kapitel": {
+              "1": {
+                "kapitel_id": 1,
+                "languages": {
+                  "de": {
+                    "title": "a) Einführung eines Approval-Systems für Einzelpositionen",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "a) Introduction of an Approval System for Individual Positions",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              }
+            }
+          },
+          "verguetungssystem-amtsinhaber": {
+            "thema_id": 3,
+            "languages": {
+              "de": {
+                "title": "Vergütungssystem für Amtsinhaber",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Remuneration System for Office Holders",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            },
+            "kapitel": {
+              "1": {
+                "kapitel_id": 1,
+                "languages": {
+                  "de": {
+                    "title": "0. Einleitung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "0. Introduction",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "2": {
+                "kapitel_id": 2,
+                "languages": {
+                  "de": {
+                    "title": "1. Das Vergütungsmodell im Detail",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "1. The Remuneration Model in Detail",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "AG-innere-sicherheit": {
+        "ag_id": 2,
+        "languages": {
+          "de": {
+            "title": "AG Innere Sicherheit",
+            "contents": "(Deutscher zusammengefasster Inhalt)",
+            "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          },
+          "en": {
+            "title": "AG Internal Security",
+            "contents": "(Englischer zusammengefasster Inhalt)",
+            "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          }
+        },
+        "themen": {
+          "Drogenpolitik": {
+            "thema_id": 1,
+            "languages": {
+              "de": {
+                "title": "Drogenpolitik",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Drug Policy",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            }
+          },
+          "kapitel": {
+            "1": {
+              "kapitel_id": 1,
+              "languages": {
+                "de": {
+                  "title": "0. Grundsatzposition",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "0. Fundamental Position",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "2": {
+              "kapitel_id": 2,
+              "languages": {
+                "de": {
+                  "title": "1. Lernen aus der kontrollierten Verschreibung: Das Beispiel Methylphenidat (Ritalin, Medikinet)",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "1. Learning from Controlled Prescription: The Example of Methylphenidate (Ritalin, Medikinet)",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "3": {
+              "kapitel_id": 3,
+              "languages": {
+                "de": {
+                  "title": "2. Vergleichende Analyse: Legalisierung als Instrument der Schadensminimierung",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "2. Comparative Analysis: Legalization as an Instrument of Harm Reduction",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "4": {
+              "kapitel_id": 4,
+              "languages": {
+                "de": {
+                  "title": "3. Ein evidenzbasiertes Regulierungskonzept für psychoaktive Substanzen",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "3. An Evidence-Based Regulation Concept for Psychoactive Substances",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "5": {
+              "kapitel_id": 5,
+              "languages": {
+                "de": {
+                  "title": "4. Förderung von Forschung und medizinischer Nutzung",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "4. Promotion of Research and Medical Use",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "6": {
+              "kapitel_id": 6,
+              "languages": {
+                "de": {
+                  "title": "5. Historische Entwicklung und gesellschaftliche Perspektiven",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "5. Historical Development and Societal Perspectives",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "7": {
+              "kapitel_id": 7,
+              "languages": {
+                "de": {
+                  "title": "6. Wirtschaftliche Chancen und gesellschaftlicher Nutzen",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "6. Economic Opportunities and Societal Benefits",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "8": {
+              "kapitel_id": 8,
+              "languages": {
+                "de": {
+                  "title": "7. Schlussfolgerung: Kontrolle statt Kriminalisierung",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "7. Conclusion: Control Instead of Criminalization",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "9": {
+              "kapitel_id": 9,
+              "languages": {
+                "de": {
+                  "title": "Q. Quellen und weiterführende Literatur",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "Q. Sources and Further Reading",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            },
+            "10": {
+              "kapitel_id": 10,
+              "languages": {
+                "de": {
+                  "title": "Detaillierte Analyse Wichtiger Bewertungsfaktoren für die Schädigungspotentiale psychoaktiver Substanzen",
+                  "contents": "(Deutscher ausführlicher Inhalt)",
+                  "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                },
+                "en": {
+                  "title": "Detailed Analysis of Important Evaluation Factors for the Harm Potential of Psychoactive Substances",
+                  "contents": "(Englischer ausführlicher Inhalt)",
+                  "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                  "tags": []
+                }
+              }
+            }
+          }
+        }
+      },
+      "ag-umweltschutz": {
+        "ag_id": 3,
+        "languages": {
+          "de": {
+            "title": "AG Umweltschutz",
+            "contents": "(Deutscher zusammengefasster Inhalt)",
+            "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          },
+          "en": {
+            "title": "AG Environmental Protection",
+            "contents": "(Englischer zusammengefasster Inhalt)",
+            "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          }
+        },
+        "themen": {
+          "feuerwerk-events": {
+            "thema_id": 1,
+            "languages": {
+              "de": {
+                "title": "Feuerwerk-Events",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Fireworks Events",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            },
+            "kapitel": {
+              "1": {
+                "kapitel_id": 1,
+                "languages": {
+                  "de": {
+                    "title": "0. Einleitung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "0. Introduction",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "2": {
+                "kapitel_id": 2,
+                "languages": {
+                  "de": {
+                    "title": "1. Problemaufriss",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "1. Problem Overview",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "3": {
+                "kapitel_id": 3,
+                "languages": {
+                  "de": {
+                    "title": "2. Leitprinzipien (CCT-Rahmen)",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "2. Guiding Principles (CCT Framework)",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "4": {
+                "kapitel_id": 4,
+                "languages": {
+                  "de": {
+                    "title": "3. Raumplanung & Standortwahl",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "3. Spatial Planning & Site Selection",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "5": {
+                "kapitel_id": 5,
+                "languages": {
+                  "de": {
+                    "title": "4. Veranstaltungsformate",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "4. Event Formats",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "6": {
+                "kapitel_id": 6,
+                "languages": {
+                  "de": {
+                    "title": "5. Gesundheits- & Immissionsschutz",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "5. Health & Emission Protection",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "7": {
+                "kapitel_id": 7,
+                "languages": {
+                  "de": {
+                    "title": "6. Tierrechtliche Begleitmaßnahmen",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "6. Animal Rights Accompanying Measures",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "8": {
+                "kapitel_id": 8,
+                "languages": {
+                  "de": {
+                    "title": "7. Governance & Recht",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "7. Governance & Law",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "9": {
+                "kapitel_id": 9,
+                "languages": {
+                  "de": {
+                    "title": "8. Logistik & Sicherheit",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "8. Logistics & Security",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "10": {
+                "kapitel_id": 10,
+                "languages": {
+                  "de": {
+                    "title": "9. Aufräum- & Recyclingoffensive",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "9. Cleanup & Recycling Offensive",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "11": {
+                "kapitel_id": 11,
+                "languages": {
+                  "de": {
+                    "title": "10. Wirtschaft & Tourismus",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "10. Economy & Tourism",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "12": {
+                "kapitel_id": 12,
+                "languages": {
+                  "de": {
+                    "title": "11. Kommunikation & Begleitung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "11. Communication & Support",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "13": {
+                "kapitel_id": 13,
+                "languages": {
+                  "de": {
+                    "title": "12. Ausblick: Vollständiger Übergang zu emissionsfreien Lichtinszenierungen",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "12. Outlook: Complete Transition to Emission-Free Light Displays",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "14": {
+                "kapitel_id": 14,
+                "languages": {
+                  "de": {
+                    "title": "Q. Kritik & Antworten (FAQ)",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "Q. Criticism & Answers (FAQ)",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              }
+            }
+          },
+          "extensivwiesen": {
+            "thema_id": 2,
+            "languages": {
+              "de": {
+                "title": "Extensivwiesen",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Extensive Meadows",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            }
+          }
+        }
+      },
+      "ag-klimaschutz": {
+        "ag_id": 4,
+        "languages": {
+          "de": {
+            "title": "AG Klimaschutz",
+            "contents": "(Deutscher zusammengefasster Inhalt)",
+            "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          },
+          "en": {
+            "title": "AG Climate Protection",
+            "contents": "(Englischer zusammengefasster Inhalt)",
+            "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+            "tags": []
+          }
+        },
+        "themen": {
+          "project-drawdown": {
+            "thema_id": 1,
+            "languages": {
+              "de": {
+                "title": "Project Drawdown",
+                "contents": "(Deutscher zusammengefasster Inhalt)",
+                "simple": "(Deutscher zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              },
+              "en": {
+                "title": "Project Drawdown",
+                "contents": "(Englischer zusammengefasster Inhalt)",
+                "simple": "(Englischer zusammengefasster Inhalt in einfacher Sprache)",
+                "tags": []
+              }
+            },
+            "kapitel": {
+              "1": {
+                "kapitel_id": 1,
+                "languages": {
+                  "de": {
+                    "title": "0. Einleitung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "0. Introduction",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "2": {
+                "kapitel_id": 2,
+                "languages": {
+                  "de": {
+                    "title": "1. Förderung einer pflanzenbasierten Ernährung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "1. Promotion of a Plant-Based Diet",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "3": {
+                "kapitel_id": 3,
+                "languages": {
+                  "de": {
+                    "title": "2. Reduzierung von Lebensmittelverschwendung",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "2. Reduction of Food Waste",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "4": {
+                "kapitel_id": 4,
+                "languages": {
+                  "de": {
+                    "title": "3. Schutz und Wiederherstellung von Wäldern und Mooren",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "3. Protection and Restoration of Forests and Peatlands",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "5": {
+                "kapitel_id": 5,
+                "languages": {
+                  "de": {
+                    "title": "4. Ausbau erneuerbarer Energien",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "4. Expansion of Renewable Energies",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "6": {
+                "kapitel_id": 6,
+                "languages": {
+                  "de": {
+                    "title": "5. Förderung von Bildungs- und Familienplanungsprogrammen",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "5. Promotion of Education and Family Planning Programs",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "7": {
+                "kapitel_id": 7,
+                "languages": {
+                  "de": {
+                    "title": "6. Einführung sauberer Kochtechnologien",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "6. Introduction of Clean Cooking Technologies",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "8": {
+                "kapitel_id": 8,
+                "languages": {
+                  "de": {
+                    "title": "7. Verbesserte Landnutzungspraktiken",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "7. Improved Land Use Practices",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "9": {
+                "kapitel_id": 9,
+                "languages": {
+                  "de": {
+                    "title": "8. Management von Methanemissionen",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "8. Management of Methane Emissions",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "10": {
+                "kapitel_id": 10,
+                "languages": {
+                  "de": {
+                    "title": "9. Schutz und Wiederherstellung von Feuchtgebieten",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "9. Protection and Restoration of Wetlands",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "11": {
+                "kapitel_id": 11,
+                "languages": {
+                  "de": {
+                    "title": "10. Einsatz alternativer Kältemittel",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "10. Use of Alternative Refrigerants",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "12": {
+                "kapitel_id": 12,
+                "languages": {
+                  "de": {
+                    "title": "z. Schlusswort",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "z. Conclusion",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              },
+              "13": {
+                "kapitel_id": 13,
+                "languages": {
+                  "de": {
+                    "title": "Nachträgliche Additionen",
+                    "contents": "(Deutscher ausführlicher Inhalt)",
+                    "simple": "(Deutscher ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  },
+                  "en": {
+                    "title": "Subsequent Additions",
+                    "contents": "(Englischer ausführlicher Inhalt)",
+                    "simple": "(Englischer ausführlicher Inhalt in einfacher Sprache)",
+                    "tags": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
