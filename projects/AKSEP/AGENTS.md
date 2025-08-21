@@ -1,3 +1,6 @@
+HINWEIS: DIESE AGENTS.md ENTHÄLT NOCH BESCHREIBUNGEN EINER VERALTETEN ARCHITEKTUR-PLANUNG!
+=> BITTE DIE INHALTE DEN BESCHREIBUNGEN IN DER migration.md ANPASSEN!
+
 ## Zweck dieses Dokuments
 
 Diese Datei beschreibt die Struktur, Konventionen und Regeln für das Partei-Webseiten-Projekt **AKSEP**, insbesondere zur Verwaltung des Programms in drei Detaillierungsgraden (kurz, mittel, lang), zur Erstellung von Begriffsseiten und zur Pfadbenennung. Sie dient als Referenz für Agenten, Redakteur:innen und Tools zur konsistenten Weiterentwicklung des Webauftritts.

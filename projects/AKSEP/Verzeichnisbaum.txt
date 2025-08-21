@@ -7,19 +7,19 @@ angular-app/
 │  ├─ main.ts
 │  ├─ assets/
 │  │  └─ data/  # Könnte je nach Architektur auch "src" sein
-│  │     ├─ globals.yaml    # Globale Variablen (kann jedoch gerade keine sinnvolle Beispiele nennen)
+│  │     ├─ globals.yml     # Globale Variablen (kann jedoch gerade keine sinnvolle Beispiele nennen)
 │  │     └─ programm/               # 1 Ordner für jede der >15 Primär-Seiten, sowie für "begriffe" und für "programm"
-│  │        ├─ _index.file          # Start-File für die Web-Page zur Programm-Startseite
+│  │        ├─ _index.mdc           # Start-File für die Web-Page zur Programm-Startseite
 │  │        └─ ag-beispiel/         # 1 Ordner für jede AG
-│  │           ├─ _index.file       # Träger der kurzen Programm-Version zu "ag-beispiel"
+│  │           ├─ _index.mdc        # Träger der kurzen Programm-Version zu "ag-beispiel"
 │  │           └─ thema-a/          # 1 Ordner für jedes Theme der AG
-│  │              ├─ _index.file    # Träger der mittleren Programm-Version zu "thema-a"
-│  │              ├─ 1.file         # Träger der langen Programm-Version zu "Kapitel 1" (im Regelfall auf ein einziges Zeichen gekürzt, welches für den Kapitel-Index steht)
-│  │              ├─ 2.file         # Träger der langen Programm-Version zu "Kapitel 2"
-│  │              ├─ 3.file         # Träger der langen Programm-Version zu "Kapitel 3"
-│  │              ├─ 4.file         # Träger der langen Programm-Version zu "Kapitel 4"
-│  │              ├─ Q.file         # Träger der langen Programm-Version zu "Kapitel Q" (Q&A-Kapitel, um direkt vor Ort mögliche Unklarheiten zu klären)
-│  │              └─ z.file         # Träger der langen Programm-Version zu "Kapitel z" (Abschluss-Kapitel)
+│  │              ├─ _index.mdc     # Träger der mittleren Programm-Version zu "thema-a"
+│  │              ├─ 01.mdc         # Träger der langen Programm-Version zu "Kapitel 1" (im Regelfall auf ein einziges Zeichen gekürzt, welches für den Kapitel-Index steht)
+│  │              ├─ 02.mdc         # Träger der langen Programm-Version zu "Kapitel 2"
+│  │              ├─ 03.mdc         # Träger der langen Programm-Version zu "Kapitel 3"
+│  │              ├─ 04.mdc         # Träger der langen Programm-Version zu "Kapitel 4"
+│  │              ├─ Q.mdc          # Träger der langen Programm-Version zu "Kapitel Q" (Q&A-Kapitel, um direkt vor Ort mögliche Unklarheiten zu klären)
+│  │              └─ z.mdc          # Träger der langen Programm-Version zu "Kapitel z" (Abschluss-Kapitel)
 │  ├─ app/
 │  │  ├─ app-routing.module.ts
 │  │  ├─ app.module.ts
