@@ -17,8 +17,8 @@ Site‑weite Defaults/Metadaten (z. B. `orgName`, globale `path`‑Vorgaben). 
 Definiert vererbbare Defaults für alle direkten und indirekten Kinder innerhalb der Section:
 
 * **Primärseiten** wie `start/`, `presse/`, `ueber-uns/` etc. (jeweils `_dir.yml` + `_index.mdc`)&#x20;
-* **Glossar**: `begriffe/_dir.yml` und `begriffe/_terms/_dir.yml` (für einzelne Begriffe)&#x20;
-* **Programm**: `programm/_dir.yml`, `programm/ag-*/_dir.yml`, `programm/ag-*/thema-*/_dir.yml`&#x20;
+* **Glossar**: `begriffe/_dir.yml` und `begriffe/_terms/_dir.yml` (für alle Begriffe inkl. oder exkl. Landing Page)&#x20;
+* **Programm**: `programm/_dir.yml` (für alle AGs), `programm/ag-*/_dir.yml` (für diese AG), `programm/ag-*/thema-*/_dir.yml` (für dieses Thema)&#x20;
 
 **1.3 Front‑Matter in `.mdc`‑Dateien (höchste Priorität)**
 
@@ -36,21 +36,23 @@ Definiert vererbbare Defaults für alle direkten und indirekten Kinder innerhalb
 ---
 
 ## 2) Gemeinsame Feldkonventionen (alle Typen)
-
-| Feld               | Typ                 | Pflicht | Bedeutung / Regeln                                                                                                                                     |
-| ------------------ | ------------------- | ------: | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `layout`           | String              |    nein | `default` (Standard) oder `program` (für `/programm/*`). Kann in Section‑`_dir.yml` gesetzt werden.                                                    |
-| `path`             | Map                 |    nein | Lokalisierte Slugs je Sprache, z. B. `{ de: "programm", en: "program" }`. Fallback: wenn Sprache fehlt, nutze `de`. Vererbbar (AG ➜ Thema ➜ Kapitel).  |
-| `edited`           | ISO‑8601‑Datum/Zeit |    nein | Zuletzt geändert. Wenn fehlt, wird per Hook aus `git log -1` gesetzt. **Format:** `YYYY‑MM‑DD` (oder vollständige ISO‑Zeit).                           |
-| `draft`            | Boolean             |    nein | Wenn `true`, nicht veröffentlichen/anzeigen.                                                                                                           |
-| `tags`             | String\[]           |    nein | Freie Schlagwörter (nicht für Sortierung).                                                                                                             |
-| `hreflang_exclude` | Boolean             |    nein | Seite von hreflang ausschließen (Edge‑Fälle).                                                                                                          |
-| `aliases`          | String\[]           |    nein | Zusätzliche Pfade/Weiterleitungen. Wird zum Teil automatisch aus `path` erzeugt.                                                                       |
+                                                                    |
+| Feld               | Typ                      | Pflicht | Bedeutung / Regeln |
+|--------------------|--------------------------|-------:|--------------------|
+| `layout`           | String                   |    nein | `default` (Standard) oder `programm` (für `/programm/*`). In Section‑`_dir.yml` oder pro Seite. |
+| `path.(lang)`      | Map\<string,string>      |    nein | Lokalisierte Slugs, z. B. `{ de:"programm", en:"program" }`. Fallback: fehlt Sprache → nimm `de`; fehlt `path` ganz → nimm **Ordnernamen** als `de`. Vererbbar (AG ➜ Thema ➜ Kapitel). |
+| `edited`           | ISO‑8601‑Datum/Zeit      |    nein | **Manuelles** Redaktionsdatum (`YYYY‑MM‑DD` oder ISO‑Zeit). Wird **nicht** automatisch überschrieben. |
+| `edited_git`       | ISO‑8601‑Datum/Zeit      |    nein | **Automatisch**: letztes Git‑Commit‑Datum für die Datei (vom Hook gesetzt). Anzeige gemeinsam mit `edited`. |
+| `draft`            | Boolean                  |    nein | Wenn `true`, nicht veröffentlichen. Default `false`. |
+| `tags.(lang)`      | Array\<string \| number> |    nein | Schlagwörter für Suche (sprachspezifisch). **Gewichtung erlaubt**: jedes **String‑Tag** kann **optional** von einem **Integer** *direkt danach* begleitet werden (Gewicht ≥1). Beispiel: `["Bildung", 3, "Schule"]` ⇒ Bildung=3, Schule=1. **Nicht‑String nach Nicht‑String** wird ignoriert. Parser normalisiert zu `{ label, weight }`. |
+| `hreflang_exclude` | Boolean                  |    nein | Seite von hreflang ausschließen (Edge‑Fälle). |
+| `aliases`          | String[]                 |    nein | Zusätzliche Pfade/Weiterleitungen; werden z. T. aus `path` generiert. |
 
 **Hinweise**
 
-* **Pfad‑Fallback:** Wenn `path.en` fehlt, wird der **deutsche Ordnername** verwendet (mit `/en/`‑Präfix). Alias‑Generierung kann zusätzliche „schöne“ EN‑URLs bereitstellen. (Siehe Modul `content-aliases.ts`.)&#x20;
-* **`edited`‑Automatik:** Modul `content-edited-git.ts` trägt das Datum ein, falls im Front‑Matter nicht gesetzt.&#x20;
+- **Pfad‑Fallback:** Fehlt `path.(lang)`, verwende den **deutschen Ordnernamen** (mit `/(lang)/`‑Präfix für (lang) != `de`). Aliasse können schöne EN‑URLs ergänzen (siehe `content-aliases.ts`).
+- **`edited` vs. `edited_git`:** `edited` ist redaktionell und bleibt manuell; `edited_git` wird vom Hook immer auf das letzte Commit‑Datum gesetzt (keine Überschreibung von `edited`). Beide Werte dürfen im UI angezeigt werden (z. B. Tooltip).
+- **Tags‑Normalisierung:** Ein Build‑Hook erzeugt aus `tags.(lang)` eine normalisierte Liste `tags_index.(lang) = [{ label, weight }]`.
 
 ---
 
@@ -62,22 +64,38 @@ Definiert vererbbare Defaults für alle direkten und indirekten Kinder innerhalb
 
 ```yaml
 layout: default
-path: { en: "press" }   # Beispiel für /presse/
+path:
+  en: "press"     # Beispiel für /presse/ - nicht angegebene Sprachen nehmen path.de als Default, welcher wiederum per Default dem Ordnernamen entnommen wird
 ```
 
 **\_index.mdc (Front‑Matter minimal):**
 
-```md
+```mdc
 ---
 edited: 2025-08-21
+edited_git: null      # automatic
+title:
+  de: Presse
+  en: Press
+tags:
+  de: ["Medien", "Nachrichten", "News"]
+  en: ["media", "news"]
 ---
 ::variant{lang="de" simple=false}
-# Presse
+# {{ title.de }}
 … Inhalt …
 ::
+::variant{lang="de" simple=true}
+# {{ title.de }}
+… Inhalt in einfacher Sprache …
+::
 ::variant{lang="en" simple=false}
-# Press
+# {{ title.en }}
 … content …
+::
+::variant{lang="en" simple=true}
+# {{ title.en }}
+… content in simple Language …
 ::
 ```
 
@@ -89,33 +107,49 @@ edited: 2025-08-21
 
 **begriffe/\_dir.yml** (Section‑Defaults, z. B. Pfadlokalisierung):
 
-````yaml
+```yaml
 layout: default
-path: { en: "glossary" }
-``` :contentReference[oaicite:16]{index=16}
+path:
+  en: "glossary"
+```
 
 **begriffe/_terms/_dir.yml** (Defaults für Einträge):  
 ```yaml
 autolink: true   # erste Vorkommen automatisch verlinken (Tooltipp)
-````
+```
 
-**begriffe/\_terms/<slug>.mdc** (Front‑Matter minimal):
+**begriffe/_terms/<slug>.mdc** (Front‑Matter minimal):
 
-```md
+```mdc
 ---
 edited: 2025-08-18
+edited_git: null      # automatic
+title:
+  de: Demokratie
+  en: Democracy
 synonyms:
-  de: ["Synonym A", "Synonym B"]
-  en: ["Synonym A", "Synonym B"]
-level: 101         # optional: Komplexitätsgrad für Filter
+  de: ["Volksherrschaft"]
+  en: ["popular rule", "self-government"]
+tags:
+  de: ["Staatsform", 3, "Regierungsform"]   # Gewichtung: "Staatsform" = 3
+  en: ["form of government", 3, "type of government"]
+highlighted: false    # auf Glossar-Landing unter "Wichtige Begriffe" zeigen?
 ---
 ::variant{lang="de" simple=false}
-# Demokratie
-… Definition DE …
+# {{ title.de }}
+… Definition …
+::
+::variant{lang="de" simple=true}
+# {{ title.de }}
+… Definition in einfacher Sprache …
 ::
 ::variant{lang="en" simple=false}
-# Democracy
-… definition EN …
+# {{ title.en }}
+… definition …
+::
+::variant{lang="en" simple=true}
+# {{ title.en }}
+… definition in simple language …
 ::
 ```
 
@@ -123,34 +157,54 @@ level: 101         # optional: Komplexitätsgrad für Filter
 
 ---
 
-### 3.3 Programm – **AG‑Ebene** (Kurzfassung)
+### 3.3 Programm – **AG‑Ebene** (Programm-Root & Kurzfassung)
 
 **programm/\_dir.yml** (Section‑Defaults):
 
-````yaml
-layout: program
-path: { de: "programm", en: "program" }
-``` :contentReference[oaicite:18]{index=18}
+```yaml
+layout: programm
+path:
+  en: program
+```
 
-**programm/ag-XYZ/_dir.yml**:  
+**programm/ag-XYZ/_dir.yml** (Beispiel: AG Regierung):  
 ```yaml
 ag_id: 1
-path: { en: "government" }   # optional
-````
+path:
+  en: "ag-government"    # optional
+ag:
+  de: AG Regierung
+  en: AG Government
+```
 
 **programm/ag-XYZ/\_index.mdc**:
 
-```md
+```mdc
 ---
 edited: 2025-08-17
+edited_git: null      # automatic
+ag:
+  de: AG Regierung
+  en: AG Government
+tags:
+  de: ["Medien", "Nachrichten", "News"]
+  en: ["media", "news"]
 ---
 ::variant{lang="de" simple=false}
-# AG Regierung – Kurzfassung
-… kurze Fassung DE …
+# {{ ag.de }}
+… Inhalt …
+::
+::variant{lang="de" simple=true}
+# {{ ag.de }}
+… Inhalt in einfacher Sprache …
 ::
 ::variant{lang="en" simple=false}
-# Working Group Government – Summary
-… short EN …
+# {{ ag.en }}
+… content …
+::
+::variant{lang="en" simple=true}
+# {{ ag.en }}
+… content in simple Language …
 ::
 ```
 
@@ -160,27 +214,46 @@ edited: 2025-08-17
 
 ### 3.4 Programm – **Themen‑Ebene** (Mittlere Fassung)
 
-**programm/ag-XYZ/thema-ABC/\_dir.yml**:
+**programm/ag-XYZ/thema-ABC/\_dir.yml** Beispiel: Reservepool für Pflegefachkräfte:
 
 ```yaml
-thema_id: 7
+thema_id: 2
+path:
+  en: "reserve-pool-for-nurses"
+thema:
+  de: Reservepool für Pflegefachkräfte
+  en: Reserve Pool for Nurses
 highlighted: true       # Startseiten‑Teaser
-edited: 2025-08-18
 ```
 
 **programm/ag-XYZ/thema-ABC/\_index.mdc**:
 
-```md
+```mdc
 ---
-edited: 2025-08-18
+edited: 2025-08-17
+edited_git: null      # automatic
+thema:
+  de: Reservepool für Pflegefachkräfte
+  en: Reserve Pool for Nurses
+tags:
+  de: ["Pflege", "Gesundheit"]
+  en: ["nursing", "health"]
 ---
 ::variant{lang="de" simple=false}
-# Regierungsform – Überblick
-… mittlere Fassung DE …
+# {{ thema.de }}
+… Inhalt …
+::
+::variant{lang="de" simple=true}
+# {{ thema.de }}
+… Inhalt in einfacher Sprache …
 ::
 ::variant{lang="en" simple=false}
-# Form of Government – Overview
-… medium EN …
+# {{ thema.en }}
+… content …
+::
+::variant{lang="en" simple=true}
+# {{ thema.en }}
+… content in simple Language …
 ::
 ```
 
@@ -190,20 +263,35 @@ edited: 2025-08-18
 
 ### 3.5 Programm – **Kapitel‑Datei** (Lange Fassung, pro Kapitel 1 Datei)
 
-**programm/ag-XYZ/thema-ABC/01.mdc**:
+**programm/ag-XYZ/thema-ABC/01.mdc** (Beispiel: #1 Förderung einer pflanzenbasierten Ernährung):
 
-```md
+```mdc
 ---
-kapitel_id: 1          # Pflicht (Integer oder String wie "Q"/"Z")
-edited: 2025-08-19
+kapitel_id: 1           # Pflicht (Integer; Falls es ein 'Kapitel 0' gibt (z.B. "0. Einleitung" oder "0. Vorwort"), dann ist für das erste Kapitel die kapitel_id=0, sonst 1. Die kapitel_id zählt ansonsten unabhängig vom Kapitel-Index bzw. Dateinamen, wobei diese im Regelfall einzig bei Buchstaben-basierten Indizes abweicht.)
+edited: 2025-08-17
+edited_git: null        # automatic
+kapitel:
+  de: Förderung einer pflanzenbasierten Ernährung
+  en: Promoting Plant-Based Nutrition
+tags:
+  de: ["Ernährung", "Klimaschutz"]
+  en: ["nutrition", "climate protection"]
 ---
 ::variant{lang="de" simple=false}
-## a) Die Politie als mögliches Ideal
-… langer Inhalt DE …
+## {{ kapitel.de }}
+… Inhalt …
+::
+::variant{lang="de" simple=true}
+## {{ kapitel.de }}
+… Inhalt in einfacher Sprache …
 ::
 ::variant{lang="en" simple=false}
-## a) The Politie as a Possible Ideal
-… long content EN …
+## {{ kapitel.en }}
+… content …
+::
+::variant{lang="en" simple=true}
+## {{ kapitel.en }}
+… content in simple Language …
 ::
 ```
 
@@ -229,7 +317,7 @@ edited: 2025-08-19
 ### 4.2 Programm – AG‑`_dir.yml`
 
 * **Pflicht**: `ag_id` (Integer)
-* **Optional**: `path.<lang>`, `layout: program`
+* **Optional**: `path.<lang>`, `layout: programm`
 * **Vererbt**: auf alle Themen/Kapitel unterhalb der AG
 
 ### 4.3 Programm – Thema‑`_dir.yml`
@@ -298,7 +386,7 @@ edited: 2025-08-19
 ```yaml
 ag_id: 1
 path: { en: "government" }
-layout: program
+layout: programm
 ```
 
 
