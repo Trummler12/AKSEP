@@ -1,0 +1,11 @@
+﻿
+
+Auflistung der Ordnerpfade für Volume WINDOWS
+Volumeseriennummer : 9AF3-4876
+C:.
++---docs
+|       Verzeichnisbaum.txt
+|
+\---scripts
+        local_tree.ps1
+

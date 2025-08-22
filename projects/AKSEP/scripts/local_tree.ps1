@@ -1,13 +1,14 @@
-Set-Location $PSScriptRoot
+Set-Location $PSScriptRoot # Nicht mehr aktuell
+Set-Location ..
 
 # HIDE FOLDERS
 $foldersToHide = @("node_modules", "Lib", ".JavaZeugs", "m293-HTMLZeugs", "VueDemo", "m346-ablage-Trummler12")
 
 # Optional settings
 $saveTreeToTxt       = $true
-$treeTxtPath         = "."
+$treeTxtPath         = "docs"
 # "ProgrammierZeugs" = "Tree"; "ListPuzzle" = "LPTree"; etc.
-$treeTxtFileName     = "local-Tree"
+$treeTxtFileName     = "local_tree"
 $replaceOldTreeFile  = $true
 
 # --- END OF USER CONFIGURATION ---
