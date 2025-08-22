@@ -1,80 +1,65 @@
-# Projektwurzel
+# Projektwurzel (AKSEP\projects\AKSEP)
 .
-├─ .gitignore                               # u.a. .nuxt/, .output/, node_modules/
-├─ README.md
-├─ package.json
-├─ nuxt.config.ts                           # Nuxt 3 + @nuxt/content + @nuxtjs/i18n Konfiguration
-├─ app.vue                                  # globaler Rahmen (Header/Footer via Komponenten)
-├─ tsconfig.json
-├─ .eslintrc.cjs
-├─ .prettierrc
+├─ .editorconfig
 ├─ .env.example
+├─ .eslintrc.cjs
+├─ .gitignore                                # u.a. .nuxt/, .output/, node_modules/
+├─ .nvmrc
+├─ .prettierignore
+├─ .prettierrc
+├─ .vscode/
+│  └─ settings.json
+├─ AGENTS.md                                 # muss noch rennoviert werden
+├─ DEVELOPER.md
+├─ i18n.config.ts                            # (optional) zentrale i18n-Optionen
+├─ package.json
+├─ package-lock.json                         # oder pnpm-lock.yaml / yarn.lock
+├─ README.md
+├─ tsconfig.json
+├─ nuxt.config.ts                            # Nuxt 3 + @nuxt/content + @nuxtjs/i18n Konfiguration
 │
-├─ public/                                   # statische Assets (direkt auslieferbar)
+├─ .github/
+│  └─ workflows/
+│     ├─ ci.yml                              # Lint + Typecheck + (optional) Linkcheck der Content-Seiten
+│     └─ deploy.yml                          # (falls benötigt) Preview/Prod Deploy
+|
+├─ docs/                                     # Projekt-Dokumentation (zur Entzerrung des Root)
+│  ├─ local_tree.txt                         # generiert aus der local_tree.ps1/.mjs, beschreibt die *momentane* Dateistruktur
+│  ├─ migration.md
+│  ├─ Verzeichnisbaum.txt
+│  └─ yaml.md
+│
+├─ server/
+│  └─ routes/
+│     └─ sitemap.xml.ts                      # generiert Sitemap aus @nuxt/content
+|
+├─ public/
 │  ├─ favicon.ico
 │  ├─ robots.txt
 │  ├─ og-image.png
-│  ├─ admin/                                 # Decap CMS (Git‑basiertes CMS)
-│  │  ├─ index.html                          # Decap Mount (Standardsetup)
-│  │  └─ config.yml                          # Decap-Konfiguration (Collections für content/)
-│  └─ _redirects                             # optional (Netlify) für Redirect-Regeln
+│  ├─ .well-known/
+│  │  ├─ security.txt
+│  │  └─ humans.txt
+│  ├─ images/
+│  │  └─ content/                            # Bilder, die in Markdown verlinkt werden (z.B. /images/content/…)
+│  ├─ uploads/                               # Ziel für Decap-Uploads (media_folder/public_folder)
+│  ├─ admin/
+│  │  ├─ index.html
+│  │  └─ config.yml
+│  └─ _redirects
 │
-├─ assets/                                   # gebundelte Assets (CSS, Fonts, Bilder)
-│  ├─ css/
-│  │  └─ main.css
-│  └─ images/
-│     └─ placeholders/
-│
-├─ components/                               # Auto‑import durch Nuxt
-│  ├─ AppHeader.vue
-│  ├─ AppFooter.vue
-│  ├─ Variant.vue                            # Wrap für ::variant{lang, simple}
-│  ├─ VariantToolbar.vue                     # Sprach-/„Leichte Sprache“-Schalter
-│  ├─ Chapter.vue                            # kapselt Kapitel-Heading + Anker (#<kapitel_id>)
-│  └─ TermHint.vue                           # Glossar‑Tooltip/Popover
-│
-├─ layouts/
-│  ├─ default.vue                            # Standardlayout (Header/Footer + <NuxtPage/>)
-│  └─ program.vue                            # Layout für Programm-Routen
-│
-├─ pages/                                    # explizite Seitenrouten (Nuxt erzeugt automatisch Routen) 
-│  ├─ index.vue                              # Redirect → /start
-│  ├─ programm/
-│  │  ├─ kurz/
-│  │  │  └─ [ag].vue                         # /programm/kurz/<AG> (rendert AG/_index.mdc)
-│  │  ├─ mittel/
-│  │  │  └─ [ag]/
-│  │  │     └─ [thema].vue                   # /programm/mittel/<AG>/<Thema> (rendert Thema/_index.mdc)
-│  │  └─ lang/
-│  │        └─ [ag]/
-│  │           └─ [thema].vue                # /programm/lang/<AG>/<Thema> (+ #<kapitel_id>)
-│  └─ error.vue                              # Fehlerseite (optional)
-│
-├─ modules/                                  # lokale Nuxt‑Module (auto‑registriert)
-│  ├─ content-aliases.ts                     # EN‑Slug‑Aliases (pfadlokalisierte URLs mit Fallback)
-│  ├─ content-edited-git.ts                  # setzt/füllt `edited` aus Git‑Commit-Zeitstempeln
-│  ├─ glossary-autolink.ts                   # Autolink erster Glossar‑Begriffsvorkommen (Hover)
-│  └─ content-ensure.ts                      # Validierung/Injection (ag_id/thema_id/kapitel_id vorhanden?)
-│
-├─ plugins/
-│  └─ variant-filter.client.ts               # rendert nur passenden ::variant‑Block (lang/simple)
-│
-├─ stores/                                   # Pinia Stores (globaler Zustand)
-│  └─ prefs.ts                               # { simple: boolean } + evtl. persistentes Locale
-│
-├─ locales/                                  # UI‑Strings, nicht Content (für Toolbar, Labels etc.)
-│  ├─ de.json
-│  └─ en.json
-│
-├─ content/                                  # Content‑CMS (Markdown/MDC/YAML) – Document‑Driven
+├─ content/                                  # Git-basiertes CMS (Markdown/MDC/YAML) – @nuxt/content
+│  ├─ _globals.yml                           # optionale globale Metadaten (Copyright, orgName, etc.)
+│  │
 │  ├─ start/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc                          # Startseite (DE ohne /de/, EN mit /en/)
+│  │  ├─ _dir.yml                            # defaults für die Startseite (Layout, Pfad, Meta)
+│  │  └─ _index.mdc
 │  │
 │  ├─ begriffe/
-│  │  ├─ _dir.yml                            # z.B. { layout: default, path: {en: "glossary"} }
-│  │  ├─ _index.mdc                          # Glossar‑Landing (Filter, A‑Z, Suche)
-│  │  └─ _terms/                             # einzelne Begriffseinträge (je Datei ein Begriff)
+│  │  ├─ _dir.yml                            # z.B. { layout: default, path: { en: "glossary" } }
+│  │  ├─ _index.mdc                          # Glossar-Landing (A–Z, Suche)
+│  │  └─ _terms/                             # einzelne Begriffseinträge
+│  │     ├─ _dir.yml                         # defaults: { autolink: true }
 │  │     ├─ ag.mdc
 │  │     ├─ cancel-culture.mdc
 │  │     ├─ demokratie.mdc
@@ -92,31 +77,8 @@
 │  │     ├─ toleranz.mdc
 │  │     └─ wokeness.mdc
 │  │
-│  ├─ finanzen-transparenz/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ kontakt/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ mitglied-werden/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ partner-projekte/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ praeambel/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ presse/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
 │  ├─ programm/
+│  │  ├─ _dir.yml                            # defaults: { layout: "program", path: { de:"programm", en:"program" } }
 │  │  ├─ _index.mdc                          # Programm-Startseite
 │  │  ├─ CHANGELOG.mdc                       # manuelles Änderungsprotokoll
 │  │  │
@@ -190,39 +152,89 @@
 │  │  │     ├─ 10.mdc
 │  │  │     ├─ 11.mdc
 │  │  │     ├─ 12.mdc
-│  │  │     └─ 13.mdc
+│  │  │     ├─ 13.mdc
+│  │  │     └─ …
 │  │  │
 │  │  └─ …/                                  # ags/* (analog)
 │  │
-│  ├─ projekte/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ satzung/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ termine/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ ueber-uns/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ unterstuetzen/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc
-│  │
-│  ├─ datenschutz/
-│  │  ├─ _dir.yml
-│  │  └─ _index.mdc                          # statt .html → einheitlich als Markdown
-│  │
-│  └─ impressum/
-│     ├─ _dir.yml
-│     └─ _index.mdc                          # statt .html → einheitlich als Markdown
+│  ├─ finanzen-transparenz/   ┐
+│  ├─ kontakt/                │
+│  ├─ mitglied-werden/        │   # Primärseiten (alle gleich aufgebaut)
+│  ├─ partner-projekte/       │   # jede enthält:
+│  ├─ praeambel/              │   #   _dir.yml
+│  ├─ presse/                 │   #   _index.mdc   (DE/EN + einfache Sprache per ::variant)
+│  ├─ projekte/               │
+│  ├─ satzung/                │
+│  ├─ termine/                │
+│  ├─ ueber-uns/              │
+│  ├─ unterstuetzen/          │
+│  ├─ datenschutz/            │   # statt .html → konsistent als Markdown
+│  └─ impressum/              ┘
 │
-└─ scripts/                                   # optionale Hilfsskripte (Migrations‑/Checks)
-   ├─ check-missing-variants.mjs              # prüft, ob DE/EN & simple vorhanden; sonst warnen
-   ├─ generate-en-aliases.mjs                 # generiert slug_en‑Aliases aus _dir.yml
-   └─ build-chapters-toc.mjs                  # erzeugt Themen‑Inhaltsverzeichnis
+├─ modules/                                  # lokale Nuxt-Module (Build-Hooks, Content-Pipeline)
+│  ├─ content-aliases.ts                     # EN-Slug-Aliases (pfadlokalisierte URLs mit Fallback)
+│  ├─ content-edited-git.ts                  # füllt `edited` aus Git-Commit-Timestamps
+│  ├─ glossary-autolink.ts                   # Autolink erstes Glossar-Vorkommen (Hover)
+│  └─ content-ensure.ts                      # Validierung/Injection (ag_id/thema_id/kapitel_id)
+│
+├─ scripts/                                  # Hilfsskripte (Migration/Checks/CI)
+│  ├─ check-missing-variants.mjs             # prüft DE/EN & simple, sonst Warnungen
+│  ├─ generate-en-aliases.mjs                # generiert slug_en-Aliases aus _dir.yml
+│  ├─ build-chapters-toc.mjs                 # erzeugt Themen-Inhaltsverzeichnisse
+│  ├─ local_tree.ps1                         # von Root hierher verschoben
+│  └─ local_tree.mjs                         # Node-Alternative für Nicht-Windows
+│           
+└─ src/                                      # *** technischer App-Code (sauber gebündelt) ***
+   ├─ app.vue                                # globaler Rahmen (Header/Footer via Komponenten)
+   ├─ app.config.ts                          # (optional) App-weite Konfiguration
+   │
+   ├─ assets/                                # gebundelte Assets (CSS, Fonts, Bilder)
+   │  ├─ css/
+   │  │  └─ main.css
+   │  └─ images/
+   │     └─ placeholders/
+   │
+   ├─ components/                            # Auto-Import durch Nuxt
+   │  ├─ AppHeader.vue
+   │  ├─ AppFooter.vue
+   │  ├─ Variant.vue                         # Wrap für ::variant{lang, simple}
+   │  ├─ VariantToolbar.vue                  # Sprach-/„Leichte Sprache“-Schalter
+   │  ├─ Chapter.vue                         # kapselt Kapitel-Heading + Anker (#<kapitel_id>)
+   │  └─ TermHint.vue                        # Glossar-Tooltip/Popover
+   │
+   ├─ composables/
+   │  ├─ useI18nPath.ts                      # baut lokalisierte Pfade (inkl. Fallback auf DE-Slug)
+   │  ├─ useVariants.ts                      # Kapselt {lang, simple}-Logik für ::variant
+   │  └─ useGlossaryIndex.ts                 # A–Z Index, Suche, erste-Erwähnung-Map
+   ├─ types/
+   │  ├─ domain.ts                           # Typen: AgId, ThemaId, KapitelId, Front-Matter-Schemata
+   │  └─ content.d.ts                        # Module augmentation für @nuxt/content (wenn gewünscht)
+   │
+   ├─ layouts/
+   │  ├─ default.vue                         # Standardlayout (<NuxtPage/>)
+   │  └─ program.vue                         # Layout für /programm/*
+   │
+   ├─ pages/                                 # Routen (i18n benötigt eine pages-Struktur)
+   │  ├─ index.vue                           # Redirect → /start
+   │  ├─ programm/
+   │  │  ├─ kurz/
+   │  │  │  └─ [ag].vue                      # /programm/kurz/<AG> → rendert AG/_index.mdc
+   │  │  ├─ mittel/
+   │  │  │  └─ [ag]/
+   │  │  │     └─ [thema].vue                # /programm/mittel/<AG>/<Thema> → Thema/_index.mdc
+   │  │  └─ lang/
+   │  │        └─ [ag]/
+   │  │           └─ [thema].vue             # /programm/lang/<AG>/<Thema> (+ #<kapitel_id>)
+   │  └─ error.vue                           # optional
+   │
+   ├─ plugins/
+   │  └─ variant-filter.client.ts            # rendert nur passenden ::variant-Block (lang/simple)
+   │
+   ├─ stores/
+   │  └─ prefs.ts                            # Pinia: { simple: boolean } (+ persistentes Locale)
+   │
+   ├─ locales/                               # UI-Strings (Toolbar/Labels), NICHT Content
+   │  ├─ de.json
+   │  └─ en.json
+   │
+   └─ middleware/                            # (optional) i18n/guards/etc.
