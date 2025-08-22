@@ -1,2 +1,4 @@
-node_modules
-package-lock.json
+.nuxt/
+.output/
+node_modules/
+.env
