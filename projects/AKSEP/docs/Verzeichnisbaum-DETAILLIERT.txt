@@ -9,7 +9,7 @@
 ├─ .prettierrc
 ├─ .vscode/
 │  └─ settings.json
-├─ AGENTS.md                                 # muss noch rennoviert werden
+├─ AGENTS.md                                 # muss noch überarbeitet werden
 ├─ DEVELOPER.md
 ├─ i18n.config.ts                            # (optional) zentrale i18n-Optionen
 ├─ package.json
@@ -83,64 +83,75 @@
 │  │  ├─ _index.mdc                          # Programm-Startseite
 │  │  ├─ CHANGELOG.mdc                       # manuelles Änderungsprotokoll
 │  │  │
-│  │  ├─ ag-regierung/
-│  │  │  ├─ _dir.yml                         # { ag_id: 1, path:{en:"government"} , ... }
-│  │  │  ├─ _index.mdc                       # KURZ (AG)
-│  │  │  ├─ regierungsform/
-│  │  │  │  ├─ _dir.yml                      # { thema_id: 1, highlighted: true, ... }
-│  │  │  │  ├─ _index.mdc                    # MITTEL (Thema)
-│  │  │  │  ├─ 01.mdc                        # LANG Kapitel 01  (## …, ::variant{de/en, simple})
-│  │  │  │  ├─ 02.mdc                        # LANG Kapitel 02
-│  │  │  │  ├─ …
-│  │  │  │  ├─ Q.mdc                         # Q&A
-│  │  │  │  └─ Z.mdc                         # Schluss
-│  │  │  ├─ wahlsystem/
-│  │  │  │  ├─ _dir.yml
-│  │  │  │  ├─ _index.mdc
-│  │  │  │  ├─ 01.mdc
-│  │  │  │  └─ …
-│  │  │  └─ verguetungssystem-amtsinhaber/
-│  │  │     ├─ _dir.yml
-│  │  │     ├─ _index.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     └─ …
-│  │  │
-│  │  ├─ ag-innere-sicherheit/               # Platzhalter (AG 2)
+│  │  ├─ ag-regierung/                       # ag_id: 1
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ …/                               # themen/* (analog)
-│  │  │
-│  │  ├─ ag-umweltschutz/
-│  │  │  ├─ _dir.yml                         # { ag_id: 3, path:{en:"environmental-protection"} }
-│  │  │  ├─ _index.mdc
-│  │  │  ├─ feuerwerk-events/
-│  │  │  │  ├─ _dir.yml                      # { thema_id: 1, highlighted: false }
+│  │  │  ├─ regierungsform/                  # thema_id: 1
+│  │  │  │  ├─ _dir.yml
 │  │  │  │  ├─ _index.mdc
 │  │  │  │  ├─ 01.mdc
 │  │  │  │  ├─ 02.mdc
 │  │  │  │  ├─ 03.mdc
 │  │  │  │  ├─ 04.mdc
-│  │  │  │  ├─ 05.mdc
-│  │  │  │  ├─ 06.mdc
-│  │  │  │  ├─ 07.mdc
-│  │  │  │  ├─ 08.mdc
-│  │  │  │  ├─ 09.mdc
-│  │  │  │  ├─ 10.mdc
-│  │  │  │  ├─ 11.mdc
-│  │  │  │  ├─ 12.mdc
-│  │  │  │  ├─ 13.mdc
-│  │  │  │  └─ …
-│  │  │  └─ extensivwiesen/
-│  │  │     ├─ _dir.yml                      # { thema_id: 2 }
+│  │  │  │  └─ 05.mdc
+│  │  │  ├─ wahlsystem/                      # thema_id: 2
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  └─ 01.mdc
+│  │  │  └─ verguetungssystem-amtsinhaber/   # thema_id: 3
+│  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     └─ …
+│  │  │     ├─ 00.mdc
+│  │  │     └─ 01.mdc
 │  │  │
-│  │  ├─ ag-klimaschutz/
-│  │  │  ├─ _dir.yml                         # { ag_id: 4, path:{en:"climate-protection"} }
+│  │  ├─ ag-innere-sicherheit/               # ag_id: 2
+│  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ project-drawdown/
-│  │  │     ├─ _dir.yml                      # { thema_id: 1 }
+│  │  │  └─ drogenpolitik/                   # thema_id: 1
+│  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     ├─ 03.mdc
+│  │  │     ├─ 04.mdc
+│  │  │     ├─ 05.mdc
+│  │  │     ├─ 06.mdc
+│  │  │     ├─ 07.mdc
+│  │  │     ├─ Q.mdc
+│  │  │     └─ Z.mdc
+│  │  │
+│  │  ├─ ag-klimaschutz/                     # ag_id: 3
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ project-drawdown/                # thema_id: 1
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     ├─ 03.mdc
+│  │  │     ├─ 04.mdc
+│  │  │     ├─ 05.mdc
+│  │  │     ├─ 06.mdc
+│  │  │     ├─ 07.mdc
+│  │  │     ├─ 08.mdc
+│  │  │     ├─ 09.mdc
+│  │  │     ├─ 10.mdc
+│  │  │     ├─ Z.mdc
+│  │  │     └─ ZZ.mdc
+│  │  │
+│  │  ├─ ag-umweltschutz/                    # ag_id: 4
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  ├─ extensivwiesen/                  # thema_id: 1
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  └─ 00.mdc
+│  │  │  └─ zentralisierte-feuerwerk-events/ # thema_id: 2
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
 │  │  │     ├─ 01.mdc
 │  │  │     ├─ 02.mdc
 │  │  │     ├─ 03.mdc
@@ -154,9 +165,119 @@
 │  │  │     ├─ 11.mdc
 │  │  │     ├─ 12.mdc
 │  │  │     ├─ 13.mdc
-│  │  │     └─ …
+│  │  │     ├─ 14.mdc
+│  │  │     └─ Q.mdc
 │  │  │
-│  │  └─ …/                                  # ags/* (analog)
+│  │  ├─ ag-gesundheit/                      # ag_id: 5
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  ├─ verpflegung-in-versorgungseinrichtungen/ # thema_id: 1
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  └─ 01.mdc
+│  │  │  ├─ reservepool-fuer-pflegefachkraefte/ # thema_id: 2
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  ├─ 01.mdc
+│  │  │  │  ├─ 02.mdc
+│  │  │  │  ├─ 03.mdc
+│  │  │  │  └─ 04.mdc
+│  │  │  └─ re-evaluation-von-ernaehrungsempfehlungen/ # thema_id: 3
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     ├─ 03.mdc
+│  │  │     └─ Z.mdc
+│  │  │
+│  │  ├─ ag-forschung-und-ki/                # ag_id: 6
+│  │  │  ├─ _dir.yml
+│  │  │  └─ _index.mdc                       # noch keine Themen
+│  │  │
+│  │  ├─ ag-wirtschaft/                      # ag_id: 7
+│  │  │  ├─ _dir.yml
+│  │  │  └─ _index.mdc                       # noch keine Themen
+│  │  │
+│  │  ├─ ag-bildung/                         # ag_id: 8
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ reform-des-bildungssystems/      # thema_id: 1
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     ├─ 03.mdc
+│  │  │     ├─ 04.mdc
+│  │  │     ├─ 05.mdc
+│  │  │     ├─ 06.mdc
+│  │  │     ├─ 07.mdc
+│  │  │     └─ 08.mdc
+│  │  │
+│  │  ├─ ag-soziales/                        # ag_id: 9
+│  │  │  ├─ _dir.yml
+│  │  │  └─ _index.mdc                       # noch keine Themen
+│  │  │
+│  │  ├─ ag-europa-und-migration/            # ag_id: 10
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ fluechtlings-und-integrationspolitik/ # thema_id: 1
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     ├─ 03.mdc
+│  │  │     ├─ 04.mdc
+│  │  │     ├─ 05.mdc
+│  │  │     ├─ 06.mdc
+│  │  │     ├─ 07.mdc
+│  │  │     └─ Z.mdc
+│  │  │
+│  │  ├─ ag-aussenpolitik/                   # ag_id: 11
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ aktive-neutralitaet/             # thema_id: 1
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     └─ 02.mdc
+│  │  │
+│  │  ├─ ag-tierrechte/                      # ag_id: 12
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ grundsatzposition/               # thema_id: 1
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc
+│  │  │     ├─ 01.mdc
+│  │  │     ├─ 02.mdc
+│  │  │     └─ 03.mdc
+│  │  │
+│  │  ├─ ag-sonstiges/                       # ag_id: 13
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ religioese-erziehung/            # thema_id: 1
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     └─ 01.mdc
+│  │  │
+│  │  └─ ag-agrarpolitik/                    # ag_id: 14
+│  │     ├─ _dir.yml
+│  │     ├─ _index.mdc
+│  │     └─ ernaehrungsreform/               # thema_id: 1
+│  │        ├─ _dir.yml
+│  │        ├─ _index.mdc
+│  │        ├─ 01.mdc
+│  │        ├─ 02.mdc
+│  │        ├─ 03.mdc
+│  │        ├─ 04.mdc
+│  │        ├─ 05.mdc
+│  │        ├─ 06.mdc
+│  │        ├─ 07.mdc
+│  │        ├─ 08.mdc
+│  │        └─ Q.mdc
 │  │
 │  ├─ finanzen-transparenz/   ┐
 │  ├─ kontakt/                │
