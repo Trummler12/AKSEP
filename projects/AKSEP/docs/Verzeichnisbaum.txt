@@ -27,7 +27,8 @@
 │  ├─ local_tree.txt                         # generiert aus der local_tree.ps1/.mjs, beschreibt die *momentane* Dateistruktur
 │  ├─ migration.md
 │  ├─ Verzeichnisbaum.txt
-│  └─ yaml.md
+│  ├─ yaml.md
+│  └─ …                                      # Weitere Info-Files
 │
 ├─ server/
 │  └─ routes/
