@@ -36,7 +36,7 @@ Definiert vererbbare Defaults für alle direkten und indirekten Kinder innerhalb
 ---
 
 ## 2) Gemeinsame Feldkonventionen (alle Typen)
-                                                                    |
+
 | Feld               | Typ                      | Pflicht | Bedeutung / Regeln |
 |--------------------|--------------------------|-------:|--------------------|
 | `layout`           | String                   |    nein | `default` (Standard) oder `programm` (für `/programm/*`). In Section‑`_dir.yml` oder pro Seite. |
@@ -50,9 +50,9 @@ Definiert vererbbare Defaults für alle direkten und indirekten Kinder innerhalb
 
 **Hinweise**
 
-- **Pfad‑Fallback:** Fehlt `path.(lang)`, verwende den **deutschen Ordnernamen** (mit `/(lang)/`‑Präfix für (lang) != `de`). Aliasse können schöne EN‑URLs ergänzen (siehe `content-aliases.ts`).
+- **Pfad‑Fallback:** i18n‑Strategie ist `prefix_except_default`. Fehlt `path.<lang>`, verwende den **deutschen Ordnernamen** und stelle den Sprachpräfix voran (z. B. `/en/...`). Aliasse können „schöne“ EN‑URLs ergänzen (`content-aliases.ts`).
 - **`edited` vs. `edited_git`:** `edited` ist redaktionell und bleibt manuell; `edited_git` wird vom Hook immer auf das letzte Commit‑Datum gesetzt (keine Überschreibung von `edited`). Beide Werte dürfen im UI angezeigt werden (z. B. Tooltip).
-- **Tags‑Normalisierung:** Ein Build‑Hook erzeugt aus `tags.(lang)` eine normalisierte Liste `tags_index.(lang) = [{ label, weight }]`.
+- **Tags‑Validierung:** Der Linter warnt, wenn `tags.(lang)` fehlt. Ungültige Sequenzen (Nicht‑String nach Nicht‑String) werden beim Normalisieren ignoriert.
 
 ---
 
@@ -95,7 +95,7 @@ tags:
 ::
 ::variant{lang="en" simple=true}
 # {{ title.en }}
-… content in simple Language …
+… content in simple language …
 ::
 ```
 
@@ -153,8 +153,6 @@ highlighted: false    # auf Glossar-Landing unter "Wichtige Begriffe" zeigen?
 ::
 ```
 
-(Die Liste der Beispiel‑Begriffe siehst du hier.)&#x20;
-
 ---
 
 ### 3.3 Programm – **AG‑Ebene** (Programm-Root & Kurzfassung)
@@ -171,10 +169,7 @@ path:
 ```yaml
 ag_id: 1
 path:
-  en: "ag-government"    # optional
-ag:
-  de: AG Regierung
-  en: AG Government
+  en: "ag-government"
 ```
 
 **programm/ag-XYZ/\_index.mdc**:
@@ -204,11 +199,9 @@ tags:
 ::
 ::variant{lang="en" simple=true}
 # {{ ag.en }}
-… content in simple Language …
+… content in simple language …
 ::
 ```
-
-(Siehe Beispiel‑AGs/Struktur.)&#x20;
 
 ---
 
@@ -220,9 +213,6 @@ tags:
 thema_id: 2
 path:
   en: "reserve-pool-for-nurses"
-thema:
-  de: Reservepool für Pflegefachkräfte
-  en: Reserve Pool for Nurses
 highlighted: true       # Startseiten‑Teaser
 ```
 
@@ -253,7 +243,7 @@ tags:
 ::
 ::variant{lang="en" simple=true}
 # {{ thema.en }}
-… content in simple Language …
+… content in simple language …
 ::
 ```
 
@@ -267,7 +257,7 @@ tags:
 
 ```mdc
 ---
-kapitel_id: 1           # Pflicht (Integer; Falls es ein 'Kapitel 0' gibt (z.B. "0. Einleitung" oder "0. Vorwort"), dann ist für das erste Kapitel die kapitel_id=0, sonst 1. Die kapitel_id zählt ansonsten unabhängig vom Kapitel-Index bzw. Dateinamen, wobei diese im Regelfall einzig bei Buchstaben-basierten Indizes abweicht.)
+kapitel_id: 1           # Pflicht (Integer). Falls es ein 'Kapitel 0' gibt (z. B. "0. Einleitung"), dann hat das erste Kapitel kapitel_id=0, sonst 1. Die kapitel_id zählt unabhängig von Kapitel-Index/Dateinamen (auch wenn Dateinamen Buchstaben wie 'Q'/'Z' verwenden).
 edited: 2025-08-17
 edited_git: null        # automatic
 kapitel:
@@ -291,12 +281,12 @@ tags:
 ::
 ::variant{lang="en" simple=true}
 ## {{ kapitel.en }}
-… content in simple Language …
+… content in simple language …
 ::
 ```
 
 * **Heading‑Level**: Thema‑Seite ist H1; Kapitel beginnen mit **H2**.
-* **Deep‑Links**: Anker werden aus `kapitel_id` generiert (`#1`, `#Q` …).
+* **Deep‑Links**: Anker werden aus `kapitel_id` generiert (z. B. `#1`, `#15`), auch wenn die Datei `Q.mdc`/`Z.mdc` heißt.
   (Siehe Kapitellisten pro Thema.)&#x20;
 
 ---
@@ -309,32 +299,82 @@ tags:
 
 ## 4) Feldkatalog nach Ebene
 
-### 4.1 Section‑`_dir.yml` (alle Sections & Primärseiten)
+> Grundregel: `_dir.yml` trägt **vererbbare Defaults** (sparsam einsetzen), `.mdc` trägt **Seiten-/Dokument‑eigene** Metadaten.  
+> `tags` gehören in der Regel **in die `.mdc`** (nicht in `_dir.yml`).
 
-* **Erlaubt**: `layout`, `path`, `edited` (nur für Landing‑Seiten sinnvoll), `draft`, `tags`
-* **Nicht verwenden**: `ag_id`, `thema_id`, `kapitel_id` (nur Programm)
+### 4.1 Primärseiten
 
-### 4.2 Programm – AG‑`_dir.yml`
+#### 4.1.1 `_dir.yml` (optional)
+- **Erlaubt (sparsam):**
+  - `layout` (`default`)
+  - `path.(lang)` (z. B. `{ en: "press" }`)
+- **Nicht hier pflegen:** `edited`, `tags` (gehören in `_index.mdc`)
 
-* **Pflicht**: `ag_id` (Integer)
-* **Optional**: `path.<lang>`, `layout: programm`
-* **Vererbt**: auf alle Themen/Kapitel unterhalb der AG
+#### 4.1.2 `_index.mdc` (Front‑Matter)
+- **Pflicht:**
+  - `edited` (manuell), `edited_git` (automatisch),
+  - `title.(lang)`
+- **Empfohlen/typisch:**
+  - `tags.(lang)` *(mit optionalen Gewichten, siehe §2)*
 
-### 4.3 Programm – Thema‑`_dir.yml`
+### 4.2 Glossar
 
-* **Pflicht**: `thema_id` (Integer)
-* **Optional**: `highlighted` (Boolean), `edited` (ISO‑Datum), `path.<lang>`
-* **Vererbt**: auf alle Kapitel im Thema
+#### 4.2.1 `begriffe/_dir.yml`
+- **Erlaubt:** `layout: default`, `path.(lang)` (z. B. `{ en: "glossary" }`)
+- **Optional:** globale Defaults (z. B. `autolink: true`), die unter `_terms/` vererbt werden
 
-### 4.4 Programm – Kapitel‑Front‑Matter
+#### 4.2.2 `begriffe/_terms/<slug>.mdc`
+- **Pflicht:**
+  - `edited`, `edited_git`,
+  - `title.(lang)`
+- **Empfohlen/typisch:**  
+  - `synonyms.(lang): string[]`,  
+  - `tags.(lang)` *(Gewicht möglich)*,  
+  - `highlighted: true|false` (Default: `false` für „Wichtige Begriffe“ auf der Landing)
 
-* **Pflicht**: `kapitel_id` (Integer **oder** `Q`/`Z`)
-* **Optional**: `edited`, `tags`, `draft`
-* **Titel/Überschriften**: **stehen im jeweiligen `::variant`‑Block**, nicht im Front‑Matter (dein Wunsch)
+### 4.3 Programm – **AG‑Ebene**
 
-### 4.5 Glossar‑Eintrag (Front‑Matter)
+#### 4.3.1 `programm/_dir.yml` und `programm/ag-*/_dir.yml`
+- **Pflicht auf AG‑Ebene:** `ag_id` (Integer)  
+- **Erlaubt:**  
+  - `layout: programm`,  
+  - `path.(lang)` (z. B. `{ en: "ag-government" }`)  
+- **Titel‑Felder:** *nicht* duplizieren; **Quelle der Wahrheit ist die zugehörige `_index.mdc`** (`ag.(lang)`).  
+  - Optionaler Workflow: per Hook/Script **virtuell injizieren** oder kontrolliert spiegeln.
 
-* **Optional**: `edited`, `synonyms.{de|en}: string[]`, `level` (Number), `autolink` (Boolean; Default kommt aus `_dir.yml`)
+#### 4.3.2 `programm/ag-*/_index.mdc` (KURZ)
+- **Pflicht:**
+  - `edited`, `edited_git`,
+  - `ag.(lang)`
+- **Empfohlen/typisch:**
+  - `tags.(lang)` *(Gewicht möglich)*
+
+### 4.4 Programm – **Themen‑Ebene**
+
+#### 4.4.1 `programm/ag-*/<thema>/_dir.yml`
+- **Pflicht:** `thema_id` (Integer)  
+- **Optional:** `path.(lang)`, `highlighted: true|false`  
+- **Titel‑Felder:** *nicht* duplizieren; **Quelle** ist `_index.mdc` (`thema.(lang)`).
+
+#### 4.4.2 `programm/ag-*/<thema>/_index.mdc` (MITTEL)
+- **Pflicht:**
+  - `edited`, `edited_git`,
+  - `thema.(lang)`
+- **Empfohlen/typisch:**
+  - `tags.(lang)` *(Gewicht möglich)*
+
+### 4.5 Programm – **Kapitel‑Ebene** (LANG)
+
+#### 4.5.1 `programm/ag-*/<thema>/<kapitel>.mdc`
+- **Pflicht:**
+  - **Pflicht**: `kapitel_id` (Integer, fortlaufend; z. B. 11, 12, 13, 14, 15 – auch wenn Dateinamen Q/Z heißen)
+  - `edited`, `edited_git`,
+  - `kapitel.(lang)`
+- **Empfohlen/typisch:**  
+  - `tags.(lang)` *(Gewicht möglich)*  
+- **Hinweise:**  
+  - Überschriften stehen im jeweiligen `::variant`‑Block.  
+  - Anker aus `kapitel_id` (z. B. `#1`, `#Q`).
 
 ---
 
@@ -344,7 +384,7 @@ tags:
 
   * Unter `/programm/ag-*`: `ag_id` muss gesetzt sein (AG‑Ebene).
   * Unter `/programm/ag-*/<thema>`: `thema_id` muss gesetzt sein (Themen‑Ebene).
-  * In `*/{01,02,…,Q,Z}.mdc`: `kapitel_id` muss gesetzt sein (Kapitel).
+  * In `*/{01,02,…,Q,z}.mdc`: `kapitel_id` muss gesetzt sein (Kapitel).
     (Vorgesehenes Modul: `content-ensure.ts` für Injection/Fehlerhinweise.)&#x20;
 
 * **Sprach‑Fallbacks**
@@ -355,12 +395,17 @@ tags:
 
 * **Kapitel‑Sortierung**
 
-  * Reihenfolge ergibt sich aus `kapitel_id` (numerisch sortiert; Nicht‑Zahlen wie `Q`, `Z` werden **danach** alphabetisch eingefügt).
+  * Reihenfolge ergibt sich aus `kapitel_id` (numerisch sortiert).
   * **Keine separate `order`** (explizit so festgelegt).
 
+* **`edited_git`**
+  - Wird immer aus Git gesetzt (letztes Commit der Datei).
 * **`edited`**
+  - Rein manuell; wird **nicht** automatisch überschrieben.
 
-  * Wenn nicht im Front‑Matter gesetzt → `content-edited-git.ts` setzt `edited` auf das letzte Commit‑Datum.&#x20;
+* **Tags**
+  - Warnung, wenn `tags.(lang)` fehlt (empfohlen, aber nicht zwingend).
+  - Bei Gewichtung: Ein **String‑Tag** darf optional von einem **Integer ≥1** direkt gefolgt werden. Ungültige Sequenzen (Nicht‑String nach Nicht‑String) werden ignoriert. Die Normalisierung erzeugt `tags_index.(lang) = [{label, weight}]`.
 
 ---
 
@@ -373,74 +418,18 @@ tags:
 * **IDs**:
 
   * `ag_id`, `thema_id`: Integer (≥ 1)
-  * `kapitel_id`: Integer **oder** Sondermarken `Q`, `Z`
+  * `kapitel_id`: Integer (≥ 0,1)
 * **Datum**: `edited` als `YYYY‑MM‑DD` (oder `YYYY‑MM‑DDTHH:mm:ssZ` für volle ISO‑Zeit)
 * **Booleans**: `highlighted`, `draft`, `autolink` → `true`/`false`
 
 ---
 
-## 7) Beispiele (Copy‑&‑Paste)
-
-**7.1 AG‑`_dir.yml`**
-
-```yaml
-ag_id: 1
-path: { en: "government" }
-layout: programm
-```
-
-
-
-**7.2 Thema‑`_dir.yml`**
-
-```yaml
-thema_id: 1
-highlighted: true
-edited: 2025-08-18
-```
-
-
-
-**7.3 Kapitel `01.mdc`**
-
-```md
----
-kapitel_id: 1
-edited: 2025-08-19
----
-::variant{lang="de" simple=false}
-## a) Kritik an der (direkten) Demokratie
-… DE …
-::
-::variant{lang="en" simple=false}
-## a) Criticism of (Direct) Democracy
-… EN …
-::
-```
-
-(Die Kapitelstruktur ist z. B. bei „Regierungsform“/„Project Drawdown“ angedeutet.) &#x20;
-
-**7.4 Glossar‑Eintrag `begriffe/_terms/toleranz.mdc`**
-
-```md
----
-edited: 2025-08-21
-synonyms:
-  de: ["Duldsamkeit"]
-  en: ["forbearance", "tolerance (normative)"]
-level: 101
----
-::variant{lang="de" simple=false}
-# Toleranz
-… Definition …
-::
-::variant{lang="en" simple=false}
-# Tolerance
-… definition …
-::
-```
-
-(Begriffe‑Liste siehe Verzeichnis.)&#x20;
+## 7) Appendix A – Quick Templates
+- Primärseite: siehe §3.1 (Beispiel `_index.mdc`)
+- Glossar‑Eintrag: siehe §3.2 (Beispiel `<slug>.mdc`)
+- Programm/AG (kurz): siehe §3.3
+- Programm/Thema (mittel): siehe §3.4
+- Programm/Kapitel (lang): siehe §3.5
 
 ---
 
