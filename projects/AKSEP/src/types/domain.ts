@@ -1,2 +1,2 @@
 // TODO: Typen definieren.
-export {};
+export {}

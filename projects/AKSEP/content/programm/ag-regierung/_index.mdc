@@ -1,2 +1,22 @@
 ---
+edited: 2025-08-24
+edited_git: null
+ag:
+  de: "AG Regierung"
+  en: "AG Government"
+tags:
+  de: []
+  en: []
 ---
+::variant{lang="de" simple=false}
+# {{ ag.de }}
+::
+::variant{lang="de" simple=true}
+# {{ ag.de }}
+::
+::variant{lang="en" simple=false}
+# {{ ag.en }}
+::
+::variant{lang="en" simple=true}
+# {{ ag.en }}
+::

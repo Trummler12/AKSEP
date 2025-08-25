@@ -1,3 +1,34 @@
 # AKSEP Nuxt 3
 
 Dieses Projekt enthält die Nuxt-3-Version der AKSEP-Webseite.
+
+## Voraussetzungen
+- Node.js 18+
+- npm 9+
+
+## Installation
+```bash
+npm install
+```
+
+## Entwicklung starten
+```bash
+npm run dev
+```
+Der Befehl startet einen lokalen Server unter http://localhost:3000.
+
+## Linting
+```bash
+npm run lint
+```
+
+## Produktion builden
+```bash
+npm run build
+```
+Die gebauten Dateien liegen anschließend in `.output`.
+
+## Produktion starten
+```bash
+npm run start
+```

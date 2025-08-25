@@ -1,3 +1,23 @@
 ---
 kapitel_id: 1
+edited: 2025-08-24
+edited_git: null
+kapitel:
+  de: "1. Umfassende Reform und Zentralisierung des Bildungssystems"
+  en: "1. Comprehensive Reform and Centralization of the Education System"
+tags:
+  de: []
+  en: []
 ---
+::variant{lang="de" simple=false}
+# {{ kapitel.de }}
+::
+::variant{lang="de" simple=true}
+# {{ kapitel.de }}
+::
+::variant{lang="en" simple=false}
+# {{ kapitel.en }}
+::
+::variant{lang="en" simple=true}
+# {{ kapitel.en }}
+::

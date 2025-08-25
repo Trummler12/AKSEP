@@ -1,0 +1,23 @@
+---
+edited: 2025-08-24
+edited_git: null
+thema:
+  de: "öffentliche oder gemeinschaftlich genutzte Versorgungseinrichtungen"
+  en: "Public or Communally Used Care Facilities"
+tags:
+  de: []
+  en: []
+---
+
+::variant{lang="de" simple=false}
+# {{ thema.de }}
+::
+::variant{lang="de" simple=true}
+# {{ thema.de }}
+::
+::variant{lang="en" simple=false}
+# {{ thema.en }}
+::
+::variant{lang="en" simple=true}
+# {{ thema.en }}
+::

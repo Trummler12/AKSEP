@@ -1,2 +1,2 @@
 // TODO: Funktion implementieren.
-export function useVariants() {}
+export function useVariants () {}

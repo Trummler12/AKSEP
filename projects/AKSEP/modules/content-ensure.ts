@@ -1,2 +1,2 @@
 // TODO: Modul implementieren.
-export default () => {};
+export default () => {}

@@ -1,2 +1,2 @@
 // TODO: App-Konfiguration ergänzen.
-export default defineAppConfig({});
+export default defineAppConfig({})

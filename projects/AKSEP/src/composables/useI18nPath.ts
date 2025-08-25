@@ -1,2 +1,2 @@
 // TODO: Funktion implementieren.
-export function useI18nPath() {}
+export function useI18nPath () {}
