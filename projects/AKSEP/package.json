@@ -5,6 +5,7 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "lint": "eslint .",
+    "test": "vitest run",
     "start": "nuxt start"
   },
   "dependencies": {
@@ -15,6 +16,8 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@tsconfig/nuxt": "^2.0.3",
-    "eslint": "^8.56.0"
+    "eslint": "^8.56.0",
+    "@nuxt/test-utils": "3.18.0",
+    "vitest": "^1.5.0"
   }
 }
