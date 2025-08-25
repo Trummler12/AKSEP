@@ -1,2 +1,2 @@
 // TODO: Plugin implementieren.
-export default defineNuxtPlugin(() => {});
+export default defineNuxtPlugin(() => {})

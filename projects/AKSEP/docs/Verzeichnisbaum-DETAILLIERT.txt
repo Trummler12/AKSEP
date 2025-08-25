@@ -86,110 +86,110 @@
 │  │  ├─ ag-regierung/                       # ag_id: 1
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  ├─ regierungsform/                  # thema_id: 1
+│  │  │  ├─ regierungsform/                  # thema_id: 1; title.de: "Regierungsform"
 │  │  │  │  ├─ _dir.yml
 │  │  │  │  ├─ _index.mdc
-│  │  │  │  ├─ 01.mdc
-│  │  │  │  ├─ 02.mdc
-│  │  │  │  ├─ 03.mdc
-│  │  │  │  ├─ 04.mdc
-│  │  │  │  └─ 05.mdc
-│  │  │  ├─ wahlsystem/                      # thema_id: 2
+│  │  │  │  ├─ 01.mdc                       # title.de: "a) Kritik an der (direkten) Demokratie"
+│  │  │  │  ├─ 02.mdc                       # title.de: "b) Die Politie als mögliches Ideal"
+│  │  │  │  ├─ 03.mdc                       # title.de: "c) Abstimmungs-Vertretung"
+│  │  │  │  ├─ 04.mdc                       # title.de: "d) Erweiterte Gedanken"
+│  │  │  │  └─ 05.mdc                       # title.de: "e) Zusammenfassung und Ausblick"
+│  │  │  ├─ wahlsystem/                      # thema_id: 2; title.de: "Wahlsystem"
 │  │  │  │  ├─ _dir.yml
 │  │  │  │  ├─ _index.mdc
-│  │  │  │  └─ 01.mdc
-│  │  │  └─ verguetungssystem-amtsinhaber/   # thema_id: 3
+│  │  │  │  └─ 01.mdc                       # title.de: "a) Einführung eines Approval-Systems für Einzelpositionen"
+│  │  │  └─ verguetungssystem-amtsinhaber/   # thema_id: 3; title.de: "Vergütungssystem für Amtsinhaber"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     └─ 01.mdc
+│  │  │     ├─ 00.mdc                    # title.de: "0. Einleitung"
+│  │  │     └─ 01.mdc                    # title.de: "1. Das Vergütungsmodell im Detail"
 │  │  │
 │  │  ├─ ag-innere-sicherheit/               # ag_id: 2
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ drogenpolitik/                   # thema_id: 1
+│  │  │  └─ drogenpolitik/                   # thema_id: 1; title.de: "Drogenpolitik"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     ├─ 03.mdc
-│  │  │     ├─ 04.mdc
-│  │  │     ├─ 05.mdc
-│  │  │     ├─ 06.mdc
-│  │  │     ├─ 07.mdc
-│  │  │     ├─ Q.mdc
-│  │  │     └─ Z.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Grundsatzposition"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Lernen aus der kontrollierten Verschreibung: Das Beispiel Methylphenidat (Ritalin, Medikinet)"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Vergleichende Analyse: Legalisierung als Instrument der Schadensminimierung"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Ein evidenzbasiertes Regulierungskonzept für psychoaktive Substanzen"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Förderung von Forschung und medizinischer Nutzung"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Historische Entwicklung und gesellschaftliche Perspektiven"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Wirtschaftliche Chancen und gesellschaftlicher Nutzen"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Schlussfolgerung: Kontrolle statt Kriminalisierung"
+│  │  │     ├─ Q.mdc                        # title.de: "Q. Quellen und weiterführende Literatur"
+│  │  │     └─ Z.mdc                        # title.de: "Detaillierte Analyse Wichtiger Bewertungsfaktoren für die Schädigungspotentiale psychoaktiver Substanzen"
 │  │  │
 │  │  ├─ ag-klimaschutz/                     # ag_id: 3
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ project-drawdown/                # thema_id: 1
+│  │  │  └─ project-drawdown/                # thema_id: 1; title.de: "Project Drawdown"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     ├─ 03.mdc
-│  │  │     ├─ 04.mdc
-│  │  │     ├─ 05.mdc
-│  │  │     ├─ 06.mdc
-│  │  │     ├─ 07.mdc
-│  │  │     ├─ 08.mdc
-│  │  │     ├─ 09.mdc
-│  │  │     ├─ 10.mdc
-│  │  │     ├─ Z.mdc
-│  │  │     └─ ZZ.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "#0 Einleitung"
+│  │  │     ├─ 01.mdc                       # title.de: "#1 Förderung einer pflanzenbasierten Ernährung"
+│  │  │     ├─ 02.mdc                       # title.de: "#2 Reduzierung von Lebensmittelverschwendung"
+│  │  │     ├─ 03.mdc                       # title.de: "#3 Schutz und Wiederherstellung von Wäldern und Mooren"
+│  │  │     ├─ 04.mdc                       # title.de: "#4 Ausbau erneuerbarer Energien"
+│  │  │     ├─ 05.mdc                       # title.de: "#5 Förderung von Bildungs- und Familienplanungsprogrammen"
+│  │  │     ├─ 06.mdc                       # title.de: "#6 Einführung sauberer Kochtechnologien"
+│  │  │     ├─ 07.mdc                       # title.de: "#7 Verbesserte Landnutzungspraktiken"
+│  │  │     ├─ 08.mdc                       # title.de: "#8 Management von Methanemissionen"
+│  │  │     ├─ 09.mdc                       # title.de: "#9 Schutz und Wiederherstellung von Feuchtgebieten"
+│  │  │     ├─ 10.mdc                      # title.de: "#10 Einsatz alternativer Kältemittel"
+│  │  │     ├─ Z.mdc                        # title.de: "#z Schlusswort"
+│  │  │     └─ ZZ.mdc                      # title.de: "Nachträgliche Additionen"
 │  │  │
 │  │  ├─ ag-umweltschutz/                    # ag_id: 4
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  ├─ extensivwiesen/                  # thema_id: 1
+│  │  │  ├─ extensivwiesen/                  # thema_id: 1; title.de: "Förderung von Extensivwiesen"
 │  │  │  │  ├─ _dir.yml
 │  │  │  │  ├─ _index.mdc
-│  │  │  │  └─ 00.mdc
-│  │  │  └─ zentralisierte-feuerwerk-events/ # thema_id: 2
+│  │  │  │  └─ 00.mdc                       # title.de: "#0 Einleitung"
+│  │  │  └─ feuerwerk-events/               # thema_id: 2; title.de: "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     ├─ 03.mdc
-│  │  │     ├─ 04.mdc
-│  │  │     ├─ 05.mdc
-│  │  │     ├─ 06.mdc
-│  │  │     ├─ 07.mdc
-│  │  │     ├─ 08.mdc
-│  │  │     ├─ 09.mdc
-│  │  │     ├─ 10.mdc
-│  │  │     ├─ 11.mdc
-│  │  │     ├─ 12.mdc
-│  │  │     ├─ 13.mdc
-│  │  │     ├─ 14.mdc
-│  │  │     └─ Q.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Einleitung"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Problemaufriss"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Leitprinzipien (\"CCT-Rahmen\")"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Internationale Praxisbeispiele"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Raumplanung & Standortwahl"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Veranstaltungsformate"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Gesundheits- & Immissionsschutz"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Tierrechtliche Begleitmaßnahmen"
+│  │  │     ├─ 08.mdc                       # title.de: "8. Governance & Recht"
+│  │  │     ├─ 09.mdc                       # title.de: "9. Logistik & Sicherheit"
+│  │  │     ├─ 10.mdc                      # title.de: "10. Aufräum- & Recyclingoffensive"
+│  │  │     ├─ 11.mdc                      # title.de: "11. Wirtschaft & Tourismus"
+│  │  │     ├─ 12.mdc                      # title.de: "12. Kommunikation & Beteiligung"
+│  │  │     ├─ 13.mdc                      # title.de: "13. Ausblick: Vollständiger Übergang zu emissionsfreien Lichtinszenierungen"
+│  │  │     ├─ 14.mdc                      # title.de: "14. Potenziale & Kritik – Chancen, Grenzen, Risiken"
+│  │  │     └─ Q.mdc                        # title.de: "Q. Quellen und weiterführende Literatur"
 │  │  │
 │  │  ├─ ag-gesundheit/                      # ag_id: 5
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  ├─ verpflegung-in-versorgungseinrichtungen/ # thema_id: 1
+│  │  │  ├─ versorgungseinrichtungen/       # thema_id: 1; title.de: "öffentliche oder gemeinschaftlich genutzte Versorgungseinrichtungen"
 │  │  │  │  ├─ _dir.yml
 │  │  │  │  ├─ _index.mdc
-│  │  │  │  └─ 01.mdc
-│  │  │  ├─ reservepool-fuer-pflegefachkraefte/ # thema_id: 2
+│  │  │  │  └─ 01.mdc                       # title.de: "Gesetzliche Grundlage für bedarfsgerechte Verpflegung in öffentlichen Einrichtungen"
+│  │  │  ├─ reservepool-fuer-pflegefachkraefte/ # thema_id: 2; title.de: "Reservepool für Pflegefachkräfte"
 │  │  │  │  ├─ _dir.yml
 │  │  │  │  ├─ _index.mdc
-│  │  │  │  ├─ 01.mdc
-│  │  │  │  ├─ 02.mdc
-│  │  │  │  ├─ 03.mdc
-│  │  │  │  └─ 04.mdc
-│  │  │  └─ re-evaluation-von-ernaehrungsempfehlungen/ # thema_id: 3
+│  │  │  │  ├─ 01.mdc                       # title.de: "1. Kernidee und Funktionsweise"
+│  │  │  │  ├─ 02.mdc                       # title.de: "2. Berücksichtigung von Kritikpunkten und Alternativansätzen"
+│  │  │  │  ├─ 03.mdc                       # title.de: "3. Ausblick und weitere Schritte"
+│  │  │  │  └─ 04.mdc                       # title.de: "4. Schlussfolgerung"
+│  │  │  └─ ernaehrungsempfehlungen/        # thema_id: 3; title.de: "Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     ├─ 03.mdc
-│  │  │     └─ Z.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Einführung"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Was wir fordern"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Beispiele"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Politische Umsetzungsmöglichkeiten"
+│  │  │     └─ Z.mdc                        # title.de: "z. Zielsetzung"
 │  │  │
 │  │  ├─ ag-forschung-und-ki/                # ag_id: 6
 │  │  │  ├─ _dir.yml
@@ -202,17 +202,17 @@
 │  │  ├─ ag-bildung/                         # ag_id: 8
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ reform-des-bildungssystems/      # thema_id: 1
+│  │  │  └─ reform-des-bildungssystems/      # thema_id: 1; title.de: "Reform des Bildungssystems [IN ÜBERARBEITUNG]"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     ├─ 03.mdc
-│  │  │     ├─ 04.mdc
-│  │  │     ├─ 05.mdc
-│  │  │     ├─ 06.mdc
-│  │  │     ├─ 07.mdc
-│  │  │     └─ 08.mdc
+│  │  │     ├─ 01.mdc                       # title.de: "1. Umfassende Reform und Zentralisierung des Bildungssystems"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Bekämpfung des Lehrkräftemangels und Verbesserung der Arbeitsbedingungen"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Individuelle Förderung und Inklusion"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Frühkindliche Bildung stärken"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Digitalisierung und innovative Lernumgebungen"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Soziale Gerechtigkeit und Chancengleichheit"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Förderung des ländlichen Raums"
+│  │  │     └─ 08.mdc                       # title.de: "8. Alternative Bildungswege und innovative Ansätze"
 │  │  │
 │  │  ├─ ag-soziales/                        # ag_id: 9
 │  │  │  ├─ _dir.yml
@@ -221,63 +221,63 @@
 │  │  ├─ ag-europa-und-migration/            # ag_id: 10
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ fluechtlings-und-integrationspolitik/ # thema_id: 1
+│  │  │  └─ fluechtlings-und-integrationspolitik/ # thema_id: 1; title.de: "Flüchtlings- und Integrationspolitik"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     ├─ 03.mdc
-│  │  │     ├─ 04.mdc
-│  │  │     ├─ 05.mdc
-│  │  │     ├─ 06.mdc
-│  │  │     ├─ 07.mdc
-│  │  │     └─ Z.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Einleitung – Unser Konzept für ein sicheres, integriertes Europa"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Grenzen als Instrument der systematischen Erfassung und Sicherheit"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Differenzierte Bildungs- und Integrationsmaßnahmen"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Soziale Unterstützung und Integration"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Effektive Asylverfahren und Grenzsicherung"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Arbeitsmarktintegration und wirtschaftliche Teilhabe"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Kultureller Austausch und gesellschaftlicher Zusammenhalt"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Wissenschaftliche Evaluation und unabhängige Expertise"
+│  │  │     └─ Z.mdc                        # title.de: "Schlusswort"
 │  │  │
 │  │  ├─ ag-aussenpolitik/                   # ag_id: 11
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ aktive-neutralitaet/             # thema_id: 1
+│  │  │  └─ aktive-neutralitaet/             # thema_id: 1; title.de: "Aktive Neutralität"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     └─ 02.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Begriffsklärungen und Erweiterungen"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Grundprinzipien der Aktiven Neutralität"
+│  │  │     └─ 02.mdc                       # title.de: "2. Gleichnis zur «aktiven Neutralität»"
 │  │  │
 │  │  ├─ ag-tierrechte/                      # ag_id: 12
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ grundsatzposition/               # thema_id: 1
+│  │  │  └─ grundsatzposition/               # thema_id: 1; title.de: "Grundsatzposition"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     ├─ 00.mdc
-│  │  │     ├─ 01.mdc
-│  │  │     ├─ 02.mdc
-│  │  │     └─ 03.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Grundlegendes & Ressourcen"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Effektive Umsetzung"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Weitere Maßnahmen"
+│  │  │     └─ 03.mdc                       # title.de: "3. Abschluss"
 │  │  │
 │  │  ├─ ag-sonstiges/                       # ag_id: 13
 │  │  │  ├─ _dir.yml
 │  │  │  ├─ _index.mdc
-│  │  │  └─ religioese-erziehung/            # thema_id: 1
+│  │  │  └─ religioese-erziehung/            # thema_id: 1; title.de: "Religiöse Erziehung"
 │  │  │     ├─ _dir.yml
 │  │  │     ├─ _index.mdc
-│  │  │     └─ 01.mdc
+│  │  │     └─ 01.mdc                       # title.de: "Religiöse Erziehung und das Kindeswohl – ein unaufgelöster Konflikt im Grundgesetz?"
 │  │  │
 │  │  └─ ag-agrarpolitik/                    # ag_id: 14
 │  │     ├─ _dir.yml
 │  │     ├─ _index.mdc
-│  │     └─ ernaehrungsreform/               # thema_id: 1
+│  │     └─ ernaehrungsreform/               # thema_id: 1; title.de: "Warum eine Ernährungsreform notwendig ist"
 │  │        ├─ _dir.yml
 │  │        ├─ _index.mdc
-│  │        ├─ 01.mdc
-│  │        ├─ 02.mdc
-│  │        ├─ 03.mdc
-│  │        ├─ 04.mdc
-│  │        ├─ 05.mdc
-│  │        ├─ 06.mdc
-│  │        ├─ 07.mdc
-│  │        ├─ 08.mdc
-│  │        └─ Q.mdc
+│  │        ├─ 01.mdc                       # title.de: "1. Tierrechte"
+│  │        ├─ 02.mdc                       # title.de: "2. Auswirkungen auf die Gesundheit"
+│  │        ├─ 03.mdc                       # title.de: "3. Auswirkungen auf Natur und Umwelt"
+│  │        ├─ 04.mdc                       # title.de: "4. Auswirkungen auf das Klima"
+│  │        ├─ 05.mdc                       # title.de: "5. Auswirkungen auf die Wirtschaft"
+│  │        ├─ 06.mdc                       # title.de: "6. Chancen für die Energiewende"
+│  │        ├─ 07.mdc                       # title.de: "7. Chancen für den Wohnungsmarkt"
+│  │        ├─ 08.mdc                       # title.de: "8. Weitere Chancen einer Ernährungsreform"
+│  │        └─ Q.mdc                        # title.de: "Fragen & Antworten zur Umsetzung (Q&A)"
 │  │
 │  ├─ finanzen-transparenz/   ┐
 │  ├─ kontakt/                │

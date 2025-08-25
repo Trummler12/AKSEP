@@ -14,7 +14,11 @@ $replaceOldTreeFile  = $true
 # --- END OF USER CONFIGURATION ---
 
 # Get raw tree output as an array of lines
-$content = (tree /F /A).Split("`n")
+if ($IsWindows) {
+    $content = (tree /F /A).Split("`n")
+} else {
+    $content = (tree -a -A).Split("`n")
+}
 # Prepare container for filtered lines
 $filteredContent = @("`n")
 

@@ -1,2 +1,2 @@
 // TODO: Funktion implementieren.
-export function useGlossaryIndex() {}
+export function useGlossaryIndex () {}

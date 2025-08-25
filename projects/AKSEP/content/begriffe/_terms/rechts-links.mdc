@@ -1,5 +1,31 @@
 ---
-title: rechts links
+edited: 2025-08-24
+edited_git: null
+title:
+  de: "Rechts vs. Links"
+  en: "Right vs. Left"
+synonyms:
+  de: []
+  en: []
+tags:
+  de: []
+  en: []
+highlighted: false
 ---
 
-Definition of rechts links.
+::variant{lang="de" simple=false}
+# {{ title.de }}
+
+::
+::variant{lang="de" simple=true}
+# {{ title.de }}
+
+::
+::variant{lang="en" simple=false}
+# {{ title.en }}
+
+::
+::variant{lang="en" simple=true}
+# {{ title.en }}
+
+::
