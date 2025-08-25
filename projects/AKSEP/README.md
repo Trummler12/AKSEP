@@ -8,6 +8,7 @@ Dieses Projekt enthält die Nuxt-3-Version der AKSEP-Webseite.
 
 ## Installation
 ```bash
+cd projects\AKSEP       # Submodule: cd AKSEP/projects/AKSEP
 npm install
 ```
 
