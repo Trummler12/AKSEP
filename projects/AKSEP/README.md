@@ -23,6 +23,12 @@ Der Befehl startet einen lokalen Server unter http://localhost:3000.
 npm run lint
 ```
 
+## Tests
+```bash
+npm test
+```
+Der Test prueft, ob die Startseite gerendert werden kann.
+
 ## Produktion builden
 ```bash
 npm run build
