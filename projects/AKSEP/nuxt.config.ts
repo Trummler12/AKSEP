@@ -1,3 +1,5 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/i18n', '@pinia/nuxt'],
   i18n: {
