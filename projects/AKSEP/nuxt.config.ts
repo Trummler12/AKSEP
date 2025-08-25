@@ -1,3 +1,9 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
-  modules: ['@nuxt/content', '@nuxtjs/i18n']
+  srcDir: 'src/',
+  modules: ['@nuxt/content', '@nuxtjs/i18n'],
+  nitro: {
+    compatibilityDate: '2025-08-25'
+  }
 })
