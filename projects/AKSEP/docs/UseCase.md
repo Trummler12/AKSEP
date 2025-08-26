@@ -27,11 +27,11 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 | Bereich | Unsere Definition | Best Practice |
 |---|---|---|
-| Farbmodus | **Dark Mode als Default** (systemunabhängig), Light Mode opt-in; Theme persistiert nur via Cookie für Light Mode. | System-Preference respektieren (prefers-color-scheme) + User-Override persistieren; Kontrast ≥ WCAG AA, reduzierte Motion optional. |
+| Farbmodus | Startwert folgt `prefers-color-scheme`; ohne Angabe **Dark**. Light-Persistenz ausschließlich via `theme`-Cookie. | System-Preference respektieren (prefers-color-scheme) + User-Override persistieren; Kontrast ≥ WCAG AA, reduzierte Motion optional. |
 | Cookies | **Kein Tracking**, **nur** `theme=light` (SameSite=Lax, Secure, max-age ~180d). Beim Wechsel zurück zu Dark → Cookie löschen. | Consent-Banner **nur** wenn nicht-strikt-notwendige Cookies gesetzt werden. Hier reicht i.d.R. **kein** Consent, aber Humorhinweis zulässig. |
 | Performance | LCP < 2.5s, TTFB < 0.8s, CLS < 0.1; statische Auslieferung bevorzugt. | Build-Time Rendering, HTTP/2, brotli/gzip, Bildoptimierung, lazy loading, prerender kritischer Routen. |
 | A11y | Vollständig tastaturnutzbar, ARIA-Rollen korrekt, Fokus-States sichtbar. | WCAG 2.2 AA, Farbsimulationstests, Skip-Links, semantische Überschriftenstruktur. |
-| i18n | DE/EN parallel, sprachumschaltbar pro Seite, SEO hreflang. | URL-basierte Lokalisierung, konsistente Slugs, sprachabhängige Metadaten. |
+| i18n | DE ohne Präfix, EN mit `/en/...`; `path.<lang>` mit Fallback auf DE-Slug. | URL-basierte Lokalisierung, konsistente Slugs, sprachabhängige Metadaten. |
 | SEO | Saubere Titel/Descriptions, OpenGraph, Sitemap automatisch. | Strukturierte Daten (Organisation/Person/Article), konsistente Canonicals. |
 
 ---
@@ -80,7 +80,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Nachbedingungen:** Theme gesetzt; optional Cookie bei Light.
 
 **Hauptablauf (Unsere Definition)**
-1. Beim App-Start wird **Dark** gesetzt (Default; System-Präferenzen haben jedoch Priorität).
+1. Beim App-Start wird `prefers-color-scheme` gelesen; fehlt eine Angabe, ist **Dark** aktiv.
 2. Prüfe `theme`-Cookie: falls `light`, aktiviere **Light Mode**.
 3. Nutzer schaltet manuell auf Light (ODER Light Mode wird auf Basis der System-Präferenzen gesetzt) → setze Cookie `theme=light; SameSite=Lax; Secure; max-age=15552000`.
 4. Nutzer schaltet zurück auf Dark → lösche `theme`-Cookie.
@@ -219,6 +219,9 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Akzeptanz**
 - [ ] Pro Seite wird jeder definierte Begriff höchstens **einmal** automatisch verlinkt.
 - [ ] Kein Autolink in Überschriften oder Code-Blöcken.
+
+**Technik-Hinweis**
+- Modul `modules/glossary-autolink.ts` verlinkt Begriffe, `autolink: false` deaktiviert.
 
 ---
 
@@ -463,6 +466,9 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 - [ ] `/programm/...` (DE, ohne Präfix) und `/en/program/...` (EN) funktionieren.
 - [ ] Mit gesetztem `path.en` weicht das Segment ab; ohne `path.en` = DE-Slug.
 
+**Technik-Hinweis**
+- Modul `modules/content-aliases.ts` erzeugt Aliasse und Redirect-Mapping.
+
 ---
 
 ### UC-URL-02 — Cross-Locale Legacy-Slug Redirect (DE-Slug in EN-URL)
@@ -496,7 +502,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Technik-Hinweise:**
 - Beispiele mit path.en gilt analog für ALLE path.(lang) ausser path.de
-- technische Ausarbeitung folgt noch
+- Implementierung in `modules/content-aliases.ts`
 
 ---
 
@@ -509,6 +515,9 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Akzeptanz**
 - [ ] Jede Seite/Kapitel hat ein `edited`-Datum (Frontmatter oder Git).
 - [ ] Datum ist im Format `YYYY-MM-DD`.
+
+**Technik-Hinweis**
+- Build-Hook `modules/content-edited-git.ts` ergänzt `edited_git`.
 
 ---
 

@@ -50,7 +50,8 @@ Definiert vererbbare Defaults für alle direkten und indirekten Kinder innerhalb
 
 **Hinweise**
 
-- **Pfad‑Fallback:** i18n‑Strategie ist `prefix_except_default`. Fehlt `path.<lang>`, verwende den **deutschen Ordnernamen** und stelle den Sprachpräfix voran (z. B. `/en/...`). Aliasse können „schöne“ EN‑URLs ergänzen (`content-aliases.ts`).
+- **Pfad‑Fallback:** i18n‑Strategie `prefix_except_default`. Fehlt `path.<lang>`, verwende den **deutschen Ordnernamen** und stelle den Sprachpräfix voran (z. B. `/en/...`).
+- **Aliasse & Redirects:** `modules/content-aliases.ts` erzeugt EN‑Aliasse und leitet alte DE‑Slugs auf neue EN‑Slugs um (Query/Hash bleiben erhalten).
 - **`edited` vs. `edited_git`:** `edited` ist redaktionell und bleibt manuell; `edited_git` wird vom Hook immer auf das letzte Commit‑Datum gesetzt (keine Überschreibung von `edited`). Beide Werte dürfen im UI angezeigt werden (z. B. Tooltip).
 - **Tags‑Validierung:** Der Linter warnt, wenn `tags.(lang)` fehlt. Ungültige Sequenzen (Nicht‑String nach Nicht‑String) werden beim Normalisieren ignoriert.
 
@@ -374,7 +375,7 @@ tags:
   - `tags.(lang)` *(Gewicht möglich)*  
 - **Hinweise:**  
   - Überschriften stehen im jeweiligen `::variant`‑Block.  
-  - Anker aus `kapitel_id` (z. B. `#1`, `#Q`).
+  - Anker aus `kapitel_id` (z. B. `#1`, `#15`).
 
 ---
 
