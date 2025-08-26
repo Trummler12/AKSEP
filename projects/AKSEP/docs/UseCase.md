@@ -76,14 +76,14 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Nachbedingungen:** Theme gesetzt; optional Cookie bei Light.
 
 **Hauptablauf (Unsere Definition)**
-1. Beim App-Start wird **Dark** gesetzt (Default).
+1. Beim App-Start wird **Dark** gesetzt (Default; System-Präferenzen haben jedoch Priorität).
 2. Prüfe `theme`-Cookie: falls `light`, aktiviere **Light Mode**.
-3. Nutzer schaltet manuell auf Light → setze Cookie `theme=light; SameSite=Lax; Secure; max-age=15552000`.
+3. Nutzer schaltet manuell auf Light (ODER Light Mode wird auf Basis der System-Präferenzen gesetzt) → setze Cookie `theme=light; SameSite=Lax; Secure; max-age=15552000`.
 4. Nutzer schaltet zurück auf Dark → lösche `theme`-Cookie.
 5. UI speichert den Zustand sofort (kein Reload nötig).
 
 **Best Practice**
-- Statt hartem Dark-Default: `prefers-color-scheme` als Startwert; User-Override persistieren (Cookie **oder** `localStorage`), wobei Cookie für SSR-First-Paint konsistenter ist.
+- Kein harter Dark-Default: `prefers-color-scheme` als Startwert; User-Override persistieren (Cookie **oder** `localStorage`), wobei Cookie für SSR-First-Paint konsistenter ist.
 - CSS-Variablen: zentrale Tokens; Light/Dark via Root-Scope togglen.
 
 **UI/UX-Notizen**
@@ -94,8 +94,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 - 1 Cookie (`theme`) ausschließlich für Light-Persistenz.
 
 **Akzeptanzkriterien**
-- [ ] Erstaufruf ohne Cookies → **Dark** aktiv.  
-- [ ] Light gewählt → Refresh → **Light** bleibt aktiv.  
+- [ ] Erstaufruf ohne Cookies & System-Präferenzen != "Light" → **Dark** aktiv.  
+- [ ] Light gewählt (oder als System-Default gesetzt) → Refresh → **Light** bleibt aktiv.  
 - [ ] Wechsel auf Dark → Cookie entfernt.
 
 **Dev-Hook**
@@ -109,16 +109,18 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Hauptablauf (Unsere Definition)**
 1. Bei Wechsel auf Light erscheint **einmalig** ein kleines Banner:  
-   “⚠️ Achtung, der *Bright*-Cookie schleicht sich sonst an. Dark Mode spart Nerven & Pixel. – [OK] [Mehr Infos]”
+   “Bitte aktiviere den Dark Mode, sonst verfolgt dich ein helles Cookie \u{1F36A} – [OK] [Mehr Infos]”
 2. Klick auf **OK** → Banner schließt; Cookie wird dennoch gesetzt (funktional notwendig).
 3. Klick auf **Mehr Infos** → kleines Info-Modal: *Warum nur beim Light Mode ein Cookie?*  
    - Transparent darlegen: rein funktionaler Cookie; bei Dark sofort gelöscht.
 
 **Best Practice**
-- Statt Banner: unaufdringlicher **Toast** + Link zur Cookie-Policy. Consent ist nicht nötig, da funktional.
+- Statt Banner: unaufdringlicher **Toast** + Link zur Cookie-Policy. Consent ist nicht nötig, da funktional[1].
+
+[1] In unserem Falle egal, da der Cookie-Banner in erster Linie ein humoristisches Element sein soll und zugleich auch impliziert, dass ansonsten keinerlei weitere Cookies gespeichert werden.
 
 **Akzeptanzkriterien**
-- [ ] Banner/Toast erscheint nur **beim Umschalten** auf Light, nicht bei jedem Seitenaufruf.  
+- [ ] Banner/Toast erscheint nur **beim Umschalten** (oder Default-Setzung) auf Light, nicht bei jedem Seitenaufruf.  
 - [ ] “Mehr Infos” führt zu erklärender Seite/Modal.
 
 ---
@@ -136,7 +138,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 - Mega-Menü für tiefe Hierarchien; Breadcrumbs ab Ebene ≥2.
 
 **Dev-Hints**
-- Komponenten-Basis vorhanden (`AppHeader.vue`, `AppFooter.vue`)【Repo: `src/components/AppHeader.vue`, `AppFooter.vue`】【:contentReference[oaicite:9]{index=9}】.
+- Komponenten-Basis vorhanden (`AppHeader.vue`, `AppFooter.vue`)【Repo: `src/components/AppHeader.vue`, `AppFooter.vue`】.
 
 ---
 
@@ -145,7 +147,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Hauptablauf**
 1. Für erwartete, aber noch nicht vorhandene Assets werden **Platzhalter** abgelegt (`.md`/`.txt`), die Zweck/Quelle erklären.
-2. Verzeichnisstruktur unter `src/assets/images/placeholders/` nutzen【:contentReference[oaicite:10]{index=10}】.
+2. Verzeichnisstruktur unter `src/assets/images/placeholders/` nutzen.
 3. Build-Skript/CI kann auf “Platzhalter verblieben?” prüfen (optional).
 
 **Best Practice**
@@ -176,10 +178,10 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 3. Darunter: alle übrigen Begriffe alphabetisch.
 
 **Dev-Hints**
-- Inhalte liegen unter `content/begriffe/**` inkl. `_terms/*.mdc`【:contentReference[oaicite:11]{index=11}】【:contentReference[oaicite:12]{index=12}】.
+- Inhalte liegen unter `content/begriffe/**` inkl. `_terms/*.mdc`.
 
 **Best Practice**
-- Tagging (Themenfelder), Suchfeld/Filter, Autolink-Komponente (existiert: `TermHint.vue`)【:contentReference[oaicite:13]{index=13}】.
+- Tagging (Themenfelder), Suchfeld/Filter, Autolink-Komponente (existiert: `TermHint.vue`).
 
 **Akzeptanz**
 - [ ] “highlighted” Begriffe werden visuell priorisiert (erste Zeile Kacheln).
@@ -207,8 +209,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 3. Klick auf Thema → Kapitel/Varianten wählbar.
 
 **Dev-Hints**
-- Inhalte unter `content/programm/**` vorhanden (u.a. AG-Unterordner und Kapitel-MDCs)【:contentReference[oaicite:14]{index=14}】【:contentReference[oaicite:15]{index=15}】【:contentReference[oaicite:16]{index=16}】.
-- Tooling: `scripts/check-missing-variants.mjs` kann Vollständigkeit prüfen【:contentReference[oaicite:17]{index=17}】.
+- Inhalte unter `content/programm/**` vorhanden (u.a. AG-Unterordner und Kapitel-MDCs).
+- Tooling: `scripts/check-missing-variants.mjs` kann Vollständigkeit prüfen.
 
 **Best Practice**
 - Client-seitige Suche/Filter (AG/Topic/Chapter), Deep-Link auf spezifische Kapitel.
@@ -224,8 +226,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 2. Router-Pfade existieren bereits:  
    - `src/pages/programm/kurz/[ag].vue` (kurz, AG-Ebene)  
    - `src/pages/programm/mittel/[ag]/[thema].vue`  
-   - `src/pages/programm/lang/[ag]/[thema].vue`【:contentReference[oaicite:18]{index=18}】  
-3. UI-Komponenten zur Variantenauswahl wie `VariantToolbar.vue` und `Variant.vue` nutzen【:contentReference[oaicite:19]{index=19}】.
+   - `src/pages/programm/lang/[ag]/[thema].vue`  
+3. UI-Komponenten zur Variantenauswahl wie `VariantToolbar.vue` und `Variant.vue` nutzen.
 
 **Best Practice**
 - Persistiere letzte Variantenwahl im Store (nicht zwingend persistiert).
@@ -256,7 +258,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Ablauf**
 1. Sprachumschalter an üblicher Stelle (Header oder Content-Toolbar).  
 2. Wechsel erhält Kontext (AG/Thema/Kapitel).  
-3. i18n-Dateien: `src/locales/de.json`, `src/locales/en.json` vorhanden【:contentReference[oaicite:20]{index=20}】.
+3. i18n-Dateien: `src/locales/de.json`, `src/locales/en.json` vorhanden.
 
 **Best Practice**
 - `hreflang`, Sprach-Route, Fallback-Strategie (falls Übersetzung fehlt → Default DE).
@@ -277,7 +279,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 ### UC-ABOUT-01 — Über uns: Verein/Partei
 **Akteure:** BES/RED  
 **Ablauf**
-1. Zwei getrennte Seiten: **Verein** und **Partei** (Struktur & Ziele).  
+1. Eine "Über-Uns"-Page für **Verein** (Struktur & Ziele); Später, sobald wir eine tatsächliche Partei sind, wird die Page zu "Partei" umbenannt und "Verein" zu einem Redirect umfunktioniert.  
 2. Redaktionsfähig via MDC.
 
 **Best Practice**
@@ -288,8 +290,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 ### UC-ABOUT-02 — Geschichte: “geschönt” vs. “ungeschönt”
 **Akteure:** BES/RED  
 **Ablauf**
-1. Seite lädt **geschönte** Version als Default.  
-2. Umschalter “ungeschönt” zeigt Fehler & Fehleinschätzungen (Transparenz).
+1. "Über-Uns"-Page mit Titel "Geschichte" lädt per Default eine **geschönte** Version, wie man sie üblicherweise kennt.  
+2. Umschalter “zeige ehrliche Version” zeigt ebenso Fehler, Fehleinschätzungen & Fails, die in der Vergangenheit begangen wurden (Transparenz).
 
 **Best Practice**
 - Toggle-URL-Param (`?raw=1`) für direktes Verlinken.
@@ -302,12 +304,11 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Hauptablauf (Unsere Definition)**
 1. Jedes Mitglied: Portraitbild, D&D-Stats **STR/CON/DEX/WIS/INT/CHA** (Skala 0–20, **>20 erlaubt**, Default-Max 20).  
-2. Optional: Klasse (z.B. Druide/Barde), “Items, die man immer dabei hat”.  
-3. UI betont Spitzenwerte (z.B. Badge “INT 22”).  
-4. Öffentliche Anzeige nur bei Opt-in der Person.
+2. Optional: Klasse (z.B. Druide/Barde), “Items, die man immer dabei hat”, "Traits", etc..  
+3. Öffentliche Anzeige nur bei Opt-in der Person.
 
 **Best Practice**
-- Validierung (0–20 hart, >20 als “Legendär”-Badge); Tooltips erklären Skalenhumor.
+- Tooltips erklären Skalenhumor.
 
 **Akzeptanz**
 - [ ] Profil ohne Bild zeigt **Platzhalter** und Notiz “Bild folgt” (Platzhalter-Asset-Regel).
@@ -353,7 +354,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 ### UC-SEO-01 — SEO/Social (Platzhalter)
 **Akteure:** SEO/RED  
 **Unsere Definition**
-- Titel/Description pro Seite; OpenGraph (`og:image` vorhanden: `public/og-image.png`), Sitemap automatisch (`/server/routes/sitemap.xml.ts`)【:contentReference[oaicite:21]{index=21}】.
+- Titel/Description pro Seite; OpenGraph (`og:image` vorhanden: `public/og-image.png`), Sitemap automatisch (`/server/routes/sitemap.xml.ts`).
 
 **Best Practice**
 - Strukturierte Daten (FAQ/Article), Preview-Links validieren.
