@@ -2,7 +2,7 @@ Set-Location $PSScriptRoot # Nicht mehr aktuell
 Set-Location ..
 
 # HIDE FOLDERS
-$foldersToHide = @("node_modules", "Lib", ".JavaZeugs", "m293-HTMLZeugs", "VueDemo", "m346-ablage-Trummler12")
+$foldersToHide = @("node_modules", "package-lock.json", ".nuxt", ".output", ".env")
 
 # Optional settings
 $saveTreeToTxt       = $true
@@ -14,10 +14,10 @@ $replaceOldTreeFile  = $true
 # --- END OF USER CONFIGURATION ---
 
 # Get raw tree output as an array of lines
-if ($IsWindows) {
+if ($IsWindows -eq $true) {
     $content = (tree /F /A).Split("`n")
 } else {
-    $content = (tree -a -A).Split("`n")
+    $content = (tree /F /A).Split("`n")
 }
 # Prepare container for filtered lines
 $filteredContent = @("`n")
