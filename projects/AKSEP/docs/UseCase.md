@@ -49,6 +49,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 | UC-STD-01 | Externe Referenzlinks zu Standardseiten | DEV/RED | Inspirations-Preview | N | D |
 | UC-TERM-01 | Begriffe: Einstiegsseite mit Begründung | BES | Warum-Text verstehen | H | D |
 | UC-TERM-02 | Begriffe: Kachelübersicht inkl. Highlights | BES | Schneller Zugriff | H | D |
+| UC-TERM-ALINK-01 | Begriffe: Autolink erstes Vorkommen | BES/RED | Kontextuelle Verlinkung | M | D |
 | UC-PROG-01 | Programm: AG-Liste + Ausklappen | BES | Themen/Chapter entdecken | H | D |
 | UC-PROG-02 | Programm: Variantennavigation kurz/mittel/lang | BES | passendes Detaillevel wählen | H | D |
 | UC-PROG-03 | Programm: Prev/Next (AG/Thema/Kapitel) | BES | Linear & lateral navigieren | M | D |
@@ -64,6 +65,9 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 | UC-SRCH-01 | On-Site-Suche | BES | schneller Zugriff | N | P |
 | UC-ANL-01 | Analytics ohne Cookies | ADM/SEO | Basis-KPIs | N | P |
 | UC-EMBED-01 | Externe Embeds datenschutzfreundlich | BES/ADM | z.B. YouTube-Preview-Proxy | N | P |
+| UC-URL-01 | Pfad-Lokalisierung & Aliasse | DEV/RED/SEO | Konsistente DE/EN Routen | M | D |
+| UC-URL-02 | Cross-Locale Legacy-Slug Redirect (DE-Slug in EN-URL) | DEV/SEO | Alte Links stabil halten | M | D |
+| UC-META-01 | edited-Metadatum aus Git | DEV/RED | | Letzte Änderung sichtbar | N | D |
 
 ---
 
@@ -91,7 +95,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 - Kontrast ≥ 4.5:1; fokussierbare Elemente sichtbar.
 
 **Daten**
-- 1 Cookie (`theme`) ausschließlich für Light-Persistenz.
+- 1 Cookie (`theme=light`) ausschließlich für Light-Persistenz.
+- SSR liest Cookie vor First Paint, um Theme-FOUC zu vermeiden.
 
 **Akzeptanzkriterien**
 - [ ] Erstaufruf ohne Cookies & System-Präferenzen != "Light" → **Dark** aktiv.  
@@ -131,7 +136,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Hauptablauf**
 1. Header zeigt Primärnavigation (z.B. Start, Programm, Begriffe, Über uns, Termine, Kontakt).  
-2. Sekundärnavigation kontextabhängig (z.B. in Programm: AGs/Varianten).  
+2. Sekundärnavigation kontextabhängig (Programm):
+   Reihenfolge & Aktivelemente basieren auf `ag_id` → `thema_id` → `kapitel_id`. 
 3. Falls an Positionen üblicherweise Icons/Bilder erscheinen, aber noch fehlen: **Platzhalter-Assets** (TXT/MD) im Assets-Ordner.
 
 **Best Practice**
@@ -165,6 +171,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Best Practice**
 - Markierung “Nur Preview” klar sichtbar.
+- Technische Absicherung: Links werden nur in `process.dev === true` oder bei `VITE_PREVIEW_MODE=1` gerendert.
 
 ---
 
@@ -174,7 +181,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Hauptablauf**
 1. `/begriffe` lädt Intro-Text (MDC) + Kachel-Grid.  
-2. Oben: “wichtigste Begriffe” (Frontmatter `highlighted: true`).  
+2. Oben: “wichtigste Begriffe” (Frontmatter `highlighted: true` in `content/begriffe/_terms/*.mdc`).
+   Fallback: ohne Flag werden Begriffe alphabetisch einsortiert.
 3. Darunter: alle übrigen Begriffe alphabetisch.
 
 **Dev-Hints**
@@ -196,6 +204,21 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Best Practice**
 - Responsive Flex/Grid; Fokusreihenfolge logisch.
+
+**Akzeptanz**
+- [ ] Kacheln sind per Tastatur erreichbar (Tab-Order), Fokus sichtbar, ARIA-Label = Begriffstitel.
+
+---
+
+### UC-TERM-ALINK-01 — Autolink erster Begriffsvorkommen
+**Akteure:** BES/RED  
+**Hauptablauf**
+1. Beim Rendern wird das **erste Auftreten** eines Begriffs verlinkt (Tooltip + Link zur Definition).
+2. Per Frontmatter `autolink: false` auf Seiten- oder Begriffs-Ebene abschaltbar.
+
+**Akzeptanz**
+- [ ] Pro Seite wird jeder definierte Begriff höchstens **einmal** automatisch verlinkt.
+- [ ] Kein Autolink in Überschriften oder Code-Blöcken.
 
 ---
 
@@ -223,10 +246,10 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Hauptablauf**
 1. Auf Thema/Kapitel-Seiten sind Varianten **kurz/mittel/lang** anwählbar (Toolbar oder Tabs).  
-2. Router-Pfade existieren bereits:  
-   - `src/pages/programm/kurz/[ag].vue` (kurz, AG-Ebene)  
-   - `src/pages/programm/mittel/[ag]/[thema].vue`  
-   - `src/pages/programm/lang/[ag]/[thema].vue`  
+2. Router-Pfade existieren bereits (Deep-Linking in "lang"):
+  - `src/pages/programm/kurz/[ag].vue` (kurz, AG-Ebene)  
+  - `src/pages/programm/mittel/[ag]/[thema].vue`  
+  - `src/pages/programm/lang/[ag]/[thema].vue#<kapitel>`
 3. UI-Komponenten zur Variantenauswahl wie `VariantToolbar.vue` und `Variant.vue` nutzen.
 
 **Best Practice**
@@ -250,6 +273,7 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Akzeptanz**
 - [ ] Korrekte Kontext-sensitive Sichtbarkeit der drei Ebenen.  
 - [ ] Zyklisch? Entscheidung: **Nein** (am Anfang/Ende disabled).
+- [ ] Reihenfolge basiert strikt auf `ag_id` → `thema_id` → `kapitel_id` (Integer).
 
 ---
 
@@ -262,6 +286,11 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Best Practice**
 - `hreflang`, Sprach-Route, Fallback-Strategie (falls Übersetzung fehlt → Default DE).
+
+**Akzeptanz**
+- [ ] DE hat **kein** Sprachpräfix: `/programm/...`
+- [ ] EN hat **Präfix**: `/en/program/...`
+- [ ] Falls `path.en` fehlt, wird der **deutsche** Slug als Fallback verwendet.
 
 ---
 
@@ -284,6 +313,9 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Best Practice**
 - Strukturierte Daten: `Organization`.
+
+**Akzeptanz**
+- [ ] Sobald der Partei-Status gegeben ist, wird `/ueber-uns` → `/partei` migriert;
 
 ---
 
@@ -311,7 +343,8 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 - Tooltips erklären Skalenhumor.
 
 **Akzeptanz**
-- [ ] Profil ohne Bild zeigt **Platzhalter** und Notiz “Bild folgt” (Platzhalter-Asset-Regel).
+- [ ] Jede Stat ist Integer (0–20 regulär, >20 erlaubt bis max. 30 mit Hinweis-Icon).
+- [ ] Fehlende Stats → neutraler Platzhalterwert (z. B. "—").
 
 ---
 
@@ -333,7 +366,13 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 - Rollen: Redakteur:in (erstellen/ändern), Review (Freigabe).
 
 **Best Practice**
-- Netlify CMS / Decap CMS mit `config.yml` im Projekt (`/public/admin/config.yml`), Branch-Workflow, Preview Builds.
+- Decap CMS mit `/public/admin/index.html` + `/public/admin/config.yml`,
+  `media_folder: "public/uploads"`, `public_folder: "/uploads"`,
+  Branch-Workflow (Review), Preview Builds pro PR.
+
+**Akzeptanz**
+- [ ] `/admin` ist erreichbar; Uploads landen unter `/public/uploads`.
+- [ ] Editor-Collections existieren für `content/begriffe/_terms` und `content/programm/**`.
 
 **Offen**
 - Finales CMS-Tool bestätigen; Editor-Felder für Begriffe/Programm modellieren.
@@ -349,6 +388,10 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Best Practice**
 - Manuelle Tests mit Screenreader (NVDA/VoiceOver), “Reduced Motion” unterstützen.
 
+**Akzeptanz**
+- [ ] Pro Seite genau **ein** H1 (auf `_index.mdc`), Kapitel beginnen mit **H2**.
+- [ ] Ein globaler “Skip to content”-Link ist vorhanden und fokussierbar.
+
 ---
 
 ### UC-SEO-01 — SEO/Social (Platzhalter)
@@ -359,25 +402,37 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 **Best Practice**
 - Strukturierte Daten (FAQ/Article), Preview-Links validieren.
 
+**Akzeptanz**
+- [ ] Pro Seite `link rel="canonical"` konsistent mit Varianten-URL.
+- [ ] `hreflang`-Paare zwischen DE (ohne Präfix) und EN (`/en/...`) vorhanden.
+
 ---
 
 ### UC-SRCH-01 — On-Site-Suche (Platzhalter)
 **Akteure:** BES  
 **Unsere Definition**
-- Volltextsuche über Begriffe/Programm.
+- Volltextsuche über Begriffe sowie Programm (kurz/mittel/lang, Kapitel).
 
 **Best Practice**
 - Statischer Index (Stork/FlexSearch) clientseitig; DSGVO-frei.
+
+**Akzeptanz**
+- [ ] Build erzeugt `public/search-index.json` aus `content/**` (inkl. IDs/Slugs).
+- [ ] Client durchsucht offline (keine externen Calls).
 
 ---
 
 ### UC-ANL-01 — Analytics ohne Cookies (Platzhalter)
 **Akteure:** ADM/SEO  
 **Unsere Definition**
-- Serverseitiges Logging/Privacy-first (ohne Fingerprinting).
+- Privacy-first (ohne Cookies, ohne Fingerprinting, ohne Cross-Site-Beacons).
 
 **Best Practice**
 - Plausible/Umami im Self-Host, anonymisiert, ohne Cookies.
+
+**Akzeptanz**
+- [ ] Keine Cookies/LocalStorage für Analytics.
+- [ ] IPs werden nur gekürzt/aggregiert verarbeitet (falls überhaupt).
 
 ---
 
@@ -388,6 +443,72 @@ Jeder Use Case enthält: Akteure, Ziel/Nutzen, Trigger, Vor-/Nachbedingungen, Ha
 
 **Best Practice**
 - Preview-Proxy-Bilder, `sandbox`/`referrerpolicy` streng.
+
+**Akzeptanz**
+- [ ] Vor dem Klick wird **kein** externer Request abgesetzt.
+- [ ] Nach Klick werden `sandbox`, `allow`, `referrerpolicy` restriktiv gesetzt.
+
+---
+
+### UC-URL-01 — Pfad-Lokalisierung & Aliasse
+**Akteure:** DEV/RED/SEO  
+**Ziel:** Lokalisierte Pfade ohne Dubletten; Fallback auf DE-Slugs.
+
+**Hauptablauf**
+1. `_dir.yml` kann `path.en` setzen (AG-/Themen-Ebene).
+2. Fehlt `path.en`, nutzt EN-Route den **deutschen** Slug.
+3. Modul erzeugt passende **Aliases**, damit /en/... erreichbar ist.
+
+**Akzeptanz**
+- [ ] `/programm/...` (DE, ohne Präfix) und `/en/program/...` (EN) funktionieren.
+- [ ] Mit gesetztem `path.en` weicht das Segment ab; ohne `path.en` = DE-Slug.
+
+---
+
+### UC-URL-02 — Cross-Locale Legacy-Slug Redirect (DE-Slug in EN-URL)
+
+**Akteure:** DEV/SEO  
+**Ziel/Nutzen:** Stabilität alter externer Links sicherstellen, wenn für eine Route nachträglich `path.en` definiert oder geändert wird.
+
+**Beispiel/Trigger:**
+- Ein Nutzer ruft später eine alte EN-URL auf, in der ein Segment noch den **deutschen** Platzhalter-Slug trägt:
+  `/en/program/medium/ag-health/ernaehrungsempfehlungen`
+- Inzwischen existiert für das Themen-Segment ein spezifischer **EN-Slug**:
+  `dietary-recommendations`
+
+**Hauptablauf (Unsere Definition):**
+1. Erkennen, dass die angefragte EN-Route ein **DE-Slug**-Segment enthält trotz verfügbarem lang.en.
+2. Berechnen der **aktuellen** EN-Zielroute mit `path.en`-Segmenten.
+3. **Redirect (301)** auf die korrekte EN-URL:
+   `/en/program/medium/ag-health/dietary-recommendations`
+
+**Alternativen/Fehlerfälle:**
+- Falls kein passendes Mapping ermittelbar ist → Standard-404 (oder Fallback-Seite, policy-abhängig).
+
+**Daten / UI / UX:**
+- Query-Parameter und Hash (z. B. `#<kapitel_id>`) werden **unverändert** übernommen.
+- Logging des Redirect-Ereignisses (z. B. für SEO-Monitoring).
+
+**Akzeptanzkriterien:**
+- [ ] Aufruf von `/en/program/medium/ag-health/ernaehrungsempfehlungen` → **301** zu `/en/program/medium/ag-health/dietary-recommendations`
+- [ ] Vorhandene `?query` und `#hash` bleiben erhalten.
+- [ ] Redirects greifen **nur**, wenn `path.en` heute gesetzt ist und sich vom DE-Slug unterscheidet.
+
+**Technik-Hinweise:**
+- Beispiele mit path.en gilt analog für ALLE path.(lang) ausser path.de
+- technische Ausarbeitung folgt noch
+
+---
+
+### UC-META-01 — edited-Metadatum aus Git
+**Akteure:** DEV/RED  
+**Hauptablauf**
+1. Falls `edited` im Frontmatter gesetzt ist → nutzen.
+2. Sonst setzt Build-Hook (`git log -1 --pretty=%cI`) das Datum.
+
+**Akzeptanz**
+- [ ] Jede Seite/Kapitel hat ein `edited`-Datum (Frontmatter oder Git).
+- [ ] Datum ist im Format `YYYY-MM-DD`.
 
 ---
 
