@@ -39,7 +39,8 @@ export function applyRedirect (url: string, map: Record<string, string>): string
 
 export default defineNuxtModule({
   setup (_, nuxt) {
-    nuxt.hook('content:file:beforeParse', (file: any) => {
+    // @ts-expect-error content hook
+    nuxt.hook('content:file:beforeParse', (file: { _id: string, body: string } & Partial<ContentDoc>) => {
       generateAliases(file as ContentDoc)
     })
   }

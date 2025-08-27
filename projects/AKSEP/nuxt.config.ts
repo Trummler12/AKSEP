@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   srcDir: 'src/',
   modules: ['@nuxt/content', '@nuxtjs/i18n', '@pinia/nuxt'],
   nitro: {
-    compatibilityDate: '2025-08-25'
+    compatibilityDate: '2025-08-26'
   },
   i18n: {
     locales: [

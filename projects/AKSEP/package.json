@@ -6,7 +6,8 @@
     "build": "nuxt build",
     "lint": "eslint .",
     "start": "nuxt start",
-    "test": "NUXT_TELEMETRY_DISABLED=1 vitest run",
+    "test": "vitest run",
+    "typecheck": "vue-tsc --noEmit",
     "check-docs": "node scripts/check-docs.mjs"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "@tsconfig/nuxt": "^2.0.3",
     "@types/node": "^20.11.30",
     "eslint": "^8.56.0",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "vue-tsc": "^3.0.6"
   }
 }
