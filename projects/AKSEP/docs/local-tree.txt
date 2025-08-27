@@ -11,6 +11,7 @@ C:.
 |   .prettierignore
 |   .prettierrc
 |   AGENTS.md
+|   AGENTS.md-WEBSITE.txt
 |   DEVELOPER.md
 |   i18n.config.ts
 |   nuxt.config.ts
@@ -330,6 +331,7 @@ C:.
 |           _index.mdc
 |
 +---docs
+|       local-tree.txt
 |       TO-DO.md
 |       UseCase.md
 |       UseCase.md.txt
