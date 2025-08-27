@@ -24,7 +24,7 @@
 │     └─ deploy.yml                          # (falls benötigt) Preview/Prod Deploy
 |
 ├─ docs/                                     # Projekt-Dokumentation (zur Entzerrung des Root)
-│  ├─ local_tree.txt                         # generiert aus der local_tree.ps1/.mjs, beschreibt die *momentane* Dateistruktur
+│  ├─ local-tree.txt                         # generiert aus der local-tree.ps1/.mjs, beschreibt die *momentane* Dateistruktur
 │  ├─ migration.md
 │  ├─ Verzeichnisbaum.txt
 │  ├─ yaml.md
@@ -182,8 +182,8 @@
 │  ├─ check-missing-variants.mjs             # prüft DE/EN & simple, sonst Warnungen
 │  ├─ generate-en-aliases.mjs                # generiert slug_en-Aliases aus _dir.yml
 │  ├─ build-chapters-toc.mjs                 # erzeugt Themen-Inhaltsverzeichnisse
-│  ├─ local_tree.ps1                         # von Root hierher verschoben
-│  └─ local_tree.mjs                         # Node-Alternative für Nicht-Windows
+│  ├─ local-tree.ps1                         # von Root hierher verschoben
+│  └─ local-tree.mjs                         # Node-Alternative für Nicht-Windows
 │           
 └─ src/                                      # *** technischer App-Code (sauber gebündelt) ***
    ├─ app.vue                                # globaler Rahmen (Header/Footer via Komponenten)

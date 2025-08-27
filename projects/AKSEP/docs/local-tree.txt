@@ -1,7 +1,7 @@
 ﻿
 
-Folder PATH listing for volume Windows
-Volume serial number is AA0F-5FCF
+Auflistung der Ordnerpfade für Volume WINDOWS
+Volumeseriennummer : 9AF3-4876
 C:.
 |   .editorconfig
 |   .env.example
@@ -14,6 +14,7 @@ C:.
 |   DEVELOPER.md
 |   i18n.config.ts
 |   nuxt.config.ts
+|   package-lock.json
 |   package.json
 |   README.md
 |   tsconfig.json
@@ -329,8 +330,9 @@ C:.
 |           _index.mdc
 |
 +---docs
-|       local_tree.txt
 |       TO-DO.md
+|       UseCase.md
+|       UseCase.md.txt
 |       Verzeichnisbaum-DETAILLIERT.txt
 |       Verzeichnisbaum.txt
 |       yaml.md
@@ -341,6 +343,9 @@ C:.
 |       content-edited-git.ts
 |       content-ensure.ts
 |       glossary-autolink.ts
+|
++---node_modules
+|       [Contents excluded]
 |
 +---public
 |   |   favicon.ico
@@ -364,10 +369,11 @@ C:.
 |
 +---scripts
 |       build-chapters-toc.mjs
+|       check-docs.mjs
 |       check-missing-variants.mjs
 |       generate-en-aliases.mjs
-|       local_tree.mjs
-|       local_tree.ps1
+|       local-tree.mjs
+|       local-tree.ps1
 |
 +---server
 |   \---routes
@@ -431,11 +437,22 @@ C:.
 |   +---stores
 |   |       prefs.ts
 |   |
-|   \---types
-|           content.d.ts
-|           domain.ts
+|   +---types
+|   |       content.d.ts
+|   |       domain.ts
+|   |
+|   \---utils
+|           anchors.ts
 |
 \---test
-        index.test.ts
-        nuxt-config.test.ts
+    |   index.test.ts
+    |   nuxt-config.test.ts
+    |
+    +---modules
+    |       content-aliases.spec.ts
+    |       content-ensure.spec.ts
+    |       glossary-autolink.spec.ts
+    |
+    \---routing
+            anchors.spec.ts
 

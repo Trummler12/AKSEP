@@ -1,14 +1,14 @@
-Set-Location $PSScriptRoot # Nicht mehr aktuell
+Set-Location $PSScriptRoot
 Set-Location ..
 
 # HIDE FOLDERS
-$foldersToHide = @("node_modules", "package-lock.json", ".nuxt", ".output", ".env")
+$foldersToHide = @("node_modules", ".nuxt", ".output", ".env")
 
 # Optional settings
 $saveTreeToTxt       = $true
-$treeTxtPath         = "docs"
+$treeTxtPath         = "docs"   # Use "." for root directory
 # "ProgrammierZeugs" = "Tree"; "ListPuzzle" = "LPTree"; etc.
-$treeTxtFileName     = "local_tree"
+$treeTxtFileName     = "local-tree"
 $replaceOldTreeFile  = $true
 
 # --- END OF USER CONFIGURATION ---
