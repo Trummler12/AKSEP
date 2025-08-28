@@ -2,7 +2,7 @@ import { defineNuxtModule } from 'nuxt/kit'
 
 export interface ContentFile {
   _id: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 /**
@@ -23,8 +23,9 @@ export function validate (file: ContentFile): string[] {
 
 export default defineNuxtModule({
   setup (_, nuxt) {
-    nuxt.hook('content:file:beforeParse', (file: any) => {
-      const errors = validate(file as ContentFile)
+    // @ts-expect-error content hook
+    nuxt.hook('content:file:beforeParse', (file: ContentFile & { body: string }) => {
+      const errors = validate(file)
       if (errors.length) {
         throw new Error(`Content validation failed for ${file._id}: ${errors.join(', ')}`)
       }
