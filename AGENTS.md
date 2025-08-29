@@ -4,28 +4,48 @@ These rules apply to this AKSEP submodule (root). A nested `AGENTS.md` in a subf
 
 ---
 
-## 0) Prime Directive: Plan first, then code
+## 0) Task Modes & Gatekeeping
+Default is **No-Plan Mode** for small/low-risk changes; **Plan-Gate Mode** only for clear risk threshold.
 
-**Before any code changes**, create `TASK_PLAN.md` at repo root:
-- Copy the request verbatim (no compression): exact file/folder names, flags, and any markers.
-- List concrete steps with exact paths and (when helpful) line ranges or search anchors.
-- State the checks you will run (lint / test / build / type-check **or Manual Verification**) and the pass criteria.
-- **Planning write-scope:** You may modify **only** `TASK_PLAN.md` in this phase. Make a single commit containing just this file. Do **not** run commands that mutate tracked files (e.g., installs that rewrite lockfiles).
+### 0.1 Scope/Risk classifier (decide before each task)
+Calculate score; **Plan-Gate is mandatory** for `score ≥ 4`, **optional** for `{2,3}`, **forbidden** for `≤ 1`.
+Add points for:
+1) >2 files are changed → +2
+2) Cross-file linking (edited function is used in other files/exports/routes) → +2
+3) Build/Config/CI/Lockfile (`package.json`, lockfiles, tsconfig, workflows) → +3
+4) New dependency or change of package manager → +3
+5) DB/schema/migration/data model **or** i18n routing/aliases → +2
+6) Security/Auth/Permissions/Crypto/Cookies → +3
+7) No tests in the affected area → +1
+8) Generated paths or code generation affected → +2
+9) Diff >50 LOC **or** >1 new file → +1
+10) User explicitly says "no plan for this" → -2 (**sticky**, see below)
 
-Proceed to code **only after** explicit approval using one of:
+### 0.2 No-Plan Mode (standard; small/low-risk)
+Proceed directly with code changes. At the end, create or update **`TASK_DOCS.md`** (what/why changed, checks, commit SHA[s]). Do **not** create `TASK_PLAN.md`.
+
+### 0.3 Plan-Gate Mode (medium/high risk)
+**Before** coding, create `TASK_PLAN.md`, obtain approval, then implement. **After implementation**, create/update **`TASK_DOCS.md`** summarizing the final delta.
+Approval (unchanged):
 - `APPROVE PLAN: <plan-sha1> (TTL 7 days)`
-- `APPROVE PLAN WITH CHANGES: <plan-sha1> — <short note>`
+- `APPROVE PLAN WITH CHANGES: <plan-sha1> - <short note>`
+Rules: SHA must be included; renew on divergence/TTL; small text tweaks via "WITH CHANGES".
 
-Rules:
-1) Approval must include the current `TASK_PLAN.md` Git SHA.  
-2) If `main` diverges or TTL expires, refresh the plan and request a new approval.  
-3) Minor textual tweaks are allowed under `APPROVE PLAN WITH CHANGES` if scope is unchanged.  
+### 0.4 Sticky No-Plan & Escalation
+If the user has said **"no plan for this"** at the beginning, **no** `TASK_PLAN.md` should be created, except after a prior message:
+`REQUEST ESCALATION TO PLAN (score=<n>): <2-3 bullets why>`
+and approval via:
+- `OK ESCALATE` → switch to Plan-Gate; or
+- `STAY NO-PLAN` → stay No-Plan.
+In case of scope growth, re-evaluate score and escalate again if necessary.
+
 > Overrides: A task may override this protocol **only** if it contains the exact phrase `OVERRIDE PROTOCOL` **and** the approver repeats it in the approval message.
 
 ### Suggested Tasks (Ask-mode)
 - **No compression**; keep “must-include markers” intact (quoted paths, code fragments, selectors, placeholders).
 - **Chunking policy**: split into Task (1/n), (2/n), … when the plan exceeds ~3000 tokens or ~4 editor pages, **or** when any must-include marker would be truncated.
-- **Title**: `[\<Project\>] <scope> (<k>/<n>)`.
+- **Write-scope:** In **Plan-Gate** you may **only** change `TASK_PLAN.md` until approval. In **No-Plan** **no** `TASK_PLAN.md` is created; commit code normally and add `TASK_DOCS.md` at the end.
+- **Title**: `[<Project>] <scope> (<k>/<n>)`.
 
 ### TASK_PLAN.md — Minimal Template (copy/paste)
 ```md
@@ -65,6 +85,28 @@ Done: <measurable pass criterion>
 * Add a short manual verification checklist.
 * Within 24h: retrospective `TASK_PLAN.md` with follow-ups.
 
+### TASK_DOCS.md — Post-hoc Summary (copy/paste)
+```md
+# Task Docs: <title>
+
+## Mode & Score
+Mode: <no-plan|plan-gate>, Score: <n> (factors: <bullet1>, <bullet2>, …)
+
+## Changes
+- <file>: <summary> (SHA <short>)
+- …
+
+## Checks & Results
+- lint/test/build → <short outcome>
+
+## Manual Verification (if no tests)
+- [ ] Step A …
+- [ ] Step B …
+
+## Follow-ups / Risks
+- …
+```
+
 ---
 
 ## 1) Project Map & Guardrails (AKSEP)
@@ -97,7 +139,7 @@ Done: <measurable pass criterion>
 
 * Indentation 2 spaces; TypeScript strict; avoid `any`.
 * Filenames: kebab-case; Components: PascalCase.
-* Vue SFCs: `<script setup lang="ts">`, composables in `src/composables`.
+* Vue SFCs: `<script setup lang="ts">`; composables in `composables/` (or `src/composables` if `srcDir` is used).
 * Prefer `async/await`; JSDoc on exported utilities.
 * Language: write new code/comments in **English** (UI text per i18n).
 * CSS tokens: prefer CSS variables; global palette may reference `AKSEP/Values.txt` (color hexes).
@@ -145,7 +187,8 @@ $PM test || :
 # build / preview / dev (scripts provided by package.json)
 $PM run build || :
 $PM run preview || :
-$PM run dev || :   # for local dev only
+$PM run start || :  # production start
+$PM run dev || :    # for local dev only
 ```
 
 **Content pipeline helpers (run when relevant)**
@@ -158,7 +201,7 @@ node scripts/build-chapters-toc.mjs || :
 
 **Testing expectations**
 * If a test suite exists, keep it **green** and update for changed behavior.
-* If none exists, add a short **Manual Verification** checklist to `TASK_PLAN.md`.
+* If none exists, add a short **Manual Verification** checklist to `TASK_PLAN.md` (Plan-Gate) **or** `TASK_DOCS.md` (No-Plan).
 * Tests are **offline by default** (no live network). Mark any networked tests with `@net` and skip in CI by default.
 
 ---
@@ -186,8 +229,7 @@ $PM run build || :
 $PM run preview || :
 ```
 
-**Merge gate:** Do **not** merge if linters/tests fail.
-If coverage metrics exist, they **must not decrease** vs `main` (soft gate; explain exceptions).
+**Merge gate:** Do **not** merge if linters/tests fail. (This gate does **not** apply to the **plan-only** or **docs-only** commit.)
 
 ---
 
@@ -198,11 +240,13 @@ If coverage metrics exist, they **must not decrease** vs `main` (soft gate; expl
 * **PR title**: `[AKSEP]: <short description>`; avoid special chars (expand umlauts).
 * **PR description must include**: Summary; What changed (bullets); Tests run + results; Risks & rollback; Screenshots (UI).
 * **PR checklist**:
-  * [ ] Lockfile unchanged (or rationale if changed)
-  * [ ] No live network calls in tests/build
-  * [ ] No edits under generated paths (`.nuxt/**`, `.output/**`, `node_modules/**`)
-  * [ ] Changed LOC ≤ \~200 (or rationale)
-  * [ ] Coverage (if measured) not decreased vs `main`
+* [ ] Mode: no-plan / plan-gate  |  Score: <n> (classifier applied)
+* [ ] `TASK_DOCS.md` added/updated for this task
+* [ ] Lockfile unchanged (or rationale if changed)
+* [ ] No live network calls in tests/build
+* [ ] No edits under generated paths (`.nuxt/**`, `.output/**`, `node_modules/**`)
+* [ ] Changed LOC ≤ ~200 (or rationale)
+* [ ] Coverage (if measured) not decreased vs `main`
 * Keep diffs small; avoid mass reformatting unless the task is formatting.
 * Respect existing package manager/lockfile; don’t switch unless asked.
 
