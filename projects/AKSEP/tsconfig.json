@@ -1,6 +1,35 @@
 {
-  "extends": "@tsconfig/nuxt/tsconfig.json",
   "compilerOptions": {
-    "types": ["@types/node", "nuxt", "@nuxtjs/i18n"]
-  }
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node", "nuxt", "@nuxt/content", "@nuxtjs/i18n"],
+    "paths": {
+      "#app": ["./node_modules/nuxt/dist/app"],
+      "#app/*": ["./node_modules/nuxt/dist/app/*"],
+      "#imports": ["./.nuxt/imports"],
+      "#content/server": ["./node_modules/@nuxt/content/dist/runtime/server"],
+      "#content/*": ["./node_modules/@nuxt/content/dist/runtime/*"],
+      "#content": ["./node_modules/@nuxt/content/dist/runtime/index"],
+      "#i18n": ["./node_modules/@nuxtjs/i18n/dist/runtime/composables/index"],
+      "#build": ["./.nuxt"],
+      "#build/*": ["./.nuxt/*"]
+    }
+  },
+  "include": [
+    "nuxt.config.ts",
+    "i18n.config.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "server/**/*.ts",
+    "modules/**/*.ts",
+    "test/**/*.ts",
+    "nuxt.d.ts"
+  ]
 }
