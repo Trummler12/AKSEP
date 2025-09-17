@@ -27,8 +27,8 @@ Proceed directly with code changes. At the end, create or update **`TASK_DOCS.md
 ### 0.3 Plan-Gate Mode (medium/high risk)
 **Before** coding, create `TASK_PLAN.md`, obtain approval, then implement. **After implementation**, create/update **`TASK_DOCS.md`** summarizing the final delta.
 Approval (unchanged):
-- `APPROVE PLAN: <plan-sha1> (TTL 7 days)`
-- `APPROVE PLAN WITH CHANGES: <plan-sha1> - <short note>`
+- `APPROVE PLAN: <plan-sha1> (TTL 7 days)` - Approval may appear at the very beginning or very end of the message.
+- `APPROVE PLAN WITH CHANGES: <plan-sha1> - <short note>` - Same positioning flexibility applies.
 Rules: SHA must be included; renew on divergence/TTL; small text tweaks via "WITH CHANGES".
 
 ### 0.4 Sticky No-Plan & Escalation
