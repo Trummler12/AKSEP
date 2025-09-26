@@ -1,4 +1,5 @@
 import { defineNuxtModule } from 'nuxt/kit'
+import type { ParsedContent } from '@nuxt/content'
 
 export interface Term { slug: string, term: string }
 
@@ -31,10 +32,14 @@ export function autolink (content: string, terms: Term[], enabled = true): strin
 
 export default defineNuxtModule({
   setup (_, nuxt) {
-    nuxt.hook('content:file:afterParse', (file: any) => {
+    // @ts-expect-error content hook
+    nuxt.hook('content:file:afterParse', (file: ParsedContent & { autolink?: boolean, terms?: Record<string, string> }) => {
       const enabled = file.autolink !== false
-      const terms = Object.entries(file.terms || {}).map(([slug, term]) => ({ slug, term }))
-      if (file.body) { file.body = autolink(file.body, terms, enabled) }
+      const terms = (Object.entries(file.terms || {}) as [string, string][]).map(([slug, term]) => ({ slug, term }))
+      if (typeof file.body === 'string') {
+        // @ts-expect-error body is mutated string
+        file.body = autolink(file.body, terms, enabled)
+      }
     })
   }
 })
