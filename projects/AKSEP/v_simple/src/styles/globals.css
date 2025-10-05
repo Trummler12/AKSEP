@@ -1,0 +1,191 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  /* AKSEP Dark Mode Colors */
+  --background: #322A45;
+  --foreground: #ffffff;
+  --card: #423A51;
+  --card-foreground: #ffffff;
+  --popover: #423A51;
+  --popover-foreground: #ffffff;
+  --primary: #7E65B9;
+  --primary-foreground: #ffffff;
+  --secondary: #5A8FA8;
+  --secondary-foreground: #ffffff;
+  --muted: #423A51;
+  --muted-foreground: #ffffff;
+  --accent: #3EB694;
+  --accent-foreground: #ffffff;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #5A8FA8;
+  --input: #423A51;
+  --input-background: #423A51;
+  --switch-background: #5A8FA8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #7E65B9;
+  --chart-1: #7E65B9;
+  --chart-2: #5A8FA8;
+  --chart-3: #3EB694;
+  --chart-4: #322A45;
+  --chart-5: #423A51;
+  --radius: 0.625rem;
+  --sidebar: #322A45;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #7E65B9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #423A51;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #5A8FA8;
+  --sidebar-ring: #7E65B9;
+}
+
+.dark {
+  /* Keep same values as root for consistent dark mode */
+  --background: #322A45;
+  --foreground: #ffffff;
+  --card: #423A51;
+  --card-foreground: #ffffff;
+  --popover: #423A51;
+  --popover-foreground: #ffffff;
+  --primary: #7E65B9;
+  --primary-foreground: #ffffff;
+  --secondary: #5A8FA8;
+  --secondary-foreground: #ffffff;
+  --muted: #423A51;
+  --muted-foreground: #ffffff;
+  --accent: #3EB694;
+  --accent-foreground: #ffffff;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: #5A8FA8;
+  --input: #423A51;
+  --ring: #7E65B9;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #7E65B9;
+  --chart-2: #5A8FA8;
+  --chart-3: #3EB694;
+  --chart-4: #322A45;
+  --chart-5: #423A51;
+  --sidebar: #322A45;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #7E65B9;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #423A51;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #5A8FA8;
+  --sidebar-ring: #7E65B9;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
