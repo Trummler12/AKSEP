@@ -1,0 +1,688 @@
+The Surprising Secret of Synchronization
+https://youtu.be/t-_VPRCtiUg
+31.03.2021
+How does order spontaneously arise out of chaos?
+An enormous thanks to Prof. Steven Strogatz — this video would not have been possible without him. Much of the script-writing was inspired and informed by his wonderful book Sync, and his 2004 TED talk. He is a giant in this field, and has literally written the book on chaos, complexity, and synchronization. It was hard to find a paper in this field that Steven (or one of his students) didn't contribute to. His Podcast "The Joy of X" is wonderful — please listen and subscribe wherever you get your podcasts https://www.quantamagazine.org/tag/th...
+
+Nicky Case's Amazing Firefly Interactive — https://ncase.me/fireflies
+
+Great Kuramoto Model Interactive — https://www.complexity-explorables.or...
+
+References: 
+
+Strogatz, S. H. (2012). Sync: How order emerges from chaos in the universe, nature, and daily life. Hachette UK. — https://ve42.co/Sync
+
+Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization in populations of coupled oscillators. Physica D: Nonlinear Phenomena, 143(1-4), 1-20. — https://ve42.co/Strogatz2000
+
+Goldsztein, G. H., Nadeau, A. N., & Strogatz, S. H. (2021). Synchronization of clocks and metronomes: A perturbation analysis based on multiple timescales. Chaos: An Interdisciplinary Journal of Nonlinear Science, 31(2), 023109. — https://ve42.co/Goldsztein
+
+The Broughton Suspension Bridge and the Resonance Disaster — https://ve42.co/Broughton
+
+Bennett, M., Schatz, M. F., Rockwood, H., & Wiesenfeld, K. (2002). Huygens's clocks. Proceedings of the Royal Society of London. Series A: Mathematical, Physical and Engineering Sciences, 458(2019), 563-579. — https://ve42.co/Bennett2002
+
+Pantaleone, J. (2002). Synchronization of metronomes. American Journal of Physics, 70(10), 992-1000. — https://ve42.co/Pantaleone2002
+
+Kuramoto, Y. (1975). Self-entrainment of a population of coupled non-linear oscillators. In International symposium on mathematical problems in theoretical physics (pp. 420-422). Springer, Berlin, Heidelberg. -- https://ve42.co/Kuramoto1975
+
+Great video by Minute Earth about Tidal Locking and the Moon — https://ve42.co/MinuteEarth
+
+Strogatz, S. H., Abrams, D. M., McRobie, A., Eckhardt, B., & Ott, E. (2005). Crowd synchrony on the Millennium Bridge. Nature, 438(7064), 43-44. — https://ve42.co/Strogatz2005
+
+Zhabotinsky, A. M. (2007). Belousov-zhabotinsky reaction. Scholarpedia, 2(9), 1435. — https://ve42.co/Zhabotinsky2007
+
+Flavio H Fenton et al. (2008) Cardiac arrhythmia. Scholarpedia, 3(7):1665. — https://ve42.co/Cardiac
+
+Cherry, E. M., & Fenton, F. H. (2008). Visualization of spiral and scroll waves in simulated and experimental cardiac tissue. New Journal of Physics, 10(12), 125016. — https://ve42.co/Cherry2008
+
+Tyson, J. J. (1994). What everyone should know about the Belousov-Zhabotinsky reaction. In Frontiers in mathematical biology (pp. 569-587). Springer, Berlin, Heidelberg. — https://ve42.co/Tyson1994
+
+Winfree, A. T. (2001). The geometry of biological time (Vol. 12). Springer Science & Business Media. — https://ve42.co/Winfree2001
+
+The Manim Community Developers. (2021). Manim – Mathematical Animation Framework (Version v0.13.1) [Computer software]. https://www.manim.community/
+
+
+
+
+This is why we can't have nice things
+https://youtu.be/j5v8D-alAKE
+26.03.2021
+This video is about stuff: light bulbs, printers, phones and why they aren't better.
+References:
+The Man in the White Suit — https://ve42.co/Suit
+
+London, B. (1932). Ending the depression through planned obsolescence. — https://ve42.co/London32
+
+Slade, G. (2009). Made to break: Technology and obsolescence in America. Harvard University Press — https://ve42.co/madetobreak
+
+Krajewski, M. (2014). The great lightbulb conspiracy. IEEE spectrum, 51(10), 56-61. — https://ve42.co/Phoebus
+
+Planet Money, The Phoebus Cartel - https://ve42.co/PMobs
+
+The Light Bulb Conspiracy -    • The Light Bulb Conspiracy  
+
+
+
+
+The Discovery That Transformed Pi
+https://youtu.be/gMlf1ELvRzc
+16.03.2021
+For thousands of years, mathematicians were calculating Pi the obvious but numerically inefficient way. Then Newton came along  and changed the game.
+Happy Pi Day! 
+
+References:
+Arndt, J., & Haenel, C. (2001). Pi-unleashed. Springer Science & Business Media — https://ve42.co/Arndt2001
+
+Dunham, W. (1990). Journey through genius: The great theorems of mathematics. Wiley — https://ve42.co/Dunham1990
+
+Borwein, J. M. (2014). The Life of π: From Archimedes to ENIAC and Beyond. In From Alexandria, Through Baghdad (pp. 531-561). Springer, Berlin, Heidelberg — https://ve42.co/Borwein2012
+
+Special thanks to Alex Kontorovich, Professor of Mathematics  at Rutgers University, and Distinguished Visiting Professor for the Public Dissemination of Mathematics National Museum of Mathematics MoMath for being part of this Pi Day video.
+
+
+
+
+
+Why Robots That Bend Are Better
+https://youtu.be/058hRtaCWC0
+18.02.2021
+Robots of the future may be softer, squishier and bendier than robots today. This could make them ideal for space exploration.
+On Thursday February 18th, 2021 the NASA Perseverance Rover will land on Mars. It is a wonderful robot, made out of steel and wire — but will future robots look like Perseverance? There is an emerging field of  research on "soft robots", where the machines are flexible. These soft robots have many advantages over traditional robots — they're safer, lighter, more flexible and can change their shape and size.
+
+NASA is investigating the use of soft robots for space missions. For future visits to Enceladus or Europa, a lander could cut a hole in the ice and then insert a compliant robot through the hole. This robot could then grow and change shape on the other side.
+
+References:
+N. S. Usevitch, Z. M. Hammond, M. Schwager, A. M. Okamura, E. W. Hawkes, S. Follmer, An untethered isoperimetric soft robot. Sci. Robot. 4, 
+https://ve42.co/Hammond2020 — paper about the truss robot
+
+https://ve42.co/Usevitch2020 — press release and video about the truss robot
+
+Electronics-free pneumatic circuits for controlling soft-legged robots
+Dylan Drotman1, Saurabh Jadhav, David Sharp, Christian Chan, Michael T. Tolley Sci. Robot. 6, eaay2627 (2021)
+https://ve42.co/Drotman — paper about the turtle robot
+
+
+
+
+
+I Asked Bill Gates What's The Next Crisis?
+https://youtu.be/Grv1RJkdyqI
+04.02.2021
+I got the chance to interview Bill Gates so I asked him: Will Covid-19 be the last pandemic? How does he deal with misinformation and conspiracy theories? And what is the next disaster? The Foundation Letter is here: https://ve42.co/BG21
+
+
+
+
+The Explosive Element That Changed The World
+https://youtu.be/YMDJA4UvXLA
+27.01.2021
+What are these electric blue ponds in the middle of the Utah desert? And why do they keep changing color?
+
+Join Derek Muller (Veritasium) as he looks into the weird, bizarre, and seemingly inexplicable images found on Google Earth to discover what on Earth they actually are. It’s a travel vlog, documentary, and science show wrapped into one. It’s Pindrop.
+
+0:00 Intro
+0:29 Electric Blue Ponds
+2:13 Finding The Truth
+5:47 Importance Of Potash
+8:41 Potash From Rocks
+14:04 Safer Ways To Mine
+15:02 Droning
+17:28 Potash The Savior
+
+
+
+
+
+The Illusion Only Some People Can See
+https://youtu.be/dBap_Lp-0oc
+31.12.2020
+Ames window illusion illustrates how we don't directly perceive external reality.
+Special thanks to:
+Prof. Phil Kellman from UCLA Psychology https://kellmanlab.psych.ucla.edu
+Museum of Illusions in Los Angeles for the use of their Ames Room https://laillusions.com
+Curiosity Show - Video on Ames Illusion:    • The Magical, Mystical, Mind-boggling ...  
+
+References:
+Ames, A., Jr. (1951). Visual perception and the rotating trapezoidal window. Psychological Monographs: General and Applied, 65(7), i–32. https://doi.org/10.1037/h0093600
+
+Marcel de Heer & Thomas V. Papathomas (2017) The Ames Window Illusion and Its Variations
+DOI:10.1093/acprof:oso/9780199794607.003.0014
+
+Oross, Stephen, Francis, Ellie, Mauk, Deborah & Fox, Robert. (1987). The Ames Window Illusion: Perception of Illusory Motion by Human Infants. Journal of Experimental Psychology: Human Perception & Performance, 13(4), 609-613.
+
+Behrens, R. (1987). The Life and Unusual Ideas of Adelbert Ames, Jr. Leonardo, 20(3), 273-279. doi:10.2307/1578173
+
+Burnham, C., & Ono, H. (1969). Variables Altering Perception of the Rotating Trapezoidal Illusion. The American Journal of Psychology, 82(1), 86-95. doi:10.2307/1420609
+
+Allport, G. W., & Pettigrew, T. F. (1957). Cultural influence on the perception of movement: The trapezoidal illusion among Zulus. The Journal of Abnormal and Social Psychology, 55(1), 104–113. https://doi.org/10.1037/h0049372
+
+Zenhausern R. Effect of Perspective on Two Trapezoid Illusions. Perceptual and Motor Skills. 1969;28(3):1003-1009. doi:10.2466/pms.1969.28.3.1003
+
+Gehringer, W. L., & Engel, E. (1986). Effect of ecological viewing conditions on the Ames' distorted room illusion. Journal of Experimental Psychology: Human Perception and Performance, 12(2), 181–185. https://doi.org/10.1037/0096-1523.12....
+
+Long, G.M., Toppino, T.C. Adaptation effects and reversible figures: A comment on Horlitz and O’Leary. Perception & Psychophysics 56, 605–610 (1994). https://doi.org/10.3758/BF03206956
+
+Gregory RL. Looking through the Ames window. Perception. 2009;38(12):1739-40. doi: 10.1068/p3812ed. PMID: 20192124.
+
+Jahoda, G. (1966). Geometric illusions and environment: A study in Ghana. British Journal of Psychology, 57(1-2), 193–199. https://doi.org/10.1111/j.2044-8295.1...
+
+V. Mary Stewart (1974) A Cross-Cultural Test of the “Carpentered World” Hypothesis Using The Ames Distorted Room Illusion, International Journal of Psychology, 9:2, 79-89, DOI: 10.1080/00207597408247094
+
+Margaret Kathleen Cappone (1966) The Effect of Verbal Suggestion on the Reversal Rate of the Ames Trapezoid Illusion, The Journal of Psychology, 62:2, 211-219, DOI: 10.1080/00223980.1966.10543786
+
+
+
+
+These are the asteroids to worry about
+https://youtu.be/4Wrc4fHSCpw
+30.11.2020
+Stephen Hawking thought an asteroid impact posed the greatest threat to life on Earth.
+Special thanks to:
+Prof. Dave Jewitt from UCLA Earth, Planetary, and Space Sciences
+Prof. Mark Boslough from Sandia National Labs
+Scott Manley:    / szyzyg  
+Ryan Wyatt at Morrison Planetarium
+Prof. Amy Mainzer
+Alexandr Ivanov for the opening shot of Chelyabinsk Meteor
+
+Maps of Asteroid Impacts —https://ve42.co/Map
+
+Time passing animation from Universe Sandbox - http://universesandbox.com/
+
+Opposition Effect — https://ve42.co/Belskaya2000
+Belskaya, I. N., & Shevchenko, V. G. (2000). Opposition effect of asteroids. Icarus, 147(1), 94-105.
+
+Potentially Hazardous Asteroids — https://ve42.co/Perna2013
+Perna, D., Barucci, M. A., & Fulchignoni, M. (2013). The near-Earth objects and their potential threat to our planet. The Astronomy and Astrophysics Review, 21(1), 65.
+
+Survey of Potentially Hazardous Asteroids — https://ve42.co/NEOSurvey
+
+Population Vulnerability — https://ve42.co/Rumpf2017
+Rumpf, C. M., Lewis, H. G., & Atkinson, P. M. (2017). Population vulnerability models for asteroid impact risk assessment. Meteoritics & Planetary Science, 52(6), 1082-1102.
+
+Size distribution of NEOs — https://ve42.co/Trilling17
+Trilling, D. E., Valdes, F., Allen, L., James, D., Fuentes, C., Herrera, D., ... & Rajagopal, J. (2017). The size distribution of near-earth objects larger than 10 m. The Astronomical Journal, 154(4), 170.
+
+2020 NEOWISE Data Release — https://ve42.co/NEOWISE
+
+National Research Council Report— https://ve42.co/Defending
+Board, S. S., & National Research Council. (2010). Defending planet earth: Near-Earth-Object surveys and hazard mitigation strategies. National Academies Press.
+
+Tug Boat — https://ve42.co/Schweickart03
+Schweickart, R. L., Lu, E. T., Hut, P., & Chapman, C. R. (2003). The asteroid tugboat. Scientific American, 289(5), 54-61.
+
+Gravity Tractor 1 — https://ve42.co/Lu05
+Lu, E. T., & Love, S. G. (2005). Gravitational tractor for towing asteroids. Nature, 438(7065), 177-178.
+
+Laser Ablation — https://ve42.co/Thiry14
+Thiry, N., & Vasile, M. (2014). Recent advances in laser ablation modelling for asteroid deflection methods. SPIE Optical Engineering+ Applications, 922608-922608.
+
+Yarakovsky Effect — https://ve42.co/Yara
+
+DART Mission — https://ve42.co/DART
+
+Nuclear 1 — https://ve42.co/Ahrens92
+Ahrens, T. J., & Harris, A. W. (1992). Deflection and fragmentation of near-Earth asteroids. Nature, 360(6403), 429-433.
+
+Nuclear 2 — https://ve42.co/Bradley10
+Bradley, P. A., Plesko, C. S., Clement, R. R., Conlon, L. M., Weaver, R. P., Guzik, J. A., ... & Huebner, W. F. (2010, January). Challenges of deflecting an asteroid or comet nucleus with a nuclear burst. In AIP Conference Proceedings (Vol. 1208, No. 1, pp. 430-437). American Institute of Physics.
+
+
+
+
+Why No One Has Measured The Speed Of Light
+https://youtu.be/pTn6Ewhb27k
+31.10.2020
+Physics students learn the speed of light, c, is the same for all inertial observers but no one has ever actually measured it in one direction.
+Huge thanks to Destin from Smarter Every Day for always being open and willing to engage in new ideas. If you haven't subscribed already, what are you waiting for: https://ve42.co/SED
+
+For an overview of the one-way speed of light check out the wiki page: https://ve42.co/wiki1way
+
+The script was written in consultation with subject matter experts:
+Prof. Geraint Lewis, University of Sydney https://ve42.co/gfl
+Prof. Emeritus Allen Janis, University of Pittsburgh
+Prof. Clifford M. Will, University of Florida https://ve42.co/cmw
+The stuff that's correct is theirs. Any errors are mine.
+
+References:
+Einstein, A. (1905). On the electrodynamics of moving bodies. Annalen der physik, 17(10), 891-921.
+(English) https://ve42.co/E1905 (German) https://ve42.co/G1905
+
+Greaves, E. D., Rodríguez, A. M., & Ruiz-Camacho, J. (2009). A one-way speed of light experiment. American Journal of Physics, 77(10), 894-896. https://ve42.co/Greaves09
+
+Response to Greaves et al. paper — https://arxiv.org/abs/0911.3616
+Finkelstein, J. (2009). One-way speed of light?. arXiv, arXiv-0911.
+
+The Philosophy of Space and Time - Reichenbach, H. (2012). Courier Corporation.
+
+Anderson, R., Vetharaniam, I., & Stedman, G. E. (1998). Conventionality of synchronisation, gauge dependence and test theories of relativity. Physics reports, 295(3-4), 93-180. https://ve42.co/Anderson98
+
+A review article about simultaneity — Janis, Allen, "Conventionality of Simultaneity", The Stanford Encyclopedia of Philosophy (Fall 2018 Edition), Edward N. Zalta (ed.) https://ve42.co/janis
+
+Will, C. M. (1992). Clock synchronization and isotropy of the one-way speed of light. Physical Review D, 45(2), 403. https://ve42.co/Will92
+
+Zhang, Y. Z. (1995). Test theories of special relativity. General Relativity and Gravitation, 27(5), 475-493. https://ve42.co/Zhang95
+
+Mansouri, R., & Sexl, R. U. (1977). A test theory of special relativity: I. Simultaneity and clock synchronization. General relativity and Gravitation, 8(7), 497-513. https://ve42.co/Sexl
+
+
+
+
+What Actually Expands In An Expanding Universe?
+https://youtu.be/9DrBQg_n2Uo
+23.10.2020  #SMB #smallbiz #space
+As the universe expands, #expanding #space is said to "stretch" photons. But if it stretches photons, does it also stretch molecules, galaxies and you?
+Special thanks to Geraint Lewis - this video was based on his paper "On the relativity of redshifts"
+https://arxiv.org/abs/1605.08634
+Check out his YouTube channel: https://ve42.co/gfl and books: https://ve42.co/GFLbooks
+
+References:
+Expanding Space: the Root of all Evil?
+Matthew J. Francis, Luke A. Barnes, J. Berian James, Geraint F. Lewis
+https://arxiv.org/abs/0707.0380
+
+
+
+
+How One Supernova Measured The Universe
+https://youtu.be/ljoeOLuX6Z4
+20.10.2020
+In 2015 astronomers successfully predicted the appearance of a supernova within a couple weeks. How did they do it?
+Special thanks to Geraint Lewis for consulting on gravitational lensing. Check out his YouTube channel: https://ve42.co/gfl and books: https://ve42.co/GFLbooks
+
+The supernova image in the thumbnail is from my documentary, Uranium: Twisting The Dragon's Tail. Check it out here: https://genepoolproductions.com/urani...
+
+References:
+DEJA VU ALL OVER AGAIN: THE REAPPEARANCE OF SUPERNOVA REFSDAL
+P. L. Kelly et al. https://arxiv.org/abs/1512.04654
+
+Predicted properties of multiple images of the strongly lensed supernova SN Refsdal 
+Masamune Oguri. Monthly Notices of the Royal Astronomical Society: Letters, Volume 449, Issue 1, 01 May 2015, Pages L86–L89, https://arxiv.org/abs/1411.6443
+
+Multiple Images of a Highly Magnified Supernova Formed by an Early-Type Cluster Galaxy Lens
+Patrick L. Kelly et al. https://arxiv.org/abs/1411.6009
+
+"Refsdal" meets Popper: comparing predictions of the re-appearance of the multiply imaged supernova behind MACSJ1149.5+2223. T. Treu et al. https://arxiv.org/abs/1510.05750
+
+Irwin I. Shapiro (1964). "Fourth Test of General Relativity". Physical Review Letters. 13 (26): 789–791. doi:10.1103/PhysRevLett.13.789
+
+Irwin I. Shapiro; Gordon H. Pettengill; Michael E. Ash; Melvin L. Stone; et al. (1968). "Fourth Test of General Relativity: Preliminary Results". Physical Review Letters. 20 (22): 1265–1269. doi:10.1103/PhysRevLett.20.1265
+
+
+
+
+How Gravity Actually Works
+https://youtu.be/XRr1kaXKBsU
+09.10.2020
+The General Theory of Relativity tells us gravity is not a force, gravitational fields don't exist. Objects tend to move on straight paths through curved spacetime.
+Huge thanks to Prof. Geraint Lewis for hours of consulting on this video so I could get these ideas straight in my own brain. Check out his YouTube channel: https://ve42.co/gfl or his books: https://ve42.co/GFLbooks
+
+
+
+
+The Infinite Pattern That Never Repeats
+https://youtu.be/48sCx-wBs34
+01.10.2020
+Simple rules of geometry meant that 5-fold symmetry was impossible as were crystals without a periodic structure. This turns out to be wrong.
+Huge thanks to Prof. Paul Steinhardt for the interview on this topic. Check out his book ‘The Second Kind of Impossible’
+
+If you'd like to learn more about Penrose tilings, go check out "Penrose Tiles to Trapdoor Ciphers" by Martin Gardener, which helped my research for this video.
+
+
+
+
+How Kodak Exposed Nuclear Testing
+https://youtu.be/7pSqk-XV2QM
+16.09.2020
+Kodak detected the first atomic bomb before anyone else figured it out. Then they made a deal not to tell anyone.
+Thanks to Uranium: Twisting the Dragon's Tail for the opening clip: https://www.pbs.org/show/uranium-twis...
+
+References:
+Albuquerque Tribune Bulletin, July 16, 1945 – https://www.marshallfoundation.org/li...
+
+Webb, J. H. (1949). The fogging of photographic film by radioactive contaminants in cardboard packaging materials. Physical Review, 76(3), 375.
+
+Julian Webb at Oak Ridge – Snavely, B. B. (1989). Julian H. Webb. PhT, 42(7), 87.https://physicstoday.scitation.org/do...
+
+Radium in watch dials – https://www.epa.gov/radtown/radioacti...
+
+A 1958 video about how Kodak film is made, noting the careful monitoring of radioactive contaminants –    • Kodak - How Film is Made - 1958 - kf5...  
+
+Radioactive fallout in 1951 - https://www.nytimes.com/1951/02/03/ar...
+
+1998 senate hearing – https://www.govinfo.gov/content/pkg/C...
+
+Institute of Medicine and National Research Council. 1999. Exposure of the American People to Iodine-131 from Nevada Nuclear-Bomb Tests: Review of the National Cancer Institute Report and Public Health Implications. Washington, DC: The National Academies Press. https://doi.org/10.17226/6283. https://www.cancer.gov/about-cancer/c...
+
+Baby Teeth Survey – Reiss, L. Z. (1961). Strontium-90 absorption by deciduous teeth. Science, 134(3491), 1669-1673.
+
+Strontium 90 and Cancer rates – Gould, J. M., Sternglass, E. J., Sherman, J. D., Brown, J., McDonnell, W., & Mangano, J. J. (2000). Strontium-90 in deciduous teeth as a factor in early childhood cancer. International Journal of Health Services, 30(3), 515-539.
+
+Wine forensics – Hubert, P., Perrot, F., Gaye, J., Médina, B., & Pravikoff, M. S. (2009). Radioactivity measurements applied to the dating and authentication of old wines. Comptes Rendus Physique, 10(7), 622–629. doi:10.1016/j.crhy.2009.08.007
+
+Strontium 90 in forensics – Maclaughlin-Black, S. M., Herd, R. J., Willson, K., Myers, M., & West, I. E. (1992). Strontium-90 as an indicator of time since death: a pilot investigation. Forensic science international, 57(1), 51-56.
+
+Research and Writing by Derek Muller, Petr Lebedev, and Jonny Hyman
+
+
+
+
+Is Success Luck or Hard Work?
+https://youtu.be/3LopI4YeC4I
+28.08.2020
+In a competitive world, tiny advantages can make all the difference.
+Huge thanks to Gene and Sam from Potato Jet for filming with me: https://ve42.co/potatojet
+
+This video was inspired by and draws examples from the book "Success and Luck: Good Fortune and the Myth of Meritocracy" by Robert H. Frank
+
+
+
+
+Is Dust Mostly Dead Skin?
+https://youtu.be/jn5M48MVWyg
+18.08.2020
+People claim that 70-80% of household dust is dead skin, but is it true?
+Special thanks to J.M.E.H van Bronswijk, author of 'House Dust Biology'. We exchanged emails to make sure I got my facts straight for this video. Below is an excerpt from her email to me, responding to my claims that start with a dash:
+
+Around half of airborne dust particles under 100um are skin scales
+This is true for climates, regions and seasons where people live mostly indoors.
+The 1 to 2 g of skin scales shed each 24 hours will end up in places where people are present (and rub their skin or have textile moving over the skin).
+You can also look at it from a different angle: What else has the same size and could contribute? That will usually be pollen from outdoor sources, also depending on season, region and climate, as well as the ventilation regime of the building.
+However, taken as the median value over a whole year, I consider your statement correct for regions with a temperate climate.
+
+53% of dust particles vacuumed from a mattress were found to be skin scales
+It depends a little on the type of mattress. For polyether mattresses the amount may even be larger.
+For mattresses made of natural material it could be less since the mattress-material will also give off small particles.
+
+larger particles consist mostly of fibers, eg. cotton, paper, wool, synthetics
+That's true .. including bread crumbs ..... 🙂
+
+skin scales seem to form a larger fraction of dust where we spend more time, e.g. in or near bed.
+..... and on the couch used to view television or be active in gaming.
+It has to do with the constant production of skin scales over the 24 hours.
+
+skin scales form a smaller fraction of dust if there are significant other sources, e.g. carpeting, dirt from outside etc.
+Yes, everyting you walk on with your shoes or that recieves dirt from the outside with other means, will have a lessr percentage of human skin scales.
+However, do not forget the skin scales of pets that will also be an active allergen for many people, and a food source for house dust mites.
+
+Information on dust particle size ©ISO. This material is adapted from ISO 7708:1995, with permission of the American National Standards Institute (ANSI) on behalf of the International Organization for Standardization. All rights reserved.
+
+
+
+
+Half the universe was missing... until now
+https://youtu.be/Kp_kqamkYpw
+01.08.2020
+Half of the ordinary baryonic matter has been tough to find but Fast Radio Bursts made it possible to detect the WHIM.
+Special thanks to Prof. Geraint Lewis https://ve42.co/gfl
+
+Nature paper: A census of baryons in the Universe from localized fast radio bursts
+https://ve42.co/whim
+
+
+
+
+The Launch of Perseverance to Mars
+https://youtu.be/m85qDk849_o
+30.07.2020
+This was a pretty extraordinary experience - thanks to NASA for inviting me! The Atlas V 541 rocket took off carrying the Perseverance rover and Ingenuity the Mars helicopter at 7:50 am July 30, 2020. They should arrive in about seven months on February 18, 2021
+
+
+
+
+Turbulent Flow is MORE Awesome Than Laminar Flow
+https://youtu.be/5zI9sG3pjVU
+11.06.2020
+Everyone loves laminar flow but turbulent flow is the real MVP. 
+Special thanks to:
+Prof. Beverley McKeon and team https://www.mckeon.caltech.edu
+Destin from Smarter Every Day    / smartereveryday  
+Nicole Sharp from FYFD https://ve42.co/fyfd
+Pavol Dobryakov turbulent simulations: https://paveldogreat.github.io/WebGL-...
+
+I got into turbulent flow via chaos. The transition to turbulence sometimes involves a period doubling. Turbulence itself is chaotic motion, it is unpredictable and sensitively dependent on initial conditions. What surprised me is all the ways turbulent flow is useful to us. It is diffusive, meaning it causes mixing. This is useful in jet engines or rocket nozzles (which Destin studies) and is important to achieve in microfluidic devices, which are so small that turbulent flow is actually difficult to achieve. Turbulent flow can energize a boundary layer, which is important to maintain flow attachment over a wing, maintaining lift and delaying stall. Similarly a turbulent boundary layer over a golf ball reduces pressure drag allowing golf balls to fly further. This is the reason for the dimples on golf balls. Flow transitioning to turbulence in the wake of a bluff body can create periodic vortex shedding. This beautiful phenomenon can be seen in the von Kàrmàn vortex street in clouds viewed from space. Turbulence is everywhere, in the air currents in a room, in your aorta, in the breaths you exhale, in oil pipelines and water pipes, in the flow over cars and ships and planes. Animals have evolved for it (like dead fish swimming up stream) and we have engineered our environment, our planes and golf balls for it. Laminar flow may be nice to look at (which is why we use it in decorative fountains) but turbulent flow does the real lifting.
+
+
+
+
+Parallel Worlds Probably Exist. Here’s Why
+https://youtu.be/kTXTPe3wahc
+06.03.2020
+The most elegant interpretation of quantum mechanics is the universe is constantly splitting
+Special thanks to:
+Prof. Sean Carroll https://www.preposterousuniverse.com
+His book, a major source for this video is 'Something Deeply Hidden: Quantum Worlds and The Emergence of Spacetime'
+
+Code for solving the Schrödinger equation by Jonny Hyman available here: https://github.com/jonnyhyman/Quantum...
+
+I learned quantum mechanics the traditional 'Copenhagen Interpretation' way. We can use the Schrödinger equation to solve for and evolve wave functions. Then we invoke wave-particle duality, in essence things we detect as particles can behave as waves when they aren't interacting with anything. But when there is a measurement, the wave function collapses leaving us with a definite particle detection. If we repeat the experiment many times, we find the statistics of these results mirror the amplitude of the wave function squared. Hence the Born rule came into being, saying the wave function should be interpreted statistically, that our universe at the most fundamental scale is probabilistic rather than deterministic. This did not sit well with scientists like Einstein and Schrödinger who believed there must be more going on, perhaps 'hidden variables'.
+
+In the 1950's Hugh Everett proposed the Many Worlds interpretation of quantum mechanics. It is so logical in hindsight but with a bias towards the classical world, experiments and measurements to guide their thinking, it's understandable why the founders of quantum theory didn't come up with it. Rather than proposing different dynamics for measurement, Everett suggests that measurement is something that happens naturally in the course of quantum particles interacting with each other. The conclusion is inescapable. There is nothing special about measurement, it is just the observer becoming entangled with a wave function in a superposition. Since one observer can experience only their own branch, it appears as if the other possibilities have disappeared but in reality there is no reason why they could not still exist and just fail to interact with the other branches. This is caused by environmental decoherence.
+
+Schrodinger's cat animation by Ivy Tello
+Wave functions, double slit and entanglement animation by Jonny Hyman
+Filming of opening sequence by Casey Rentz
+
+
+
+
+
+This equation will change how you see the world (the logistic map)
+https://youtu.be/ovJcsL7vyrk
+29.01.2020
+The logistic map connects fluid convection, neuron firing, the Mandelbrot set and so much more.
+Animations, coding, interactives in this video by Jonny Hyman 🙌
+Try the code yourself: https://github.com/jonnyhyman/Chaos
+
+References:
+James Gleick, Chaos
+Steven Strogatz, Nonlinear Dynamics and Chaos
+
+May, R. Simple mathematical models with very complicated dynamics. Nature 261, 459–467 (1976). https://doi.org/10.1038/261459a0
+
+Robert Shaw, The Dripping Faucet as a Model Chaotic System
+https://archive.org/details/ShawRober...
+
+Crevier DW, Meister M. Synchronous period-doubling in flicker vision of salamander and man.
+J Neurophysiol. 1998 Apr;79(4):1869-78.
+
+Bing Jia, Huaguang Gu, Li Li, Xiaoyan Zhao. Dynamics of period-doubling bifurcation to chaos in the spontaneous neural firing patterns Cogn Neurodyn (2012) 6:89–106 DOI 10.1007/s11571-011-9184-7
+
+A Garfinkel, ML Spano, WL Ditto, JN Weiss. Controlling cardiac chaos
+Science  28 Aug 1992: Vol. 257, Issue 5074, pp. 1230-1235 DOI: 10.1126/science.1519060
+
+R. M. May, D. M. G. Wishart, J. Bray and R. L. Smith Chaos and the Dynamics of Biological Populations
+Source: Proceedings of the Royal Society of London. Series A, Mathematical and Physical Sciences, Vol. 413, No. 1844, Dynamical Chaos (Sep. 8, 1987), pp. 27-44
+
+Chialvo, D., Gilmour Jr, R. & Jalife, J. Low dimensional chaos in cardiac tissue. Nature 343, 653–657 (1990). https://doi.org/10.1038/343653a0
+
+Xujun Ye, Kenshi Sakai. A new modified resource budget model for nonlinear dynamics in citrus production. Chaos, Solitons and Fractals 87 (2016) 51–60
+
+Libchaber, A. & Laroche, C. & Fauve, Stephan. (1982). Period doubling cascade in mercury, a quantitative measurement. http://dx.doi.org/10.1051/jphyslet:01.... 43. 10.1051/jphyslet:01982004307021100. 
+
+Special thanks to Patreon Supporters:
+Alfred Wallace, Arjun Chakroborty, Bryan Baker, DALE HORNE, Donal Botkin, halyoav, James Knight, Jasper Xin, Joar Wandborg, Lee Redden, Lyvann Ferrusca, Michael Krugman, Pindex, Ron Neal, Sam Lutfi, Tige Thorman, Vincent
+
+
+
+
+
+
+Why New Years Resolutions Fail & How To Succeed
+https://youtu.be/Pm9CQn07OjU
+28.12.2019
+Common pitfalls of New Year's resolutions and how I plan to avoid them.
+
+
+
+
+How to Slow Aging (and even reverse it)
+https://youtu.be/QRt7LjqJ45k
+14.12.2019
+Scientists like Prof Sinclair have evidence of speeding up, slowing, and even reversing aging.
+What causes aging? According to Professor David Sinclair, it is a loss of information in our epigenome, the system of proteins like histones and chemical markers like methylation that turn on and off genes. Epigenetics allow different cell types to perform their specific functions - they are what differentiate a brain cell from a skin cell. Our DNA is constantly getting broken, by cosmic rays, UV radiation, free radicals, x-rays and regular cell division etc. When our cells repair that damage, the epigenome is not perfectly reset. And hence over time, noise accumulates in our epigenome. Our cells no longer perform their functions well. 
+
+To counter this decline, we can activate the body's own defenses against aging by stressing the body. Eat less, eat less protein, engage in intense exercise, experience uncomfortable cold. When the body senses existential threats it triggers longevity genes, which attempt to maintain the body to ensure its survival until good times return. This may be the evolutionary legacy of early bacteria, which established these two modes of living (repair and protect vs grow and reproduce). Scientists are uncovering ways to mimic stresses on the body without the discomfort of fasting. Molecules like NMN also trigger sirtuins to monitor and repair the epigenome. This may slow aging.
+
+Reversing aging requires an epigenetic reset, which may be possible using Yamanaka factors. These four factors can revert an adult cell into a pluripotent stem cell. Prof. Sinclair used three of the four factors to reverse aging in the retinal cells of old mice. He found they could see again after the treatment.
+
+
+
+
+
+Chaos: The Science of the Butterfly Effect
+https://youtu.be/fDek6cYijxI
+06.12.2019
+Chaos theory means deterministic systems can be unpredictable.
+Want to know more about chaos theory and non-linear dynamical systems? Check out: https://ve42.co/chaos-math
+
+Butterfly footage courtesy of Phil Torres and The Jungle Diaries: https://ve42.co/monarch
+Solar system, 3-body and printout animations by Jonny Hyman
+Some animations made with Universe Sandbox: https://universesandbox.com/
+Special thanks to Prof. Mason Porter at UCLA who I interviewed for this video.
+
+I have long wanted to make a video about chaos, ever since reading James Gleick's fantastic book, Chaos. I hope this video gives an idea of phase space - a picture of dynamical systems in which each point completely represents the state of the system. For a pendulum, phase space is only 2-dimensional and you can get orbits (in the case of an undamped pendulum) or an inward spiral (in the case of a pendulum with friction). For the Lorenz equations we need three dimensions to show the phase space. The attractor you find for these equations is said to be strange and chaotic because there is no loop, only infinite curves that never intersect. This explains why the motion is so unpredictable - two different initial conditions that are very close together can end up arbitrarily far apart.
+
+
+
+
+
+3 Perplexing Physics Problems
+https://youtu.be/K-Fc08X56R0
+20.11.2019
+Why does shaken soda explode? Does ice melt first in fresh or salt water?
+This video features experiments that have been shown to me by science teachers over the years. Does ice melt fast in salt water or fresh water was an experiment introduced to me at the Utah Science Teachers' conference. The ring of metal over a chain demo came from a teachers event in Florida. The idea shaking a carbonated drink increases pressure came from an email.
+
+Special thanks to Petr Lebedev for building the pressure gauge.
+
+Links to literature are below:
+Victims of the pop bottle, by Ted Willhoft. New Scientist, 21 August 1986 p.28
+
+Carbonation speculation
+The Physics Teacher 30, 173 (1992); https://doi.org/10.1119/1.2343501
+
+Agitation solution
+The Physics Teacher 30, 325 (1992); https://doi.org/10.1119/1.2343556
+
+
+
+
+Why Trees Are Out to Get You
+https://youtu.be/-PWMQR59M68
+25.10.2019  #teamtrees
+Want to help plant 20M trees by 2020? Go to https://teamtrees.org #teamtrees
+Huge thanks to all the YouTubers who organized this. My apologies for the repost.
+These videos are from 2012 so my interest in trees goes back a long ways. I think these videos discuss two of the most interesting and amazing facts about our leafy friends: they are made mostly of CO2 (which comes from us breathing out amongst other sources) and they can transport water up a tube higher than any we can currently manufacture. So trees are out to get you. But we do much worse to them so we owe it to them to plant some more. 20 mil is a good start.
+
+
+
+
+Engineering with Origami
+https://youtu.be/ThwuT3_AG6w
+04.10.2019
+Origami is inspiring a plethora of new engineering designs.
+Huge thanks to:
+Dr. Robert Lang https://langorigami.com
+Prof. Larry Howell https://www.compliantmechanisms.byu.edu/
+
+On first glance it's surprising that origami -- a centuries old art of folding paper to achieve particular aesthetics -- is applicable to engineering. But upon closer consideration there are a lot of reasons methods developed for paper folding are also applicable to engineering: origami allows you to take a flat sheet of material and convert it to almost any shape only by folding. Plus for large flat structures, origami provides a way of shrinking dimensions while ensuring simply deployment - this is particularly useful for solar arrays in space applications. Furthermore, motions designed to take advantage of the flexibility of paper can also be used to form compliant mechanisms for engineering like the kaleidocycle. Since the principles of origami are scalable, mechanisms can also be dramatically miniaturized.
+
+Some of the work shown is based upon work supported by the National Science Foundation and the Air Force Office of Scientific Research under Grant No. EFRI-ODISSEI-1240417. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

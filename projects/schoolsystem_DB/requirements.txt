@@ -1,0 +1,4 @@
+flask
+flask-cors
+openai>=1.0
+pymysql

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topic Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <textarea id="interest-input" placeholder="Beschreibe deine Interessen..."></textarea>
+    <button id="analyze-btn">Analysieren</button>
+    <table id="result-table" class="hidden">
+      <thead>
+        <tr>
+          <th>TopicID</th>
+          <th>Topic</th>
+          <th>Description</th>
+          <th>URL</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
