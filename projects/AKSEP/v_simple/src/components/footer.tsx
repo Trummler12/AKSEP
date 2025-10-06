@@ -1,6 +1,5 @@
 import { Separator } from './ui/separator';
 import { Mail, MessageCircle, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
-import { Button } from './ui/button';
 import aksepLogo from 'figma:asset/656b674fc169e7dedbf127dfaf9ab8d51d976120.png';
 
 const Footer = () => {
@@ -79,26 +78,18 @@ const Footer = () => {
           {/* Participation */}
           <div>
             <h3 className="mb-4">Aktiv werden</h3>
-            <div className="space-y-3 mb-6">
+            <ul className="space-y-2">
               {participationLinks.map((link) => (
-                <div key={link.href}>
-                  <Button variant="ghost" size="sm" className="justify-start p-0 h-auto" asChild>
-                    <a href={link.href} className="text-sm text-muted-foreground hover:text-primary">
-                      {link.label}
-                    </a>
-                  </Button>
-                </div>
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                </li>
               ))}
-            </div>
-            
-            <div className="space-y-2">
-              <Button size="sm" className="w-full" asChild>
-                <a href="/mitglied-werden">Mitglied werden</a>
-              </Button>
-              <Button variant="outline" size="sm" className="w-full" asChild>
-                <a href="/unterstuetzen">Jetzt unterstützen</a>
-              </Button>
-            </div>
+            </ul>
           </div>
 
           {/* Legal and Links */}
