@@ -1,0 +1,12 @@
+# Node / Vite build output
+node_modules/
+dist/
+
+# Environment files
+.env
+
+# Package manager lockfiles managed elsewhere
+package-lock.json
+
+# Legacy build artifacts
+build/
