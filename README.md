@@ -1,16 +1,29 @@
-# AKSEP
-A Repository dedicated to our upcoming political Party DIE AKSEP
+# Politische Partei Startseite
 
-## Development Server
+Dieses Repository enthält die Vite-basierte Umsetzung der AKSEP-Webseite.
+Das ursprüngliche Figma-Design ist verfügbar unter
+<https://www.figma.com/design/dsXQEY2UzZVied0ZT0QVGg/Politische-Partei-Startseite>.
 
-Run the AKSEP preview server from the repository root:
+## Entwicklung starten
 
 ```bash
-npm run AKSEP
+npm install
+npm run dev
 ```
 
-The command installs dependencies and starts Eleventy from the `projects/AKSEP` directory. The `src` folder merely holds the deployable files that Eleventy processes. You can view the site at `http://localhost:8080` (default). The generated files appear directly in `projects/AKSEP`.
+Für einen Produktionsbuild:
 
-### Ausblick
+```bash
+npm run build
+```
 
-In future versions, additional scripts will allow starting previews for multiple projects at once, including a command `npm run all` to launch all preview servers.
+## Projektstruktur
+
+- `src/` – React/TypeScript-Quellcode und Assets.
+- `Schoolsystem/` – Ausgelagertes Unterrichtsressourcen-Projekt (wird in ein eigenes Repo migriert).
+- `reference/` – Historische Web-Prototypen (`v1_json_not_good`, `v2_too_complicated`) und alte Root-Dokumente.
+
+## Weitere Hinweise
+
+- Entwicklungsrichtlinien und Setup-Tipps stehen in `DEVELOPER.md`.
+- Farb- und Designwerte befinden sich in `Values.txt` (wird mit dem Schoolsystem geteilt).
