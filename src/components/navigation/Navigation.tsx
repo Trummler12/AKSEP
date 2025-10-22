@@ -21,6 +21,8 @@ import type { NavigationProps } from '../../types/navigation';
 import { NavigationItem } from './NavigationItem';
 import { OverflowNavigation } from './OverflowNavigation';
 
+// import '../../styles/globals.css'; // vorerst auskommentiert auf Grund von Konflikten mit Tailwind
+
 const Navigation = ({ currentPath = '/' }: NavigationProps) => {
   const primaryNavItems = useMemo(() => getPrimaryNavItems(), []);
   
