@@ -1,26 +1,10 @@
 import { Separator } from './ui/separator';
-import { Mail, MessageCircle, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Icon } from './ui/icon';
+import { footerConfig, contactInfo, socialLinks, participationLinks, legalLinks } from '../data/footer';
 import aksepLogo from 'figma:asset/656b674fc169e7dedbf127dfaf9ab8d51d976120.png';
 
 const Footer = () => {
-  const participationLinks = [
-    { label: 'Mitglied werden', href: '/mitglied-werden' },
-    { label: 'Mitmachen', href: '/mitmachen' },
-    { label: 'Unterstützen', href: '/unterstuetzen' },
-  ];
-
-  const legalLinks = [
-    { label: 'Impressum', href: '/impressum' },
-    { label: 'Datenschutz', href: '/datenschutz' },
-    { label: 'Finanzen & Transparenz', href: '/finanzen-transparenz' },
-  ];
-
-  const socialLinks = [
-    { icon: <MessageCircle className="h-4 w-4" />, href: 'https://discord.gg/nE7TKtBQnr', label: 'Discord' },
-    { icon: <Facebook className="h-4 w-4" />, href: 'https://facebook.com/dieaksep', label: 'Facebook' },
-    { icon: <Twitter className="h-4 w-4" />, href: 'https://twitter.com/dieaksep', label: 'Twitter' },
-    { icon: <Youtube className="h-4 w-4" />, href: 'https://youtube.com/dieaksep', label: 'YouTube' },
-  ];
+  // All links and configuration are now imported from external data
 
   return (
     <footer className="bg-card border-t border-border">
@@ -41,18 +25,21 @@ const Footer = () => {
             
             {/* Contact */}
             <div className="space-y-2 text-sm mb-6">
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:kontakt@dieaksep.de" className="hover:text-primary transition-colors">
-                  kontakt@dieaksep.de
-                </a>
-              </div>
-              <div className="flex items-center space-x-2 text-muted-foreground">
-                <MessageCircle className="h-4 w-4" />
-                <a href="https://discord.gg/nE7TKtBQnr" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  Discord-Server
-                </a>
-              </div>
+              {contactInfo.map((contact) => (
+                <div key={contact.href} className="flex items-center space-x-2 text-muted-foreground">
+                  <Icon name={contact.iconName} />
+                  <a 
+                    href={contact.href} 
+                    className="hover:text-primary transition-colors"
+                    {...(contact.href.startsWith('https://') && {
+                      target: "_blank",
+                      rel: "noopener noreferrer"
+                    })}
+                  >
+                    {contact.display}
+                  </a>
+                </div>
+              ))}
             </div>
 
             {/* Social Media */}
@@ -68,7 +55,7 @@ const Footer = () => {
                     className="text-muted-foreground hover:text-primary transition-colors"
                     aria-label={social.label}
                   >
-                    {social.icon}
+                    <Icon name={social.iconName} />
                   </a>
                 ))}
               </div>
@@ -115,7 +102,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2024 DIE AKSEP. Alle Rechte vorbehalten.
+            {footerConfig.copyright}
           </div>
           <div className="text-sm text-muted-foreground text-center md:text-right">
             AKSEPtanz · Für Transparenz, Evidenz und Bürgernähe

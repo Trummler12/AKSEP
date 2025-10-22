@@ -1,56 +1,9 @@
 import HeroSection from '../components/hero-section';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { ArrowRight, Calendar, FileText, Globe, Heart, Lightbulb, Users } from 'lucide-react';
-
-const newsItems = [
-  {
-    title: 'Bildungsreform: Grundreformierung des Bildungssystems',
-    description: 'Moderne, digitale und international vergleichbare Bildungsangebote schaffen',
-    date: '15. März 2024',
-    href: '/programm/bildung',
-  },
-  {
-    title: 'Discord-Server: Bürgernähe digital leben',
-    description: 'Plattform für Austausch, Ressourcen-Sharing und demokratische Teilhabe',
-    date: '8. März 2024',
-    href: 'https://discord.gg/nE7TKtBQnr',
-  },
-  {
-    title: 'AKSEPtanz: Gleiche Chancen für alle',
-    description: 'Unser Ideal einer Gesellschaft ohne systemische Benachteiligung',
-    date: '1. März 2024',
-    href: '/praeambel',
-  },
-];
-
-const programHighlights = [
-  {
-    icon: <Lightbulb className="h-6 w-6" />,
-    title: 'Bildungsreform',
-    description:
-      'Grundreformierung des Bildungssystems mit digitalen, international vergleichbaren Angeboten',
-    href: '/programm/bildung',
-  },
-  {
-    icon: <Globe className="h-6 w-6" />,
-    title: 'Klimapolitik',
-    description: 'Klimatologisch und soziologisch - für Umwelt und gute Gesprächskultur',
-    href: '/programm/klimaschutz',
-  },
-  {
-    icon: <Heart className="h-6 w-6" />,
-    title: 'Sozialpolitik',
-    description: 'Effiziente, barrierefreie Unterstützung ohne bürokratische Hürden',
-    href: '/programm/soziales',
-  },
-  {
-    icon: <Users className="h-6 w-6" />,
-    title: 'Europa & Migration',
-    description: 'Grenzübergreifende Zusammenarbeit und menschenwürdige Migrationspolitik',
-    href: '/programm/europa-migration',
-  },
-];
+import { Icon } from '../components/ui/icon';
+import { ArrowRight, Calendar, FileText, Users, Heart, Lightbulb } from 'lucide-react';
+import { newsItems, programHighlights, startPageContent } from '../data/startpage';
 
 const StartPageContent = () => {
   return (
@@ -61,12 +14,11 @@ const StartPageContent = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <div className="mb-12 text-center">
-                <h2 className="mb-6 text-3xl lg:text-4xl">Was bedeutet AKSEP?</h2>
+                <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.aksepDescription.title}</h2>
                 <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                  <strong>Aktivistisch · Klimafreundlich · Sozialdemokratisch · Europa-Partei</strong>
+                  <strong>{startPageContent.aksepDescription.subtitle}</strong>
                   <br />
-                  Wir vereinen formelle Politik mit informeller Aufklärungsarbeit und setzen auf evidenzbasierte Entscheidungen
-                  mit Expertenwissen statt auf reine Ideologie.
+                  {startPageContent.aksepDescription.description}
                 </p>
               </div>
 
@@ -129,7 +81,7 @@ const StartPageContent = () => {
                         </Button>
                         <Button variant="ghost" size="sm" asChild>
                           <a
-                            href="https://discord.gg/nE7TKtBQnr"
+                            href="https://discord.gg/5nBmmbqSPH"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center space-x-2"
@@ -150,18 +102,20 @@ const StartPageContent = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-6 text-3xl lg:text-4xl">Programm-Highlights</h2>
+              <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.programSection.title}</h2>
               <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-                Unsere Arbeitsgruppen entwickeln evidenzbasierte Lösungen für die wichtigsten gesellschaftlichen Herausforderungen.
+                {startPageContent.programSection.description}
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-              {programHighlights.map((item, index) => (
-                <Card key={index} className="cursor-pointer transition-shadow hover:shadow-lg">
+              {programHighlights.map((item) => (
+                <Card key={item.href} className="cursor-pointer transition-shadow hover:shadow-lg">
                   <CardHeader>
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-                      <div className="text-primary">{item.icon}</div>
+                      <div className="text-primary">
+                        <Icon name={item.iconName} className="h-6 w-6" />
+                      </div>
                     </div>
                     <CardTitle className="text-lg">{item.title}</CardTitle>
                   </CardHeader>
@@ -192,13 +146,13 @@ const StartPageContent = () => {
         <section className="bg-card py-20">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
-              <h2 className="mb-6 text-3xl lg:text-4xl">Aktuelles</h2>
-              <p className="text-lg text-muted-foreground">Die neuesten Entwicklungen und Positionen von DIE AKSEP</p>
+              <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.newsSection.title}</h2>
+              <p className="text-lg text-muted-foreground">{startPageContent.newsSection.description}</p>
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {newsItems.map((item, index) => (
-                <Card key={index} className="transition-shadow hover:shadow-lg">
+              {newsItems.map((item) => (
+                <Card key={item.href} className="transition-shadow hover:shadow-lg">
                   <CardHeader>
                     <div className="mb-2 flex items-center space-x-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
@@ -233,10 +187,9 @@ const StartPageContent = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl text-center">
-              <h2 className="mb-6 text-3xl lg:text-4xl">Gemeinsam für AKSEPtanz</h2>
+              <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.participationSection.title}</h2>
               <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-                Unterstützen Sie uns dabei, eine Gesellschaft zu schaffen, in der jede Person die gleichen Chancen hat.
-                Aktivistisch, klimafreundlich, sozialdemokratisch - für ein vereintes Europa.
+                {startPageContent.participationSection.description}
               </p>
 
               <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
