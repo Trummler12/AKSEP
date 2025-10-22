@@ -1,4 +1,4 @@
-# Politische Partei Startseite
+# AKSEP Webseite
 
 Dieses Repository enthält die Vite-basierte Umsetzung der AKSEP-Webseite.
 Das ursprüngliche Figma-Design ist verfügbar unter

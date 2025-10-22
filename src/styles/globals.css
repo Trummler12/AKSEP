@@ -1,86 +1,80 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  /* Base Design System Variables */
   --font-size: 16px;
-  /* AKSEP Dark Mode Colors */
-  --background: #322A45;
-  --foreground: #ffffff;
-  --card: #423A51;
-  --card-foreground: #ffffff;
-  --popover: #423A51;
-  --popover-foreground: #ffffff;
-  --primary: #7E65B9;
-  --primary-foreground: #ffffff;
-  --secondary: #5A8FA8;
-  --secondary-foreground: #ffffff;
-  --muted: #423A51;
-  --muted-foreground: #ffffff;
-  --accent: #3EB694;
-  --accent-foreground: #ffffff;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: #5A8FA8;
-  --input: #423A51;
-  --input-background: #423A51;
-  --switch-background: #5A8FA8;
   --font-weight-medium: 500;
   --font-weight-normal: 400;
-  --ring: #7E65B9;
-  --chart-1: #7E65B9;
-  --chart-2: #5A8FA8;
-  --chart-3: #3EB694;
-  --chart-4: #322A45;
-  --chart-5: #423A51;
   --radius: 0.625rem;
-  --sidebar: #322A45;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #7E65B9;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #423A51;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #5A8FA8;
-  --sidebar-ring: #7E65B9;
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  
+  /* AKSEP Color Palette - Named Colors */
+  --true-lavender: #7E65B9;
+  --horizon: #5A8FA8;
+  --mint: #3EB694;
+  --bg-darker: #322A45;
+  --bg-dark: #423A51;
+  --white: #ffffff;
+  --destructive: #d4183d;
+  
+  /* Additional colors for potential bright theme */
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #495057;
 }
 
+/* AKSEP Dark Theme - Current Default */
+:root,
 .dark {
-  /* Keep same values as root for consistent dark mode */
-  --background: #322A45;
-  --foreground: #ffffff;
-  --card: #423A51;
-  --card-foreground: #ffffff;
-  --popover: #423A51;
-  --popover-foreground: #ffffff;
-  --primary: #7E65B9;
-  --primary-foreground: #ffffff;
-  --secondary: #5A8FA8;
-  --secondary-foreground: #ffffff;
-  --muted: #423A51;
-  --muted-foreground: #ffffff;
-  --accent: #3EB694;
-  --accent-foreground: #ffffff;
-  --destructive: #d4183d;
-  --destructive-foreground: #ffffff;
-  --border: #5A8FA8;
-  --input: #423A51;
-  --ring: #7E65B9;
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --chart-1: #7E65B9;
-  --chart-2: #5A8FA8;
-  --chart-3: #3EB694;
-  --chart-4: #322A45;
-  --chart-5: #423A51;
-  --sidebar: #322A45;
-  --sidebar-foreground: #ffffff;
-  --sidebar-primary: #7E65B9;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #423A51;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #5A8FA8;
-  --sidebar-ring: #7E65B9;
+  /* Semantic Color Variables - Dark Theme */
+  --background: var(--bg-darker);
+  --foreground: var(--white);
+  --card: var(--bg-dark);
+  --card-foreground: var(--white);
+  --popover: var(--bg-dark);
+  --popover-foreground: var(--white);
+  --primary: var(--true-lavender);
+  --primary-foreground: var(--white);
+  --secondary: var(--horizon);
+  --secondary-foreground: var(--white);
+  --muted: var(--bg-dark);
+  --muted-foreground: var(--white);
+  --accent: var(--mint);
+  --accent-foreground: var(--white);
+  --destructive-foreground: var(--white);
+  --border: var(--horizon);
+  --input: var(--bg-dark);
+  --input-background: var(--bg-dark);
+  --switch-background: var(--horizon);
+  --ring: var(--true-lavender);
+  --chart-1: var(--true-lavender);
+  --chart-2: var(--horizon);
+  --chart-3: var(--mint);
+  --chart-4: var(--bg-darker);
+  --chart-5: var(--bg-dark);
+  --sidebar: var(--bg-darker);
+  --sidebar-foreground: var(--white);
+  --sidebar-primary: var(--true-lavender);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--bg-dark);
+  --sidebar-accent-foreground: var(--white);
+  --sidebar-border: var(--horizon);
+  --sidebar-ring: var(--true-lavender);
 }
+
+/* AKSEP Bright Theme - Future Implementation */
+/* .bright { ... } */
 
 @theme inline {
+  /* Theme Integration Layer - Maps semantic variables to Tailwind */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -107,10 +101,14 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  
+  /* Radius Variations */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Sidebar Theme Variables */
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
