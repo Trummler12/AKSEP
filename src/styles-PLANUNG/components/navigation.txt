@@ -32,93 +32,93 @@ nav-header (DONE) | "sticky top-0 z-50 border-b border-border bg-card" | Hauptna
 
 === FILE: src/components/navigation/Navigation.tsx ===
 
-    <header className="nav-header">
-      <div className="w-full px-6 sm:px-8">
-        <div className="flex h-16 items-center gap-4">
-                <a className="nav-logo-link">
-                  <img className="h-10 w-10" />
-                  <span className="nav-logo-text">
-          <nav className="nav-group-items">
-          <div className="ml-4 flex items-center gap-3">
-            <div className="nav-actions-desktop">
-              <Button className="hero-primary-button">
-            <button className="nav-menu-button">
-              <X className="h-6 w-6" />
-              <Menu className="h-6 w-6" />
-          <div className="border-t border-border bg-card">
-            <nav className="max-h-[70vh] overflow-y-auto py-4">
-              <div className="space-y-2">
-                    <div className="nav-mobile-item">
-                          <button className="nav-mobile-button">
-                            <ChevronDown className={cn(
-                                'h-4 w-4 transition-transform',
-                                isOpen ? 'rotate-180' : ''
-                              )}>
+<header className="nav-header">
+  <div className="w-full px-6 sm:px-8">
+    <div className="flex h-16 items-center gap-4">
+            <a className="nav-logo-link">
+              <img className="h-10 w-10" />
+              <span className="nav-logo-text">
+      <nav className="nav-group-items">
+      <div className="ml-4 flex items-center gap-3">
+        <div className="nav-actions-desktop">
+          <Button className="hero-primary-button">
+        <button className="nav-menu-button">
+          <X className="h-6 w-6" />
+          <Menu className="h-6 w-6" />
+      <div className="border-t border-border bg-card">
+        <nav className="max-h-[70vh] overflow-y-auto py-4">
+          <div className="space-y-2">
+                <div className="nav-mobile-item">
+                      <button className="nav-mobile-button">
+                        <ChevronDown className={cn(
+                            'h-4 w-4 transition-transform',
+                            isOpen ? 'rotate-180' : ''
+                          )}>
+                      <div className={cn(
+                          'space-y-2 pt-3',
+                          isOpen ? 'block' : 'hidden'
+                        )}>
                           <div className={cn(
-                              'space-y-2 pt-3',
-                              isOpen ? 'block' : 'hidden'
+                              'rounded-md bg-muted/10 px-3 py-2',
+                              group.showTopBorder && 'border-t border-border/60 pt-3',
+                              group.showBottomBorder && 'border-b border-border/60 pb-3'
                             )}>
-                              <div className={cn(
-                                  'rounded-md bg-muted/10 px-3 py-2',
-                                  group.showTopBorder && 'border-t border-border/60 pt-3',
-                                  group.showBottomBorder && 'border-b border-border/60 pb-3'
-                                )}>
-                                  <p className="nav-group-label">
-                                <div className="mt-2 space-y-1">
-                                    <a className="nav-child-link">
-                          <a className="nav-direct-link">
+                              <p className="nav-group-label">
+                            <div className="mt-2 space-y-1">
+                                <a className="nav-child-link">
+                      <a className="nav-direct-link">
 
 === FILE: src/components/navigation/NavigationItem.tsx ===
 
-    <div className="nav-item-wrapper">
-      <a className={cn(
-          'flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-sm font-medium transition-colors',
-          isActive
-            ? 'bg-muted/40 text-primary'
-            : 'text-foreground hover:bg-muted/30 hover:text-primary'
+<div className="nav-item-wrapper">
+  <a className={cn(
+      'flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-sm font-medium transition-colors',
+      isActive
+        ? 'bg-muted/40 text-primary'
+        : 'text-foreground hover:bg-muted/30 hover:text-primary'
+    )}>
+    <ChevronDown className="h-4 w-4" />
+  <div className="nav-dropdown-spacer" />
+    <div className="nav-dropdown-panel">
+      <div className={cn(
+          'max-h-96 overflow-y-auto pr-2',
+          item.key === 'programm' ? 'pr-2' : ''
         )}>
-        <ChevronDown className="h-4 w-4" />
-      <div className="nav-dropdown-spacer" />
-        <div className="nav-dropdown-panel">
-          <div className={cn(
-              'max-h-96 overflow-y-auto pr-2',
-              item.key === 'programm' ? 'pr-2' : ''
+            <div className={cn(
+              'px-3',
+              group.showTopBorder && 'mt-2 border-t border-border/60 pt-3',
+              group.showBottomBorder && 'mb-2 border-b border-border/60 pb-3',
+              !group.showTopBorder && groupIndex === 0 && 'pt-1'
             )}>
-                <div className={cn(
-                  'px-3',
-                  group.showTopBorder && 'mt-2 border-t border-border/60 pt-3',
-                  group.showBottomBorder && 'mb-2 border-b border-border/60 pb-3',
-                  !group.showTopBorder && groupIndex === 0 && 'pt-1'
-                )}>
-                  <p className="nav-dropdown-group-label">
-                <div className="mt-1 space-y-1">
-                    <a className="nav-dropdown-link">
+              <p className="nav-dropdown-group-label">
+            <div className="mt-1 space-y-1">
+                <a className="nav-dropdown-link">
 
 === FILE: src/components/navigation/OverflowNavigation.tsx ===
 
-    <div className="relative flex-shrink-0">
-          className="nav-overflow-trigger">
-          <MoreHorizontal className="h-4 w-4" />
-          className="nav-overflow-content">
-              <div className="py-1">
-                    <div className="space-y-2">
-                      className="nav-overflow-button">
-                      <ChevronDown className={cn(
-                          'h-4 w-4 transition-transform',
-                          isOpen ? 'rotate-180' : ''
-                        )}>
+<div className="relative flex-shrink-0">
+      className="nav-overflow-trigger">
+      <MoreHorizontal className="h-4 w-4" />
+      className="nav-overflow-content">
+          <div className="py-1">
+                <div className="space-y-2">
+                  className="nav-overflow-button">
+                  <ChevronDown className={cn(
+                      'h-4 w-4 transition-transform',
+                      isOpen ? 'rotate-180' : ''
+                    )}>
+                  <div className={cn(
+                    'space-y-1 rounded-md bg-muted/20 px-2 py-2',
+                    isOpen ? 'block' : 'hidden'
+                  )}>
                       <div className={cn(
-                        'space-y-1 rounded-md bg-muted/20 px-2 py-2',
-                        isOpen ? 'block' : 'hidden'
+                        'space-y-1 px-1',
+                        group.showTopBorder && 'pt-2 border-t border-border/60',
+                        group.showBottomBorder && 'pb-2 border-b border-border/60'
                       )}>
-                          <div className={cn(
-                            'space-y-1 px-1',
-                            group.showTopBorder && 'pt-2 border-t border-border/60',
-                            group.showBottomBorder && 'pb-2 border-b border-border/60'
-                          )}>
-                            <p className="nav-overflow-group-label">
-                              className="whitespace-normal leading-snug">
-                              <a className="w-full">
-                  <DropdownMenuItem className="leading-snug">
-                    <a className="w-full">
+                        <p className="nav-overflow-group-label">
+                          className="whitespace-normal leading-snug">
+                          <a className="w-full">
+              <DropdownMenuItem className="leading-snug">
+                <a className="w-full">
 
