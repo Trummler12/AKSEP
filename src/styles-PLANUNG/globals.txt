@@ -54,29 +54,6 @@
   --accent-20: rgba(62, 182, 148, 0.2);
 }
 
-.dark {
-  /* Dark theme inherits the same values for now */
-  --background: #322a45;
-  --foreground: #fff;
-  --card: #423a51;
-  --card-foreground: #fff;
-  --popover: #423a51;
-  --popover-foreground: #fff;
-  --primary: #7e65b9;
-  --primary-foreground: #fff;
-  --secondary: #5a8fa8;
-  --secondary-foreground: #fff;
-  --muted: #423a51;
-  --muted-foreground: #fff;
-  --accent: #3eb694;
-  --accent-foreground: #fff;
-  --destructive: #d4183d;
-  --destructive-foreground: #fff;
-  --border: #5a8fa8;
-  --input: #423a51;
-  --ring: #7e65b9;
-}
-
 /* =============================================== */
 /* GLOBAL RESET & BASE STYLES */
 /* =============================================== */

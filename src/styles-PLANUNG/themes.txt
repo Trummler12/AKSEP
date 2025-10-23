@@ -27,16 +27,6 @@
   --ring: #7e65b9;
 }
 
-/* Alpha Color Variants - For transparency effects */
-:root {
-  --primary-5: rgba(126, 101, 185, 0.05);
-  --primary-20: rgba(126, 101, 185, 0.2);
-  --primary-90: rgba(126, 101, 185, 0.9);
-  --secondary-20: rgba(90, 143, 168, 0.2);
-  --accent-5: rgba(62, 182, 148, 0.05);
-  --accent-20: rgba(62, 182, 148, 0.2);
-}
-
 /* =============================================== */
 /* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
 /* =============================================== */
