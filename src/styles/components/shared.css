@@ -1,0 +1,124 @@
+/**
+ * AKSEP Shared Component Styles
+ * Reusable components like buttons, logos, icons
+ */
+@import '../themes.css';
+
+/* =============================================== */
+/* APP LEVEL */
+/* =============================================== */
+
+.app-shell {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================== */
+/* SHARED COMPONENTS */
+/* =============================================== */
+
+/* AKSEP Logo Component - Reusable */
+.aksep-logo {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.aksep-logo-large {
+  height: 4rem;
+  width: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .aksep-logo-large {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+/* Primary Button Component */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-90);
+}
+
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+  outline-offset: 2px;
+}
+
+/* Secondary Button Component */
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+  opacity: 0.9;
+}
+
+/* Card Component */
+.card-base {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Icon Containers */
+.icon-container-primary {
+  background-color: var(--primary-20);
+  border-radius: 50%;
+  padding: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.icon-container-secondary {
+  background-color: var(--secondary-20);
+  border-radius: 50%;
+  padding: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary);
+}
+
+.icon-container-accent {
+  background-color: var(--accent-20);
+  border-radius: 50%;
+  padding: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}

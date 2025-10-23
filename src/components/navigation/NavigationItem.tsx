@@ -3,6 +3,9 @@ import { cn } from '../ui/utils';
 import type { NavItem } from '../../types/navigation';
 import { isPathActive } from '../../utils/navigation';
 
+// Import our custom styles
+import '../../styles/components/navigation.css';
+
 interface NavigationItemProps {
   item: NavItem;
   currentPath: string;
@@ -33,7 +36,7 @@ export const NavigationItem = ({
   return (
     <div
       ref={itemRef}
-      className="group relative flex h-full items-center"
+      className="nav-item-wrapper"
       hidden={isOverflow}
       onMouseEnter={() => onMouseEnter(item.key, hasGroups)}
       onMouseLeave={() => onMouseLeave(item.key, hasGroups)}
@@ -51,11 +54,11 @@ export const NavigationItem = ({
         {hasGroups && <ChevronDown className="h-4 w-4" />}
       </a>
       
-      {hasGroups && <div aria-hidden className="absolute left-0 top-full h-2 w-full" />}
+      {hasGroups && <div aria-hidden className="nav-dropdown-spacer" />}
       
       {hasGroups && activeDropdown === item.key && (
         <div
-          className="absolute left-0 top-full z-50 mt-3 w-fit max-w-[13rem] rounded-md border border-border bg-card py-3 shadow-lg"
+          className="nav-dropdown-panel"
           style={{ width: 'max-content', maxWidth: '13rem' }}
         >
           <div
@@ -75,7 +78,7 @@ export const NavigationItem = ({
                 )}
               >
                 {group.title && (
-                  <p className="px-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  <p className="nav-dropdown-group-label">
                     {group.title}
                   </p>
                 )}
@@ -84,7 +87,7 @@ export const NavigationItem = ({
                     <a
                       key={child.href}
                       href={child.href}
-                      className="block rounded-md px-2 py-2 text-sm leading-snug text-foreground transition-colors hover:bg-muted hover:text-primary"
+                      className="nav-dropdown-link"
                     >
                       {child.label}
                     </a>

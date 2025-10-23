@@ -5,6 +5,9 @@ import { Icon } from '../components/ui/icon';
 import { ArrowRight, Calendar, FileText, Users, Heart, Lightbulb } from 'lucide-react';
 import { newsItems, programHighlights, startPageContent } from '../data/startpage';
 
+// Import homepage-specific styles
+import '../styles/pages/homepage.css';
+
 const StartPageContent = () => {
   return (
     <>

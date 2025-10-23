@@ -8,6 +8,9 @@ import {
 import { cn } from '../ui/utils';
 import type { NavItem } from '../../types/navigation';
 
+// Import our custom styles
+import '../../styles/components/navigation.css';
+
 interface OverflowNavigationProps {
   overflowItems: NavItem[];
   openOverflowSections: string[];
@@ -32,13 +35,13 @@ export const OverflowNavigation = ({
       <DropdownMenu>
         <DropdownMenuTrigger
           ref={overflowTriggerRef}
-          className="inline-flex h-10 items-center justify-center rounded-md px-2 text-sm font-medium transition-colors hover:bg-muted/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          className="nav-overflow-trigger"
         >
           <MoreHorizontal className="h-4 w-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
-          className="max-h-96 w-fit max-w-[13rem] overflow-y-auto p-3"
+          className="nav-overflow-content"
           style={{ width: 'max-content', maxWidth: '13rem' }}
         >
           {overflowItems.map((item) => {
@@ -52,7 +55,7 @@ export const OverflowNavigation = ({
                     <button
                       type="button"
                       onClick={() => onToggleOverflowSection(item.key)}
-                      className="flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+                      className="nav-overflow-button"
                     >
                       <span>{item.label}</span>
                       <ChevronDown
@@ -78,7 +81,7 @@ export const OverflowNavigation = ({
                           )}
                         >
                           {group.title && (
-                            <p className="px-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                            <p className="nav-overflow-group-label">
                               {group.title}
                             </p>
                           )}

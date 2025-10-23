@@ -8,7 +8,7 @@ import { ChevronDown, Menu, MoreHorizontal, X } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip';
 import { cn } from '../ui/utils';
-import aksepLogo from 'figma:asset/656b674fc169e7dedbf127dfaf9ab8d51d976120.png';
+import aksepLogo from 'figma:asset/Logo_AKSEP.png';
 
 // Import our refactored data and hooks
 import { navigationItems, getPrimaryNavItems } from '../../data/navigation';
@@ -21,7 +21,8 @@ import type { NavigationProps } from '../../types/navigation';
 import { NavigationItem } from './NavigationItem';
 import { OverflowNavigation } from './OverflowNavigation';
 
-// import '../../styles/globals.css'; // vorerst auskommentiert auf Grund von Konflikten mit Tailwind
+// Import our custom styles
+import '../../styles/components/navigation.css';
 
 const Navigation = ({ currentPath = '/' }: NavigationProps) => {
   const primaryNavItems = useMemo(() => getPrimaryNavItems(), []);
@@ -85,7 +86,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-card">
+    <header className="nav-header">
       <div className="w-full px-6 sm:px-8">
         <div className="flex h-16 items-center gap-4">
           <TooltipProvider>
@@ -93,11 +94,11 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
               <TooltipTrigger asChild>
                 <a
                   href="/"
-                  className="mr-8 flex flex-shrink-0 items-center space-x-3 transition-opacity hover:opacity-80"
+                  className="nav-logo-link"
                   aria-label="Zur Startseite"
                 >
                   <img src={aksepLogo} alt="DIE AKSEP Logo" className="h-10 w-10" />
-                  <span className="text-xl font-semibold whitespace-nowrap">DIE AKSEP</span>
+                  <span className="nav-logo-text">DIE AKSEP</span>
                 </a>
               </TooltipTrigger>
               <TooltipContent>
@@ -108,7 +109,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
 
           <nav
             ref={navContainerRef}
-            className="flex min-w-0 max-w-full flex-1 items-stretch gap-1 overflow-visible md:gap-2 lg:gap-3"
+            className="nav-group-items"
           >
             {primaryNavItems.map((item) => {
               const isOverflow = overflowSet.has(item.key);
@@ -140,17 +141,17 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
           </nav>
 
           <div className="ml-4 flex items-center gap-3">
-            <div className="hidden items-center space-x-3 2xl:flex">
+            <div className="nav-actions-desktop">
               <Button variant="outline" size="sm" asChild>
                 <a href="/mitglied-werden">Mitglied werden</a>
               </Button>
-              <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
+              <Button size="sm" className="hero-primary-button" asChild>
                 <a href="/unterstuetzen">Unterstützen</a>
               </Button>
             </div>
 
             <button
-              className="flex h-10 w-10 items-center justify-center rounded-md border border-transparent transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="nav-menu-button"
               onClick={toggleMenu}
               aria-label="Navigation umschalten"
             >
@@ -168,13 +169,13 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                   const hasGroups = Boolean(item.groups?.length);
 
                   return (
-                    <div key={item.key} className="border-b border-border/60 px-4 py-3 last:border-b-0">
+                    <div key={item.key} className="nav-mobile-item">
                       {hasGroups ? (
                         <>
                           <button
                             type="button"
                             onClick={() => toggleMobileSection(item.key)}
-                            className="flex w-full items-center justify-between text-left text-base font-medium text-foreground"
+                            className="nav-mobile-button"
                           >
                             <span>{item.label}</span>
                             <ChevronDown
@@ -200,7 +201,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                                 )}
                               >
                                 {group.title && (
-                                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                                  <p className="nav-group-label">
                                     {group.title}
                                   </p>
                                 )}
@@ -209,7 +210,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                                     <a
                                       key={child.href}
                                       href={child.href}
-                                      className="block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-primary"
+                                      className="nav-child-link"
                                       onClick={() => setMenuOpen(false)}
                                     >
                                       {child.label}
@@ -223,7 +224,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                       ) : (
                         <a
                           href={item.href}
-                          className="block rounded px-2 py-2 text-base text-foreground transition-colors hover:bg-muted hover:text-primary"
+                          className="nav-direct-link"
                           onClick={() => setMenuOpen(false)}
                         >
                           {item.label}

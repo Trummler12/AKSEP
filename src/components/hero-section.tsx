@@ -1,6 +1,6 @@
 import { Button } from './ui/button';
 import { ArrowRight, Users, BookOpen, Calendar } from 'lucide-react';
-import aksepLogo from 'figma:asset/656b674fc169e7dedbf127dfaf9ab8d51d976120.png';
+import aksepLogo from 'figma:asset/Logo_AKSEP.png';
 
 const HeroSection = () => {
   return (

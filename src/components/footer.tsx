@@ -1,7 +1,7 @@
 import { Separator } from './ui/separator';
 import { Icon } from './ui/icon';
 import { footerConfig, contactInfo, socialLinks, participationLinks, legalLinks } from '../data/footer';
-import aksepLogo from 'figma:asset/656b674fc169e7dedbf127dfaf9ab8d51d976120.png';
+import aksepLogo from 'figma:asset/Logo_AKSEP.png';
 
 const Footer = () => {
   // All links and configuration are now imported from external data

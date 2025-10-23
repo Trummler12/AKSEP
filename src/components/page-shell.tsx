@@ -9,10 +9,10 @@ interface PageShellProps extends PropsWithChildren {
 }
 
 const PageShell = ({ currentPath, mainClassName, afterMain, children }: PageShellProps) => {
-  const mainClass = ['flex-1', mainClassName].filter(Boolean).join(' ');
+  const mainClass = ['homepage-main', mainClassName].filter(Boolean).join(' ');
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col">
+    <div className="app-shell">
       <Navigation currentPath={currentPath} />
       <main className={mainClass}>{children}</main>
       {afterMain}

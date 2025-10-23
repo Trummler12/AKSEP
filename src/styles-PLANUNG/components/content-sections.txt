@@ -1,0 +1,17 @@
+@import '../themes.css';
+
+/* =============================================== */
+/* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
+/* =============================================== */
+
+=== CONTENT SECTIONS ===
+section-description (DONE) | "mx-auto max-w-3xl text-lg text-muted-foreground" | Section Beschreibung - zentriert, begrenzte Breite, groß
+centered-description (DONE) | "mx-auto mb-8 max-w-2xl text-lg text-muted-foreground" | Zentrierte Beschreibung - mit bottom margin
+two-column-grid (DONE) | "grid grid-cols-1 items-center gap-8 lg:grid-cols-2" | Zwei-Spalten Grid - responsive
+three-column-grid (DONE) | "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" | Drei-Spalten Grid - responsive
+three-column-grid-with-margin (DONE) | "mb-8 grid grid-cols-1 gap-6 md:grid-cols-3" | Drei-Spalten Grid mit Margin - responsive
+four-column-grid (DONE) | "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4" | Vier-Spalten Grid - responsive
+  interactive-card (DONE) | "cursor-pointer transition-shadow hover:shadow-lg" | Interaktive Karte - Cursor + Schatten-Effekt
+    program-icon-container (DONE) | "mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20" | Programm Icon Container - rund, primäre Farbe
+    news-meta (DONE) | "mb-2 flex items-center space-x-2 text-sm text-muted-foreground" | News Meta Info - Datum/Icon, klein
+    centered-icon (DONE) | "mx-auto mb-2 h-8 w-8 text-secondary" | Zentriertes Icon - sekundäre Farbe

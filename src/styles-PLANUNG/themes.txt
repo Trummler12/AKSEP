@@ -1,0 +1,44 @@
+/**
+ * AKSEP Theme Definitions
+ * Inherits base variables from globals.css
+ */
+@import './globals.css';
+
+/* Dark Theme - Semantic color mappings */
+.dark {
+  --background: #322a45;
+  --foreground: #fff;
+  --card: #423a51;
+  --card-foreground: #fff;
+  --popover: #423a51;
+  --popover-foreground: #fff;
+  --primary: #7e65b9;
+  --primary-foreground: #fff;
+  --secondary: #5a8fa8;
+  --secondary-foreground: #fff;
+  --muted: #423a51;
+  --muted-foreground: #fff;
+  --accent: #3eb694;
+  --accent-foreground: #fff;
+  --destructive: #d4183d;
+  --destructive-foreground: #fff;
+  --border: #5a8fa8;
+  --input: #423a51;
+  --ring: #7e65b9;
+}
+
+/* Alpha Color Variants - For transparency effects */
+:root {
+  --primary-5: rgba(126, 101, 185, 0.05);
+  --primary-20: rgba(126, 101, 185, 0.2);
+  --primary-90: rgba(126, 101, 185, 0.9);
+  --secondary-20: rgba(90, 143, 168, 0.2);
+  --accent-5: rgba(62, 182, 148, 0.05);
+  --accent-20: rgba(62, 182, 148, 0.2);
+}
+
+/* =============================================== */
+/* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
+/* =============================================== */
+
+(No entries for themes.css yet)

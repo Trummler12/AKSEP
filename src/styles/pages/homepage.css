@@ -1,0 +1,177 @@
+/**
+ * AKSEP Homepage Styles
+ * Homepage-spezifische Layout und Komponenten
+ */
+@import '../themes.css';
+@import '../components/hero.css';
+@import '../components/navigation.css';
+@import '../components/footer.css';
+@import '../components/content-sections.css';
+
+/* =============================================== */
+/* HOMEPAGE SPECIFIC LAYOUT */
+/* =============================================== */
+
+.homepage-main {
+  background-color: var(--background);
+  min-height: calc(100vh - var(--navigation-height));
+  display: flex;
+  flex-direction: column;
+}
+
+.homepage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* =============================================== */
+/* HOMEPAGE SECTIONS */
+/* =============================================== */
+
+.homepage-hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.homepage-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem 0;
+}
+
+@media (min-width: 768px) {
+  .homepage-content-wrapper {
+    gap: 6rem;
+    padding: 6rem 0;
+  }
+}
+
+/* =============================================== */
+/* HOMEPAGE SPECIFIC COMPONENTS */
+/* =============================================== */
+
+/* Quick Actions Section - Homepage spezifisch */
+.homepage-quick-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .homepage-quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage-quick-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.homepage-quick-action-item {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.homepage-quick-action-item:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Statistics Section - Homepage spezifisch */
+.homepage-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .homepage-stats {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+.homepage-stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+.homepage-stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.homepage-stat-label {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  font-weight: 500;
+}
+
+/* Featured Content - Homepage spezifisch */
+.homepage-featured {
+  background: linear-gradient(135deg, var(--primary-5) 0%, var(--accent-5) 100%);
+  border-radius: 1rem;
+  padding: 3rem 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.homepage-featured-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .homepage-featured-title {
+    font-size: 2.25rem;
+  }
+}
+
+.homepage-featured-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homepage-featured-cta {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.homepage-featured-cta:hover {
+  background-color: var(--primary-90);
+}
