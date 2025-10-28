@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  color: var(--white);
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: center;
+}
+
+.hero__content {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero__eyebrow {
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.hero__description {
+  margin: 0;
+  font-size: var(--text-lg);
+  max-width: 40ch;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+}
+
+.hero__button--primary {
+  background: linear-gradient(135deg, var(--true-lavender), var(--horizon));
+  color: var(--white);
+  box-shadow: 0 10px 30px rgba(126, 101, 185, 0.3);
+}
+
+.hero__button--primary:hover,
+.hero__button--primary:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(126, 101, 185, 0.4);
+  outline: none;
+}
+
+.hero__button--ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero__button--ghost:hover,
+.hero__button--ghost:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.hero__quote {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  border-left: 3px solid rgba(62, 182, 148, 0.6);
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hero__media {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.hero__orb {
+  width: clamp(14rem, 32vw, 20rem);
+  height: clamp(14rem, 32vw, 20rem);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(62, 182, 148, 0.35), transparent 65%);
+  filter: blur(0.5px);
+}
+
+.hero__logo {
+  position: absolute;
+  width: clamp(8rem, 22vw, 12rem);
+  height: clamp(8rem, 22vw, 12rem);
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 640px) {
+  .hero__cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__button {
+    transition: none;
+  }
+}

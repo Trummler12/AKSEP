@@ -1,0 +1,139 @@
+.footer {
+  background: rgba(24, 18, 36, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 4rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.footer__inner {
+  width: min(100%, calc(var(--max-content-width) + 2rem));
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  display: grid;
+  gap: 2.5rem;
+}
+
+.footer__brand {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.footer__logo {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  display: grid;
+  place-items: center;
+}
+
+.footer__logo-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(126, 101, 185, 0.45), transparent 70%);
+  filter: blur(8px);
+  border-radius: 50%;
+}
+
+.footer__logo-core {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #64d5ff, #9a7ff0);
+  box-shadow: 0 0 18px rgba(144, 215, 255, 0.5);
+}
+
+.footer__brand-text {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.footer__brand-title {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--white);
+}
+
+.footer__brand-subtitle {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 28rem;
+}
+
+.footer__grid {
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.footer__heading {
+  margin: 0 0 0.9rem;
+  color: var(--white);
+  font-size: var(--text-base);
+  letter-spacing: 0.02em;
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.footer__item {
+  display: flex;
+}
+
+.footer__link,
+.footer__social-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer__link:hover,
+.footer__link:focus-visible,
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  color: var(--white);
+}
+
+.footer__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.footer__link-text {
+  font-weight: 600;
+}
+
+.footer__social-link span {
+  font-size: var(--text-sm);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 1.5rem 2.5rem;
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 640px) {
+  .footer__inner {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .footer__grid {
+    gap: 1.75rem;
+  }
+}

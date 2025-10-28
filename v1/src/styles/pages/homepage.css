@@ -1,0 +1,14 @@
+.homepage {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.homepage section {
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    gap: var(--space-5);
+  }
+}

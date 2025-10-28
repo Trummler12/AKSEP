@@ -1,0 +1,48 @@
+.standard-page {
+  padding: 5rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.standard-page__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  background: rgba(34, 28, 51, 0.85);
+  border: 1px solid rgba(126, 101, 185, 0.25);
+  border-radius: var(--radius);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  display: grid;
+  gap: 1.25rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.standard-page__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto;
+  color: var(--mint);
+}
+
+.standard-page__title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: var(--white);
+}
+
+.standard-page__description {
+  margin: 0 auto 0.5rem;
+  max-width: 55ch;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.standard-page__cta {
+  justify-self: center;
+}
+
+@media (max-width: 600px) {
+  .standard-page__inner {
+    padding: 2.5rem 1.75rem;
+  }
+}

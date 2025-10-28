@@ -1,0 +1,157 @@
+﻿
+
+Auflistung der Ordnerpfade für Volume WINDOWS
+Volumeseriennummer : 9AF3-4876
+C:.
+|   .gitignore
+|   eslint.config.js
+|   index.html
+|   INVENTORY_SUMMARY.md
+|   package-lock.json
+|   package.json
+|   playwright.config.ts
+|   README.md
+|   tsconfig.app.json
+|   tsconfig.json
+|   tsconfig.node.json
+|   vite.config.ts
+|
++---dist
+|       [Contents excluded]
+|
++---docs
+|       CODEX_README.md
+|       PROJECT_INVENTORY.md
+|       PROJECT_MANIFEST.json
+|
++---goal
+|       navbar1.png
+|       navbar2.png
+|       navbar3.png
+|       navbar4a.png
+|       navbar4b.png
+|       navbar5.png
+|       placeholder_page.png
+|       sidebar.png
+|       start0.png
+|
++---node_modules
+|       [Contents excluded]
+|
++---public
+|       vite.svg
+|
++---src
+|   |   App.tsx
+|   |   main.tsx
+|   |   setupTests.ts
+|   |
+|   +---assets
+|   |       Logo_AKSEP.png
+|   |       react.svg
+|   |
+|   +---components
+|   |   |   footer.tsx
+|   |   |   navigation.tsx
+|   |   |   page-shell.tsx
+|   |   |
+|   |   +---navigation
+|   |   |       Navigation.tsx
+|   |   |       NavigationItem.tsx
+|   |   |       OverflowNavigation.tsx
+|   |   |
+|   |   +---routing
+|   |   |       Router.tsx
+|   |   |
+|   |   \---ui
+|   |           accordion.tsx
+|   |           alert-dialog.tsx
+|   |           alert.tsx
+|   |           aspect-ratio.tsx
+|   |           avatar.tsx
+|   |           badge.tsx
+|   |           breadcrumb.tsx
+|   |           button.tsx
+|   |           calendar.tsx
+|   |           card.tsx
+|   |           carousel.tsx
+|   |           chart.tsx
+|   |           checkbox.tsx
+|   |           collapsible.tsx
+|   |           command.tsx
+|   |           context-menu.tsx
+|   |           dialog.tsx
+|   |           drawer.tsx
+|   |           dropdown-menu.tsx
+|   |           form.tsx
+|   |           hover-card.tsx
+|   |           icon.tsx
+|   |           input-otp.tsx
+|   |           input.tsx
+|   |           label.tsx
+|   |           menubar.tsx
+|   |           navigation-menu.tsx
+|   |           pagination.tsx
+|   |           popover.tsx
+|   |           progress.tsx
+|   |           radio-group.tsx
+|   |           resizable.tsx
+|   |           scroll-area.tsx
+|   |           select.tsx
+|   |           separator.tsx
+|   |           sheet.tsx
+|   |           sidebar.tsx
+|   |           skeleton.tsx
+|   |           slider.tsx
+|   |           sonner.tsx
+|   |           switch.tsx
+|   |           table.tsx
+|   |           tabs.tsx
+|   |           textarea.tsx
+|   |           toggle-group.tsx
+|   |           toggle.tsx
+|   |           tooltip.tsx
+|   |           use-mobile.ts
+|   |           utils.ts
+|   |
+|   +---content
+|   |       page-placeholder.tsx
+|   |       start.tsx
+|   |
+|   +---data
+|   |       footer.ts
+|   |       navigation.ts
+|   |       routes.ts
+|   |       startpage.ts
+|   |
+|   +---guidelines
+|   |       Guidelines.md
+|   |
+|   +---hooks
+|   |       .gitkeep
+|   |
+|   +---styles
+|   |   |   globals.css
+|   |   |   themes.css
+|   |   |
+|   |   +---components
+|   |   |       content-sections.css
+|   |   |       footer.css
+|   |   |       hero.css
+|   |   |       navigation.css
+|   |   |       shared.css
+|   |   |
+|   |   \---pages
+|   |           homepage.css
+|   |           standard.css
+|   |
+|   \---types
+|           navigation.ts
+|
++---test
+|       smoke.test.ts
+|
+\---utility-scripts
+        local-tree.ps1
+        local-tree.txt
+

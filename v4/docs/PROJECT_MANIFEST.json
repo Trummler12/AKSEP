@@ -1,0 +1,377 @@
+{
+  "name": "AKSEP-Website Project Manifest",
+  "version": "1.0.0",
+  "generated": "2025-10-28",
+  "projectType": "vite+react+typescript",
+  "status": {
+    "lint": "passing",
+    "test": "passing",
+    "build": "passing",
+    "typecheck": "passing"
+  },
+  "routes": [
+    {
+      "path": "/",
+      "component": "ROOT_REDIRECT",
+      "redirectTo": "/.start",
+      "implemented": true
+    },
+    {
+      "path": "/.start",
+      "component": "src/content/start.tsx",
+      "layout": "src/components/page-shell.tsx",
+      "implemented": true,
+      "type": "homepage"
+    },
+    {
+      "path": "/begriffe",
+      "component": "src/content/page-placeholder.tsx",
+      "layout": "src/components/page-shell.tsx",
+      "implemented": false,
+      "type": "list"
+    },
+    {
+      "path": "/begriffe/*",
+      "component": "src/content/page-placeholder.tsx",
+      "layout": "src/components/page-shell.tsx",
+      "implemented": false,
+      "type": "article"
+    },
+    {
+      "path": "/programm",
+      "component": "src/content/page-placeholder.tsx",
+      "layout": "src/components/page-shell.tsx",
+      "implemented": false,
+      "type": "list"
+    },
+    {
+      "path": "/programm/*",
+      "component": "src/content/page-placeholder.tsx",
+      "layout": "src/components/page-shell.tsx",
+      "implemented": false,
+      "type": "article"
+    }
+  ],
+  "navigation": {
+    "dataSource": "src/data/navigation.ts",
+    "typeSource": "src/types/navigation.ts",
+    "primaryItems": [
+      {
+        "key": "begriffe",
+        "label": "Begriffe",
+        "href": "/begriffe",
+        "groups": 3,
+        "totalSubItems": 7,
+        "displayInPrimary": true
+      },
+      {
+        "key": "programm",
+        "label": "Programm",
+        "href": "/programm",
+        "groups": 2,
+        "totalSubItems": 15,
+        "displayInPrimary": true
+      },
+      {
+        "key": "ueber-uns",
+        "label": "Über uns",
+        "href": "/ueber-uns",
+        "groups": 1,
+        "totalSubItems": 4,
+        "displayInPrimary": true
+      },
+      {
+        "key": "aktuelles",
+        "label": "Aktuelles",
+        "href": "/termine",
+        "groups": 1,
+        "totalSubItems": 2,
+        "displayInPrimary": true
+      },
+      {
+        "key": "mitmachen",
+        "label": "Mitmachen",
+        "href": "/mitmachen",
+        "groups": 1,
+        "totalSubItems": 4,
+        "displayInPrimary": true
+      }
+    ],
+    "secondaryItems": [
+      {
+        "key": "datenschutz",
+        "label": "Datenschutz",
+        "href": "/datenschutz",
+        "displayInPrimary": false,
+        "placement": "footer"
+      },
+      {
+        "key": "impressum",
+        "label": "Impressum",
+        "href": "/impressum",
+        "displayInPrimary": false,
+        "placement": "footer"
+      }
+    ],
+      "components": {
+        "Navigation": "src/components/navigation/Navigation.tsx",
+        "NavigationItem": "src/components/navigation/NavigationItem.tsx",
+        "OverflowNavigation": "src/components/navigation/OverflowNavigation.tsx"
+      },
+      "features": {
+        "desktopDropdown": true,
+        "mobileOverflow": true,
+        "keyboardNavigation": true,
+        "ariaRoles": true,
+        "focusManagement": true,
+        "pinnedCtas": true,
+        "activeState": true,
+        "smoothTransitions": true
+      }
+  },
+  "footer": {
+    "dataSource": "src/data/footer.ts",
+    "component": "src/components/footer.tsx",
+    "sections": {
+      "contact": 2,
+      "social": 4,
+      "participation": 3,
+      "legal": 3
+    },
+    "implemented": true
+  },
+  "content": {
+    "startpage": {
+      "dataSource": "src/data/startpage.ts",
+      "component": "src/content/start.tsx",
+      "sections": {
+        "hero": true,
+        "pillars": true,
+        "programHighlights": 4,
+        "newsItems": 3,
+        "ctaStrip": true
+      },
+      "implemented": true
+    },
+    "placeholder": {
+      "component": "src/content/page-placeholder.tsx",
+      "implemented": true
+    }
+  },
+  "css": {
+    "tokens": {
+      "colors": {
+        "primary": "#7E65B9",
+        "secondary": "#5A8FA8",
+        "accent": "#3EB694",
+        "bg_darkest": "#322A45",
+        "bg_darker": "#423A51",
+        "white": "#ffffff",
+        "destructive": "#d4183d",
+        "lightGray": "#f8f9fa",
+        "mediumGray": "#e9ecef",
+        "darkGray": "#495057"
+      },
+      "typography": {
+        "scale": ["12px", "14px", "16px", "18px", "20px", "24px", "30px"],
+        "fontWeights": {
+          "normal": 400,
+          "medium": 500
+        }
+      },
+      "layout": {
+        "borderRadius": "0.625rem",
+        "baseFont": "16px"
+      }
+    },
+    "files": {
+      "globals": "src/styles/globals.css",
+      "themes": "src/styles/themes.css",
+      "components": [
+        "src/styles/components/shared.css",
+        "src/styles/components/navigation.css",
+        "src/styles/components/hero.css",
+        "src/styles/components/footer.css",
+        "src/styles/components/content-sections.css"
+      ],
+      "pages": [
+        "src/styles/pages/homepage.css",
+        "src/styles/pages/standard.css"
+      ]
+    },
+    "recommendations": [
+      "Define spacing scale: --space-1 (4px) through --space-8 (32px)",
+      "Define breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)",
+      "Normalize class naming convention (recommend BEM-lite)",
+      "Add dark theme support for bright theme (currently commented out)"
+    ]
+  },
+  "uiPrimitives": {
+    "total": 50,
+    "implemented": 0,
+    "keyPrimitives": [
+      {
+        "name": "button",
+        "file": "src/components/ui/button.tsx",
+        "priority": "essential",
+        "needed_for": "Nav CTAs, hero CTA, form submit"
+      },
+      {
+        "name": "card",
+        "file": "src/components/ui/card.tsx",
+        "priority": "essential",
+        "needed_for": "News cards, highlight cards, content containers"
+      },
+      {
+        "name": "sheet",
+        "file": "src/components/ui/sheet.tsx",
+        "priority": "essential",
+        "needed_for": "Mobile nav overflow drawer"
+      },
+      {
+        "name": "navigation-menu",
+        "file": "src/components/ui/navigation-menu.tsx",
+        "priority": "essential",
+        "needed_for": "Desktop dropdown nav"
+      },
+      {
+        "name": "dropdown-menu",
+        "file": "src/components/ui/dropdown-menu.tsx",
+        "priority": "high",
+        "needed_for": "Overflow menu items"
+      },
+      {
+        "name": "icon",
+        "file": "src/components/ui/icon.tsx",
+        "priority": "high",
+        "needed_for": "AKSEP icon system (Lightbulb, Heart, Globe, etc.)"
+      }
+    ],
+    "allAvailable": [
+      "accordion", "alert", "alert-dialog", "aspect-ratio", "avatar", "badge",
+      "breadcrumb", "button", "calendar", "card", "carousel", "chart",
+      "checkbox", "collapsible", "command", "context-menu", "dialog", "drawer",
+      "dropdown-menu", "form", "hover-card", "icon", "input", "input-otp",
+      "label", "menubar", "navigation-menu", "pagination", "popover", "progress",
+      "radio-group", "resizable", "scroll-area", "select", "separator", "sheet",
+      "sidebar", "skeleton", "slider", "sonner", "switch", "table", "tabs",
+      "textarea", "toggle", "toggle-group", "tooltip"
+    ]
+  },
+  "build": {
+    "scripts": {
+      "dev": "vite",
+      "build": "tsc -b && vite build",
+      "preview": "vite preview --strictPort",
+      "lint": "eslint .",
+      "test": "vitest --environment jsdom --run",
+      "test:watch": "vitest --environment jsdom",
+      "test:e2e": "playwright test",
+      "e2e:headed": "playwright test --headed"
+    },
+    "tooling": {
+      "bundler": "vite",
+      "testRunner": "vitest",
+      "e2eRunner": "playwright",
+      "linter": "eslint",
+      "typeChecker": "typescript"
+    }
+  },
+  "a11y": {
+    "language": "de-DE",
+    "wcagTarget": "2.1 AA",
+    "implemented": {
+      "semanticHTML": true,
+      "ariaRoles": true,
+      "keyboardNav": true,
+      "focusIndicators": true,
+      "focusTrap": true,
+      "colorContrast": "unchecked",
+      "altText": true,
+      "skipLinks": true,
+      "formLabels": false,
+      "errorMessages": false,
+      "reducedMotion": true
+    },
+    "recommendations": [
+      "Verify color contrast ratios (LADC >= 4.5:1 for normal text)",
+      "Implement keyboard navigation for all interactive elements",
+      "Add focus traps in modals/dropdowns",
+      "Respect prefers-reduced-motion CSS media query",
+      "Add ARIA labels to icon-only buttons",
+      "Implement skip-to-main-content link"
+    ]
+  },
+  "performance": {
+    "targets": {
+      "fcp": "< 1.5s",
+      "lcp": "< 2.5s",
+      "tti": "< 3s",
+      "cls": "< 0.1"
+    },
+    "optimizations": [
+      "Code splitting with React Router lazy loading",
+      "Image optimization (hero: WebP + srcset)",
+      "Debounce resize/scroll listeners in nav",
+      "Pre-calculate nav widths for overflow detection",
+      "Respect prefers-reduced-motion",
+      "Lazy-load below-fold content"
+    ]
+  },
+  "browser_support": {
+    "target": "ES2022",
+    "desktop": ["Chrome (latest 2)", "Firefox (latest 2)", "Safari (latest 2)"],
+    "mobile": ["iOS Safari (last 2)", "Chrome Android (last 2)"]
+  },
+  "openQuestions": [
+    {
+      "question": "Icon library choice?",
+      "context": "Data uses iconName field but no library imported",
+      "recommendation": "Use Lucide React; implement src/components/ui/icon.tsx"
+    },
+    {
+      "question": "Root route behavior?",
+      "context": "/start defined but not /",
+      "recommendation": "Implement / -> /start redirect in Router.tsx"
+    },
+    {
+      "question": "Overflow dropdown handling?",
+      "context": "Programm has 14+ items; Begriffe has 7",
+      "recommendation": "Implement scrollable dropdown or mobile overflow menu"
+    },
+    {
+      "question": "Form library choice?",
+      "context": "Contact/signup forms needed but undefined",
+      "recommendation": "Choose React Hook Form or Formik; keep validation logic simple"
+    },
+    {
+      "question": "CMS/backend integration?",
+      "context": "All content currently hardcoded in src/data/",
+      "recommendation": "For now keep static; document migration path if needed"
+    }
+  ],
+  "safeDefaults": {
+    "zIndexScale": {
+      "modal": 50,
+      "dropdown": 30,
+      "tooltip": 20,
+      "sticky": 10
+    },
+    "motionDurations": {
+      "fast": "150ms",
+      "normal": "250ms",
+      "slow": "400ms"
+    },
+    "spacing": {
+      "cardGap": "var(--space-2, 8px)",
+      "sectionGap": "var(--space-4, 16px)"
+    },
+    "breakpointStrategy": "mobile-first (min-width)"
+  },
+  "immediateImplementationPriority": [
+    "Phase 1 (Foundation): Router.tsx, page-shell.tsx, footer.tsx",
+    "Phase 2 (Navigation): Navigation.tsx, NavigationItem.tsx, OverflowNavigation.tsx, icon.tsx",
+    "Phase 3 (Homepage): start.tsx, page-placeholder.tsx",
+    "Phase 4 (Polish): CSS completion, remaining UI primitives, E2E tests"
+  ]
+}

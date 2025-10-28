@@ -1,0 +1,137 @@
+.footer {
+  padding: 3.5rem 1.5rem 2.5rem;
+  background: rgba(26, 21, 39, 0.92);
+  border-top: 1px solid rgba(126, 101, 185, 0.25);
+}
+
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.footer__section {
+  display: grid;
+  gap: 1rem;
+}
+
+.footer__heading {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: var(--white);
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.footer__item {
+  display: flex;
+}
+
+.footer__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.5rem 0.35rem;
+  border-radius: var(--radius);
+  color: rgba(255, 255, 255, 0.85);
+  transition: background 0.2s ease;
+}
+
+.footer__contact-link:hover,
+.footer__contact-link:focus-visible {
+  background: rgba(126, 101, 185, 0.2);
+}
+
+.footer__icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(126, 101, 185, 0.18);
+  color: var(--true-lavender);
+}
+
+.footer__icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.footer__contact-text {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.footer__contact-label {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__contact-value {
+  font-size: var(--text-base);
+  color: var(--white);
+}
+
+.footer__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer__link:hover,
+.footer__link:focus-visible {
+  color: var(--white);
+}
+
+.footer__social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer__social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(126, 101, 185, 0.2);
+  color: var(--white);
+  transition: transform 0.2s ease;
+}
+
+.footer__social-link:hover,
+.footer__social-link:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(126, 101, 185, 0.35);
+}
+
+.footer__bottom {
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+  border-top: 1px solid rgba(126, 101, 185, 0.2);
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 720px) {
+  .footer__social-list {
+    flex-wrap: wrap;
+  }
+}
