@@ -1,0 +1,57 @@
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-shell__main {
+  flex: 1;
+  outline: none;
+}
+
+.standard-page {
+  width: min(100%, 680px);
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.standard-page__wrapper {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.standard-page__icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+}
+
+.standard-page__icon-svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.standard-page__title {
+  margin: 0;
+  font-size: clamp(1.9rem, 2vw + 1.2rem, 2.5rem);
+  color: var(--white);
+}
+
+.standard-page__description {
+  margin: 0;
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+}
+
+.standard-page__action {
+  justify-self: center;
+}

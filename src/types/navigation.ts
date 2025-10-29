@@ -1,41 +1,37 @@
-/**
- * Type definitions for navigation system
- */
-
-export interface NavChildItem {
-  label: string;
-  href: string;
+// src/types/navigation.ts
+export type LinkItem = {
+  label: string
+  href: string
+  external?: boolean
+  icon?: string
 }
 
-export interface NavChildGroup {
-  key: string;
-  title?: string;
-  items: NavChildItem[];
-  showTopBorder?: boolean;
-  showBottomBorder?: boolean;
+export type SocialLink = {
+  label: string
+  href: string
+  icon?: string
+  iconName?: string // wird in footer.ts verwendet
 }
 
-export interface NavItem {
-  key: string;
-  label: string;
-  href: string;
-  groups?: NavChildGroup[];
-  displayInPrimary?: boolean;
+export type NavChild = {
+  label: string
+  href: string
+  key?: string
 }
 
-export interface NavigationProps {
-  currentPath?: string;
+export type NavChildGroup = {
+  label?: string
+  items: NavChild[]
+  key?: string // wird in navigation.ts verwendet
+  showTopBorder?: boolean
 }
 
-export interface NavigationState {
-  isMenuOpen: boolean;
-  activeDropdown: string | null;
-  overflowKeys: string[];
-  openOverflowSections: string[];
-  openMobileSections: Record<string, boolean>;
-}
-
-export interface OverflowDetectionState {
-  overflowKeys: string[];
-  itemWidths: Record<string, number>;
+export type NavItem = {
+  label: string
+  href?: string
+  groups?: NavChildGroup[]
+  cta?: boolean
+  align?: 'left' | 'right'
+  key?: string               // wird in navigation.ts verwendet
+  displayInPrimary?: boolean // wird in navigation.ts verwendet
 }

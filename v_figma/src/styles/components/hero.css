@@ -1,0 +1,262 @@
+/**
+ * components/hero.css
+ * Erbt von components/.shared.css
+ * Styles für die Hero-Section der Startseite
+ */
+
+@import './.shared.css';
+
+/* ==================== HERO MAIN ==================== */
+
+/* hero-section | "relative bg-gradient-to-b from-background to-card py-20 lg:py-32" | Hauptcontainer mit Gradient */
+.hero-section {
+  position: relative;
+  background: linear-gradient(to bottom, var(--background), var(--card));
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* hero-container | "container mx-auto px-4" | Container für Hero-Content */
+.hero-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* hero-content | "max-w-4xl mx-auto text-center" | Zentrierter Content-Wrapper */
+.hero-content {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ==================== HERO LOGO & TITLE ==================== */
+
+/* hero-logo-title-wrapper | "flex items-center justify-center space-x-4 mb-8" | Logo & Title Container */
+.hero-logo-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* hero-logo-image | "h-16 w-16 lg:h-20 lg:w-20" | Logo Image */
+.hero-logo-image {
+  height: 4rem;
+  width: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-logo-image {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+/* hero-title-group | implicit div | Wrapper für Title & Subtitle */
+.hero-title-group {
+  /* Container ohne eigene Styles */
+}
+
+/* hero-title | "text-4xl lg:text-6xl mb-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent" | Haupt-Title mit Gradient */
+.hero-title {
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* hero-subtitle | "text-lg lg:text-xl text-muted-foreground" | Subtitle unter Logo */
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 1024px) {
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* ==================== HERO SLOGAN & DESCRIPTION ==================== */
+
+/* hero-slogan | "text-2xl lg:text-4xl mb-6 max-w-3xl mx-auto" | Haupt-Slogan */
+.hero-slogan {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero-slogan {
+    font-size: 2.25rem;
+  }
+}
+
+/* hero-description | "text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto" | Beschreibungstext */
+.hero-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .hero-description {
+    font-size: 1.25rem;
+  }
+}
+
+/* ==================== HERO CTA BUTTONS ==================== */
+
+/* hero-cta-container | "flex flex-col sm:flex-row gap-4 justify-center mb-12" | CTA Buttons Container */
+.hero-cta-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .hero-cta-container {
+    flex-direction: row;
+  }
+}
+
+/* hero-cta-link-content | "flex items-center space-x-2" | Content innerhalb CTA Links */
+.hero-cta-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* hero-cta-icon | "h-5 w-5" | Icon in CTA Button */
+.hero-cta-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+/* ==================== HERO FEATURES ==================== */
+
+/* hero-features-grid | "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto" | Features Grid */
+.hero-features-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-features-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* hero-feature-item | "text-center" | Single Feature Item */
+.hero-feature-item {
+  text-align: center;
+}
+
+/* hero-feature-icon-wrapper | "bg-primary/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Icon Wrapper mit Hintergrund */
+.hero-feature-icon-wrapper {
+  background-color: rgba(126, 101, 185, 0.2);
+  border-radius: var(--radius-full);
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hero-feature-icon-wrapper-secondary | Same but with secondary color | Sekundärfarbe für Icon */
+.hero-feature-icon-wrapper-secondary {
+  background-color: rgba(90, 143, 168, 0.2);
+  border-radius: var(--radius-full);
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hero-feature-icon-wrapper-accent | Same but with accent color | Akzentfarbe für Icon */
+.hero-feature-icon-wrapper-accent {
+  background-color: rgba(62, 182, 148, 0.2);
+  border-radius: var(--radius-full);
+  padding: 1rem;
+  width: 4rem;
+  height: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* hero-feature-icon | "h-8 w-8 text-primary" | Icon im Feature */
+.hero-feature-icon {
+  height: 2rem;
+  width: 2rem;
+  color: var(--primary);
+}
+
+/* hero-feature-icon-secondary | "h-8 w-8 text-secondary" | Icon in Sekundärfarbe */
+.hero-feature-icon-secondary {
+  height: 2rem;
+  width: 2rem;
+  color: var(--secondary);
+}
+
+/* hero-feature-icon-accent | "h-8 w-8 text-accent" | Icon in Akzentfarbe */
+.hero-feature-icon-accent {
+  height: 2rem;
+  width: 2rem;
+  color: var(--accent);
+}
+
+/* hero-feature-title | "mb-2" | Feature Title (h3) */
+.hero-feature-title {
+  margin-bottom: 0.5rem;
+}
+
+/* hero-feature-description | "text-sm text-muted-foreground" | Feature Description */
+.hero-feature-description {
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+}

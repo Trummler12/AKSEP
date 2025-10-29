@@ -3,12 +3,7 @@
  * Centralized footer content for easy maintenance
  */
 
-import { LinkItem } from '../types/navigation';
-
-export interface SocialLink extends LinkItem {
-  iconName: 'MessageCircle' | 'Facebook' | 'Twitter' | 'Youtube' | 'Instagram';
-  external?: boolean;
-}
+import type { LinkItem, SocialLink } from '../types/navigation'
 
 export interface ContactInfo {
   type: 'email' | 'discord' | 'phone';
@@ -44,31 +39,26 @@ export const contactInfo: ContactInfo[] = [
   },
 ];
 
-// Social Media Links
 export const socialLinks: SocialLink[] = [
   {
     iconName: 'MessageCircle',
     label: 'Discord',
     href: 'https://discord.gg/5nBmmbqSPH',
-    external: true,
   },
   {
     iconName: 'Facebook',
     label: 'Facebook',
     href: 'https://facebook.com/dieaksep',
-    external: true,
   },
   {
     iconName: 'Twitter',
     label: 'Twitter',
     href: 'https://twitter.com/dieaksep',
-    external: true,
   },
   {
     iconName: 'Youtube',
     label: 'YouTube',
     href: 'https://youtube.com/dieaksep',
-    external: true,
   },
 ];
 

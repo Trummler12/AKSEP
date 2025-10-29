@@ -1,5 +1,4 @@
-import Router from './router';
-
+// Später: PageShell mit Header/Footer, Router-Komponente usw.
 export default function App() {
-  return <Router />;
+  return <div id="app-root">{/* Router/PageShell kommt hier rein */}</div>
 }

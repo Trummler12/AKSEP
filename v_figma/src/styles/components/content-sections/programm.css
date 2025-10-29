@@ -1,0 +1,154 @@
+/**
+ * components/content-sections/programm.css
+ * Erbt von content-sections/.shared.css
+ * Styles für die Programm-Highlights-Sektion
+ */
+
+@import './.shared.css';
+
+/* ==================== PROGRAMM SECTION ==================== */
+
+/* programm-section | "py-20" | Programm Section Container */
+.programm-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* programm-container | "container mx-auto px-4" | Container für Programm Content */
+.programm-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* programm-header | "text-center mb-12" | Header Container */
+.programm-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* programm-title | "text-3xl lg:text-4xl mb-6" | Section Title */
+.programm-title {
+  font-size: 1.875rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .programm-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* programm-description | "text-lg text-muted-foreground max-w-3xl mx-auto" | Description Text */
+.programm-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================== PROGRAMM GRID ==================== */
+
+/* programm-grid | "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" | 4-Column Highlights Grid */
+.programm-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .programm-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .programm-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* programm-card | "hover:shadow-lg transition-shadow cursor-pointer" | Hoverable Card */
+.programm-card {
+  cursor: pointer;
+  transition: box-shadow var(--transition-base);
+}
+
+.programm-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==================== PROGRAMM CARD CONTENT ==================== */
+
+/* programm-icon-wrapper | "bg-primary/20 rounded-full p-3 w-12 h-12 flex items-center justify-center mb-4" | Icon Wrapper */
+.programm-icon-wrapper {
+  background-color: rgba(126, 101, 185, 0.2);
+  border-radius: var(--radius-full);
+  padding: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* programm-icon-content | "text-primary" | Icon Content */
+.programm-icon-content {
+  color: var(--primary);
+}
+
+/* programm-icon | "h-6 w-6" | Icon */
+.programm-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+/* programm-card-title | "text-lg" | Card Title */
+.programm-card-title {
+  font-size: 1.125rem;
+}
+
+/* programm-card-description | "text-sm text-muted-foreground mb-4" | Card Description */
+.programm-card-description {
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
+
+/* programm-card-link-content | "flex items-center space-x-2" | Link Content mit Icon */
+.programm-card-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* programm-card-link-icon | "h-4 w-4" | Link Icon */
+.programm-card-link-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+/* ==================== PROGRAMM CTA ==================== */
+
+/* programm-cta | "text-center mt-8" | CTA Container */
+.programm-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* programm-cta-link-content | "flex items-center space-x-2" | CTA Link Content */
+.programm-cta-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* programm-cta-icon | "h-5 w-5" | CTA Icon */
+.programm-cta-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}

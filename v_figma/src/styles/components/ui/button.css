@@ -1,0 +1,9 @@
+/**
+ * components/ui/button.css
+ * Erbt von ui/.shared.css
+ * Styles für Button-Komponenten
+ */
+
+@import './.shared.css';
+
+/* Noch zu befüllen - ShadCN Buttons haben bereits eigene Styles */

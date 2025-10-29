@@ -1,0 +1,221 @@
+/**
+ * themes.css
+ * Erbt von globals.css und weist die Variablen verschiedenen Themes zu
+ * - .dark (Standard Dark Mode)
+ * - .light (noch nicht implementiert)
+ * - .on-dark (Kontext für Objekte auf dunklem Hintergrund)
+ * - .on-light (Kontext für Objekte auf hellem Hintergrund)
+ * - Farb-spezifische Kontexte (.on-bg-darker, .on-bg-darkerst, etc.)
+ */
+
+@import './globals.css';
+
+/* === DARK THEME (Standard) === */
+:root,
+.dark {
+  /* Hintergründe */
+  --background: var(--color-bg-darker);
+  --foreground: var(--color-white);
+  
+  /* Cards & Panels */
+  --card: var(--color-bg-darkerst);
+  --card-foreground: var(--color-white);
+  
+  /* Popovers & Dropdowns */
+  --popover: var(--color-bg-darkerst);
+  --popover-foreground: var(--color-white);
+  
+  /* Primärfarben */
+  --primary: var(--color-true-lavender);
+  --primary-foreground: var(--color-white);
+  
+  /* Sekundärfarben */
+  --secondary: var(--color-horizon);
+  --secondary-foreground: var(--color-white);
+  
+  /* Akzentfarben */
+  --accent: var(--color-mint);
+  --accent-foreground: var(--color-white);
+  
+  /* Muted (gedämpft) */
+  --muted: var(--color-bg-darkerst);
+  --muted-foreground: var(--color-white);
+  
+  /* Destructive (Fehler/Löschen) */
+  --destructive: var(--color-error);
+  --destructive-foreground: var(--color-white);
+  
+  /* Borders & Inputs */
+  --border: var(--color-horizon);
+  --input: var(--color-bg-darkerst);
+  --input-background: var(--color-bg-darkerst);
+  --ring: var(--color-true-lavender);
+  
+  /* Switch/Toggle */
+  --switch-background: var(--color-horizon);
+  
+  /* Charts */
+  --chart-1: var(--color-true-lavender);
+  --chart-2: var(--color-horizon);
+  --chart-3: var(--color-mint);
+  --chart-4: var(--color-bg-darker);
+  --chart-5: var(--color-bg-darkerst);
+  
+  /* Sidebar */
+  --sidebar: var(--color-bg-darker);
+  --sidebar-foreground: var(--color-white);
+  --sidebar-primary: var(--color-true-lavender);
+  --sidebar-primary-foreground: var(--color-white);
+  --sidebar-accent: var(--color-bg-darkerst);
+  --sidebar-accent-foreground: var(--color-white);
+  --sidebar-border: var(--color-horizon);
+  --sidebar-ring: var(--color-true-lavender);
+  
+  /* Radius (aus globals) */
+  --radius: var(--radius-lg);
+}
+
+/* === TAILWIND THEME INTEGRATION === */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* === BASE STYLES === */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+/* === KONTEXT-THEMES === */
+/* Für Objekte auf dunklem Hintergrund */
+.on-dark {
+  color: var(--color-white);
+}
+
+/* Für Objekte auf hellem Hintergrund (zukünftig) */
+.on-light {
+  color: var(--color-bg-darker);
+}
+
+/* Farb-spezifische Kontexte */
+.on-bg-darker {
+  background-color: var(--color-bg-darker);
+  color: var(--color-white);
+}
+
+.on-bg-darkerst {
+  background-color: var(--color-bg-darkerst);
+  color: var(--color-white);
+}
+
+.on-true-lavender {
+  background-color: var(--color-true-lavender);
+  color: var(--color-white);
+}
+
+.on-horizon {
+  background-color: var(--color-horizon);
+  color: var(--color-white);
+}
+
+.on-mint {
+  background-color: var(--color-mint);
+  color: var(--color-white);
+}

@@ -1,5 +1,5 @@
 Set-Location $PSScriptRoot
-Set-Location ..
+Set-Location ../src/styles-vererbung/from-globals
 
 # HIDE FOLDERS
 $foldersToHide = @("node_modules", "dist", ".output", ".env")

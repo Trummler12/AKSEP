@@ -1,0 +1,136 @@
+/**
+ * components/content-sections/aktuelles.css
+ * Erbt von content-sections/.shared.css
+ * Styles für die Aktuelles/News-Sektion
+ */
+
+@import './.shared.css';
+
+/* ==================== AKTUELLES SECTION ==================== */
+
+/* aktuelles-section | "py-20 bg-card" | News Section Container */
+.aktuelles-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: var(--card);
+}
+
+/* aktuelles-container | "container mx-auto px-4" | Container für News Content */
+.aktuelles-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* aktuelles-header | "text-center mb-12" | Header Container */
+.aktuelles-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* aktuelles-title | "text-3xl lg:text-4xl mb-6" | Section Title */
+.aktuelles-title {
+  font-size: 1.875rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .aktuelles-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* aktuelles-description | "text-lg text-muted-foreground" | Description Text */
+.aktuelles-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+}
+
+/* ==================== AKTUELLES GRID ==================== */
+
+/* aktuelles-grid | "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" | 3-Column News Grid */
+.aktuelles-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .aktuelles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .aktuelles-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* aktuelles-card | "hover:shadow-lg transition-shadow" | Hoverable News Card */
+.aktuelles-card {
+  transition: box-shadow var(--transition-base);
+}
+
+.aktuelles-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==================== AKTUELLES CARD CONTENT ==================== */
+
+/* aktuelles-date-wrapper | "flex items-center space-x-2 text-sm text-muted-foreground mb-2" | Date Wrapper */
+.aktuelles-date-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+  margin-bottom: 0.5rem;
+}
+
+/* aktuelles-date-icon | "h-4 w-4" | Calendar Icon */
+.aktuelles-date-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+/* aktuelles-card-title | "text-lg" | News Card Title */
+.aktuelles-card-title {
+  font-size: 1.125rem;
+}
+
+/* aktuelles-card-link-content | "flex items-center space-x-2" | Link Content */
+.aktuelles-card-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* aktuelles-card-link-icon | "h-4 w-4" | Link Icon */
+.aktuelles-card-link-icon {
+  height: 1rem;
+  width: 1rem;
+}
+
+/* ==================== AKTUELLES CTA ==================== */
+
+/* aktuelles-cta | "text-center mt-8" | CTA Container */
+.aktuelles-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* aktuelles-cta-link-content | "flex items-center space-x-2" | CTA Link Content */
+.aktuelles-cta-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* aktuelles-cta-icon | "h-5 w-5" | CTA Icon */
+.aktuelles-cta-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+}

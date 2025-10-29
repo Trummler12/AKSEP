@@ -1,0 +1,211 @@
+DIE AKSEP - CSS Architecture
+============================
+
+styles/
+│
+├── 📄 globals.css                      # Global variables (colors, sizes, spacing)
+├── 📄 themes.css                       # Theme assignments (dark mode, contexts)
+├── 📄 index.css                        # Main entry point (imports all)
+│
+├── 📖 README.md                        # Architecture documentation
+├── 📖 MIGRATION.md                     # Migration guide with mappings
+├── 📖 CLASS-INDEX.md                   # Complete class reference (~175 classes)
+├── 📖 NEXT-STEPS.md                    # Next steps & progress tracker
+├── 📖 STRUCTURE.txt                    # This file
+│
+├── components/
+│   │
+│   ├── 📄 .shared.css                  # Shared component styles
+│   ├── 📄 navigation.css               # Navigation (32 classes)
+│   ├── 📄 footer.css                   # Footer (26 classes)
+│   ├── 📄 hero.css                     # Hero section (23 classes)
+│   │
+│   ├── content-sections/
+│   │   │
+│   │   ├── 📄 .shared.css              # Shared content section styles
+│   │   ├── 📄 akronym.css              # "Was bedeutet AKSEP?" (19 classes)
+│   │   ├── 📄 aktuelles.css            # News section (15 classes)
+│   │   ├── 📄 mitmachen.css            # CTA section (11 classes)
+│   │   └── 📄 programm.css             # Program highlights (17 classes)
+│   │
+│   └── ui/
+│       │
+│       ├── 📄 .shared.css              # Shared UI component styles
+│       ├── 📄 button.css               # Button styles (ShadCN)
+│       ├── 📄 dropdown.css             # Dropdown styles
+│       └── 📄 table.css                # Table styles
+│
+└── pages/
+    │
+    ├── 📄 .shared.css                  # Shared page styles
+    ├── 📄 placeholder.css              # Placeholder pages (8 classes)
+    └── 📄 start.css                    # Start page
+
+
+Import Hierarchy (Inheritance Chain)
+=====================================
+
+globals.css
+    │
+    └─→ themes.css
+            │
+            ├─→ components/.shared.css
+            │       │
+            │       ├─→ navigation.css
+            │       ├─→ footer.css
+            │       ├─→ hero.css
+            │       │
+            │       ├─→ content-sections/.shared.css
+            │       │       │
+            │       │       ├─→ akronym.css
+            │       │       ├─→ aktuelles.css
+            │       │       ├─→ mitmachen.css
+            │       │       └─→ programm.css
+            │       │
+            │       └─→ ui/.shared.css
+            │               │
+            │               ├─→ button.css
+            │               ├─→ dropdown.css
+            │               └─→ table.css
+            │
+            └─→ pages/.shared.css
+                    │
+                    ├─→ placeholder.css
+                    └─→ start.css
+
+
+CSS Classes Summary
+===================
+
+Navigation:              32 classes
+Footer:                  26 classes
+Hero:                    23 classes
+Akronym Section:         19 classes
+Programm Section:        17 classes
+Aktuelles Section:       15 classes
+Mitmachen Section:       11 classes
+Placeholder Page:         8 classes
+Shared Components:       ~12 classes
+Shared Content:          ~6 classes
+Shared UI:               ~3 classes
+Shared Pages:            ~4 classes
+────────────────────────────────────
+TOTAL:                  ~176 classes
+
+
+Variable System
+===============
+
+Colors:
+  --color-true-lavender         #7E65B9  (Primary dark)
+  --color-horizon               #5A8FA8  (Middle)
+  --color-mint                  #3EB694  (Primary light)
+  --color-bg-darker             #322A45  (Background darker)
+  --color-bg-darkerst           #423A51  (Background darkest)
+
+Text Sizes:
+  --text-xs → --text-6xl        (0.75rem → 3.75rem)
+
+Spacing:
+  --spacing-xs → --spacing-3xl  (0.25rem → 4rem)
+
+Border Radius:
+  --radius-sm → --radius-full   (0.375rem → 9999px)
+
+Transitions:
+  --transition-fast             150ms ease
+  --transition-base             200ms ease
+  --transition-slow             300ms ease
+
+Z-Index:
+  --z-base → --z-tooltip        (1 → 50)
+
+
+File Sizes (Approximate)
+========================
+
+globals.css                ~3 KB
+themes.css                 ~5 KB
+navigation.css             ~8 KB
+footer.css                 ~6 KB
+hero.css                   ~6 KB
+content-sections/*.css     ~10 KB total
+pages/*.css                ~3 KB total
+.shared.css files          ~4 KB total
+documentation              ~50 KB total
+────────────────────────────────────
+TOTAL CSS:                ~45 KB
+TOTAL DOCS:               ~50 KB
+
+
+Migration Status
+================
+
+✅ Phase 1: Architecture             100% Complete
+✅ Phase 2: Variables                100% Complete
+✅ Phase 3: CSS Classes              100% Complete
+✅ Phase 4: Documentation            100% Complete
+⏳ Phase 5: TSX Migration              0% Complete  ← YOU ARE HERE
+⏳ Phase 6: Testing                    0% Complete
+⏳ Phase 7: Cleanup                    0% Complete
+
+Overall Progress: 57% Complete
+
+
+Next Action
+===========
+
+1. Open /App.tsx
+2. Add: import './styles/index.css';
+3. Open /components/navigation.tsx
+4. Replace classNames with new classes
+5. Test visually
+6. Continue with next component
+
+See NEXT-STEPS.md for detailed workflow!
+
+
+Quick Reference
+===============
+
+Container Classes:
+  .component-container         Standard container (1280px max)
+  .page-container              Page container with padding
+  .nav-header-container        Navigation container
+
+Grid Layouts:
+  .footer-grid                 1 → 3 columns (responsive)
+  .hero-features-grid          1 → 3 columns
+  .aktuelles-grid              1 → 2 → 3 columns
+  .programm-grid               1 → 2 → 4 columns
+
+Common Patterns:
+  .nav-logo-link               Flex with gap, hover effect
+  .nav-dropdown-trigger        Link with hover color change
+  .nav-dropdown-item           Dropdown item with hover
+  .hero-feature-icon-wrapper   Icon container with background
+
+Icon Sizes:
+  .*-icon                      Usually 1rem × 1rem
+  .*-cta-icon                  Usually 1.25rem × 1.25rem
+  .*-mobile-icon               Usually 1.5rem × 1.5rem
+  .*-feature-icon              Usually 2rem × 2rem
+
+
+Support
+=======
+
+Documentation:
+  README.md         - Full architecture overview
+  MIGRATION.md      - Step-by-step migration guide
+  CLASS-INDEX.md    - Complete class reference
+  NEXT-STEPS.md     - Progress tracker & workflow
+
+Questions? Check the docs first, then ask the team!
+
+
+═══════════════════════════════════════════════════════════
+Created: October 2024
+Version: 1.0
+Status: Ready for TSX Migration
+═══════════════════════════════════════════════════════════

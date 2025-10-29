@@ -1,0 +1,93 @@
+/**
+ * globals.css
+ * Definiert globale CSS-Variablen und Konstanten für das gesamte Projekt
+ * - Farbpaletten (AKSEP Dark Mode)
+ * - Textgrößen (xs, s, m, l, xl, xxl)
+ * - Spacing-Werte
+ * - Border-Radien
+ * - Transitions
+ */
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* === FARBPALETTE === */
+  /* Basis-Farben (AKSEP Dark Mode) */
+  --color-true-lavender: #7E65B9;    /* Primärfarbe dunkel */
+  --color-horizon: #5A8FA8;          /* Mittelfarbe */
+  --color-mint: #3EB694;             /* Helle Primärfarbe */
+  --color-bg-darker: #322A45;        /* Dunklerer Hintergrund */
+  --color-bg-darkerst: #423A51;      /* Noch dunklerer Hintergrund/Cards */
+  
+  /* Semantische Farben */
+  --color-white: #ffffff;
+  --color-error: #d4183d;
+  
+  /* === TYPOGRAfie-GRÖSSEN === */
+  --font-size-base: 16px;
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  
+  /* Schriftstärken */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* === SPACING === */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-2xl: 3rem;     /* 48px */
+  --spacing-3xl: 4rem;     /* 64px */
+  
+  /* === BORDER RADIEN === */
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.625rem;   /* 10px */
+  --radius-xl: 0.75rem;    /* 12px */
+  --radius-2xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 300ms ease;
+  
+  /* === SHADOWS === */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  
+  /* === Z-INDEX HIERARCHIE === */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-overlay: 30;
+  --z-modal: 40;
+  --z-tooltip: 50;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+/* Base Reset */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,114 @@
+/**
+ * components/content-sections/mitmachen.css
+ * Erbt von content-sections/.shared.css
+ * Styles für die Mitmachen/Call-to-Action-Sektion
+ */
+
+@import './.shared.css';
+
+/* ==================== MITMACHEN SECTION ==================== */
+
+/* mitmachen-section | "py-20" | Call to Action Section Container */
+.mitmachen-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* mitmachen-container | "container mx-auto px-4" | Container für CTA Content */
+.mitmachen-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* mitmachen-content | "max-w-4xl mx-auto text-center" | Zentrierter Content-Wrapper */
+.mitmachen-content {
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* mitmachen-title | "text-3xl lg:text-4xl mb-6" | Section Title */
+.mitmachen-title {
+  font-size: 1.875rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .mitmachen-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* mitmachen-description | "text-lg text-muted-foreground mb-8 max-w-2xl mx-auto" | Description Text */
+.mitmachen-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 2rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==================== MITMACHEN GRID ==================== */
+
+/* mitmachen-grid | "grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" | 3-Column Action Cards Grid */
+.mitmachen-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .mitmachen-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* mitmachen-card | "text-center" | Centered Action Card */
+.mitmachen-card {
+  text-align: center;
+}
+
+/* ==================== MITMACHEN CARD CONTENT ==================== */
+
+/* mitmachen-card-icon-users | "h-8 w-8 text-primary mx-auto mb-2" | Users Icon (Primary) */
+.mitmachen-card-icon-users {
+  height: 2rem;
+  width: 2rem;
+  color: var(--primary);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* mitmachen-card-icon-lightbulb | "h-8 w-8 text-secondary mx-auto mb-2" | Lightbulb Icon (Secondary) */
+.mitmachen-card-icon-lightbulb {
+  height: 2rem;
+  width: 2rem;
+  color: var(--secondary);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* mitmachen-card-icon-heart | "h-8 w-8 text-accent mx-auto mb-2" | Heart Icon (Accent) */
+.mitmachen-card-icon-heart {
+  height: 2rem;
+  width: 2rem;
+  color: var(--accent);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5rem;
+}
+
+/* mitmachen-card-description | "text-sm text-muted-foreground mb-4" | Card Description */
+.mitmachen-card-description {
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+  margin-bottom: 1rem;
+}
