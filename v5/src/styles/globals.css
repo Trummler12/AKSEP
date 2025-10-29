@@ -1,0 +1,31 @@
+
+:root {
+  /* Base Design System Variables */
+  --font-size: 16px;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --radius: 0.625rem;
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  
+  /* AKSEP Color Palette - Named Colors */
+  --true-lavender: #7E65B9;
+  --horizon: #5A8FA8;
+  --mint: #3EB694;
+  --bg-darkest: #322A45;
+  --bg-darker: #423A51;
+  --white: #ffffff;
+  --destructive: #d4183d;
+  
+  /* Additional colors for potential bright theme */
+  --light-gray: #f8f9fa;
+  --medium-gray: #e9ecef;
+  --dark-gray: #495057;
+}

@@ -1,0 +1,29 @@
+.homepage {
+  background: radial-gradient(circle at top, rgba(126, 101, 185, 0.18), transparent 55%), var(--background, #423A51);
+  color: var(--foreground, #ffffff);
+}
+
+.homepage section + section {
+  position: relative;
+}
+
+.homepage section + section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  border-top: 1px solid rgba(126, 101, 185, 0.18);
+  transform: translateY(-2rem);
+  pointer-events: none;
+}
+
+.homepage section:first-of-type::before {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .homepage section + section::before {
+    transform: translateY(-1.5rem);
+  }
+}

@@ -1,0 +1,62 @@
+@import '../components/shared.css';
+
+.standard-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  background: rgba(32, 24, 52, 0.35);
+  color: var(--white);
+}
+
+.standard-page__inner {
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(17, 10, 30, 0.55);
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: calc(var(--radius) * 1.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.35);
+}
+
+.standard-page__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: rgba(62, 182, 148, 0.18);
+  color: var(--mint);
+  margin: 0 auto;
+}
+
+.standard-page__eyebrow {
+  margin: 0;
+  font-size: var(--text-sm);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.standard-page__title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.standard-page__description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+}
+
+.standard-page__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}

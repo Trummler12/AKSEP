@@ -1,0 +1,200 @@
+.content-section {
+  padding: clamp(2.5rem, 4vw, 3.5rem) 1.5rem;
+}
+
+.content-section__header {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.content-section__title {
+  margin: 0;
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.content-section__subtitle {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.content-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.content-card {
+  background: linear-gradient(180deg, rgba(40, 33, 56, 0.85) 0%, rgba(24, 20, 34, 0.9) 100%);
+  border-radius: 18px;
+  padding: 1.75rem;
+  border: 1px solid rgba(126, 101, 185, 0.35);
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 16px 32px rgba(10, 8, 15, 0.4);
+}
+
+.content-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(62, 182, 148, 0.2);
+  color: var(--accent, #3EB694);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-card__title {
+  margin: 0;
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.content-card__body {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.content-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent, #3EB694);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+
+.content-card__link-icon {
+  transition: transform 140ms ease;
+}
+
+.content-card__link:hover .content-card__link-icon,
+.content-card__link:focus-visible .content-card__link-icon {
+  transform: translateX(4px);
+}
+
+.content-grid--news {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.news-card {
+  background: rgba(40, 33, 56, 0.82);
+  border-radius: 16px;
+  border: 1px solid rgba(126, 101, 185, 0.3);
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.news-card__date {
+  margin: 0;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.news-card__title {
+  margin: 0;
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.news-card__description {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.news-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--accent, #3EB694);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.news-card__link-icon {
+  transition: transform 140ms ease;
+}
+
+.news-card__link:hover .news-card__link-icon,
+.news-card__link:focus-visible .news-card__link-icon {
+  transform: translateX(4px);
+}
+
+.cta-strip {
+  padding: clamp(2.5rem, 5vw, 4rem) 1.5rem clamp(3rem, 6vw, 4.5rem);
+}
+
+.cta-strip__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(126, 101, 185, 0.35), rgba(62, 182, 148, 0.45));
+  border-radius: 24px;
+  border: 1px solid rgba(126, 101, 185, 0.45);
+  padding: clamp(2rem, 4vw, 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(10, 8, 15, 0.45);
+}
+
+.cta-strip__title {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cta-strip__description {
+  margin: 0;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.cta-strip__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .content-section__header {
+    text-align: left;
+  }
+
+  .cta-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-strip__actions {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-card__link-icon,
+  .news-card__link-icon {
+    transition-duration: 0.01ms !important;
+    transition-property: none !important;
+  }
+}

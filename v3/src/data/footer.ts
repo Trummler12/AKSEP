@@ -27,8 +27,8 @@ export const contactInfo: ContactInfo[] = [
     type: 'email',
     iconName: 'Mail',
     label: 'E-Mail Kontakt',
-    href: 'mailto:kontakt@aksepp.ch',
-    display: 'kontakt@aksepp.ch',
+    href: 'mailto:kontakt@aksep.ch',
+    display: 'kontakt@aksep.ch',
   },
   {
     type: 'discord',

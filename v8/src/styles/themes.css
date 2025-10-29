@@ -1,0 +1,63 @@
+/**
+ * AKSEP Theme Definitions
+ * Inherits base variables from globals.css
+ */
+@import './globals.css';
+
+/* AKSEP Dark Theme - Current Default */
+.dark {
+  /* Semantic Color Variables - Dark Theme */
+  --background: var(--bg-darker);
+  --foreground: var(--white);
+  --card: var(--bg-dark);
+  --card-foreground: var(--white);
+  --popover: var(--bg-dark);
+  --popover-foreground: var(--white);
+  --primary: var(--true-lavender);
+  --primary-foreground: var(--white);
+  --secondary: var(--horizon);
+  --secondary-foreground: var(--white);
+  --muted: var(--bg-dark);
+  --muted-foreground: var(--white);
+  --accent: var(--mint);
+  --accent-foreground: var(--white);
+  --destructive-foreground: var(--white);
+  --border: var(--horizon);
+  --input: var(--bg-dark);
+  --input-background: var(--bg-dark);
+  --switch-background: var(--horizon);
+  --ring: var(--true-lavender);
+  --chart-1: var(--true-lavender);
+  --chart-2: var(--horizon);
+  --chart-3: var(--mint);
+  --chart-4: var(--bg-darker);
+  --chart-5: var(--bg-dark);
+  --sidebar: var(--bg-darker);
+  --sidebar-foreground: var(--white);
+  --sidebar-primary: var(--true-lavender);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--bg-dark);
+  --sidebar-accent-foreground: var(--white);
+  --sidebar-border: var(--horizon);
+  --sidebar-ring: var(--true-lavender);
+  
+  /* Alpha Color Variants for Components */
+  --primary-20: #7E65B920;  /* primary with 20% opacity */
+  --primary-90: #7E65B9E6;  /* primary with 90% opacity */
+  --secondary-20: #5A8FA820;  /* secondary with 20% opacity */
+  --accent-20: #3EB69420;  /* accent with 20% opacity */
+  --muted-40: #423A5140;  /* muted with 40% opacity */
+  --border-60: #5A8FA860;  /* border with 60% opacity */
+}
+
+/* AKSEP Bright Theme - Future Implementation */
+/* 
+.bright {
+  --background: var(--light-gray);
+  --foreground: var(--dark-gray);
+  --card: var(--white);
+  --primary: var(--true-lavender);
+  --secondary: var(--horizon);
+  --accent: var(--mint);
+}
+*/
