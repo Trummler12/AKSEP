@@ -1,8 +1,8 @@
 /**
- * AKSEP Content Sections Styles
- * Reusable layout patterns for content areas
+ * Shared Content Sections Styles
+ * Reusable layout patterns used across all content areas
  */
-@import '../themes.css';
+@import '../../themes.css';
 
 /* =============================================== */
 /* LAYOUT & SECTION WRAPPERS */
@@ -110,7 +110,7 @@
 }
 
 /* =============================================== */
-/* INTRO GRID & FEATURE LISTS */
+/* GENERIC ELEMENTS */
 /* =============================================== */
 
 .content-two-column-grid {
@@ -187,7 +187,6 @@
   gap: calc(var(--spacing) * 2);
 }
 
-/* Zusammenführen sinnvoll */
 .content-inline-link {
   display: inline-flex;
   align-items: center;
@@ -206,29 +205,11 @@
   height: 1rem;
 }
 
-/* =============================================== */
-/* PROGRAM CARDS */
-/* =============================================== */
-
-.content-program-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: calc(var(--spacing) * 6);
+.content-icon-sm {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
-@media (min-width: 48rem) {
-  .content-program-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 64rem) {
-  .content-program-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-/* Zusammenführen sinnvoll */
 .content-card-interactive {
   cursor: pointer;
   transition: box-shadow 0.15s ease-in-out;
@@ -238,39 +219,6 @@
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.content-card-icon-wrapper {
-  margin-bottom: calc(var(--spacing) * 4);
-  display: flex;
-  height: 3rem;
-  width: 3rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: var(--primary-20);
-}
-
-.content-card-icon-color {
-  color: var(--primary);
-}
-
-.content-card-icon-size {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.content-card-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-.content-card-description {
-  margin-bottom: calc(var(--spacing) * 4);
-  font-size: 0.875rem;
-  line-height: 1.4;
-  color: var(--muted-foreground);
-}
-
-/* Zusammenführen sinnvoll */
 .content-card-link {
   display: inline-flex;
   align-items: center;
@@ -283,66 +231,6 @@
   color: var(--primary);
 }
 
-.content-icon-sm {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.content-program-cta {
-  margin-top: calc(var(--spacing) * 8);
-  text-align: center;
-}
-
-/* =============================================== */
-/* NEWS & EVENTS */
-/* =============================================== */
-
-.content-news-grid {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: calc(var(--spacing) * 6);
-}
-
-@media (min-width: 48rem) {
-  .content-news-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 64rem) {
-  .content-news-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.content-news-card {
-  transition: box-shadow 0.15s ease-in-out;
-}
-
-.content-news-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.content-news-meta {
-  margin-bottom: calc(var(--spacing) * 2);
-  display: flex;
-  align-items: center;
-  gap: calc(var(--spacing) * 2);
-  font-size: 0.875rem;
-  color: var(--muted-foreground);
-}
-
-.content-news-icon {
-  width: 1rem;
-  height: 1rem;
-}
-
-.content-news-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-}
-
-/* Zusammenführen sinnvoll */
 .content-news-link {
   display: inline-flex;
   align-items: center;
@@ -353,57 +241,4 @@
 
 .content-news-link:hover {
   color: var(--primary);
-}
-
-.content-news-cta {
-  margin-top: calc(var(--spacing) * 8);
-  text-align: center;
-}
-
-/* =============================================== */
-/* IMPACT HIGHLIGHTS */
-/* =============================================== */
-
-.content-impact-grid {
-  margin-bottom: calc(var(--spacing) * 8);
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: calc(var(--spacing) * 6);
-}
-
-@media (min-width: 48rem) {
-  .content-impact-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.content-impact-card {
-  text-align: center;
-}
-
-.content-impact-icon-primary,
-.content-impact-icon-secondary,
-.content-impact-icon-accent {
-  margin: 0 auto calc(var(--spacing) * 2) auto;
-  width: 2rem;
-  height: 2rem;
-}
-
-.content-impact-icon-primary {
-  color: var(--primary);
-}
-
-.content-impact-icon-secondary {
-  color: var(--secondary);
-}
-
-.content-impact-icon-accent {
-  color: var(--accent);
-}
-
-.content-impact-description {
-  margin-bottom: calc(var(--spacing) * 4);
-  font-size: 0.875rem;
-  line-height: 1.4;
-  color: var(--muted-foreground);
 }

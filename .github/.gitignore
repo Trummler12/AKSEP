@@ -1,7 +1,6 @@
 # Node / Vite build output
 node_modules/
 dist/
-build/
 
 # Environment files
 .env

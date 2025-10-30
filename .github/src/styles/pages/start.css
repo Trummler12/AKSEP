@@ -1,12 +1,16 @@
 /**
- * AKSEP Homepage Styles
- * Homepage-specific layout wrappers (shared content lives in components/content-sections.css)
+ * AKSEP Start Page Styles
+ * Start page layout and imports for all component sections
  */
 @import '../themes.css';
 @import '../components/hero.css';
 @import '../components/navigation.css';
 @import '../components/footer.css';
-@import '../components/content-sections.css';
+@import '../components/start-sections/shared.css';
+@import '../components/start-sections/akronym.css';
+@import '../components/start-sections/programm.css';
+@import '../components/start-sections/aktuell.css';
+@import '../components/start-sections/mitmachen.css';
 
 /* =============================================== */
 /* PAGE LAYOUT */
