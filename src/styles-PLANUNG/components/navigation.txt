@@ -6,25 +6,59 @@
 
 === NAVIGATION SYSTEM ===
 nav-header (DONE) | "sticky top-0 z-50 border-b border-border bg-card" | Hauptnavigation Header - sticky, oberste Ebene, mit Rahmen
-  nav-logo-link (DONE) | "mr-8 flex flex-shrink-0 items-center space-x-3 transition-opacity hover:opacity-80" | Logo-Link in Navigation - flexibel, mit Hover-Effekt
-    nav-logo-text (DONE) | "text-xl font-semibold whitespace-nowrap" | Logo-Text "DIE AKSEP" - groß, fett, kein Umbruch
-  nav-group-items (DONE) | "flex min-w-0 max-w-full flex-1 items-stretch gap-1 overflow-visible md:gap-2 lg:gap-3" | Container für Navigations-Gruppe-Items - responsive Gaps
-    nav-item-wrapper (DONE) | "group relative flex h-full items-center" | Navigation Item Wrapper - gruppiert, relativ positioniert
-      nav-dropdown-spacer (DONE) | "absolute left-0 top-full h-2 w-full" | Unsichtbarer Spacer für Dropdown-Hover - 2 units hoch
-      nav-dropdown-panel (DONE) | "absolute left-0 top-full z-50 mt-3 w-fit max-w-[13rem] rounded-md border border-border bg-card py-3 shadow-lg" | Dropdown Panel - absolut positioniert, maximale Breite, Schatten
-        nav-dropdown-group-label (DONE) | "px-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground" | Dropdown Gruppe Label - klein, fett, uppercase
-        nav-dropdown-link (DONE) | "block rounded-md px-2 py-2 text-sm leading-snug text-foreground transition-colors hover:bg-muted hover:text-primary" | Dropdown Link - kleine Schrift, enge Zeilenhöhe, Hover-Effekte
+  nav-inner-container | "w-full px-6 sm:px-8" | Innencontainer für Navigation - volle Breite mit responsivem Padding
+    nav-toolbar | "flex h-16 items-center gap-4" | Horizontale Toolbar für Logo, Links und Aktionen
+      nav-logo-link (DONE) | "mr-8 flex flex-shrink-0 items-center space-x-3 transition-opacity hover:opacity-80" | Logo-Link in Navigation - flexibel, mit Hover-Effekt
+        nav-logo-image | "h-10 w-10" | Logo-Bildgröße im Header
+        nav-logo-text (DONE) | "text-xl font-semibold whitespace-nowrap" | Logo-Text "DIE AKSEP" - groß, fett, kein Umbruch
+      nav-group-items (DONE) | "flex min-w-0 max-w-full flex-1 items-stretch gap-1 overflow-visible md:gap-2 lg:gap-3" | Container für Navigations-Gruppe-Items - responsive Gaps
+        nav-item-wrapper (DONE) | "group relative flex h-full items-center" | Navigation Item Wrapper - gruppiert, relativ positioniert
+          nav-item-base | "flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-sm font-medium transition-colors" | Basisstil für Primär-Navigation Links
+          nav-item-active-state | "bg-muted/40 text-primary" | Aktivzustand eines Navigation Items
+          nav-item-default-state | "text-foreground hover:bg-muted/30 hover:text-primary" | Standard/Hover Zustand eines Navigation Items
+          nav-dropdown-icon | "h-4 w-4" | Kleine Icon-Größe für Chevron-/Overflow-Symbole
+          nav-dropdown-toggle | "h-4 w-4 transition-transform" | Rotierendes Chevron für Dropdown-/Overflow-Toggles
+          nav-dropdown-open-state | "rotate-180" | Geöffneter Zustand der Dropdown-Pfeile
+        nav-dropdown-spacer (DONE) | "absolute left-0 top-full h-2 w-full" | Unsichtbarer Spacer für Dropdown-Hover - 2 units hoch
+        nav-dropdown-panel (DONE) | "absolute left-0 top-full z-50 mt-3 w-fit max-w-[13rem] rounded-md border border-border bg-card py-3 shadow-lg" | Dropdown Panel - absolut positioniert, maximale Breite, Schatten
+          nav-dropdown-scroll | "max-h-96 overflow-y-auto pr-2" | Scrollbarer Bereich innerhalb des Dropdown Panels
+          nav-dropdown-group-wrapper | "px-3" | Innenabstand für Dropdown-Gruppencontainer
+          nav-dropdown-group-top-divider | "mt-2 border-t border-border/60 pt-3" | Oberer Rahmen für Dropdown-Gruppen
+          nav-dropdown-group-bottom-divider | "mb-2 border-b border-border/60 pb-3" | Unterer Rahmen für Dropdown-Gruppen
+          nav-dropdown-group-first | "pt-1" | Zusätzlicher Abstand für erste Dropdown-Gruppe
+          nav-dropdown-group-label (DONE) | "px-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground" | Dropdown Gruppe Label - klein, fett, uppercase
+          nav-dropdown-stack | "mt-1 space-y-1" | Stapelabstand für Dropdown-Links
+          nav-dropdown-link (DONE) | "block rounded-md px-2 py-2 text-sm leading-snug text-foreground transition-colors hover:bg-muted hover:text-primary" | Dropdown Link - kleine Schrift, enge Zeilenhöhe, Hover-Effekte
+    nav-actions-area | "ml-4 flex items-center gap-3" | Wrapper für rechte Aktionssektion
+      nav-actions-desktop (DONE) | "hidden items-center space-x-3 2xl:flex" | Desktop-only Actions (sehr große Bildschirme)
+      nav-menu-button (DONE) | "flex h-10 w-10 items-center justify-center rounded-md border border-transparent transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" | Mobile Menü Button - quadratisch, mit Fokus/Hover-States
+        nav-menu-icon | "h-6 w-6" | Icon-Größe für Menü-Button (Burger/Close)
+  nav-overflow-wrapper | "relative flex-shrink-0" | Container für Overflow-Menü Trigger
     nav-overflow-trigger (DONE) | "inline-flex h-10 items-center justify-center rounded-md px-2 text-sm font-medium transition-colors hover:bg-muted/40 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" | Overflow Navigation Button - komplex mit Fokus-States
-      nav-overflow-content (DONE) | "max-h-96 w-fit max-w-[13rem] overflow-y-auto p-3" | Overflow Navigation Content - scrollbar, begrenzte Höhe
+    nav-overflow-content (DONE) | "max-h-96 w-fit max-w-[13rem] overflow-y-auto p-3" | Overflow Navigation Content - scrollbar, begrenzte Höhe
+      nav-overflow-scroll | "py-1" | Vertikaler Abstand innerhalb des Overflow-Menüs
+      nav-stack-space-2 | "space-y-2" | Gemeinsamer vertikaler Abstand (Overflow-Listen & Mobile-Menüblöcke)
         nav-overflow-button (DONE) | "flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary" | Overflow Navigation Button Item - volle Breite, zwischen-ausgerichtet
+          nav-overflow-submenu | "space-y-1 rounded-md bg-muted/20 px-2 py-2" | Ausgeklappter Untermenü-Container
+          nav-overflow-submenu-stack | "space-y-1 px-1" | Innerer Abstand im Untermenü
+          nav-overflow-top-divider | "pt-2 border-t border-border/60" | Optionaler oberer Rahmen im Overflow-Untermenü
+          nav-overflow-bottom-divider | "pb-2 border-b border-border/60" | Optionaler unterer Rahmen im Overflow-Untermenü
         nav-overflow-group-label (DONE) | "px-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground" | Overflow Gruppe Label - identisch zu Dropdown
-  nav-actions-desktop (DONE) | "hidden items-center space-x-3 2xl:flex" | Desktop-only Actions (sehr große Bildschirme)
-  nav-menu-button (DONE) | "flex h-10 w-10 items-center justify-center rounded-md border border-transparent transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" | Mobile Menü Button - quadratisch, mit Fokus/Hover-States
-    nav-mobile-item (DONE) | "border-b border-border/60 px-4 py-3 last:border-b-0" | Mobile Navigation Item Container - mit Trennlinie
-      nav-mobile-button (DONE) | "flex w-full items-center justify-between text-left text-base font-medium text-foreground" | Mobile Navigation Button - volle Breite, zwischen-ausgerichtet
-        nav-group-label (DONE) | "text-xs font-semibold uppercase tracking-wide text-muted-foreground" | Gruppe Label (z.B. "BEGRIFFE") - klein, fett, großbuchstaben
-        nav-child-link (DONE) | "block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-primary" | Kind-Link in Navigation (Unterpunkte) - klein, mit Hover
-      nav-direct-link (DONE) | "block rounded px-2 py-2 text-base text-foreground transition-colors hover:bg-muted hover:text-primary" | Direkte Navigation Links - normale Größe, mit Hover
+        nav-overflow-description | "whitespace-normal leading-snug" | Beschreibungstext im Overflow-Menü
+        nav-overflow-full-width | "w-full" | Volle Breite für Overflow-Eintragsinhalte
+        nav-overflow-secondary-text | "leading-snug" | Sekundäre Textzeile im Overflow-Menü
+  nav-mobile-wrapper | "border-t border-border bg-card" | Container für ausgeklapptes Mobile-Menü
+    nav-mobile-scroll | "max-h-[70vh] overflow-y-auto py-4" | Scrollbarer Bereich des Mobile-Menüs
+      nav-mobile-item (DONE) | "border-b border-border/60 px-4 py-3 last:border-b-0" | Mobile Navigation Item Container - mit Trennlinie
+        nav-mobile-button (DONE) | "flex w-full items-center justify-between text-left text-base font-medium text-foreground" | Mobile Navigation Button - volle Breite, zwischen-ausgerichtet
+          nav-mobile-disclosure | "space-y-2 pt-3" | Ausklappbereich innerhalb eines Mobile-Menüitems
+          nav-mobile-group-card | "rounded-md bg-muted/10 px-3 py-2" | Hintergrundkarte für Mobile-Untergruppen
+          nav-section-divider-top | "border-t border-border/60 pt-3" | Oberer Trenner für Mobile/Dropdown Sektionen
+          nav-section-divider-bottom | "border-b border-border/60 pb-3" | Unterer Trenner für Mobile/Dropdown Sektionen
+          nav-group-label (DONE) | "text-xs font-semibold uppercase tracking-wide text-muted-foreground" | Gruppe Label (z.B. "BEGRIFFE") - klein, fett, großbuchstaben
+          nav-mobile-link-list | "mt-2 space-y-1" | Liste der Unterlinks innerhalb eines Mobile-Menüitems
+            nav-child-link (DONE) | "block rounded px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-primary" | Kind-Link in Navigation (Unterpunkte) - klein, mit Hover
+        nav-direct-link (DONE) | "block rounded px-2 py-2 text-base text-foreground transition-colors hover:bg-muted hover:text-primary" | Direkte Navigation Links - normale Größe, mit Hover
 
 /* =============================================== */
 /* EXTRACTED className INSTANCES */

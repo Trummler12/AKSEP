@@ -1,14 +1,12 @@
 import { ChevronDown } from 'lucide-react';
 import { cn } from '../ui/utils';
 import type { NavItem } from '../../types/navigation';
-import { isPathActive } from '../../utils/navigation';
 
 // Import our custom styles
 import '../../styles/components/navigation.css';
 
 interface NavigationItemProps {
   item: NavItem;
-  currentPath: string;
   isOverflow: boolean;
   isActive: boolean;
   activeDropdown: string | null;
@@ -23,7 +21,6 @@ interface NavigationItemProps {
  */
 export const NavigationItem = ({
   item,
-  currentPath,
   isOverflow,
   isActive,
   activeDropdown,
@@ -44,37 +41,30 @@ export const NavigationItem = ({
       <a
         href={item.href}
         className={cn(
-          'flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-sm font-medium transition-colors',
-          isActive
-            ? 'bg-muted/40 text-primary'
-            : 'text-foreground hover:bg-muted/30 hover:text-primary'
+          'nav-item-base',
+          isActive ? 'nav-item-active-state' : 'nav-item-default-state'
         )}
       >
         <span>{item.label}</span>
-        {hasGroups && <ChevronDown className="h-4 w-4" />}
+        {hasGroups && <ChevronDown className="nav-dropdown-icon" />}
       </a>
-      
+
       {hasGroups && <div aria-hidden className="nav-dropdown-spacer" />}
-      
+
       {hasGroups && activeDropdown === item.key && (
         <div
           className="nav-dropdown-panel"
           style={{ width: 'max-content', maxWidth: '13rem' }}
         >
-          <div
-            className={cn(
-              'max-h-96 overflow-y-auto pr-2',
-              item.key === 'programm' ? 'pr-2' : ''
-            )}
-          >
+          <div className="nav-dropdown-scroll">
             {item.groups?.map((group, groupIndex) => (
               <div
                 key={group.key}
                 className={cn(
-                  'px-3',
-                  group.showTopBorder && 'mt-2 border-t border-border/60 pt-3',
-                  group.showBottomBorder && 'mb-2 border-b border-border/60 pb-3',
-                  !group.showTopBorder && groupIndex === 0 && 'pt-1'
+                  'nav-dropdown-group-wrapper',
+                  group.showTopBorder && 'nav-dropdown-group-top-divider',
+                  group.showBottomBorder && 'nav-dropdown-group-bottom-divider',
+                  !group.showTopBorder && groupIndex === 0 && 'nav-dropdown-group-first'
                 )}
               >
                 {group.title && (
@@ -82,7 +72,7 @@ export const NavigationItem = ({
                     {group.title}
                   </p>
                 )}
-                <div className="mt-1 space-y-1">
+                <div className="nav-dropdown-stack">
                   {group.items.map((child) => (
                     <a
                       key={child.href}

@@ -5,22 +5,26 @@
 /* =============================================== */
 
 === HERO SECTION ===
-hero-section (DONE) | "relative bg-gradient-to-b from-background to-card py-20 lg:py-32" | Hero Section - Gradient, responsive Padding
-    hero-content (DONE) | "max-w-4xl mx-auto text-center" | Hero Content Container - zentriert, begrenzte Breite
-      hero-logo-container (DONE) | "flex items-center justify-center space-x-4 mb-8" | Logo Container - zentriert horizontal, mit Abstand
-        hero-logo (DONE) | "h-16 w-16 lg:h-20 lg:w-20" | Hero Logo - responsive Größe
-          hero-title (DONE) | "text-4xl lg:text-6xl mb-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent" | Hero Titel - riesig, Gradient-Text
-          hero-subtitle (DONE) | "text-lg lg:text-xl text-muted-foreground" | Hero Untertitel - responsive Größe, gedämpft
-      hero-slogan (DONE) | "text-2xl lg:text-4xl mb-6 max-w-3xl mx-auto" | Hero Slogan - groß, responsive, begrenzte Breite
-      hero-description (DONE) | "text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto" | Hero Beschreibung - responsive, zentriert
-      hero-buttons (DONE) | "flex flex-col sm:flex-row gap-4 justify-center mb-12" | Hero Button Container - responsive Layout
-        hero-primary-button (DONE) | "bg-primary hover:bg-primary/90" | Hero Primary Button - primäre Farbe, Hover
-          hero-button-link (DONE) | "flex items-center space-x-2" | Hero Button Link - Icon + Text Layout
-      hero-features-grid (DONE) | "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto" | Hero Features Grid - responsive 3-Spalten
-          hero-feature-icon (DONE) | "bg-primary/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Hero Feature Icon - runder Container, zentriert
-          hero-feature-icon-secondary (DONE) | "bg-secondary/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Hero Feature Icon Secondary - identisch, andere Farbe
-          hero-feature-icon-accent (DONE) | "bg-accent/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Hero Feature Icon Accent - identisch, Akzent-Farbe
-          hero-feature-text (DONE) | "text-sm text-muted-foreground" | Hero Feature Text - klein, gedämpft
+hero-section | "relative bg-gradient-to-b from-background to-card py-20 lg:py-32" | Hero Section - Gradient, responsive Padding
+  hero-container | "container mx-auto px-4" | Äußerer Container mit Seitenabständen
+    hero-content | "max-w-4xl mx-auto text-center" | Hero Content Container - zentriert, begrenzte Breite
+      hero-logo-container | "flex items-center justify-center space-x-4 mb-8" | Logo Container - zentriert horizontal, mit Abstand
+        hero-logo | "h-16 w-16 lg:h-20 lg:w-20" | Hero Logo - responsive Größe
+        hero-title | "text-4xl lg:text-6xl mb-2 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent" | Hero Titel - riesig, Gradient-Text
+        hero-subtitle | "text-lg lg:text-xl text-muted-foreground" | Hero Untertitel - responsive Größe, gedämpft
+      hero-slogan | "text-2xl lg:text-4xl mb-6 max-w-3xl mx-auto" | Hero Slogan - groß, responsive, begrenzte Breite
+      hero-description | "text-lg lg:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto" | Hero Beschreibung - responsive, zentriert
+      hero-buttons | "flex flex-col sm:flex-row gap-4 justify-center mb-12" | Hero Button Container - responsive Layout
+        hero-primary-button | "bg-primary hover:bg-primary/90" | Hero Primary Button - primäre Farbe, Hover
+        hero-button-link | "flex items-center space-x-2" | Hero Button Link - Icon + Text Layout
+          hero-button-icon | "h-5 w-5" | Icon-Größe in Hero-Buttons
+    hero-features-grid | "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto" | Hero Features Grid - responsive 3-Spalten
+      hero-feature-card | "text-center" | Feature-Karte mit zentriertem Inhalt
+        hero-feature-icon | "bg-primary/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Hero Feature Icon - runder Container, zentriert
+        hero-feature-icon-secondary | "bg-secondary/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Hero Feature Icon Secondary - identisch, andere Farbe
+        hero-feature-icon-accent | "bg-accent/20 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center" | Hero Feature Icon Accent - identisch, Akzent-Farbe
+        hero-feature-heading | "mb-2" | Überschrift-Abstand bei Feature-Karten
+        hero-feature-text | "text-sm text-muted-foreground" | Hero Feature Text - klein, gedämpft
 
 /* =============================================== */
 /* EXTRACTED CLASSNAMES FROM TSX FILES */

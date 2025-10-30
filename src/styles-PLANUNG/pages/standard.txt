@@ -7,7 +7,16 @@
 /* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
 /* =============================================== */
 
-(Standard page layouts - none explicitly marked yet in ugly-classNames.txt)
+=== STANDARD PAGE PLACEHOLDER ===
+standard-placeholder-section | "flex min-h-[60vh] flex-col items-center justify-center px-4 py-24 text-center" | Platzhalter-Sektion für Standardseiten
+  standard-placeholder-card | "mx-auto max-w-md space-y-6" | Container für Placeholder-Inhalt
+    standard-placeholder-icon-wrap | "mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-primary/20" | Runder Icon-Hintergrund
+      standard-placeholder-icon | "h-12 w-12 text-primary" | Icon-Größe/Farbe im Placeholder
+    standard-placeholder-stack | "space-y-3" | Vertikaler Abstand zwischen Texten und CTA
+      standard-placeholder-title | "text-3xl font-semibold" | Hauptüberschrift im Placeholder
+      standard-placeholder-description | "text-lg text-muted-foreground" | Beschreibender Text
+      standard-placeholder-link | "inline-flex items-center space-x-2" | Link zurück zur Startseite
+        standard-placeholder-link-icon | "h-4 w-4" | Icon im Link
 
 /* =============================================== */
 /* EXTRACTED CLASSNAMES FROM TSX FILES */

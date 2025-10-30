@@ -26,7 +26,7 @@ import '../../styles/components/navigation.css';
 
 const Navigation = ({ currentPath = '/' }: NavigationProps) => {
   const primaryNavItems = useMemo(() => getPrimaryNavItems(), []);
-  
+
   const {
     navigationState,
     setMenuOpen,
@@ -87,8 +87,8 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
 
   return (
     <header className="nav-header">
-      <div className="w-full px-6 sm:px-8">
-        <div className="flex h-16 items-center gap-4">
+      <div className="nav-inner-container">
+        <div className="nav-toolbar">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -97,7 +97,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                   className="nav-logo-link"
                   aria-label="Zur Startseite"
                 >
-                  <img src={aksepLogo} alt="DIE AKSEP Logo" className="h-10 w-10" />
+                  <img src={aksepLogo} alt="DIE AKSEP Logo" className="nav-logo-image" />
                   <span className="nav-logo-text">DIE AKSEP</span>
                 </a>
               </TooltipTrigger>
@@ -119,7 +119,6 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                 <NavigationItem
                   key={item.key}
                   item={item}
-                  currentPath={currentPath}
                   isOverflow={isOverflow}
                   isActive={isActive}
                   activeDropdown={navigationState.activeDropdown}
@@ -140,7 +139,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
             />
           </nav>
 
-          <div className="ml-4 flex items-center gap-3">
+          <div className="nav-actions-area">
             <div className="nav-actions-desktop">
               <Button variant="outline" size="sm" asChild>
                 <a href="/mitglied-werden">Mitglied werden</a>
@@ -155,15 +154,15 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
               onClick={toggleMenu}
               aria-label="Navigation umschalten"
             >
-              {navigationState.isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {navigationState.isMenuOpen ? <X className="nav-menu-icon" /> : <Menu className="nav-menu-icon" />}
             </button>
           </div>
         </div>
 
         {navigationState.isMenuOpen && (
-          <div className="border-t border-border bg-card">
-            <nav className="max-h-[70vh] overflow-y-auto py-4">
-              <div className="space-y-2">
+          <div className="nav-mobile-wrapper">
+            <nav className="nav-mobile-scroll">
+              <div className="nav-stack-space-2">
                 {navigationItems.map((item) => {
                   const isOpen = navigationState.openMobileSections[item.key];
                   const hasGroups = Boolean(item.groups?.length);
@@ -180,14 +179,14 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                             <span>{item.label}</span>
                             <ChevronDown
                               className={cn(
-                                'h-4 w-4 transition-transform',
-                                isOpen ? 'rotate-180' : ''
+                                'nav-dropdown-toggle',
+                                isOpen ? 'nav-dropdown-open-state' : ''
                               )}
                             />
                           </button>
                           <div
                             className={cn(
-                              'space-y-2 pt-3',
+                              'nav-mobile-disclosure',
                               isOpen ? 'block' : 'hidden'
                             )}
                           >
@@ -195,9 +194,9 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                               <div
                                 key={group.key}
                                 className={cn(
-                                  'rounded-md bg-muted/10 px-3 py-2',
-                                  group.showTopBorder && 'border-t border-border/60 pt-3',
-                                  group.showBottomBorder && 'border-b border-border/60 pb-3'
+                                  'nav-mobile-group-card',
+                                  group.showTopBorder && 'nav-section-divider-top',
+                                  group.showBottomBorder && 'nav-section-divider-bottom'
                                 )}
                               >
                                 {group.title && (
@@ -205,7 +204,7 @@ const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                                     {group.title}
                                   </p>
                                 )}
-                                <div className="mt-2 space-y-1">
+                                <div className="nav-mobile-link-list">
                                   {group.items.map((child) => (
                                     <a
                                       key={child.href}

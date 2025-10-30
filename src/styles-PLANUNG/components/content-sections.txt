@@ -1,2 +1,62 @@
 @import '../themes.css';
 
+/* =============================================== */
+/* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
+/* =============================================== */
+
+=== CONTENT LAYOUT ===
+content-page-stack | "space-y-20" | Vertikaler Abstand zwischen Inhaltsabschnitten
+  content-section-card | "bg-card py-20" | Abschnitt mit Kartenhintergrund und vertikalem Padding
+  content-section-plain | "py-20" | Neutraler Abschnitt ohne Hintergrundfarbe
+  content-container | "container mx-auto px-4" | Standard-Container mit Seitenabständen
+    content-inner-wide | "mx-auto max-w-4xl" | Breiter Inhaltsrahmen für zentrale Texte
+    content-inner-centered | "mx-auto max-w-4xl text-center" | Zentriertes Inneres für CTA-Abschnitte
+    content-header | "mb-12 text-center" | Abschnittsüberschrift - zentriert mit Abstand
+      content-heading-xl | "mb-6 text-3xl lg:text-4xl" | Große Überschrift für Abschnitte
+      content-description-base | "text-lg text-muted-foreground" | Standard Beschreibung ohne Breitenbegrenzung
+      content-description-wide | "mx-auto max-w-3xl text-lg text-muted-foreground" | Breite Beschreibung, zentriert
+      content-description-compact | "mx-auto mb-8 max-w-2xl text-lg text-muted-foreground" | Kompaktere Beschreibung mit zusätzlichem Abstand
+
+/* === Zwei-Spalten Einführungsbereich === */
+  content-two-column-grid | "grid grid-cols-1 items-center gap-8 lg:grid-cols-2" | Intro-Abschnitt mit Bild/Text nebeneinander
+    content-subheading | "mb-4 text-xl" | Unterüberschrift in Content-Abschnitten
+    content-bullet-list | "space-y-3" | Liste mit vertikalem Abstand
+      content-bullet-item | "flex items-start space-x-3" | Bullet-Item mit Icon links
+        content-bullet-marker-primary | "mt-1 rounded-full bg-primary p-1" | Runder Marker in Primärfarbe
+        content-bullet-marker-secondary | "mt-1 rounded-full bg-secondary p-1" | Runder Marker in Sekundärfarbe
+        content-bullet-marker-accent | "mt-1 rounded-full bg-accent p-1" | Runder Marker in Akzentfarbe
+        content-bullet-dot | "h-2 w-2 rounded-full bg-white" | Weißer Punkt im Marker
+      content-bullet-caption | "mb-4 text-sm" | Beschreibungstext unter Bulletlisten
+    content-resource-stack | "flex flex-col space-y-2" | Sammlung von Links/Kontakten untereinander
+      content-inline-link | "flex items-center space-x-2" | Inline-Link mit Icon
+        content-icon-xs | "h-4 w-4" | Kleines Icon für Listen/Links
+
+/* === Programmkacheln === */
+  content-program-grid | "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4" | Grid für Programmkarten
+    content-card-interactive | "cursor-pointer transition-shadow hover:shadow-lg" | Interaktive Karte mit Hover-Schatten
+      content-card-icon-wrapper | "mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20" | Runder Icon-Background
+        content-card-icon-color | "text-primary" | Farbgebung für Primär-Icon
+        content-card-icon-size | "h-6 w-6" | Icon-Größe innerhalb der Karte
+      content-card-title | "text-lg" | Titel in Karten
+      content-card-description | "mb-4 text-sm text-muted-foreground" | Beschreibungstext in Karten
+      content-card-link | "flex items-center space-x-2" | Link innerhalb einer Karte
+        content-icon-sm | "h-5 w-5" | Mittleres Icon (Pfeil etc.)
+    content-program-cta | "mt-8 text-center" | Abschluss-CTA unter Programmkacheln
+
+/* === News & Events Sektionen === */
+  content-news-grid | "grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" | Grid für News/Events Karten
+    content-news-card | "transition-shadow hover:shadow-lg" | Hovereffekt für News/Events-Karten
+      content-news-meta | "mb-2 flex items-center space-x-2 text-sm text-muted-foreground" | Metadatenzeile einer News-Karte
+        content-news-icon | "h-4 w-4" | Icongröße in News-Metadaten
+      content-news-title | "text-lg" | Titel in News/Event-Karten
+      content-news-link | "flex items-center space-x-2" | Linkelement in News/Event-Karten
+    content-news-cta | "mt-8 text-center" | CTA-Bereich für News/Event
+
+/* === Impact Highlights === */
+  content-impact-grid | "mb-8 grid grid-cols-1 gap-6 md:grid-cols-3" | Grid für Impact/Highlight-Karten
+    content-impact-card | "text-center" | Zentrierte Impact-Karte
+      content-impact-icon-primary | "mx-auto mb-2 h-8 w-8 text-primary" | Icon in Primärfarbe
+      content-impact-icon-secondary | "mx-auto mb-2 h-8 w-8 text-secondary" | Icon in Sekundärfarbe
+      content-impact-icon-accent | "mx-auto mb-2 h-8 w-8 text-accent" | Icon in Akzentfarbe
+      content-impact-description | "mb-4 text-sm text-muted-foreground" | Beschreibung innerhalb der Impact-Karte
+

@@ -161,3 +161,71 @@
   color: var(--foreground);
   font-weight: 500;
 }
+/* =============================================== */
+/* STANDARD PLACEHOLDER */
+/* =============================================== */
+
+.standard-placeholder-section {
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block: calc(var(--spacing) * 24);
+  text-align: center;
+}
+
+.standard-placeholder-card {
+  margin-inline: auto;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 6);
+}
+
+.standard-placeholder-icon-wrap {
+  margin-inline: auto;
+  display: flex;
+  height: 6rem;
+  width: 6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--primary-20);
+}
+
+.standard-placeholder-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary);
+}
+
+.standard-placeholder-stack {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 3);
+}
+
+.standard-placeholder-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.standard-placeholder-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+}
+
+.standard-placeholder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  text-decoration: none;
+  color: inherit;
+}
+
+.standard-placeholder-link-icon {
+  width: 1rem;
+  height: 1rem;
+}

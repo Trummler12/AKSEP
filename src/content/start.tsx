@@ -12,50 +12,50 @@ const StartPageContent = () => {
   return (
     <>
       <HeroSection />
-      <div className="space-y-20">
-        <section className="bg-card py-20">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-4xl">
-              <div className="mb-12 text-center">
-                <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.aksepDescription.title}</h2>
-                <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
+      <div className="content-page-stack">
+        <section className="content-section-card">
+          <div className="content-container">
+            <div className="content-inner-wide">
+              <div className="content-header">
+                <h2 className="content-heading-xl">{startPageContent.aksepDescription.title}</h2>
+                <p className="content-description-wide">
                   <strong>{startPageContent.aksepDescription.subtitle}</strong>
                   <br />
                   {startPageContent.aksepDescription.description}
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+              <div className="content-two-column-grid">
                 <div>
-                  <h3 className="mb-4 text-xl">Unsere Säulen</h3>
-                  <ul className="space-y-3">
-                    <li className="flex items-start space-x-3">
-                      <div className="mt-1 rounded-full bg-primary p-1">
-                        <div className="h-2 w-2 rounded-full bg-white" />
+                  <h3 className="content-subheading">Unsere Säulen</h3>
+                  <ul className="content-bullet-list">
+                    <li className="content-bullet-item">
+                      <div className="content-bullet-marker-primary">
+                        <div className="content-bullet-dot" />
                       </div>
                       <div>
                         <strong>Klimafreundlich:</strong> Klimatologisch und soziologisch - für eine gute Gesprächskultur
                       </div>
                     </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="mt-1 rounded-full bg-secondary p-1">
-                        <div className="h-2 w-2 rounded-full bg-white" />
+                    <li className="content-bullet-item">
+                      <div className="content-bullet-marker-secondary">
+                        <div className="content-bullet-dot" />
                       </div>
                       <div>
                         <strong>Sozialdemokratisch:</strong> Effiziente, barrierefreie Unterstützung für alle
                       </div>
                     </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="mt-1 rounded-full bg-accent p-1">
-                        <div className="h-2 w-2 rounded-full bg-white" />
+                    <li className="content-bullet-item">
+                      <div className="content-bullet-marker-accent">
+                        <div className="content-bullet-dot" />
                       </div>
                       <div>
                         <strong>Europa-Partei:</strong> Grenzübergreifend aktiv für gemeinsame Werte
                       </div>
                     </li>
-                    <li className="flex items-start space-x-3">
-                      <div className="mt-1 rounded-full bg-primary p-1">
-                        <div className="h-2 w-2 rounded-full bg-white" />
+                    <li className="content-bullet-item">
+                      <div className="content-bullet-marker-primary">
+                        <div className="content-bullet-dot" />
                       </div>
                       <div>
                         <strong>AKSEPtanz:</strong> Gleiche Chancen unabhängig von Startparametern
@@ -71,15 +71,15 @@ const StartPageContent = () => {
                       <CardDescription>Unser Hauptfokus für gesellschaftlichen Wandel</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="mb-4 text-sm">
+                      <p className="content-bullet-caption">
                         "In einer Zeit des Informationsüberflusses setzen wir uns für einen verantwortungsvollen Umgang mit Daten ein.
                         Information bildet die Grundlage für jeden gesellschaftlichen Wandel..."
                       </p>
-                      <div className="flex flex-col space-y-2">
+                      <div className="content-resource-stack">
                         <Button variant="outline" size="sm" asChild>
-                          <a href="/praeambel" className="flex items-center space-x-2">
+                          <a href="/praeambel" className="content-inline-link">
                             <span>Vollständige Präambel</span>
-                            <ArrowRight className="h-4 w-4" />
+                            <ArrowRight className="content-icon-xs" />
                           </a>
                         </Button>
                         <Button variant="ghost" size="sm" asChild>
@@ -87,10 +87,10 @@ const StartPageContent = () => {
                             href="https://discord.gg/5nBmmbqSPH"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center space-x-2"
+                            className="content-inline-link"
                           >
                             <span>Discord-Server</span>
-                            <ArrowRight className="h-4 w-4" />
+                            <ArrowRight className="content-icon-xs" />
                           </a>
                         </Button>
                       </div>
@@ -102,32 +102,32 @@ const StartPageContent = () => {
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.programSection.title}</h2>
-              <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
+        <section className="content-section-plain">
+          <div className="content-container">
+            <div className="content-header">
+              <h2 className="content-heading-xl">{startPageContent.programSection.title}</h2>
+              <p className="content-description-wide">
                 {startPageContent.programSection.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="content-program-grid">
               {programHighlights.map((item) => (
-                <Card key={item.href} className="cursor-pointer transition-shadow hover:shadow-lg">
+                <Card key={item.href} className="content-card-interactive">
                   <CardHeader>
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/20">
-                      <div className="text-primary">
-                        <Icon name={item.iconName} className="h-6 w-6" />
+                    <div className="content-card-icon-wrapper">
+                      <div className="content-card-icon-color">
+                        <Icon name={item.iconName} className="content-card-icon-size" />
                       </div>
                     </div>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <CardTitle className="content-card-title">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4 text-sm text-muted-foreground">{item.description}</p>
+                    <p className="content-card-description">{item.description}</p>
                     <Button variant="ghost" size="sm" asChild>
-                      <a href={item.href} className="flex items-center space-x-2">
+                      <a href={item.href} className="content-card-link">
                         <span>Mehr erfahren</span>
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="content-icon-xs" />
                       </a>
                     </Button>
                   </CardContent>
@@ -135,40 +135,40 @@ const StartPageContent = () => {
               ))}
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="content-program-cta">
               <Button size="lg" variant="outline" asChild>
-                <a href="/programm" className="flex items-center space-x-2">
+                <a href="/programm" className="content-inline-link">
                   <span>Vollständiges Programm ansehen</span>
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="content-icon-sm" />
                 </a>
               </Button>
             </div>
           </div>
         </section>
 
-        <section className="bg-card py-20">
-          <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.newsSection.title}</h2>
-              <p className="text-lg text-muted-foreground">{startPageContent.newsSection.description}</p>
+        <section className="content-section-card">
+          <div className="content-container">
+            <div className="content-header">
+              <h2 className="content-heading-xl">{startPageContent.newsSection.title}</h2>
+              <p className="content-description-base">{startPageContent.newsSection.description}</p>
             </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="content-news-grid">
               {newsItems.map((item) => (
-                <Card key={item.href} className="transition-shadow hover:shadow-lg">
+                <Card key={item.href} className="content-news-card">
                   <CardHeader>
-                    <div className="mb-2 flex items-center space-x-2 text-sm text-muted-foreground">
-                      <Calendar className="h-4 w-4" />
+                    <div className="content-news-meta">
+                      <Calendar className="content-news-icon" />
                       <span>{item.date}</span>
                     </div>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <CardTitle className="content-news-title">{item.title}</CardTitle>
                     <CardDescription>{item.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button variant="ghost" size="sm" asChild>
-                      <a href={item.href} className="flex items-center space-x-2">
+                      <a href={item.href} className="content-news-link">
                         <span>Weiterlesen</span>
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowRight className="content-icon-xs" />
                       </a>
                     </Button>
                   </CardContent>
@@ -176,10 +176,10 @@ const StartPageContent = () => {
               ))}
             </div>
 
-            <div className="mt-8 text-center">
+            <div className="content-news-cta">
               <Button size="lg" variant="outline" asChild>
-                <a href="/presse" className="flex items-center space-x-2">
-                  <FileText className="h-5 w-5" />
+                <a href="/presse" className="content-inline-link">
+                  <FileText className="content-icon-sm" />
                   <span>Alle Pressemitteilungen</span>
                 </a>
               </Button>
@@ -187,22 +187,22 @@ const StartPageContent = () => {
           </div>
         </section>
 
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="mb-6 text-3xl lg:text-4xl">{startPageContent.participationSection.title}</h2>
-              <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
+        <section className="content-section-plain">
+          <div className="content-container">
+            <div className="content-inner-centered">
+              <h2 className="content-heading-xl">{startPageContent.participationSection.title}</h2>
+              <p className="content-description-compact">
                 {startPageContent.participationSection.description}
               </p>
 
-              <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-                <Card className="text-center">
+              <div className="content-impact-grid">
+                <Card className="content-impact-card">
                   <CardHeader>
-                    <Users className="mx-auto mb-2 h-8 w-8 text-primary" />
+                    <Users className="content-impact-icon-primary" />
                     <CardTitle>Mitglied werden</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4 text-sm text-muted-foreground">
+                    <p className="content-impact-description">
                       Werden Sie offizielles Mitglied und gestalten Sie unsere Politik aktiv mit.
                     </p>
                     <Button asChild>
@@ -211,13 +211,13 @@ const StartPageContent = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center">
+                <Card className="content-impact-card">
                   <CardHeader>
-                    <Lightbulb className="mx-auto mb-2 h-8 w-8 text-secondary" />
+                    <Lightbulb className="content-impact-icon-secondary" />
                     <CardTitle>Mitmachen</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4 text-sm text-muted-foreground">
+                    <p className="content-impact-description">
                       Bringen Sie Ihre Ideen und Expertise in unsere Arbeitsgruppen ein.
                     </p>
                     <Button variant="secondary" asChild>
@@ -226,13 +226,13 @@ const StartPageContent = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="text-center">
+                <Card className="content-impact-card">
                   <CardHeader>
-                    <Heart className="mx-auto mb-2 h-8 w-8 text-accent" />
+                    <Heart className="content-impact-icon-accent" />
                     <CardTitle>Unterstützen</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4 text-sm text-muted-foreground">
+                    <p className="content-impact-description">
                       Helfen Sie uns mit einer Spende, unsere Arbeit zu finanzieren.
                     </p>
                     <Button variant="outline" asChild>

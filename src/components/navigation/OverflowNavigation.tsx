@@ -31,13 +31,13 @@ export const OverflowNavigation = ({
   if (overflowItems.length === 0) return null;
 
   return (
-    <div className="relative flex-shrink-0">
+    <div className="nav-overflow-wrapper">
       <DropdownMenu>
         <DropdownMenuTrigger
           ref={overflowTriggerRef}
           className="nav-overflow-trigger"
         >
-          <MoreHorizontal className="h-4 w-4" />
+          <MoreHorizontal className="nav-dropdown-icon" />
         </DropdownMenuTrigger>
         <DropdownMenuContent
           align="end"
@@ -49,9 +49,9 @@ export const OverflowNavigation = ({
             const hasGroups = Boolean(item.groups?.length);
 
             return (
-              <div key={item.key} className="py-1">
+              <div key={item.key} className="nav-overflow-scroll">
                 {hasGroups ? (
-                  <div className="space-y-2">
+                  <div className="nav-stack-space-2">
                     <button
                       type="button"
                       onClick={() => onToggleOverflowSection(item.key)}
@@ -60,14 +60,14 @@ export const OverflowNavigation = ({
                       <span>{item.label}</span>
                       <ChevronDown
                         className={cn(
-                          'h-4 w-4 transition-transform',
-                          isOpen ? 'rotate-180' : ''
+                          'nav-dropdown-toggle',
+                          isOpen ? 'nav-dropdown-open-state' : ''
                         )}
                       />
                     </button>
                     <div
                       className={cn(
-                        'space-y-1 rounded-md bg-muted/20 px-2 py-2',
+                        'nav-overflow-submenu',
                         isOpen ? 'block' : 'hidden'
                       )}
                     >
@@ -75,9 +75,9 @@ export const OverflowNavigation = ({
                         <div
                           key={group.key}
                           className={cn(
-                            'space-y-1 px-1',
-                            group.showTopBorder && 'pt-2 border-t border-border/60',
-                            group.showBottomBorder && 'pb-2 border-b border-border/60'
+                            'nav-overflow-submenu-stack',
+                            group.showTopBorder && 'nav-overflow-top-divider',
+                            group.showBottomBorder && 'nav-overflow-bottom-divider'
                           )}
                         >
                           {group.title && (
@@ -89,9 +89,9 @@ export const OverflowNavigation = ({
                             <DropdownMenuItem
                               key={child.href}
                               asChild
-                              className="whitespace-normal leading-snug"
+                              className="nav-overflow-description"
                             >
-                              <a href={child.href} className="w-full">
+                              <a href={child.href} className="nav-overflow-full-width">
                                 {child.label}
                               </a>
                             </DropdownMenuItem>
@@ -101,8 +101,8 @@ export const OverflowNavigation = ({
                     </div>
                   </div>
                 ) : (
-                  <DropdownMenuItem asChild className="leading-snug">
-                    <a href={item.href} className="w-full">
+                  <DropdownMenuItem asChild className="nav-overflow-secondary-text">
+                    <a href={item.href} className="nav-overflow-full-width">
                       {item.label}
                     </a>
                   </DropdownMenuItem>

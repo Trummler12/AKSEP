@@ -7,30 +7,30 @@ const Footer = () => {
   // All links and configuration are now imported from external data
 
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="footer-wrapper">
+      <div className="footer-container">
+        <div className="footer-grid">
           {/* Logo and Description */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <img src={aksepLogo} alt="DIE AKSEP Logo" className="h-8 w-8" />
-              <span className="text-xl">DIE AKSEP</span>
+            <div className="footer-brand">
+              <img src={aksepLogo} alt="DIE AKSEP Logo" className="footer-logo-image" />
+              <span className="footer-logo-text">DIE AKSEP</span>
             </div>
-            <p className="text-muted-foreground mb-6 text-sm">
+            <p className="footer-description">
               Aktivistisch · Klimafreundlich · Sozialdemokratisch · Europa-Partei
             </p>
-            <p className="text-muted-foreground mb-6 text-sm">
+            <p className="footer-description">
               Informationspolitik als Hauptfokus: Für eine transparente, evidenzbasierte Politik.
             </p>
-            
+
             {/* Contact */}
-            <div className="space-y-2 text-sm mb-6">
+            <div className="footer-link-group">
               {contactInfo.map((contact) => (
-                <div key={contact.href} className="flex items-center space-x-2 text-muted-foreground">
+                <div key={contact.href} className="footer-contact-item">
                   <Icon name={contact.iconName} />
-                  <a 
-                    href={contact.href} 
-                    className="hover:text-primary transition-colors"
+                  <a
+                    href={contact.href}
+                    className="footer-contact-link"
                     {...(contact.href.startsWith('https://') && {
                       target: "_blank",
                       rel: "noopener noreferrer"
@@ -44,15 +44,15 @@ const Footer = () => {
 
             {/* Social Media */}
             <div>
-              <h4 className="text-sm mb-3">Folgen Sie uns</h4>
-              <div className="flex space-x-3">
+              <h4 className="footer-section-title">Folgen Sie uns</h4>
+              <div className="footer-social-row">
                 {socialLinks.map((social) => (
                   <a
                     key={social.href}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="footer-social-link"
                     aria-label={social.label}
                   >
                     <Icon name={social.iconName} />
@@ -64,13 +64,13 @@ const Footer = () => {
 
           {/* Participation */}
           <div>
-            <h3 className="mb-4">Aktiv werden</h3>
-            <ul className="space-y-2">
+            <h3 className="footer-section-title">Aktiv werden</h3>
+            <ul className="footer-link-stack">
               {participationLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                    className="footer-nav-link"
                   >
                     {link.label}
                   </a>
@@ -81,13 +81,13 @@ const Footer = () => {
 
           {/* Legal and Links */}
           <div>
-            <h3 className="mb-4">Rechtliches</h3>
-            <ul className="space-y-2">
+            <h3 className="footer-section-title">Rechtliches</h3>
+            <ul className="footer-link-stack">
               {legalLinks.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="footer-legal-link"
                   >
                     {link.label}
                   </a>
@@ -97,14 +97,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <Separator className="my-8" />
+        <Separator className="footer-divider" />
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div className="text-sm text-muted-foreground">
+        <div className="footer-bottom-bar">
+          <div className="footer-bottom-text">
             {footerConfig.copyright}
           </div>
-          <div className="text-sm text-muted-foreground text-center md:text-right">
+          <div className="footer-bottom-text-aligned">
             AKSEPtanz · Für Transparenz, Evidenz und Bürgernähe
           </div>
         </div>
