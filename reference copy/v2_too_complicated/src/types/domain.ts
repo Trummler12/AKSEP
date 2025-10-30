@@ -1,2 +1,0 @@
-// TODO: Typen definieren.
-export {}
