@@ -1,0 +1,417 @@
+/* =============================================
+   NAVIGATION.CSS
+   ============================================= */
+
+/* skip-to-content | "a11y skip link" | Skip-Navigation für Screenreader */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: var(--spacing-md);
+  z-index: var(--z-tooltip);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--surface);
+  color: var(--link);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.skip-to-content:focus {
+  top: var(--spacing-md);
+}
+
+/* nav-bar | "sticky top, full-width, shadow" | Oberer Navigationsrahmen */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+/* nav-inner | "flex row, space-between, align-center" | Innenlayout */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    padding: var(--spacing-md);
+  }
+}
+
+/* nav-brand | "logo + wordmark" | Linke Logo-Zone (klickbar) */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  text-decoration: none;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.nav-brand:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* nav-logo | "logo image" | Logo-Bild */
+.nav-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+}
+
+/* nav-wordmark | "brand text" | Markenname */
+.nav-wordmark {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .nav-wordmark {
+    display: none;
+  }
+}
+
+/* nav-center | "center flex zone" | Mittlerer Bereich mit Tabs */
+.nav-center {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .nav-center {
+    display: none;
+  }
+}
+
+/* nav-items | "primäre Tabs" | Hauptnavigationselemente */
+.nav-items {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow: hidden;
+  flex: 1;
+  max-width: 800px;
+}
+
+/* nav-item | "single tab" | Einzelner Navigations-Tab */
+.nav-item {
+  position: relative;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-item:hover {
+  background-color: color-mix(in oklab, var(--surface) 80%, transparent);
+  opacity: 1;
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+/* nav-item--active | "active state" | Aktiver Tab */
+.nav-item--active {
+  color: var(--link);
+  background-color: color-mix(in oklab, var(--link) 15%, transparent);
+}
+
+/* nav-actions | "rechte CTA-Zone" | Rechte Aktionszone */
+.nav-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* nav-overflow | "Mehr … Trigger" | Priority+ Overflow-Button */
+.nav-overflow {
+  position: relative;
+}
+
+.nav-overflow-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-overflow-trigger:hover {
+  background-color: color-mix(in oklab, var(--surface) 80%, transparent);
+}
+
+.nav-overflow-trigger:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.nav-overflow-trigger[aria-expanded="true"] {
+  background-color: var(--surface);
+}
+
+.nav-overflow-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-overflow-trigger[aria-expanded="true"] .nav-overflow-icon {
+  transform: rotate(180deg);
+}
+
+/* nav-menu | "Dropdown, scrollable" | Dropdown-Menü */
+.nav-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  min-width: 280px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-menu:focus {
+  outline: none;
+}
+
+/* nav-menu-item | "menu item" | Menü-Eintrag */
+.nav-menu-item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text);
+  font-size: var(--text-sm);
+  text-align: left;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-menu-item:hover {
+  background-color: color-mix(in oklab, var(--link) 15%, transparent);
+}
+
+.nav-menu-item:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+
+/* nav-menu-disclosure | "accordion group" | Disclosure-Gruppe */
+.nav-menu-disclosure {
+  border-top: 1px solid var(--border);
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+}
+
+.nav-menu-disclosure:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.nav-menu-disclosure-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  text-align: left;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-menu-disclosure-trigger:hover {
+  background-color: color-mix(in oklab, var(--link) 15%, transparent);
+}
+
+.nav-menu-disclosure-trigger:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+
+.nav-menu-disclosure-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-menu-disclosure-trigger[aria-expanded="true"] .nav-menu-disclosure-icon {
+  transform: rotate(180deg);
+}
+
+.nav-menu-disclosure-content {
+  padding-left: var(--spacing-md);
+  margin-top: var(--spacing-xs);
+}
+
+.nav-menu-disclosure-item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  text-align: left;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.nav-menu-disclosure-item:hover {
+  background-color: color-mix(in oklab, var(--link) 10%, transparent);
+  color: var(--text);
+}
+
+.nav-menu-disclosure-item:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+
+/* nav-mobile-toggle | "mobile menu button" | Mobile Menü-Button */
+.nav-mobile-toggle {
+  display: none;
+  padding: var(--spacing-sm);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-mobile-toggle:hover {
+  background-color: color-mix(in oklab, var(--surface) 80%, transparent);
+}
+
+.nav-mobile-toggle:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .nav-mobile-toggle {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-mobile-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* nav-drawer | "mobile drawer" | Mobile Drawer-Navigation */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-modal);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+}
+
+.nav-drawer--open {
+  transform: translateX(0);
+}
+
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-drawer-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.nav-drawer-close {
+  padding: var(--spacing-sm);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-drawer-close:hover {
+  background-color: color-mix(in oklab, var(--surface) 80%, transparent);
+}
+
+.nav-drawer-close:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.nav-drawer-content {
+  padding: var(--spacing-lg);
+}
+
+.nav-drawer-item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-md);
+  color: var(--text);
+  font-size: var(--text-base);
+  text-align: left;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.nav-drawer-item:hover {
+  background-color: color-mix(in oklab, var(--link) 15%, transparent);
+}
+
+.nav-drawer-item:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+
+/* nav-overlay | "backdrop overlay" | Overlay für Mobile Drawer */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  z-index: var(--z-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.nav-overlay--visible {
+  opacity: 1;
+  pointer-events: all;
+}

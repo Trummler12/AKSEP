@@ -1,0 +1,81 @@
+/* =============================================
+   PLACEHOLDER.CSS - Platzhalterseiten
+   ============================================= */
+
+/* placeholder-page | "placeholder page layout" | Platzhalter-Layout */
+.placeholder-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+}
+
+/* placeholder-content | "centered content" | Zentrierter Inhalt */
+.placeholder-content {
+  max-width: 600px;
+  text-align: center;
+}
+
+/* placeholder-icon | "placeholder icon" | Platzhalter-Icon */
+.placeholder-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in oklab, var(--color-horizon) 15%, transparent);
+  color: var(--color-horizon);
+  border-radius: var(--radius-full);
+}
+
+.placeholder-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+/* placeholder-title | "placeholder heading" | Platzhalter-Überschrift */
+.placeholder-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .placeholder-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* placeholder-description | "placeholder text" | Platzhalter-Text */
+.placeholder-description {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .placeholder-description {
+    font-size: var(--text-base);
+  }
+}
+
+/* placeholder-actions | "placeholder buttons" | Platzhalter-Buttons */
+.placeholder-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* placeholder-divider | "visual divider" | Visueller Trenner */
+.placeholder-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--link);
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--spacing-lg);
+}

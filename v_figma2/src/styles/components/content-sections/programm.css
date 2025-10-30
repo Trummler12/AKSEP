@@ -1,0 +1,94 @@
+/* =============================================
+   PROGRAMM.CSS - Programm-Highlights
+   ============================================= */
+
+/* programm-section | "program highlights section" | Programm-Highlights-Sektion */
+.programm-section {
+  padding: var(--spacing-3xl) 0;
+  background: var(--surface);
+}
+
+/* programm-grid | "program cards grid" | Grid für Programm-Cards */
+.programm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .programm-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* programm-card | "program card" | Programm-Card */
+.programm-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.programm-card:hover {
+  border-color: var(--color-mint);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* programm-card-header | "card header with icon" | Card-Header mit Icon */
+.programm-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* programm-card-icon | "card icon" | Card-Icon */
+.programm-card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in oklab, var(--color-mint) 15%, transparent);
+  color: var(--color-mint);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.programm-card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* programm-card-title | "card title" | Card-Titel */
+.programm-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+/* programm-card-content | "card body" | Card-Body */
+.programm-card-content {
+  flex: 1;
+}
+
+.programm-card-content p {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+/* programm-card-footer | "card footer" | Card-Footer */
+.programm-card-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border);
+}

@@ -1,0 +1,118 @@
+/* =============================================
+   MITMACHEN.CSS - Participation Section
+   ============================================= */
+
+/* mitmachen-section | "participation section" | Mitmachen-Sektion */
+.mitmachen-section {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, var(--color-bg-darker) 0%, var(--color-bg-darkerst) 100%);
+}
+
+/* mitmachen-content | "content wrapper" | Content-Wrapper */
+.mitmachen-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mitmachen-content {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* mitmachen-grid | "options grid" | Grid für Mitmach-Optionen */
+.mitmachen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+  .mitmachen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* mitmachen-card | "participation card" | Mitmachen-Card */
+.mitmachen-card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-base);
+  text-align: center;
+}
+
+.mitmachen-card:hover {
+  border-color: var(--color-mint);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* mitmachen-card-icon | "card icon" | Card-Icon */
+.mitmachen-card-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-lg);
+  background: color-mix(in oklab, var(--color-mint) 15%, transparent);
+  color: var(--color-mint);
+  border-radius: var(--radius-full);
+}
+
+.mitmachen-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* mitmachen-card-title | "card title" | Card-Titel */
+.mitmachen-card-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin-bottom: var(--spacing-md);
+}
+
+/* mitmachen-card-text | "card description" | Card-Beschreibung */
+.mitmachen-card-text {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* mitmachen-cta | "call to action" | Call-to-Action-Bereich */
+.mitmachen-cta {
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-2xl);
+  background: color-mix(in oklab, var(--color-mint) 10%, transparent);
+  border: 1px solid color-mix(in oklab, var(--color-mint) 30%, transparent);
+  border-radius: var(--radius-lg);
+}
+
+.mitmachen-cta-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: var(--spacing-md);
+}
+
+.mitmachen-cta-text {
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-relaxed);
+}
+
+.mitmachen-cta-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}

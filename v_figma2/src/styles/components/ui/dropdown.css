@@ -1,0 +1,98 @@
+/* =============================================
+   DROPDOWN.CSS
+   ============================================= */
+
+/* dropdown | "dropdown wrapper" | Dropdown-Wrapper */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* dropdown-trigger | "dropdown trigger button" | Dropdown-Trigger */
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.dropdown-trigger:hover {
+  border-color: var(--link);
+}
+
+.dropdown-trigger:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+.dropdown-trigger[aria-expanded="true"] {
+  border-color: var(--link);
+  background: color-mix(in oklab, var(--link) 10%, transparent);
+}
+
+/* dropdown-icon | "dropdown icon" | Dropdown-Icon */
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.dropdown-trigger[aria-expanded="true"] .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+/* dropdown-menu | "dropdown menu" | Dropdown-Menü */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-dropdown);
+}
+
+.dropdown-menu--right {
+  left: auto;
+  right: 0;
+}
+
+/* dropdown-item | "dropdown menu item" | Dropdown-Menü-Eintrag */
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text);
+  font-size: var(--text-sm);
+  text-align: left;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: color-mix(in oklab, var(--link) 15%, transparent);
+}
+
+.dropdown-item:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: -2px;
+}
+
+/* dropdown-separator | "menu separator" | Menü-Trenner */
+.dropdown-separator {
+  height: 1px;
+  background: var(--border);
+  margin: var(--spacing-sm) 0;
+}

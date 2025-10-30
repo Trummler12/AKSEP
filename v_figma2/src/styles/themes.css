@@ -1,0 +1,23 @@
+/* =============================================
+   THEMES.CSS - THEME-ZUWEISUNGEN
+   ============================================= */
+
+.dark {
+  color-scheme: dark;
+  --bg: var(--color-bg-darker);
+  --surface: var(--color-bg-darkerst);
+  --text: #E8E4F5;
+  --text-muted: #CFC8E6;
+  --link: var(--color-mint);
+  --border: color-mix(in oklab, #CFC8E6 20%, transparent);
+}
+
+.on-dark {
+  --text: #E8E4F5;
+  --link: var(--color-mint);
+}
+
+.on-light {
+  --text: #1c152b;
+  --link: var(--color-true-lavender);
+}

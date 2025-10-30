@@ -1,0 +1,61 @@
+/* =============================================
+   START.CSS - Startseite
+   ============================================= */
+
+/* start-page | "start page layout" | Startseiten-Layout */
+.start-page {
+  /* Spezifische Styles für Startseite */
+}
+
+/* Feature-Highlight-Bereich */
+.feature-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+@media (max-width: 1024px) {
+  .feature-highlight {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.feature-highlight-item {
+  padding: var(--spacing-xl);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.feature-highlight-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in oklab, var(--color-mint) 15%, transparent);
+  border-radius: var(--radius-xl);
+  color: var(--color-mint);
+}
+
+.feature-highlight-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.feature-highlight-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.feature-highlight-text {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: var(--line-height-relaxed);
+}

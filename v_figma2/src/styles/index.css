@@ -1,0 +1,23 @@
+/* =============================================
+   INDEX.CSS - AGGREGATOR
+   Importiert NUR die tiefsten CSS-Dateien
+   ============================================= */
+
+@import './globals.css';
+@import './themes.css';
+@import './components/.shared.css';
+@import './components/navigation.css';
+@import './components/footer.css';
+@import './components/hero.css';
+@import './components/content-sections/.shared.css';
+@import './components/content-sections/akronym.css';
+@import './components/content-sections/programm.css';
+@import './components/content-sections/aktuelles.css';
+@import './components/content-sections/mitmachen.css';
+@import './components/ui/.shared.css';
+@import './components/ui/button.css';
+@import './components/ui/dropdown.css';
+@import './components/ui/table.css';
+@import './pages/.shared.css';
+@import './pages/start.css';
+@import './pages/placeholder.css';

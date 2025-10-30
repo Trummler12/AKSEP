@@ -1,0 +1,62 @@
+/* =============================================
+   TABLE.CSS
+   ============================================= */
+
+/* table-wrapper | "scrollable wrapper" | Scrollbarer Wrapper */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+/* table | "data table" | Daten-Tabelle */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+/* table-header | "table header" | Tabellen-Header */
+.table-header {
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+}
+
+.table-header th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text);
+}
+
+/* table-body | "table body" | Tabellen-Body */
+.table-body tr {
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--transition-fast);
+}
+
+.table-body tr:hover {
+  background-color: color-mix(in oklab, var(--surface) 50%, transparent);
+}
+
+.table-body tr:last-child {
+  border-bottom: none;
+}
+
+.table-body td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  color: var(--text-muted);
+}
+
+/* table-cell--highlight | "highlighted cell" | Hervorgehobene Zelle */
+.table-cell--highlight {
+  color: var(--link);
+  font-weight: var(--font-weight-medium);
+}
+
+/* table-cell--numeric | "numeric cell" | Numerische Zelle */
+.table-cell--numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

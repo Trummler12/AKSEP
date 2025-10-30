@@ -1,0 +1,110 @@
+/* =============================================
+   HERO.CSS
+   ============================================= */
+
+/* hero | "main hero section" | Hauptbereich Hero-Sektion */
+.hero {
+  position: relative;
+  padding: var(--spacing-4xl) 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+  }
+}
+
+/* hero-content | "centered content wrapper" | Zentrierter Content-Wrapper */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* hero-logo | "hero logo image" | Logo im Hero-Bereich */
+.hero-logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto var(--spacing-xl);
+  border-radius: var(--radius-2xl);
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* hero-title | "main heading" | Haupt-Überschrift */
+.hero-title {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-tight);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* hero-subtitle | "subtitle text" | Untertitel */
+.hero-subtitle {
+  font-size: var(--text-xl);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-normal);
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* hero-description | "description text" | Beschreibungstext */
+.hero-description {
+  font-size: var(--text-lg);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-2xl);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (max-width: 768px) {
+  .hero-description {
+    font-size: var(--text-base);
+  }
+}
+
+/* hero-actions | "CTA buttons" | Call-to-Action Buttons */
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* hero-badge | "badge/tag" | Badge im Hero */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: color-mix(in oklab, var(--link) 15%, transparent);
+  color: var(--link);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-lg);
+}
