@@ -1,0 +1,33 @@
+/**
+ * AKSEP Start Page Styles
+ * Start page layout and imports for all component sections
+ */
+@import '../themes.css';
+@import '../components/hero.css';
+@import '../components/navigation.css';
+@import '../components/footer.css';
+@import '../components/start-sections/shared.css';
+@import '../components/start-sections/akronym.css';
+@import '../components/start-sections/programm.css';
+@import '../components/start-sections/aktuell.css';
+@import '../components/start-sections/mitmachen.css';
+
+/* =============================================== */
+/* PAGE LAYOUT */
+/* =============================================== */
+
+.homepage-main {
+  background-color: var(--background);
+  min-height: calc(100vh - var(--navigation-height));
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================== */
+/* PLACEHOLDER FOR FUTURE HOMEPAGE-SPECIFIC MODULES */
+/* =============================================== */
+
+/* Zusammenführen sinnvoll */
+.homepage-section-note {
+  display: contents;
+}

@@ -1,0 +1,362 @@
+﻿# Projektwurzel (AKSEP\projects\AKSEP)
+.
+├─ .editorconfig
+├─ .env.example
+├─ .eslintrc.cjs
+├─ .gitignore                                # u.a. .nuxt/, .output/, node_modules/
+├─ .nvmrc
+├─ .prettierignore
+├─ .prettierrc
+├─ .vscode/
+│  └─ settings.json
+├─ AGENTS.md                                 # muss noch überarbeitet werden
+├─ DEVELOPER.md
+├─ i18n.config.ts                            # (optional) zentrale i18n-Optionen
+├─ package.json
+├─ package-lock.json                         # oder pnpm-lock.yaml / yarn.lock
+├─ README.md
+├─ tsconfig.json
+├─ nuxt.config.ts                            # Nuxt 3 + @nuxt/content + @nuxtjs/i18n Konfiguration
+│
+├─ .github/
+│  └─ workflows/
+│     ├─ ci.yml                              # Lint + Typecheck + (optional) Linkcheck der Content-Seiten
+│     └─ deploy.yml                          # (falls benötigt) Preview/Prod Deploy
+|
+├─ docs/                                     # Projekt-Dokumentation (zur Entzerrung des Root)
+│  ├─ local_tree.txt                         # generiert aus der local_tree.ps1/.mjs, beschreibt die *momentane* Dateistruktur
+│  ├─ migration.md
+│  ├─ Verzeichnisbaum.txt
+│  ├─ yaml.md
+│  └─ …                                      # Weitere Info-Files
+│
+├─ server/
+│  └─ routes/
+│     └─ sitemap.xml.ts                      # generiert Sitemap aus @nuxt/content
+|
+├─ public/
+│  ├─ favicon.ico
+│  ├─ robots.txt
+│  ├─ og-image.png
+│  ├─ .well-known/
+│  │  ├─ security.txt
+│  │  └─ humans.txt
+│  ├─ images/
+│  │  └─ content/                            # Bilder, die in Markdown verlinkt werden (z.B. /images/content/…)
+│  ├─ uploads/                               # Ziel für Decap-Uploads (media_folder/public_folder)
+│  ├─ admin/
+│  │  ├─ index.html
+│  │  └─ config.yml
+│  └─ _redirects
+│
+├─ content/                                  # Git-basiertes CMS (Markdown/MDC/YAML) – @nuxt/content
+│  ├─ _globals.yml                           # optionale globale Metadaten (Copyright, orgName, etc.)
+│  │
+│  ├─ start/
+│  │  ├─ _dir.yml                            # defaults für die Startseite (Layout, Pfad, Meta)
+│  │  └─ _index.mdc
+│  │
+│  ├─ begriffe/
+│  │  ├─ _dir.yml                            # z.B. { layout: default, path: { en: "glossary" } }
+│  │  ├─ _index.mdc                          # Glossar-Landing (A–Z, Suche)
+│  │  └─ _terms/                             # einzelne Begriffseinträge
+│  │     ├─ _dir.yml                         # defaults: { autolink: true }
+│  │     ├─ ag.mdc
+│  │     ├─ cancel-culture.mdc
+│  │     ├─ demokratie.mdc
+│  │     ├─ extremismus.mdc
+│  │     ├─ faschismus.mdc
+│  │     ├─ identitaetspolitik.mdc
+│  │     ├─ liberalismus.mdc
+│  │     ├─ meinungsfreiheit.mdc
+│  │     ├─ nationalsozialismus.mdc
+│  │     ├─ neoliberalismus.mdc
+│  │     ├─ paedophil-paedokriminell.mdc
+│  │     ├─ populismus.mdc
+│  │     ├─ radikal.mdc
+│  │     ├─ rechts-links.mdc
+│  │     ├─ toleranz.mdc
+│  │     └─ wokeness.mdc
+│  │
+│  ├─ programm/
+│  │  ├─ _dir.yml                            # defaults: { layout: "program", path: { de:"programm", en:"program" } }
+│  │  ├─ _index.mdc                          # Programm-Startseite
+│  │  ├─ CHANGELOG.mdc                       # manuelles Änderungsprotokoll
+│  │  │
+│  │  ├─ ag-regierung/                       # ag_id: 1
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  ├─ regierungsform/                  # thema_id: 1; title.de: "Regierungsform"
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  ├─ 01.mdc                       # title.de: "a) Kritik an der (direkten) Demokratie"
+│  │  │  │  ├─ 02.mdc                       # title.de: "b) Die Politie als mögliches Ideal"
+│  │  │  │  ├─ 03.mdc                       # title.de: "c) Abstimmungs-Vertretung"
+│  │  │  │  ├─ 04.mdc                       # title.de: "d) Erweiterte Gedanken"
+│  │  │  │  └─ 05.mdc                       # title.de: "e) Zusammenfassung und Ausblick"
+│  │  │  ├─ wahlsystem/                      # thema_id: 2; title.de: "Wahlsystem"
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  └─ 01.mdc                       # title.de: "a) Einführung eines Approval-Systems für Einzelpositionen"
+│  │  │  └─ verguetungssystem-amtsinhaber/   # thema_id: 3; title.de: "Vergütungssystem für Amtsinhaber"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                    # title.de: "0. Einleitung"
+│  │  │     └─ 01.mdc                    # title.de: "1. Das Vergütungsmodell im Detail"
+│  │  │
+│  │  ├─ ag-innere-sicherheit/               # ag_id: 2
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ drogenpolitik/                   # thema_id: 1; title.de: "Drogenpolitik"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Grundsatzposition"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Lernen aus der kontrollierten Verschreibung: Das Beispiel Methylphenidat (Ritalin, Medikinet)"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Vergleichende Analyse: Legalisierung als Instrument der Schadensminimierung"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Ein evidenzbasiertes Regulierungskonzept für psychoaktive Substanzen"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Förderung von Forschung und medizinischer Nutzung"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Historische Entwicklung und gesellschaftliche Perspektiven"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Wirtschaftliche Chancen und gesellschaftlicher Nutzen"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Schlussfolgerung: Kontrolle statt Kriminalisierung"
+│  │  │     ├─ Q.mdc                        # title.de: "Q. Quellen und weiterführende Literatur"
+│  │  │     └─ Z.mdc                        # title.de: "Detaillierte Analyse Wichtiger Bewertungsfaktoren für die Schädigungspotentiale psychoaktiver Substanzen"
+│  │  │
+│  │  ├─ ag-klimaschutz/                     # ag_id: 3
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ project-drawdown/                # thema_id: 1; title.de: "Project Drawdown"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "#0 Einleitung"
+│  │  │     ├─ 01.mdc                       # title.de: "#1 Förderung einer pflanzenbasierten Ernährung"
+│  │  │     ├─ 02.mdc                       # title.de: "#2 Reduzierung von Lebensmittelverschwendung"
+│  │  │     ├─ 03.mdc                       # title.de: "#3 Schutz und Wiederherstellung von Wäldern und Mooren"
+│  │  │     ├─ 04.mdc                       # title.de: "#4 Ausbau erneuerbarer Energien"
+│  │  │     ├─ 05.mdc                       # title.de: "#5 Förderung von Bildungs- und Familienplanungsprogrammen"
+│  │  │     ├─ 06.mdc                       # title.de: "#6 Einführung sauberer Kochtechnologien"
+│  │  │     ├─ 07.mdc                       # title.de: "#7 Verbesserte Landnutzungspraktiken"
+│  │  │     ├─ 08.mdc                       # title.de: "#8 Management von Methanemissionen"
+│  │  │     ├─ 09.mdc                       # title.de: "#9 Schutz und Wiederherstellung von Feuchtgebieten"
+│  │  │     ├─ 10.mdc                      # title.de: "#10 Einsatz alternativer Kältemittel"
+│  │  │     ├─ Z.mdc                        # title.de: "#z Schlusswort"
+│  │  │     └─ ZZ.mdc                      # title.de: "Nachträgliche Additionen"
+│  │  │
+│  │  ├─ ag-umweltschutz/                    # ag_id: 4
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  ├─ extensivwiesen/                  # thema_id: 1; title.de: "Förderung von Extensivwiesen"
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  └─ 00.mdc                       # title.de: "#0 Einleitung"
+│  │  │  └─ feuerwerk-events/               # thema_id: 2; title.de: "Zentralisierte Feuerwerk-Events & Förderung alternativer Shows"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Einleitung"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Problemaufriss"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Leitprinzipien (\"CCT-Rahmen\")"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Internationale Praxisbeispiele"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Raumplanung & Standortwahl"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Veranstaltungsformate"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Gesundheits- & Immissionsschutz"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Tierrechtliche Begleitmaßnahmen"
+│  │  │     ├─ 08.mdc                       # title.de: "8. Governance & Recht"
+│  │  │     ├─ 09.mdc                       # title.de: "9. Logistik & Sicherheit"
+│  │  │     ├─ 10.mdc                      # title.de: "10. Aufräum- & Recyclingoffensive"
+│  │  │     ├─ 11.mdc                      # title.de: "11. Wirtschaft & Tourismus"
+│  │  │     ├─ 12.mdc                      # title.de: "12. Kommunikation & Beteiligung"
+│  │  │     ├─ 13.mdc                      # title.de: "13. Ausblick: Vollständiger Übergang zu emissionsfreien Lichtinszenierungen"
+│  │  │     ├─ 14.mdc                      # title.de: "14. Potenziale & Kritik – Chancen, Grenzen, Risiken"
+│  │  │     └─ Q.mdc                        # title.de: "Q. Quellen und weiterführende Literatur"
+│  │  │
+│  │  ├─ ag-gesundheit/                      # ag_id: 5
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  ├─ versorgungseinrichtungen/       # thema_id: 1; title.de: "öffentliche oder gemeinschaftlich genutzte Versorgungseinrichtungen"
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  └─ 01.mdc                       # title.de: "Gesetzliche Grundlage für bedarfsgerechte Verpflegung in öffentlichen Einrichtungen"
+│  │  │  ├─ reservepool-fuer-pflegefachkraefte/ # thema_id: 2; title.de: "Reservepool für Pflegefachkräfte"
+│  │  │  │  ├─ _dir.yml
+│  │  │  │  ├─ _index.mdc
+│  │  │  │  ├─ 01.mdc                       # title.de: "1. Kernidee und Funktionsweise"
+│  │  │  │  ├─ 02.mdc                       # title.de: "2. Berücksichtigung von Kritikpunkten und Alternativansätzen"
+│  │  │  │  ├─ 03.mdc                       # title.de: "3. Ausblick und weitere Schritte"
+│  │  │  │  └─ 04.mdc                       # title.de: "4. Schlussfolgerung"
+│  │  │  └─ ernaehrungsempfehlungen/        # thema_id: 3; title.de: "Wissenschaftlich fundierte Re-Evalutation offizieller Ernährungsempfehlungen"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Einführung"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Was wir fordern"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Beispiele"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Politische Umsetzungsmöglichkeiten"
+│  │  │     └─ Z.mdc                        # title.de: "z. Zielsetzung"
+│  │  │
+│  │  ├─ ag-forschung-und-ki/                # ag_id: 6
+│  │  │  ├─ _dir.yml
+│  │  │  └─ _index.mdc                       # noch keine Themen
+│  │  │
+│  │  ├─ ag-wirtschaft/                      # ag_id: 7
+│  │  │  ├─ _dir.yml
+│  │  │  └─ _index.mdc                       # noch keine Themen
+│  │  │
+│  │  ├─ ag-bildung/                         # ag_id: 8
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ reform-des-bildungssystems/      # thema_id: 1; title.de: "Reform des Bildungssystems [IN ÜBERARBEITUNG]"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 01.mdc                       # title.de: "1. Umfassende Reform und Zentralisierung des Bildungssystems"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Bekämpfung des Lehrkräftemangels und Verbesserung der Arbeitsbedingungen"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Individuelle Förderung und Inklusion"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Frühkindliche Bildung stärken"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Digitalisierung und innovative Lernumgebungen"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Soziale Gerechtigkeit und Chancengleichheit"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Förderung des ländlichen Raums"
+│  │  │     └─ 08.mdc                       # title.de: "8. Alternative Bildungswege und innovative Ansätze"
+│  │  │
+│  │  ├─ ag-soziales/                        # ag_id: 9
+│  │  │  ├─ _dir.yml
+│  │  │  └─ _index.mdc                       # noch keine Themen
+│  │  │
+│  │  ├─ ag-europa-und-migration/            # ag_id: 10
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ fluechtlings-und-integrationspolitik/ # thema_id: 1; title.de: "Flüchtlings- und Integrationspolitik"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Einleitung – Unser Konzept für ein sicheres, integriertes Europa"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Grenzen als Instrument der systematischen Erfassung und Sicherheit"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Differenzierte Bildungs- und Integrationsmaßnahmen"
+│  │  │     ├─ 03.mdc                       # title.de: "3. Soziale Unterstützung und Integration"
+│  │  │     ├─ 04.mdc                       # title.de: "4. Effektive Asylverfahren und Grenzsicherung"
+│  │  │     ├─ 05.mdc                       # title.de: "5. Arbeitsmarktintegration und wirtschaftliche Teilhabe"
+│  │  │     ├─ 06.mdc                       # title.de: "6. Kultureller Austausch und gesellschaftlicher Zusammenhalt"
+│  │  │     ├─ 07.mdc                       # title.de: "7. Wissenschaftliche Evaluation und unabhängige Expertise"
+│  │  │     └─ Z.mdc                        # title.de: "Schlusswort"
+│  │  │
+│  │  ├─ ag-aussenpolitik/                   # ag_id: 11
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ aktive-neutralitaet/             # thema_id: 1; title.de: "Aktive Neutralität"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Begriffsklärungen und Erweiterungen"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Grundprinzipien der Aktiven Neutralität"
+│  │  │     └─ 02.mdc                       # title.de: "2. Gleichnis zur «aktiven Neutralität»"
+│  │  │
+│  │  ├─ ag-tierrechte/                      # ag_id: 12
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ grundsatzposition/               # thema_id: 1; title.de: "Grundsatzposition"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     ├─ 00.mdc                       # title.de: "0. Grundlegendes & Ressourcen"
+│  │  │     ├─ 01.mdc                       # title.de: "1. Effektive Umsetzung"
+│  │  │     ├─ 02.mdc                       # title.de: "2. Weitere Maßnahmen"
+│  │  │     └─ 03.mdc                       # title.de: "3. Abschluss"
+│  │  │
+│  │  ├─ ag-sonstiges/                       # ag_id: 13
+│  │  │  ├─ _dir.yml
+│  │  │  ├─ _index.mdc
+│  │  │  └─ religioese-erziehung/            # thema_id: 1; title.de: "Religiöse Erziehung"
+│  │  │     ├─ _dir.yml
+│  │  │     ├─ _index.mdc
+│  │  │     └─ 01.mdc                       # title.de: "Religiöse Erziehung und das Kindeswohl – ein unaufgelöster Konflikt im Grundgesetz?"
+│  │  │
+│  │  └─ ag-agrarpolitik/                    # ag_id: 14
+│  │     ├─ _dir.yml
+│  │     ├─ _index.mdc
+│  │     └─ ernaehrungsreform/               # thema_id: 1; title.de: "Warum eine Ernährungsreform notwendig ist"
+│  │        ├─ _dir.yml
+│  │        ├─ _index.mdc
+│  │        ├─ 01.mdc                       # title.de: "1. Tierrechte"
+│  │        ├─ 02.mdc                       # title.de: "2. Auswirkungen auf die Gesundheit"
+│  │        ├─ 03.mdc                       # title.de: "3. Auswirkungen auf Natur und Umwelt"
+│  │        ├─ 04.mdc                       # title.de: "4. Auswirkungen auf das Klima"
+│  │        ├─ 05.mdc                       # title.de: "5. Auswirkungen auf die Wirtschaft"
+│  │        ├─ 06.mdc                       # title.de: "6. Chancen für die Energiewende"
+│  │        ├─ 07.mdc                       # title.de: "7. Chancen für den Wohnungsmarkt"
+│  │        ├─ 08.mdc                       # title.de: "8. Weitere Chancen einer Ernährungsreform"
+│  │        └─ Q.mdc                        # title.de: "Fragen & Antworten zur Umsetzung (Q&A)"
+│  │
+│  ├─ finanzen-transparenz/   ┐
+│  ├─ kontakt/                │
+│  ├─ mitglied-werden/        │   # Primärseiten (alle gleich aufgebaut)
+│  ├─ partner-projekte/       │   # jede enthält:
+│  ├─ praeambel/              │   #   _dir.yml
+│  ├─ presse/                 │   #   _index.mdc   (DE/EN + einfache Sprache per ::variant)
+│  ├─ projekte/               │
+│  ├─ satzung/                │
+│  ├─ termine/                │
+│  ├─ ueber-uns/              │
+│  ├─ unterstuetzen/          │
+│  ├─ datenschutz/            │   # statt .html → konsistent als Markdown
+│  └─ impressum/              ┘
+│
+├─ modules/                                  # lokale Nuxt-Module (Build-Hooks, Content-Pipeline)
+│  ├─ content-aliases.ts                     # EN-Slug-Aliases (pfadlokalisierte URLs mit Fallback)
+│  ├─ content-edited-git.ts                  # füllt `edited` aus Git-Commit-Timestamps
+│  ├─ glossary-autolink.ts                   # Autolink erstes Glossar-Vorkommen (Hover)
+│  └─ content-ensure.ts                      # Validierung/Injection (ag_id/thema_id/kapitel_id)
+│
+├─ scripts/                                  # Hilfsskripte (Migration/Checks/CI)
+│  ├─ check-missing-variants.mjs             # prüft DE/EN & simple, sonst Warnungen
+│  ├─ generate-en-aliases.mjs                # generiert slug_en-Aliases aus _dir.yml
+│  ├─ build-chapters-toc.mjs                 # erzeugt Themen-Inhaltsverzeichnisse
+│  ├─ local_tree.ps1                         # von Root hierher verschoben
+│  └─ local_tree.mjs                         # Node-Alternative für Nicht-Windows
+│           
+└─ src/                                      # *** technischer App-Code (sauber gebündelt) ***
+   ├─ app.vue                                # globaler Rahmen (Header/Footer via Komponenten)
+   ├─ app.config.ts                          # (optional) App-weite Konfiguration
+   │
+   ├─ assets/                                # gebundelte Assets (CSS, Fonts, Bilder)
+   │  ├─ css/
+   │  │  └─ main.css
+   │  └─ images/
+   │     └─ placeholders/
+   │
+   ├─ components/                            # Auto-Import durch Nuxt
+   │  ├─ AppHeader.vue
+   │  ├─ AppFooter.vue
+   │  ├─ Variant.vue                         # Wrap für ::variant{lang, simple}
+   │  ├─ VariantToolbar.vue                  # Sprach-/„Leichte Sprache“-Schalter
+   │  ├─ Chapter.vue                         # kapselt Kapitel-Heading + Anker (#<kapitel_id>)
+   │  └─ TermHint.vue                        # Glossar-Tooltip/Popover
+   │
+   ├─ composables/
+   │  ├─ useI18nPath.ts                      # baut lokalisierte Pfade (inkl. Fallback auf DE-Slug)
+   │  ├─ useVariants.ts                      # Kapselt {lang, simple}-Logik für ::variant
+   │  └─ useGlossaryIndex.ts                 # A–Z Index, Suche, erste-Erwähnung-Map
+   ├─ types/
+   │  ├─ domain.ts                           # Typen: AgId, ThemaId, KapitelId, Front-Matter-Schemata
+   │  └─ content.d.ts                        # Module augmentation für @nuxt/content (wenn gewünscht)
+   │
+   ├─ layouts/
+   │  ├─ default.vue                         # Standardlayout (<NuxtPage/>)
+   │  └─ program.vue                         # Layout für /programm/*
+   │
+   ├─ pages/                                 # Routen (i18n benötigt eine pages-Struktur)
+   │  ├─ index.vue                           # Redirect → /start
+   │  ├─ programm/
+   │  │  ├─ kurz/
+   │  │  │  └─ [ag].vue                      # /programm/kurz/<AG> → rendert AG/_index.mdc
+   │  │  ├─ mittel/
+   │  │  │  └─ [ag]/
+   │  │  │     └─ [thema].vue                # /programm/mittel/<AG>/<Thema> → Thema/_index.mdc
+   │  │  └─ lang/
+   │  │        └─ [ag]/
+   │  │           └─ [thema].vue             # /programm/lang/<AG>/<Thema> (+ #<kapitel_id>)
+   │  └─ error.vue                           # optional
+   │
+   ├─ plugins/
+   │  └─ variant-filter.client.ts            # rendert nur passenden ::variant-Block (lang/simple)
+   │
+   ├─ stores/
+   │  └─ prefs.ts                            # Pinia: { simple: boolean } (+ persistentes Locale)
+   │
+   ├─ locales/                               # UI-Strings (Toolbar/Labels), NICHT Content
+   │  ├─ de.json
+   │  └─ en.json
+   │
+   └─ middleware/                            # (optional) i18n/guards/etc.

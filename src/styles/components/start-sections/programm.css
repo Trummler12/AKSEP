@@ -1,0 +1,54 @@
+/**
+ * Programm Section Styles
+ * Styles for program highlights grid and cards
+ */
+
+.content-program-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 6);
+}
+
+@media (min-width: 48rem) {
+  .content-program-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .content-program-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.content-card-icon-wrapper {
+  margin-bottom: calc(var(--spacing) * 4);
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--primary-20);
+}
+
+.content-card-icon-color {
+  color: var(--primary);
+}
+
+.content-card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.content-card-description {
+  margin-bottom: calc(var(--spacing) * 4);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--muted-foreground);
+}
+
+.content-program-cta {
+  margin-top: calc(var(--spacing) * 8);
+  text-align: center;
+}

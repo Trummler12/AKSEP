@@ -1,0 +1,31 @@
+---
+edited: 2025-08-24
+edited_git: null
+title:
+  de: "Liberalismus"
+  en: "Liberalism"
+synonyms:
+  de: []
+  en: []
+tags:
+  de: []
+  en: []
+highlighted: false
+---
+
+::variant{lang="de" simple=false}
+# {{ title.de }}
+
+::
+::variant{lang="de" simple=true}
+# {{ title.de }}
+
+::
+::variant{lang="en" simple=false}
+# {{ title.en }}
+
+::
+::variant{lang="en" simple=true}
+# {{ title.en }}
+
+::

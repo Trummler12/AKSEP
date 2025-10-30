@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import PageShell from '../page-shell';
-import PagePlaceholder from '../../content/page-placeholder';
+import NotFound from '../../content/not-found';
 import StartPageContent from '../../content/start';
 import { useRouter } from '../../hooks/useRouter';
 import { getRouteConfig } from '../../data/routes';
@@ -27,9 +27,9 @@ const Router = () => {
       {isStartPage ? (
         <StartPageContent />
       ) : routeConfig ? (
-        <PagePlaceholder {...routeConfig} />
+        <NotFound {...routeConfig} />
       ) : (
-        <PagePlaceholder 
+        <NotFound 
           title="Seite nicht gefunden" 
           description="Die aufgerufene Seite existiert nicht." 
         />

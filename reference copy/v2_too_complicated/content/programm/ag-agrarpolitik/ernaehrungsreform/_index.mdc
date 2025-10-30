@@ -1,0 +1,23 @@
+---
+edited: 2025-08-25
+edited_git: null
+thema:
+  de: "Warum eine Ernährungsreform notwendig ist"
+  en: "Why a Dietary Reform Is Necessary"
+tags:
+  de: []
+  en: []
+---
+
+::variant{lang="de" simple=false}
+# {{ thema.de }}
+::
+::variant{lang="de" simple=true}
+# {{ thema.de }}
+::
+::variant{lang="en" simple=false}
+# {{ thema.en }}
+::
+::variant{lang="en" simple=true}
+# {{ thema.en }}
+::
