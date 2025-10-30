@@ -1,4 +1,4 @@
-import type { NavItem, NavChildGroup } from '../types/navigation'
+import type { NavItem, NavChildGroup } from '../types/navigation';
 
 /**
  * Navigation data configuration
@@ -21,6 +21,7 @@ const createBegriffeGroups = (): NavChildGroup[] => [
       { label: 'Rechts vs. Links', href: '/begriffe/rechts-vs-links' },
       { label: 'Radikal', href: '/begriffe/radikal' },
       { label: 'Pädophil vs. Pädokriminell', href: '/begriffe/paedophil-vs-paedokriminell' },
+      { label: 'Nationalsozialismus', href: '/begriffe/nationalsozialismus' },
       { label: 'Faschismus', href: '/begriffe/faschismus' },
     ],
     showTopBorder: true,

@@ -3,7 +3,12 @@
  * Centralized footer content for easy maintenance
  */
 
-import type { LinkItem, SocialLink } from '../types/navigation'
+import { LinkItem } from '../types/navigation';
+
+export interface SocialLink extends LinkItem {
+  iconName: 'MessageCircle' | 'Facebook' | 'Twitter' | 'Youtube' | 'Instagram';
+  external?: boolean;
+}
 
 export interface ContactInfo {
   type: 'email' | 'discord' | 'phone';
@@ -27,8 +32,8 @@ export const contactInfo: ContactInfo[] = [
     type: 'email',
     iconName: 'Mail',
     label: 'E-Mail Kontakt',
-    href: 'mailto:kontakt@aksep.ch',
-    display: 'kontakt@aksep.ch',
+    href: 'mailto:kontakt@aksepp.ch',
+    display: 'kontakt@aksepp.ch',
   },
   {
     type: 'discord',
@@ -39,26 +44,31 @@ export const contactInfo: ContactInfo[] = [
   },
 ];
 
+// Social Media Links
 export const socialLinks: SocialLink[] = [
   {
     iconName: 'MessageCircle',
     label: 'Discord',
     href: 'https://discord.gg/5nBmmbqSPH',
+    external: true,
   },
   {
     iconName: 'Facebook',
     label: 'Facebook',
     href: 'https://facebook.com/dieaksep',
+    external: true,
   },
   {
     iconName: 'Twitter',
     label: 'Twitter',
     href: 'https://twitter.com/dieaksep',
+    external: true,
   },
   {
     iconName: 'Youtube',
     label: 'YouTube',
     href: 'https://youtube.com/dieaksep',
+    external: true,
   },
 ];
 

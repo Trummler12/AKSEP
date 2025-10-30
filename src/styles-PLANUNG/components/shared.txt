@@ -1,0 +1,72 @@
+@import '../themes.css';
+
+/* =============================================== */
+/* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
+/* =============================================== */
+
+=== SHARED UI COMPONENTS ===
+card-root | "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border" | Gemeinsamer Card-Wrapper für Grundlayout
+  card-header-grid | "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6" | Card-Header mit Gridlayout & Container Queries
+  card-title | "leading-none" | Überschrift in Card-Komponenten
+  card-description | "text-muted-foreground" | Beschreibungstext in Cards
+  card-aside | "col-start-2 row-span-2 row-start-1 self-start justify-self-end" | Bereich für Aktionen/Badges im Card-Header
+  card-content | "px-6 [&:last-child]:pb-6" | Card-Content mit Padding & letztes Kind Regel
+  card-footer | "flex items-center px-6 pb-6 [.border-t]:pt-6" | Footerbereich einer Card
+separator-root | "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px" | Separator Grundlinie für beide Ausrichtungen
+dropdown-content | "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md" | Dropdown Menu Content Wrapper (Radix)
+dropdown-item | "focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4" | Dropdown Menu Item Styles inkl. Varianten
+
+/* =============================================== */
+/* EXTRACTED className INSTANCES */
+/* =============================================== */
+
+=== FILE: src/components/ui/button.tsx ===
+
+Note: Button component uses cva() for dynamic className generation via buttonVariants.
+The cn() function is called with the result of buttonVariants({ variant, size, className }).
+No static className="..." strings to extract - uses programmatic class composition.
+
+=== FILE: src/components/ui/card.tsx ===
+
+<div className={cn(
+    "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border",
+    className,
+  )}>
+<div className={cn(
+    "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+    className,
+  )}>
+<h4 className={cn("leading-none", className)}>
+<p className={cn("text-muted-foreground", className)}>
+<div className={cn(
+    "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+    className,
+  )}>
+<div className={cn("px-6 [&:last-child]:pb-6", className)}>
+<div className={cn("flex items-center px-6 pb-6 [.border-t]:pt-6", className)}>
+
+=== FILE: src/components/ui/separator.tsx ===
+
+<SeparatorPrimitive.Root className={cn(
+    "bg-border shrink-0 data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px",
+    className,
+  )}>
+
+=== FILE: src/components/ui/icon.tsx ===
+
+Note: Icon component accepts className as a prop with default value "h-4 w-4".
+No hardcoded className="..." in the component body itself.
+
+  return <IconComponent className={className} />;
+
+=== FILE: src/components/ui/dropdown-menu.tsx ===
+
+<DropdownMenuPrimitive.Content className={cn(
+      "bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 max-h-(--radix-dropdown-menu-content-available-height) min-w-[8rem] origin-(--radix-dropdown-menu-content-transform-origin) overflow-x-hidden overflow-y-auto rounded-md border p-1 shadow-md",
+      className,
+    )}>
+<DropdownMenuPrimitive.Item className={cn(
+    "focus:bg-accent focus:text-accent-foreground data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 dark:data-[variant=destructive]:focus:bg-destructive/20 data-[variant=destructive]:focus:text-destructive data-[variant=destructive]:*:[svg]:!text-destructive [&_svg:not([class*='text-'])]:text-muted-foreground relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    className,
+  )}>
+

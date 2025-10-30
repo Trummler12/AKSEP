@@ -5,6 +5,7 @@
 @import './globals.css';
 
 /* AKSEP Dark Theme - Current Default */
+:root,
 .dark {
   /* Semantic Color Variables - Dark Theme */
   --background: var(--bg-darker);

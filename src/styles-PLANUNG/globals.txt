@@ -1,0 +1,173 @@
+/**
+ * AKSEP Base Globals - Core Variables & Reset
+ * Minimal base that all other CSS modules import
+ */
+
+/* =============================================== */
+/* CSS VARIABLES (Core Theme System) */
+/* =============================================== */
+
+:root {
+  /* Design System Variables */
+  --font-size: 16px;
+  --radius: 0.625rem;
+  --navigation-height: 4rem;
+
+  /* Color System */
+  --background: #322a45;
+  --foreground: #fff;
+  --card: #423a51;
+  --card-foreground: #fff;
+  --popover: #423a51;
+  --popover-foreground: #fff;
+  
+  /* Brand Colors */
+  --primary: #7e65b9;
+  --primary-foreground: #fff;
+  --secondary: #5a8fa8;
+  --secondary-foreground: #fff;
+  --accent: #3eb694;
+  --accent-foreground: #fff;
+  
+  /* UI Colors */
+  --muted: #423a51;
+  --muted-foreground: #fff;
+  --border: #5a8fa8;
+  --input: #423a51;
+  --input-background: #423a51;
+  --ring: #7e65b9;
+  
+  /* Semantic Colors */
+  --destructive: #d4183d;
+  --destructive-foreground: #fff;
+  
+  /* Typography */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+
+  /* Alpha Variants (for transparency effects) */
+  --primary-5: rgba(126, 101, 185, 0.05);
+  --primary-20: rgba(126, 101, 185, 0.2);
+  --primary-90: rgba(126, 101, 185, 0.9);
+  --secondary-20: rgba(90, 143, 168, 0.2);
+  --accent-5: rgba(62, 182, 148, 0.05);
+  --accent-20: rgba(62, 182, 148, 0.2);
+}
+
+/* =============================================== */
+/* GLOBAL RESET & BASE STYLES */
+/* =============================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  line-height: inherit;
+  min-height: 100vh;
+}
+
+/* =============================================== */
+/* TYPOGRAPHY BASE */
+/* =============================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 0.875rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+/* =============================================== */
+/* INPUT & FORM BASE */
+/* =============================================== */
+
+button, input, select, textarea {
+  font: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  border-radius: var(--radius);
+}
+
+/* =============================================== */
+/* FOCUS & INTERACTION STATES */
+/* =============================================== */
+
+* {
+  border-color: var(--border);
+  outline-color: var(--ring);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+  outline-offset: 2px;
+}
+
+/* =============================================== */
+/* UTILITY BASE CLASSES */
+/* =============================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =============================================== */
+/* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
+/* =============================================== */
+
+=== APP LEVEL ===
+app-shell (DONE) | "min-h-screen bg-background text-foreground dark flex flex-col" | App Shell - volle Höhe, Flex-Layout, Dark-Mode

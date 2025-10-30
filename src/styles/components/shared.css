@@ -1,0 +1,148 @@
+/**
+ * AKSEP Shared Component Styles
+ * Reusable components like buttons, logos, icons
+ */
+@import '../themes.css';
+
+/* =============================================== */
+/* APP LEVEL */
+/* =============================================== */
+
+.app-shell {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================== */
+/* CARD COMPONENTS */
+/* =============================================== */
+
+.card-root {
+  background-color: var(--card);
+  color: var(--card-foreground);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 6);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+}
+
+.card-header-grid {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr;
+  gap: calc(var(--spacing) * 1.5);
+  padding-inline: calc(var(--spacing) * 6);
+  padding-top: calc(var(--spacing) * 6);
+}
+
+.card-header-grid:has([data-slot='card-action']) {
+  grid-template-columns: 1fr auto;
+}
+
+.card-title {
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.card-description {
+  color: var(--muted-foreground);
+}
+
+.card-aside {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: flex-start;
+  justify-self: flex-end;
+}
+
+.card-content {
+  padding-inline: calc(var(--spacing) * 6);
+  padding-bottom: calc(var(--spacing) * 6);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  padding-inline: calc(var(--spacing) * 6);
+  padding-bottom: calc(var(--spacing) * 6);
+}
+
+/* =============================================== */
+/* SEPARATOR */
+/* =============================================== */
+
+.separator-root {
+  background-color: var(--border);
+  flex-shrink: 0;
+  height: 1px;
+  width: 100%;
+}
+
+/* =============================================== */
+/* DROPDOWN MENU */
+/* =============================================== */
+
+.dropdown-content {
+  background-color: var(--popover);
+  color: var(--popover-foreground);
+  max-height: var(--radix-dropdown-menu-content-available-height, 400px);
+  min-width: 8rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 0.375rem;
+  border: 1px solid var(--border);
+  padding: calc(var(--spacing) * 1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.15s ease-in-out;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  border-radius: 0.25rem;
+  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 3);
+  font-size: 0.875rem;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.dropdown-item[data-disabled='true'] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.dropdown-item[data-variant='destructive'] {
+  color: var(--destructive);
+}
+
+.dropdown-item[data-variant='destructive']:hover {
+  background-color: rgba(212, 24, 61, 0.1);
+  color: var(--destructive);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dropdown-item-inset {
+  padding-left: calc(var(--spacing) * 8);
+}

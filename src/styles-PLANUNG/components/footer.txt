@@ -1,0 +1,58 @@
+@import '../themes.css';
+
+/* =============================================== */
+/* UGLY CLASSNAMES TO REFACTOR (from ugly-classNames.txt) */
+/* =============================================== */
+
+=== FOOTER ===
+footer-wrapper | "bg-card border-t border-border" | Oberer Rahmen + Hintergrund des Footers
+  footer-container | "container mx-auto px-4 py-12" | Innencontainer des Footers mit Padding
+    footer-grid | "grid grid-cols-1 md:grid-cols-3 gap-8" | Footer Hauptgrid - 1 Spalte mobil, 3 Spalten Desktop
+      footer-brand | "flex items-center space-x-3 mb-4" | Brand-Zeile mit Logo im Footer
+        footer-logo-image | "h-8 w-8" | Logo-Größe im Footer
+        footer-logo-text | "text-xl" | Markenname im Footer
+      footer-description | "text-muted-foreground mb-6 text-sm" | Einleitender Beschreibungstext
+      footer-link-group | "space-y-2 text-sm mb-6" | Linkliste mit vertikalem Abstand
+        footer-contact-item | "flex items-center space-x-2 text-muted-foreground" | Kontakt Item - horizontal, mit Icon-Abstand
+          footer-contact-link | "hover:text-primary transition-colors" | Kontakt Link - nur Hover-Effekt
+        footer-social-row | "flex space-x-3" | Soziale Icons in einer Reihe
+          footer-social-link | "text-muted-foreground hover:text-primary transition-colors" | Social Media Link - gedämpfte Farbe, Hover
+      footer-section-title | "text-sm mb-3" | Überschrift innerhalb einer Footer-Spalte
+      footer-link-stack | "space-y-2" | Liste für Navigations-/Rechtslinks
+        footer-nav-link | "text-sm text-muted-foreground transition-colors hover:text-primary" | Footer Navigation Link - klein, gedämpft, Hover
+        footer-legal-link | "text-sm text-muted-foreground hover:text-primary transition-colors" | Footer Legal Link - identisch zu nav-link
+      footer-section-spacing | "mb-4" | Zusätzlicher Abstand zwischen Footer-Sektionen
+    footer-divider | "my-8" | Abstand vor dem unteren Footerbereich
+    footer-bottom-bar | "flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0" | Footer Bottom Bar - responsive Layout
+      footer-bottom-text | "text-sm text-muted-foreground" | Footer Copytext - klein, gedämpft
+      footer-bottom-text-aligned | "text-sm text-muted-foreground text-center md:text-right" | Footer Copytext mit responsiver Ausrichtung
+
+/* =============================================== */
+/* EXTRACTED CLASSNAMES FROM TSX FILES */
+/* =============================================== */
+
+=== FILE: src/components/footer.tsx ===
+
+<footer className="bg-card border-t border-border">
+  <div className="container mx-auto px-4 py-12">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex items-center space-x-3 mb-4">
+          <img className="h-8 w-8" />
+          <span className="text-xl">
+        <p className="text-muted-foreground mb-6 text-sm">
+        <p className="text-muted-foreground mb-6 text-sm">
+        <div className="space-y-2 text-sm mb-6">
+            <div className="flex items-center space-x-2 text-muted-foreground">
+              <a className="hover:text-primary transition-colors">
+          <h4 className="text-sm mb-3">
+          <div className="flex space-x-3">
+              <a className="text-muted-foreground hover:text-primary transition-colors">
+        <h3 className="mb-4">
+        <ul className="space-y-2">
+              <a className="text-sm text-muted-foreground transition-colors hover:text-primary">
+        <h3 className="mb-4">
+        <ul className="space-y-2">
+              <a className="text-sm text-muted-foreground hover:text-primary transition-colors">
+    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div className="text-sm text-muted-foreground">
+      <div className="text-sm text-muted-foreground text-center md:text-right">

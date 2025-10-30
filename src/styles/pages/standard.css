@@ -1,0 +1,231 @@
+/**
+ * AKSEP Generic Page Styles
+ * Standard Layout für interne Seiten (About, Contact, etc.)
+ */
+@import '../themes.css';
+@import '../components/navigation.css';
+@import '../components/footer.css';
+@import '../components/shared.css';
+
+/* =============================================== */
+/* STANDARD PAGE LAYOUT */
+/* =============================================== */
+
+.page-main {
+  background-color: var(--background);
+  min-height: calc(100vh - var(--navigation-height));
+  padding: 2rem 0;
+}
+
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--muted-foreground);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* =============================================== */
+/* STANDARD CONTENT SECTIONS */
+/* =============================================== */
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.page-section {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 2rem;
+}
+
+.page-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.page-section-content {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* =============================================== */
+/* UTILITY CLASSES FÜR SEITEN */
+/* =============================================== */
+
+.page-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .page-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.page-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .page-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.page-text-center {
+  text-align: center;
+}
+
+.page-max-width-prose {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+/* =============================================== */
+/* BREADCRUMB NAVIGATION */
+/* =============================================== */
+
+.page-breadcrumb {
+  background-color: var(--muted);
+  padding: 0.75rem 0;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+.page-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+}
+
+.page-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-breadcrumb-link {
+  color: var(--muted-foreground);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.page-breadcrumb-link:hover {
+  color: var(--primary);
+}
+
+.page-breadcrumb-current {
+  color: var(--foreground);
+  font-weight: 500;
+}
+/* =============================================== */
+/* STANDARD PLACEHOLDER */
+/* =============================================== */
+
+.standard-placeholder-section {
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: calc(var(--spacing) * 4);
+  padding-block: calc(var(--spacing) * 24);
+  text-align: center;
+}
+
+.standard-placeholder-card {
+  margin-inline: auto;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 6);
+}
+
+.standard-placeholder-icon-wrap {
+  margin-inline: auto;
+  display: flex;
+  height: 6rem;
+  width: 6rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--primary-20);
+}
+
+.standard-placeholder-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary);
+}
+
+.standard-placeholder-stack {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 3);
+}
+
+.standard-placeholder-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.standard-placeholder-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+}
+
+.standard-placeholder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  text-decoration: none;
+  color: inherit;
+}
+
+.standard-placeholder-link-icon {
+  width: 1rem;
+  height: 1rem;
+}
