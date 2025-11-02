@@ -1,0 +1,4 @@
+### GET root endpoint
+GET https://localhost:3000/
+
+###

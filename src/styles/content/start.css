@@ -1,0 +1,25 @@
+/**
+ * AKSEP Start Page Styles
+ * Start page layout and imports
+ */
+@import './.shared.css';
+
+/* =============================================== */
+/* PAGE LAYOUT */
+/* =============================================== */
+
+.homepage-main {
+  background-color: var(--background);
+  min-height: calc(100vh - var(--navigation-height));
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================== */
+/* PLACEHOLDER FOR FUTURE HOMEPAGE-SPECIFIC MODULES */
+/* =============================================== */
+
+/* Zusammenführen sinnvoll */
+.homepage-section-note {
+  display: contents;
+}

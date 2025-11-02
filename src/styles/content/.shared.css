@@ -1,0 +1,5 @@
+/**
+ * Shared Page Styles
+ * Base styles for all pages (imports theme only)
+ */
+@import '../themes.css';

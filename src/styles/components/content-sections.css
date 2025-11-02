@@ -1,0 +1,44 @@
+/**
+ * Content Sections Orchestrator Styles
+ * Container and layout styles for the content-sections component
+ */
+@import './.shared.css';
+
+/* =============================================== */
+/* CONTENT SECTIONS ORCHESTRATOR */
+/* =============================================== */
+
+.content-sections-root {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-sections-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--spacing) * 4);
+}
+
+@media (min-width: 40rem) {
+  .content-sections-container {
+    max-width: 40rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .content-sections-container {
+    max-width: 48rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .content-sections-container {
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .content-sections-container {
+    max-width: 80rem;
+  }
+}

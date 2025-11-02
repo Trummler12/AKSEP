@@ -1,0 +1,11 @@
+@import './.shared.css';
+
+/* =============================================== */
+/* CAPTION COMPONENT */
+/* =============================================== */
+
+.caption-root {
+  font-size: var(--text-sm);
+  color: var(--muted-foreground);
+  line-height: 1.5;
+}

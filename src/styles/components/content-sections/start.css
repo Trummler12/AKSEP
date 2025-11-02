@@ -1,0 +1,5 @@
+@import './.shared.css';
+
+.content-page-stack > * + * {
+  margin-top: calc(var(--spacing) * 20);
+}

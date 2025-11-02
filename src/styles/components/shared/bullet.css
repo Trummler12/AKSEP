@@ -1,0 +1,26 @@
+@import './.shared.css';
+
+/* =============================================== */
+/* BULLET COMPONENT */
+/* =============================================== */
+
+.bullet-root {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  padding: calc(var(--spacing) * 2) 0;
+}
+
+.bullet-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.bullet-content {
+  flex: 1;
+}

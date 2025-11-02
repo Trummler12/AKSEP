@@ -1,0 +1,23 @@
+@import './.shared.css';
+
+/* =============================================== */
+/* HEADING COMPONENT */
+/* =============================================== */
+
+.heading-root {
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+
+.heading-root[data-size='sm'] {
+  font-size: var(--text-lg);
+}
+
+.heading-root[data-size='md'] {
+  font-size: var(--text-2xl);
+}
+
+.heading-root[data-size='lg'] {
+  font-size: var(--text-3xl);
+}

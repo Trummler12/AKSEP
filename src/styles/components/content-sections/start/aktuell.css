@@ -1,0 +1,55 @@
+/**
+ * Aktuell Section Styles
+ * Styles for news and updates grid
+ */
+@import './.shared.css';
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: calc(var(--spacing) * 6);
+}
+
+@media (min-width: 48rem) {
+  .news-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .news-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.news-card {
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.news-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.news-meta {
+  margin-bottom: calc(var(--spacing) * 2);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 2);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.news-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.news-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.news-cta {
+  margin-top: calc(var(--spacing) * 8);
+  text-align: center;
+}

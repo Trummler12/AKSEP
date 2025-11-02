@@ -1,0 +1,5 @@
+@import './.shared.css';
+
+/* Legacy entry point retained for navigation styles.
+ * All concrete selectors now live in `navigation/nav-*.css` files.
+ */
