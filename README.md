@@ -6,6 +6,18 @@ Das ursprüngliche Figma-Design ist verfügbar unter
 
 ## Entwicklung starten
 
+0. Basis-Installationen
+
+**Node**
+Visit <https://nodejs.org/en/download/package-manager/> => Button "Windows Installer (.msi)" => (installieren mit Default Settings)
+Starte VSCode neu und/oder öffne ein neues Terminal:
+```bash
+node -v     # v24.11.0
+npm -v      # 11.6.1
+```
+
+1. Projekt starten
+
 ```bash
 npm install
 npm run dev
