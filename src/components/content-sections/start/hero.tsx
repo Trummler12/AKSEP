@@ -1,5 +1,5 @@
 import '@/styles/components/content-sections/start/hero.css';
-import { Button } from '../../ui/button';
+import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, BookOpen, Calendar } from 'lucide-react';
 import aksepLogo from 'figma:asset/Logo_AKSEP.png';
 

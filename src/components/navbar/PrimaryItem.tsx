@@ -1,37 +1,34 @@
 import { ChevronDown } from 'lucide-react';
-import { cn } from '../ui/utils';
-import type { NavItem as NavItemData } from '../../types/navigation';
+import { cn } from '@/components/ui/utils';
+import type { NavItem } from '@/types/navigation';
 
-import '@/styles/components/navigation/nav-item.css';
+import '@/styles/components/navbar/navbar-item.css';
+import '@/styles/components/navbar/navbar-dropdown.css';
 
-interface NavItemProps {
-  item: NavItemData;
-  isOverflow: boolean;
+interface NavbarPrimaryItemProps {
+  item: NavItem;
   isActive: boolean;
+  isOverflow: boolean;
   activeDropdown: string | null;
+  registerRef: (element: HTMLElement | null) => void;
   onMouseEnter: (key: string, hasGroups: boolean) => void;
   onMouseLeave: (key: string, hasGroups: boolean) => void;
-  itemRef: (element: HTMLDivElement | null) => void;
 }
 
-/**
- * Individual navigation item component
- * Handles both regular items and dropdown items with groups
- */
-export const NavItem = ({
+export const NavbarPrimaryItem = ({
   item,
-  isOverflow,
   isActive,
+  isOverflow,
   activeDropdown,
+  registerRef,
   onMouseEnter,
   onMouseLeave,
-  itemRef,
-}: NavItemProps) => {
+}: NavbarPrimaryItemProps) => {
   const hasGroups = Boolean(item.groups?.length);
 
   return (
     <div
-      ref={itemRef}
+      ref={registerRef}
       className="nav-item-wrapper"
       hidden={isOverflow}
       onMouseEnter={() => onMouseEnter(item.key, hasGroups)}

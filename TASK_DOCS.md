@@ -1,13 +1,14 @@
 # Task Docs: Component Naming Cleanup (Phase 4) + CSS-Architektur-Optimierung (Phase D)
 
-**Phase 4 Completed**: 2025-01-16 | Build: ✅ SUCCESS (3.32s)  
+**Phase 4 Completed**: 2025-01-16 | Build: ✅ SUCCESS (3.32s)
 **Phase D Completed**: 2025-01-17 | Build: ✅ SUCCESS (4.50s)
+**Phase E Completed**: 2025-01-17 | Build: ✅ SUCCESS (4.47s)
 
 ---
 
 ## Mode & Score
-- **Mode**: no-plan
-- **Score**: 3 (factors: >2 files touched, CSS + component coupling, no generated paths affected)
+- **Mode**: plan-gate
+- **Score**: 6 (factors: >2 files touched, cross-file coupling, new modules, >50 LOC)
 
 ---
 
@@ -21,6 +22,26 @@ Comprehensive naming cleanup across AKSEP-NEU start-sections components to elimi
 ---
 
 ## Changes Made
+
+
+### Phase F – Navigation modularisation & sidebar split (2025-01-18)
+- Introduced a shared navigation controller hook that unifies state, overflow detection, and priority-aware collapsing for navbar actions/items.
+- Replaced the monolithic navigation component with modular `navbar/` and `sidebar/` trees; each subcomponent (brand, primary list, dropdown, actions, overflow, toggle) now maps to its scoped stylesheet.
+- Added CTA action metadata (priority + variant) and updated overflow detection so high-priority entries collapse first while preserving display order.
+- Migrated styles into `styles/components/navbar/**` and `styles/components/sidebar/**`, mirroring the new component hierarchy and fixing the sidebar collapse bug with `[data-open]` toggles.
+- Updated `page-shell` to render `<Navbar />` + `<Sidebar />`, ensuring both share navigation state via the new controller.
+
+#### Phase F Checks
+- `npm run build` → ✅ success (chunk `163626`).
+- Manual QA: desktop overflow priorities (actions collapse first), mobile sidebar toggles & link navigation close the menu.
+
+### Phase E – Style & Component Contract Enforcement (2025-01-17)
+- Audited `src/styles/**` and confirmed every `.shared.css` and leaf CSS file imports only the permitted parent file; no structural changes were required.
+- Normalised component/content imports to the `@/` alias so every `.tsx` references only its own CSS module and shared resources without `../` hops.
+- Replaced verbose `.STYLES.md` and `.COMPONENTS.md` guides with concise rulebooks describing the enforced constraints.
+
+#### Phase E Checks
+- `npm run build` → ✅ success (4.47s)
 
 ### ✅ File Renames (4 files)
 - `AkronymSection.tsx` → `akronym.tsx`

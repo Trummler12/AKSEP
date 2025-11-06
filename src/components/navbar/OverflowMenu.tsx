@@ -1,39 +1,29 @@
-import { MoreHorizontal, ChevronDown } from 'lucide-react';
+import { ChevronDown, MoreHorizontal } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu';
-import { cn } from '../ui/utils';
-import type { NavItem } from '../../types/navigation';
+} from '@/components/ui/dropdown-menu';
+import { cn } from '@/components/ui/utils';
+import type { NavigationController } from '@/hooks/useNavigationController';
 
-import '@/styles/components/navigation/nav-overflow.css';
+import '@/styles/components/navbar/navbar-overflow.css';
 
-interface NavOverflowProps {
-  overflowItems: NavItem[];
-  openOverflowSections: string[];
-  onToggleOverflowSection: (key: string) => void;
-  overflowTriggerRef: React.RefObject<HTMLButtonElement>;
+interface NavbarOverflowMenuProps {
+  controller: NavigationController;
 }
 
-/**
- * Overflow navigation component for responsive navigation
- * Handles items that don't fit in the main navigation bar
- */
-export const NavOverflow = ({
-  overflowItems,
-  openOverflowSections,
-  onToggleOverflowSection,
-  overflowTriggerRef,
-}: NavOverflowProps) => {
-  if (overflowItems.length === 0) return null;
+export const NavbarOverflowMenu = ({ controller }: NavbarOverflowMenuProps) => {
+  if (controller.overflowEntries.length === 0) {
+    return null;
+  }
 
   return (
     <div className="nav-overflow-wrapper">
       <DropdownMenu>
         <DropdownMenuTrigger
-          ref={overflowTriggerRef}
+          ref={controller.overflowTriggerRef}
           className="nav-overflow-trigger"
         >
           <MoreHorizontal className="nav-dropdown-icon" />
@@ -43,8 +33,8 @@ export const NavOverflow = ({
           className="nav-overflow-content"
           style={{ width: 'max-content', maxWidth: '13rem' }}
         >
-          {overflowItems.map((item) => {
-            const isOpen = openOverflowSections.includes(item.key);
+          {controller.overflowItems.map((item) => {
+            const isOpen = controller.navigationState.openOverflowSections.includes(item.key);
             const hasGroups = Boolean(item.groups?.length);
 
             return (
@@ -53,7 +43,7 @@ export const NavOverflow = ({
                   <div className="nav-stack-space-2">
                     <button
                       type="button"
-                      onClick={() => onToggleOverflowSection(item.key)}
+                      onClick={() => controller.toggleOverflowSection(item.key)}
                       className="nav-overflow-button"
                     >
                       <span>{item.label}</span>
@@ -109,6 +99,18 @@ export const NavOverflow = ({
               </div>
             );
           })}
+
+          {controller.overflowActions.length > 0 && (
+            <div className="nav-overflow-actions">
+              {controller.overflowActions.map((action) => (
+                <DropdownMenuItem key={action.key} asChild className="nav-overflow-secondary-text">
+                  <a href={action.href} className="nav-overflow-full-width">
+                    {action.label}
+                  </a>
+                </DropdownMenuItem>
+              ))}
+            </div>
+          )}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

@@ -1,6 +1,6 @@
-import { Separator } from './ui/separator';
-import { Icon } from './ui/icon';
-import { footerConfig, contactInfo, socialLinks, participationLinks, legalLinks } from '../data/footer';
+import { Separator } from '@/components/ui/separator';
+import { Icon } from '@/components/ui/icon';
+import { footerConfig, contactInfo, socialLinks, participationLinks, legalLinks } from '@/data/footer';
 import aksepLogo from 'figma:asset/Logo_AKSEP.png';
 
 import '@/styles/components/footer.css';

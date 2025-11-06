@@ -1,5 +1,7 @@
 import type { PropsWithChildren, ReactNode } from 'react';
-import Navigation from './navigation';
+import Navbar from './navbar';
+import Sidebar from './sidebar';
+import { useNavigationController } from '@/hooks/useNavigationController';
 import Footer from './footer';
 
 import '@/styles/components/page-shell.css';
@@ -12,10 +14,12 @@ interface PageShellProps extends PropsWithChildren {
 
 const PageShell = ({ currentPath, mainClassName, afterMain, children }: PageShellProps) => {
   const mainClass = ['homepage-main', mainClassName].filter(Boolean).join(' ');
+  const navigationController = useNavigationController({ currentPath });
 
   return (
     <div className="app-shell">
-      <Navigation currentPath={currentPath} />
+      <Navbar controller={navigationController} />
+      <Sidebar controller={navigationController} />
       <main className={mainClass}>{children}</main>
       {afterMain}
       <Footer />

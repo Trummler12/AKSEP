@@ -1,0 +1,28 @@
+@import './.shared.css';
+
+/* CTA button alignment inside navbar */
+
+.nav-actions-area {
+  margin-left: calc(var(--spacing) * 4);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--spacing) * 3);
+}
+
+.nav-actions-desktop {
+  display: none;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.nav-action-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1536px) {
+  .nav-actions-desktop {
+    display: flex;
+  }
+}

@@ -5,6 +5,7 @@
 export interface NavChildItem {
   label: string;
   href: string;
+  important?: boolean;
 }
 
 export interface NavChildGroup {
@@ -21,6 +22,26 @@ export interface NavItem {
   href: string;
   groups?: NavChildGroup[];
   displayInPrimary?: boolean;
+  priority?: number;
+}
+
+export type NavActionVariant = 'primary' | 'outline';
+
+export interface NavAction {
+  key: string;
+  label: string;
+  href: string;
+  priority: number;
+  variant: NavActionVariant;
+}
+
+export type NavPrimaryEntry =
+  | { type: 'item'; item: NavItem } 
+  | { type: 'action'; action: NavAction };
+
+export interface OverflowEntry {
+  type: NavPrimaryEntry['type'];
+  key: string;
 }
 
 export interface NavigationProps {
@@ -30,12 +51,7 @@ export interface NavigationProps {
 export interface NavigationState {
   isMenuOpen: boolean;
   activeDropdown: string | null;
-  overflowKeys: string[];
+  overflowEntries: OverflowEntry[];
   openOverflowSections: string[];
   openMobileSections: Record<string, boolean>;
-}
-
-export interface OverflowDetectionState {
-  overflowKeys: string[];
-  itemWidths: Record<string, number>;
 }

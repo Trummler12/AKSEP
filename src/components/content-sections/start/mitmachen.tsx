@@ -1,9 +1,9 @@
 import '@/styles/components/content-sections/start/mitmachen.css';
 import { Users, Heart, Lightbulb } from 'lucide-react';
-import { Button } from '../../ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card';
-import { Heading } from '../../shared';
-import { startPageContent } from '../../../data/start';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Heading } from '@/components/shared';
+import { startPageContent } from '@/data/start';
 
 /**
  * Mitmachen Section

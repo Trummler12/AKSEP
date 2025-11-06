@@ -1,0 +1,52 @@
+@import './.shared.css';
+
+/* Navbar shell: layout for header container and primary track */
+
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--card);
+}
+
+.nav-inner-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: calc(var(--spacing) * 6);
+}
+
+@media (min-width: 40rem) {
+  .nav-inner-container {
+    padding-inline: calc(var(--spacing) * 8);
+  }
+}
+
+.nav-toolbar {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  gap: calc(var(--spacing) * 4);
+}
+
+.nav-group-items {
+  display: flex;
+  min-width: 0;
+  max-width: 100%;
+  flex: 1;
+  align-items: stretch;
+  gap: 0.25rem;
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .nav-group-items {
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-group-items {
+    gap: 0.75rem;
+  }
+}

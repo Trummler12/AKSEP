@@ -1,4 +1,4 @@
-import type { NavItem, NavChildGroup } from '../types/navigation';
+import type { NavItem, NavChildGroup, NavAction, NavPrimaryEntry } from '../types/navigation';
 
 /**
  * Navigation data configuration
@@ -11,17 +11,33 @@ const createBegriffeGroups = (): NavChildGroup[] => [
     items: [
       {
         label: 'Warum Begriffklärungen wichtig sind',
-        href: '/begriffe/warum-begriffklaerungen-wichtig-sind',
+        href: '/begriffe',
       },
     ],
   },
   {
-    key: 'begriffe-wichtige',
+    key: 'begriffe',
     items: [
-      { label: 'Rechts vs. Links', href: '/begriffe/rechts-vs-links' },
-      { label: 'Radikal', href: '/begriffe/radikal' },
-      { label: 'Pädophil vs. Pädokriminell', href: '/begriffe/paedophil-vs-paedokriminell' },
-      { label: 'Faschismus', href: '/begriffe/faschismus' },
+      { label: 'Rechts vs. Links', href: '/begriffe/rechts-vs-links', important: true },
+      { label: 'Radikal', href: '/begriffe/radikal', important: true },
+      { label: 'Pädophil vs. Pädokriminell', href: '/begriffe/paedophil-vs-paedokriminell', important: true },
+      { label: 'Faschismus', href: '/begriffe/faschismus', important: true },
+      /* Weitere begriffe (important = false):
+      AG (Arbeitsgruppe)
+      Cancel Culture
+      Demokratie
+      Extremismus
+      Liberalismus
+      Meinungsfreiheit
+      Nationalsozialismus
+      Neoliberalismus
+      Populismus
+      Toleranz
+      Wokeness
+
+      => Im Endeffekt würden wir für die Begriffe gar keine NavChildGroup definieren brauchen wollen;
+      Falls sich das so umsetzen lässt, dann würde Es reichen, , 
+      */
     ],
     showTopBorder: true,
   },
@@ -93,14 +109,20 @@ const createMitmachenGroups = (): NavChildGroup[] => [
   },
 ];
 
+// Prioritäten (je höher, desto früher ausgeblendet): programm > mitmachen > begriffe > aktuelles > ueber-uns > unterstuetzen > mitglied-werden
 export const navigationItems: NavItem[] = [
-  { key: 'begriffe', label: 'Begriffe', href: '/begriffe', groups: createBegriffeGroups() },
-  { key: 'programm', label: 'Programm', href: '/programm', groups: createProgrammGroups() },
-  { key: 'ueber-uns', label: 'Über uns', href: '/ueber-uns', groups: createUeberUnsGroups() },
-  { key: 'aktuelles', label: 'Aktuelles', href: '/termine', groups: createAktuellGroups() },
-  { key: 'mitmachen', label: 'Mitmachen', href: '/mitmachen', groups: createMitmachenGroups() },
-  { key: 'datenschutz', label: 'Datenschutz', href: '/datenschutz', displayInPrimary: false },
-  { key: 'impressum', label: 'Impressum', href: '/impressum', displayInPrimary: false },
+  { key: 'begriffe', label: 'Begriffe', href: '/begriffe', groups: createBegriffeGroups(), priority: 20 },
+  { key: 'programm', label: 'Programm', href: '/programm', groups: createProgrammGroups(), priority: 0 },
+  { key: 'ueber-uns', label: 'Über uns', href: '/ueber-uns', groups: createUeberUnsGroups(), priority: 40 },
+  { key: 'aktuelles', label: 'Aktuelles', href: '/termine', groups: createAktuellGroups(), priority: 30 },
+  { key: 'mitmachen', label: 'Mitmachen', href: '/mitmachen', groups: createMitmachenGroups(), priority: 10 },
+  { key: 'datenschutz', label: 'Datenschutz', href: '/datenschutz', displayInPrimary: false, priority: 0 },
+  { key: 'impressum', label: 'Impressum', href: '/impressum', displayInPrimary: false, priority: 0 },
+];
+
+const navigationActions: NavAction[] = [
+  { key: 'mitglied-werden', label: 'Mitglied werden', href: '/mitglied-werden', variant: 'outline', priority: 200 },
+  { key: 'unterstuetzen', label: 'Unterstützen', href: '/unterstuetzen', variant: 'primary', priority: 100 },
 ];
 
 /**
@@ -108,6 +130,16 @@ export const navigationItems: NavItem[] = [
  */
 export const getPrimaryNavItems = (): NavItem[] => {
   return navigationItems.filter((item) => item.displayInPrimary !== false);
+};
+
+export const getNavActions = (): NavAction[] => navigationActions;
+
+export const getPrimaryNavEntries = (): NavPrimaryEntry[] => {
+  const items = getPrimaryNavItems();
+  return [
+    ...items.map((item) => ({ type: 'item' as const, item })),
+    ...navigationActions.map((action) => ({ type: 'action' as const, action })),
+  ];
 };
 
 /**

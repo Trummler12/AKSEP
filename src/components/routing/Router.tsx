@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
-import PageShell from '../page-shell';
-import NotFound from '../../content/not-found';
-import StartPageContent from '../../content/start';
-import { useRouter } from '../../hooks/useRouter';
-import { getRouteConfig } from '../../data/routes';
+import PageShell from '@/components/page-shell';
+import NotFound from '@/content/not-found';
+import StartPageContent from '@/content/start';
+import { useRouter } from '@/hooks/useRouter';
+import { getRouteConfig } from '@/data/routes';
 
 /**
  * Main router component

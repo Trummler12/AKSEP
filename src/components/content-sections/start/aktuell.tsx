@@ -1,9 +1,9 @@
 import '@/styles/components/content-sections/start/aktuell.css';
 import { ArrowRight, Calendar, FileText } from 'lucide-react';
-import { Button } from '../../ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../ui/card';
-import { Heading } from '../../shared';
-import { newsItems, startPageContent } from '../../../data/start';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Heading } from '@/components/shared';
+import { newsItems, startPageContent } from '@/data/start';
 
 /**
  * Aktuell Section

@@ -1,9 +1,9 @@
 import '@/styles/components/content-sections/start/akronym.css';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '../../ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../ui/card';
-import { Bullet, BulletList, Heading, Subheading, Caption } from '../../shared';
-import { startPageContent } from '../../../data/start';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Bullet, BulletList, Heading, Subheading, Caption } from '@/components/shared';
+import { startPageContent } from '@/data/start';
 
 /**
  * Akronym Section

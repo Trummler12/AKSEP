@@ -1,10 +1,10 @@
 import '@/styles/components/content-sections/start/programm.css';
 import { ArrowRight } from 'lucide-react';
-import { Button } from '../../ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../ui/card';
-import { Icon } from '../../ui/icon';
-import { Heading } from '../../shared';
-import { programHighlights, startPageContent } from '../../../data/start';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Icon } from '@/components/ui/icon';
+import { Heading } from '@/components/shared';
+import { programHighlights, startPageContent } from '@/data/start';
 
 /**
  * Programm Section

@@ -1,140 +1,122 @@
-﻿# Task Plan: CSS Architecture Compliance Rules
+# Task Plan: Navigation modularization & sidebar split
 
 ## Mode & Score
-Mode: plan-gate, Score: 4 (classifier: >2 files touched, cross-file coupling)
+Mode: plan-gate, Score: 6 (classifier: >2 files touched, cross-file coupling, new files/modules, estimated diff >50 LOC)
 
 ## Task Scope Paths
-- AKSEP-NEU/src/styles/**
-- AKSEP-NEU/src/components/**
-- AKSEP-NEU/src/content/**
+- src/components/navigation/**
+- src/components/navigation.tsx
+- src/components/navbar/**
+- src/components/navbar.tsx
+- src/components/sidebar/**
+- src/components/sidebar.tsx
+- src/components/page-shell.tsx
+- src/components/footer.tsx
+- src/components/header.tsx
+- src/hooks/useNavigationState.ts
+- src/hooks/useOverflowDetection.ts
+- src/hooks/useNavigationController.ts
+- src/data/navigation.ts
+- src/types/navigation.ts
+- src/styles/components/navigation/**
+- src/styles/components/navbar/**
+- src/styles/components/sidebar/**
+- src/styles/components/page-shell/**
 - TASK_PLAN.md
 - TASK_DOCS.md
 
 ## Scope (verbatim)
-Okay, dann lass uns für die styles- und components-Architektur folgende Regeln festhalten:
-- AKSEP-NEU\src\styles\globals.css bildet die Basis, indem dort die Farbpalette und andere Variablen/Konstanten definiert werden, die über das ganze Projekt hinweg gültig sind;
-- AKSEP-NEU\src\styles\themes.css importiert von ./globals.css und definiert auf Basis der der in ./globals.css definierten Variablen die Themes (vorerst reicht .dark);
-- Alle AKSEP-NEU\src\styles\<Gruppe>\.shared.css importieren von `../themes.css` und NUR von `../themes.css`;
-- Alle anderen AKSEP-NEU\src\styles\<Gruppe>\*.css importieren von `./.shared.css` und NUR von `./.shared.css`;
-- Alle AKSEP-NEU\src\styles\<Gruppe>\..\.shared.css importieren von `../.shared.css` und NUR von `../.shared.css`;
-- Alle anderen AKSEP-NEU\src\styles\<Gruppe>\..\*.css importieren von `./.shared.css` und NUR von `./.shared.css`;
-Und letztere beiden Regeln gelten symmetrisch für alle Levels darunter.
+Halte in /src/ Ausschau nach denjenigen .tsx- und .css-Files mit der höchsten Zeilenzahl bzw. File-Grösse (ausgenommenAKSEP\src\components\ui & AKSEP\src\styles\components\ui) und schau jeweils, ob Potential besteht für Modularisierung;
+Beispiel:
+Die Unterkomponenten in AKSEP\src\components\navigation kann man sehr gerne noch weiter aufteilen in NOCH kleinere Module wie das Nav-Logo (was in der NavBar ganz links ist mit Logo, "DIE AKSEP" und dem Redirect zu /start), die Nav-Gruppen ("Begriffe", "Programm", "Über uns", etc.), Nav-Dropdown (Welche on hover ausgeklappt wird; Vielleicht lohnt es sich, auch für die Nav-Dropdown-Items eigene Mini-Komponenten zu definieren? Bin mir jedoch unsicher, entscheide Du bitte), Nav-Button (Die momentan rechtsbündig als "Mitglied werden" und "Unterstützen" existieren), Nav-Overflow (die Logik des Aufsammelns von Navbar-Elementen, wenn der Platz nicht mehr ausreicht; Dies soll zudem bitte erweitert werden mit einer Möglichkeit, die primären Navbar-Elemente (Nav-Gruppen, Nav-Buttons) mit einer "priority" zu versehen, welche die Reihenfolge definiert, in welcher die Elemente eingesammelt werden (höchste Priority zuerst)), Nav-Overflow-Icon (Das Element mit den "...", welches die aufgesammelten Nav-Gruppen enthält), Sidebar-Icon (Das Element, mit welchem man die Sidebar öffnen kann), etc.
+In AKSEP\src\styles\components\navigation hab' ich bereits versucht, eine solche Modularisierungs-Verfeinerung vorzubereiten; Bitte mach dir ausgiebig Gedanken darüber, wie die Modularisierungs-Aufteilungen am sinnvollsten aussehen könnten (auf Basis dessen, wie die Komponenten bis dato aufgebaut sind, v.a. aber auch mit Blick darauf, wie die Komponenten idealerweise aufgebaut sein *sollten*) und plane eine entsprechende Umstrukturierung (beachte dabei bitte, dass AKSEP\src\styles stets ein Abbild der Komponenten-Struktur sein soll)
 
-Sobald ^dies überall gewährleistet ist, gilt für AKSEP-NEU\src\components\..\*.tsx, AKSEP-NEU\src\content\..\*.tsx folgende Regeln:
-- Jede Komponente und jede andere .tsx, die sich an Style-Definitionen bedient, importiert die Styles einzig und allein aus der ihr zugewiesenen styles/../*.css; Im Falle der AKSEP-NEU\src\components\content-sections\start.tsx importiert diese von AKSEP-NEU\src\styles\components\content-sections\start.css, im Falle der AKSEP-NEU\src\components\content-sections\start\akronym.tsx wird von AKSEP-NEU\src\styles\components\content-sections\start\akronym.css importiert - nicht mehr und nicht weniger.
-- Imports, die über den Root des /src/-Folders gehen sind mittels eines `@/<path-from-src-root>` zu vereinfachen (siehe AKSEP-NEU\src\components\content-sections und AKSEP-NEU\src\components\shared, wo dies bereits umgesetzt wurde)
-- Komponenten werden von ganz unten (höchste Modularisierung) nach oben eingesammelt; AKSEP-NEU\src\components\content-sections\start.tsx packt die in AKSEP-NEU\src\components\content-sections\start definierten Unterkomponenten zusammen und gibt dieses Paket dann an AKSEP-NEU\src\content\start.tsx weiter, wo man je nach Bedarf dann noch temporäre Elemente einfügen kann, die dann oberhalb der Hero-Sektion eingeblendet werden (z.B. im Falle eines wichtigen Hinweises)
-
-Bitte erarbeite einen detaillierten Plan, in welchem du systematisch gewährleistest, dass diese Regeln strikt eingehalten werden.
-
-Anschliessend gilt es, die AKSEP-NEU\src\styles\.STYLES.md und AKSEP-NEU\src\components\.COMPONENTS.md entsprechend zu aktualisieren, damit diese strikten Regeln klar und unmissverständlich kommuniziert werden.
-Wobei nach wie vor gilt, dass AKSEP-NEU\src\components\ui und deren dazugehörige AKSEP-NEU\src\styles\components\ui\.figma-ui-components.css eine Ausnahme bildet und von den beschriebenen Regeln ausdrücklich befreit sind.
-
-**Scope-Hash**: `b5ad5bccb173514b5c263f35fd41715c0ab292e1889174f13b0ff2e082779806`
+Zudem wäre es sinnvoll, die "AKSEP\src\components\navigation.tsx" aufzusplitten in "AKSEP\src\components\navbar.tsx" und "AKSEP\src\components\sidebar.tsx" (mit jeweils ihrem eigenen Komponenten-Ordner (inkl. entsprechendem Abbild in AKSEP\src\styles)), um die Nav-Bar, welche als Header fungiert, sauber von der Sidebar trennen zu können; Dementsprechend verdient auch die Sidebar eine entsprechende Modularisierung (wobei es dort natürlich weniger Elemente zu beachten gibt; Ach, zudem gibt es bei der Sidebar noch so einige Bugs, so sollten die Gruppen eingeklappt starten, jedoch starten alle Elemente ausgeklappt ohne dass das Einklappen funktioniert)
 
 ## Discovery
-- Problem Statement: Enforce the new hierarchical CSS import rules and align component/content imports while updating the architecture docs so future changes keep the structure intact.
-- Context & Constraints:
-	- `globals.css` → `themes.css` already drives the design tokens; `@` alias exists for root-relative imports.
-	- `components/ui/**` with their `.figma-ui-components.css` bundle remain exempt from the new rules.
-	- Existing build succeeds; adjustments must not break current styling.
-- Existing Signals:
-	- `themes.css` imports `./globals.css`; every `src/styles/<group>/.shared.css` imports only `../themes.css` (confirmed via `Select-String '^@import'`).
-	- Nested `.shared.css` files (e.g., `components/content-sections/.shared.css`, `components/navigation/.shared.css`, `components/shared/.shared.css`) consistently import exactly their parent `.shared.css`.
-	- Leaf CSS files (`*.css` beside `.shared.css`) import only `./.shared.css`; no extra `@import` statements detected.
-	- All non-exempt `.tsx` files that do import CSS use the `@/styles/...` alias; no relative `../styles` paths remain.
-	- Gaps: `components/content-sections.tsx`, `components/page-shell.tsx`, and `components/footer.tsx` currently miss CSS imports; `content` pages reference the correct `styles/content/*.css` assets.
-	- Navigation subcomponents (`NavigationItem`, `OverflowNavigation`) still rely on the shared `navigation.css`; need a policy decision whether to keep or split.
-- Unknowns & Questions:
-	- Do the navigation subcomponents require their own CSS files, or may they intentionally share `navigation.css` under the new rules?
-	- Should purely re-exporting files (e.g., `components/navigation.tsx`, `components/shared.tsx`) carry CSS imports, or can imports live only in the concrete implementations?
-- Options:
-	- A) Split any shared CSS (navigation group) into component-specific files to follow the strict rule literally.
-	- B) Maintain shared CSS for tightly coupled subcomponents but document the exception (risk: deviates from strict wording).
-	- C) Add automated lint check (custom script) to flag future violations after refactoring.
-- Evidence links:
-	- `Select-String '^@import'` scan across `src/styles` (PowerShell command) shows current import hierarchy.
-	- `Select-String 'import .+\.css'` scan across `src/**/*.tsx` confirms which components import styles and highlights missing ones.
 Status: READY
+
+### Largest files & current architecture
+- `Navigation.tsx` (244 LOC) is the largest `.tsx` outside UI; it bundles header, overflow logic, and mobile sidebar in one component. `NavOverflow.tsx` (116 LOC) and `NavItem.tsx` (92 LOC) are also high. (`find … wc -l` analysis). [Chunk: `a94ce4†L1-L10`]
+- The heaviest CSS files mirror navigation: `nav-shell.css` (227 LOC), `nav-item.css` (134 LOC), and `nav-overflow.css` (112 LOC). (`find … wc -l`). [Chunk: `c05c6f†L1-L10`]
+- Navigation uses centralized data (`src/data/navigation.ts`) and hooks (`useNavigationState`, `useOverflowDetection`); both currently assume only primary nav items collapse from the end.
+- Styles already have placeholder files (`nav-button.css`, `nav-group.css`, etc.) ready for finer-grained modules but still empty.
+
+### Gaps & bugs
+- Mobile sidebar sections attempt to collapse using the class `hidden`, but no global `.hidden` style exists (only in UI exceptions), so sections always render expanded. (`rg` search). [Chunk: `170937†L1-L1`]
+- `useOverflowDetection` collapses items strictly from the end, ignoring desired priority control and unaware of action buttons.
+- `Navigation.tsx` owns menu state and data selection, making reuse in other layouts (separate header/sidebar) difficult.
+- Styles folder must mirror component hierarchy; with new `navbar/` and `sidebar/` modules the CSS tree must be re-homed accordingly.
+
+### Opportunities
+- Introduce explicit data for CTA buttons with priority metadata so overflow logic can consider them alongside nav groups.
+- Build dedicated subcomponents: brand/logo, primary list, dropdown, action buttons, overflow collector, menu toggle, and sidebar sections/items.
+- Provide shared controller (hook/context) so `Navbar` and `Sidebar` stay in sync while living in separate modules.
 
 ## Planning
-- Decision: Adopt strict one-to-one CSS↔component mapping (Option A) and add an automated validator (Option C) so the new rules stay enforceable. Navigation CSS will be split into component-specific files living beside the subgroup hierarchy.
-- Impact on Scope/Steps/Checks/Risks:
-	- Requires migrating the existing monolithic `navigation.css` into targeted files under `styles/components/navigation/` and updating imports in `Navigation`, `NavigationItem`, and `OverflowNavigation`.
-	- Add missing CSS imports to orchestrator components (`content-sections.tsx`, `page-shell.tsx`, `footer.tsx`) and ensure their CSS files exist and follow the `.shared.css` chain.
-	- Introduce a Node-based validation script (run via `npm run lint:styles`) that checks CSS import hierarchy and component/content CSS imports (with an allowlist for `components/ui/**`, `App.tsx`, etc.).
-	- Refresh `.STYLES.md` and `.COMPONENTS.md` to describe the enforced rules, navigation restructure, and validation workflow.
-- Acceptance Criteria:
-	1. Every `.shared.css` imports only its parent target (`../themes.css` for level 1, `../.shared.css` otherwise).
-	2. Every non-exempt `.css` file under `styles/**` imports exactly `./.shared.css` and nothing else.
-	3. Every non-exempt `.tsx` component/content file imports exactly one `@/styles/...` file that matches its folder hierarchy; navigational components use their new per-component CSS assets.
-	4. Validation script fails on violations and passes on clean tree; `npm run build` succeeds.
-	5. `.STYLES.md` and `.COMPONENTS.md` clearly document the rules, exceptions, and validator usage.
-- Test Strategy:
-	- Run the new `npm run lint:styles` script (implemented this task) to verify structure.
-	- Run `npm run build` to ensure Vite bundling succeeds post-refactor.
-	- Spot-check navigation and start page in dev server for visual regressions (manual QA checklist in docs).
-- Risks & preliminary Rollback:
-	- CSS split may miss selectors, causing regressions → keep old `navigation.css` content in git history for quick reversion (`git checkout -- <file>` during dev or `git revert` after commit).
-	- Validator false positives (e.g., intentionally shared CSS) → maintain small allowlist and document rationale; adjust script if needed.
-	- Added script increases CI time slightly → script will scan only `src/` and should finish fast (<1s) to limit impact.
-- Links: *(none yet — will add if we publish validator docs or scripts)*
-- Step Granularity: Implementation steps below are atomic per file/folder so reviewers can trace deltas easily.
 Status: READY
 
+### Approach
+1. **Data & types** — Extend navigation types with `priority` metadata and new action/button types. Update navigation data to include actions and a helper that exposes a unified list of primary entries (items + actions) for rendering/overflow while keeping existing group definitions for content pages.
+2. **State & hooks** — Expand `useNavigationState` to track `overflowEntries` (items/actions) and expose setters that accept the richer shape. Replace `useOverflowDetection` with a priority-aware version that measures all primary entries (items and actions) and collapses the highest-priority elements first while preserving on-screen order for the rest.
+3. **Component modularization** — Replace `Navigation.tsx` with a `navbar` module (root + brand, primary list, dropdown item, action button, overflow menu, menu toggle) and a `sidebar` module (root + collapsible sections and links). Both consume the controller hook so they remain synchronized. Delete the legacy `navigation` folder.
+4. **Styling restructure** — Move navigation CSS into `styles/components/navbar/**` and `styles/components/sidebar/**`, filling previously empty placeholders with selectors scoped to the new subcomponents and fixing the collapse bug with explicit `[data-open]` toggles.
+5. **Integration** — Update `page-shell.tsx` to instantiate the shared controller, render `<Navbar />` and `<Sidebar />`, and drop the `navigation.tsx` intermediary. Ensure imports follow `@/` alias and documentation/test artifacts are updated.
+
+### Acceptance criteria
+- Header and sidebar render with identical behavior to today (dropdowns, overflow, CTA buttons) while using new modular components and styles.
+- Overflow hides entries based on `priority` metadata (highest first) without reordering the visible remainder; hidden entries appear inside the overflow menu grouped logically (items vs actions) and preserve navigation.
+- Sidebar sections start collapsed, expand/collapse reliably, and respect navigation state toggles.
+- CSS tree mirrors component hierarchy (`styles/components/navbar/**`, `styles/components/sidebar/**`) with correct `.shared.css` import chains.
+- Build passes (`npm run build`) and navigation interactions work in manual QA.
+
 ## Pre-Approval Checklist
-- [ ] Discovery: Status = READY
-- [ ] Planning: Status = READY
-- [ ] Steps are atomic (per file + anchor/range); Final @codex Sweep present
-- [ ] Developer Interactions section exists
-- [ ] Checks & Pass Criteria present & consistent
-- [ ] Mode & Score filled (plan-gate, score = 4)
-- [ ] git status clean (only TASK_PLAN.md/TASK_DOCS.md changed)
+- [x] Discovery: Status = READY
+- [x] Planning: Status = READY
+- [x] Steps are atomic (per file + anchor/range); Final @codex Sweep present
+- [x] Developer Interactions section exists
+- [x] Checks & Pass Criteria present & consistent
+- [x] Mode & Score filled (plan-gate, score = 6)
+- [x] git status clean (only TASK_PLAN.md/TASK_DOCS.md changed)
 
 ## Implementation Steps (paths & anchors)
-> Notes:
-> - No research/plan meta-tasks here; Discovery/Planning above must be complete before approval.
-> - If Discovery/Planning changed understanding, **synchronize and (re)split** these steps into small **atomic** edits (per file + anchor/range) **before** requesting approval.
-
-**Priority & Preemption Rules (global order)**
-- Global order: **Priority @codex** (tagged `URGENT|IMPORTANT|NOTFALL|SEV1` or safety/secret/security) **> finish current atomic step** **> regular @codex** **> start next step**.
-- Immediate preemption only if a priority item arrives or it impacts the current step's paths/anchors.
-- Regular @codex: process after finishing the current step but before starting the next.
-- Final sweep ensures no residual @codex guidance remains.
-
-[ ] 0) **Plan Sync:** Reload `TASK_PLAN.md`; scan **Developer Interactions**; process outstanding @codex items.
-[x] 1) `src/components/footer.tsx`: add `@/styles/components/footer.css` import at top; ensure no duplicate imports.
-[x] 2) `src/components/page-shell.tsx`: add `@/styles/components/page-shell.css` import and adjust lint ordering if needed.
-[x] 3) `src/components/content-sections.tsx`: add `@/styles/components/content-sections.css` import so orchestrator follows rule.
-[x] 4) `src/styles/components/navigation/nav-shell.css`: populate existing stub with header/layout/mobile selectors migrated from legacy `navigation.css`; keep `@import './.shared.css';` at top.
-[x] 5) `src/components/navigation/Navigation.tsx`: point stylesheet import to `@/styles/components/navigation/nav-shell.css`; update related comments if necessary.
-[x] 6) `src/styles/components/navigation/nav-item.css`: move navigation item + dropdown selectors into this file (with shared import header).
-[x] 7) Rename `src/components/navigation/NavigationItem.tsx` → `src/components/navigation/NavItem.tsx`; update export/import graph and swap CSS import to `@/styles/components/navigation/nav-item.css`.
-[x] 8) `src/styles/components/navigation/nav-overflow.css`: move overflow menu selectors here (with shared import header).
-[x] 9) Rename `src/components/navigation/OverflowNavigation.tsx` → `src/components/navigation/NavOverflow.tsx`; update exports/imports and CSS import to `@/styles/components/navigation/nav-overflow.css`.
-[x] 10) `src/styles/components/navigation/nav-button.css`, `nav-group.css`, `nav-dropdown.css`, `nav-logo.css`, `nav-overflow-collector.css`, `sidebar.css`: ensure selectors align with new structure; remove duplicates from deleted legacy file.
-[x] 11) `src/styles/components/navigation.css`: delete or reduce to comment stub once selectors migrated; ensure no duplicate definitions remain (top-level file retains navigation-wide notes only).
-[x] 12) `scripts/validate-style-architecture.mjs`: add Node script that validates CSS hierarchy and component/content imports with documented allowlist (`components/ui` exempt).
-[x] 13) `package.json`: add `"lint:styles": "node scripts/validate-style-architecture.mjs"` (or similar) in scripts block.
-[ ] 14) `src/styles/.STYLES.md`: update sections to outline the strict rules, navigation restructure, and validator usage.
-[ ] 15) `src/components/.COMPONENTS.md`: document new import expectations, navigation updates, and tie-in to `.STYLES.md`.
-[ ] 16) `docs/DEVELOPER.md`: add guidance on running the validator locally and in CI expectations.
-[ ] 17) `TASK_DOCS.md`: log work summary, validator command, and manual QA checklist.
-[ ] 18) Run `npm run lint:styles` then `npm run build`; capture outcomes for summary.
+[x] 0) **Plan Sync:** Reload `TASK_PLAN.md`; scan **Developer Interactions**; process outstanding @codex items.
+[x] 1) `src/types/navigation.ts`: add priority field to `NavItem`, define `NavAction`, `NavPrimaryEntry`, and `OverflowEntry` types; update `NavigationState` to track overflow entries.
+[x] 2) `src/data/navigation.ts`: add `priority` metadata to nav items, introduce CTA action config, and export helpers (`getPrimaryNavEntries`, `getNavActions`).
+[x] 3) `src/hooks/useNavigationState.ts`: update state shape and setter signatures to accommodate `OverflowEntry[]`.
+[x] 4) `src/hooks/useOverflowDetection.ts`: refactor to accept primary entries, measure widths, and compute overflow based on priority order; expose ref registration helpers for both items and actions.
+[x] 5) `src/hooks/useNavigationController.ts`: create new hook composing navigation data, state, overflow detection, and derived sets for navbar/sidebar consumption.
+[x] 6) `src/components/navbar/Navbar.tsx`: implement root header component wiring brand, primary entries, actions, overflow trigger, and menu toggle using controller data.
+[x] 7) `src/components/navbar/Brand.tsx`: render logo link + tooltip (imports scoped CSS).
+[x] 8) `src/components/navbar/PrimaryList.tsx`: render primary entries, delegating to item/action subcomponents with overflow awareness and dropdown handling.
+[x] 9) `src/components/navbar/PrimaryItem.tsx`: encapsulate dropdown/nav item behavior (former `NavItem` logic) with updated props.
+[x] 10) `src/components/navbar/ActionButton.tsx`: render CTA buttons with overflow support.
+[x] 11) `src/components/navbar/OverflowMenu.tsx`: render overflow dropdown consolidating hidden items/actions using new data shape.
+[x] 12) `src/components/navbar/MenuToggle.tsx`: isolate mobile toggle button (hamburger / close icons).
+[x] 13) `src/components/navbar/index.ts`: export the assembled navbar API.
+[x] 14) `src/components/navbar.tsx`: top-level entry re-exporting default navbar component for consumers.
+[x] 15) `src/components/sidebar/Sidebar.tsx`: implement sidebar root using controller state, rendering collapsible sections.
+[x] 16) `src/components/sidebar/Section.tsx`: component for grouped links with collapse toggle + `[data-open]` attribute.
+[x] 17) `src/components/sidebar/index.ts`: export sidebar components.
+[x] 18) `src/components/sidebar.tsx`: top-level entry re-exporting default sidebar.
+[x] 19) `src/components/page-shell.tsx`: replace `<Navigation />` with `<Navbar />` + `<Sidebar />`, using the controller hook to share state.
+[x] 20) Remove legacy `src/components/navigation/**` and `src/components/navigation.tsx`.
+[x] 21) `src/styles/components/navbar/.shared.css` & friends: populate new CSS modules (shell, brand, primary, dropdown, action, overflow, toggle) with migrated selectors from old navigation styles.
+[x] 22) `src/styles/components/sidebar/.shared.css` & friends: author sidebar styling, ensuring collapsed sections respect `[data-open='false']`.
+[x] 23) Delete superseded files under `src/styles/components/navigation/**`.
+[x] 24) Update documentation/tests: adjust any references in `TASK_DOCS.md` (summary + QA) and ensure lint/build instructions include new controller.
+[x] 25) Run `npm run build`; record outcomes.
 N) Final **@codex Sweep**: scan all touched/new files plus Control Paths for `@codex`; resolve queue; confirm compliance with rules.
 
 ## Developer Interactions
-- [ ] @CODEX HINWEIS: Manche .tsx-Files brauchen keine style-Imports, da deren Funktionalität teilweise etwas anderes abbildet als etwas, das irgendwelche Style-Definitionen benötigen würde; Falls ich gesagt haben sollte "jede \*.tsx hat immer nur exakt einen einzigen \*.css- Import", dann muss ich dies korrigieren zu "jede \*.tsx hat immer _maximal_ exakt einen einzigen \*.css-Import"
-- [ ] @CODEX INFO: Navigation-Unterkomponenten sollen im Komponenten-Ordner sowie bei den Styles das Schema `nav-*` verwenden; Top-Level `navigation.tsx` und `navigation.css` bleiben unverändert.
-- [ ] // @CODEX ERGÄNZUNG: In AKSEP-NEU\src\styles\components\navigation hab' ich den Platzhalter-Files jeweils einen Kommentar hinzugefügt "/* Placeholder for future rfactoring for nav-bar-Subcomponents */"
+(none yet)
 
 ## Checks & Pass Criteria
-- `npm run lint:styles` (new validator) ⇒ exits 0 with no violations.
-- `npm run build` ⇒ completes successfully (Vite bundling passes).
-- Manual QA: verify navigation bar, dropdowns, and overflow menu render correctly in dev server (desktop + narrow width snapshot).
-- Documentation diff reviewed to ensure `.STYLES.md` and `.COMPONENTS.md` capture rules & validator instructions.
+- `npm run build`
+- Manual QA: desktop overflow collapse order, CTA appearance, sidebar toggle + section collapse.
+- Documentation updated in `TASK_DOCS.md` with summary & test evidence.
 
 ## Risks / Rollback
-- Navigation CSS split could miss selectors → fallback: restore previous `styles/components/navigation.css` from git and re-apply with finer diff.
-- Validator allowlist may omit legitimate exceptions → adjust script configuration or mark additional files, rerun until clean.
-- Added script might slow CI slightly → measure runtime and, if needed, restrict scan scope or cache file list.
+- **CSS regression risk:** Keep old navigation CSS handy; if layout breaks, revert to previous commit and reapply with smaller slices.
+- **Overflow logic bugs:** New priority algorithm might hide wrong entries; fallback is to restore previous `useOverflowDetection` implementation and iterate.
+- **State sync issues:** If sidebar/menu toggle gets out of sync, validate controller hook invariants or temporarily co-locate state in navbar while debugging.

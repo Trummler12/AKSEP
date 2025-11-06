@@ -1,27 +1,50 @@
 import { useCallback, useEffect, useRef } from 'react';
-import type { NavItem } from '../types/navigation';
+import type { NavPrimaryEntry, OverflowEntry } from '../types/navigation';
 
 interface UseOverflowDetectionProps {
-  primaryNavItems: NavItem[];
-  onOverflowChange: (keys: string[]) => void;
+  entries: NavPrimaryEntry[];
+  onOverflowChange: (entries: OverflowEntry[]) => void;
 }
 
+const composeEntryId = (entry: OverflowEntry): string => `${entry.type}:${entry.key}`;
+
+const getEntryDescriptor = (entry: NavPrimaryEntry): OverflowEntry => {
+  if (entry.type === 'item') {
+    return { type: 'item', key: entry.item.key };
+  }
+
+  return { type: 'action', key: entry.action.key };
+};
+
+const getEntryPriority = (entry: NavPrimaryEntry): number => {
+  if (entry.type === 'item') {
+    return entry.item.priority ?? 0;
+  }
+
+  return entry.action.priority;
+};
+
 /**
- * Custom hook for detecting navigation overflow
- * Handles responsive behavior and overflow menu management
+ * Priority-aware overflow detection
  */
-export const useOverflowDetection = ({ 
-  primaryNavItems, 
-  onOverflowChange 
-}: UseOverflowDetectionProps) => {
+export const useOverflowDetection = ({ entries, onOverflowChange }: UseOverflowDetectionProps) => {
   const navContainerRef = useRef<HTMLDivElement | null>(null);
   const overflowTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const itemRefs = useRef<Record<string, HTMLDivElement | null>>({});
-  const itemWidths = useRef<Record<string, number>>({});
+  const entryRefs = useRef<Record<string, HTMLElement | null>>({});
+  const entryWidths = useRef<Record<string, number>>({});
 
-  const measureItems = useCallback(() => {
-    primaryNavItems.forEach((item) => {
-      const element = itemRefs.current[item.key];
+  const registerEntryRef = useCallback(
+    (descriptor: OverflowEntry) => (element: HTMLElement | null) => {
+      entryRefs.current[composeEntryId(descriptor)] = element;
+    },
+    []
+  );
+
+  const measureEntries = useCallback(() => {
+    entries.forEach((entry) => {
+      const descriptor = getEntryDescriptor(entry);
+      const id = composeEntryId(descriptor);
+      const element = entryRefs.current[id];
       if (!element) {
         return;
       }
@@ -42,7 +65,7 @@ export const useOverflowDetection = ({
       const margin =
         parseFloat(computed.marginLeft || '0') + parseFloat(computed.marginRight || '0');
 
-      itemWidths.current[item.key] = rect.width + margin;
+      entryWidths.current[id] = rect.width + margin;
 
       if (originalStyle) {
         element.setAttribute('style', originalStyle);
@@ -54,7 +77,7 @@ export const useOverflowDetection = ({
         element.setAttribute('hidden', '');
       }
     });
-  }, [primaryNavItems]);
+  }, [entries]);
 
   const calculateVisibility = useCallback(() => {
     const container = navContainerRef.current;
@@ -95,33 +118,64 @@ export const useOverflowDetection = ({
       return;
     }
 
-    const widths = primaryNavItems.map((item) => itemWidths.current[item.key] ?? 0);
-    let totalWidth = widths.reduce((sum, width) => sum + width, 0);
-    let visibleCount = primaryNavItems.length;
-    const overflowWidth =
-      overflowTriggerRef.current?.getBoundingClientRect().width ?? 48;
+    const entryData = entries.map((entry, index) => {
+      const descriptor = getEntryDescriptor(entry);
+      const id = composeEntryId(descriptor);
+      return {
+        descriptor,
+        id,
+        width: entryWidths.current[id] ?? 0,
+        priority: getEntryPriority(entry),
+        index,
+      };
+    });
 
+    let totalWidth = entryData.reduce((sum, { width }) => sum + width, 0);
     if (totalWidth <= availableWidth) {
       onOverflowChange([]);
       return;
     }
 
-    let widthWithOverflow = totalWidth + overflowWidth;
-    const newOverflow: string[] = [];
+    const overflowWidth = overflowTriggerRef.current?.getBoundingClientRect().width ?? 48;
+    const removed = new Set<string>();
+    const hiddenEntries: OverflowEntry[] = [];
 
-    while (visibleCount > 0 && widthWithOverflow > availableWidth) {
-      newOverflow.unshift(primaryNavItems[visibleCount - 1].key);
-      totalWidth -= widths[visibleCount - 1];
-      visibleCount -= 1;
-      widthWithOverflow = totalWidth + overflowWidth;
+    const getWidthWithOverflow = (currentWidth: number, hiddenCount: number) => {
+      return hiddenCount === 0 ? currentWidth : currentWidth + overflowWidth;
+    };
+
+    let widthWithOverflow = getWidthWithOverflow(totalWidth, hiddenEntries.length);
+
+    while (widthWithOverflow > availableWidth) {
+      const candidate = entryData
+        .filter(({ id, width }) => !removed.has(id) && width > 0)
+        .sort((a, b) => {
+          if (b.priority !== a.priority) {
+            return b.priority - a.priority;
+          }
+          return b.index - a.index;
+        })[0];
+
+      if (!candidate) {
+        break;
+      }
+
+      removed.add(candidate.id);
+      hiddenEntries.push(candidate.descriptor);
+      totalWidth -= candidate.width;
+      widthWithOverflow = getWidthWithOverflow(totalWidth, hiddenEntries.length);
+
+      if (hiddenEntries.length === entryData.length) {
+        break;
+      }
     }
 
-    onOverflowChange(newOverflow);
-  }, [primaryNavItems, onOverflowChange]);
+    onOverflowChange(hiddenEntries);
+  }, [entries, onOverflowChange]);
 
   useEffect(() => {
     const update = () => {
-      measureItems();
+      measureEntries();
       calculateVisibility();
     };
 
@@ -139,11 +193,11 @@ export const useOverflowDetection = ({
       observer.disconnect();
       window.removeEventListener('resize', update);
     };
-  }, [calculateVisibility, measureItems]);
+  }, [calculateVisibility, measureEntries]);
 
   return {
     navContainerRef,
     overflowTriggerRef,
-    itemRefs,
+    registerEntryRef,
   };
 };

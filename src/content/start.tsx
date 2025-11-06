@@ -1,4 +1,4 @@
-import ContentSections from '../components/content-sections';
+import ContentSections from '@/components/content-sections';
 
 // Import start-page specific styles
 import '@/styles/content/start.css';

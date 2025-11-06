@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import type { NavigationState } from '../types/navigation';
+import type { NavigationState, OverflowEntry } from '../types/navigation';
 
 /**
  * Custom hook for managing navigation state
@@ -9,7 +9,7 @@ export const useNavigationState = (currentPath?: string) => {
   const [navigationState, setNavigationState] = useState<NavigationState>({
     isMenuOpen: false,
     activeDropdown: null,
-    overflowKeys: [],
+    overflowEntries: [],
     openOverflowSections: [],
     openMobileSections: {},
   });
@@ -20,6 +20,7 @@ export const useNavigationState = (currentPath?: string) => {
       ...prev,
       isMenuOpen: false,
       activeDropdown: null,
+      overflowEntries: [],
       openOverflowSections: [],
       openMobileSections: {},
     }));
@@ -37,8 +38,8 @@ export const useNavigationState = (currentPath?: string) => {
     setNavigationState(prev => ({ ...prev, activeDropdown: key }));
   }, []);
 
-  const setOverflowKeys = useCallback((keys: string[]) => {
-    setNavigationState(prev => ({ ...prev, overflowKeys: keys }));
+  const setOverflowEntries = useCallback((entries: OverflowEntry[]) => {
+    setNavigationState(prev => ({ ...prev, overflowEntries: entries }));
   }, []);
 
   const toggleOverflowSection = useCallback((key: string) => {
@@ -65,7 +66,7 @@ export const useNavigationState = (currentPath?: string) => {
     setMenuOpen,
     toggleMenu,
     setActiveDropdown,
-    setOverflowKeys,
+    setOverflowEntries,
     toggleOverflowSection,
     toggleMobileSection,
   };
