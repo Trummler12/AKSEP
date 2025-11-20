@@ -1,0 +1,79 @@
+﻿
+
+Folder PATH listing for volume Windows
+Volume serial number is AA0F-5FCF
+C:.
+|   local-tree.ps1
+|   local-tree.txt
+|   PLANUNG.md
+|
++---backend
+|   |   build.gradle
+|   |
+|   +---.gradle
+|   |   +---8.9
+|   |   |   |   gc.properties
+|   |   |   |
+|   |   |   +---checksums
+|   |   |   |       checksums.lock
+|   |   |   |
+|   |   |   +---dependencies-accessors
+|   |   |   |       gc.properties
+|   |   |   |
+|   |   |   +---executionHistory
+|   |   |   |       executionHistory.lock
+|   |   |   |
+|   |   |   +---fileChanges
+|   |   |   |       last-build.bin
+|   |   |   |
+|   |   |   \---fileHashes
+|   |   |           fileHashes.lock
+|   |   |
+|   |   +---buildOutputCleanup
+|   |   |       buildOutputCleanup.lock
+|   |   |       cache.properties
+|   |   |
+|   |   \---vcs-1
+|   |           gc.properties
+|   |
+|   \---src
+|       \---main
+|           +---java
+|           |   \---org
+|           |       \---schoolsystem
+|           |           +---application
+|           |           |       .gitkeep
+|           |           |
+|           |           +---domain
+|           |           |   +---model
+|           |           |   |       .gitkeep
+|           |           |   |
+|           |           |   +---ports
+|           |           |   |       .gitkeep
+|           |           |   |
+|           |           |   +---services
+|           |           |   |       .gitkeep
+|           |           |   |
+|           |           |   \---value
+|           |           |           .gitkeep
+|           |           |
+|           |           +---infrastructure
+|           |           |   +---csv
+|           |           |   |       .gitkeep
+|           |           |   |
+|           |           |   +---mapper
+|           |           |   |       .gitkeep
+|           |           |   |
+|           |           |   \---persistence
+|           |           |           .gitkeep
+|           |           |
+|           |           \---interface
+|           |               \---rest
+|           |                       .gitkeep
+|           |
+|           \---resources
+|                   .gitkeep
+|
+\---frontend
+        .gitkeep
+
