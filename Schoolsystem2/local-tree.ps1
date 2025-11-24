@@ -1,7 +1,7 @@
 Set-Location $PSScriptRoot
 
 # HIDE FOLDERS
-$foldersToHide = @("node_modules", ".nuxt", ".gradle", ".output", ".env", "build")
+$foldersToHide = @("node_modules", ".nuxt", ".gradle", ".output", ".env", "build", "bin")
 
 # Optional settings
 $saveTreeToTxt       = $true
