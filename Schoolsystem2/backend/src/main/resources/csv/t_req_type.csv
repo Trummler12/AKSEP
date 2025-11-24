@@ -1,0 +1,5 @@
+req_typeID,req_type
+0,obligatory
+1,"highly recommended"
+2,recommended
+3,beneficial

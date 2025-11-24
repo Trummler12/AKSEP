@@ -1,0 +1,9 @@
+typeID,type_name,definition
+0,"General Subject","Tests for every half Level with Goals: L1 after y3, L1.5 after y6, L2 after y9, L3 after y12 if chosen by student"
+1,Specialization,"Tests for every full Level; Goals: L3 after y12 if chosen by student"
+2,"Technical Subject","Subject that requires physical Tools to be taught not every school can provide; Tests for every full Level"
+3,Achievement,NULL
+4,"General Course",NULL
+5,"Optional Course",NULL
+6,"Practical Subject","where theory alone isn't sufficient (Requires Group Organisation)"
+7,"other","not falling into any other category"

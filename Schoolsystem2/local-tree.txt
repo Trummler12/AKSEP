@@ -17,6 +17,41 @@ C:.
 |   +---.gradle
 |   |       [Contents excluded]
 |   |
+|   +---bin
+|   |   +---main
+|   |   |   +---csv
+|   |   |   |       ct_lrequirements.csv
+|   |   |   |       ct_topic_tags.csv
+|   |   |   |       t_contact_type.csv
+|   |   |   |       t_inter_type.csv
+|   |   |   |       t_language.csv
+|   |   |   |       t_req_type.csv
+|   |   |   |       t_resource_type.csv
+|   |   |   |       t_source.csv - Shortcut.lnk
+|   |   |   |       t_source_author.csv - Shortcut.lnk
+|   |   |   |       t_source_type.csv
+|   |   |   |       t_tag.csv
+|   |   |   |       t_timezone.csv
+|   |   |   |       t_topic.csv
+|   |   |   |       t_topic_levels.csv
+|   |   |   |       t_topic_type.csv
+|   |   |   |       t_topic_url.csv
+|   |   |   |
+|   |   |   \---org
+|   |   |       \---schoolsystem
+|   |   |           \---domain
+|   |   |               \---model
+|   |   |                       LocalizedText.class
+|   |   |                       TagLocalization.class
+|   |   |
+|   |   \---test
+|   |       \---org
+|   |           \---schoolsystem
+|   |               \---domain
+|   |                   \---model
+|   |                           LocalizedTextTest.class
+|   |                           TagLocalizationTest.class
+|   |
 |   +---build
 |   |       [Contents excluded]
 |   |
@@ -35,7 +70,8 @@ C:.
 |       |   |           |
 |       |   |           +---domain
 |       |   |           |   +---model
-|       |   |           |   |       .gitkeep
+|       |   |           |   |       LocalizedText.java
+|       |   |           |   |       TagLocalization.java
 |       |   |           |   |
 |       |   |           |   +---ports
 |       |   |           |   |       .gitkeep
@@ -65,7 +101,23 @@ C:.
 |       |   |                       .gitkeep
 |       |   |
 |       |   \---resources
-|       |           .gitkeep
+|       |       \---csv
+|       |               ct_lrequirements.csv
+|       |               ct_topic_tags.csv
+|       |               t_contact_type.csv
+|       |               t_inter_type.csv
+|       |               t_language.csv
+|       |               t_req_type.csv
+|       |               t_resource_type.csv
+|       |               t_source.csv - Shortcut.lnk
+|       |               t_source_author.csv - Shortcut.lnk
+|       |               t_source_type.csv
+|       |               t_tag.csv
+|       |               t_timezone.csv
+|       |               t_topic.csv
+|       |               t_topic_levels.csv
+|       |               t_topic_type.csv
+|       |               t_topic_url.csv
 |       |
 |       \---test
 |           \---java
@@ -76,7 +128,8 @@ C:.
 |                       |
 |                       +---domain
 |                       |   +---model
-|                       |   |       .gitkeep
+|                       |   |       LocalizedTextTest.java
+|                       |   |       TagLocalizationTest.java
 |                       |   |
 |                       |   +---ports
 |                       |   |       .gitkeep
