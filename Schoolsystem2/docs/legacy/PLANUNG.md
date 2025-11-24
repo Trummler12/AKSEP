@@ -14,7 +14,7 @@ CustomGPT: [Java](https://chatgpt.com/g/g-3GmVMbWRV-java)
 Please ultra think hard on this:
 Wir haben in unserer Lehre in einem Modul zu projektorientiertem Programmieren die Aufgabe, ein Java-Projekt umzusetzen, zusammen mit einem Frontend-HTML basiert, welches auf einem anderen parallel laufenden Modul fließt. Und nun wollte ich dich folgende Fragen stellen. Was ist die nach Best Practices minimale Architektur eines solchen Projekts? Und was ist die sinnvollste modulare Aufteilung des Projektes in kleinere Files? Zum Beispiel, wie Filen sollten Klassen in einzelne Files unterteilt werden? Und wie gilt es diesbezüglich mit abstrakten Klassen und Interfaces umzugehen, die wir ebenfalls mit einbauen sollten? Dazu musst du wissen, das objektorientierte Backend, wenn man das so bezeichnen will, soll primär aus Java-Code bestehen, welches in meinem Falle CSV-Dateien interpretiert und in Form von Objekten speichert.
 Folgende Klassen werde ich dafür benötigen (Ich geb' dir einfach die entsprechenden Abschnitte des bereits über ein anderes Modul vorbereiteten .sql-Scripts):
-```
+```sql
 -- "t_" = "table", "ct_" = "combination table" (n:m-Beziehung); Würden wir für die Klassen-Namen weglassen
 -- -----------------------------------------------------
 -- Table `schoolsystem`.`t_tag`
@@ -371,13 +371,13 @@ COLLATE = utf8mb4_0900_ai_ci;
 -- -----------------------------------------------------
 -- Table `schoolsystem`.`t_inter_type`
 -- (Ab hier erst relevant, Sobald wir eine Login-Funktionalität implementiert haben)
--- 0	seen
--- 1	viewed
--- 2	visited
--- 3	downloaded
--- 4	watched
--- 5	partly solved
--- 6	solved
+-- 0  seen
+-- 1  viewed
+-- 2  visited
+-- 3  downloaded
+-- 4  watched
+-- 5  partly solved
+-- 6  solved
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `schoolsystem`.`t_inter_type` (
   `interaction_typeID` TINYINT NOT NULL,
@@ -424,11 +424,11 @@ WICHTIG: Programmatisch will ich noch nichts umsetzen, jetzt soll der Fokus alle
 
 Alles klar, Trummler — Fokus auf Architektur, kein Coding. Unten findest du eine schlanke, praxistaugliche Projektstruktur, die a) minimal bleibt und b) spätere Erweiterungen (DB statt CSV, Login etc.) sauber ermöglicht. Kernprinzip: **Domain-first** und Ports/Adapter (Hexagonal/Clean) so schlank wie möglich.
 
-# Minimal-Architektur (empfohlen)
+#### Minimal-Architektur (empfohlen)
 
 **Ziel:** CSV-Dateien einlesen → Domänenobjekte → per Service nutzbar; einfacher Übergabepunkt fürs HTML-Frontend (z. B. REST, später).
 
-```
+```markdown
 schoolsystem/
 ├─ backend/
 │  ├─ build.gradle (oder pom.xml)
@@ -455,20 +455,20 @@ schoolsystem/
 Warum so?
 
 * **domain** bleibt stabil (Kernmodelle, Regeln).
-* **ports** geben nur *Fähigkeiten* (z. B. `TopicRepository`) vor.
+* **ports** geben nur _Fähigkeiten_ (z. B. `TopicRepository`) vor.
 * **infrastructure** implementiert Ports (z. B. CSV-Leser). Austauschbar ohne Domain anzufassen.
 * **application** bündelt Use-Cases (z. B. „lade Topics mit Tags und Levels“).
 * **interface** ist das Einfallstor fürs Frontend (REST ist naheliegend, aber optional).
 
 ---
 
-# Sinnvolle modulare Aufteilung in Dateien
+#### Sinnvolle modulare Aufteilung in Dateien
 
-**Regel:** 1 Klasse/Interface = 1 Datei. Kleine Value Objects können als `record` (ab Java 16) in eigenen Dateien gepflegt werden. Keine verschachtelten *God Classes*. Sealed Hierarchien (ab Java 17) eignen sich für klar abgegrenzte Typbäume (z. B. `Resource`).
+**Regel:** 1 Klasse/Interface = 1 Datei. Kleine Value Objects können als `record` (ab Java 16) in eigenen Dateien gepflegt werden. Keine verschachtelten _God Classes_. Sealed Hierarchien (ab Java 17) eignen sich für klar abgegrenzte Typbäume (z. B. `Resource`).
 
-## Packages und Dateien (konkret)
+##### Packages und Dateien (konkret)
 
-```
+```markdown
 org.schoolsystem.domain.value
   LanguageCode               // z. B. "de", "en" (record)
   LevelNumber                // 1..9 (record), regelkonform zu type/layer prüfen
@@ -563,7 +563,7 @@ org.schoolsystem.interface.rest  (optional, minimal)
 
 ---
 
-# Domänen-Abgrenzung (Aggregates) und Beziehungen
+#### Domänen-Abgrenzung (Aggregates) und Beziehungen
 
 **Aggregate Roots** (sinnvoll in eurem Modell):
 
@@ -588,7 +588,7 @@ org.schoolsystem.interface.rest  (optional, minimal)
 
 ---
 
-# Interfaces vs. abstrakte Klassen (Best Practices)
+#### Interfaces vs. abstrakte Klassen (Best Practices)
 
 * **Repositories, Parser, Validatoren:** **Interfaces** (leicht austauschbar: CSV heute, DB morgen).
 * **Hierarchien mit klarer Variantenmenge:** **Sealed interface** + finale Implementierungen (z. B. `Resource` → `UrlResource`, `FileResource`; `Source` → `UrlSource`, `FileSource`). Das hält offen (Interface) und zugleich kontrolliert (sealed).
@@ -596,7 +596,7 @@ org.schoolsystem.interface.rest  (optional, minimal)
 
 ---
 
-# CSV-spezifische Planung
+#### CSV-spezifische Planung
 
 * **Schema-Klassen pro CSV-Tabelle** (Spaltennamen, Pflichtfelder, Typkonvertierung, semantische Checks).
 * **Mappers** (Row → Domain) strikt getrennt vom **Repository**, das Laden/Joinen orchestriert.
@@ -614,13 +614,13 @@ org.schoolsystem.interface.rest  (optional, minimal)
 
 ---
 
-# Minimales Datenflussdiagramm
+#### Minimales Datenflussdiagramm
 
 Frontend (HTML/JS) → (optional REST) → **application.UseCase** → **domain.services** → **domain.ports** (Repositories) → **infrastructure.csv** (liest CSV, mappt, verknüpft) → Domain-Objekte → zurück als DTOs.
 
 ---
 
-# Konkrete Klassenskizzen (nur zur Planung, kein Code nötig)
+#### Konkrete Klassenskizzen (nur zur Planung, kein Code nötig)
 
 * `Topic`
 
@@ -644,7 +644,7 @@ Frontend (HTML/JS) → (optional REST) → **application.UseCase** → **domain.
 
 ---
 
-# Validierungs- und Regel-Checks (wo?)
+#### Validierungs- und Regel-Checks (wo?)
 
 * **Domain.services.ValidationService**:
 
@@ -660,7 +660,7 @@ Frontend (HTML/JS) → (optional REST) → **application.UseCase** → **domain.
 
 ---
 
-# DTOs und Mapping (für das spätere Frontend)
+#### DTOs und Mapping (für das spätere Frontend)
 
 * **DTOs** nur für Schnittstellenebene, nicht in `domain`.
 * Trenne Domain-Model (reich) von DTO (flach, serialisierbar).
@@ -668,9 +668,9 @@ Frontend (HTML/JS) → (optional REST) → **application.UseCase** → **domain.
 
 ---
 
-# Tests (essentiell, aber minimal)
+#### Tests (essentiell, aber minimal)
 
-```
+```markdown
 src/test/java/org/schoolsystem/
   domain/
     TopicServiceTest          // Layer-Regeln, Tag-Gewichte
@@ -683,7 +683,7 @@ src/test/java/org/schoolsystem/
 
 ---
 
-# Versionierung / IDs / Typen (saubere Value Objects)
+#### Versionierung / IDs / Typen (saubere Value Objects)
 
 * `TopicId` als Value Object kapselt das **Benennungspattern** (AAA0/Aaa1/aaaa).
 * `LanguageCode` kapselt ISO 639-1 (Strings von CSV kommen, VO prüft).
@@ -692,7 +692,7 @@ src/test/java/org/schoolsystem/
 
 ---
 
-# Warum diese Struktur „minimal, aber richtig“ ist
+#### Warum diese Struktur „minimal, aber richtig“ ist
 
 * Sie verhindert, dass CSV-Parsing-Details im Kernmodell „durchbluten“.
 * Sie erlaubt ein späteres Ersetzen der CSV-Adapter durch JPA/JOOQ, ohne Domain/Use-Cases umzubauen.

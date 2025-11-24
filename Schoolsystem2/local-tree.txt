@@ -9,6 +9,7 @@ C:.
 |   PLANUNG.md
 |
 +---backend
+|   |   .gitignore
 |   |   build.gradle
 |   |   gradlew
 |   |   gradlew.bat
