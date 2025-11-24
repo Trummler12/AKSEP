@@ -3,76 +3,113 @@
 Folder PATH listing for volume Windows
 Volume serial number is AA0F-5FCF
 C:.
+|   DEVELOPER.md
 |   local-tree.ps1
 |   local-tree.txt
 |   PLANUNG.md
 |
 +---backend
 |   |   build.gradle
+|   |   gradlew
+|   |   gradlew.bat
+|   |   README.md
 |   |
 |   +---.gradle
-|   |   +---8.9
-|   |   |   |   gc.properties
-|   |   |   |
-|   |   |   +---checksums
-|   |   |   |       checksums.lock
-|   |   |   |
-|   |   |   +---dependencies-accessors
-|   |   |   |       gc.properties
-|   |   |   |
-|   |   |   +---executionHistory
-|   |   |   |       executionHistory.lock
-|   |   |   |
-|   |   |   +---fileChanges
-|   |   |   |       last-build.bin
-|   |   |   |
-|   |   |   \---fileHashes
-|   |   |           fileHashes.lock
-|   |   |
-|   |   +---buildOutputCleanup
-|   |   |       buildOutputCleanup.lock
-|   |   |       cache.properties
-|   |   |
-|   |   \---vcs-1
-|   |           gc.properties
+|   |       [Contents excluded]
+|   |
+|   +---build
+|   |       [Contents excluded]
+|   |
+|   +---gradle
+|   |   \---wrapper
+|   |           gradle-wrapper.jar
+|   |           gradle-wrapper.properties
 |   |
 |   \---src
-|       \---main
-|           +---java
-|           |   \---org
-|           |       \---schoolsystem
-|           |           +---application
-|           |           |       .gitkeep
-|           |           |
-|           |           +---domain
-|           |           |   +---model
-|           |           |   |       .gitkeep
-|           |           |   |
-|           |           |   +---ports
-|           |           |   |       .gitkeep
-|           |           |   |
-|           |           |   +---services
-|           |           |   |       .gitkeep
-|           |           |   |
-|           |           |   \---value
-|           |           |           .gitkeep
-|           |           |
-|           |           +---infrastructure
-|           |           |   +---csv
-|           |           |   |       .gitkeep
-|           |           |   |
-|           |           |   +---mapper
-|           |           |   |       .gitkeep
-|           |           |   |
-|           |           |   \---persistence
-|           |           |           .gitkeep
-|           |           |
-|           |           \---interface
-|           |               \---rest
-|           |                       .gitkeep
-|           |
-|           \---resources
-|                   .gitkeep
+|       +---main
+|       |   +---java
+|       |   |   \---org
+|       |   |       \---schoolsystem
+|       |   |           +---application
+|       |   |           |       .gitkeep
+|       |   |           |
+|       |   |           +---domain
+|       |   |           |   +---model
+|       |   |           |   |       .gitkeep
+|       |   |           |   |
+|       |   |           |   +---ports
+|       |   |           |   |       .gitkeep
+|       |   |           |   |
+|       |   |           |   +---services
+|       |   |           |   |       .gitkeep
+|       |   |           |   |
+|       |   |           |   \---value
+|       |   |           |           LanguageCode.java
+|       |   |           |           LevelNumber.java
+|       |   |           |           TagWeight.java
+|       |   |           |           TopicId.java
+|       |   |           |           WebUrl.java
+|       |   |           |
+|       |   |           +---infrastructure
+|       |   |           |   +---csv
+|       |   |           |   |       .gitkeep
+|       |   |           |   |
+|       |   |           |   +---mapper
+|       |   |           |   |       .gitkeep
+|       |   |           |   |
+|       |   |           |   \---persistence
+|       |   |           |           .gitkeep
+|       |   |           |
+|       |   |           \---interface
+|       |   |               \---rest
+|       |   |                       .gitkeep
+|       |   |
+|       |   \---resources
+|       |           .gitkeep
+|       |
+|       \---test
+|           \---java
+|               \---org
+|                   \---schoolsystem
+|                       +---application
+|                       |       .gitkeep
+|                       |
+|                       +---domain
+|                       |   +---model
+|                       |   |       .gitkeep
+|                       |   |
+|                       |   +---ports
+|                       |   |       .gitkeep
+|                       |   |
+|                       |   +---services
+|                       |   |       .gitkeep
+|                       |   |
+|                       |   \---value
+|                       |           LanguageCodeTest.java
+|                       |           LevelNumberTest.java
+|                       |           TagWeightTest.java
+|                       |           TopicIdTest.java
+|                       |           WebUrlTest.java
+|                       |
+|                       +---infrastructure
+|                       |   +---csv
+|                       |   |       .gitkeep
+|                       |   |
+|                       |   +---mapper
+|                       |   |       .gitkeep
+|                       |   |
+|                       |   \---persistence
+|                       |           .gitkeep
+|                       |
+|                       \---interface
+|                           \---rest
+|                                   .gitkeep
+|
++---docs
+|       Kompetenzmatrix_M320.md
+|       Kompetenzmatrix_M322.md
+|       Projektaufgabe.md
+|       ProjektLogbuch.md
 |
 \---frontend
         .gitkeep

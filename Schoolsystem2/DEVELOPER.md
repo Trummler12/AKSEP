@@ -44,7 +44,7 @@ Willkommen im Projekt. Dieses Dokument erklärt kurz und präzise, **wie der Cod
 Die wichtigsten Ordner (gekürzt) — Backend (Java) und Frontend sind getrennt.
 Siehe Projektskelett im Repo (backend/src/main/java/... mit `application`, `domain` usw.).
 
-```
+```markdown
 backend/
   build.gradle
   src/main/java/org/schoolsystem/

@@ -471,33 +471,33 @@ Warum so?
 ```
 org.schoolsystem.domain.value
   LanguageCode               // z. B. "de", "en" (record)
-  Version                    // int > 0 (record + Validierung)
-  Weight                     // 0..100 (record)
+  LevelNumber                // 1..9 (record), regelkonform zu type/layer prüfen
+  TagWeight                  // 1..5 (record)
   TopicId                    // String mit Pattern (AAA0, Aaa1, aaaa...) (record)
-  LevelNumber                // 0..9 (record), regelkonform zu type/layer prüfen
+  WebUrl                     // allgemeiner URL-Datentyp (record)
 
 org.schoolsystem.domain.model
-  Tag                        // id, version, localizations (mit Synonymen)
+  LocalizedText
   TagLocalization            // Map<LanguageCode, List<String>> (Synonyme)
   TopicType                  // id, name, definition (lokalisierbar)
-  Topic                      // topicId, name, type, layer, description, urls, levels, tags
-  TopicUrl                   // url + version
-  TopicLevel                 // levelNumber, description
   SourceType                 // id, name
+  ResourceType               // id, name
+  InteractionType            // seen/viewed/... (Enum)
+  User                       // Basis für Rollen
+  SourceAuthor               // name, URL, description, impressum, version
+  ResourceAuthor             // authorID (0=Unregistered), profile, settings (JSON) – referenziert User (=authorID)
+  Tag                        // id, version, localizations (mit Synonymen)
+  Topic                      // topicId, name, type, layer, description, urls, levels, tags
+  TopicLevel                 // levelNumber, description, einem Topic zugewiesen
   Source (sealed interface)  // gemeinsam: title?, urls?, author?, timestamps
     UrlSource
     FileSource               // für spätere Datei-Backends
-  SourceAuthor               // name, URL, description, impressum, version
-  ResourceType               // id, name
   Resource (sealed interface)
     UrlResource              // title, description, type, active, version
     FileResource             // optional später
-  VersionedResource          // resourceID → List<VersionEntry> (siehe DB)
-  VersionEntry               // versionID, versionNumber, changelog
-  LanguageVersion            // pro Version: language, author, pubDate, etc.
-  Author                     // authorID, profile, settings (JSON) – referenziert t_user
+  ResourceVersion            // resourceID → List<VersionEntry> (siehe DB)
+  LanguageVersion            // pro Version: ResourceVersionID, language, author, pubDate, etc.
   ResourceToLevel            // resourceID, topicId, level, sublevelID
-  InteractionType            // seen/viewed/... (Enum oder Value)
   ResourceInteraction        // userID, resourceID, interactionType, usageDate
 
 org.schoolsystem.domain.ports
