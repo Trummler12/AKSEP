@@ -6,7 +6,6 @@ C:.
 |   DEVELOPER.md
 |   local-tree.ps1
 |   local-tree.txt
-|   PLANUNG.md
 |
 +---backend
 |   |   .gitignore
@@ -107,10 +106,13 @@ C:.
 |                                   .gitkeep
 |
 +---docs
-|       Kompetenzmatrix_M320.md
-|       Kompetenzmatrix_M322.md
-|       Projektaufgabe.md
-|       ProjektLogbuch.md
+|   |   Kompetenzmatrix_M320.md
+|   |   Kompetenzmatrix_M322.md
+|   |   Projektaufgabe.md
+|   |   ProjektLogbuch.md
+|   |
+|   \---legacy
+|           PLANUNG.md
 |
 \---frontend
         .gitkeep
