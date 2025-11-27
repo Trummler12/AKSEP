@@ -40,10 +40,17 @@ C:.
 |       |   |           |   +---model
 |       |   |           |   |       InteractionType.java
 |       |   |           |   |       LocalizedText.java
+|       |   |           |   |       Resource.java
 |       |   |           |   |       ResourceType.java
+|       |   |           |   |       RLangVersion.java
+|       |   |           |   |       RVersion.java
+|       |   |           |   |       Source.java
 |       |   |           |   |       SourceAuthor.java
 |       |   |           |   |       SourceType.java
+|       |   |           |   |       Tag.java
 |       |   |           |   |       TagLocalization.java
+|       |   |           |   |       Topic.java
+|       |   |           |   |       TopicLevel.java
 |       |   |           |   |       TopicType.java
 |       |   |           |   |
 |       |   |           |   +---ports
@@ -103,9 +110,16 @@ C:.
 |                       |   +---model
 |                       |   |       InteractionTypeTest.java
 |                       |   |       LocalizedTextTest.java
+|                       |   |       ResourceTest.java
 |                       |   |       ResourceTypeTest.java
+|                       |   |       RLangVersionTest.java
+|                       |   |       RVersionTest.java
 |                       |   |       SourceAuthorTest.java
+|                       |   |       SourceTest.java
 |                       |   |       TagLocalizationTest.java
+|                       |   |       TagTest.java
+|                       |   |       TopicLevelTest.java
+|                       |   |       TopicTest.java
 |                       |   |       TopicTypeTest.java
 |                       |   |
 |                       |   +---ports
