@@ -1,725 +1,724 @@
-topicID,name,typeID,layer,description
-ART0,Art,0,1,"Creative human expression across visual, auditory and performance media; the umbrella discipline for the fine arts"
-BOL0,Biology,0,1,Science that studies life
-CHE0,Chemistry,0,1,Scientific field of study – study of properties and behaviours of substances.
-COS0,Computer science,0,1,Study of computation – study of processes that interact with data.
-CUS0,Cultural studies,0,1,"Interdisciplinary analysis of culture, power and identity in everyday life and media"
-ETH0,Ethics,0,1,"Philosophical study of moral values, principles and decision-making"
-GOG0,Geography,0,1,Study of lands and inhabitants of Earth – study of surface of the earth and its inhabitants
-HSR0,History,0,1,Systematic study and interpretation of past events and human activities
-LAW0,Law,0,1,System of rules created and enforced through social or governmental institutions to regulate behaviour
-LIN0,Linguistics,0,1,Scientific study of language
-LIT0,Literature,0,1,Study and analysis of written and oral texts as artistic and cultural artefacts
-LOG0,Logics,0,1,Study of correct reasoning
-MAT0,Mathematics,0,1,"Area of knowledge – study of magnitude, number, and forms"
-MST0,Music theory,0,1,"Analytical study of music’s structures, systems and compositional techniques"
-PHI0,Philosophy,0,1,Study of general and fundamental questions – science of knowledge or wisdom
-PYS0,Physics,0,1,Scientific field of study
-PYL0,Psychology,0,1,Study of mental functions and behaviors
-ABI1,Abiology,1,2,"Study of abiotic matter and physicochemical processes that occur independently of life, including those that may have preceded its origin"
-ABI2,Abiophysiology,1,2,"Investigation of life-like physicochemical processes in non-living systems, especially as models for physiology"
-ACA1,Acanthology,1,2,Branch of zoology that examines spined or spine-bearing organisms (notably echinoids) and the taxonomic significance of their spines
-ACO1,Acoustics,1,2,Branch of physics involving mechanical waves – the branch of physics studying the properties of sound.
-ACT1,Actinobiology,1,2,Study of effects of radiation on living things – synonymous with radiobiology.
-AED1,Aerodynamics,1,2,Branch of dynamics concerned with studying the motion of air
-AES1,Aerostatics,1,2,Study of gases that are not in motion
-AES2,Aesthetics,1,2,"Philosophical field that analyses beauty, taste and the creation or appreciation of art"
-AGN1,Agnoiology,1,2,"Epistemological study of the varieties, sources and classifications of ignorance and the unknown"
-AGO1,Agonistics,1,2,Chemical which binds to and activates a biochemical receptor
-ALG1,Algebra,1,2,Branch of mathematics
-API1,Apiology,1,2,Scientific study of bees
-AHS1,Art history,1,2,"Scholarly study of artworks, artists and artistic movements in their cultural and historical contexts"
-ASN0,Astronomy,0,2,Scientific study of celestial objects
-ATS1,Atmospheric Science,1,2,Inter-disciplinary science that investigates the physical and chemical processes of Earth’s atmosphere
-AUT1,Autology,1,2,Word that expresses a property it also possesses – scientific study of oneself.
-AUT2,Automata theory,1,2,Study of abstract machines and automata
-BAR1,Barology,1,2,study of gravitational force.
-BOC1,Biochemistry,1,2,Study of chemical processes in living organisms
-BOP1,Biophysics,1,2,Study of biological systems using methods from the physical sciences – study of physics of biological phenomena.
-BOT1,Botany,1,2,Study of plant life
-CHA1,Chaology,1,2,Field of mathematics and science based on non-linear systems and initial conditions
-CHT1,Chaos theory,1,2,Field of mathematics and science based on non-linear systems and initial conditions
-CHO1,Chorology (geography),1,2,"Study of regional causal relationships between physical geographic phenomena (e.g., how topography, climate and soils interact within a delimited area)"
-CLM1,Classical mechanics,1,2,Description of large objects' physics – study of motion of macroscopic objects.
-CLI1,Comparative literature,1,2,"Literary discipline comparing texts across languages, cultures and periods"
-CRY1,Cryptology,1,2,Practice and study of secure communication techniques – study of codes.
-EAS0,Earth Science,0,2,includes all fields of natural science related to the planet Earth.
-EMB1,Embryology,1,2,Branch of biology studying prenatal biology
-ENG1,Engineering,2,2,"Profession applying scientific principles to design, build and optimise systems, structures and devices"
-ENI1,Enigmatology,1,2,Problem or enigma that tests – study of enigmas (puzzles).
-FST1,Fluid statics,1,2,Branch of fluid mechanics that studies fluids at rest – study of fluids behaviour at rest.
-FOS1,Food science,1,2,"Study of the physical, chemical and biological properties of food and food processing"
-FOS2,Forensic science,1,2,Application of science to criminal and civil laws – the use of scientific methods or expertise to investigate crimes or examine evidence that might be presented in a court of law
-GEN1,Genetics,1,2,"Science of genes, heredity, and variation in living organisms"
-GOM1,Geomatics,2,2,"Technology-driven discipline for acquiring, processing and visualising geospatial information"
-GOM2,Geometry,1,2,"Branch of mathematics – study the sizes, shapes, positions, angles and dimensions of things."
-GLO1,Glossology,1,2,Scientific study of language – study of language; study of the tongue
-GOO1,Googology,1,2,Numbers significantly larger than those used regularly – study of large numbers
-HSR2,Historiography,1,2,Study of the methods used by historians
-HSR3,Historiology,1,2,The study of history.
-IDE1,Ideogeny,1,2,study of origins of ideas
-IDI1,Idiomology,1,2,"study of idiom, jargon or dialect"
-INS0,Information science,0,2,Academic field concerned with collection and analysis of information
-ISE1,Information security,1,2,"Discipline protecting information assets against unauthorised access, disclosure or modification"
-JAP1,Japanology,1,2,"Area studies focused on Japan – The study of Japan, its language, culture and history"
-KNM1,Kinematics,1,2,Branch of physics describing the motion of objects without considering forces – study of motion
-KNT1,Kinetics,1,2,Subfield of physics – study of forces producing or changing motion
-LUD1,Ludology,1,2,Study of games and the act of playing them
-MAS1,Materials science,1,2,"Interdisciplinary field exploring the properties, performance and applications of materials"
-MEC1,Mechanics,1,2,Science concerned with physical bodies subjected to forces or displacements
-MED1,Medicine,1,2,"Diagnosis, treatment, and prevention of illness"
-MER1,Mereology,1,2,Study of parts and the wholes they form – study of part-whole relationships
-MPH1,Metaphysics,1,2,Study of fundamental reality – study of principles of nature and thought
-MPS1,Metapsychology,1,2,Psychological aspect – study of nature of the mind
-MBI1,Microbiology,1,2,Study of microscopic organisms (microbes)
-MOR1,Morphology,1,2,study of forms and the development of structures
-MSI1,Musicology,1,2,Scholarly study of music – study of music
-NAV1,Navigation,1,2,Process of monitoring and controlling the movement of a craft or vehicle from one place to another – study of controlling a movement of a vehicle from one place to another
-NEU1,Neutrosophy,1,2,study of the origin and nature of philosophical neutralities
-NOO1,Noology,1,2,Spanish philosopher (1898–1983) – science of the intellect
-ONO1,Onomastics,1,2,Study of proper names
-OPT1,Optics,1,2,Branch of physics that studies light
-ORC1,Organic chemistry,1,2,"Chemistry branch focused on the structure, properties and reactions of carbon-based compounds"
-PLG1,Palaeography,1,2,"Study of ancient and historical handwriting forms to date, read and contextualise manuscripts"
-PDO1,Paradoxology,1,2,Logically self-contradictory statement – study of paradoxes
-PAR1,Paroemiology,1,2,study of proverbs
-PPY1,Particle physics,1,2,Study of subatomic particles and forces
-PAR2,Performing arts,6,2,"Creative disciplines (music, theatre, dance, etc.) presented live for an audience"
-PHE1,Phenomenology,1,2,Philosophical method and schools of philosophy – study of phenomena
-PHI2,Philology,1,2,Study of language in historical sources
-POS1,Philosophy of science,1,2,"Critical inquiry into the foundations, methods and implications of scientific practice"
-PNO1,Phonology,1,2,Study of sound organization in languages
-PHR1,Phraseology,1,2,Linguistic study of phrases
-PSE1,Pseudology,1,2,art or science of lying
-PUN1,Punnology,1,2,study of puns
-QUM1,Quantum mechanics,1,2,Description of physical properties at the atomic and subatomic scale – a fundamental theory in physics which describes nature at the smallest scales of energy levels of atoms and subatomic particles
-RAD1,Radiochemistry,1,2,Chemistry of radioactive materials – study of ordinary chemical reactions under radioactive circumstances
-SCH1,Schematonics,1,2,art of using gesture to express tones
-SMO1,Scientific modelling,1,2,Scientific activity that produces models – study of application of models to understand a particular problem
-SPR1,Scientific programming,1,2,Language for communicating instructions to a machine – study of programming
-SEM1,Semantics,1,2,Study of meaning in language
-SIG1,Significs,1,2,Linguistic and philosophical term – science of meaning
-SIN1,Sinology,1,2,Area studies focused on China
-SCL0,Sociology,0,2,Social science that studies human society and its development
-SOS1,Soil Science,1,2,"Soil science, study of soils, especially agricultural soils."
-SPC1,Spectrology,1,2,Study involving matter and electromagnetic radiation
-SPC2,Spectroscopy,1,2,Study involving matter and electromagnetic radiation – study of spectra
-STA1,Statics,1,2,Branch of mechanics concerned with balance of forces in nonmoving systems
-STA2,Statistics,1,2,"discipline that concerns the collection, organization, analysis, interpretation, and presentation of data."
-STE1,Stereochemistry,1,2,Subdiscipline of chemistry – study of chemistry of the relative spatial arrangement of atoms that form the structure of molecules and their manipulation.
-SYN1,Synectics,1,2,Thought process for making the strange familiar and the familiar strange – study of processes of invention
-SYN2,Syntax,1,2,System responsible for combining morphemes into complex structures – study of sentence structure
-TAX1,Taxonomy,1,2,"Science of naming, defining and classifying organisms"
-TEC0,Technology,0,2,"application of conceptual knowledge to achieve practical goals, especially in a reproducible way."
-TEL1,Teleology,1,2,Thinking in terms of destiny or purpose – study of final causes; analysis in terms of purpose
-THE1,Theology,1,2,Study of the nature of deities and religious beliefs - study of religion
-TCS1,Theoretical computer science,1,2,Subfield of computer science and mathematics
-TED1,Thermodynamics,1,2,"Physics of heat, work, and temperature"
-TIM1,Timbrology,1,2,study of postage stamps
-TPL1,Topology,1,2,Branch of mathematics – study of places and their natural features
-TPN1,Toponymy,1,2,Study of place names
-TYG1,Typography,1,2,Art of arranging type – art and technique of arranging type
-ZLO1,Zoology,1,2,Scientific study of animals
-ACA2,Acanthochronology,1,3,Study of cactus spines and the chronology of their growth
-AEB1,Aerobiology,1,3,Study of airborne organisms
-AEL1,Aerolithology,1,3,Science of meteorites – study of aerolites; meteorites.
-AEP1,Aeropalynology,1,3,study of pollens and spores in atmosphere.
-AEE1,Aerospace Engineering,1,3,Branch of engineering
-AGB1,Agrobiology,1,3,Interdisciplinary studies of the interactions between plants and soil
-AGG1,Agrogeology,1,3,Study of origins and applications of minerals important to farming
-AGN2,Agronomy,1,3,Science of producing and using plants
-AGS1,Agrostology,1,3,Scientific study of the grasses
-ANA1,Anatomy,1,3,Study of the structure of organisms
-AND1,Andrology,1,3,Medical specialty – study of men's physiology.
-ANG1,Angiology,1,3,"Branch of internal medicine, which deals with vascular disease"
-ARA1,Arachnology,1,3,"Scientific study of arachnides such as spiders, ticks and mites"
-ARA2,Archaeology,1,3,Study of human activity based on materials left behind
-ARE1,Archelogy,1,3,study of first principles.
-ARI1,Architecture,1,3,Applied art and engineering discipline concerned with designing and constructing built environments
-ARS1,Archival science,1,3,"Science of storage, registration and preservation of historical data"
-ARI2,Aristology,1,3,the art or science of cooking and dining – science or art of dining.
-ART2,Arthrology,1,3,Scientific study of joints and articulations
-ART3,Arthropodology,1,3,Study of arthropods
-AST1,Astacology,1,3,Scientific study of crayfish
-AST2,Asteroseismology,1,3,Study of oscillations in stars
-ASB1,Astrobiology,1,3,Science concerned with life in the universe
-ASD1,Astrodynamics,1,3,Field of classical mechanics concerned with the motion of spacecraft
-ASG1,Astrogeology,1,3,Geology of astronomical objects apparently in orbit around stellar objects
-ASP1,Astrophysics,1,3,Subfield of astronomy – study of behaviour of interstellar matter.
-ATM1,Atmology,1,3,the science of aqueous vapor.
-AUD1,Audiology,1,3,"Branch of science that studies hearing, balance, and related disorders"
-AUX1,Auxology,1,3,Study of all aspects of human physical growth
-BAC1,Bacteriology,1,3,Subdiscipline of microbiology that studies bacteria
-BAT1,Batology,1,3,Study of brambles
-BEG1,Behavioural genetics,1,3,Study of genetic-environment interactions influencing behaviour
-BIB1,Bibliology,1,3,Organized listing of books and the systematic description of them as objects
-BIB2,Bibliotics,1,3,study of documents to determine authenticity.
-BOG1,Biogeochemistry,1,3,Study of chemical cycles of the earth that are either driven by or influence biological activity
-BOM1,Biometrics,1,3,Metrics related to human characteristics
-BRO1,Bromatology,1,3,Applied science devoted to the study of food – study of food.
-CAC1,Cacogenics,1,3,Decrease in genetic traits deemed desirable and study thereof
-CAL1,Calorifics,1,3,study of heat – relating to the production of heat
-CRC1,Carcinology,1,3,Study of crustaceans
-CRI1,Caricology,1,3,Study of sedges
-CRP1,Carpology,1,3,Study of seeds and fruit
-CRT1,Cartography,1,3,Study and practice of making maps – science of making maps and globes.
-CAT1,Catacoustics,1,3,science of echoes or reflected sounds.
-CEM1,Celestial mechanics,1,3,Branch of astronomy – study of motion of objects in outer space.
-CEB1,Cell biology,1,3,Branch of biology that studies cells – study of the different structures and functions of both eukaryote and prokaryote cells.
-CHA2,Characterology,1,3,The study of character – study of development of character.
-CHI1,Chirography,1,3,Study of penmanship and handwriting in all of its aspects – study of handwriting or penmanship.
-CHR1,Chromatics,1,3,Technique to quantify and describe physically the human color perception – study of color.
-CHR2,Chrysology,1,3,study of precious metals.
-CIE1,Civil engineering,1,3,"Engineering specialty that designs, builds and maintains infrastructure such as roads, bridges and water systems"
-CLI2,Climatology,1,3,"Scientific study of climate, defined as weather conditions averaged over a period of time – study of climate."
-COD1,Codicology,1,3,Study of codices or manuscript books
-COS2,Communication studies,1,3,"Social-science field examining human and mediated communication processes, messages and effects"
-CON1,Coniology,1,3,Study of atmospheric dust and its effects
-COP1,Coprology,1,3,Study of faeces
-CSC1,Cosmochemistry,1,3,Study of the chemical composition of matter in the universe
-CSL1,Cosmology,1,3,"Scientific study of the origin, evolution, and eventual fate of the universe"
-CRI2,Criminology,1,3,Study of crime and criminal actions/behavior
-CRY2,Cryobiology,1,3,Study of effects of extreme low temperatures on life
-CRY3,Cryptography,1,3,Practice and study of secure communication techniques
-CYN1,Cynology,1,3,Study of canines or domestic dogs
-CYT1,Cytology,1,3,"Study of cells in terms of structure, function and chemistry"
-DAS1,Data science,1,3,"Field of study to extract knowledge from data – study of analyzing, processing, interpreting and extracting data."
-DEN1,Dentistry,1,3,"Medical specialty focused on oral health, diagnosis and treatment of teeth and related structures"
-DIA1,Dialectology,1,3,Scientific study of linguistic dialect
-DIO1,Dioptrics,1,3,Science of light and lenses
-DYN1,Dynamics,1,3,Study of forces and their effect on motion
-DYS1,Dysgenics,1,3,Decrease in genetic traits deemed desirable and study thereof.
-ECO1,Ecology,1,3,Study of organisms and their environment
-ECO0,Economics,0,3,"Social science – study of material wealth (production, distribution, and consumption of goods and services)."
-EDA1,Edaphology,1,3,Science concerned with the influence of soils on living beings
-ELE1,Electrical Engineering,2,3,"Engineering branch dealing with electricity, electronics and electromagnetism"
-ELC1,Electrochemistry,1,3,Branch of chemistry – study of relations between electricity and chemicals.
-END1,Endocrinology,1,3,Branch of medicine pertaining to the endocrine system
-ENE1,Energetics,1,3,study of energy under transformation – study of energy under transformation within various fields.
-ENS1,Engineering studies,1,3,Academic field – study of engineering.
-ENT1,Entomology,1,3,Scientific study of insects
-ENZ1,Enzymology,1,3,Large biological molecule that acts as a catalyst – study of enzymes.
-EPI1,Epidemiology,1,3,Study of health and disease within a population
-ETH2,Ethology,1,3,Scientific objective study of non-human animal behaviour – study of natural or biological character.
-ETY1,Etymology,1,3,Study of the origin and evolution of words – study of origins of words.
-EVB1,Evolutionary biology,1,3,Biological science investigating the origins and diversification of life through evolutionary processes
-EXO1,Exobiology,1,3,Science concerned with life in the universe – study of extraterrestrial life.
-FDY1,Fluid dynamics,1,3,Aspects of fluid mechanics involving fluid flow
-FLM1,Fluid mechanics,1,3,"Branch of physics concerned with the mechanics of fluids (liquids, gases, and plasmas) – study of fluids behaviour at rest and in motion."
-FUT1,Futurology,1,3,"Study of postulating possible, probable, and preferable futures"
-GEM1,Gemmology,1,3,Science dealing with natural and artificial gemstone materials – study of gems and jewels
-GES1,Gender Studies,1,3,Interdisciplinary field of study – study of gender
-GEN2,Genesiology,1,3,study of reproduction and heredity
-GOC1,Geochemistry,1,3,Science that applies chemistry to analyze geological systems – study of chemistry of the Earth's crust
-GOC2,Geochronology,1,3,"Science of determining the age of rocks, sediments and fossils – study of measuring geological time"
-GOD1,Geodesy,1,3,"Earth-science field that measures and models Earth’s shape, gravity field and rotation"
-GMG1,Geomorphogeny,1,3,"study of the characteristics, origins, and development of land forms"
-GML1,Geomorphology,1,3,Scientific study of landforms – study of landforms and landform evolution
-GOP1,Geophysics,1,3,Earth-science discipline applying physical principles to study Earth’s interior and dynamic processes
-GOP2,Geoponics,1,3,Science of cultivating the earth – study of agriculture
-GOT1,Geotechnics,1,3,Scientific study of earth materials in engineering problems – study of increasing habitability of the Earth
-GER1,Gerontology,1,3,"Study of the social, psychological and biological aspects of aging"
-GNO1,Gnotobiology,1,3,Organism with fully-known microorganisms – study of life in germ-free conditions
-GRM1,Graminology,1,3,Scientific study of the grasses
-GRP1,Graphology,1,3,Pseudoscientific analysis of handwriting – study of handwriting
-GYN1,Gynaecology,1,3,Medical area for women's reproductive health – study of women's physiology
-HAR1,Harmonics,1,3,Science of musical sounds
-HLL1,Heliology,1,3,Scientific study of the sun
-HLS1,Helioseismology,1,3,Study of the structure and dynamics of the Sun through its oscillation
-HEP1,Hepatology,1,3,"Medical specialty – study of liver, gallbladder, biliary tree, and pancreas"
-HER1,Heraldry,1,3,"Historical study and design of coats of arms, armorial bearings and related symbolism"
-HER2,Heredity,1,3,Passing of traits to offspring from the species' parents or ancestor – study of passing of traits from parents to offspring
-HER3,Herpetology,1,3,Study of amphibians and reptiles
-HIP1,Hippology,1,3,Study of horses
-HOS1,History of science,1,3,"Examination of the development of scientific ideas, practices and institutions through time"
-HOT1,History of technology,2,3,Investigation of technological innovation and its social impacts across history
-HOR1,Horography,1,3,art of constructing sundials or clocks
-HOR2,Horology,1,3,Art or science of measuring time – science of time measurement
-HLO1,Hydrology,1,3,"Science of the movement, distribution, and quality of water on Earth – study of water resources"
-HYG1,Hygrometry,1,3,Study of gas-vapor mixtures – science of humidity
-HYG2,Hygroscopy,1,3,Phenomenon of attracting and holding water molecules – study of humidity
-ICH1,Ichthyology,1,3,Branch of zoology devoted to the study of fish
-ICO1,Iconology,1,3,Method of interpretation in cultural history – study of icons; symbols
-IML1,Immunology,1,3,Branch of medicine studying the immune system
-ITE1,Information technology (IT),1,3,Computer-based technology
-KAL1,Kalology,1,3,study of beauty
-LEX1,Lexicology,1,3,Linguistic discipline studying words – study of words and their meanings
-LIM1,Limacology,1,3,The study of slugs
-LOX1,Loxodromy,1,3,study of sailing along rhumb-lines
-MAL1,Malacology,1,3,Study of molluscs
-MAM1,Mammalogy,1,3,Study of mammals
-MEE1,Mechanical Engineering,2,3,"Engineering branch concerned with the design, analysis and manufacture of mechanical systems"
-MIM1,Medical imaging,1,3,"Use of technologies (e.g. X-ray, MRI) to visualise internal body structures for clinical diagnosis"
-MEL1,Melissopalynology,1,3,The study of pollen contained in honey
-MLL1,Metallogeny,1,3,Study of the genesis and geographic distribution of mineral deposits – study of the origin and distribution of metal deposits
-MLL2,Metallurgy,1,3,Field of science that studies the physical and chemical behavior of metals
-MSC1,Metascience,1,3,Scientific study of science
-MTR1,Meteoritics,1,3,"Scientific study of meteors, meteorites and meteoroids"
-MTR2,Meteorology,1,3,Interdisciplinary scientific study of the atmosphere focusing on weather forecasting
-MTH1,Methodology,1,3,Study of research methods
-MTR3,Metrology,1,3,Science of measurement and its application
-MPH2,Microphytology,1,3,study of very small plant life
-MIN1,Mineralogy,1,3,Scientific study of minerals and mineralised artifacts
-MOB1,Molecular biology,1,3,Branch of biology that studies biological systems at the molecular level
-MOR2,Morphometrics,1,3,Quantitative study of size and shape – study of size and shape
-MSC2,Muscology,1,3,Branch of botany concerned with the study of bryophytes – study of mosses
-MSE1,Museology,1,3,Study of museums
-MYC1,Mycology,1,3,Branch of biology concerned with the study of fungi
-NAN1,Nanotechnology,1,3,Technology with features near one nanometer
-NAU1,Nautics,1,3,study and art of navigation
-NEM1,Nematology,1,3,Scientific study of roundworms
-NRS1,Neuroscience,1,3,"Scientific study of the nervous system – study of development, work and structure of nervous system"
-NOS1,Nosology,1,3,Branch of medicine that deals with classification of diseases
-NUS1,Nutritional Science,1,3,Science of nutrition
-OBS1,Obstetrics,1,3,Medical specialty concerning pregnancy and childbirth
-OCE1,Oceanography,1,3,"Study of physical, chemical, and biological processes in the ocean"
-OEN1,Oenology,1,3,Study of wine and winemaking
-ONC1,Oncology,1,3,"Branch of medicine dealing with, or specializing in, cancer"
-ONO2,Onomasiology,1,3,Branch of linguistics concerned with how to express a given concept – study of nomenclature
-ONT1,Ontology,1,3,Philosophical study of being – science of pure being; the nature of things
-OPH1,Ophthalmology,1,3,Field of medicine treating eye disorders
-OPT2,Optometry,1,3,Field of medicine treating eye disorders – science of examining the eyes
-ORM1,Orbital mechanics,1,3,Field of classical mechanics concerned with the motion of spacecraft
-ORC2,Orchidology,1,3,Scientific study of orchids
-ORG1,Organology (music),1,3,"Science of musical instruments and their classifications (musicology) – study of musical instruments in relation to history, culture, construction, acoustic properties and classification"
-ORN1,Ornithology,1,3,Study of birds
-ORO1,Orology,1,3,Study of mountain environments
-OTO1,Otology,1,3,Branch of medicine for the ear
-PLN1,Palaeontology,1,3,Study of life before the Holocene epoch
-PAL1,Palynology,1,3,Study of pollen and other acid-resistant microoscopic organic material
-PSI1,Parasitology,1,3,"Study of parasites, their hosts, and the relationship between them"
-PAT1,Pathology,1,3,Study of disease
-PDG1,Pedagogy,1,3,"Science and art of teaching, learning processes and educational theory"
-PED1,Pediatrics,1,3,study of children's diseases; pediatrics
-PED2,Pedology,1,3,Study of soils in their natural environment
-PEL1,Pelology,1,3,study of mud
-PET1,Petrology,1,3,"Branch of geology that studies the formation, composition, distribution and structure of rocks"
-PHC1,Pharmacology,1,3,Science of drugs and medications and their effects
-PHA1,Pharology,1,3,Scientific study of lighthouses and signal lights
-PTB1,Photobiology,1,3,Scientific study of light's effect on living organisms
-PTN1,Photonics,1,3,Technical applications of optics – study of photons
-PYC1,Phycology,1,3,Branch of biology concerned with the study of algae
-PYS2,Physiology,1,3,Science regarding functions in organisms or living systems
-PIS1,Pisteology,1,3,science or study of faith
-PLS1,Planetary science,1,3,Science of planets and planetary systems
-PNE1,Pneumatics,1,3,Use of pressurised gas in mechanical systems – study of mechanics of gases
-PNE2,Pneumonology,1,3,Study of respiratory diseases
-POS2,Political science,1,3,Scientific study of politics
-PRA1,Pragmatics,1,3,Branch of linguistics and semiotics relating context to meaning
-PRI1,Printmaking,1,3,Artistic process of creating images by transferring ink from a matrix onto another surface
-PRO1,Protistology,1,3,Scientific discipline devoted to the study of protists – study of protists
-PRO2,Proxemics,1,3,Study of human use of space and the effects that population density has on behavior
-PSE2,Pseudoptics,1,3,study of optical illusions
-PYG1,Psychogenetics,1,3,Study of genetic-environment interactions influencing behaviour – study of internal or mental states
-PTE1,Pteridology,1,3,Class of vascular plants – study of ferns
-PHE2,Public health,1,3,"Science and art of preventing disease, prolonging life and promoting health through organised societal efforts"
-PYG2,Pyrography,1,3,Art or decoration made from burn marks – study of woodburning
-PYT1,Pyrotechnics,1,3,Science of creating combustibles and explosives for entertainment – study of combustion through fire or explosions
-QCO1,Quantum computing,1,3,"Computer hardware technology that uses quantum mechanics – the exploitation of collective properties of quantum states, such as superposition and entanglement, to perform computation."
-RAD2,Radiobiology,1,3,"Study of effects of radiation on living tissues – study of the scientific principles, mechanisms, and effects of the interaction of ionizing radiation with living matter"
-SCA1,Scatology,1,3,Study of faeces – study of excrement or obscene literature
-SCI1,Sciagraphy,1,3,Study of perspective shadow projection – art of shading
-SCO1,Science communication,1,3,Study and practice of conveying scientific knowledge to non-expert audiences
-SED1,Sedimentology,1,3,Study of natural sediments and their formation processes
-SEI1,Seismology,1,3,Scientific study of earthquakes and propagation of elastic waves through a planet
-SEM2,Semasiology,1,3,Branch of linguistics about what words mean
-SEX1,Sexology,1,3,Scientific study of human sexuality
-SOS2,Social science,1,3,Collective term for disciplines that study society and human relationships
-SCB1,Sociobiology,1,3,Subdiscipline of biology regarding social behavior – study of biological basis of human behaviour
-SCL2,Sociolinguistics,1,3,Study of how society affects language
-SOM1,Solid mechanics,1,3,Branch of mechanics concerned with solid materials and their behaviors
-SPL1,Speleology,1,3,Science of cave and karst systems
-SPR2,Spermology,1,3,Embryonic plant enclosed in a protective outer covering – study of seeds
-SAS1,Stellar astronomy,1,3,Study of stars and stellar evolution
-STE2,Stemmatics,1,3,Identification of textual variants – study of relationships between text
-STR1,Stratigraphy,1,3,Study of rock layers and their formation
-STY1,Stylometry,1,3,Study of writing style – studying literature by means of statistical analysis
-SUC1,Supramolecular chemistry,1,3,Branch of chemistry – study of the chemistry of assembled molecular sub-units
-SUR1,Surgery,1,3,Medical specialty using operative techniques to treat disease or injury
-SYB1,Synthetic biology,1,3,"Engineering-oriented branch of biology that designs and builds new biological parts, devices and systems"
-SYE1,Systems engineering,2,3,"Interdisciplinary approach for designing, integrating and managing complex systems over their life cycles"
-SYS1,Systems science,1,3,Study of the nature of systems – study of systems
-TEC2,Tectonics,1,3,Process of evolution of the Earth's crust
-TER1,Teratology,1,3,Study of developmental anomalies
-TEX1,Textology,1,3,Identification of textual variants – study of the production of texts
-THA1,Thanatology,1,3,Scientific study of death and its aspects
-THA2,Thaumatology,1,3,The study of miracles – study of miracles
-THS1,Therapy studies,1,3,"Applied health field investigating therapeutic methods for prevention, rehabilitation and cure"
-TEK1,Thermokinematics,1,3,study of motion of heat
-TEL2,Thermology,1,3,thermography used for medical diagnosis – study of heat
-TPG1,Topography,1,3,Study of the forms of land surfaces
-TOX1,Toxicology,1,3,Study of substances harmful to living organisms
-URA1,Uranology,1,3,Science of the heavens (historical)
-UPL1,Urban planning,1,3,"Discipline that organises and regulates land use, infrastructure and development in urban areas"
-URO1,Urogynaecology,1,3,Sub-specialty of urology and gynaecology
-VME1,Veterinary medicine,1,3,Branch of medicine for non-human animals
-VIR1,Virology,1,3,Study of viruses
-VIT1,Vitrics,1,3,"study, art and technology of glassy materials; glassware"
-VOL1,Volcanology,1,3,Study of volcanoes
-XYL1,Xylology,1,3,Science of wood
-ZCH1,Zoochemistry,1,3,study of chemistry of animals
-ZGE1,Zoogeography,1,3,Science of the geographic distribution of animal species
-ZPH1,Zoophysics,1,3,Study of physics relating to structure and function of animal organs and bodies.
-ZPH2,Zoophytology,1,3,study of plant-like animals
-ZTA1,Zootaxy,1,3,Scientific classification of animals.
-ZYM1,Zymology,1,3,Study of fermentation and its uses
-ZYM2,Zymurgy,1,3,Applied chemistry of fermentation processes
-ZYT1,Zythology,1,3,Study of beer and beer-brewing.
-ACA3,Acarology,1,4,Study of mites and ticks
-ACE1,Aceology,1,4,"Systematic study of therapeutic remedies (also called iamatology), covering principles, efficacy and modes of treatment"
-AED2,Aerodonetics,1,4,Science or study of gliding flight.
-AEN1,Aeronautics,1,4,"Science involved with the study, design, and manufacturing of airflight-capable machines"
-AGC1,Agricultural chemistry,1,4,Agricultural sub-discipline of applied chemistry – study of influence in chemical processes in plants.
-AGE1,Agroecology,1,4,Study of ecological processes in agriculture
-AGN3,Agronomics,1,4,"Branch of economics about distribution, management, and productivity of land."
-ALG2,Algedonics,1,4,"Psychophysiological study of pleasure and pain, including the neural circuits and subjective experiences that underlie both"
-ALL1,Allergology,1,4,Study of the causes and treatment of allergies - study of causes and treatment of allergies
-ANA2,Anaesthesiology,1,4,Medical specialty concerned with anesthesia and perioperative care
-AND2,Andragogy,1,4,Methods and principles in adult education
-ANE1,Anemology,1,4,Study of winds – study of wind.
-ANT1,Anthropology,1,4,"Scientific study of humans, human behavior, and societies – study of human cultures."
-AEC1,Aquatic ecology,1,4,The study of interactions between organisms and the environment in water
-ARO1,Archology,1,4,study of the nature of government – science of the origins of government.
-ARE2,Areology,1,4,"Scientific study of the surface, crust, and interior of the planet Mars"
-ARO2,Aromachology,1,4,Study of the influence of odors on human behavior
-AST3,Astheniology,1,4,Physical symptom – study of diseases of weakening and aging.
-ASB2,Astrobotany,1,4,Study of plants grown in spacecraft
-ASN2,Astronautics,1,4,Theory and practice of navigation beyond the Earth's atmosphere
-AUT3,Autecology,1,4,Study of interactions of individual organisms with the environment
-BAL1,Ballistics,1,4,Science of the motion of projectiles
-BAL2,Balneology,1,4,Method of treating diseases by bathing – science of the therapeutic use of baths.
-BAR2,Barodynamics,1,4,science of the support and mechanics of heavy structures
-BAT2,Bathymetry,1,4,Study of underwater depth of lake or ocean floors
-BAT3,Batrachology,1,4,Branch of herpetology that studies amphibians
-BNR1,Behavioral neuroscience,1,4,Study of biological and neural mechanisma in behaviour
-BOE1,Bioecology,1,4,Study of interrelations of plants and animals with their environment
-BOM2,Biomechanics,1,4,Study of the mechanics of biological systems
-BON1,Bionomics (economics),1,4,"Less commonly, the application of biological analogies to economic systems—state which sense is intended"
-BOP2,Biopsychology,1,4,Study of biological and neural mechanisma in behaviour – application of the science of biology to the study of psychology.
-BOT2,Biotribology,1,4,"Study of friction, wear and lubrication in biological systems – study of friction, wear and lubrication of biological systems."
-BRY1,Bryology,1,4,Branch of botany concerned with the study of bryophytes – study of mosses and liverworts.
-BUS1,Business studies,1,4,"Applied social-science field analysing how organisations create value, manage resources and interact with markets"
-CAL2,Caliology,1,4,Place where a bird broods its eggs – study of bird's nests.
-CAM1,Cambistry,1,4,science of international exchange.
-CAM2,Campanology,1,4,Scientific and musical study of bells
-CRL1,Cardiology,1,4,Branch of medicine dealing with the heart
-CAT2,Catallactics,1,4,Theory about the free market system in economies – science of commercial exchange.
-CAT3,Catechectics,1,4,art of teaching by question and answer.
-CET1,Cetology,1,4,"The study of whales, dolphins, porpoises, and other cetaceans – study of whales and dolphins."
-CHI2,Chiropody,1,4,Medicine branch focusing on the human lower extremities
-CHO2,Chorology (biogeography),1,4,Study of the spatial distribution patterns of organisms and the environmental factors shaping those patterns – an early synonym of biogeography
-CHR3,Chrematistics,1,4,Economics theory studying money – study of wealth; political economy.
-CRB1,Chronobiology,1,4,Study of rhythms in biological processes of living organisms – study of biological rhythms.
-CIV1,Civics,1,4,study of the civil and political rights and obligations of citizens in a society.
-CLI3,Clinology,1,4,study of aging or individual decline after maturity.
-CGS1,Cognitive science,1,4,Interdisciplinary scientific study of cognitive processes
-COL1,Coleopterology,1,4,Branch of entomology studying beetles
-COM1,Cometology,1,4,study of comets.
-CON2,Conchology,1,4,Study of mollusc shells
-CON3,Connectomics,1,4,Study of mapping wiring diagrams
-COM2,Contact mechanics,1,4,Study of the deformation of solids that touch each other
-CTE1,Ctetology,1,4,study of the inheritance of acquired characteristics.
-CUS2,Curriculum studies,7,4,concentration in the different types of curriculum and instruction concerned with understanding curricula as an active force influenced by human educational experiences.
-CYB1,Cybernetics,1,4,Transdisciplinary field concerned with regulatory and purposive systems
-CYC1,Cyclonology,1,4,"study of tropical cyclones, e.g. hurricanes."
-DAC1,Dactyliology,1,4,study of finger rings.
-DAC2,Dactylography,1,4,Scientific study of fingerprints
-DAC3,Dactylology,1,4,Form of communication using one or both hands – study of sign language.
-DEM1,Demography,1,4,"Science that deals with populations and their structures, statistically and theoretically"
-DEN2,Dendrochronology,1,4,Method of dating based on the analysis of patterns of tree rings
-DEN3,Dendrology,1,4,Science and study of woody plants
-DER1,Dermatoglyphics,1,4,Scientific study of finger- and toeprints
-DER2,Dermatology,1,4,"Field of medicine dealing with the hair, nails, skin, and its diseases"
-DES1,Desmology,1,4,Study of ligaments
-DMT1,Didactic method,7,4,"theory of teaching, and in a wider sense, a theory and practical application of teaching and learning. In demarcation from ""mathetics"" (the science of learning), didactics refers only to the science of teaching."
-DIE1,Dietetics,1,4,Study of diet and nutrition in relation to health and disease
-DIP1,Diplomatics,1,4,Academic study of the protocols of documents – science of deciphering ancient writings and texts.
-DOS1,Dosiology,1,4,study of dosage of drugs.
-ECC1,Eccrinology,1,4,Sweat gland distributed almost all over the human body – study of excretion.
-EKI1,Ekistics,1,4,Science of human settlements
-ELD1,Electrodynamics,1,4,"Fundamental interaction between charged particles – study of the effects arising from the interactions of electric currents with magnets, with other currents, or with themselves."
-ELH1,Electrohydrodynamics,1,4,Study of electrically conducting fluids in the presence of electric fields – the study of dynamics of electrically charged fluids.
-ELM1,Electromagnetism,1,4,Fundamental interaction between charged particles – study of electromagnetic force.
-ELS1,Electrostatics,1,4,Study of stationary or slow-moving electric charges – study of static electricity.
-EMM1,Emmenology,1,4,study of menstruation.
-END2,Endemiology,1,4,study of local diseases.
-ENT2,Entozoology,1,4,study of parasites that live inside larger organisms.
-ENS2,Environmental science,1,4,"study of the environment, and the solution of environmental problems."
-EPH1,Ephebiatrics,1,4,Medical subspecialty for adolescents – branch of medicine dealing with adolescence.
-ERE1,Eremology,1,4,study of deserts.
-ESC1,Escapology,1,4,Practice of escaping from restraints – study of freeing oneself from constraints.
-ETH3,Ethonomics,1,4,"Personal value, basis for ethical action – study of economic and ethical principles of a society."
-ETI1,Etiology,1,4,"Study of causation, or origination"
-EUT1,Euthenics,1,4,Study of improving living conditions to increase well-being – science concerned with improving living conditions.
-EXO2,Exoplanetology,1,4,study of exoplanets.
-FEL1,Felinology,1,4,Study of cats – study of felines.
-FLU1,Fluviology,1,4,study of watercourses.
-FOR1,Forestry,1,4,"Science and craft of managing woodlands – study of the creation, management, use, conservation, and repair of forests and associated resources."
-FRM1,Fracture mechanics,1,4,Study of propagation of cracks in materials
-GAS1,Gastroenterology,1,4,Branch of medicine focused on the digestive system and its disorders
-GER2,Gerocomy,1,4,study of old age
-GLA1,Glaciology,1,4,Scientific study of ice and natural phenomena involving ice
-GNO2,Gnomonics,1,4,science that studies sundials – the art of measuring time using sundials
-GRP2,Graphemics,1,4,Study of graphemes and writing systems – study of systems of representing speech in writing
-GRO1,Gromatics,1,4,Ancient Roman land surveyors – science of surveying
-GYR1,Gyrostatics,1,4,study of rotating bodies
-HAE1,Haemataulics,1,4,study of movement of blood through blood vessels
-HAL1,Halieutics,1,4,study of fishing
-HEL1,Helminthology,1,4,Study of parasitic worms (helminths)
-HEM1,Hematology,1,4,Study of blood and blood diseases
-HEM2,Hemodynamics,1,4,Dynamics of blood flow – study of the dynamics behind blood circulation
-HRO1,Hermeology,1,4,study of Mercury
-HIP2,Hippiatrics,1,4,study of diseases of horses
-HSL1,Histology,1,4,Study of the microscopic anatomy of cells and tissues of plants and animals
-HEC1,Home economics,1,4,Study of household management
-HOR3,Horticulture,1,4,Small-scale cultivation of plants – study of gardening
-HYD1,Hydraulics,1,4,"Applied engineering involving liquids – study of application of engineering, chemistry and other fields of science involving the use of liquids"
-HBI1,Hydrobiology,1,4,Science of life and life processes in water – study of aquatic organisms
-HDY1,Hydrodynamics,1,4,Study of liquids in motion
-HGE1,Hydrogeology,1,4,Study of the distribution and movement of groundwater
-HGR1,Hydrography,1,4,Measurement of bodies of water
-HKI1,Hydrokinetics,1,4,study of motion of fluids
-HME1,Hydrometeorology,1,4,Branch of meteorology and hydrology – study of atmospheric moisture
-HST1,Hydrostatics,1,4,Branch of fluid mechanics that studies fluids at rest
-HYE1,Hyetology,1,4,science of rainfall
-HYG3,Hygienics,1,4,Practices performed to preserve health – study of sanitation; health
-HYP1,Hypnology,1,4,Study of sleep and hypnotic phenomena – study of sleep; study of hypnosis.
-HYP2,Hypsography,1,4,Measurement of the elevation and depth of features on Earth's surface relative to mean sea level. – science of measuring heights
-ICH2,Ichnography,1,4,Architectural diagram showing interior layout of a building – art of drawing ground plans; a ground plan
-ICH3,Ichnology,1,4,Study of trace fossils
-IDE2,Ideology,1,4,Set of beliefs or values – science of ideas; system of ideas used to justify behaviour
-IMC1,Immunochemistry,1,4,Study of the chemistry of the immune system.
-IMG1,Immunogenetics,1,4,Branch of medical genetics that studies genetic interactions related to the immune system – study of genetic characteristics of immunity
-IMP1,Immunopathology,1,4,Branch of medicine that deals with immune responses associated with disease
-IRE1,International relations,1,4,"Social-science field analysing political, economic and legal interactions among states and other actors"
-KAR1,Karstology,1,4,Scientific study of the various aspects of karst regions
-KAR2,Karyology,1,4,Photographic display of total chromosome complement in a cell – study of cell nuclei
-KYM1,Kymatology,1,4,"Branch of physics concerned with the mechanics of fluids (liquids, gases, and plasmas) – study of wave motion"
-LAR1,Laryngology,1,4,Medical specialty that deals with the larynx
-LEP1,Lepidopterology,1,4,Branch of entomology that studies moths and butterflies
-LEP2,Leprology,1,4,The study of leprosy and its treatment
-LIC1,Lichenology,1,4,Branch of mycology that studies lichens
-LML1,Limnology,1,4,Science of inland aquatic ecosystems
-LOI1,Loimology,1,4,study of plagues and epidemics
-MAC1,Macroeconomics,1,4,"Study of an economy as a whole – branch of economics dealing with the performance, structure, behavior, and decision-making of the whole economy"
-MAL2,Malariology,1,4,"Study of the mosquito borne disease, malaria"
-MAB1,Marine biology,1,4,Scientific study of organisms that live in the ocean – study of the ocean's ecosystem
-MEC2,Meconology,1,4,study of or treatise concerning opium
-MES1,Media studies,1,4,Field of study that deals with media
-MEL2,Melittology,1,4,Scientific study of bees
-MLL3,Metallography,1,4,Study of metals using microscopy – study of the structure and constitution of metals
-MPO1,Metapolitics,1,4,Political discourse about politics itself – study of politics in theory or abstract
-MTH2,Methyology,1,4,study of alcohol
-MEC3,Microbial ecology,1,4,Study of the relationship of microorganisms with their environment
-MCL1,Microclimatology,1,4,Local set of atmospheric conditions that differ significantly from the surrounding area – study of local climates
-MEC4,Microeconomics,1,4,Behavior of individuals and firms – branch of economics that studies the behavior of individual households and firms in making decisions on the allocation of limited resources
-MLO1,Micrology,1,4,study or discussion of trivialities
-MPA1,Micropalaeontology,1,4,Branch of paleontology that studies microfossils
-MIS1,Military science,1,4,"Systematic study of military organisation, strategy, tactics and logistics"
-MOL1,Molinology,2,4,Study of devices which use energy for mechanical purposes
-MYO1,Myology,1,4,Study of the muscular system – study of muscles
-MYR1,Myrmecology,1,4,Study of ants
-NAO1,Naology,1,4,study of church or temple architecture
-NEC1,Necroplanetology,1,4,Study of the process of planetary destruction – study of the destruction of planets
-NEO1,Neonatology,1,4,"Medical care of newborns, especially the ill or premature"
-NEO2,Neossology,1,4,study of nestling birds
-NEP1,Nephology,1,4,Scientific study of clouds
-NEP2,Nephrology,1,4,Medical study concerned with the kidneys
-NRB1,Neurobiology,1,4,Scientific study of the nervous system
-NRE1,Neuroeconomics,1,4,Interdisciplinary field – study of human decision making and the ability to process multiple alternatives and to choose an optimal course of action
-NRL1,Neurology,1,4,Medical specialty dealing with disorders of the nervous system
-NRP1,Neuropsychology,1,4,Study of the brain related to specific psychological processes and behaviors
-NEU2,Neurypnology,1,4,study of hypnotism
-NOM1,Nomology,1,4,Science of laws in philosophy
-NOS2,Nostology,1,4,study of senility
-NOT1,Notaphily,1,4,Study of paper currency – study and collecting of bank-notes and cheques
-NUM1,Numismatics,1,4,"Study of currencies, coins and paper money"
-NYM1,Nymphology,1,4,study of nymphs
-OHE1,Occupational health,1,4,Field dedicated to protecting and promoting health and safety in the workplace
-ODO1,Odonatology,1,4,Study of dragonflies and damselflies
-ODO2,Odontology,1,4,Scientific study of teeth
-OLF1,Olfactology,1,4,study of the sense of smell
-OMB1,Ombrology,1,4,study of rain
-ONE1,Oneirology,1,4,Scientific study of dreams
-OOL1,Oology,1,4,"Branch of ornithology studying bird eggs, nests and breeding behavior"
-OPH2,Ophiology,1,4,Branch of herpetology that studies snakes
-ORG2,Organology (biology),1,4,"Collection of tissues with similar functions (biology) – study of form, structure, development, and functions of plant or animal organs"
-ORT1,Orthopterology,1,4,Study of grasshoppers and related insects
-ORY1,Oryctology,1,4,mineralogy or paleontology
-OSM1,Osmics,1,4,scientific study of smells
-OST1,Osteology,1,4,Scientific study of bones
-OTO2,Otorhinolaryngology,1,4,Medical specialty of the head and neck
-PAE1,Paedology,1,4,Study of children's behavior and development
-PME1,Pain Medicine,1,4,"aspect of medicine and health care involving relief of pain (pain relief, analgesia, pain control) in various dimensions, from acute and simple to chronic and challenging"
-PLB1,Palaeobiology,1,4,Study of organic evolution using fossils
-PLC1,Palaeoclimatology,1,4,Study of changes in ancient climate
-PLI1,Palaeoichthyology,1,4,study of ancient fish
-PLP1,Palaeopedology,1,4,Discipline studying soils of the past eras
-PLB2,Paleobotany,1,4,Study of organic evolution of plants based on fossils
-PLS2,Paleoseismology,1,4,Study of earthquakes that happened in the past
-PAP1,Papyrology,1,4,Scientific study of ancient manuscripts
-PPS1,Parapsychology,1,4,Study of paranormal and psychic phenomena
-PDG2,Pedagogics,1,4,Theory and practice of education
-PEN1,Penology,1,4,Subfield of criminology – study of crime and punishment
-PER1,Periodontics,1,4,Field of dentistry
-PES1,Pestology,1,4,Scientific study of insects – science of pests
-PHC2,Pharmacognosy,1,4,Study of drugs obtained from natural sources
-PHA2,Pharyngology,1,4,study of the throat
-PHE3,Phenology,1,4,Study of periodic events in biological life cycles
-PNE3,Phonetics,1,4,Study of how humans produce and perceive sounds
-PYG3,Phylogenetics,1,4,Study of evolutionary relationships between organisms
-PLU1,Plumology,1,4,Study of feathers
-PLU2,Plutology,1,4,political economy; study of wealth
-POD1,Podology,1,4,Medicine branch focusing on the human lower extremities
-POG1,Pogonology,1,4,Hair that grows on the lower part of the face – study of beards
-POM1,Pomology,1,4,Study of fruits and their cultivation
-POS3,Posology,1,4,Study of dosage of medicines
-POT1,Potamology,1,4,Study of rivers
-PRA2,Praxeology,1,4,Theory of human action
-PRO3,Proctology,1,4,"Study of the structure and diseases of the anus, rectum, and sigmoid colon"
-PSE3,Psephology,1,4,Quantitative scientific analysis of elections and balloting (within political science) – study of election results and voting trends
-PYB1,Psychobiology,1,4,Neuroscience of behaviour
-PYL2,Psycholinguistics,1,4,Study of relations between psychology and language
-PYP1,Psychopathology,1,4,Scientific study of mental disorders
-PYP2,Psychophysics,1,4,Branch of knowledge relating physical stimuli and psychological perception
-PTE2,Pterylology,1,4,study of distribution of feathers on birds
-PYR1,Pyretology,1,4,study of fevers
-PYR2,Pyrgology,1,4,study of towers
-QUT1,Queer theory,1,4,Field of critical theory – study of issues related to sexual orientation and gender identity
-QUI1,Quinology,1,4,study of quinine.
-RAD3,Radiology,1,4,Medical specialty for imaging procedures
-RHE1,Rheology,1,4,"Study of the flow of matter, primarily in a fluid state"
-RHE2,Rheumatology,1,4,Medical speciality of inflammatory diseases
-RHI1,Rhinology,1,4,Study of the nose and sinuses
-ROB1,Robotics,1,4,"Design, construction, use, and application of robots"
-RUN1,Runology,1,4,Study of Runic alphabets
-SAR1,Sarcology,1,4,study of fleshy parts of the body
-SCR1,Scripophily,1,4,Study and collection of stock and bond certificates
-SEL1,Selenodesy,1,4,Study of the surface and shape of the Moon
-SEL2,Selenology,1,4,Structure and composition of the Moon – study of the Moon
-SEM3,Semiotics,1,4,Study of signs and sign processes
-SER1,Serology,1,4,Scientific study of serum and other bodily fluids
-SID1,Siderology,1,4,"study of iron and its alloys, including steel"
-SIN2,Sindonology,1,4,Scientific analysis of the Shroud.of Turin
-SIT1,Sitology,1,4,Expert in nutrition and malnutrition – dietetics
-SHL1,Snow hydrology,1,4,Field of snow science concerning its composition and dispersion
-SCE1,Socioeconomics,1,4,Branch of sociology – study of the relationship between economy and society
-SPH1,Sphagnology,1,4,study of peat moss
-SPH2,Sphygmology,1,4,Study of the pulse
-SPL2,Splanchnology,1,4,Study of the visceral organs
-STA3,Stasiology,1,4,study of political parties
-STM1,Stomatology,1,4,Study of oral medicine – study of the mouth
-SUI1,Suicidology,1,4,Scientific study of suicide and self-destructive behaviors
-SYM1,Symptomatology,1,4,"Indications of a specific illness, including psychiatric – study of symptoms of illness"
-SYN3,Synecology,1,4,Associated populations of species in a given area – study of ecological communities
-SYP1,Syphilology,1,4,Sexually transmitted infection – study of syphilis
-SYS2,Systematics,1,4,"Branch of biology – study of the diversification of living forms, both past and present"
-TAX2,Taxidermy,1,4,Stuffing and mounting dead animals for display – art of curing and stuffing animals
-TEL3,Telmatology,1,4,Branch of physical geography concerned with the study of wetlands
-TEM1,Tempestology,1,4,"The study of cyclones, hurricanes and similar extreme weather events"
-THA3,Thalassography,1,4,science of the seas and gulfs
-THE2,Theriogenology,1,4,Veterinary specialty concerning reproduction
-THR1,Thremmatology,1,4,science of breeding domestic animals and plants
-THR2,Threpsology,1,4,science of nutrition
-TID1,Tidology,1,4,study of tides
-TRA1,Traumatology,1,4,Medicine branch – study of wounds and their effects
-TRI1,Tribology,1,4,Science of rubbing surfaces
-TUR1,Turbology,1,4,study of tornadoes
-TYP1,Typhlology,1,4,study of blindness and the blind
-URA2,Uranography,1,4,Part of astronomy concerned with mapping of stars
-URB1,Urbanology,1,4,Study dealing with specialized problems of cities
-URE1,Urenology,1,4,study of rust molds
-URO2,Urology,1,4,Medical specialty on the urinary and reproductive systems
-VAC1,Vaccinology,1,4,Science of vaccine development and production
-VAL1,Valeology,1,4,study of healthy living
-VEN1,Venereology,1,4,Branch of medicine dealing with the study and treatment of sexually transmitted diseases
-VEN2,Venology,1,4,The study of veins.
-VEX1,Vexillography,1,4,Art and practice of designing flags – the art and practice of designing flags
-VEX2,Vexillology,1,4,Study of flags
-VIC1,Victimology,1,4,Study of victimization
-VIN1,Vinology,1,4,scientific study of vines and winemaking
-VIT2,Vitaminology,1,4,The study of vitamins.
-XEN1,Xenobiology,1,4,Science of synthetic life forms – study of biological systems which do not exist in nature
-XYL2,Xylography,1,4,Broad term for woodblock printing techniques
-YOS1,Youth Studies,1,4,"Interdisciplinary academic field – the study of the development, history, culture, psychology, and politics of youth"
-ZEN1,Zenography,1,4,The study of the planet Jupiter
-ZAR1,Zooarchaeology,1,4,Analysis of animal remains found in archaeological sites
-ZGE2,Zoogeology,1,4,study of fossil animal remains
-ZNO1,Zoonomy,1,4,study of animal physiology
-ZNO2,Zoonosology,1,4,study of animal diseases
-ZPA1,Zoopathology,1,4,Study and diagnosis of disease in animals
-ZPH3,Zoophysiology,1,4,study of physiology of animals
-ZTE1,Zootechnics,1,4,Science of managing domestic or captive animals
-ZYG1,Zygology,1,4,science of joining and fastening
-ANT2,Anthropobiology,1,5,Biological study of the human species – study of human biology.
-ANT3,Anthrozoology,1,5,Subset of ethnobiology – study of human-animal interaction.
-CAS1,Castrametation,1,5,Roman term for a fortified military base – art of designing a camp.
-COS3,Cosmetology,1,5,Study and application of beauty treatment – study of cosmetics.
-CRA1,Craniology,1,5,Pseudoscientific study of human characteristics according to shape of the skull – study of the skull.
-DRE1,Dance research,6,5,"Academic investigation of dance as art, cultural practice and embodied knowledge"
-DEM2,Demology,1,5,study of human populations and behaviour.
-EGY1,Egyptology,1,5,Scientific study of ancient Egypt – study of ancient Egypt.
-EID1,Eidology,1,5,study of mental imagery.
-ELL1,Electrology,1,5,Method of hair removal – study of electricity.
-EME1,Emetology,1,5,"Involuntary, forceful expulsion of stomach contents, typically via the mouth – study of vomiting."
-EPI2,Epileptology,1,5,Physician specializing in epileptology – study of epilepsy.
-ERG1,Ergology,1,5,study of effects of work on humans.
-ERG2,Ergonomics,1,5,Designing systems to suit their users – study of people at work.
-ETB1,Ethnobiology,1,5,Study of how living things are used by human cultures – study of dynamic relationships between peoples.
-ETB2,Ethnobotany,1,5,Study of traditional plant use – study of a region's plants and their practical uses through the traditional knowledge of a local culture and people.
-ETC1,Ethnochoreology,1,5,Field of dance study – study of dances and its implication in culture.
-ETG1,Ethnogeny,1,5,study of origins of races or ethnic groups.
-ETL1,Ethnology,1,5,Branch of anthropology – study of cultures.
-ETM1,Ethnomethodology,1,5,Study of how social order is produced – study of everyday communication and social interaction.
-ETM2,Ethnomusicology,1,5,Study of the cultural aspects of music – study of comparative musical systems.
-FIN1,Finance,1,5,Academic discipline studying businesses and investments – science or study of money management.
-FOL1,Folkloristics,1,5,Branch of anthropology – study of folklore and fables.
-GAR1,Garbology,1,5,Study of modern refuse
-GEN3,Genealogy,1,5,Study of individual descent and bloodline – study of descent of families
-GIG1,Gigantology,1,5,study of giants
-GRM2,Grammatology,1,5,Study of graphemes and writing systems – study of systems of writing
-HEL2,Helcology,1,5,study of ulcers
-HSP1,Histopathology,1,5,Microscopic examination of tissue in order to study and diagnose disease – study of changes in tissue due to disease
-HOP1,Hoplology,1,5,The study of human combative behavior and performance
-ICO2,Iconography,1,5,Branch of art history – study of drawing symbols
-IDI2,Idiopsychology,1,5,study of the psychology of one's own mind
-IRE2,Irenology,1,5,Social science study of peace – study of peace
-KNS1,Kinesics,1,5,Interpretation of body motion communication – study of gestural communication
-KNS2,Kinesiology,1,5,Study of human body movement – study of human movement and posture
-KTE1,Ktenology,1,5,Scientific study of killing
-LAR2,Larithmics,1,5,study of population statistics
-LMB1,Limnobiology,1,5,study of freshwater ecosystems
-LOG2,Logistics,2,5,"Planning, implementation and control of efficient flow and storage of goods, services and information"
-MAG1,Magnetics,1,5,Class of physical phenomena – study of magnetism
-MGH1,Magnetohydrodynamics,1,5,Model of electrically conducting fluids – study of electrically conducting fluids
-MGS1,Magnetostatics,1,5,Branch of physics about magnetism in systems with steady electric currents – study of magnetic fields in systems where the currents are steady
-MOM1,Momilogy,1,5,study of mummies
-MYT1,Mythology,1,5,Type of traditional narrative – study of myths; fables; tales
-OIK1,Oikology,1,5,science of housekeeping
-ORT2,Orthoepy,1,5,Correct pronunciation of a language
-ORT3,Orthography,1,5,Set of conventions for written language
-PLA1,Palaeoanthropology,1,5,Study of ancient humans
-PLL1,Palaeolimnology,1,5,Scientific study of ancient lakes and streams
-POS4,Paleo-osteology,1,5,study of ancient bones
-PAR3,Parthenology,1,5,study of virgins
-PNI1,Phoniatrics,1,5,Sudy and treatment of organs involved in speech production
-POL1,Polemology,1,5,Multidisciplinary study of war
-PRI2,Primatology,1,5,Scientific study of primates
-PYG4,Psychognosy,1,5,"study of mentality, personality or character"
-PYB2,Pyroballogy,1,5,study of artillery
-SIL1,Silvics,1,5,Practice of controlling forests for timber production – study of tree's life
-SOM2,Somatology,1,5,Branch of anthropology that studies the physical development of the human species – science of substances
-SPO1,Spongology,1,5,study of sponges
-STI1,Stoichiology,1,5,science of elements of animal tissues
-STR2,Stratography,1,5,art of leading an army
-SYM2,Symbology,1,5,"Something that represents an idea, process, or physical entity – study of symbols"
-TEC3,Terrestrial ecology,1,5,Study of terrestrial ecosystems and the biotic and abiotic things that occupy them.
-TEU1,Teuthology,1,5,Study of cephalopods
-TON1,Tonetics,1,5,Use of pitch to distinguish lexical or grammatical meaning
-TRI2,Trichology,1,5,The study of the hair and scalp
-TSI1,Tsiganology,1,5,study of gypsies
-TYL1,Typology,1,5,System of classification – study of types of things
-WEB1,Webology,1,5,Academic journal on the World Wide Web – The study of the World Wide Web.
-ZSE1,Zoosemiotics,1,5,Study of the use of signs among animals – study of animal communication
-RHO1,Rhochrematics,1,6,science of inventory management and the movement of products
-STR3,Storiology,1,6,study of folk tales
+topicID,lang,name,typeID,layer,description,version,url
+ART0,en,Art,0,1,"Creative human expression across visual, auditory and performance media; the umbrella discipline for the fine arts",1,https://en.wikipedia.org/wiki/Art_history
+BOL0,en,Biology,0,1,Science that studies life,1,https://en.wikipedia.org/wiki/Biochemistry
+CHE0,en,Chemistry,0,1,Scientific field of study – study of properties and behaviours of substances.,1,https://en.wikipedia.org/wiki/Chaology
+COS0,en,Computer science,0,1,Study of computation – study of processes that interact with data.,1,https://en.wikipedia.org/wiki/Codicology
+CUS0,en,Cultural studies,0,1,"Interdisciplinary analysis of culture, power and identity in everyday life and media",1,https://en.wikipedia.org/wiki/Cryptography
+ETH0,en,Ethics,0,1,"Philosophical study of moral values, principles and decision-making",1,https://en.wikipedia.org/wiki/Epidemiology
+GOG0,en,Geography,0,1,Study of lands and inhabitants of Earth – study of surface of the earth and its inhabitants,1,https://en.wikipedia.org/wiki/Gnotobiology
+HSR0,en,History,0,1,Systematic study and interpretation of past events and human activities,1,https://en.wikipedia.org/wiki/Hydrology
+LAW0,en,Law,0,1,System of rules created and enforced through social or governmental institutions to regulate behaviour,1,https://en.wikipedia.org/wiki/Kalology
+LIN0,en,Linguistics,0,1,Scientific study of language,1,https://en.wikipedia.org/wiki/Limacology
+LIT0,en,Literature,0,1,Study and analysis of written and oral texts as artistic and cultural artefacts,1,https://en.wikipedia.org/wiki/Limacology
+LOG0,en,Logics,0,1,Study of correct reasoning,1,https://en.wikipedia.org/wiki/Limacology
+MAT0,en,Mathematics,0,1,"Area of knowledge – study of magnitude, number, and forms",1,https://en.wikipedia.org/wiki/Mammalogy
+MST0,en,Music theory,0,1,"Analytical study of music’s structures, systems and compositional techniques",1,https://en.wikipedia.org/wiki/Museology
+PHI0,en,Philosophy,0,1,Study of general and fundamental questions – science of knowledge or wisdom,1,https://en.wikipedia.org/wiki/Public_health
+PYS0,en,Physics,0,1,Scientific field of study,1,https://en.wikipedia.org/wiki/Pyrography
+PYL0,en,Psychology,0,1,Study of mental functions and behaviors,1,https://en.wikipedia.org/wiki/Pyrography
+ABI1,en,Abiology,1,2,"Study of abiotic matter and physicochemical processes that occur independently of life, including those that may have preceded its origin",1,
+ABI2,en,Abiophysiology,1,2,"Investigation of life-like physicochemical processes in non-living systems, especially as models for physiology",1,
+ACA1,en,Acanthology,1,2,Branch of zoology that examines spined or spine-bearing organisms (notably echinoids) and the taxonomic significance of their spines,1,
+ACO1,en,Acoustics,1,2,Branch of physics involving mechanical waves – the branch of physics studying the properties of sound.,1,
+ACT1,en,Actinobiology,1,2,Study of effects of radiation on living things – synonymous with radiobiology.,1,https://en.wikipedia.org/wiki/Actinobiology
+AED1,en,Aerodynamics,1,2,Branch of dynamics concerned with studying the motion of air,1,https://en.wikipedia.org/wiki/Aerodynamics
+AES1,en,Aerostatics,1,2,Study of gases that are not in motion,1,https://en.wikipedia.org/wiki/Aerostatics
+AES2,en,Aesthetics,1,2,"Philosophical field that analyses beauty, taste and the creation or appreciation of art",1,https://en.wikipedia.org/wiki/Aesthetics
+AGN1,en,Agnoiology,1,2,"Epistemological study of the varieties, sources and classifications of ignorance and the unknown",1,https://en.wikipedia.org/wiki/Agnoiology
+AGO1,en,Agonistics,1,2,Chemical which binds to and activates a biochemical receptor,1,https://en.wikipedia.org/wiki/Agonistics
+ALG1,en,Algebra,1,2,Branch of mathematics,1,https://en.wikipedia.org/wiki/Algebra
+API1,en,Apiology,1,2,Scientific study of bees,1,https://en.wikipedia.org/wiki/Art_history
+AHS1,en,Art history,1,2,"Scholarly study of artworks, artists and artistic movements in their cultural and historical contexts",1,https://en.wikipedia.org/wiki/Agonistics
+ASN0,en,Astronomy,0,2,Scientific study of celestial objects,1,https://en.wikipedia.org/wiki/Astronomy
+ATS1,en,Atmospheric Science,1,2,Inter-disciplinary science that investigates the physical and chemical processes of Earth’s atmosphere,1,https://en.wikipedia.org/wiki/Aerology
+AUT1,en,Autology,1,2,Word that expresses a property it also possesses – scientific study of oneself.,1,https://en.wikipedia.org/wiki/Autology
+AUT2,en,Automata theory,1,2,Study of abstract machines and automata,1,https://en.wikipedia.org/wiki/Automata_theory
+BAR1,en,Barology,1,2,study of gravitational force.,1,https://en.wikipedia.org/wiki/Automata_theory
+BOC1,en,Biochemistry,1,2,Study of chemical processes in living organisms,1,https://en.wikipedia.org/wiki/Biochemistry
+BOP1,en,Biophysics,1,2,Study of biological systems using methods from the physical sciences – study of physics of biological phenomena.,1,https://en.wikipedia.org/wiki/Biophysics
+BOT1,en,Botany,1,2,Study of plant life,1,https://en.wikipedia.org/wiki/Botany
+CHA1,en,Chaology,1,2,Field of mathematics and science based on non-linear systems and initial conditions,1,https://en.wikipedia.org/wiki/Chaology
+CHT1,en,Chaos theory,1,2,Field of mathematics and science based on non-linear systems and initial conditions,1,https://en.wikipedia.org/wiki/Colorimetry
+CHO1,en,Chorology (geography),1,2,"Study of regional causal relationships between physical geographic phenomena (e.g., how topography, climate and soils interact within a delimited area)",1,https://en.wikipedia.org/wiki/Chaology
+CLM1,en,Classical mechanics,1,2,Description of large objects' physics – study of motion of macroscopic objects.,1,https://en.wikipedia.org/wiki/Climatology
+CLI1,en,Comparative literature,1,2,"Literary discipline comparing texts across languages, cultures and periods",1,https://en.wikipedia.org/wiki/Civil_engineering
+EAS0,en,Earth Science,0,2,includes all fields of natural science related to the planet Earth.,1,https://en.wikipedia.org/wiki/Dysgenics
+EMB1,en,Embryology,1,2,Branch of biology studying prenatal biology,1,https://en.wikipedia.org/wiki/Electrochemistry
+ENG1,en,Engineering,2,2,"Profession applying scientific principles to design, build and optimise systems, structures and devices",1,https://en.wikipedia.org/wiki/Energetics_(disambiguation)
+ENI1,en,Enigmatology,1,2,Problem or enigma that tests – study of enigmas (puzzles).,1,https://en.wikipedia.org/wiki/Energetics_(disambiguation)
+FST1,en,Fluid statics,1,2,Branch of fluid mechanics that studies fluids at rest – study of fluids behaviour at rest.,1,https://en.wikipedia.org/wiki/Fluid_mechanics
+FOS1,en,Food science,1,2,"Study of the physical, chemical and biological properties of food and food processing",1,https://en.wikipedia.org/wiki/Fluid_mechanics
+FOS2,en,Forensic science,1,2,Application of science to criminal and civil laws – the use of scientific methods or expertise to investigate crimes or examine evidence that might be presented in a court of law,1,https://en.wikipedia.org/wiki/Fluid_mechanics
+GEN1,en,Genetics,1,2,"Science of genes, heredity, and variation in living organisms",1,https://en.wikipedia.org/wiki/Gemmology
+GOM1,en,Geomatics,2,2,"Technology-driven discipline for acquiring, processing and visualising geospatial information",1,https://en.wikipedia.org/wiki/Gnotobiology
+GOM2,en,Geometry,1,2,"Branch of mathematics – study the sizes, shapes, positions, angles and dimensions of things.",1,https://en.wikipedia.org/wiki/Gnotobiology
+GLO1,en,Glossology,1,2,Scientific study of language – study of language; study of the tongue,1,https://en.wikipedia.org/wiki/Gerontology
+GOO1,en,Googology,1,2,Numbers significantly larger than those used regularly – study of large numbers,1,https://en.wikipedia.org/wiki/Gnotobiology
+HSR2,en,Historiography,1,2,Study of the methods used by historians,1,https://en.wikipedia.org/wiki/Hydrology
+HSR3,en,Historiology,1,2,The study of history.,1,https://en.wikipedia.org/wiki/Hydrology
+IDE1,en,Ideogeny,1,2,study of origins of ideas,1,https://en.wikipedia.org/wiki/Iconology
+IDI1,en,Idiomology,1,2,"study of idiom, jargon or dialect",1,https://en.wikipedia.org/wiki/Iconology
+INS0,en,Information science,0,2,Academic field concerned with collection and analysis of information,1,https://en.wikipedia.org/wiki/Immunology
+ISE1,en,Information security,1,2,"Discipline protecting information assets against unauthorised access, disclosure or modification",1,https://en.wikipedia.org/wiki/Immunology
+JAP1,en,Japanology,1,2,"Area studies focused on Japan – The study of Japan, its language, culture and history",1,https://en.wikipedia.org/wiki/Information_technology
+KNM1,en,Kinematics,1,2,Branch of physics describing the motion of objects without considering forces – study of motion,1,https://en.wikipedia.org/wiki/Kalology
+KNT1,en,Kinetics,1,2,Subfield of physics – study of forces producing or changing motion,1,https://en.wikipedia.org/wiki/Kalology
+LUD1,en,Ludology,1,2,Study of games and the act of playing them,1,https://en.wikipedia.org/wiki/Limacology
+MAS1,en,Materials science,1,2,"Interdisciplinary field exploring the properties, performance and applications of materials",1,https://en.wikipedia.org/wiki/Mammalogy
+MEC1,en,Mechanics,1,2,Science concerned with physical bodies subjected to forces or displacements,1,https://en.wikipedia.org/wiki/Mammalogy
+MED1,en,Medicine,1,2,"Diagnosis, treatment, and prevention of illness",1,https://en.wikipedia.org/wiki/Mammalogy
+MER1,en,Mereology,1,2,Study of parts and the wholes they form – study of part-whole relationships,1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MPH1,en,Metaphysics,1,2,Study of fundamental reality – study of principles of nature and thought,1,https://en.wikipedia.org/wiki/Morphometrics
+MPS1,en,Metapsychology,1,2,Psychological aspect – study of nature of the mind,1,https://en.wikipedia.org/wiki/Morphometrics
+MBI1,en,Microbiology,1,2,Study of microscopic organisms (microbes),1,https://en.wikipedia.org/wiki/Mammalogy
+MOR1,en,Morphology,1,2,study of forms and the development of structures,1,https://en.wikipedia.org/wiki/Molecular_biology
+MSI1,en,Musicology,1,2,Scholarly study of music – study of music,1,https://en.wikipedia.org/wiki/Museology
+NAV1,en,Navigation,1,2,Process of monitoring and controlling the movement of a craft or vehicle from one place to another – study of controlling a movement of a vehicle from one place to another,1,https://en.wikipedia.org/wiki/Nanotechnology
+NEU1,en,Neutrosophy,1,2,study of the origin and nature of philosophical neutralities,1,https://en.wikipedia.org/wiki/Nematology
+NOO1,en,Noology,1,2,Spanish philosopher (1898–1983) – science of the intellect,1,https://en.wikipedia.org/wiki/Nematology
+ONO1,en,Onomastics,1,2,Study of proper names,1,https://en.wikipedia.org/wiki/Oncology
+OPT1,en,Optics,1,2,Branch of physics that studies light,1,https://en.wikipedia.org/wiki/Ophthalmology
+ORC1,en,Organic chemistry,1,2,"Chemistry branch focused on the structure, properties and reactions of carbon-based compounds",1,https://en.wikipedia.org/wiki/Optometry
+PLG1,en,Palaeography,1,2,"Study of ancient and historical handwriting forms to date, read and contextualise manuscripts",1,https://en.wikipedia.org/wiki/Public_health
+PDO1,en,Paradoxology,1,2,Logically self-contradictory statement – study of paradoxes,1,https://en.wikipedia.org/wiki/Pedagogy
+PAR1,en,Paroemiology,1,2,study of proverbs,1,https://en.wikipedia.org/wiki/Palynology
+PPY1,en,Particle physics,1,2,Study of subatomic particles and forces,1,https://en.wikipedia.org/wiki/Public_health
+PAR2,en,Performing arts,6,2,"Creative disciplines (music, theatre, dance, etc.) presented live for an audience",1,https://en.wikipedia.org/wiki/Palynology
+PHE1,en,Phenomenology,1,2,Philosophical method and schools of philosophy – study of phenomena,1,https://en.wikipedia.org/wiki/Pharology
+PHI2,en,Philology,1,2,Study of language in historical sources,1,https://en.wikipedia.org/wiki/Public_health
+POS1,en,Philosophy of science,1,2,"Critical inquiry into the foundations, methods and implications of scientific practice",1,https://en.wikipedia.org/wiki/Public_health
+PNO1,en,Phonology,1,2,Study of sound organization in languages,1,https://en.wikipedia.org/wiki/Public_health
+PHR1,en,Phraseology,1,2,Linguistic study of phrases,1,https://en.wikipedia.org/wiki/Public_health
+PSE1,en,Pseudology,1,2,art or science of lying,1,https://en.wikipedia.org/wiki/Public_health
+PUN1,en,Punnology,1,2,study of puns,1,https://en.wikipedia.org/wiki/Public_health
+QUM1,en,Quantum mechanics,1,2,Description of physical properties at the atomic and subatomic scale – a fundamental theory in physics which describes nature at the smallest scales of energy levels of atoms and subatomic particles,1,https://en.wikipedia.org/wiki/Quantum_computing
+RAD1,en,Radiochemistry,1,2,Chemistry of radioactive materials – study of ordinary chemical reactions under radioactive circumstances,1,https://en.wikipedia.org/wiki/Quantum_computing
+SCH1,en,Schematonics,1,2,art of using gesture to express tones,1,https://en.wikipedia.org/wiki/Scatology
+SMO1,en,Scientific modelling,1,2,Scientific activity that produces models – study of application of models to understand a particular problem,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SPR1,en,Scientific programming,1,2,Language for communicating instructions to a machine – study of programming,1,https://en.wikipedia.org/wiki/Speleology
+SEM1,en,Semantics,1,2,Study of meaning in language,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SIG1,en,Significs,1,2,Linguistic and philosophical term – science of meaning,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SIN1,en,Sinology,1,2,Area studies focused on China,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SCL0,en,Sociology,0,2,Social science that studies human society and its development,1,https://en.wikipedia.org/wiki/Sciagraphy
+SOS1,en,Soil Science,1,2,"Soil science, study of soils, especially agricultural soils.",1,https://en.wikipedia.org/wiki/Solid_mechanics
+SPC1,en,Spectrology,1,2,Study involving matter and electromagnetic radiation,1,https://en.wikipedia.org/wiki/Solid_mechanics
+SPC2,en,Spectroscopy,1,2,Study involving matter and electromagnetic radiation – study of spectra,1,https://en.wikipedia.org/wiki/Solid_mechanics
+STA1,en,Statics,1,2,Branch of mechanics concerned with balance of forces in nonmoving systems,1,https://en.wikipedia.org/wiki/Stellar_astronomy
+STA2,en,Statistics,1,2,"discipline that concerns the collection, organization, analysis, interpretation, and presentation of data.",1,https://en.wikipedia.org/wiki/Stellar_astronomy
+STE1,en,Stereochemistry,1,2,Subdiscipline of chemistry – study of chemistry of the relative spatial arrangement of atoms that form the structure of molecules and their manipulation.,1,https://en.wikipedia.org/wiki/Stellar_astronomy
+SYN1,en,Synectics,1,2,Thought process for making the strange familiar and the familiar strange – study of processes of invention,1,https://en.wikipedia.org/wiki/Symbology
+SYN2,en,Syntax,1,2,System responsible for combining morphemes into complex structures – study of sentence structure,1,https://en.wikipedia.org/wiki/Symbology
+TAX1,en,Taxonomy,1,2,"Science of naming, defining and classifying organisms",1,https://en.wikipedia.org/wiki/Symbology
+TEC0,en,Technology,0,2,"application of conceptual knowledge to achieve practical goals, especially in a reproducible way.",1,https://en.wikipedia.org/wiki/Symbology
+TEL1,en,Teleology,1,2,Thinking in terms of destiny or purpose – study of final causes; analysis in terms of purpose,1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+THE1,en,Theology,1,2,Study of the nature of deities and religious beliefs - study of religion,1,https://en.wikipedia.org/wiki/Teuthology
+TCS1,en,Theoretical computer science,1,2,Subfield of computer science and mathematics,1,https://en.wikipedia.org/wiki/Symbology
+TED1,en,Thermodynamics,1,2,"Physics of heat, work, and temperature",1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+TIM1,en,Timbrology,1,2,study of postage stamps,1,https://en.wikipedia.org/wiki/Teuthology
+TPL1,en,Topology,1,2,Branch of mathematics – study of places and their natural features,1,https://en.wikipedia.org/wiki/Tonetics
+TPN1,en,Toponymy,1,2,Study of place names,1,https://en.wikipedia.org/wiki/Tonetics
+TYG1,en,Typography,1,2,Art of arranging type – art and technique of arranging type,1,https://en.wikipedia.org/wiki/Trichology
+ZLO1,en,Zoology,1,2,Scientific study of animals,1,https://en.wikipedia.org/wiki/Webology
+ACA2,en,Acanthochronology,1,3,Study of cactus spines and the chronology of their growth,1,
+AEB1,en,Aerobiology,1,3,Study of airborne organisms,1,https://en.wikipedia.org/wiki/Actinobiology
+AEL1,en,Aerolithology,1,3,Science of meteorites – study of aerolites; meteorites.,1,https://en.wikipedia.org/wiki/Aerodynamics
+AEP1,en,Aeropalynology,1,3,study of pollens and spores in atmosphere.,1,https://en.wikipedia.org/wiki/Aerodynamics
+AEE1,en,Aerospace Engineering,1,3,Branch of engineering,1,https://en.wikipedia.org/wiki/Aerodynamics
+AGB1,en,Agrobiology,1,3,Interdisciplinary studies of the interactions between plants and soil,1,https://en.wikipedia.org/wiki/Aesthetics
+AGG1,en,Agrogeology,1,3,Study of origins and applications of minerals important to farming,1,https://en.wikipedia.org/wiki/Aesthetics
+AGN2,en,Agronomy,1,3,Science of producing and using plants,1,https://en.wikipedia.org/wiki/Agnoiology
+AGS1,en,Agrostology,1,3,Scientific study of the grasses,1,https://en.wikipedia.org/wiki/Agonistics
+ANA1,en,Anatomy,1,3,Study of the structure of organisms,1,https://en.wikipedia.org/wiki/Algebra
+AND1,en,Andrology,1,3,Medical specialty – study of men's physiology.,1,https://en.wikipedia.org/wiki/Algebra
+ANG1,en,Angiology,1,3,"Branch of internal medicine, which deals with vascular disease",1,https://en.wikipedia.org/wiki/Algebra
+ARA1,en,Arachnology,1,3,"Scientific study of arachnides such as spiders, ticks and mites",1,https://en.wikipedia.org/wiki/Art_history
+ARA2,en,Archaeology,1,3,Study of human activity based on materials left behind,1,https://en.wikipedia.org/wiki/Art_history
+ARE1,en,Archelogy,1,3,study of first principles.,1,https://en.wikipedia.org/wiki/Art_history
+ARI1,en,Architecture,1,3,Applied art and engineering discipline concerned with designing and constructing built environments,1,https://en.wikipedia.org/wiki/Art_history
+ARS1,en,Archival science,1,3,"Science of storage, registration and preservation of historical data",1,https://en.wikipedia.org/wiki/Art_history
+ARI2,en,Aristology,1,3,the art or science of cooking and dining – science or art of dining.,1,https://en.wikipedia.org/wiki/Art_history
+ART2,en,Arthrology,1,3,Scientific study of joints and articulations,1,https://en.wikipedia.org/wiki/Art_history
+ART3,en,Arthropodology,1,3,Study of arthropods,1,https://en.wikipedia.org/wiki/Art_history
+AST1,en,Astacology,1,3,Scientific study of crayfish,1,https://en.wikipedia.org/wiki/Astronomy
+AST2,en,Asteroseismology,1,3,Study of oscillations in stars,1,https://en.wikipedia.org/wiki/Astronomy
+ASB1,en,Astrobiology,1,3,Science concerned with life in the universe,1,https://en.wikipedia.org/wiki/Art_history
+ASD1,en,Astrodynamics,1,3,Field of classical mechanics concerned with the motion of spacecraft,1,https://en.wikipedia.org/wiki/Art_history
+ASG1,en,Astrogeology,1,3,Geology of astronomical objects apparently in orbit around stellar objects,1,https://en.wikipedia.org/wiki/Art_history
+ASP1,en,Astrophysics,1,3,Subfield of astronomy – study of behaviour of interstellar matter.,1,https://en.wikipedia.org/wiki/Astronomy
+ATM1,en,Atmology,1,3,the science of aqueous vapor.,1,https://en.wikipedia.org/wiki/Astronomy
+AUD1,en,Audiology,1,3,"Branch of science that studies hearing, balance, and related disorders",1,https://en.wikipedia.org/wiki/Aerology
+AUX1,en,Auxology,1,3,Study of all aspects of human physical growth,1,https://en.wikipedia.org/wiki/Automata_theory
+BAC1,en,Bacteriology,1,3,Subdiscipline of microbiology that studies bacteria,1,https://en.wikipedia.org/wiki/Automata_theory
+BAT1,en,Batology,1,3,Study of brambles,1,https://en.wikipedia.org/wiki/Automata_theory
+BEG1,en,Behavioural genetics,1,3,Study of genetic-environment interactions influencing behaviour,1,https://en.wikipedia.org/wiki/Automata_theory
+BIB1,en,Bibliology,1,3,Organized listing of books and the systematic description of them as objects,1,https://en.wikipedia.org/wiki/Automata_theory
+BIB2,en,Bibliotics,1,3,study of documents to determine authenticity.,1,https://en.wikipedia.org/wiki/Automata_theory
+BOG1,en,Biogeochemistry,1,3,Study of chemical cycles of the earth that are either driven by or influence biological activity,1,https://en.wikipedia.org/wiki/Biochemistry
+BOM1,en,Biometrics,1,3,Metrics related to human characteristics,1,https://en.wikipedia.org/wiki/Biochemistry
+BRO1,en,Bromatology,1,3,Applied science devoted to the study of food – study of food.,1,https://en.wikipedia.org/wiki/Botany
+CAC1,en,Cacogenics,1,3,Decrease in genetic traits deemed desirable and study thereof,1,https://en.wikipedia.org/wiki/Botany
+CAL1,en,Calorifics,1,3,study of heat – relating to the production of heat,1,https://en.wikipedia.org/wiki/Botany
+CRC1,en,Carcinology,1,3,Study of crustaceans,1,https://en.wikipedia.org/wiki/Coprology
+CRI1,en,Caricology,1,3,Study of sedges,1,https://en.wikipedia.org/wiki/Coprology
+CRP1,en,Carpology,1,3,Study of seeds and fruit,1,https://en.wikipedia.org/wiki/Criminology
+CRT1,en,Cartography,1,3,Study and practice of making maps – science of making maps and globes.,1,https://en.wikipedia.org/wiki/Criminology
+CAT1,en,Catacoustics,1,3,science of echoes or reflected sounds.,1,https://en.wikipedia.org/wiki/Botany
+CEM1,en,Celestial mechanics,1,3,Branch of astronomy – study of motion of objects in outer space.,1,https://en.wikipedia.org/wiki/Botany
+CEB1,en,Cell biology,1,3,Branch of biology that studies cells – study of the different structures and functions of both eukaryote and prokaryote cells.,1,https://en.wikipedia.org/wiki/Botany
+CHA2,en,Characterology,1,3,The study of character – study of development of character.,1,https://en.wikipedia.org/wiki/Chaology
+CHI1,en,Chirography,1,3,Study of penmanship and handwriting in all of its aspects – study of handwriting or penmanship.,1,https://en.wikipedia.org/wiki/Chaology
+CHR1,en,Chromatics,1,3,Technique to quantify and describe physically the human color perception – study of color.,1,https://en.wikipedia.org/wiki/Colorimetry
+CHR2,en,Chrysology,1,3,study of precious metals.,1,https://en.wikipedia.org/wiki/Colorimetry
+CIE1,en,Civil engineering,1,3,"Engineering specialty that designs, builds and maintains infrastructure such as roads, bridges and water systems",1,https://en.wikipedia.org/wiki/Civil_engineering
+CLI2,en,Climatology,1,3,"Scientific study of climate, defined as weather conditions averaged over a period of time – study of climate.",1,https://en.wikipedia.org/wiki/Climatology
+COD1,en,Codicology,1,3,Study of codices or manuscript books,1,https://en.wikipedia.org/wiki/Codicology
+COS2,en,Communication studies,1,3,"Social-science field examining human and mediated communication processes, messages and effects",1,https://en.wikipedia.org/wiki/Coprology
+CON1,en,Coniology,1,3,Study of atmospheric dust and its effects,1,https://en.wikipedia.org/wiki/Codicology
+COP1,en,Coprology,1,3,Study of faeces,1,https://en.wikipedia.org/wiki/Codicology
+CSC1,en,Cosmochemistry,1,3,Study of the chemical composition of matter in the universe,1,https://en.wikipedia.org/wiki/Cryptography
+CSL1,en,Cosmology,1,3,"Scientific study of the origin, evolution, and eventual fate of the universe",1,https://en.wikipedia.org/wiki/Cryptography
+CRI2,en,Criminology,1,3,Study of crime and criminal actions/behavior,1,https://en.wikipedia.org/wiki/Criminology
+CRY1,en,Cryobiology,1,3,Study of effects of extreme low temperatures on life,1,https://en.wikipedia.org/wiki/Criminology
+CRY2,en,Cryptography,1,3,Practice and study of secure communication techniques,1,https://en.wikipedia.org/wiki/Cryobiology
+CYN1,en,Cynology,1,3,Study of canines or domestic dogs,1,https://en.wikipedia.org/wiki/Cynology
+CYT1,en,Cytology,1,3,"Study of cells in terms of structure, function and chemistry",1,https://en.wikipedia.org/wiki/Cytology
+DAS1,en,Data science,1,3,"Field of study to extract knowledge from data – study of analyzing, processing, interpreting and extracting data.",1,https://en.wikipedia.org/wiki/Data_science
+DEN1,en,Dentistry,1,3,"Medical specialty focused on oral health, diagnosis and treatment of teeth and related structures",1,https://en.wikipedia.org/wiki/Dentistry
+DIA1,en,Dialectology,1,3,Scientific study of linguistic dialect,1,https://en.wikipedia.org/wiki/Dialectology
+DIO1,en,Dioptrics,1,3,Science of light and lenses,1,https://en.wikipedia.org/wiki/Dioptrics
+DYN1,en,Dynamics,1,3,Study of forces and their effect on motion,1,https://en.wikipedia.org/wiki/Dynamics_(mechanics)
+DYS1,en,Dysgenics,1,3,Decrease in genetic traits deemed desirable and study thereof.,1,https://en.wikipedia.org/wiki/Dysgenics
+ECO1,en,Ecology,1,3,Study of organisms and their environment,1,https://en.wikipedia.org/wiki/Economics
+ECO0,en,Economics,0,3,"Social science – study of material wealth (production, distribution, and consumption of goods and services).",1,https://en.wikipedia.org/wiki/Economics
+EDA1,en,Edaphology,1,3,Science concerned with the influence of soils on living beings,1,https://en.wikipedia.org/wiki/Edaphology
+ELE1,en,Electrical Engineering,2,3,"Engineering branch dealing with electricity, electronics and electromagnetism",1,https://en.wikipedia.org/wiki/Electrochemistry
+ELC1,en,Electrochemistry,1,3,Branch of chemistry – study of relations between electricity and chemicals.,1,https://en.wikipedia.org/wiki/Edaphology
+END1,en,Endocrinology,1,3,Branch of medicine pertaining to the endocrine system,1,https://en.wikipedia.org/wiki/Endocrinology
+ENE1,en,Energetics,1,3,study of energy under transformation – study of energy under transformation within various fields.,1,https://en.wikipedia.org/wiki/Energetics_(disambiguation)
+ENS1,en,Engineering studies,1,3,Academic field – study of engineering.,1,https://en.wikipedia.org/wiki/Engineering_studies
+ENT1,en,Entomology,1,3,Scientific study of insects,1,https://en.wikipedia.org/wiki/Entomology
+ENZ1,en,Enzymology,1,3,Large biological molecule that acts as a catalyst – study of enzymes.,1,https://en.wikipedia.org/wiki/Enzymology
+EPI1,en,Epidemiology,1,3,Study of health and disease within a population,1,https://en.wikipedia.org/wiki/Epidemiology
+ETH2,en,Ethology,1,3,Scientific objective study of non-human animal behaviour – study of natural or biological character.,1,https://en.wikipedia.org/wiki/Ethology
+ETY1,en,Etymology,1,3,Study of the origin and evolution of words – study of origins of words.,1,https://en.wikipedia.org/wiki/Etymology
+EVB1,en,Evolutionary biology,1,3,Biological science investigating the origins and diversification of life through evolutionary processes,1,https://en.wikipedia.org/wiki/Evolutionary_biology
+EXO1,en,Exobiology,1,3,Science concerned with life in the universe – study of extraterrestrial life.,1,https://en.wikipedia.org/wiki/Exobiology
+FDY1,en,Fluid dynamics,1,3,Aspects of fluid mechanics involving fluid flow,1,https://en.wikipedia.org/wiki/Fluid_dynamics
+FLM1,en,Fluid mechanics,1,3,"Branch of physics concerned with the mechanics of fluids (liquids, gases, and plasmas) – study of fluids behaviour at rest and in motion.",1,https://en.wikipedia.org/wiki/Fluid_mechanics
+FUT1,en,Futurology,1,3,"Study of postulating possible, probable, and preferable futures",1,https://en.wikipedia.org/wiki/Futurology
+GEM1,en,Gemmology,1,3,Science dealing with natural and artificial gemstone materials – study of gems and jewels,1,https://en.wikipedia.org/wiki/Gemmology
+GES1,en,Gender Studies,1,3,Interdisciplinary field of study – study of gender,1,https://en.wikipedia.org/wiki/Gerontology
+GEN2,en,Genesiology,1,3,study of reproduction and heredity,1,https://en.wikipedia.org/wiki/Gemmology
+GOC1,en,Geochemistry,1,3,Science that applies chemistry to analyze geological systems – study of chemistry of the Earth's crust,1,https://en.wikipedia.org/wiki/Gnotobiology
+GOC2,en,Geochronology,1,3,"Science of determining the age of rocks, sediments and fossils – study of measuring geological time",1,https://en.wikipedia.org/wiki/Gnotobiology
+GOD1,en,Geodesy,1,3,"Earth-science field that measures and models Earth’s shape, gravity field and rotation",1,https://en.wikipedia.org/wiki/Gnotobiology
+GMG1,en,Geomorphogeny,1,3,"study of the characteristics, origins, and development of land forms",1,https://en.wikipedia.org/wiki/Gerontology
+GML1,en,Geomorphology,1,3,Scientific study of landforms – study of landforms and landform evolution,1,https://en.wikipedia.org/wiki/Gerontology
+GOP1,en,Geophysics,1,3,Earth-science discipline applying physical principles to study Earth’s interior and dynamic processes,1,https://en.wikipedia.org/wiki/Gnotobiology
+GOP2,en,Geoponics,1,3,Science of cultivating the earth – study of agriculture,1,https://en.wikipedia.org/wiki/Gnotobiology
+GOT1,en,Geotechnics,1,3,Scientific study of earth materials in engineering problems – study of increasing habitability of the Earth,1,https://en.wikipedia.org/wiki/Gnotobiology
+GER1,en,Gerontology,1,3,"Study of the social, psychological and biological aspects of aging",1,https://en.wikipedia.org/wiki/Gerontology
+GNO1,en,Gnotobiology,1,3,Organism with fully-known microorganisms – study of life in germ-free conditions,1,https://en.wikipedia.org/wiki/Gnotobiology
+GRM1,en,Graminology,1,3,Scientific study of the grasses,1,https://en.wikipedia.org/wiki/Graminology
+GRP1,en,Graphology,1,3,Pseudoscientific analysis of handwriting – study of handwriting,1,https://en.wikipedia.org/wiki/Graphology
+GYN1,en,Gynaecology,1,3,Medical area for women's reproductive health – study of women's physiology,1,https://en.wikipedia.org/wiki/Gynaecology
+HAR1,en,Harmonics,1,3,Science of musical sounds,1,https://en.wikipedia.org/wiki/Harmonics
+HLL1,en,Heliology,1,3,Scientific study of the sun,1,https://en.wikipedia.org/wiki/Hippology
+HLS1,en,Helioseismology,1,3,Study of the structure and dynamics of the Sun through its oscillation,1,https://en.wikipedia.org/wiki/Hippology
+HEP1,en,Hepatology,1,3,"Medical specialty – study of liver, gallbladder, biliary tree, and pancreas",1,https://en.wikipedia.org/wiki/Harmonics
+HER1,en,Heraldry,1,3,"Historical study and design of coats of arms, armorial bearings and related symbolism",1,https://en.wikipedia.org/wiki/Harmonics
+HER2,en,Heredity,1,3,Passing of traits to offspring from the species' parents or ancestor – study of passing of traits from parents to offspring,1,https://en.wikipedia.org/wiki/Heredity
+HER3,en,Herpetology,1,3,Study of amphibians and reptiles,1,https://en.wikipedia.org/wiki/Herpetology
+HIP1,en,Hippology,1,3,Study of horses,1,https://en.wikipedia.org/wiki/Hippology
+HOS1,en,History of science,1,3,"Examination of the development of scientific ideas, practices and institutions through time",1,https://en.wikipedia.org/wiki/History_of_science
+HOT1,en,History of technology,2,3,Investigation of technological innovation and its social impacts across history,1,https://en.wikipedia.org/wiki/Hydrology
+HOR1,en,Horography,1,3,art of constructing sundials or clocks,1,https://en.wikipedia.org/wiki/Hippology
+HOR2,en,Horology,1,3,Art or science of measuring time – science of time measurement,1,https://en.wikipedia.org/wiki/Hippology
+HLO1,en,Hydrology,1,3,"Science of the movement, distribution, and quality of water on Earth – study of water resources",1,https://en.wikipedia.org/wiki/Hippology
+HYG1,en,Hygrometry,1,3,Study of gas-vapor mixtures – science of humidity,1,https://en.wikipedia.org/wiki/Hygrometry
+HYG2,en,Hygroscopy,1,3,Phenomenon of attracting and holding water molecules – study of humidity,1,https://en.wikipedia.org/wiki/Hygroscopy
+ICH1,en,Ichthyology,1,3,Branch of zoology devoted to the study of fish,1,https://en.wikipedia.org/wiki/Ichthyology
+ICO1,en,Iconology,1,3,Method of interpretation in cultural history – study of icons; symbols,1,https://en.wikipedia.org/wiki/Iconology
+IML1,en,Immunology,1,3,Branch of medicine studying the immune system,1,https://en.wikipedia.org/wiki/Immunology
+ITE1,en,Information technology (IT),1,3,Computer-based technology,1,https://en.wikipedia.org/wiki/Information_technology
+KAL1,en,Kalology,1,3,study of beauty,1,https://en.wikipedia.org/wiki/Kalology
+LEX1,en,Lexicology,1,3,Linguistic discipline studying words – study of words and their meanings,1,https://en.wikipedia.org/wiki/Lexicology
+LIM1,en,Limacology,1,3,The study of slugs,1,https://en.wikipedia.org/wiki/Limacology
+LOX1,en,Loxodromy,1,3,study of sailing along rhumb-lines,1,https://en.wikipedia.org/wiki/Limacology
+MAL1,en,Malacology,1,3,Study of molluscs,1,https://en.wikipedia.org/wiki/Malacology
+MAM1,en,Mammalogy,1,3,Study of mammals,1,https://en.wikipedia.org/wiki/Mammalogy
+MEE1,en,Mechanical Engineering,2,3,"Engineering branch concerned with the design, analysis and manufacture of mechanical systems",1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MIM1,en,Medical imaging,1,3,"Use of technologies (e.g. X-ray, MRI) to visualise internal body structures for clinical diagnosis",1,https://en.wikipedia.org/wiki/Melissopalynology
+MEL1,en,Melissopalynology,1,3,The study of pollen contained in honey,1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MLL1,en,Metallogeny,1,3,Study of the genesis and geographic distribution of mineral deposits – study of the origin and distribution of metal deposits,1,https://en.wikipedia.org/wiki/Mineralogy
+MLL2,en,Metallurgy,1,3,Field of science that studies the physical and chemical behavior of metals,1,https://en.wikipedia.org/wiki/Mineralogy
+MSC1,en,Metascience,1,3,Scientific study of science,1,https://en.wikipedia.org/wiki/Morphometrics
+MTR1,en,Meteoritics,1,3,"Scientific study of meteors, meteorites and meteoroids",1,https://en.wikipedia.org/wiki/Museology
+MTR2,en,Meteorology,1,3,Interdisciplinary scientific study of the atmosphere focusing on weather forecasting,1,https://en.wikipedia.org/wiki/Museology
+MTH1,en,Methodology,1,3,Study of research methods,1,https://en.wikipedia.org/wiki/Museology
+MTR3,en,Metrology,1,3,Science of measurement and its application,1,https://en.wikipedia.org/wiki/Museology
+MPH2,en,Microphytology,1,3,study of very small plant life,1,https://en.wikipedia.org/wiki/Morphometrics
+MIN1,en,Mineralogy,1,3,Scientific study of minerals and mineralised artifacts,1,https://en.wikipedia.org/wiki/Mineralogy
+MOB1,en,Molecular biology,1,3,Branch of biology that studies biological systems at the molecular level,1,https://en.wikipedia.org/wiki/Molecular_biology
+MOR2,en,Morphometrics,1,3,Quantitative study of size and shape – study of size and shape,1,https://en.wikipedia.org/wiki/Morphometrics
+MSC2,en,Muscology,1,3,Branch of botany concerned with the study of bryophytes – study of mosses,1,https://en.wikipedia.org/wiki/Muscology
+MSE1,en,Museology,1,3,Study of museums,1,https://en.wikipedia.org/wiki/Museology
+MYC1,en,Mycology,1,3,Branch of biology concerned with the study of fungi,1,https://en.wikipedia.org/wiki/Mycology
+NAN1,en,Nanotechnology,1,3,Technology with features near one nanometer,1,https://en.wikipedia.org/wiki/Nanotechnology
+NAU1,en,Nautics,1,3,study and art of navigation,1,https://en.wikipedia.org/wiki/Nanotechnology
+NEM1,en,Nematology,1,3,Scientific study of roundworms,1,https://en.wikipedia.org/wiki/Nematology
+NRS1,en,Neuroscience,1,3,"Scientific study of the nervous system – study of development, work and structure of nervous system",1,https://en.wikipedia.org/wiki/Nosology
+NOS1,en,Nosology,1,3,Branch of medicine that deals with classification of diseases,1,https://en.wikipedia.org/wiki/Nematology
+NUS1,en,Nutritional Science,1,3,Science of nutrition,1,https://en.wikipedia.org/wiki/Trophology
+OBS1,en,Obstetrics,1,3,Medical specialty concerning pregnancy and childbirth,1,https://en.wikipedia.org/wiki/Obstetrics
+OCE1,en,Oceanography,1,3,"Study of physical, chemical, and biological processes in the ocean",1,https://en.wikipedia.org/wiki/Oceanography
+OEN1,en,Oenology,1,3,Study of wine and winemaking,1,https://en.wikipedia.org/wiki/Oenology
+ONC1,en,Oncology,1,3,"Branch of medicine dealing with, or specializing in, cancer",1,https://en.wikipedia.org/wiki/Oncology
+ONO2,en,Onomasiology,1,3,Branch of linguistics concerned with how to express a given concept – study of nomenclature,1,https://en.wikipedia.org/wiki/Onomasiology
+ONT1,en,Ontology,1,3,Philosophical study of being – science of pure being; the nature of things,1,https://en.wikipedia.org/wiki/Ontology
+OPH1,en,Ophthalmology,1,3,Field of medicine treating eye disorders,1,https://en.wikipedia.org/wiki/Ophthalmology
+OPT2,en,Optometry,1,3,Field of medicine treating eye disorders – science of examining the eyes,1,https://en.wikipedia.org/wiki/Optometry
+ORM1,en,Orbital mechanics,1,3,Field of classical mechanics concerned with the motion of spacecraft,1,https://en.wikipedia.org/wiki/Organology
+ORC2,en,Orchidology,1,3,Scientific study of orchids,1,https://en.wikipedia.org/wiki/Optometry
+ORG1,en,Organology (music),1,3,"Science of musical instruments and their classifications (musicology) – study of musical instruments in relation to history, culture, construction, acoustic properties and classification",1,https://en.wikipedia.org/wiki/Optometry
+ORN1,en,Ornithology,1,3,Study of birds,1,https://en.wikipedia.org/wiki/Ornithology
+ORO1,en,Orology,1,3,Study of mountain environments,1,https://en.wikipedia.org/wiki/Orology
+OTO1,en,Otology,1,3,Branch of medicine for the ear,1,https://en.wikipedia.org/wiki/Otology
+PLN1,en,Palaeontology,1,3,Study of life before the Holocene epoch,1,https://en.wikipedia.org/wiki/Public_health
+PAL1,en,Palynology,1,3,Study of pollen and other acid-resistant microoscopic organic material,1,https://en.wikipedia.org/wiki/Palynology
+PSI1,en,Parasitology,1,3,"Study of parasites, their hosts, and the relationship between them",1,https://en.wikipedia.org/wiki/Public_health
+PAT1,en,Pathology,1,3,Study of disease,1,https://en.wikipedia.org/wiki/Palynology
+PDG1,en,Pedagogy,1,3,"Science and art of teaching, learning processes and educational theory",1,https://en.wikipedia.org/wiki/Pedagogy
+PED1,en,Pediatrics,1,3,study of children's diseases; pediatrics,1,https://en.wikipedia.org/wiki/Pedagogy
+PED2,en,Pedology,1,3,Study of soils in their natural environment,1,https://en.wikipedia.org/wiki/Pedology
+PEL1,en,Pelology,1,3,study of mud,1,https://en.wikipedia.org/wiki/Pedology
+PET1,en,Petrology,1,3,"Branch of geology that studies the formation, composition, distribution and structure of rocks",1,https://en.wikipedia.org/wiki/Petrology
+PHC1,en,Pharmacology,1,3,Science of drugs and medications and their effects,1,https://en.wikipedia.org/wiki/Pharology
+PHA1,en,Pharology,1,3,Scientific study of lighthouses and signal lights,1,https://en.wikipedia.org/wiki/Pharology
+PTB1,en,Photobiology,1,3,Scientific study of light's effect on living organisms,1,https://en.wikipedia.org/wiki/Public_health
+PTN1,en,Photonics,1,3,Technical applications of optics – study of photons,1,https://en.wikipedia.org/wiki/Public_health
+PYC1,en,Phycology,1,3,Branch of biology concerned with the study of algae,1,https://en.wikipedia.org/wiki/Public_health
+PYS2,en,Physiology,1,3,Science regarding functions in organisms or living systems,1,https://en.wikipedia.org/wiki/Pyrography
+PIS1,en,Pisteology,1,3,science or study of faith,1,https://en.wikipedia.org/wiki/Public_health
+PLS1,en,Planetary science,1,3,Science of planets and planetary systems,1,https://en.wikipedia.org/wiki/Public_health
+PNE1,en,Pneumatics,1,3,Use of pressurised gas in mechanical systems – study of mechanics of gases,1,https://en.wikipedia.org/wiki/Public_health
+PNE2,en,Pneumonology,1,3,Study of respiratory diseases,1,https://en.wikipedia.org/wiki/Public_health
+POS2,en,Political science,1,3,Scientific study of politics,1,https://en.wikipedia.org/wiki/Public_health
+PRA1,en,Pragmatics,1,3,Branch of linguistics and semiotics relating context to meaning,1,https://en.wikipedia.org/wiki/Public_health
+PRI1,en,Printmaking,1,3,Artistic process of creating images by transferring ink from a matrix onto another surface,1,https://en.wikipedia.org/wiki/Public_health
+PRO1,en,Protistology,1,3,Scientific discipline devoted to the study of protists – study of protists,1,https://en.wikipedia.org/wiki/Public_health
+PRO2,en,Proxemics,1,3,Study of human use of space and the effects that population density has on behavior,1,https://en.wikipedia.org/wiki/Public_health
+PSE2,en,Pseudoptics,1,3,study of optical illusions,1,https://en.wikipedia.org/wiki/Public_health
+PYG1,en,Psychogenetics,1,3,Study of genetic-environment interactions influencing behaviour – study of internal or mental states,1,https://en.wikipedia.org/wiki/Public_health
+PTE1,en,Pteridology,1,3,Class of vascular plants – study of ferns,1,https://en.wikipedia.org/wiki/Public_health
+PHE2,en,Public health,1,3,"Science and art of preventing disease, prolonging life and promoting health through organised societal efforts",1,https://en.wikipedia.org/wiki/Public_health
+PYG2,en,Pyrography,1,3,Art or decoration made from burn marks – study of woodburning,1,https://en.wikipedia.org/wiki/Pyrography
+PYT1,en,Pyrotechnics,1,3,Science of creating combustibles and explosives for entertainment – study of combustion through fire or explosions,1,https://en.wikipedia.org/wiki/Pyrotechnics
+QCO1,en,Quantum computing,1,3,"Computer hardware technology that uses quantum mechanics – the exploitation of collective properties of quantum states, such as superposition and entanglement, to perform computation.",1,https://en.wikipedia.org/wiki/Quantum_computing
+RAD2,en,Radiobiology,1,3,"Study of effects of radiation on living tissues – study of the scientific principles, mechanisms, and effects of the interaction of ionizing radiation with living matter",1,https://en.wikipedia.org/wiki/Radiobiology
+SCA1,en,Scatology,1,3,Study of faeces – study of excrement or obscene literature,1,https://en.wikipedia.org/wiki/Scatology
+SCI1,en,Sciagraphy,1,3,Study of perspective shadow projection – art of shading,1,https://en.wikipedia.org/wiki/Sciagraphy
+SCO1,en,Science communication,1,3,Study and practice of conveying scientific knowledge to non-expert audiences,1,https://en.wikipedia.org/wiki/Science_communication
+SED1,en,Sedimentology,1,3,Study of natural sediments and their formation processes,1,https://en.wikipedia.org/wiki/Sedimentology
+SEI1,en,Seismology,1,3,Scientific study of earthquakes and propagation of elastic waves through a planet,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SEM2,en,Semasiology,1,3,Branch of linguistics about what words mean,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SEX1,en,Sexology,1,3,Scientific study of human sexuality,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SOS2,en,Social science,1,3,Collective term for disciplines that study society and human relationships,1,https://en.wikipedia.org/wiki/Solid_mechanics
+SCB1,en,Sociobiology,1,3,Subdiscipline of biology regarding social behavior – study of biological basis of human behaviour,1,https://en.wikipedia.org/wiki/Scatology
+SCL2,en,Sociolinguistics,1,3,Study of how society affects language,1,https://en.wikipedia.org/wiki/Sciagraphy
+SOM1,en,Solid mechanics,1,3,Branch of mechanics concerned with solid materials and their behaviors,1,https://en.wikipedia.org/wiki/Solid_mechanics
+SPL1,en,Speleology,1,3,Science of cave and karst systems,1,https://en.wikipedia.org/wiki/Speleology
+SPR2,en,Spermology,1,3,Embryonic plant enclosed in a protective outer covering – study of seeds,1,https://en.wikipedia.org/wiki/Stellar_astronomy
+SAS1,en,Stellar astronomy,1,3,Study of stars and stellar evolution,1,https://en.wikipedia.org/wiki/Radiobiology
+STE2,en,Stemmatics,1,3,Identification of textual variants – study of relationships between text,1,https://en.wikipedia.org/wiki/Splanchnology
+STR1,en,Stratigraphy,1,3,Study of rock layers and their formation,1,https://en.wikipedia.org/wiki/Stomatology
+STY1,en,Stylometry,1,3,Study of writing style – studying literature by means of statistical analysis,1,https://en.wikipedia.org/wiki/Stomatology
+SUC1,en,Supramolecular chemistry,1,3,Branch of chemistry – study of the chemistry of assembled molecular sub-units,1,https://en.wikipedia.org/wiki/Stomatology
+SUR1,en,Surgery,1,3,Medical specialty using operative techniques to treat disease or injury,1,https://en.wikipedia.org/wiki/Somatology
+SYB1,en,Synthetic biology,1,3,"Engineering-oriented branch of biology that designs and builds new biological parts, devices and systems",1,https://en.wikipedia.org/wiki/Somatology
+SYE1,en,Systems engineering,2,3,"Interdisciplinary approach for designing, integrating and managing complex systems over their life cycles",1,https://en.wikipedia.org/wiki/Somatology
+SYS1,en,Systems science,1,3,Study of the nature of systems – study of systems,1,https://en.wikipedia.org/wiki/Symbology
+TEC2,en,Tectonics,1,3,Process of evolution of the Earth's crust,1,https://en.wikipedia.org/wiki/Symbology
+TER1,en,Teratology,1,3,Study of developmental anomalies,1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+TEX1,en,Textology,1,3,Identification of textual variants – study of the production of texts,1,https://en.wikipedia.org/wiki/Teuthology
+THA1,en,Thanatology,1,3,Scientific study of death and its aspects,1,https://en.wikipedia.org/wiki/Teuthology
+THA2,en,Thaumatology,1,3,The study of miracles – study of miracles,1,https://en.wikipedia.org/wiki/Teuthology
+THS1,en,Therapy studies,1,3,"Applied health field investigating therapeutic methods for prevention, rehabilitation and cure",1,https://en.wikipedia.org/wiki/Teuthology
+TEK1,en,Thermokinematics,1,3,study of motion of heat,1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+TEL2,en,Thermology,1,3,thermography used for medical diagnosis – study of heat,1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+TPG1,en,Topography,1,3,Study of the forms of land surfaces,1,https://en.wikipedia.org/wiki/Tonetics
+TOX1,en,Toxicology,1,3,Study of substances harmful to living organisms,1,https://en.wikipedia.org/wiki/Tonetics
+URA1,en,Uranology,1,3,Science of the heavens (historical),1,https://en.wikipedia.org/wiki/Typology
+UPL1,en,Urban planning,1,3,"Discipline that organises and regulates land use, infrastructure and development in urban areas",1,https://en.wikipedia.org/wiki/Typology
+URO1,en,Urogynaecology,1,3,Sub-specialty of urology and gynaecology,1,https://en.wikipedia.org/wiki/Typology
+VME1,en,Veterinary medicine,1,3,Branch of medicine for non-human animals,1,https://en.wikipedia.org/wiki/Typology
+VIR1,en,Virology,1,3,Study of viruses,1,https://en.wikipedia.org/wiki/Typology
+VIT1,en,Vitrics,1,3,"study, art and technology of glassy materials; glassware",1,https://en.wikipedia.org/wiki/Typology
+VOL1,en,Volcanology,1,3,Study of volcanoes,1,https://en.wikipedia.org/wiki/Typology
+XYL1,en,Xylology,1,3,Science of wood,1,https://en.wikipedia.org/wiki/Webology
+ZCH1,en,Zoochemistry,1,3,study of chemistry of animals,1,https://en.wikipedia.org/wiki/Webology
+ZGE1,en,Zoogeography,1,3,Science of the geographic distribution of animal species,1,https://en.wikipedia.org/wiki/Webology
+ZPH1,en,Zoophysics,1,3,Study of physics relating to structure and function of animal organs and bodies.,1,https://en.wikipedia.org/wiki/Webology
+ZPH2,en,Zoophytology,1,3,study of plant-like animals,1,https://en.wikipedia.org/wiki/Webology
+ZTA1,en,Zootaxy,1,3,Scientific classification of animals.,1,https://en.wikipedia.org/wiki/Zoosemiotics
+ZYM1,en,Zymology,1,3,Study of fermentation and its uses,1,https://en.wikipedia.org/wiki/Zoosemiotics
+ZYM2,en,Zymurgy,1,3,Applied chemistry of fermentation processes,1,https://en.wikipedia.org/wiki/Zoosemiotics
+ZYT1,en,Zythology,1,3,Study of beer and beer-brewing.,1,https://en.wikipedia.org/wiki/Zoosemiotics
+ACA3,en,Acarology,1,4,Study of mites and ticks,1,
+ACE1,en,Aceology,1,4,"Systematic study of therapeutic remedies (also called iamatology), covering principles, efficacy and modes of treatment",1,
+AED2,en,Aerodonetics,1,4,Science or study of gliding flight.,1,https://en.wikipedia.org/wiki/Aerodynamics
+AEN1,en,Aeronautics,1,4,"Science involved with the study, design, and manufacturing of airflight-capable machines",1,https://en.wikipedia.org/wiki/Aerodynamics
+AGC1,en,Agricultural chemistry,1,4,Agricultural sub-discipline of applied chemistry – study of influence in chemical processes in plants.,1,https://en.wikipedia.org/wiki/Aesthetics
+AGE1,en,Agroecology,1,4,Study of ecological processes in agriculture,1,https://en.wikipedia.org/wiki/Aesthetics
+AGN3,en,Agronomics,1,4,"Branch of economics about distribution, management, and productivity of land.",1,https://en.wikipedia.org/wiki/Agnoiology
+ALG2,en,Algedonics,1,4,"Psychophysiological study of pleasure and pain, including the neural circuits and subjective experiences that underlie both",1,https://en.wikipedia.org/wiki/Algebra
+ALL1,en,Allergology,1,4,Study of the causes and treatment of allergies - study of causes and treatment of allergies,1,https://en.wikipedia.org/wiki/Algebra
+ANA2,en,Anaesthesiology,1,4,Medical specialty concerned with anesthesia and perioperative care,1,https://en.wikipedia.org/wiki/Algebra
+AND2,en,Andragogy,1,4,Methods and principles in adult education,1,https://en.wikipedia.org/wiki/Algebra
+ANE1,en,Anemology,1,4,Study of winds – study of wind.,1,https://en.wikipedia.org/wiki/Algebra
+ANT1,en,Anthropology,1,4,"Scientific study of humans, human behavior, and societies – study of human cultures.",1,https://en.wikipedia.org/wiki/Algebra
+AEC1,en,Aquatic ecology,1,4,The study of interactions between organisms and the environment in water,1,https://en.wikipedia.org/wiki/Actinobiology
+ARO1,en,Archology,1,4,study of the nature of government – science of the origins of government.,1,https://en.wikipedia.org/wiki/Art_history
+ARE2,en,Areology,1,4,"Scientific study of the surface, crust, and interior of the planet Mars",1,https://en.wikipedia.org/wiki/Art_history
+ARO2,en,Aromachology,1,4,Study of the influence of odors on human behavior,1,https://en.wikipedia.org/wiki/Art_history
+AST3,en,Astheniology,1,4,Physical symptom – study of diseases of weakening and aging.,1,https://en.wikipedia.org/wiki/Astronomy
+ASB2,en,Astrobotany,1,4,Study of plants grown in spacecraft,1,https://en.wikipedia.org/wiki/Art_history
+ASN2,en,Astronautics,1,4,Theory and practice of navigation beyond the Earth's atmosphere,1,https://en.wikipedia.org/wiki/Astronomy
+AUT3,en,Autecology,1,4,Study of interactions of individual organisms with the environment,1,https://en.wikipedia.org/wiki/Automata_theory
+BAL1,en,Ballistics,1,4,Science of the motion of projectiles,1,https://en.wikipedia.org/wiki/Automata_theory
+BAL2,en,Balneology,1,4,Method of treating diseases by bathing – science of the therapeutic use of baths.,1,https://en.wikipedia.org/wiki/Automata_theory
+BAR2,en,Barodynamics,1,4,science of the support and mechanics of heavy structures,1,https://en.wikipedia.org/wiki/Automata_theory
+BAT2,en,Bathymetry,1,4,Study of underwater depth of lake or ocean floors,1,https://en.wikipedia.org/wiki/Automata_theory
+BAT3,en,Batrachology,1,4,Branch of herpetology that studies amphibians,1,https://en.wikipedia.org/wiki/Automata_theory
+BNR1,en,Behavioral neuroscience,1,4,Study of biological and neural mechanisma in behaviour,1,https://en.wikipedia.org/wiki/Automata_theory
+BOE1,en,Bioecology,1,4,Study of interrelations of plants and animals with their environment,1,https://en.wikipedia.org/wiki/Biochemistry
+BOM2,en,Biomechanics,1,4,Study of the mechanics of biological systems,1,https://en.wikipedia.org/wiki/Biochemistry
+BON1,en,Bionomics (economics),1,4,"Less commonly, the application of biological analogies to economic systems—state which sense is intended",1,https://en.wikipedia.org/wiki/Biochemistry
+BOP2,en,Biopsychology,1,4,Study of biological and neural mechanisma in behaviour – application of the science of biology to the study of psychology.,1,https://en.wikipedia.org/wiki/Biophysics
+BOT2,en,Biotribology,1,4,"Study of friction, wear and lubrication in biological systems – study of friction, wear and lubrication of biological systems.",1,https://en.wikipedia.org/wiki/Botany
+BRY1,en,Bryology,1,4,Branch of botany concerned with the study of bryophytes – study of mosses and liverworts.,1,https://en.wikipedia.org/wiki/Botany
+BUS1,en,Business studies,1,4,"Applied social-science field analysing how organisations create value, manage resources and interact with markets",1,https://en.wikipedia.org/wiki/Botany
+CAL2,en,Caliology,1,4,Place where a bird broods its eggs – study of bird's nests.,1,https://en.wikipedia.org/wiki/Botany
+CAM1,en,Cambistry,1,4,science of international exchange.,1,https://en.wikipedia.org/wiki/Botany
+CAM2,en,Campanology,1,4,Scientific and musical study of bells,1,https://en.wikipedia.org/wiki/Botany
+CRL1,en,Cardiology,1,4,Branch of medicine dealing with the heart,1,https://en.wikipedia.org/wiki/Criminology
+CAT2,en,Catallactics,1,4,Theory about the free market system in economies – science of commercial exchange.,1,https://en.wikipedia.org/wiki/Botany
+CAT3,en,Catechectics,1,4,art of teaching by question and answer.,1,https://en.wikipedia.org/wiki/Botany
+CET1,en,Cetology,1,4,"The study of whales, dolphins, porpoises, and other cetaceans – study of whales and dolphins.",1,https://en.wikipedia.org/wiki/Botany
+CHI2,en,Chiropody,1,4,Medicine branch focusing on the human lower extremities,1,https://en.wikipedia.org/wiki/Chaology
+CHO2,en,Chorology (biogeography),1,4,Study of the spatial distribution patterns of organisms and the environmental factors shaping those patterns – an early synonym of biogeography,1,https://en.wikipedia.org/wiki/Chaology
+CHR3,en,Chrematistics,1,4,Economics theory studying money – study of wealth; political economy.,1,https://en.wikipedia.org/wiki/Colorimetry
+CRB1,en,Chronobiology,1,4,Study of rhythms in biological processes of living organisms – study of biological rhythms.,1,https://en.wikipedia.org/wiki/Coprology
+CIV1,en,Civics,1,4,study of the civil and political rights and obligations of citizens in a society.,1,https://en.wikipedia.org/wiki/Civil_engineering
+CLI3,en,Clinology,1,4,study of aging or individual decline after maturity.,1,https://en.wikipedia.org/wiki/Climatology
+CGS1,en,Cognitive science,1,4,Interdisciplinary scientific study of cognitive processes,1,https://en.wikipedia.org/wiki/Botany
+COL1,en,Coleopterology,1,4,Branch of entomology studying beetles,1,https://en.wikipedia.org/wiki/Codicology
+COM1,en,Cometology,1,4,study of comets.,1,https://en.wikipedia.org/wiki/Codicology
+CON2,en,Conchology,1,4,Study of mollusc shells,1,https://en.wikipedia.org/wiki/Codicology
+CON3,en,Connectomics,1,4,Study of mapping wiring diagrams,1,https://en.wikipedia.org/wiki/Codicology
+COM2,en,Contact mechanics,1,4,Study of the deformation of solids that touch each other,1,https://en.wikipedia.org/wiki/Codicology
+CTE1,en,Ctetology,1,4,study of the inheritance of acquired characteristics.,1,https://en.wikipedia.org/wiki/Cryptography
+CUS2,en,Curriculum studies,7,4,concentration in the different types of curriculum and instruction concerned with understanding curricula as an active force influenced by human educational experiences.,1,https://en.wikipedia.org/wiki/Cryptography
+CYB1,en,Cybernetics,1,4,Transdisciplinary field concerned with regulatory and purposive systems,1,https://en.wikipedia.org/wiki/Cryptography
+CYC1,en,Cyclonology,1,4,"study of tropical cyclones, e.g. hurricanes.",1,https://en.wikipedia.org/wiki/Cryptography
+DAC1,en,Dactyliology,1,4,study of finger rings.,1,https://en.wikipedia.org/wiki/Cytology
+DAC2,en,Dactylography,1,4,Scientific study of fingerprints,1,https://en.wikipedia.org/wiki/Cytology
+DAC3,en,Dactylology,1,4,Form of communication using one or both hands – study of sign language.,1,https://en.wikipedia.org/wiki/Cytology
+DEM1,en,Demography,1,4,"Science that deals with populations and their structures, statistically and theoretically",1,https://en.wikipedia.org/wiki/Data_science
+DEN2,en,Dendrochronology,1,4,Method of dating based on the analysis of patterns of tree rings,1,https://en.wikipedia.org/wiki/Dentistry
+DEN3,en,Dendrology,1,4,Science and study of woody plants,1,https://en.wikipedia.org/wiki/Dentistry
+DER1,en,Dermatoglyphics,1,4,Scientific study of finger- and toeprints,1,https://en.wikipedia.org/wiki/Dentistry
+DER2,en,Dermatology,1,4,"Field of medicine dealing with the hair, nails, skin, and its diseases",1,https://en.wikipedia.org/wiki/Dentistry
+DES1,en,Desmology,1,4,Study of ligaments,1,https://en.wikipedia.org/wiki/Dentistry
+DMT1,en,Didactic method,7,4,"theory of teaching, and in a wider sense, a theory and practical application of teaching and learning. In demarcation from ""mathetics"" (the science of learning), didactics refers only to the science of teaching.",1,https://en.wikipedia.org/wiki/Dioptrics
+DIE1,en,Dietetics,1,4,Study of diet and nutrition in relation to health and disease,1,https://en.wikipedia.org/wiki/Dialectology
+DIP1,en,Diplomatics,1,4,Academic study of the protocols of documents – science of deciphering ancient writings and texts.,1,https://en.wikipedia.org/wiki/Dioptrics
+DOS1,en,Dosiology,1,4,study of dosage of drugs.,1,https://en.wikipedia.org/wiki/Dioptrics
+ECC1,en,Eccrinology,1,4,Sweat gland distributed almost all over the human body – study of excretion.,1,https://en.wikipedia.org/wiki/Dysgenics
+EKI1,en,Ekistics,1,4,Science of human settlements,1,https://en.wikipedia.org/wiki/Edaphology
+ELD1,en,Electrodynamics,1,4,"Fundamental interaction between charged particles – study of the effects arising from the interactions of electric currents with magnets, with other currents, or with themselves.",1,https://en.wikipedia.org/wiki/Edaphology
+ELH1,en,Electrohydrodynamics,1,4,Study of electrically conducting fluids in the presence of electric fields – the study of dynamics of electrically charged fluids.,1,https://en.wikipedia.org/wiki/Electrochemistry
+ELM1,en,Electromagnetism,1,4,Fundamental interaction between charged particles – study of electromagnetic force.,1,https://en.wikipedia.org/wiki/Electrochemistry
+ELS1,en,Electrostatics,1,4,Study of stationary or slow-moving electric charges – study of static electricity.,1,https://en.wikipedia.org/wiki/Electrochemistry
+EMM1,en,Emmenology,1,4,study of menstruation.,1,https://en.wikipedia.org/wiki/Electrochemistry
+END2,en,Endemiology,1,4,study of local diseases.,1,https://en.wikipedia.org/wiki/Endocrinology
+ENT2,en,Entozoology,1,4,study of parasites that live inside larger organisms.,1,https://en.wikipedia.org/wiki/Entomology
+ENS2,en,Environmental science,1,4,"study of the environment, and the solution of environmental problems.",1,https://en.wikipedia.org/wiki/Engineering_studies
+EPH1,en,Ephebiatrics,1,4,Medical subspecialty for adolescents – branch of medicine dealing with adolescence.,1,https://en.wikipedia.org/wiki/Enzymology
+ERE1,en,Eremology,1,4,study of deserts.,1,https://en.wikipedia.org/wiki/Epidemiology
+ESC1,en,Escapology,1,4,Practice of escaping from restraints – study of freeing oneself from constraints.,1,https://en.wikipedia.org/wiki/Epidemiology
+ETH3,en,Ethonomics,1,4,"Personal value, basis for ethical action – study of economic and ethical principles of a society.",1,https://en.wikipedia.org/wiki/Ethology
+ETI1,en,Etiology,1,4,"Study of causation, or origination",1,https://en.wikipedia.org/wiki/Ethology
+EUT1,en,Euthenics,1,4,Study of improving living conditions to increase well-being – science concerned with improving living conditions.,1,https://en.wikipedia.org/wiki/Etymology
+EXO2,en,Exoplanetology,1,4,study of exoplanets.,1,https://en.wikipedia.org/wiki/Exobiology
+FEL1,en,Felinology,1,4,Study of cats – study of felines.,1,https://en.wikipedia.org/wiki/Fluid_dynamics
+FLU1,en,Fluviology,1,4,study of watercourses.,1,https://en.wikipedia.org/wiki/Fluid_mechanics
+FOR1,en,Forestry,1,4,"Science and craft of managing woodlands – study of the creation, management, use, conservation, and repair of forests and associated resources.",1,https://en.wikipedia.org/wiki/Fluid_mechanics
+FRM1,en,Fracture mechanics,1,4,Study of propagation of cracks in materials,1,https://en.wikipedia.org/wiki/Fluid_mechanics
+GAS1,en,Gastroenterology,1,4,Branch of medicine focused on the digestive system and its disorders,1,https://en.wikipedia.org/wiki/Futurology
+GER2,en,Gerocomy,1,4,study of old age,1,https://en.wikipedia.org/wiki/Gerontology
+GLA1,en,Glaciology,1,4,Scientific study of ice and natural phenomena involving ice,1,https://en.wikipedia.org/wiki/Gerontology
+GNO2,en,Gnomonics,1,4,science that studies sundials – the art of measuring time using sundials,1,https://en.wikipedia.org/wiki/Gnotobiology
+GRP2,en,Graphemics,1,4,Study of graphemes and writing systems – study of systems of representing speech in writing,1,https://en.wikipedia.org/wiki/Graphology
+GRO1,en,Gromatics,1,4,Ancient Roman land surveyors – science of surveying,1,https://en.wikipedia.org/wiki/Graminology
+GYR1,en,Gyrostatics,1,4,study of rotating bodies,1,https://en.wikipedia.org/wiki/Gynaecology
+HAE1,en,Haemataulics,1,4,study of movement of blood through blood vessels,1,https://en.wikipedia.org/wiki/Gynaecology
+HAL1,en,Halieutics,1,4,study of fishing,1,https://en.wikipedia.org/wiki/Gynaecology
+HEL1,en,Helminthology,1,4,Study of parasitic worms (helminths),1,https://en.wikipedia.org/wiki/Harmonics
+HEM1,en,Hematology,1,4,Study of blood and blood diseases,1,https://en.wikipedia.org/wiki/Harmonics
+HEM2,en,Hemodynamics,1,4,Dynamics of blood flow – study of the dynamics behind blood circulation,1,https://en.wikipedia.org/wiki/Harmonics
+HRO1,en,Hermeology,1,4,study of Mercury,1,https://en.wikipedia.org/wiki/Hydrology
+HIP2,en,Hippiatrics,1,4,study of diseases of horses,1,https://en.wikipedia.org/wiki/Hippology
+HSL1,en,Histology,1,4,Study of the microscopic anatomy of cells and tissues of plants and animals,1,https://en.wikipedia.org/wiki/Hydrology
+HEC1,en,Home economics,1,4,Study of household management,1,https://en.wikipedia.org/wiki/Harmonics
+HOR3,en,Horticulture,1,4,Small-scale cultivation of plants – study of gardening,1,https://en.wikipedia.org/wiki/Hippology
+HYD1,en,Hydraulics,1,4,"Applied engineering involving liquids – study of application of engineering, chemistry and other fields of science involving the use of liquids",1,https://en.wikipedia.org/wiki/Hydrology
+HBI1,en,Hydrobiology,1,4,Science of life and life processes in water – study of aquatic organisms,1,https://en.wikipedia.org/wiki/Harmonics
+HDY1,en,Hydrodynamics,1,4,Study of liquids in motion,1,https://en.wikipedia.org/wiki/Harmonics
+HGE1,en,Hydrogeology,1,4,Study of the distribution and movement of groundwater,1,https://en.wikipedia.org/wiki/Herpetology
+HGR1,en,Hydrography,1,4,Measurement of bodies of water,1,https://en.wikipedia.org/wiki/Herpetology
+HKI1,en,Hydrokinetics,1,4,study of motion of fluids,1,https://en.wikipedia.org/wiki/Hippology
+HME1,en,Hydrometeorology,1,4,Branch of meteorology and hydrology – study of atmospheric moisture,1,https://en.wikipedia.org/wiki/Hippology
+HST1,en,Hydrostatics,1,4,Branch of fluid mechanics that studies fluids at rest,1,https://en.wikipedia.org/wiki/Hydrology
+HYE1,en,Hyetology,1,4,science of rainfall,1,https://en.wikipedia.org/wiki/Hydrology
+HYG3,en,Hygienics,1,4,Practices performed to preserve health – study of sanitation; health,1,https://en.wikipedia.org/wiki/Hygroscopy
+HYP1,en,Hypnology,1,4,Study of sleep and hypnotic phenomena – study of sleep; study of hypnosis.,1,https://en.wikipedia.org/wiki/Hygroscopy
+HYP2,en,Hypsography,1,4,Measurement of the elevation and depth of features on Earth's surface relative to mean sea level. – science of measuring heights,1,https://en.wikipedia.org/wiki/Hygroscopy
+ICH2,en,Ichnography,1,4,Architectural diagram showing interior layout of a building – art of drawing ground plans; a ground plan,1,https://en.wikipedia.org/wiki/Ichthyology
+ICH3,en,Ichnology,1,4,Study of trace fossils,1,https://en.wikipedia.org/wiki/Ichthyology
+IDE2,en,Ideology,1,4,Set of beliefs or values – science of ideas; system of ideas used to justify behaviour,1,https://en.wikipedia.org/wiki/Iconology
+IMC1,en,Immunochemistry,1,4,Study of the chemistry of the immune system.,1,https://en.wikipedia.org/wiki/Iconology
+IMG1,en,Immunogenetics,1,4,Branch of medical genetics that studies genetic interactions related to the immune system – study of genetic characteristics of immunity,1,https://en.wikipedia.org/wiki/Iconology
+IMP1,en,Immunopathology,1,4,Branch of medicine that deals with immune responses associated with disease,1,https://en.wikipedia.org/wiki/Immunology
+IRE1,en,International relations,1,4,"Social-science field analysing political, economic and legal interactions among states and other actors",1,https://en.wikipedia.org/wiki/Immunology
+KAR1,en,Karstology,1,4,Scientific study of the various aspects of karst regions,1,https://en.wikipedia.org/wiki/Kalology
+KAR2,en,Karyology,1,4,Photographic display of total chromosome complement in a cell – study of cell nuclei,1,https://en.wikipedia.org/wiki/Kalology
+KYM1,en,Kymatology,1,4,"Branch of physics concerned with the mechanics of fluids (liquids, gases, and plasmas) – study of wave motion",1,https://en.wikipedia.org/wiki/Kalology
+LAR1,en,Laryngology,1,4,Medical specialty that deals with the larynx,1,https://en.wikipedia.org/wiki/Kalology
+LEP1,en,Lepidopterology,1,4,Branch of entomology that studies moths and butterflies,1,https://en.wikipedia.org/wiki/Kalology
+LEP2,en,Leprology,1,4,The study of leprosy and its treatment,1,https://en.wikipedia.org/wiki/Kalology
+LIC1,en,Lichenology,1,4,Branch of mycology that studies lichens,1,https://en.wikipedia.org/wiki/Lexicology
+LML1,en,Limnology,1,4,Science of inland aquatic ecosystems,1,https://en.wikipedia.org/wiki/Limacology
+LOI1,en,Loimology,1,4,study of plagues and epidemics,1,https://en.wikipedia.org/wiki/Limacology
+MAC1,en,Macroeconomics,1,4,"Study of an economy as a whole – branch of economics dealing with the performance, structure, behavior, and decision-making of the whole economy",1,https://en.wikipedia.org/wiki/Limacology
+MAL2,en,Malariology,1,4,"Study of the mosquito borne disease, malaria",1,https://en.wikipedia.org/wiki/Malacology
+MAB1,en,Marine biology,1,4,Scientific study of organisms that live in the ocean – study of the ocean's ecosystem,1,https://en.wikipedia.org/wiki/Limacology
+MEC2,en,Meconology,1,4,study of or treatise concerning opium,1,https://en.wikipedia.org/wiki/Mammalogy
+MES1,en,Media studies,1,4,Field of study that deals with media,1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MEL2,en,Melittology,1,4,Scientific study of bees,1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MLL3,en,Metallography,1,4,Study of metals using microscopy – study of the structure and constitution of metals,1,https://en.wikipedia.org/wiki/Mineralogy
+MPO1,en,Metapolitics,1,4,Political discourse about politics itself – study of politics in theory or abstract,1,https://en.wikipedia.org/wiki/Morphometrics
+MTH2,en,Methyology,1,4,study of alcohol,1,https://en.wikipedia.org/wiki/Museology
+MEC3,en,Microbial ecology,1,4,Study of the relationship of microorganisms with their environment,1,https://en.wikipedia.org/wiki/Mammalogy
+MCL1,en,Microclimatology,1,4,Local set of atmospheric conditions that differ significantly from the surrounding area – study of local climates,1,https://en.wikipedia.org/wiki/Mammalogy
+MEC4,en,Microeconomics,1,4,Behavior of individuals and firms – branch of economics that studies the behavior of individual households and firms in making decisions on the allocation of limited resources,1,https://en.wikipedia.org/wiki/Mammalogy
+MLO1,en,Micrology,1,4,study or discussion of trivialities,1,https://en.wikipedia.org/wiki/Mineralogy
+MPA1,en,Micropalaeontology,1,4,Branch of paleontology that studies microfossils,1,https://en.wikipedia.org/wiki/Morphometrics
+MIS1,en,Military science,1,4,"Systematic study of military organisation, strategy, tactics and logistics",1,https://en.wikipedia.org/wiki/Mineralogy
+MOL1,en,Molinology,2,4,Study of devices which use energy for mechanical purposes,1,https://en.wikipedia.org/wiki/Molecular_biology
+MYO1,en,Myology,1,4,Study of the muscular system – study of muscles,1,https://en.wikipedia.org/wiki/Mycology
+MYR1,en,Myrmecology,1,4,Study of ants,1,https://en.wikipedia.org/wiki/Mycology
+NAO1,en,Naology,1,4,study of church or temple architecture,1,https://en.wikipedia.org/wiki/Nanotechnology
+NEC1,en,Necroplanetology,1,4,Study of the process of planetary destruction – study of the destruction of planets,1,https://en.wikipedia.org/wiki/Nanotechnology
+NEO1,en,Neonatology,1,4,"Medical care of newborns, especially the ill or premature",1,https://en.wikipedia.org/wiki/Nematology
+NEO2,en,Neossology,1,4,study of nestling birds,1,https://en.wikipedia.org/wiki/Nematology
+NEP1,en,Nephology,1,4,Scientific study of clouds,1,https://en.wikipedia.org/wiki/Nematology
+NEP2,en,Nephrology,1,4,Medical study concerned with the kidneys,1,https://en.wikipedia.org/wiki/Nematology
+NRB1,en,Neurobiology,1,4,Scientific study of the nervous system,1,https://en.wikipedia.org/wiki/Nematology
+NRE1,en,Neuroeconomics,1,4,Interdisciplinary field – study of human decision making and the ability to process multiple alternatives and to choose an optimal course of action,1,https://en.wikipedia.org/wiki/Nematology
+NRL1,en,Neurology,1,4,Medical specialty dealing with disorders of the nervous system,1,https://en.wikipedia.org/wiki/Nematology
+NRP1,en,Neuropsychology,1,4,Study of the brain related to specific psychological processes and behaviors,1,https://en.wikipedia.org/wiki/Nematology
+NEU2,en,Neurypnology,1,4,study of hypnotism,1,https://en.wikipedia.org/wiki/Nematology
+NOM1,en,Nomology,1,4,Science of laws in philosophy,1,https://en.wikipedia.org/wiki/Nematology
+NOS2,en,Nostology,1,4,study of senility,1,https://en.wikipedia.org/wiki/Nematology
+NOT1,en,Notaphily,1,4,Study of paper currency – study and collecting of bank-notes and cheques,1,https://en.wikipedia.org/wiki/Nematology
+NUM1,en,Numismatics,1,4,"Study of currencies, coins and paper money",1,https://en.wikipedia.org/wiki/Nosology
+NYM1,en,Nymphology,1,4,study of nymphs,1,https://en.wikipedia.org/wiki/Trophology
+OHE1,en,Occupational health,1,4,Field dedicated to protecting and promoting health and safety in the workplace,1,https://en.wikipedia.org/wiki/Oenology
+ODO1,en,Odonatology,1,4,Study of dragonflies and damselflies,1,https://en.wikipedia.org/wiki/Oceanography
+ODO2,en,Odontology,1,4,Scientific study of teeth,1,https://en.wikipedia.org/wiki/Oceanography
+OLF1,en,Olfactology,1,4,study of the sense of smell,1,https://en.wikipedia.org/wiki/Oenology
+OMB1,en,Ombrology,1,4,study of rain,1,https://en.wikipedia.org/wiki/Oenology
+ONE1,en,Oneirology,1,4,Scientific study of dreams,1,https://en.wikipedia.org/wiki/Oncology
+OOL1,en,Oology,1,4,"Branch of ornithology studying bird eggs, nests and breeding behavior",1,https://en.wikipedia.org/wiki/Ontology
+OPH2,en,Ophiology,1,4,Branch of herpetology that studies snakes,1,https://en.wikipedia.org/wiki/Ophthalmology
+ORG2,en,Organology (biology),1,4,"Collection of tissues with similar functions (biology) – study of form, structure, development, and functions of plant or animal organs",1,https://en.wikipedia.org/wiki/Optometry
+ORT1,en,Orthopterology,1,4,Study of grasshoppers and related insects,1,https://en.wikipedia.org/wiki/Orology
+ORY1,en,Oryctology,1,4,mineralogy or paleontology,1,https://en.wikipedia.org/wiki/Orology
+OSM1,en,Osmics,1,4,scientific study of smells,1,https://en.wikipedia.org/wiki/Orology
+OST1,en,Osteology,1,4,Scientific study of bones,1,https://en.wikipedia.org/wiki/Orology
+OTO2,en,Otorhinolaryngology,1,4,Medical specialty of the head and neck,1,https://en.wikipedia.org/wiki/Otology
+PAE1,en,Paedology,1,4,Study of children's behavior and development,1,https://en.wikipedia.org/wiki/Otology
+PME1,en,Pain Medicine,1,4,"aspect of medicine and health care involving relief of pain (pain relief, analgesia, pain control) in various dimensions, from acute and simple to chronic and challenging",1,https://en.wikipedia.org/wiki/Public_health
+PLB1,en,Palaeobiology,1,4,Study of organic evolution using fossils,1,https://en.wikipedia.org/wiki/Public_health
+PLC1,en,Palaeoclimatology,1,4,Study of changes in ancient climate,1,https://en.wikipedia.org/wiki/Public_health
+PLI1,en,Palaeoichthyology,1,4,study of ancient fish,1,https://en.wikipedia.org/wiki/Public_health
+PLP1,en,Palaeopedology,1,4,Discipline studying soils of the past eras,1,https://en.wikipedia.org/wiki/Public_health
+PLB2,en,Paleobotany,1,4,Study of organic evolution of plants based on fossils,1,https://en.wikipedia.org/wiki/Public_health
+PLS2,en,Paleoseismology,1,4,Study of earthquakes that happened in the past,1,https://en.wikipedia.org/wiki/Public_health
+PAP1,en,Papyrology,1,4,Scientific study of ancient manuscripts,1,https://en.wikipedia.org/wiki/Palynology
+PPS1,en,Parapsychology,1,4,Study of paranormal and psychic phenomena,1,https://en.wikipedia.org/wiki/Public_health
+PDG2,en,Pedagogics,1,4,Theory and practice of education,1,https://en.wikipedia.org/wiki/Pedagogy
+PEN1,en,Penology,1,4,Subfield of criminology – study of crime and punishment,1,https://en.wikipedia.org/wiki/Pedology
+PER1,en,Periodontics,1,4,Field of dentistry,1,https://en.wikipedia.org/wiki/Pedology
+PES1,en,Pestology,1,4,Scientific study of insects – science of pests,1,https://en.wikipedia.org/wiki/Pedology
+PHC2,en,Pharmacognosy,1,4,Study of drugs obtained from natural sources,1,https://en.wikipedia.org/wiki/Pharology
+PHA2,en,Pharyngology,1,4,study of the throat,1,https://en.wikipedia.org/wiki/Pharology
+PHE3,en,Phenology,1,4,Study of periodic events in biological life cycles,1,https://en.wikipedia.org/wiki/Public_health
+PNE3,en,Phonetics,1,4,Study of how humans produce and perceive sounds,1,https://en.wikipedia.org/wiki/Public_health
+PYG3,en,Phylogenetics,1,4,Study of evolutionary relationships between organisms,1,https://en.wikipedia.org/wiki/Pyrography
+PLU1,en,Plumology,1,4,Study of feathers,1,https://en.wikipedia.org/wiki/Public_health
+PLU2,en,Plutology,1,4,political economy; study of wealth,1,https://en.wikipedia.org/wiki/Public_health
+POD1,en,Podology,1,4,Medicine branch focusing on the human lower extremities,1,https://en.wikipedia.org/wiki/Public_health
+POG1,en,Pogonology,1,4,Hair that grows on the lower part of the face – study of beards,1,https://en.wikipedia.org/wiki/Public_health
+POM1,en,Pomology,1,4,Study of fruits and their cultivation,1,https://en.wikipedia.org/wiki/Public_health
+POS3,en,Posology,1,4,Study of dosage of medicines,1,https://en.wikipedia.org/wiki/Public_health
+POT1,en,Potamology,1,4,Study of rivers,1,https://en.wikipedia.org/wiki/Public_health
+PRA2,en,Praxeology,1,4,Theory of human action,1,https://en.wikipedia.org/wiki/Public_health
+PRO3,en,Proctology,1,4,"Study of the structure and diseases of the anus, rectum, and sigmoid colon",1,https://en.wikipedia.org/wiki/Public_health
+PSE3,en,Psephology,1,4,Quantitative scientific analysis of elections and balloting (within political science) – study of election results and voting trends,1,https://en.wikipedia.org/wiki/Public_health
+PYB1,en,Psychobiology,1,4,Neuroscience of behaviour,1,https://en.wikipedia.org/wiki/Public_health
+PYL2,en,Psycholinguistics,1,4,Study of relations between psychology and language,1,https://en.wikipedia.org/wiki/Pyrography
+PYP1,en,Psychopathology,1,4,Scientific study of mental disorders,1,https://en.wikipedia.org/wiki/Pyrography
+PYP2,en,Psychophysics,1,4,Branch of knowledge relating physical stimuli and psychological perception,1,https://en.wikipedia.org/wiki/Pyrography
+PTE2,en,Pterylology,1,4,study of distribution of feathers on birds,1,https://en.wikipedia.org/wiki/Public_health
+PYR1,en,Pyretology,1,4,study of fevers,1,https://en.wikipedia.org/wiki/Pyrography
+PYR2,en,Pyrgology,1,4,study of towers,1,https://en.wikipedia.org/wiki/Pyrography
+QUT1,en,Queer theory,1,4,Field of critical theory – study of issues related to sexual orientation and gender identity,1,https://en.wikipedia.org/wiki/Quantum_computing
+QUI1,en,Quinology,1,4,study of quinine.,1,https://en.wikipedia.org/wiki/Quantum_computing
+RAD3,en,Radiology,1,4,Medical specialty for imaging procedures,1,https://en.wikipedia.org/wiki/Radiobiology
+RHE1,en,Rheology,1,4,"Study of the flow of matter, primarily in a fluid state",1,https://en.wikipedia.org/wiki/Radiobiology
+RHE2,en,Rheumatology,1,4,Medical speciality of inflammatory diseases,1,https://en.wikipedia.org/wiki/Radiobiology
+RHI1,en,Rhinology,1,4,Study of the nose and sinuses,1,https://en.wikipedia.org/wiki/Radiobiology
+ROB1,en,Robotics,1,4,"Design, construction, use, and application of robots",1,https://en.wikipedia.org/wiki/Radiobiology
+RUN1,en,Runology,1,4,Study of Runic alphabets,1,https://en.wikipedia.org/wiki/Radiobiology
+SAR1,en,Sarcology,1,4,study of fleshy parts of the body,1,https://en.wikipedia.org/wiki/Radiobiology
+SCR1,en,Scripophily,1,4,Study and collection of stock and bond certificates,1,https://en.wikipedia.org/wiki/Science_communication
+SEL1,en,Selenodesy,1,4,Study of the surface and shape of the Moon,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SEL2,en,Selenology,1,4,Structure and composition of the Moon – study of the Moon,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SEM3,en,Semiotics,1,4,Study of signs and sign processes,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SER1,en,Serology,1,4,Scientific study of serum and other bodily fluids,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SID1,en,Siderology,1,4,"study of iron and its alloys, including steel",1,https://en.wikipedia.org/wiki/Sociolinguistics
+SIN2,en,Sindonology,1,4,Scientific analysis of the Shroud.of Turin,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SIT1,en,Sitology,1,4,Expert in nutrition and malnutrition – dietetics,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SHL1,en,Snow hydrology,1,4,Field of snow science concerning its composition and dispersion,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SCE1,en,Socioeconomics,1,4,Branch of sociology – study of the relationship between economy and society,1,https://en.wikipedia.org/wiki/Scatology
+SPH1,en,Sphagnology,1,4,study of peat moss,1,https://en.wikipedia.org/wiki/Solid_mechanics
+SPH2,en,Sphygmology,1,4,Study of the pulse,1,https://en.wikipedia.org/wiki/Solid_mechanics
+SPL2,en,Splanchnology,1,4,Study of the visceral organs,1,https://en.wikipedia.org/wiki/Speleology
+STA3,en,Stasiology,1,4,study of political parties,1,https://en.wikipedia.org/wiki/Stellar_astronomy
+STM1,en,Stomatology,1,4,Study of oral medicine – study of the mouth,1,https://en.wikipedia.org/wiki/Stomatology
+SUI1,en,Suicidology,1,4,Scientific study of suicide and self-destructive behaviors,1,https://en.wikipedia.org/wiki/Somatology
+SYM1,en,Symptomatology,1,4,"Indications of a specific illness, including psychiatric – study of symptoms of illness",1,https://en.wikipedia.org/wiki/Somatology
+SYN3,en,Synecology,1,4,Associated populations of species in a given area – study of ecological communities,1,https://en.wikipedia.org/wiki/Symbology
+SYP1,en,Syphilology,1,4,Sexually transmitted infection – study of syphilis,1,https://en.wikipedia.org/wiki/Symbology
+SYS2,en,Systematics,1,4,"Branch of biology – study of the diversification of living forms, both past and present",1,https://en.wikipedia.org/wiki/Symbology
+TAX2,en,Taxidermy,1,4,Stuffing and mounting dead animals for display – art of curing and stuffing animals,1,https://en.wikipedia.org/wiki/Symbology
+TEL3,en,Telmatology,1,4,Branch of physical geography concerned with the study of wetlands,1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+TEM1,en,Tempestology,1,4,"The study of cyclones, hurricanes and similar extreme weather events",1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+THA3,en,Thalassography,1,4,science of the seas and gulfs,1,https://en.wikipedia.org/wiki/Teuthology
+THE2,en,Theriogenology,1,4,Veterinary specialty concerning reproduction,1,https://en.wikipedia.org/wiki/Teuthology
+THR1,en,Thremmatology,1,4,science of breeding domestic animals and plants,1,https://en.wikipedia.org/wiki/Teuthology
+THR2,en,Threpsology,1,4,science of nutrition,1,https://en.wikipedia.org/wiki/Teuthology
+TID1,en,Tidology,1,4,study of tides,1,https://en.wikipedia.org/wiki/Teuthology
+TRA1,en,Traumatology,1,4,Medicine branch – study of wounds and their effects,1,https://en.wikipedia.org/wiki/Tonetics
+TRI1,en,Tribology,1,4,Science of rubbing surfaces,1,https://en.wikipedia.org/wiki/Tonetics
+TUR1,en,Turbology,1,4,study of tornadoes,1,https://en.wikipedia.org/wiki/Trichology
+TYP1,en,Typhlology,1,4,study of blindness and the blind,1,https://en.wikipedia.org/wiki/Typology
+URA2,en,Uranography,1,4,Part of astronomy concerned with mapping of stars,1,https://en.wikipedia.org/wiki/Typology
+URB1,en,Urbanology,1,4,Study dealing with specialized problems of cities,1,https://en.wikipedia.org/wiki/Typology
+URE1,en,Urenology,1,4,study of rust molds,1,https://en.wikipedia.org/wiki/Typology
+URO2,en,Urology,1,4,Medical specialty on the urinary and reproductive systems,1,https://en.wikipedia.org/wiki/Typology
+VAC1,en,Vaccinology,1,4,Science of vaccine development and production,1,https://en.wikipedia.org/wiki/Typology
+VAL1,en,Valeology,1,4,study of healthy living,1,https://en.wikipedia.org/wiki/Typology
+VEN1,en,Venereology,1,4,Branch of medicine dealing with the study and treatment of sexually transmitted diseases,1,https://en.wikipedia.org/wiki/Typology
+VEN2,en,Venology,1,4,The study of veins.,1,https://en.wikipedia.org/wiki/Typology
+VEX1,en,Vexillography,1,4,Art and practice of designing flags – the art and practice of designing flags,1,https://en.wikipedia.org/wiki/Typology
+VEX2,en,Vexillology,1,4,Study of flags,1,https://en.wikipedia.org/wiki/Typology
+VIC1,en,Victimology,1,4,Study of victimization,1,https://en.wikipedia.org/wiki/Typology
+VIN1,en,Vinology,1,4,scientific study of vines and winemaking,1,https://en.wikipedia.org/wiki/Typology
+VIT2,en,Vitaminology,1,4,The study of vitamins.,1,https://en.wikipedia.org/wiki/Typology
+XEN1,en,Xenobiology,1,4,Science of synthetic life forms – study of biological systems which do not exist in nature,1,https://en.wikipedia.org/wiki/Webology
+XYL2,en,Xylography,1,4,Broad term for woodblock printing techniques,1,https://en.wikipedia.org/wiki/Webology
+YOS1,en,Youth Studies,1,4,"Interdisciplinary academic field – the study of the development, history, culture, psychology, and politics of youth",1,https://en.wikipedia.org/wiki/Webology
+ZEN1,en,Zenography,1,4,The study of the planet Jupiter,1,https://en.wikipedia.org/wiki/Webology
+ZAR1,en,Zooarchaeology,1,4,Analysis of animal remains found in archaeological sites,1,https://en.wikipedia.org/wiki/Webology
+ZGE2,en,Zoogeology,1,4,study of fossil animal remains,1,https://en.wikipedia.org/wiki/Webology
+ZNO1,en,Zoonomy,1,4,study of animal physiology,1,https://en.wikipedia.org/wiki/Webology
+ZNO2,en,Zoonosology,1,4,study of animal diseases,1,https://en.wikipedia.org/wiki/Webology
+ZPA1,en,Zoopathology,1,4,Study and diagnosis of disease in animals,1,https://en.wikipedia.org/wiki/Webology
+ZPH3,en,Zoophysiology,1,4,study of physiology of animals,1,https://en.wikipedia.org/wiki/Webology
+ZTE1,en,Zootechnics,1,4,Science of managing domestic or captive animals,1,https://en.wikipedia.org/wiki/Zoosemiotics
+ZYG1,en,Zygology,1,4,science of joining and fastening,1,https://en.wikipedia.org/wiki/Zoosemiotics
+ANT2,en,Anthropobiology,1,5,Biological study of the human species – study of human biology.,1,https://en.wikipedia.org/wiki/Algebra
+ANT3,en,Anthrozoology,1,5,Subset of ethnobiology – study of human-animal interaction.,1,https://en.wikipedia.org/wiki/Algebra
+CAS1,en,Castrametation,1,5,Roman term for a fortified military base – art of designing a camp.,1,https://en.wikipedia.org/wiki/Botany
+COS3,en,Cosmetology,1,5,Study and application of beauty treatment – study of cosmetics.,1,https://en.wikipedia.org/wiki/Coprology
+CRA1,en,Craniology,1,5,Pseudoscientific study of human characteristics according to shape of the skull – study of the skull.,1,https://en.wikipedia.org/wiki/Coprology
+DRE1,en,Dance research,6,5,"Academic investigation of dance as art, cultural practice and embodied knowledge",1,https://en.wikipedia.org/wiki/Dioptrics
+DEM2,en,Demology,1,5,study of human populations and behaviour.,1,https://en.wikipedia.org/wiki/Data_science
+EGY1,en,Egyptology,1,5,Scientific study of ancient Egypt – study of ancient Egypt.,1,https://en.wikipedia.org/wiki/Edaphology
+EID1,en,Eidology,1,5,study of mental imagery.,1,https://en.wikipedia.org/wiki/Edaphology
+ELL1,en,Electrology,1,5,Method of hair removal – study of electricity.,1,https://en.wikipedia.org/wiki/Electrochemistry
+EME1,en,Emetology,1,5,"Involuntary, forceful expulsion of stomach contents, typically via the mouth – study of vomiting.",1,https://en.wikipedia.org/wiki/Electrochemistry
+EPI2,en,Epileptology,1,5,Physician specializing in epileptology – study of epilepsy.,1,https://en.wikipedia.org/wiki/Epidemiology
+ERG1,en,Ergology,1,5,study of effects of work on humans.,1,https://en.wikipedia.org/wiki/Epidemiology
+ERG2,en,Ergonomics,1,5,Designing systems to suit their users – study of people at work.,1,https://en.wikipedia.org/wiki/Epidemiology
+ETB1,en,Ethnobiology,1,5,Study of how living things are used by human cultures – study of dynamic relationships between peoples.,1,https://en.wikipedia.org/wiki/Epidemiology
+ETB2,en,Ethnobotany,1,5,Study of traditional plant use – study of a region's plants and their practical uses through the traditional knowledge of a local culture and people.,1,https://en.wikipedia.org/wiki/Epidemiology
+ETC1,en,Ethnochoreology,1,5,Field of dance study – study of dances and its implication in culture.,1,https://en.wikipedia.org/wiki/Epidemiology
+ETG1,en,Ethnogeny,1,5,study of origins of races or ethnic groups.,1,https://en.wikipedia.org/wiki/Epidemiology
+ETL1,en,Ethnology,1,5,Branch of anthropology – study of cultures.,1,https://en.wikipedia.org/wiki/Ethology
+ETM1,en,Ethnomethodology,1,5,Study of how social order is produced – study of everyday communication and social interaction.,1,https://en.wikipedia.org/wiki/Ethology
+ETM2,en,Ethnomusicology,1,5,Study of the cultural aspects of music – study of comparative musical systems.,1,https://en.wikipedia.org/wiki/Ethology
+FIN1,en,Finance,1,5,Academic discipline studying businesses and investments – science or study of money management.,1,https://en.wikipedia.org/wiki/Fluid_dynamics
+FOL1,en,Folkloristics,1,5,Branch of anthropology – study of folklore and fables.,1,https://en.wikipedia.org/wiki/Fluid_mechanics
+GAR1,en,Garbology,1,5,Study of modern refuse,1,https://en.wikipedia.org/wiki/Futurology
+GEN3,en,Genealogy,1,5,Study of individual descent and bloodline – study of descent of families,1,https://en.wikipedia.org/wiki/Gemmology
+GIG1,en,Gigantology,1,5,study of giants,1,https://en.wikipedia.org/wiki/Gerontology
+GRM2,en,Grammatology,1,5,Study of graphemes and writing systems – study of systems of writing,1,https://en.wikipedia.org/wiki/Graminology
+HEL2,en,Helcology,1,5,study of ulcers,1,https://en.wikipedia.org/wiki/Harmonics
+HSP1,en,Histopathology,1,5,Microscopic examination of tissue in order to study and diagnose disease – study of changes in tissue due to disease,1,https://en.wikipedia.org/wiki/Hydrology
+HOP1,en,Hoplology,1,5,The study of human combative behavior and performance,1,https://en.wikipedia.org/wiki/Hippology
+ICO2,en,Iconography,1,5,Branch of art history – study of drawing symbols,1,https://en.wikipedia.org/wiki/Iconology
+IDI2,en,Idiopsychology,1,5,study of the psychology of one's own mind,1,https://en.wikipedia.org/wiki/Iconology
+IRE2,en,Irenology,1,5,Social science study of peace – study of peace,1,https://en.wikipedia.org/wiki/Immunology
+KNS1,en,Kinesics,1,5,Interpretation of body motion communication – study of gestural communication,1,https://en.wikipedia.org/wiki/Kalology
+KNS2,en,Kinesiology,1,5,Study of human body movement – study of human movement and posture,1,https://en.wikipedia.org/wiki/Kalology
+KTE1,en,Ktenology,1,5,Scientific study of killing,1,https://en.wikipedia.org/wiki/Kalology
+LAR2,en,Larithmics,1,5,study of population statistics,1,https://en.wikipedia.org/wiki/Kalology
+LMB1,en,Limnobiology,1,5,study of freshwater ecosystems,1,https://en.wikipedia.org/wiki/Limacology
+LOG2,en,Logistics,2,5,"Planning, implementation and control of efficient flow and storage of goods, services and information",1,https://en.wikipedia.org/wiki/Limacology
+MAG1,en,Magnetics,1,5,Class of physical phenomena – study of magnetism,1,https://en.wikipedia.org/wiki/Limacology
+MGH1,en,Magnetohydrodynamics,1,5,Model of electrically conducting fluids – study of electrically conducting fluids,1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MGS1,en,Magnetostatics,1,5,Branch of physics about magnetism in systems with steady electric currents – study of magnetic fields in systems where the currents are steady,1,https://en.wikipedia.org/wiki/Mechanical_engineering
+MOM1,en,Momilogy,1,5,study of mummies,1,https://en.wikipedia.org/wiki/Molecular_biology
+MYT1,en,Mythology,1,5,Type of traditional narrative – study of myths; fables; tales,1,https://en.wikipedia.org/wiki/Mycology
+OIK1,en,Oikology,1,5,science of housekeeping,1,https://en.wikipedia.org/wiki/Oenology
+ORT2,en,Orthoepy,1,5,Correct pronunciation of a language,1,https://en.wikipedia.org/wiki/Orology
+ORT3,en,Orthography,1,5,Set of conventions for written language,1,https://en.wikipedia.org/wiki/Orology
+PLA1,en,Palaeoanthropology,1,5,Study of ancient humans,1,https://en.wikipedia.org/wiki/Public_health
+PLL1,en,Palaeolimnology,1,5,Scientific study of ancient lakes and streams,1,https://en.wikipedia.org/wiki/Public_health
+POS4,en,Paleo-osteology,1,5,study of ancient bones,1,https://en.wikipedia.org/wiki/Public_health
+PAR3,en,Parthenology,1,5,study of virgins,1,https://en.wikipedia.org/wiki/Palynology
+PNI1,en,Phoniatrics,1,5,Sudy and treatment of organs involved in speech production,1,https://en.wikipedia.org/wiki/Public_health
+POL1,en,Polemology,1,5,Multidisciplinary study of war,1,https://en.wikipedia.org/wiki/Public_health
+PRI2,en,Primatology,1,5,Scientific study of primates,1,https://en.wikipedia.org/wiki/Public_health
+PYG4,en,Psychognosy,1,5,"study of mentality, personality or character",1,https://en.wikipedia.org/wiki/Pyrography
+PYB2,en,Pyroballogy,1,5,study of artillery,1,https://en.wikipedia.org/wiki/Public_health
+SIL1,en,Silvics,1,5,Practice of controlling forests for timber production – study of tree's life,1,https://en.wikipedia.org/wiki/Sociolinguistics
+SOM2,en,Somatology,1,5,Branch of anthropology that studies the physical development of the human species – science of substances,1,https://en.wikipedia.org/wiki/Solid_mechanics
+SPO1,en,Spongology,1,5,study of sponges,1,https://en.wikipedia.org/wiki/Speleology
+STI1,en,Stoichiology,1,5,science of elements of animal tissues,1,https://en.wikipedia.org/wiki/Splanchnology
+STR2,en,Stratography,1,5,art of leading an army,1,https://en.wikipedia.org/wiki/Stomatology
+SYM2,en,Symbology,1,5,"Something that represents an idea, process, or physical entity – study of symbols",1,https://en.wikipedia.org/wiki/Symbology
+TEC3,en,Terrestrial ecology,1,5,Study of terrestrial ecosystems and the biotic and abiotic things that occupy them.,1,https://en.wikipedia.org/wiki/Terrestrial_ecology
+TEU1,en,Teuthology,1,5,Study of cephalopods,1,https://en.wikipedia.org/wiki/Teuthology
+TON1,en,Tonetics,1,5,Use of pitch to distinguish lexical or grammatical meaning,1,https://en.wikipedia.org/wiki/Tonetics
+TRI2,en,Trichology,1,5,The study of the hair and scalp,1,https://en.wikipedia.org/wiki/Trichology
+TSI1,en,Tsiganology,1,5,study of gypsies,1,https://en.wikipedia.org/wiki/Trichology
+TYL1,en,Typology,1,5,System of classification – study of types of things,1,https://en.wikipedia.org/wiki/Typology
+WEB1,en,Webology,1,5,Academic journal on the World Wide Web – The study of the World Wide Web.,1,https://en.wikipedia.org/wiki/Webology
+ZSE1,en,Zoosemiotics,1,5,Study of the use of signs among animals – study of animal communication,1,https://en.wikipedia.org/wiki/Zoosemiotics
+RHO1,en,Rhochrematics,1,6,science of inventory management and the movement of products,1,https://en.wikipedia.org/wiki/Radiobiology
+STR3,en,Storiology,1,6,study of folk tales,1,https://en.wikipedia.org/wiki/Stomatology

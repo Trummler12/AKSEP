@@ -1,0 +1,293 @@
+#!/usr/bin/env python3
+import math
+
+# -------------------------
+# Parameterbereiche
+# -------------------------
+MINUEND_RANGE      = range(5, 9)
+F_SIZE_RANGE       = range(1, 5)
+F_INDEX_RANGE      = range(1, 30)
+INDEX_SHIFT_RANGE  = range(-15, 30)
+SIZE_SHIFT_RANGE   = range(-300, 300)
+
+MAX_SIZE  = 11
+MAX_INDEX = MAX_SIZE - 1
+
+# --- Hilfsfunktion: einzelne Tabellenzelle wie in Excel berechnen ---
+
+def cell_value(size, index, minuend, size_shift, f_size, index_shift, f_index):
+    """
+    Entspricht der Excel-Formel:
+      =WENN(size>index;
+             WENN(size=1;5;
+                  MAX(minuend-ABRUNDEN((WURZEL(f_size*(size+size_shift)
+                                                  +f_index*(index+index_shift)))/2;0));
+             "");
+    Leere Zellen werden hier als 0 behandelt.
+    """
+    if size <= index:
+        return 0
+    if size == 1:
+        return 5
+
+    arg = f_size * (size + size_shift) + f_index * (index + index_shift)
+    if arg < 0:
+        # In Excel gäbe das #ZAHL!-Fehler; hier behandeln wir es als "ungültige Parameterkombination"
+        return None
+
+    val = minuend - math.floor(math.sqrt(arg) / 2.0)
+    if val < 0:
+        val = 0
+    return val
+
+
+# --- Hilfsfunktion: Fehlervektor der "frühen" Constraints auf Einzelzellen ---
+
+def constraint_errors(minuend, size_shift, f_size, index_shift, f_index):
+    """
+    Liefert die Abweichungen (value - target) für:
+      C1: result(size=2,index=0) == 4
+      C2: result(size=2,index=1) == 3
+      C3: result(size=9,index=8) == 1
+
+    Gibt None zurück, wenn eine Zelle "ungültig" ist (arg < 0).
+    """
+    v20 = cell_value(2, 0, minuend, size_shift, f_size, index_shift, f_index)
+    v21 = cell_value(2, 1, minuend, size_shift, f_size, index_shift, f_index)
+    v98 = cell_value(9, 8, minuend, size_shift, f_size, index_shift, f_index)
+
+    if None in (v20, v21, v98):
+        return None
+
+    return [
+        v20 - 4,  # C1
+        v21 - 3,  # C2
+        v98 - 1,  # C3
+    ]
+
+
+def sign(x):
+    if x > 0:
+        return 1
+    if x < 0:
+        return -1
+    return 0
+
+
+# --- 1D-Vorprüfung: nur f_index variieren (min und max) ---
+
+def precheck_f_index(minuend, size_shift, f_size, index_shift):
+    """
+    Prüft die Constraints-Gruppe nur für f_index = min und f_index = max.
+
+    Idee:
+      Wenn es mindestens eine Constraint gibt, die in BEIDEN Fällen
+      in dieselbe Richtung fehlschlägt (beide zu klein oder beide zu groß),
+      dann verwerfen wir die gesamte f_index-Schleife für diese anderen Parameter.
+    """
+    f_index_min = F_INDEX_RANGE.start
+    f_index_max = F_INDEX_RANGE.stop - 1
+
+    err_min = constraint_errors(minuend, size_shift, f_size, index_shift, f_index_min)
+    err_max = constraint_errors(minuend, size_shift, f_size, index_shift, f_index_max)
+
+    # Wenn eine Ecke ungültig ist (None), ist der Test nicht aussagekräftig:
+    if err_min is None or err_max is None:
+        return True  # "Nicht vorzeitig verwerfen"
+
+    for e_min, e_max in zip(err_min, err_max):
+        s_min = sign(e_min)
+        s_max = sign(e_max)
+        if s_min != 0 and s_max != 0 and s_min == s_max:
+            # Diese Bedingung scheitert an beiden Enden in dieselbe Richtung -> raus
+            return False
+
+    return True
+
+
+# --- 2D-Vorprüfung: (index_shift, f_index) gemeinsam über ihre Ecken prüfen ---
+
+def precheck_indexshift_findex(minuend, size_shift, f_size):
+    """
+    Prüft die vier Kombinationen:
+      (index_shift_min, f_index_min),
+      (index_shift_min, f_index_max),
+      (index_shift_max, f_index_min),
+      (index_shift_max, f_index_max)
+
+    Wenn es eine Constraint gibt, die in ALLEN vier Ecken in dieselbe
+    Richtung fehlschlägt, verwerfen wir die gesamte (index_shift, f_index)-Ebene
+    für dieses (minuend, size_shift, f_size).
+    """
+    index_shift_min = INDEX_SHIFT_RANGE.start
+    index_shift_max = INDEX_SHIFT_RANGE.stop - 1
+    f_index_min = F_INDEX_RANGE.start
+    f_index_max = F_INDEX_RANGE.stop - 1
+
+    corners = [
+        constraint_errors(minuend, size_shift, f_size, index_shift_min, f_index_min),
+        constraint_errors(minuend, size_shift, f_size, index_shift_min, f_index_max),
+        constraint_errors(minuend, size_shift, f_size, index_shift_max, f_index_min),
+        constraint_errors(minuend, size_shift, f_size, index_shift_max, f_index_max),
+    ]
+
+    # Wenn irgendeine Ecke None ist -> Test nicht eindeutig, wir lassen die Ebene zu.
+    if any(c is None for c in corners):
+        return True
+
+    # Für jede einzelne Constraint separat betrachten:
+    for j in range(len(corners[0])):  # 3 Constraints
+        signs = [sign(c[j]) for c in corners if c[j] != 0]
+        if not signs:
+            # Alle vier Ecken treffen genau oder wir haben keine Info -> nix zu sagen
+            continue
+        # Wenn alle Vorzeichen gleich sind -> alle scheitern in derselben Richtung
+        if all(s == signs[0] for s in signs):
+            return False  # gesamte Ebene verwerfen
+
+    return True
+
+
+# --- Haupt-Brute-Force mit Vorprüfungen ---
+
+def brute_force():
+    matches = []
+
+    # Loop-Reihenfolge:
+    # minuend -> f_size -> size_shift -> index_shift -> f_index
+    for minuend in MINUEND_RANGE:
+        for f_size in F_SIZE_RANGE:
+            for size_shift in SIZE_SHIFT_RANGE:
+
+                # 2D-Vorprüfung auf Ebene (index_shift, f_index)
+                if not precheck_indexshift_findex(minuend, size_shift, f_size):
+                    continue  # ganze index_shift/f_index-Ebene überspringen
+
+                for index_shift in INDEX_SHIFT_RANGE:
+
+                    # 1D-Vorprüfung: nur f_index variieren
+                    if not precheck_f_index(minuend, size_shift, f_size, index_shift):
+                        continue  # diese index_shift-Kombination bringt keine Lösung
+
+                    for f_index in F_INDEX_RANGE:
+
+                        # -------------------------
+                        # Tabelle[index][size]
+                        # -------------------------
+                        table = [[0] * (MAX_SIZE + 1) for _ in range(MAX_INDEX + 1)]
+                        invalid = False
+
+                        for idx in range(0, MAX_INDEX + 1):
+                            for size in range(1, MAX_SIZE + 1):
+                                val = cell_value(
+                                    size, idx,
+                                    minuend, size_shift, f_size,
+                                    index_shift, f_index
+                                )
+                                if val is None:
+                                    invalid = True
+                                    break
+                                table[idx][size] = val
+
+                            if invalid:
+                                break
+
+                            # Frühzeitige Checks nach jeweils kompletter Zeile
+                            # (lokales Pruning auf Einzelzellen):
+
+                            if idx == 0:
+                                # result(size=2,index=0)==4
+                                if table[0][2] != 4:
+                                    invalid = True
+                                    break
+
+                            elif idx == 1:
+                                # result(size=2,index=1)==3
+                                if table[1][2] != 3:
+                                    invalid = True
+                                    break
+
+                        if invalid:
+                            continue
+
+                        # Zusätzliche Bedingung auf Einzelzellen:
+                        # result(size=9,index=8)==1
+                        if table[8][9] != 1:
+                            continue
+
+                        # -------------------------
+                        # SUMME (monoton → Pruning auf Summen)
+                        # -------------------------
+                        sums = [0] * (MAX_SIZE + 1)   # SUMME[size]
+                        for size in range(1, MAX_SIZE + 1):
+                            s = 0
+                            for idx in range(0, MAX_INDEX + 1):
+                                s += table[idx][size]
+                            sums[size] = s
+
+                        # HARTE Summen-Constraints NUR für Sizes 2..5:
+                        # (Pruning-Teil, bevor DIFF überhaupt berechnet wird)
+                        if not (
+                            sums[2] == 7 and
+                            sums[3] == 9 and
+                            sums[4] == 11 and
+                            sums[5] == 13
+                        ):
+                            continue
+
+                        # -------------------------
+                        # DIFF (nur Ergebnis-Filterung)
+                        # -------------------------
+                        diffs = [None] * (MAX_SIZE + 1)  # DIFF[size] = SUMME(size)-SUMME(size-1)
+                        for size in range(2, MAX_SIZE + 1):
+                            diffs[size] = sums[size] - sums[size - 1]
+
+                        # DIFF-Constraints (können formal teils redundant sein,
+                        # sind aber der "finale" Filter, wie von dir gewünscht):
+
+                        if not (
+                            diffs[2] == 2 and
+                            diffs[7] == 1
+                        ):
+                            continue
+
+                        if not (
+                            diffs[2] >= diffs[3] >= diffs[4] >= diffs[5] >= diffs[6] >= diffs[7]>= diffs[8] >= diffs[9] >= diffs[10] >= 1 >= diffs[11] >= 0
+                        ):
+                            continue
+
+                        # Wenn wir hier sind, passt alles
+                        result = {
+                            "minuend": minuend,
+                            "size_shift": size_shift,
+                            "f_size": f_size,
+                            "index_shift": index_shift,
+                            "f_index": f_index,
+                            "sums": [sums[size] for size in range(1, MAX_SIZE + 1)],
+                            "diffs": [diffs[size] for size in range(2, MAX_SIZE + 1)],
+                        }
+                        matches.append(result)
+
+    return matches
+
+
+def main():
+    matches = brute_force()
+    print(f"Insgesamt {len(matches)} Treffer gefunden.\n")
+
+    for i, m in enumerate(matches, start=1):
+        print("=" * 60)
+        print(f"Treffer #{i}")
+        print(
+            f"minuend={m['minuend']}, "
+            f"size_shift={m['size_shift']}, "
+            f"f_size={m['f_size']}, "
+            f"index_shift={m['index_shift']}, "
+            f"f_index={m['f_index']}"
+        )
+        print("SUMME:", " ".join(str(x) for x in m["sums"]))
+        print("DIFF :", " ".join(str(x) for x in m["diffs"]))
+
+
+if __name__ == "__main__":
+    main()
