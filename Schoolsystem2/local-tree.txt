@@ -39,9 +39,12 @@ C:.
 |       |   |           |
 |       |   |           +---domain
 |       |   |           |   +---model
+|       |   |           |   |       FileRLangVersion.java
 |       |   |           |   |       InteractionType.java
 |       |   |           |   |       LocalizedText.java
 |       |   |           |   |       Resource.java
+|       |   |           |   |       ResourceTag.java
+|       |   |           |   |       ResourceToTopic.java
 |       |   |           |   |       ResourceType.java
 |       |   |           |   |       RLangVersion.java
 |       |   |           |   |       RVersion.java
@@ -51,7 +54,10 @@ C:.
 |       |   |           |   |       Tag.java
 |       |   |           |   |       Topic.java
 |       |   |           |   |       TopicLevel.java
+|       |   |           |   |       TopicTag.java
 |       |   |           |   |       TopicType.java
+|       |   |           |   |       UsesSource.java
+|       |   |           |   |       WebRLangVersion.java
 |       |   |           |   |
 |       |   |           |   +---ports
 |       |   |           |   |       .gitkeep
@@ -84,6 +90,7 @@ C:.
 |       |       +---csv
 |       |       |       Branches.csv
 |       |       |       ct_lrequirements.csv
+|       |       |       ct_resource_tags.csv
 |       |       |       ct_topic_tags.csv
 |       |       |       ct_topic_tags_PLANNING.txt
 |       |       |       transparent_topic_tags.txt
@@ -121,7 +128,9 @@ C:.
 |                       |   +---model
 |                       |   |       InteractionTypeTest.java
 |                       |   |       LocalizedTextTest.java
+|                       |   |       ResourceTagTest.java
 |                       |   |       ResourceTest.java
+|                       |   |       ResourceToTopicTest.java
 |                       |   |       ResourceTypeTest.java
 |                       |   |       RLangVersionTest.java
 |                       |   |       RVersionTest.java
@@ -129,8 +138,10 @@ C:.
 |                       |   |       SourceTest.java
 |                       |   |       TagTest.java
 |                       |   |       TopicLevelTest.java
+|                       |   |       TopicTagTest.java
 |                       |   |       TopicTest.java
 |                       |   |       TopicTypeTest.java
+|                       |   |       UsesSourceTest.java
 |                       |   |
 |                       |   +---ports
 |                       |   |       .gitkeep
