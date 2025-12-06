@@ -6,19 +6,19 @@ import math
 # -------------------------
 MINUEND_RANGE      = range(5, 7)
 
-# Ganzzahl-Basisbereiche (werden durch F_STEP_SIZE unterteilt)
-F_SIZE_RANGE       = range(1, 2)
-F_INDEX_RANGE      = range(1, 20)
+# Ganzzahl-Basisbereiche (werden durch F_STEPS unterteilt)
+F_SIZE_RANGE       = range(1, 5)
+F_INDEX_RANGE      = range(6, 10)
 
-INDEX_SHIFT_RANGE  = range(-15, 30)
-SIZE_SHIFT_RANGE   = range(-300, 300)
+INDEX_SHIFT_RANGE  = range(-25, 50)
+SIZE_SHIFT_RANGE   = range(-150, 100)
 
 # Anzahl Sub-Schritte pro Integer-Step in F_SIZE_RANGE/F_INDEX_RANGE
-# F_STEP_SIZE = 1  -> nur ganze Zahlen (wie bisher)
-# F_STEP_SIZE = n  -> jeder Integer-Abschnitt wird in n Teilintervalle gesplittet
-F_STEP_SIZE        = 5  # hier nach Bedarf anpassen
+# F_STEPS = 1  -> nur ganze Zahlen
+# F_STEPS = n  -> jeder Integer-Abschnitt wird in n Teilintervalle gesplittet
+F_STEPS        = 10  # hier nach Bedarf anpassen
 
-MAX_SIZE  = 11
+MAX_SIZE  = 15
 MAX_INDEX = MAX_SIZE - 1
 
 
@@ -102,9 +102,9 @@ def constraint_errors(minuend, size_shift, f_size, index_shift, f_index):
         return None
 
     return [
-        v20 - 4,  # C1
-        v21 - 3,  # C2
-        v98 - 1,  # C3
+        v20 - 4,  # C1 # type: ignore
+        v21 - 3,  # C2 # type: ignore
+        v98 - 1,  # C3 # type: ignore
     ]
 
 
@@ -121,15 +121,15 @@ def sign(x):
 def precheck_f_index(minuend, size_shift, f_size, index_shift):
     """
     Prüft die Constraints-Gruppe nur für f_index = min und f_index = max
-    (unter Berücksichtigung von F_STEP_SIZE).
+    (unter Berücksichtigung von F_STEPS).
 
     Idee:
       Wenn es mindestens eine Constraint gibt, die in BEIDEN Fällen
       in dieselbe Richtung fehlschlägt (beide zu klein oder beide zu groß),
       dann verwerfen wir die gesamte f_index-Schleife für diese anderen Parameter.
     """
-    f_index_min = f_min(F_INDEX_RANGE, F_STEP_SIZE)
-    f_index_max = f_max(F_INDEX_RANGE, F_STEP_SIZE)
+    f_index_min = f_min(F_INDEX_RANGE, F_STEPS)
+    f_index_max = f_max(F_INDEX_RANGE, F_STEPS)
 
     err_min = constraint_errors(minuend, size_shift, f_size, index_shift, f_index_min)
     err_max = constraint_errors(minuend, size_shift, f_size, index_shift, f_index_max)
@@ -164,8 +164,8 @@ def precheck_indexshift_findex(minuend, size_shift, f_size):
     """
     index_shift_min = INDEX_SHIFT_RANGE.start
     index_shift_max = INDEX_SHIFT_RANGE.stop - 1
-    f_index_min = f_min(F_INDEX_RANGE, F_STEP_SIZE)
-    f_index_max = f_max(F_INDEX_RANGE, F_STEP_SIZE)
+    f_index_min = f_min(F_INDEX_RANGE, F_STEPS)
+    f_index_max = f_max(F_INDEX_RANGE, F_STEPS)
 
     corners = [
         constraint_errors(minuend, size_shift, f_size, index_shift_min, f_index_min),
@@ -179,8 +179,8 @@ def precheck_indexshift_findex(minuend, size_shift, f_size):
         return True
 
     # Für jede einzelne Constraint separat betrachten:
-    for j in range(len(corners[0])):  # 3 Constraints
-        signs = [sign(c[j]) for c in corners if c[j] != 0]
+    for j in range(len(corners[0])):  # 3 Constraints # type: ignore 
+        signs = [sign(c[j]) for c in corners if c[j] != 0] # type: ignore
         if not signs:
             # Alle vier Ecken treffen genau oder wir haben keine Info -> nix zu sagen
             continue
@@ -199,7 +199,7 @@ def brute_force():
     # Loop-Reihenfolge:
     # minuend -> f_size (mit Substeps) -> size_shift -> index_shift -> f_index (mit Substeps)
     for minuend in MINUEND_RANGE:
-        for f_size in f_iter(F_SIZE_RANGE, F_STEP_SIZE):
+        for f_size in f_iter(F_SIZE_RANGE, F_STEPS):
             for size_shift in SIZE_SHIFT_RANGE:
 
                 # 2D-Vorprüfung auf Ebene (index_shift, f_index)
@@ -212,7 +212,7 @@ def brute_force():
                     if not precheck_f_index(minuend, size_shift, f_size, index_shift):
                         continue  # diese index_shift-Kombination bringt keine Lösung
 
-                    for f_index in f_iter(F_INDEX_RANGE, F_STEP_SIZE):
+                    for f_index in f_iter(F_INDEX_RANGE, F_STEPS):
 
                         # -------------------------
                         # Tabelle[index][size]
@@ -283,20 +283,18 @@ def brute_force():
                         # -------------------------
                         diffs = [None] * (MAX_SIZE + 1)  # DIFF[size] = SUMME(size)-SUMME(size-1)
                         for size in range(2, MAX_SIZE + 1):
-                            diffs[size] = sums[size] - sums[size - 1]
+                            diffs[size] = sums[size] - sums[size - 1] # type: ignore
 
-                        # DIFF-Constraints (wie in deiner Datei):
+                        # DIFF-Constraints:
 
                         if not (
-                            diffs[2] == 2 and
-                        #    diffs[7] == 1 and
-                            diffs[10] >= 1 and
-                            diffs[11] >= 0
+                            diffs[2] == 2 and diffs[7] == 1 and
+                            diffs[11] >= 1 and diffs[13] >= 0 # type: ignore
                         ):
                             continue
 
                         if not (
-                            diffs[2] >= diffs[3] >= diffs[4] >= diffs[5] >= diffs[6] >= diffs[7] >= diffs[8] >= diffs[9] >= diffs[10] >= diffs[11]
+                            diffs[2] >= diffs[3] >= diffs[4] >= diffs[5] >= diffs[6] >= diffs[7] >= diffs[8] >= diffs[9] >= diffs[10] >= diffs[11] >= diffs[12] >= diffs[13] >= diffs[14] # type: ignore
                         ):
                             continue
 
@@ -319,18 +317,46 @@ def main():
     matches = brute_force()
     print(f"Insgesamt {len(matches)} Treffer gefunden.\n")
 
+    # Einzelne Treffer ausgeben – neue Parameter-Reihenfolge:
+    # minuend, f_size, f_index, size_shift, index_shift
     for i, m in enumerate(matches, start=1):
         print("=" * 60)
         print(f"Treffer #{i}")
         print(
             f"minuend={m['minuend']}, "
-            f"size_shift={m['size_shift']}, "
             f"f_size={m['f_size']}, "
-            f"index_shift={m['index_shift']}, "
-            f"f_index={m['f_index']}"
+            f"f_index={m['f_index']}, "
+            f"index_shift={m['index_shift']}"
+            f"size_shift={m['size_shift']}, "
         )
         print("SUMME:", " ".join(str(x) for x in m["sums"]))
-        print("DIFF :", " ".join(str(x) for x in m["diffs"]))
+        print("DIFF :  ", " ".join(str(x) for x in m["diffs"]))
+
+    # Nachbereitung: Min/Max der Parameter über alle Treffer
+    if matches:
+        min_minuend = min(m["minuend"] for m in matches)
+        max_minuend = max(m["minuend"] for m in matches)
+
+        min_f_size = min(m["f_size"] for m in matches)
+        max_f_size = max(m["f_size"] for m in matches)
+
+        min_f_index = min(m["f_index"] for m in matches)
+        max_f_index = max(m["f_index"] for m in matches)
+
+        min_index_shift = min(m["index_shift"] for m in matches)
+        max_index_shift = max(m["index_shift"] for m in matches)
+
+        min_size_shift = min(m["size_shift"] for m in matches)
+        max_size_shift = max(m["size_shift"] for m in matches)
+
+        print("\nParameter-Minima und -Maxima über alle Treffer:")
+        print(f"minuend     : min={min_minuend}  max={max_minuend}")
+        print(f"f_size      : min={min_f_size}  max={max_f_size}")
+        print(f"f_index     : min={min_f_index}  max={max_f_index}")
+        print(f"index_shift : min={min_index_shift}  max={max_index_shift}")
+        print(f"size_shift  : min={min_size_shift}  max={max_size_shift}")
+    else:
+        print("Keine Treffer – Min/Max der Parameter sind nicht definiert.")
 
 
 if __name__ == "__main__":

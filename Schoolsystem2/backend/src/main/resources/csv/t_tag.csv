@@ -1,271 +1,205 @@
-tagID,tag
-1,fine arts
-2,biology
-3,chemistry
-4,computer science
-5,sociology
-6,anthropology
-7,media studies
-8,philosophy
-9,geography
-10,history
-11,law
-12,language
-13,cognitive science
-14,psycholinguistics
-15,mathematics
-16,music
-17,musicology
-18,composition
-19,physics
-20,psychology
-21,zoology
-22,taxonomy
-23,mechanical waves
-24,mechanical engineering
-25,fluid dynamics
-26,fluid mechanics
-27,art
-28,epistemology
-29,art history
-30,astronomy
-31,earth science
-32,meteorology
-33,climatology
-34,complex systems
-35,geology
-36,soil science
-37,literature
-38,linguistics
-39,cultural studies
-40,statistics
-41,oceanography
-42,environmental science
-43,engineering
-44,materials
-45,mechanics
-46,logic
-47,problem-solving
-48,cryptography
-49,food science
-50,forensic science
-51,criminal justice
-52,biochemistry
-53,evolution
-54,surveying
-55,remote sensing
-56,cartography
-57,GIS
-58,algebra
-59,trigonometry
-60,calculus
-61,combinatorics
-62,number theory
-63,information science
-64,library science
-65,data science
-66,network security
-67,cybersecurity
-68,east asian studies
-69,game studies
-70,nanotechnology
-71,health sciences
-72,metaphysics
-73,microorganisms
-74,microscopy
-75,logistics
-76,archaeology
-77,quantum mechanics
-78,astrophysics
-79,arts
-80,theatre
-81,dance
-82,ethics
-83,quantum physics
-84,east-asian-studies
-85,social science
-86,agricultural science
-87,optics
-88,probability
-89,data analysis
-90,creativity
-91,design
-92,grammar
-93,semantics
-94,philately
-95,geometry
-96,analysis
-97,communication
-98,visual arts
-99,botany
-100,paleobotany
-101,dendrochronology
-102,agriculture
-103,agronomy
-104,medicine
-105,physiology
-106,culinary arts
-107,anatomy
-108,microbiology
-109,genetics
-110,behavioral science
-111,nutrition
-112,geodesy
-113,topography
-114,acoustics
-115,metallurgy
-116,construction
-117,infrastructure
-118,earth sciences
-119,paleography
-120,information security
-121,machine learning
-122,dentistry
-123,finance
-124,microeconomics
-125,macroeconomics
-126,electronics
-127,electromagnetism
-128,molecular biology
-129,organic chemistry
-130,cell biology
-131,biophysics
-132,public health
-133,ecology
-134,paleontology
-135,futurology
-136,mineralogy
-137,gemology
-138,gender studies
-139,reproduction
-140,geophysics
-141,seismology
-142,civil engineering
-143,gastroenterology
-144,animal science
-145,science
-146,technology
-147,pharmacology
-148,aesthetics
-149,morphology
-150,syntax
-151,phonetics
-152,pragmatics
-153,navigation
-154,manufacturing
-155,economic geology
-156,materials science
-157,computer modeling
-158,research methods
-159,neurobiology
-160,cognitive psychology
-161,ophthalmology
-162,ethnomusicology
-163,education
-164,igneous rocks
-165,sedimentary rocks
-166,metamorphic rocks
-167,thermodynamics
-168,political science
-169,semiotics
-170,epidemiology
-171,biostatistics
-172,social sciences
-173,health policy
-174,craft
-175,drawing
-176,journalism
-177,philology
-178,surgical techniques
-179,management
-180,systems science
-181,theology
-182,health
-183,urban planning
-184,architecture
-185,economics
-186,urology
-187,gynaecology
-188,forestry
-189,aeronautics
-190,aerodynamics
-191,psychophysiology
-192,neuroscience
-193,immunology
-194,surgery
-195,critical care
-196,sensory perception
-197,gerontology
-198,space exploration
-199,aerospace
-200,hydrotherapy
-201,herpetology
-202,bioengineering
-203,business
-204,marketing
-205,ornithology
-206,marine biology
-207,podiatry
-208,political economy
-209,entomology
-210,systems
-211,pedagogy
-212,pediatrics
-213,performing arts
-214,solid mechanics
-215,structural engineering
-216,phonology
-217,marine science
-218,parasitology
-219,pathology
-220,cardiology
-221,veterinary medicine
-222,family studies
-223,horticulture
-224,gardening
-225,limnology
-226,hydrology
-227,environmental health
-228,cytology
-229,otolaryngology
-230,dermatology
-231,mycology
-232,military science
-233,cosmology
-234,neonatal care
-235,numismatics
-236,mythology
-237,head and neck surgery
-238,anesthesiology
-239,neurology
-240,physical therapy
-241,ichthyology
-242,criminology
-243,psychiatry
-244,critical theory
-245,rheumatology
-246,mechatronics
-247,artificial intelligence
-248,reproductive biology
-249,infectious diseases
-250,synthetic biology
-251,crafts
-252,printing
-253,ethnobiology
-254,beauty treatment
-255,demography
-256,ergonomics
-257,ethnography
-258,accounting
-259,kinesiology
-260,peace studies
-261,operations management
-262,supply chain
-263,transportation
-264,information systems
-265,electricity
-266,religion
-267,home economics
-268,conflict studies
-269,military strategy
-270,folklore
+tagID,name,synonyms
+1,"art",""
+2,"biology",""
+3,"chemistry",""
+4,"computer science",""
+5,"cultural studies",""
+6,"ethics",""
+7,"geography",""
+8,"history",""
+9,"law",""
+10,"linguistics",""
+11,"literature",""
+12,"logics",""
+13,"mathematics",""
+14,"music theory",""
+15,"philosophy",""
+16,"physics",""
+17,"psychology",""
+18,"spines and thorns","acanthology"
+19,"ignorance theory","agnoiology"
+20,"algebra",""
+21,"bees","apiology"
+22,"astronomy",""
+23,"atmospheric science",""
+24,"weight and pressure","barology"
+25,"botany",""
+26,"geographic distribution","chorology"
+27,"embryology",""
+28,"genetics",""
+29,"geometry",""
+30,"huge numbers","googology"
+31,"theory of history","historiology"
+32,"idioms","idiomology"
+33,"metaphysics",""
+34,"organic chemistry",""
+35,"performing arts",""
+36,"philosophy of science",""
+37,"speech sounds","phonology"
+38,"set phrases","phraseology"
+39,"sociology",""
+40,"soil science",""
+41,"statistics",""
+42,"stereochemistry",""
+43,"creative problem solving","synectics"
+44,"syntax",""
+45,"taxonomy",""
+46,"technology",""
+47,"purpose and goals","teleology"
+48,"postage stamps","timbrology"
+49,"topology","shapes and spaces"
+50,"typography",""
+51,"zoology",""
+52,"books","bibliology"
+53,"landform formation","geomorphogeny"
+54,"ore deposits","metallogeny"
+55,"mineralogy",""
+56,"palaeontology",""
+57,"rocks","petrology"
+58,"seismology",""
+59,"tectonics",""
+60,"mites and ticks","acarology"
+61,"remedies","aceology"
+62,"glider aerodynamics","aerodonetics"
+63,"aeronautics",""
+64,"allergy medicine","allergology"
+65,"anaesthesiology","anesthesia"
+66,"adult education","andragogy"
+67,"mars science","areology"
+68,"ballistics",""
+69,"pressure forces","barodynamics"
+70,"amphibians","batrachology"
+71,"bells","campanology"
+72,"cardiology",""
+73,"biological rhythms","chronobiology"
+74,"beetles","coleopterology"
+75,"comets","cometology"
+76,"seashells","conchology"
+77,"animal eggs","ctetology"
+78,"curriculum studies",""
+79,"fingerprints","dermatoglyphics"
+80,"dermatology",""
+81,"ligaments","desmology"
+82,"didactic method","teaching methods"
+83,"dietetics",""
+84,"radiation dosing","dosiology"
+85,"sweat glands","eccrinology"
+86,"electrodynamics",""
+87,"charged fluids","electrohydrodynamics"
+88,"electromagnetism",""
+89,"electrostatics",""
+90,"menstruation","emmenology"
+91,"adolescent medicine","ephebiatrics"
+92,"exoplanets","exoplanetology"
+93,"gastroenterology",""
+94,"spinning bodies","gyrostatics"
+95,"blood flow","haemataulics"
+96,"hematology",""
+97,"hermeology",""
+98,"horse medicine","hippiatrics"
+99,"histology",""
+100,"horticulture",""
+101,"hydraulics",""
+102,"hydrodynamics",""
+103,"groundwater","hydrogeology"
+104,"fluid motion","hydrokinetics"
+105,"hydrostatics",""
+106,"trace fossils","ichnology"
+107,"immunochemistry",""
+108,"immunopathology",""
+109,"chromosomes","karyology"
+110,"waves","kymatology"
+111,"throat medicine","laryngology"
+112,"butterflies and moths","lepidopterology"
+113,"leprosy research","leprology"
+114,"meconology",""
+115,"bees","melittology"
+116,"metal microstructures","metallography"
+117,"alcohol effects","methyology"
+118,"microfossils","micropalaeontology"
+119,"muscles","myology"
+120,"dead planets","necroplanetology"
+121,"neonatology",""
+122,"nephrology",""
+123,"neurobiology",""
+124,"neurology",""
+125,"insect nymphs","nymphology"
+126,"dentistry","odontology"
+127,"bird eggs","oology"
+128,"snakes","ophiology"
+129,"organs","organology (biology)"
+130,"grasshoppers","orthopterology"
+131,"fossils and minerals","oryctology"
+132,"sense of smell","osmics"
+133,"bones","osteology"
+134,"ear nose throat","otorhinolaryngology"
+135,"child development","paedology"
+136,"pain medicine",""
+137,"ancient life","palaeobiology"
+138,"ancient soils","palaeopedology"
+139,"past earthquakes","paleoseismology"
+140,"teaching science","pedagogics"
+141,"gum care","periodontics"
+142,"pests","pestology"
+143,"throat science","pharyngology"
+144,"phylogenetics",""
+145,"feathers","plumology"
+146,"foot care","podology"
+147,"beards","pogonology"
+148,"fruit cultivation","pomology"
+149,"drug dosing","posology"
+150,"proctology","colorectal medicine"
+151,"feather patterns","pterylology"
+152,"fevers","pyretology"
+153,"rheumatology",""
+154,"nose medicine","rhinology"
+155,"body tissues","sarcology"
+156,"moon science","selenology"
+157,"blood serum","serology"
+158,"iron and steel","siderology"
+159,"nutrition","sitology"
+160,"pulse measurement","sphygmology"
+161,"internal organs","splanchnology"
+162,"oral medicine","stomatology"
+163,"symptoms","symptomatology"
+164,"syphilis research","syphilology"
+165,"animal reproduction","theriogenology"
+166,"animal breeding","thremmatology"
+167,"nutrition care","threpsology"
+168,"injury medicine","traumatology"
+169,"blindness","typhlology"
+170,"urology",""
+171,"vaccines","vaccinology"
+172,"sexually transmitted infections","venereology"
+173,"veins","venology"
+174,"flag design","vexillography"
+175,"wine","vinology"
+176,"vitamins","vitaminology"
+177,"youth studies",""
+178,"deep ocean mapping","zenography"
+179,"animal-borne diseases","zoonosology"
+180,"animal diseases","zoopathology"
+181,"animal husbandry","zootechnics"
+182,"fasteners","zygology"
+183,"human biology","anthropobiology"
+184,"human-animal relationships","anthrozoology"
+185,"cosmetics","cosmetology"
+186,"population studies","demology"
+187,"vomiting","emetology"
+188,"epilepsy","epileptology"
+189,"people and nature","ethnobiology"
+190,"finance",""
+191,"giant myths","gigantology"
+192,"ulcers","helcology"
+193,"diseased tissue","histopathology"
+194,"peace studies","irenology"
+195,"freshwater life","limnobiology"
+196,"magnetized fluids","magnetohydrodynamics"
+197,"static magnets","magnetostatics"
+198,"ecology","oikology"
+199,"asexual reproduction","parthenology"
+200,"war studies","polemology"
+201,"human body study","somatology"
+202,"chemical ratios","stoichiology"
+203,"rock layers","stratography"
+204,"hair care","trichology"
