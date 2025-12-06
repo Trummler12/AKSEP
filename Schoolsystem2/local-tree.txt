@@ -6,6 +6,7 @@ C:.
 |   DEVELOPER.md
 |   local-tree.ps1
 |   local-tree.txt
+|   Values.txt
 |
 +---backend
 |   |   .gitignore
@@ -48,7 +49,6 @@ C:.
 |       |   |           |   |       SourceAuthor.java
 |       |   |           |   |       SourceType.java
 |       |   |           |   |       Tag.java
-|       |   |           |   |       TagLocalization.java
 |       |   |           |   |       Topic.java
 |       |   |           |   |       TopicLevel.java
 |       |   |           |   |       TopicType.java
@@ -81,23 +81,34 @@ C:.
 |       |   |                       .gitkeep
 |       |   |
 |       |   \---resources
-|       |       \---csv
-|       |               ct_lrequirements.csv
-|       |               ct_topic_tags.csv
-|       |               t_contact_type.csv
-|       |               t_inter_type.csv
-|       |               t_language.csv
-|       |               t_req_type.csv
-|       |               t_resource_type.csv
-|       |               t_source.csv - Shortcut.lnk
-|       |               t_source_author.csv - Shortcut.lnk
-|       |               t_source_type.csv
-|       |               t_tag.csv
-|       |               t_timezone.csv
-|       |               t_topic.csv
-|       |               t_topic_levels.csv
-|       |               t_topic_type.csv
-|       |               t_topic_url.csv
+|       |       +---csv
+|       |       |       Branches.csv
+|       |       |       ct_lrequirements.csv
+|       |       |       ct_topic_tags.csv
+|       |       |       ct_topic_tags_PLANNING.txt
+|       |       |       transparent_topic_tags.txt
+|       |       |       t_contact_type.csv
+|       |       |       t_inter_type.csv
+|       |       |       t_language.csv
+|       |       |       t_req_type.csv
+|       |       |       t_resource_type.csv
+|       |       |       t_source.csv - Shortcut.lnk
+|       |       |       t_source_author.csv - Shortcut.lnk
+|       |       |       t_source_type.csv
+|       |       |       t_tag.csv
+|       |       |       t_tag_PLANNING.txt
+|       |       |       t_timezone.csv
+|       |       |       t_topic.csv
+|       |       |       t_topic_levels.csv
+|       |       |       t_topic_type.csv
+|       |       |       t_topic_url.csv
+|       |       |
+|       |       \---scripts
+|       |               branches_to_tags PROMPT.txt
+|       |               branches_to_tags.ps1
+|       |               README.md
+|       |               weight_dist_bruteforce.py
+|       |               Weight_Dist_Test.xlsx
 |       |
 |       \---test
 |           \---java
@@ -116,7 +127,6 @@ C:.
 |                       |   |       RVersionTest.java
 |                       |   |       SourceAuthorTest.java
 |                       |   |       SourceTest.java
-|                       |   |       TagLocalizationTest.java
 |                       |   |       TagTest.java
 |                       |   |       TopicLevelTest.java
 |                       |   |       TopicTest.java
@@ -154,6 +164,7 @@ C:.
 |   |   Kompetenzmatrix_M322.md
 |   |   Projektaufgabe.md
 |   |   ProjektLogbuch.md
+|   |   USE_CASES.md
 |   |
 |   \---legacy
 |           PLANUNG.md

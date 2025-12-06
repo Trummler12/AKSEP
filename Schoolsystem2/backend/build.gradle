@@ -23,3 +23,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.processResources {
+    // Skip temporary Excel lock files created when a workbook is open
+    exclude '**/~$*'
+}

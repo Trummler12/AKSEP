@@ -97,6 +97,11 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+// Blendet temporäre Excel-Lockfiles aus, damit offene Arbeitsmappen den Build nicht blockieren
+tasks.processResources {
+    exclude '**/~$*'
+}
 ```
 
 > **Wichtig:** Bei jeder Änderung an den Dependencies muss sowohl die README als auch das Buildskript angepasst werden.
