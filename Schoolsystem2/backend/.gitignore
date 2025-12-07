@@ -1,2 +1,5 @@
 bin/
 .gradle/
+.env
+.env.*
+.venv/

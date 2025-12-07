@@ -60,7 +60,13 @@ C:.
 |       |   |           |   |       WebRLangVersion.java
 |       |   |           |   |
 |       |   |           |   +---ports
-|       |   |           |   |       .gitkeep
+|       |   |           |   |       ResourceRepository.java
+|       |   |           |   |       ResourceToTopicRepository.java
+|       |   |           |   |       SourceRepository.java
+|       |   |           |   |       TagRepository.java
+|       |   |           |   |       TopicRepository.java
+|       |   |           |   |       TopicTagRepository.java
+|       |   |           |   |       UsesSourceRepository.java
 |       |   |           |   |
 |       |   |           |   +---services
 |       |   |           |   |       .gitkeep
@@ -91,16 +97,19 @@ C:.
 |       |       |       Branches.csv
 |       |       |       ct_lrequirements.csv
 |       |       |       ct_resource_tags.csv
+|       |       |       ct_resource_to_topic.csv
 |       |       |       ct_topic_tags.csv
 |       |       |       ct_topic_tags_PLANNING.txt
+|       |       |       ct_uses_source.csv
 |       |       |       transparent_topic_tags.txt
 |       |       |       t_contact_type.csv
 |       |       |       t_inter_type.csv
 |       |       |       t_language.csv
 |       |       |       t_req_type.csv
+|       |       |       t_resource.csv
 |       |       |       t_resource_type.csv
-|       |       |       t_source.csv - Shortcut.lnk
-|       |       |       t_source_author.csv - Shortcut.lnk
+|       |       |       t_source.csv
+|       |       |       t_source_author.csv
 |       |       |       t_source_type.csv
 |       |       |       t_tag.csv
 |       |       |       t_tag_PLANNING.txt
