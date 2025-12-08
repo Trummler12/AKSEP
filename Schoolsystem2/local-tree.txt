@@ -80,7 +80,21 @@ C:.
 |       |   |           |
 |       |   |           +---infrastructure
 |       |   |           |   +---csv
-|       |   |           |   |       .gitkeep
+|       |   |           |   |       CsvBootstrapResult.java
+|       |   |           |   |       CsvDataBootstrapper.java
+|       |   |           |   |       CsvFileReader.java
+|       |   |           |   |       CsvLineParser.java
+|       |   |           |   |       ResourceTagCsvLoader.java
+|       |   |           |   |       ResourceTypeCsvLoader.java
+|       |   |           |   |       SourceAuthorCsvLoader.java
+|       |   |           |   |       SourceCsvLoader.java
+|       |   |           |   |       SourceImportResult.java
+|       |   |           |   |       SourceTypeCsvLoader.java
+|       |   |           |   |       TagCsvLoader.java
+|       |   |           |   |       TopicCsvLoader.java
+|       |   |           |   |       TopicLevelCsvLoader.java
+|       |   |           |   |       TopicTagCsvLoader.java
+|       |   |           |   |       TopicTypeCsvLoader.java
 |       |   |           |   |
 |       |   |           |   +---mapper
 |       |   |           |   |       .gitkeep
@@ -97,7 +111,9 @@ C:.
 |       |       |       Branches.csv
 |       |       |       ct_lrequirements.csv
 |       |       |       ct_resource_tags.csv
+|       |       |       ct_resource_tags_PLANNING.csv.txt
 |       |       |       ct_resource_to_topic.csv
+|       |       |       ct_resource_to_topic_PLANNING.csv.txt
 |       |       |       ct_topic_tags.csv
 |       |       |       ct_topic_tags_PLANNING.txt
 |       |       |       ct_uses_source.csv
@@ -120,9 +136,10 @@ C:.
 |       |       |       t_topic_url.csv
 |       |       |
 |       |       \---scripts
-|       |               branches_to_tags PROMPT.txt
+|       |               .env
 |       |               branches_to_tags.ps1
 |       |               README.md
+|       |               resource_tags_assignment.py
 |       |               weight_dist_bruteforce.py
 |       |               Weight_Dist_Test.xlsx
 |       |
@@ -167,7 +184,19 @@ C:.
 |                       |
 |                       +---infrastructure
 |                       |   +---csv
-|                       |   |       .gitkeep
+|                       |   |       CsvDataBootstrapperTest.java
+|                       |   |       CsvLineParserTest.java
+|                       |   |       InteractionTypeCsvConsistencyTest.java
+|                       |   |       ResourceTagCsvLoaderTest.java
+|                       |   |       ResourceTypeCsvLoaderTest.java
+|                       |   |       SourceAuthorCsvLoaderTest.java
+|                       |   |       SourceCsvLoaderTest.java
+|                       |   |       SourceTypeCsvLoaderTest.java
+|                       |   |       TagCsvLoader.java
+|                       |   |       TopicCsvLoaderTest.java
+|                       |   |       TopicLevelCsvLoaderTest.java
+|                       |   |       TopicTagCsvLoaderTest.java
+|                       |   |       TopicTypeCsvLoaderTest.java
 |                       |   |
 |                       |   +---mapper
 |                       |   |       .gitkeep

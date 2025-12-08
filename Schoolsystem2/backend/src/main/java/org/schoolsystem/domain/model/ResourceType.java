@@ -17,8 +17,8 @@ public final class ResourceType {
     private final int version;
 
     private ResourceType(int id, String name, int version) {
-        if (id <= 0) {
-            throw new IllegalArgumentException("ResourceType id must be > 0, but was: " + id);
+        if (id < 0) {
+            throw new IllegalArgumentException("ResourceType id must be >= 0, but was: " + id);
         }
         Objects.requireNonNull(name, "name must not be null");
         String trimmed = name.trim();

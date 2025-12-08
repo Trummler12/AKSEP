@@ -35,11 +35,13 @@ DEFAULT_OUTPUT = "../csv/ct_resource_tags_PLANNING.csv.txt"
 MIN_TAGS = 4
 MAX_TAGS = 7
 MAX_WEIGHTS = 5  # we only emit the first 5 tags (weights 5..1)
+DEFAULT_CONTINUE_AFTER_LAST_SOURCE_ID = True
+DEFAULT_CUSTOM_STARTING_SOURCE_ID: Optional[int] = None
 SAMPLE_SIZE_A = 1  # number of calls per resource to primary
-SAMPLE_SIZE_B = 3  # number of calls per resource to secondary
+SAMPLE_SIZE_B = 2  # number of calls per resource to secondary
 SAMPLE_SIZE_C = 0  # tertiary disabled by default
-WEIGHT_A = 5       # rank weight for primary list
-WEIGHT_B = 1       # rank weight for secondary list
+WEIGHT_A = 3       # rank weight for primary list
+WEIGHT_B = 2       # rank weight for secondary list
 WEIGHT_C = 1       # unused when tertiary disabled
 
 
@@ -178,6 +180,25 @@ def load_existing(output_path: Path) -> Set[int]:
             except (KeyError, ValueError):
                 continue
     return seen
+
+
+def find_last_resource_id(output_path: Path) -> Optional[int]:
+    if not output_path.exists():
+        return None
+    last_id: Optional[int] = None
+    with output_path.open(encoding="utf-8") as f:
+        for line in reversed(f.read().splitlines()):
+            line = line.strip()
+            if not line or line.startswith("resourceID"):
+                continue
+            parts = line.split(",")
+            if parts:
+                try:
+                    last_id = int(parts[0])
+                    break
+                except ValueError:
+                    continue
+    return last_id
 
 
 def ensure_header(output_path: Path) -> None:
@@ -594,8 +615,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--retry-delay",
         type=float,
-        default=5.0,
-        help="Seconds to wait between retries for the same resource (default: 5s).",
+        default=3600.0,
+        help="Seconds to wait between retries for the same resource (default: 1h).",
     )
     parser.add_argument(
         "--requests-per-minute",
@@ -640,6 +661,18 @@ def parse_args() -> argparse.Namespace:
         help="1-based row number in t_source.csv to start processing (after filtering sa_resource==1).",
     )
     parser.add_argument(
+        "--continue-after-last-source-id",
+        action="store_true",
+        help="If set, continue after the last resourceID written in the output CSV.",
+        default=DEFAULT_CONTINUE_AFTER_LAST_SOURCE_ID,
+    )
+    parser.add_argument(
+        "--custom-starting-source-id",
+        type=int,
+        default=DEFAULT_CUSTOM_STARTING_SOURCE_ID,
+        help="Start at the given sourceID (after filtering sa_resource==1); ignored if continue-after-last is set.",
+    )
+    parser.add_argument(
         "--max-rate-limit-retries",
         type=int,
         default=6,
@@ -660,6 +693,28 @@ def main() -> int:
 
     tags = load_tags(csv_dir / "t_tag.csv")
     resources = load_resources(csv_dir / "t_source.csv")
+    output_path = (script_dir / args.output).resolve()
+    # Determine effective start row based on resume/override flags
+    effective_start_row = max(1, args.start_row)
+    if args.continue_after_last_source_id:
+        last_id = find_last_resource_id(output_path)
+        if last_id is None:
+            print("No previous rows found in output; starting from row 1.", file=sys.stderr)
+            effective_start_row = 1
+        else:
+            match_index = next((i for i, r in enumerate(resources, start=1) if r.source_id == last_id), None)
+            if match_index is None:
+                raise RuntimeError(f"Last resourceID {last_id} not found in t_source.csv (sa_resource==1 filter applied)")
+            effective_start_row = match_index + 1
+    elif args.custom_starting_source_id is not None:
+        match_index = next(
+            (i for i, r in enumerate(resources, start=1) if r.source_id == args.custom_starting_source_id), None
+        )
+        if match_index is None:
+            raise RuntimeError(
+                f"Custom starting sourceID {args.custom_starting_source_id} not found in t_source.csv (sa_resource==1 filter applied)"
+            )
+        effective_start_row = match_index
     output_path = (script_dir / args.output).resolve()
     rate_limiter_a = None if args.dry_run else RateLimiter(args.requests_per_minute)
     rate_limiter_b = None if (args.dry_run or not args.secondary_model) else RateLimiter(
@@ -686,7 +741,7 @@ def main() -> int:
             rate_limiter_a=rate_limiter_a,
             rate_limiter_b=rate_limiter_b,
             rate_limiter_c=rate_limiter_c,
-            start_row=max(1, args.start_row),
+            start_row=effective_start_row,
             max_rate_limit_retries=max(1, args.max_rate_limit_retries),
             repeats_a=max(0, args.repeats_a),
             repeats_b=max(0, args.repeats_b),

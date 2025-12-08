@@ -17,7 +17,6 @@ class ResourceTypeTest {
 
     @Test
     void rejectsInvalidIdNameAndVersion() {
-        assertThrows(IllegalArgumentException.class, () -> ResourceType.of(0, "Name", 1));
         assertThrows(IllegalArgumentException.class, () -> ResourceType.of(-1, "Name", 1));
         assertThrows(NullPointerException.class, () -> ResourceType.of(1, null, 1));
         assertThrows(IllegalArgumentException.class, () -> ResourceType.of(1, "   ", 1));
