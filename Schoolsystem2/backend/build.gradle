@@ -1,30 +1,32 @@
-plugins {
+plugins { // no idea why java marks an error here
     id 'java'
+    id 'application'
 }
 
 group = 'org.schoolsystem'
-version = '0.0.1-SNAPSHOT'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+// Hier sagen wir Gradle, welches die "Startklasse" ist:
+application {
+    mainClass = 'org.schoolsystem.devserver.DevServer'
 }
 
 test {
     useJUnitPlatform()
-}
-
-tasks.processResources {
-    // Skip temporary Excel lock files created when a workbook is open
-    exclude '**/~$*'
 }

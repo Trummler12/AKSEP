@@ -167,6 +167,15 @@ Linux/macOS:
 ./gradlew test
 ```
 
+### 2.1. Backend Dev-Server starten
+
+- Stelle sicher, dass ein JDK 21 installiert ist (z. B. Temurin 21; Gradle nutzt eine Java-21-Toolchain).
+- Im Ordner `backend/` ausführen:
+  - Windows: `.\gradlew.bat run`
+  - macOS/Linux: `./gradlew run`
+- Endpunkte: `http://localhost:8080/health` (Healthcheck) und `http://localhost:8080/api/v1/tags` (CSV-Daten als JSON).
+- Hinweis: `:backend:run` ist nicht nötig, weil `backend` bereits das Root-Projekt ist.
+
 ---
 
 ## 3. Tests ausführen
@@ -212,11 +221,15 @@ Aktuell relevante Testklassen:
   * `Resource`
   * ...
 
-* Es gibt noch **keine ausführbare Backend-Anwendung** (keine `main()`).
-  Fokus liegt aktuell auf:
-  * Domain-Modellierung
-  * CSV-Einleselogik
-  * Testabdeckung der Value Objects
+* Es gibt einen **Dev-Server** für lokale Tests:
+  * Startklasse: `org.schoolsystem.devserver.DevServer`
+  * Endpunkte: `/health` (Healthcheck) und `/api/v1/tags` (CSV-Daten als JSON)
+  * Port: `8080`; nur für Entwicklung gedacht
+
+Fokus liegt aktuell auf:
+* Domain-Modellierung
+* CSV-Einleselogik
+* Testabdeckung der Value Objects
 
 ---
 

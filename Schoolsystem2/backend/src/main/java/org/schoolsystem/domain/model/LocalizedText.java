@@ -22,7 +22,7 @@ public final class LocalizedText {
     /**
      * Erzeugt einen LocalizedText aus einem Mapping.
      * Null-Keys oder Null-Werte sind nicht erlaubt.
-     * Werte werden getrimmt.
+    *  Werte werden getrimmt.
      */
     public static LocalizedText of(Map<LanguageCode, String> rawLocalizations) {
         Objects.requireNonNull(rawLocalizations, "localizations must not be null");
@@ -58,6 +58,25 @@ public final class LocalizedText {
     public Optional<String> get(LanguageCode language) {
         Objects.requireNonNull(language, "language must not be null");
         return Optional.ofNullable(localizations.get(language));
+    }
+
+    /**
+     * Liefert den Text für die gewünschte Sprache oder,
+     * falls nicht vorhanden, für die Fallback-Sprache.
+     *
+     * Falls weder gewünschte noch Fallback-Sprache vorhanden sind,
+     * wird irgendein vorhandener Wert zurückgegeben (oder ein leerer String,
+     * wenn gar nichts vorhanden ist – sollte in deinem Modell nicht vorkommen).
+     */
+    public String getOrDefault(LanguageCode requested, LanguageCode fallback) {
+        Objects.requireNonNull(requested, "requested language must not be null");
+        Objects.requireNonNull(fallback, "fallback language must not be null");
+
+        return get(requested)
+                .or(() -> get(fallback))
+                .orElseGet(() -> localizations.values().stream()
+                        .findFirst()
+                        .orElse(""));
     }
 
     /**

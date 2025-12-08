@@ -18,9 +18,18 @@ npm -v      # 11.6.1
 
 1. Projekt starten
 
+frontend:
 ```bash
+cd frontend
 npm install
 npm run dev
+```
+
+neues Terminal öffnen
+
+```bash
+cd backend
+.\gradlew run # Irgendwas funktioniert noch nicht... D:
 ```
 
 Für einen Produktionsbuild:
@@ -32,7 +41,6 @@ npm run build
 ## Projektstruktur
 
 - `src/` – React/TypeScript-Quellcode und Assets.
-- `Schoolsystem/` – Ausgelagertes Unterrichtsressourcen-Projekt (wird in ein eigenes Repo migriert).
 - `reference/` – Historische Web-Prototypen (`v1_json_not_good`, `v2_too_complicated`) und alte Root-Dokumente.
 
 ## Weitere Hinweise

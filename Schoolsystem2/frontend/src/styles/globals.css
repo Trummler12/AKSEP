@@ -1,0 +1,157 @@
+/* 1) Reset & Basics */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Basis für REM-Skala */
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 2) Design Tokens – Konstanten (nicht Theme-abhängig) */
+
+:root {
+  /* Font stacks */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+
+  /* Brand color names */
+  --color-true-lavender: #7e65b9;
+  --color-horizon: #5a8fa8;
+  --color-mint: #3eb694;
+
+  /* Dark palette (rohe Werte) */
+  --color-dark-bg-1: #322a45;
+  --color-dark-bg-2: #423a51;
+  --color-dark-primary-a: #7e65b9;
+  --color-dark-primary-b: #3eb694;
+  --color-dark-border: #5a8fa8;
+
+  /* Light palette (rohe Werte) */
+  --color-light-primary-a: #322a45;
+  --color-light-primary-b: #423a51;
+  --color-light-bg-1: #3eb694;
+  --color-light-bg-2: #5a8fa8;
+  --color-light-border: #7e65b9;
+
+  /* Neutral & semantic base colors (roh) */
+  --color-white: #ffffff;
+  --color-black: #050309;
+  --color-danger-base: #ff5b6b;
+
+  /* Typo-Skala */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-s: 0.875rem; /* 14px */
+  --font-size-m: 1rem; /* 16px */
+  --font-size-l: 1.25rem; /* 20px */
+  --font-size-xl: 1.6rem; /* ~26px */
+  --font-size-xxl: 2.1rem; /* ~34px */
+
+  /* Line heights */
+  --line-height-tight: 1.15;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.65;
+
+  /* Radius tokens */
+  --radius-xs: 3px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Spacing scale */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.4rem;
+  --space-s: 0.65rem;
+  --space-m: 1rem;
+  --space-l: 1.5rem;
+  --space-xl: 2rem;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.18);
+  --shadow-subtle: 0 1px 4px rgba(0, 0, 0, 0.15);
+
+  /* Transitions */
+  --transition-fast: 120ms ease-out;
+  --transition-normal: 180ms ease-out;
+
+  /* Z-indices */
+  --z-header: 10;
+  --z-dropdown: 20;
+}
+
+/* 3) Typo-Utilities */
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-s {
+  font-size: var(--font-size-s);
+}
+
+.text-m {
+  font-size: var(--font-size-m);
+}
+
+.text-l {
+  font-size: var(--font-size-l);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.text-xxl {
+  font-size: var(--font-size-xxl);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* 4) Generic element defaults (farblose Varianten – Farben kommen über theme.css) */
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.25);
+  color: inherit;
+}
