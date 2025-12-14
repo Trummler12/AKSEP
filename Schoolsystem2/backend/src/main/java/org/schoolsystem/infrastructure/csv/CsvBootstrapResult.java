@@ -24,7 +24,8 @@ public record CsvBootstrapResult(
         List<TopicLevel> topicLevels,
         List<TopicTag> topicTags,
 
-        // Sources & Resources; TODO: ResourceTags hinzufügen
+        // Sources & Resources
+        List<ResourceTag> resourceTags,
         List<SourceAuthor> sourceAuthors,
         List<Source> sources,
         List<Resource> resources,
@@ -41,6 +42,7 @@ public record CsvBootstrapResult(
         Objects.requireNonNull(topics, "topics must not be null");
         Objects.requireNonNull(topicLevels, "topicLevels must not be null");
         Objects.requireNonNull(topicTags, "topicTags must not be null");
+        Objects.requireNonNull(resourceTags, "resourceTags must not be null");
         Objects.requireNonNull(sourceAuthors, "sourceAuthors must not be null");
         Objects.requireNonNull(sources, "sources must not be null");
         Objects.requireNonNull(resources, "resources must not be null");

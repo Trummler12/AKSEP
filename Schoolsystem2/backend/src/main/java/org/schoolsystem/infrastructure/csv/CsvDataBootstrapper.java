@@ -60,7 +60,10 @@ public final class CsvDataBootstrapper {
         // 5) Sources + Resources (+ Versions, LangVersions, UsesSource)
         var sourceCsvLoader = new SourceCsvLoader(reader, sourceTypes, resourceTypes);
         var sourceImport = sourceCsvLoader.loadAll();
-        // TODO: ResourceTags laden
+
+        // 6) ResourceTags (resourceID <-> tagID with weight)
+        var resourceTagLoader = new ResourceTagCsvLoader();
+        var resourceTags = resourceTagLoader.loadAll();
 
         return new CsvBootstrapResult(
                 sourceTypes,
@@ -71,6 +74,7 @@ public final class CsvDataBootstrapper {
                 topics,
                 topicLevels,
                 topicTags,
+                resourceTags,
                 sourceAuthors,
                 sourceImport.sources(),
                 sourceImport.resources(),

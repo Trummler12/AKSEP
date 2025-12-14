@@ -59,7 +59,7 @@ export function createTopicsListView(context) {
     sortDirection: 'asc',
     // Clientseitige Filter:
     searchText: '',
-    selectedTag: null,
+    selectedTags: [],
     // Pagination:
     page: 0,
     pageSize: 25,
@@ -221,13 +221,18 @@ export function createTopicsListView(context) {
       });
     }
 
-    if (state.selectedTag) {
-      const tagLower = state.selectedTag.toLowerCase();
-      list = list.filter(
-        (t) =>
-          Array.isArray(t.tags) &&
-          t.tags.some((tag) => tag && tag.toLowerCase() === tagLower)
-      );
+    if (Array.isArray(state.selectedTags) && state.selectedTags.length > 0) {
+      const selected = state.selectedTags
+        .map((t) => (t || '').trim().toLowerCase())
+        .filter(Boolean);
+
+      if (selected.length > 0) {
+        list = list.filter((t) => {
+          if (!Array.isArray(t.tags) || t.tags.length === 0) return false;
+          const topicTags = new Set(t.tags.map((tag) => (tag || '').toLowerCase()));
+          return selected.every((sel) => topicTags.has(sel));
+        });
+      }
     }
 
     return list;
@@ -249,16 +254,20 @@ export function createTopicsListView(context) {
       topics,
       page: state.page,
       pageSize: state.pageSize,
-      selectedTag: state.selectedTag,
+      selectedTags: state.selectedTags,
       onTagToggle: (tagLabel) => {
-        if (
-          state.selectedTag &&
-          tagLabel.toLowerCase() === state.selectedTag.toLowerCase()
-        ) {
-          state.selectedTag = null;
+        const normalized = (tagLabel || '').trim();
+        if (!normalized) return;
+
+        const lower = normalized.toLowerCase();
+        const next = Array.isArray(state.selectedTags) ? [...state.selectedTags] : [];
+        const idx = next.findIndex((t) => (t || '').toLowerCase() === lower);
+        if (idx >= 0) {
+          next.splice(idx, 1);
         } else {
-          state.selectedTag = tagLabel;
+          next.push(normalized);
         }
+        state.selectedTags = next;
         state.page = 0;
         updateStatus();
         renderTableAndPagination();

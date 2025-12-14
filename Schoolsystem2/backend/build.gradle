@@ -27,6 +27,48 @@ application {
     mainClass = 'org.schoolsystem.devserver.DevServer'
 }
 
+tasks.register('stopServer') {
+    group = 'application'
+    description = 'Stops the running DevServer on localhost:8080 via POST /shutdown.'
+
+    doLast {
+        def url = new URL('http://localhost:8080/shutdown')
+
+        try {
+            def conn = (HttpURLConnection) url.openConnection()
+            conn.requestMethod = 'POST'
+            conn.connectTimeout = 1500
+            conn.readTimeout = 3000
+            conn.doOutput = true
+
+            conn.outputStream.withCloseable { out ->
+                out.write(''.getBytes('UTF-8'))
+            }
+
+            int code = conn.responseCode
+            def stream = (code >= 200 && code < 400) ? conn.inputStream : conn.errorStream
+            def body = stream != null ? stream.getText('UTF-8') : ''
+
+            println("DevServer stop request: HTTP ${code}${body ? " — ${body}" : ""}")
+        } catch (Exception e) {
+            println("DevServer not running on http://localhost:8080 (or shutdown failed): ${e.class.simpleName}: ${e.message}")
+        }
+    }
+}
+
+tasks.register('stop') {
+    group = 'application'
+    description = 'Alias for stopServer.'
+    dependsOn('stopServer')
+}
+
 test {
     useJUnitPlatform()
+}
+
+// Some Office apps create temporary lock files like "~$<name>.xlsx".
+// If such a file lives under src/main/resources, Gradle's incremental resource processing can fail
+// when the temp file is transient/locked. Exclude them from resources.
+tasks.named('processResources') {
+    exclude '**/~$*'
 }

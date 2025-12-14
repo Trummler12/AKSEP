@@ -7,7 +7,7 @@ import { createTagChip } from './TagChip.js';
  *   topics: any[],
  *   page: number,                  // 0-based
  *   pageSize?: number,
- *   selectedTag?: string | null,
+ *   selectedTags?: string[],
  *   onTagToggle?: (tag: string) => void
  * }} config
  */
@@ -15,7 +15,7 @@ export function createTopicTable({
   topics,
   page,
   pageSize = 25,
-  selectedTag = null,
+  selectedTags = [],
   onTagToggle
 }) {
   const wrapper = document.createElement('section');
@@ -89,11 +89,15 @@ export function createTopicTable({
     tagsTd.className = 'topics-table__tags';
 
     if (Array.isArray(topic.tags) && topic.tags.length > 0) {
+      const selectedLower = new Set(
+        (Array.isArray(selectedTags) ? selectedTags : [])
+          .map((t) => (t || '').toLowerCase())
+          .filter(Boolean)
+      );
+
       topic.tags.forEach((tagLabel) => {
         const isActive =
-          selectedTag &&
-          tagLabel &&
-          tagLabel.toLowerCase() === selectedTag.toLowerCase();
+          tagLabel && selectedLower.has(tagLabel.toLowerCase());
 
         const chip = createTagChip({
           label: tagLabel,

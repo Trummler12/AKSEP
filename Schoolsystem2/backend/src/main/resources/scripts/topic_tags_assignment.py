@@ -1,13 +1,14 @@
 """
-Generate `ct_resource_tags_PLANNING.csv.txt` by asking OpenAI models to map resources to tags.
+Generate `ct_topic_tags_PLANNING.csv.txt` by asking OpenAI models to map topics to tags.
 
 Workflow:
-- Load resources from t_source.csv where sa_resource == 1.
 - Load tag catalog from t_tag.csv (tagID, name, synonyms).
-- For each resource, ask multiple OpenAI models for 4-7 relevant tagIDs (prefer niche tags).
-- Merge ranked results with weights, then write up to the first 5 tags as rows: resourceID,tagID,weight (weights 5..1).
+- Load topics from t_topic.csv (prefer lang=en per topicID).
+- For each topic, ask multiple OpenAI models for MIN_TAGS..MAX_TAGS based on topic layer.
+- Merge ranked results with weights, then write the first K tags as rows: topicID,tagID,weight,
+  where K = 3 + floor(layer/2) and weights depend on (index, layer).
 
-Supports dry-run (no API calls), resume (skip already written resourceIDs),
+Supports dry-run (no API calls), resume (skip already written topicIDs),
 per-model rate limits, retries, prompt shrinking on token overrun, and debug logging.
 """
 
@@ -31,17 +32,15 @@ from urllib.request import Request, urlopen
 # Keep defaults conservative for trial credits and rate limits:
 # - primary enabled
 # - secondary/tertiary disabled unless explicitly set
-DEFAULT_MODEL_A = "gpt-4.1-nano"  # primary
-DEFAULT_MODEL_B = "gpt-4.1-nano"  # secondary disabled by default
-DEFAULT_MODEL_C = "gpt-4.1-nano"  # tertiary disabled by default
-DEFAULT_OUTPUT = "../csv/ct_resource_tags_PLANNING.csv.txt"
-MIN_TAGS = 4
-MAX_TAGS = 7
-MAX_WEIGHTS = 5  # we only emit the first 5 tags (weights 5..1)
+DEFAULT_MODEL_A = "gpt-4.1-nano"    # primary
+DEFAULT_MODEL_B = "gpt-4.1-nano"    # secondary disabled by default
+DEFAULT_MODEL_C = "gpt-4.1-nano"    # tertiary disabled by default
+DEFAULT_OUTPUT = "../csv/ct_topic_tags_PLANNING.csv.txt"
+BASE_MIN_TAGS = 4
 DEFAULT_CONTINUE_AFTER_LAST_SOURCE_ID = True
 DEFAULT_CUSTOM_STARTING_SOURCE_ID: Optional[int] = None
-SAMPLE_SIZE_A = 1  # number of calls per resource to primary
-SAMPLE_SIZE_B = 1  # number of calls per resource to secondary
+SAMPLE_SIZE_A = 1  # number of calls per topic to primary
+SAMPLE_SIZE_B = 1  # number of calls per topic to secondary
 SAMPLE_SIZE_C = 1  # tertiary disabled by default
 WEIGHT_A = 3       # rank weight for primary list
 WEIGHT_B = 3       # rank weight for secondary list
@@ -57,6 +56,61 @@ _MODEL_UNSUPPORTED_PARAMS: Dict[str, Set[str]] = {}
 _MODEL_TOKENS_PARAM: Dict[str, Optional[str]] = {}  # model -> param name to use for output tokens, or None
 
 TAG_INPUT = "t_tag.csv"
+TOPIC_INPUT = "t_topic.csv"
+
+
+def min_tags_for_layer(layer: int) -> int:
+    return BASE_MIN_TAGS
+
+
+def max_tags_for_layer(layer: int) -> int:
+    # MAX_TAGS = 6 + floor(layer/2)
+    return 6 + max(0, layer // 2)
+
+
+def cutoff_for_layer(layer: int) -> int:
+    # output cutoff = 3 + floor(layer/2)
+    return 3 + max(0, layer // 2)
+
+
+def weights_for_layer(layer: int) -> List[int]:
+    """
+    Hard-coded weight matrix (index-based), derived from the spec table below.
+    Important: layers with the same cutoff can still have *different* weight vectors
+    (e.g. layer 2 vs layer 3 both have cutoff=4).
+    """
+    weights_by_layer: Dict[int, List[int]] = {
+        1: [5, 3, 1],
+        2: [5, 3, 2, 1],
+        3: [5, 4, 3, 1],
+        4: [5, 4, 3, 2, 1],
+        5: [5, 4, 3, 3, 1],
+        6: [5, 4, 3, 2, 2, 1],
+        7: [5, 4, 3, 3, 2, 1],
+        8: [5, 4, 3, 3, 2, 1, 1],
+        9: [5, 4, 3, 3, 2, 2, 1],
+        10: [5, 4, 3, 3, 2, 2, 2, 1],
+        11: [5, 4, 3, 3, 2, 2, 2, 1],
+        12: [5, 4, 3, 3, 2, 2, 2, 1, 1],
+        13: [5, 4, 3, 3, 3, 2, 2, 1, 1],
+    }
+
+    k = cutoff_for_layer(layer)
+    if k <= 0:
+        return []
+
+    if layer in weights_by_layer:
+        weights = weights_by_layer[layer]
+        if len(weights) != k:
+            raise ValueError(f"Weight table mismatch for layer={layer}: expected {k} weights, got {len(weights)}")
+        return weights
+
+    # Fallback for layers not present in the table: extend last known layer with trailing 1s.
+    last_layer = max(weights_by_layer)
+    weights = weights_by_layer[last_layer]
+    if len(weights) < k:
+        return weights + [1] * (k - len(weights))
+    return weights[:k]
 
 @dataclass
 class Tag:
@@ -66,9 +120,10 @@ class Tag:
 
 
 @dataclass
-class Resource:
-    source_id: int
-    title: str
+class Topic:
+    topic_id: str
+    layer: int
+    name: str
     description: str
 
 
@@ -206,53 +261,69 @@ def load_tags(csv_path: Path) -> Dict[int, Tag]:
     return tags
 
 
-def load_resources(csv_path: Path) -> List[Resource]:
-    resources: List[Resource] = []
+def load_topics(csv_path: Path) -> List[Topic]:
+    """
+    Load topics from t_topic.csv, preferring lang='en' for each topicID.
+    """
+    by_id: Dict[str, Dict[str, str]] = {}
+    order: List[str] = []
     with csv_path.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if row.get("sa_resource") != "1":
+            topic_id = (row.get("topicID") or "").strip()
+            if not topic_id:
                 continue
-            try:
-                source_id = int(row["sourceID"])
-            except (KeyError, ValueError):
+            lang = (row.get("lang") or "").strip().lower() or "en"
+            existing = by_id.get(topic_id)
+            if existing is None:
+                by_id[topic_id] = row
+                order.append(topic_id)
                 continue
-            title = (row.get("source_title") or "").strip()
-            description = (row.get("description") or "").strip()
-            resources.append(Resource(source_id=source_id, title=title, description=description))
-    return resources
+            existing_lang = (existing.get("lang") or "").strip().lower() or "en"
+            if existing_lang != "en" and lang == "en":
+                by_id[topic_id] = row
+
+    topics: List[Topic] = []
+    for topic_id in order:
+        row = by_id[topic_id]
+        name = (row.get("name") or "").strip()
+        description = (row.get("description") or "").strip()
+        try:
+            layer = int((row.get("layer") or "0").strip())
+        except ValueError:
+            layer = 0
+        topics.append(Topic(topic_id=topic_id, layer=layer, name=name, description=description))
+
+    return topics
 
 
-def load_existing(output_path: Path) -> Set[int]:
+def load_existing(output_path: Path) -> Set[str]:
     if not output_path.exists():
         return set()
-    seen: Set[int] = set()
+    seen: Set[str] = set()
     with output_path.open(encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            try:
-                seen.add(int(row["resourceID"]))
-            except (KeyError, ValueError):
-                continue
+            tid = (row.get("topicID") or "").strip()
+            if tid:
+                seen.add(tid)
     return seen
 
 
-def find_last_resource_id(output_path: Path) -> Optional[int]:
+def find_last_topic_id(output_path: Path) -> Optional[str]:
     if not output_path.exists():
         return None
-    last_id: Optional[int] = None
+    last_id: Optional[str] = None
     with output_path.open(encoding="utf-8") as f:
         for line in reversed(f.read().splitlines()):
             line = line.strip()
-            if not line or line.startswith("resourceID"):
+            if not line or line.startswith("topicID"):
                 continue
             parts = line.split(",")
             if parts:
-                try:
-                    last_id = int(parts[0])
+                last_id = parts[0].strip()
+                if last_id:
                     break
-                except ValueError:
-                    continue
     return last_id
 
 
@@ -260,10 +331,18 @@ def ensure_header(output_path: Path) -> None:
     if output_path.exists():
         return
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text("resourceID,tagID,weight\n", encoding="utf-8")
+    output_path.write_text("topicID,tagID,weight\n", encoding="utf-8")
 
 
-def build_prompt(resource: Resource, tags: Dict[int, Tag], desc_limit: int, include_synonyms: bool) -> str:
+def build_prompt(
+    topic: Topic,
+    tags: Dict[int, Tag],
+    *,
+    min_tags: int,
+    max_tags: int,
+    desc_limit: int,
+    include_synonyms: bool,
+) -> str:
     tag_lines = []
     for tag in tags.values():
         if include_synonyms and tag.synonyms:
@@ -273,14 +352,14 @@ def build_prompt(resource: Resource, tags: Dict[int, Tag], desc_limit: int, incl
         tag_lines.append(f"- {tag.tag_id}: {tag.name}{syn}")
     tag_catalog = "\n".join(tag_lines)
 
-    desc = (resource.description or "").strip()
+    desc = (topic.description or "").strip()
     if desc_limit and len(desc) > desc_limit:
         desc = desc[:desc_limit] + "..."
 
     return textwrap.dedent(
         f"""
-        You are mapping a video resource to tags.
-        - Choose between {MIN_TAGS} and {MAX_TAGS} tagIDs from the provided catalog.
+        You are mapping a topic to tags.
+        - Choose between {min_tags} and {max_tags} tagIDs from the provided catalog.
         - Order tags by relevance (most relevant first).
         - Only return tagIDs from the catalog; never invent new IDs.
         - Prefer niche/specific tags when applicable; avoid overly generic matches unless clearly relevant.
@@ -289,8 +368,10 @@ def build_prompt(resource: Resource, tags: Dict[int, Tag], desc_limit: int, incl
         Tag catalog:
         {tag_catalog}
 
-        Resource:
-        Title: {resource.title or "[no title]"}
+        Topic:
+        ID: {topic.topic_id}
+        Layer: {topic.layer}
+        Name: {topic.name or "[no name]"}
         Description (truncated): {desc or "[no description]"}
         """
     ).strip()
@@ -522,18 +603,18 @@ def call_openai(
     raise RuntimeError(f"OpenAI request failed; last_error={last_error_detail}")
 
 
-def heuristic_tags(resource: Resource, tags: Dict[int, Tag]) -> List[int]:
-    text = f"{resource.title} {resource.description}".lower()
+def heuristic_tags(topic: Topic, tags: Dict[int, Tag], max_tags: int) -> List[int]:
+    text = f"{topic.name} {topic.description}".lower()
     matches: List[int] = []
     for tag in tags.values():
         if tag.name.lower() in text:
             matches.append(tag.tag_id)
     if not matches:
-        matches = [t.tag_id for t in list(tags.values())[:MAX_TAGS]]
-    return matches[:MAX_TAGS]
+        matches = [t.tag_id for t in list(tags.values())[: max_tags]]
+    return matches[:max_tags]
 
 
-def sanitize_ids(tag_ids: Iterable[int], valid_ids: Set[int]) -> List[int]:
+def sanitize_ids(tag_ids: Iterable[int], valid_ids: Set[int], max_tags: int) -> List[int]:
     seen: Set[int] = set()
     cleaned: List[int] = []
     for tid in tag_ids:
@@ -541,7 +622,7 @@ def sanitize_ids(tag_ids: Iterable[int], valid_ids: Set[int]) -> List[int]:
             continue
         seen.add(tid)
         cleaned.append(tid)
-        if len(cleaned) >= MAX_TAGS:
+        if len(cleaned) >= max_tags:
             break
     return cleaned
 
@@ -556,6 +637,7 @@ def fetch_model_lists(
     retry_delay: float,
     max_output_tokens: int,
     max_rate_limit_retries: int,
+    max_tags: int,
     debug: bool,
 ) -> List[List[int]]:
     results: List[List[int]] = []
@@ -571,7 +653,7 @@ def fetch_model_lists(
             try:
                 call_attempts += 1
                 raw = call_openai(api_key, model, prompt, max_output_tokens=call_tokens, debug=debug)
-                cleaned = sanitize_ids(raw, valid_ids)
+                cleaned = sanitize_ids(raw, valid_ids, max_tags=max_tags)
                 if debug:
                     print(f"[debug] model={model} raw_ids={raw} cleaned={cleaned}", file=sys.stderr)
                 results.append(cleaned)
@@ -632,26 +714,15 @@ def merge_ranked(weighted_lists: List[Tuple[int, Sequence[int]]]) -> List[int]:
     return combined_ids
 
 
-def assign_weights(tag_ids: Sequence[int]) -> List[int]:
-    weights = []
-    for idx, _ in enumerate(tag_ids[:MAX_WEIGHTS]):
-        weight = MAX_WEIGHTS - idx
-        if weight <= 0:
-            break
-        weights.append(weight)
-    return weights
-
-
-def write_rows(output_path: Path, resource_id: int, tag_ids: Sequence[int]) -> None:
-    weights = assign_weights(tag_ids)
+def write_rows(output_path: Path, topic_id: str, tag_ids: Sequence[int], weights: Sequence[int]) -> None:
     with output_path.open("a", encoding="utf-8", newline="") as f:
         writer = csv.writer(f, lineterminator="\n")
         for tag_id, weight in zip(tag_ids[: len(weights)], weights):
-            writer.writerow([resource_id, tag_id, weight])
+            writer.writerow([topic_id, tag_id, weight])
 
 
 def process_resources(
-    resources: List[Resource],
+    resources: List[Topic],
     tags: Dict[int, Tag],
     output_path: Path,
     api_key: str,
@@ -680,10 +751,10 @@ def process_resources(
     already = load_existing(output_path) if resume else set()
     processed = 0
 
-    for idx, resource in enumerate(resources, start=1):
+    for idx, topic in enumerate(resources, start=1):
         if idx < start_row:
             continue
-        if resume and resource.source_id in already:
+        if resume and topic.topic_id in already:
             continue
         if limit is not None and processed >= limit:
             break
@@ -695,15 +766,28 @@ def process_resources(
         max_output_tokens = DEFAULT_MAX_OUTPUT_TOKENS
         while True:
             attempt += 1
-            print(f"[resource {resource.source_id}] requesting tags... (attempt {attempt})", file=sys.stderr)
+            print(f"[topic {topic.topic_id}] requesting tags... (attempt {attempt})", file=sys.stderr)
             try:
+                layer = max(0, topic.layer)
+                min_tags = min_tags_for_layer(layer)
+                max_tags = max_tags_for_layer(layer)
+                if max_tags < min_tags:
+                    max_tags = min_tags
+                output_weights = weights_for_layer(layer)
+                output_count = len(output_weights)
+
                 if dry_run:
-                    results_a = [heuristic_tags(resource, tags)]
+                    results_a = [heuristic_tags(topic, tags, max_tags=max_tags)]
                     results_b: List[List[int]] = []
                     results_c: List[List[int]] = []
                 else:
                     prompt = build_prompt(
-                        resource, tags, desc_limit=desc_limit, include_synonyms=include_synonyms_local
+                        topic,
+                        tags,
+                        min_tags=min_tags,
+                        max_tags=max_tags,
+                        desc_limit=desc_limit,
+                        include_synonyms=include_synonyms_local,
                     )
                     results_a = fetch_model_lists(
                         model_a,
@@ -715,6 +799,7 @@ def process_resources(
                         retry_delay=retry_delay,
                         max_output_tokens=max_output_tokens,
                         max_rate_limit_retries=max_rate_limit_retries,
+                        max_tags=max_tags,
                         debug=debug,
                     )
                     results_b = fetch_model_lists(
@@ -727,6 +812,7 @@ def process_resources(
                         retry_delay=retry_delay,
                         max_output_tokens=max_output_tokens,
                         max_rate_limit_retries=max_rate_limit_retries,
+                        max_tags=max_tags,
                         debug=debug,
                     )
                     results_c = fetch_model_lists(
@@ -739,6 +825,7 @@ def process_resources(
                         retry_delay=retry_delay,
                         max_output_tokens=max_output_tokens,
                         max_rate_limit_retries=max_rate_limit_retries,
+                        max_tags=max_tags,
                         debug=debug,
                     )
 
@@ -758,7 +845,8 @@ def process_resources(
 
                 merged = merge_ranked(weighted_lists)
 
-                write_rows(output_path, resource.source_id, merged)
+                selected = merged[:output_count] if output_count else []
+                write_rows(output_path, topic.topic_id, selected, output_weights)
                 processed += 1
                 break
             except RateLimitError as exc:
@@ -766,11 +854,11 @@ def process_resources(
                 rate_limit_hits += 1
                 if rate_limit_hits > max_rate_limit_retries:
                     raise RuntimeError(
-                        f"Resource {resource.source_id} hit rate limits {rate_limit_hits} times; last error: {exc}"
+                        f"Topic {topic.topic_id} hit rate limits {rate_limit_hits} times; last error: {exc}"
                     ) from exc
                 wait_seconds = exc.retry_after if exc.retry_after and exc.retry_after > 0 else retry_delay
                 print(
-                    f"[resource {resource.source_id}] rate limit hit ({exc}); waiting {wait_seconds:.1f}s for next window",
+                    f"[topic {topic.topic_id}] rate limit hit ({exc}); waiting {wait_seconds:.1f}s for next window",
                     file=sys.stderr,
                 )
                 if rate_limiter_a:
@@ -789,7 +877,7 @@ def process_resources(
                 include_synonyms_local = False
                 max_output_tokens = min(4096, int(max_output_tokens * 1.6))
                 print(
-                    f"[resource {resource.source_id}] MAX_TOKENS, shrinking prompt (desc_limit={desc_limit}, synonyms disabled, max_output_tokens={max_output_tokens}); retrying after {retry_delay}s",
+                    f"[topic {topic.topic_id}] MAX_TOKENS, shrinking prompt (desc_limit={desc_limit}, synonyms disabled, max_output_tokens={max_output_tokens}); retrying after {retry_delay}s",
                     file=sys.stderr,
                 )
                 if attempt >= max_attempts:
@@ -799,25 +887,25 @@ def process_resources(
             except Exception as exc:  # noqa: BLE001
                 if attempt >= max_attempts:
                     raise RuntimeError(
-                        f"Resource {resource.source_id} failed after {attempt} attempts: {exc}"
+                        f"Topic {topic.topic_id} failed after {attempt} attempts: {exc}"
                     ) from exc
                 print(
-                    f"[resource {resource.source_id}] attempt {attempt} failed ({exc}); retrying after {retry_delay}s",
+                    f"[topic {topic.topic_id}] attempt {attempt} failed ({exc}); retrying after {retry_delay}s",
                     file=sys.stderr,
                 )
                 time.sleep(retry_delay)
 
-    print(f"Done. Processed {processed} resources; output -> {output_path}", file=sys.stderr)
+    print(f"Done. Processed {processed} topics; output -> {output_path}", file=sys.stderr)
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Assign tags to resources via OpenAI models and write ct_resource_tags_PLANNING.csv.txt"
+        description="Assign tags to topics via OpenAI models and write ct_topic_tags_PLANNING.csv.txt"
     )
     parser.add_argument(
         "--output",
         default=DEFAULT_OUTPUT,
-        help="Output CSV path relative to scripts directory (default: ../csv/ct_resource_tags_PLANNING.csv.txt)",
+        help="Output CSV path relative to scripts directory (default: ../csv/ct_topic_tags_PLANNING.csv.txt)",
     )
     parser.add_argument(
         "--limit",
@@ -828,7 +916,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--resume",
         action="store_true",
-        help="Skip resources already present in output (based on resourceID).",
+        help="Skip topics already present in output (based on topicID).",
     )
     parser.add_argument(
         "--dry-run",
@@ -870,13 +958,13 @@ def parse_args() -> argparse.Namespace:
         "--max-attempts",
         type=int,
         default=5,
-        help="Maximum attempts per resource before giving up (default: 5).",
+        help="Maximum attempts per topic before giving up (default: 5).",
     )
     parser.add_argument(
         "--retry-delay",
         type=float,
         default=30.0,
-        help="Seconds to wait between retries for the same resource (default: 30s).",
+        help="Seconds to wait between retries for the same topic (default: 30s).",
     )
     parser.add_argument(
         "--requests-per-minute",
@@ -900,38 +988,41 @@ def parse_args() -> argparse.Namespace:
         "--repeats-a",
         type=int,
         default=SAMPLE_SIZE_A,
-        help=f"Number of calls per resource to primary model (default: {SAMPLE_SIZE_A}).",
+        help=f"Number of calls per topic to primary model (default: {SAMPLE_SIZE_A}).",
     )
     parser.add_argument(
         "--repeats-b",
         type=int,
         default=SAMPLE_SIZE_B,
-        help=f"Number of calls per resource to secondary model (default: {SAMPLE_SIZE_B}).",
+        help=f"Number of calls per topic to secondary model (default: {SAMPLE_SIZE_B}).",
     )
     parser.add_argument(
         "--repeats-c",
         type=int,
         default=SAMPLE_SIZE_C,
-        help=f"Number of calls per resource to tertiary model (default: {SAMPLE_SIZE_C}).",
+        help=f"Number of calls per topic to tertiary model (default: {SAMPLE_SIZE_C}).",
     )
     parser.add_argument(
         "--start-row",
         type=int,
         default=1,
-        help="1-based row number in t_source.csv to start processing (after filtering sa_resource==1).",
+        help="1-based row number in t_topic.csv to start processing (after picking one row per topicID).",
     )
     parser.add_argument(
-        "--continue-after-last-source-id",
+        "--continue-after-last-topic-id",
         action="store_true",
-        help="If set, continue after the last resourceID written in the output CSV.",
+        help="If set, continue after the last topicID written in the output CSV.",
         default=DEFAULT_CONTINUE_AFTER_LAST_SOURCE_ID,
     )
     parser.add_argument(
-        "--custom-starting-source-id",
-        type=int,
-        default=DEFAULT_CUSTOM_STARTING_SOURCE_ID,
-        help="Start at the given sourceID (after filtering sa_resource==1); ignored if continue-after-last is set.",
+        "--custom-starting-topic-id",
+        type=str,
+        default=None,
+        help="Start at the given topicID; ignored if continue-after-last is set.",
     )
+    # Backwards compatible aliases (from resource script copy)
+    parser.add_argument("--continue-after-last-source-id", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--custom-starting-source-id", type=str, default=None, help=argparse.SUPPRESS)
     parser.add_argument(
         "--max-rate-limit-retries",
         type=int,
@@ -952,27 +1043,28 @@ def main() -> int:
         return 1
 
     tags = load_tags(csv_dir / TAG_INPUT)
-    resources = load_resources(csv_dir / "t_source.csv")
+    topics = load_topics(csv_dir / TOPIC_INPUT)
     output_path = (script_dir / args.output).resolve()
     # Determine effective start row based on resume/override flags
     effective_start_row = max(1, args.start_row)
-    if args.continue_after_last_source_id:
-        last_id = find_last_resource_id(output_path)
+    continue_after_last = bool(getattr(args, "continue_after_last_topic_id", False) or getattr(args, "continue_after_last_source_id", False))
+    custom_starting_topic_id = getattr(args, "custom_starting_topic_id", None) or getattr(args, "custom_starting_source_id", None)
+
+    if continue_after_last:
+        last_id = find_last_topic_id(output_path)
         if last_id is None:
             print("No previous rows found in output; starting from row 1.", file=sys.stderr)
             effective_start_row = 1
         else:
-            match_index = next((i for i, r in enumerate(resources, start=1) if r.source_id == last_id), None)
+            match_index = next((i for i, t in enumerate(topics, start=1) if t.topic_id == last_id), None)
             if match_index is None:
-                raise RuntimeError(f"Last resourceID {last_id} not found in t_source.csv (sa_resource==1 filter applied)")
+                raise RuntimeError(f"Last topicID {last_id} not found in t_topic.csv")
             effective_start_row = match_index + 1
-    elif args.custom_starting_source_id is not None:
-        match_index = next(
-            (i for i, r in enumerate(resources, start=1) if r.source_id == args.custom_starting_source_id), None
-        )
+    elif custom_starting_topic_id is not None:
+        match_index = next((i for i, t in enumerate(topics, start=1) if t.topic_id == custom_starting_topic_id), None)
         if match_index is None:
             raise RuntimeError(
-                f"Custom starting sourceID {args.custom_starting_source_id} not found in t_source.csv (sa_resource==1 filter applied)"
+                f"Custom starting topicID {custom_starting_topic_id} not found in t_topic.csv"
             )
         effective_start_row = match_index
     output_path = (script_dir / args.output).resolve()
@@ -986,7 +1078,7 @@ def main() -> int:
 
     try:
         process_resources(
-            resources=resources,
+            resources=topics,
             tags=tags,
             output_path=output_path,
             api_key=config["api_key"],
