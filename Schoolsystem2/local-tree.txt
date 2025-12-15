@@ -6,15 +6,19 @@ C:.
 |   DEVELOPER.md
 |   local-tree.ps1
 |   local-tree.txt
+|   README.md
 |   start-dev.ps1
 |   Values.txt
 |
 +---backend
+|   |   .env
+|   |   .env-example
 |   |   .gitignore
 |   |   build.gradle
 |   |   gradlew
 |   |   gradlew.bat
 |   |   README.md
+|   |   settings.gradle
 |   |
 |   +---.gradle
 |   |       [Contents excluded]
@@ -162,6 +166,7 @@ C:.
 |       |       |       ct_resource_to_topic.csv
 |       |       |       ct_resource_to_topic_PLANNING.csv.txt
 |       |       |       ct_topic_tags.csv
+|       |       |       ct_topic_tags_PLANNING.csv.txt
 |       |       |       ct_topic_tags_PLANNING.txt
 |       |       |       ct_uses_source.csv
 |       |       |       transparent_topic_tags.txt
@@ -183,12 +188,23 @@ C:.
 |       |       |       t_topic_url.csv
 |       |       |
 |       |       \---scripts
-|       |               .env
-|       |               branches_to_tags.ps1
-|       |               README.md
-|       |               resource_tags_assignment.py
-|       |               weight_dist_bruteforce.py
-|       |               Weight_Dist_Test.xlsx
+|       |           |   README.md
+|       |           |   resource_tags_assignment.py
+|       |           |   topic_tags_assignment.py
+|       |           |   weight_dist_bruteforce.py
+|       |           |   Weight_Dist_Test.xlsx
+|       |           |
+|       |           +---YouTubeToCSV
+|       |           |       README.md
+|       |           |       t_source.csv
+|       |           |       t_source_author.csv
+|       |           |       VideoURLs.txt
+|       |           |       VideoURLs_IMPORT.txt
+|       |           |       YouTubeToCSV.py
+|       |           |
+|       |           \---__pycache__
+|       |                   resource_tags_assignment.cpython-314.pyc
+|       |                   topic_tags_assignment.cpython-314.pyc
 |       |
 |       \---test
 |           \---java
@@ -270,68 +286,71 @@ C:.
 |   \---legacy
 |           PLANUNG.md
 |
-\---frontend
-    |   index.html
-    |   package-lock.json
-    |   package.json
-    |   vite.config.mts
-    |
-    +---node_modules
-    |       [Contents excluded]
-    |
-    \---src
-        |   main.js
-        |
-        +---components
-        |   +---interest
-        |   |       InterestForm.js
-        |   |       InterestResults.js
-        |   |
-        |   +---layout
-        |   |       AppShell.js
-        |   |       Footer.js
-        |   |       Header.js
-        |   |
-        |   +---topicDetail
-        |   |       ResourceCard.js
-        |   |       ResourceGrid.js
-        |   |       SimilarTopics.js
-        |   |       TopicHeader.js
-        |   |
-        |   +---topics
-        |   |       Pagination.js
-        |   |       TagChip.js
-        |   |       TopicFilters.js
-        |   |       TopicTable.js
-        |   |
-        |   \---ui
-        |           LanguageSelector.js
-        |           ThemeToggle.js
-        |
-        +---router
-        |       index.js
-        |
-        +---services
-        |       apiClient.js
-        |       interestService.js
-        |       resourcesService.js
-        |       tagsService.js
-        |       topicsService.js
-        |
-        +---state
-        |       languageStore.js
-        |       themeStore.js
-        |
-        +---styles
-        |       components.css
-        |       globals.css
-        |       layout.css
-        |       theme.css
-        |
-        \---views
-                InterestView.js
-                NotFoundView.js
-                StartView.js
-                TopicDetailView.js
-                TopicsListView.js
++---frontend
+|   |   index.html
+|   |   package-lock.json
+|   |   package.json
+|   |   vite.config.mts
+|   |
+|   +---node_modules
+|   |       [Contents excluded]
+|   |
+|   \---src
+|       |   main.js
+|       |
+|       +---components
+|       |   +---interest
+|       |   |       InterestForm.js
+|       |   |       InterestResults.js
+|       |   |
+|       |   +---layout
+|       |   |       AppShell.js
+|       |   |       Footer.js
+|       |   |       Header.js
+|       |   |
+|       |   +---topicDetail
+|       |   |       ResourceCard.js
+|       |   |       ResourceGrid.js
+|       |   |       SimilarTopics.js
+|       |   |       TopicHeader.js
+|       |   |
+|       |   +---topics
+|       |   |       Pagination.js
+|       |   |       TagChip.js
+|       |   |       TopicFilters.js
+|       |   |       TopicTable.js
+|       |   |
+|       |   \---ui
+|       |           LanguageSelector.js
+|       |           ThemeToggle.js
+|       |
+|       +---router
+|       |       index.js
+|       |
+|       +---services
+|       |       apiClient.js
+|       |       interestService.js
+|       |       resourcesService.js
+|       |       tagsService.js
+|       |       topicsService.js
+|       |
+|       +---state
+|       |       languageStore.js
+|       |       themeStore.js
+|       |
+|       +---styles
+|       |       components.css
+|       |       globals.css
+|       |       layout.css
+|       |       theme.css
+|       |
+|       \---views
+|               InterestView.js
+|               NotFoundView.js
+|               StartView.js
+|               TopicDetailView.js
+|               TopicsListView.js
+|
+\---Screenshots
+        Request Failed.png
 

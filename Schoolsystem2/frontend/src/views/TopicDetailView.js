@@ -55,7 +55,7 @@ function renderTopic(topic, container, statusEl) {
   const header = createTopicHeader({ topic });
   container.appendChild(header);
 
-  const resourcesState = { page: 0, pageSize: 5 };
+  const resourcesState = { page: 0, pageSize: 10 };
   const resourcesHost = document.createElement('div');
   container.appendChild(resourcesHost);
 

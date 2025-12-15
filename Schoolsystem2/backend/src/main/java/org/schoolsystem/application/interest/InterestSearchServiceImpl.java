@@ -24,7 +24,7 @@ import java.util.stream.Collectors;
  */
 public final class InterestSearchServiceImpl implements InterestSearchService {
 
-    private static final int DEFAULT_MAX_RESULTS = 200;   // harte Obergrenze für Topics
+    private static final int DEFAULT_MAX_RESULTS = 50;   // harte Obergrenze für Topics
     private static final int DEFAULT_MAX_INTEREST_TAGS = 15;
 
     private final TagRepository tagRepository;
@@ -150,7 +150,9 @@ public final class InterestSearchServiceImpl implements InterestSearchService {
             InterestTopicScoreView topicScoreView =
                     new InterestTopicScoreView(topicWithTags, totalScore, contributionsForView);
 
-            topicScoreViews.add(topicScoreView);
+            if (totalScore > 0) {
+                topicScoreViews.add(topicScoreView);
+            }
         }
 
         // 5) Nach Score absteigend sortieren

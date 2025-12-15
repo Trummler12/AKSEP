@@ -9,18 +9,21 @@ This repo contains the Java backend and a Vite-based frontend. Follow the steps 
 
 ## Quick Start
 1. Clone the repo and open a terminal in `Schoolsystem2/`.
-2. **Backend install & verify**
+2. **Set required backend env vars**
+   - Copy `backend/.env-example` to `backend/.env`
+   - Set `OPENAI_API_KEY=...` (required for `/interesting` interest search and tag generation scripts)
+3. **Backend install & verify**
    - `cd backend`
    - Windows: `.\gradlew.bat test`  
      macOS/Linux: `./gradlew test`
-3. **Run backend dev server**
+4. **Run backend dev server**
    - Windows: `.\gradlew.bat run`  
      macOS/Linux: `./gradlew run`
    - Endpoints: `http://localhost:8080/health`, `http://localhost:8080/api/v1/tags`
-4. **Frontend install**
+5. **Frontend install**
    - `cd ../frontend`
    - `npm install`
-5. **Run frontend dev server**
+6. **Run frontend dev server**
    - `npm run dev` (Vite default port is 5173)
 
 ## Useful Commands
@@ -33,3 +36,4 @@ This repo contains the Java backend and a Vite-based frontend. Follow the steps 
 ## Notes
 - `:backend:run` is not needed; `backend` is already the root Gradle project.
 - Ensure port 8080 (backend) and 5173 (frontend dev) are free before starting.
+- `YOUTUBE_DATA_API_KEY` is only needed for the optional data-generation script `backend/src/main/resources/scripts/YouTubeToCSV/YouTubeToCSV.py` (not for running the app).

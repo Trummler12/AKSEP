@@ -1,5 +1,7 @@
 # Supporting Scripts README
 
+TL;DR: You can ignore this folder when running the application; it is only used to (re)generate CSV data during development.
+
 This directory is NOT important for the overall functionality of the submitted project;  
 It contains some **supporting Scripts** dedicated to **manipulating csv data** in order to have a more proper basis to work with
 
@@ -18,7 +20,7 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-For OpenAI access, place your API key in `backend/.env` as `OPENAI_API_KEY=<key>` (see `backend/.env.example`). The script also looks for `.env` in `backend/src/main/`, `backend/src/main/resources/`, or alongside the script. Default models: primary `gpt-4.1-mini` (1 call), secondary `gpt-4o-mini` (3 calls), tertiary disabled by default.
+For OpenAI access, place your API key in `backend/.env` as `OPENAI_API_KEY=<key>` (see `backend/.env-example`). The script also looks for `.env` in `backend/src/main/`, `backend/src/main/resources/`, or alongside the script. Default models: primary `gpt-4.1-mini` (1 call), secondary `gpt-4o-mini` (3 calls), tertiary disabled by default.
 
 Rate limits & retries:
 - Default per-model RPM: 30 (adjust via `--requests-per-minute`, `--secondary-requests-per-minute`, `--tertiary-requests-per-minute`). On rate limits, all involved models wait for the next window.

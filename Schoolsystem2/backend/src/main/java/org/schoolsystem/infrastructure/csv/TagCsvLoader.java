@@ -85,6 +85,19 @@ public final class TagCsvLoader {
             return List.of();
         }
 
+        // Common CSV format: pipe-separated synonyms (e.g. "AI|A.I.")
+        if (trimmed.contains("|")) {
+            String[] parts = trimmed.split("\\|");
+            List<String> result = new ArrayList<>(parts.length);
+            for (String part : parts) {
+                String p = part.trim();
+                if (!p.isEmpty()) {
+                    result.add(p);
+                }
+            }
+            return result;
+        }
+
         // JSON-Array-ähnliches Format: ["a","b"] oder [a,b]
         if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
             String inner = trimmed.substring(1, trimmed.length() - 1).trim();

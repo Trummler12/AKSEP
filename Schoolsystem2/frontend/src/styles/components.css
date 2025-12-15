@@ -46,6 +46,19 @@ a:hover {
   box-shadow: var(--shadow-soft);
 }
 
+.button:disabled,
+.button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .button:active {
   transform: translateY(0);
   box-shadow: none;

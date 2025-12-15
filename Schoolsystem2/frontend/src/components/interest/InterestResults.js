@@ -137,7 +137,7 @@ export function createInterestResults({ response, selectedTags = [], onTagToggle
 
   const thead = document.createElement('thead');
   const trh = document.createElement('tr');
-  ['Topic', 'Score', 'Type', 'Layer', 'Tags'].forEach((label) => {
+  ['Topic', 'ID', 'Type', 'Layer', 'Description', 'Tags', 'Score'].forEach((label) => {
     const th = document.createElement('th');
     th.textContent = label;
     trh.appendChild(th);
@@ -159,9 +159,9 @@ export function createInterestResults({ response, selectedTags = [], onTagToggle
     nameTd.appendChild(a);
     tr.appendChild(nameTd);
 
-    const scoreTd = document.createElement('td');
-    scoreTd.textContent = String(row.score ?? 0);
-    tr.appendChild(scoreTd);
+    const idTd = document.createElement('td');
+    idTd.textContent = topic.id || '';
+    tr.appendChild(idTd);
 
     const typeTd = document.createElement('td');
     typeTd.textContent = topic.type || '';
@@ -170,6 +170,10 @@ export function createInterestResults({ response, selectedTags = [], onTagToggle
     const layerTd = document.createElement('td');
     layerTd.textContent = String(topic.layer ?? '');
     tr.appendChild(layerTd);
+
+    const descTd = document.createElement('td');
+    descTd.textContent = topic.shortDescription || topic.description || '';
+    tr.appendChild(descTd);
 
     const tagsTd = document.createElement('td');
     tagsTd.className = 'topics-table__tags';
@@ -198,6 +202,10 @@ export function createInterestResults({ response, selectedTags = [], onTagToggle
       tagsTd.appendChild(span);
     }
     tr.appendChild(tagsTd);
+
+    const scoreTd = document.createElement('td');
+    scoreTd.textContent = String(row.score ?? 0);
+    tr.appendChild(scoreTd);
 
     tbody.appendChild(tr);
   });

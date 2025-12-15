@@ -149,6 +149,7 @@ def resolve_config(args: argparse.Namespace, script_dir: Path) -> Dict[str, str]
         script_dir.parent / ".env",
         script_dir.parent.parent / ".env",
         script_dir.parent.parent.parent / ".env",
+        script_dir.parent.parent.parent.parent / ".env",  # backend/.env
     ]
     last_key_file: Optional[Path] = None
     last_model_file: Optional[Path] = None

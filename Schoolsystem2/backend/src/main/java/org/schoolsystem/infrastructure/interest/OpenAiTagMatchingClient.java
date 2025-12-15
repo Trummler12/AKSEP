@@ -58,13 +58,13 @@ public final class OpenAiTagMatchingClient implements TagMatchingClient {
     private static final String ENV_REPEATS_B = "OPENAI_INTEREST_REPEATS_B";
     private static final String ENV_REPEATS_C = "OPENAI_INTEREST_REPEATS_C";
 
-    private static final int DEFAULT_REPEATS_A = 1;
+    private static final int DEFAULT_REPEATS_A = 2;
     private static final int DEFAULT_REPEATS_B = 0;
     private static final int DEFAULT_REPEATS_C = 0;
 
-    private static final int WEIGHT_A = 3;
+    private static final int WEIGHT_A = 2;
     private static final int WEIGHT_B = 2;
-    private static final int WEIGHT_C = 2;
+    private static final int WEIGHT_C = 3;
 
     private final HttpClient httpClient;
     private final String apiKey;
@@ -613,8 +613,10 @@ public final class OpenAiTagMatchingClient implements TagMatchingClient {
         Set<Path> candidates = new LinkedHashSet<>();
         candidates.add(Path.of(".env"));
         candidates.add(Path.of("src", "main", "resources", "scripts", ".env"));
+        candidates.add(Path.of("resources", "scripts", ".env"));
         candidates.add(Path.of("backend", ".env"));
         candidates.add(Path.of("backend", "src", "main", "resources", "scripts", ".env"));
+        candidates.add(Path.of("backend", "resources", "scripts", ".env"));
 
         for (Path path : candidates) {
             Optional<String> val = readEnvFile(path, key);

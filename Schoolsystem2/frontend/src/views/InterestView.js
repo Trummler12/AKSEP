@@ -13,6 +13,11 @@ export function createInterestView(context) {
   const MIN_TEXT_LEN = 12;
   const MAX_TEXT_LEN = 2048;
   const COOLDOWN_MS = 60_000;
+  const STORAGE = {
+    text: 'schoolsystem2.interest.text',
+    lastSubmittedText: 'schoolsystem2.interest.lastSubmittedText',
+    cooldownUntil: 'schoolsystem2.interest.cooldownUntil'
+  };
 
   const heading = document.createElement('h1');
   heading.textContent = 'Interest-based topic search';
@@ -44,7 +49,10 @@ export function createInterestView(context) {
   container.appendChild(formHost);
   container.appendChild(resultsHost);
 
-  const initialText = (context.query && context.query.get('q')) || '';
+  const initialText =
+    (context.query && context.query.get('q')) ||
+    window.localStorage.getItem(STORAGE.text) ||
+    '';
   let isSearching = false;
   let lastSubmittedText = null;
   let cooldownUntil = 0;
@@ -60,8 +68,28 @@ export function createInterestView(context) {
   });
   formHost.appendChild(form.root);
 
+  // Restore persisted cooldown + last submit (survives reload; no cookies).
+  try {
+    const savedLast = window.localStorage.getItem(STORAGE.lastSubmittedText);
+    if (savedLast !== null) {
+      lastSubmittedText = savedLast;
+    }
+    const savedCooldown = Number(window.localStorage.getItem(STORAGE.cooldownUntil) || '0');
+    if (Number.isFinite(savedCooldown) && savedCooldown > Date.now()) {
+      cooldownUntil = savedCooldown;
+    }
+  } catch {
+    // ignore storage errors
+  }
+
   function normalize(text) {
     return (text || '').trim();
+  }
+
+  function setTextOrHide(el, text) {
+    const t = (text || '').trim();
+    el.textContent = t;
+    el.style.display = t ? 'block' : 'none';
   }
 
   function updateButtonState() {
@@ -70,7 +98,8 @@ export function createInterestView(context) {
 
     if (isSearching) {
       form.button.disabled = true;
-      hint.textContent = 'Searching…';
+      // Avoid duplicate "Searching..." lines: `status` already shows the loading state.
+      hint.textContent = '';
       return;
     }
 
@@ -98,8 +127,13 @@ export function createInterestView(context) {
     hint.textContent = '';
   }
 
-  function startCooldown() {
-    cooldownUntil = Date.now() + COOLDOWN_MS;
+  function startCooldown(untilTs = Date.now() + COOLDOWN_MS) {
+    cooldownUntil = untilTs;
+    try {
+      window.localStorage.setItem(STORAGE.cooldownUntil, String(cooldownUntil));
+    } catch {
+      // ignore
+    }
     if (cooldownTimerId) {
       window.clearInterval(cooldownTimerId);
       cooldownTimerId = null;
@@ -108,6 +142,12 @@ export function createInterestView(context) {
       if (Date.now() >= cooldownUntil) {
         window.clearInterval(cooldownTimerId);
         cooldownTimerId = null;
+        cooldownUntil = 0;
+        try {
+          window.localStorage.removeItem(STORAGE.cooldownUntil);
+        } catch {
+          // ignore
+        }
       }
       updateButtonState();
     }, 250);
@@ -117,9 +157,19 @@ export function createInterestView(context) {
   form.textarea.addEventListener('input', () => {
     errorBox.style.display = 'none';
     errorBox.textContent = '';
+    try {
+      window.localStorage.setItem(STORAGE.text, form.textarea.value);
+    } catch {
+      // ignore
+    }
     updateButtonState();
   });
-  updateButtonState();
+
+  if (cooldownUntil > Date.now()) {
+    startCooldown(cooldownUntil);
+  } else {
+    updateButtonState();
+  }
 
   function normalizeTagLabel(label) {
     return (label || '').trim();
@@ -187,7 +237,7 @@ export function createInterestView(context) {
       return;
     }
 
-    status.textContent = 'Searching…';
+    status.textContent = 'Searching...';
     errorBox.style.display = 'none';
     errorBox.textContent = '';
     currentResponse = null;
@@ -210,16 +260,32 @@ export function createInterestView(context) {
 
       currentResponse = response;
       renderResults();
+
+      // Cooldown starts only after a successful backend response.
+      lastSubmittedText = interestsText;
+      try {
+        window.localStorage.setItem(STORAGE.lastSubmittedText, lastSubmittedText);
+      } catch {
+        // ignore
+      }
+      startCooldown();
     } catch (err) {
       status.textContent = '';
       errorBox.style.display = 'block';
       errorBox.textContent = err?.message || 'Unexpected error while searching.';
       resultsHost.innerHTML = '';
+
+      // No cooldown on backend errors; allow immediate retry.
+      lastSubmittedText = null;
+      try {
+        window.localStorage.removeItem(STORAGE.lastSubmittedText);
+      } catch {
+        // ignore
+      }
     } finally {
       form.textarea.disabled = false;
       isSearching = false;
-      lastSubmittedText = interestsText;
-      startCooldown();
+      updateButtonState();
     }
   }
 

@@ -20,13 +20,13 @@ class TagCsvLoaderTest {
         assertEquals(List.of("art"), first.labels());
         assertEquals(1, first.version());
 
-        // Beispiel mit Synonym (id 18: "spines and thorns","acanthology")
-        Tag tag18 = tags.stream()
-                .filter(t -> t.id() == 18)
+        // Example with synonyms in current CSV (id 76: "artificial intelligence","AI|A.I.")
+        Tag tag76 = tags.stream()
+                .filter(t -> t.id() == 76)
                 .findFirst()
                 .orElseThrow();
 
-        assertEquals(List.of("spines and thorns", "acanthology"), tag18.labels());
+        assertEquals(List.of("artificial intelligence", "AI", "A.I."), tag76.labels());
     }
 
     @Test
@@ -42,5 +42,11 @@ class TagCsvLoaderTest {
 
         List<String> parsedNoQuotes = TagCsvLoader.parseSynonyms("[foo, bar]");
         assertEquals(List.of("foo", "bar"), parsedNoQuotes);
+    }
+
+    @Test
+    void parseSynonymsHandlesPipeSeparatedValues() {
+        assertEquals(List.of("AI", "A.I."), TagCsvLoader.parseSynonyms("AI|A.I."));
+        assertEquals(List.of("AI", "A.I."), TagCsvLoader.parseSynonyms(" AI | A.I. "));
     }
 }
