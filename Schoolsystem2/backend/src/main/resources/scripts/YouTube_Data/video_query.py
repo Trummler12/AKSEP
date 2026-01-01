@@ -3,6 +3,7 @@ import csv
 import datetime as dt
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import urlencode, urlparse
@@ -269,6 +270,16 @@ def ensure_playlist_type_csv(path: Path) -> None:
         "2,course\n",
         encoding="utf-8",
     )
+
+def run_sanitizer(script_dir: Path) -> None:
+    sanitize_script = script_dir / "sanitize_youtube_csv.py"
+    if not sanitize_script.exists():
+        print("WARN: sanitize_youtube_csv.py not found; skipping sanitization.", file=sys.stderr)
+        return
+    try:
+        subprocess.run([sys.executable, str(sanitize_script)], check=True)
+    except subprocess.CalledProcessError as exc:
+        print(f"WARN: sanitizer failed (exit {exc.returncode}); continuing.", file=sys.stderr)
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Pull YouTube channel/video/playlist data into CSVs.")
@@ -670,6 +681,7 @@ def main() -> int:
         merged_channels.sort(key=lambda item: channel_order.get(item.get("channel_id", ""), 9999))
         write_csv_rows(youtube_csv_dir / "channels.csv", CSV_HEADERS["channels.csv"].split(","), merged_channels)
 
+    run_sanitizer(script_dir)
     print("OK: CSVs written to", youtube_csv_dir)
     return 0
 

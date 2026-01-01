@@ -93,3 +93,22 @@ Mode: no-plan, Score: 3 (factors: >2 files, add new file)
 
 ## Follow-ups / Risks
 - If GitHub blocks on other secret detectors, extend the sanitizer patterns.
+
+---
+
+# Task Docs: Auto-sanitize after video_query
+
+## Mode & Score
+Mode: no-plan, Score: 3 (factors: cross-file coupling, no tests)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: run sanitize_youtube_csv.py after finishing channel processing.
+
+## Checks & Results
+- Not run (will be exercised during the next full video_query run).
+
+## Manual Verification (if no tests)
+- [ ] Run `video_query.py` and confirm sanitize step runs at the end.
+
+## Follow-ups / Risks
+- None noted.
