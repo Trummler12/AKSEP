@@ -36,6 +36,8 @@ Anonyme nutzende Person (kein Login).
 **Vorbedingung:**
 - Anwendung ist erreichbar unter `/`.
 
+  - Hinweis, ob eine Ressource Teil einer Playlist/Kurs-Gruppe ist, inkl. Link zu einer Gruppenseite mit allen Ressourcen in der vorgegebenen Reihenfolge.
+
 **Ablauf (Happy Path):**
 1. Nutzende Person ruft `GET /` im Browser auf.
 2. System leitet mit einem Redirect (z. B. HTTP 302) auf `GET /start` weiter.

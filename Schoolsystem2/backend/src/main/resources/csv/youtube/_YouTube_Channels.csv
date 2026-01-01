@@ -1,0 +1,112 @@
+sauthorID,sourceID0,title,custom_url,channel_id
+# General Science & Multidisciplinary
+## Science & Philosophy Explainers
+1,10000,Vsauce,@Vsauce,
+12,12013,Kurzgesagt – In a Nutshell,@kurzgesagt,
+13,13013,Dinge Erklärt – Kurzgesagt,@KurzgesagtDE,
+14,14013,En Pocas Palabras – Kurzgesagt,@kurzgesagt_es,
+15,15013,Tout Simplement – Kurzgesagt,@kurzgesagt_fr,
+16,16013,Em Poucas Palavras – Kurzgesagt,@kurzgesagt_br,
+17,17013,بكل بساطة – Kurzgesagt,@kurzgesagt_ar,
+18,18013,आसान शब्दों में — Kurzgesagt,@kurzgesagt_hi,
+19,19013,世界をわかりやすく – Kurzgesagt,@kurzgesagt_jp,
+2,20000,Vsauce2,@Vsauce2,
+5300,53000,CGP Grey,@CGPGrey,
+ 
+# Mathematics
+## Pure & Applied Mathematics
+31,31000,3Blue1Brown,@3blue1brown,
+2718,271828,Numberphile,@numberphile,
+314,314159,Stand-up Maths,@standupmaths,
+740,740000,"Dr Trefor",@DrTrefor,
+741,741000,"Sheafification Of G",@SheafificationOfG,
+742,742000,"Jason Bramburger",@jasonbramburger,
+743,743000,"Zunda Theorem (EN)",@zunda-theorem-en,
+744,744000,"Dan Renshaw (dwrensha)",@dwrensha,
+746,746000,"Mihai Nica Math",@MihaiNicaMath,
+747,747000,"Nemean",@Nemean,
+749,749000,"Aleph-0",@Aleph0,
+ 
+## Probability & Statistics
+745,745000,"Abide By Reason",@AbideByReason,
+750,750000,"almost sure",@almostsure,
+751,751000,"very normal",@very-normal,
+ 
+# Physics & Astronomy
+## Physics
+60,6000,Sixty Symbols,@sixtysymbols,
+60137,60137,minutephysics,@MinutePhysics,
+42,42000,Veritasium,@veritasium,
+43,43000,2veritasium,@derek,
+50,50135,Steve Mould,@SteveMould,
+1234,123456,SmarterEveryDay,@smartereveryday,
+2345,234567,Smarter Every Day 2,@SmarterEveryDay2,
+1618,161803,Physics Girl,@physicsgirl,
+ 
+## Astronomy & Space
+730,730000,"What Da Math",@whatdamath,
+ 
+# Earth & Environmental Science
+40076,40076,Atlas Pro,@AtlasPro1,
+60365,525600,MinuteEarth,@MinuteEarth,
+732,732000,"potholer54",@potholer54,
+ 
+# Biology & Zoology
+711,711000,"Animalogic",@animalogic,
+712,712000,"My Wild Backyard",@MyWildBackyard,
+713,713000,"Henry the PaleoGuy",@HenrythePaleoGuy,
+714,714000,"Travis McEnery (Arachnology)",@travismcenery2919,
+ 
+# History & Anthropology
+720,720000,"Stefan Milo",@StefanMilo,
+721,721000,"NORTH 02",@NORTH02,
+722,722000,"Ancient Americas",@AncientAmericas,
+723,723000,"premodernist history",@premodernist_history,
+ 
+# Religious Studies & Esotericism
+700,700000,"Religion for Breakfast",@ReligionForBreakfast,
+701,701000,"Crecganford",@Crecganford,
+702,702000,"Let's Talk Religion",@LetsTalkReligion,
+703,703000,"The Esoterica Channel",@TheEsotericaChannel,
+710,710000,"Moth Light Media",@mothlightmedia1936,
+790,790000,"Prof. Jeffrey Kaplan",@profjeffreykaplan,
+ 
+# Linguistics & Philology
+## Historical Linguistics & Philology
+760,760000,"Graham Amscheper",@grahamamscheper,
+761,761000,"Jackson Crawford",@JacksonCrawford,
+
+## General Linguistics
+762,762000,"Language Jones",@languagejones,
+
+# Computer Science & Software Engineering
+## Core Computer Science & Systems
+7,190000,Neso Academy,@nesoacademy,
+770,770000,"Laurie Wired",@lauriewired,
+774,774000,"Daedalus Community",@DaedalusCommunity,
+776,776000,"cacharle",@cacharle,
+781,781000,"What's A Creel",@WhatsACreel,
+778,778000,"Navek Engineering",@navekeng,
+
+## Software Engineering, Tools & Dev Culture
+775,775000,"Rico Picone",@RicoPicone,
+782,782000,"simon dev",@simondev758,
+779,779000,"Developer Voices",@DeveloperVoices,
+793,793000,"Memory Leek DE",@MemoryLeekDE,
+748,748000,"Jerboa app",@Jerboa-app,
+
+# Artificial Intelligence & Machine Learning
+771,771000,"Dr Waku",@DrWaku,
+772,772000,"Ariseff AI",@ariseffai,
+773,773000,"Szymon Ozog",@szymonozog7862,
+777,777000,"Andrej Karpathy",@AndrejKarpathy,
+780,780000,"Robert Miles (AI Safety)",@RobertMilesAI,
+
+# Psychology, Neuroscience & Learning Science
+58,39801,Zogg from Betelgeuse,@ZoggFromBetelgeuse,
+733,733000,"Benjamin Keep",@benjaminkeep,
+792,792000,"Artem Kirsanov (Neuroscience)",@ArtemKirsanov,
+
+# Music & Arts
+731,731000,"Benn Jordan",@BennJordan,
+791,791000,"Samuel Andreyev",@samuel_andreyev,
