@@ -73,3 +73,23 @@ Mode: no-plan, Score: 1 (factors: single-file script, docs-only outputs)
 
 ## Follow-ups / Risks
 - None noted.
+
+---
+
+# Task Docs: Sanitize videos.csv for push protection
+
+## Mode & Score
+Mode: no-plan, Score: 3 (factors: >2 files, add new file)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/sanitize_youtube_csv.py: redacts secret-like query params (e.g., `AWSAccessKeyId`, `Signature`) in YouTube CSV files.
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/videos.csv: redacted AWSAccessKeyId/Signature query parameters.
+
+## Checks & Results
+- Not run (manual push attempt blocked; sanitize script executed).
+
+## Manual Verification (if no tests)
+- [ ] Re-run `rg -n "\\b(AKIA|ASIA)[0-9A-Z]{16}\\b" .../videos.csv` to confirm none remain.
+
+## Follow-ups / Risks
+- If GitHub blocks on other secret detectors, extend the sanitizer patterns.
