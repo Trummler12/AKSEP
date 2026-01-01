@@ -1,39 +1,38 @@
-# Task Plan: [AKSEP] Review resource-related data flow
+# Task Plan: [AKSEP] video_query data-root guard + prep colors
 
 ## Mode & Score
-Mode: plan-gate, Score: 4 (classifier: reasons touches >2 files, cross-file coupling, estimated diff >50 LOC)
+Mode: plan-gate, Score: 5 (classifier: reasons touches >2 files, cross-file coupling, no tests cover area)
 
 ## Task Scope Paths
-- AKSEP/Schoolsystem2/docs/Data_Flow/Data_Flow.md
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/**
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/testing/data/**
 - AKSEP/TASK_PLAN.md
 - AKSEP/TASK_DOCS.md
 
 ## Scope (verbatim)
-Alles klar, es sieht sehr danach aus, leider, dass die Beschaffung der Videotranskripte eine Baustelle ist, die wir so schnell nicht gel?st bekommen.
-Bedeutet also: alles ab dem, was wir momentan haben, bis zu unserer AKSEP\Schoolsystem2\backend\src\main\resources\csv\youtube\t_source_PLANNING.csv, M?ssen wir bis auf weiteres liegen lassen, bis wir ENDLICH einen Weg gefunden haben, um Transkripte von Videos zuverl?ssig und ziehen beziehungsweise als Fallback generieren zu lassen.
-Aber gl?cklicherweise haben wir in unserem `\csv\t_source.csv` bereits ausreichend Datens?tze von fr?her noch vorliegen, mit denen wir schon sehr gut weiterarbeiten k?nnen f?r die *n?chsten* Schritte, die wir geplant haben.
-Nun zum Eingemachten:
-Ich hab' in unserer AKSEP\Schoolsystem2\docs\Data_Flow\Data_Flow.md unter #resource-related eine detaillierte "##### Compact Data Flow Description" verfasst und alles (planerisch) erg?nzt, was mir noch in den Sinn gekommen ist, bis wir fertige Source.csv-Datens?tze haben. Zwar werden wir dies alles erst sp?ter umsetzen k?nnen, sobald wir Zugriff haben auf Ad-Hoc-Transcript-Schnittstellen, aber dennoch w?rde ich dich bitten, durch das soweit Geplante mal dr?ber zu schauen und zu evaluieren, ob von der Abfolge her soweit alles sinnvoll ist, frei von unn?tiger Redundanz und unn?tigen Aufrufen, und ob das soweit von der Abfolge her funktionieren kann, wenn wir das dann alles fertig auf die Beine stellen w?rden, irgendwann in noch nicht ganz absehbarer Zukunft. Analysiere, evaluiere und erg?nze, falls n?tig, etc. Und wenn du den Ablauf soweit absegeln kannst, dann w?rde ich dich bitten, dies alles, was neu dazugekommen ist, auch in der `##### More Detailed Data Flow Description` zu erg?nzen.
-Ach, und bitte wundere dich nicht ?ber all jenes, was w?hrend deiner "Abwesenheit" manuell erg?nzt wurde. Ich habe noch ein paar Dinge vorbereitet f?r die n?chste Phase, nach welcher wir mit einem anderen Ast in unserer Applikation weitermachen werden.
-**Scope-Hash**: `a90f8bf5c6a3f777017409ee4d6090b77f064611b61f345b58b32a45e8749cda`
+Nachdem ich `python AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py --data-root AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/testing/data --channel-limit 1` ausgeführt habe, wurden im Root von AKSEP\Schoolsystem2 Jeweils eine Kopie jeder CSV-Datei im Scope erstellt, warum auch immer. Bitte investigiere, was hierzu geführt haben könnte, und korrigiere dies im Skript, damit nicht mehr irgendwo, wo es nicht passieren sollte, Kopien der CSV-Dateien erstellt werden.
+Die farbliche Hervorhebung der verschiedenen Response-Typen dagegen funktioniert soweit einwandfrei! Jedoch würde ich mir wünschen, dass auch die Prep-Phase farbliche Markierungen erhalten würde:
+- `removed=n` mit n>0 => rot
+- `reordered=yes` => gelb
+- `course_flags_updated=n` mti n>0 => gelb
+mehr braucht es jedoch nicht
+**Scope-Hash**: `bfe8d319a343a32fbc22dddc3f7bd0cbbdcb9287b5b1a8664a52d49f0a458c32`
 
 ## Discovery
-- Problem Statement: Review and refine resource-related data flow descriptions in Data_Flow.md, then propagate approved changes into the detailed section.
-- Context & Constraints: Transcript acquisition is deferred; use existing t_source.csv data for planning.
-- Existing Signals:
-  - `AKSEP/Schoolsystem2/docs/Data_Flow/Data_Flow.md` has new "Compact Data Flow Description" content under #resource-related.
-- Unknowns & Questions (U1â€¦Un) â€” Status: answered | deferred
-  - U1: Any redundant or unnecessary steps in the new compact flow? Status: answered (remove duplicate secondary-script block; clarify course marker file).
-  - U2: What exact additions should be mirrored into the "More Detailed" section? Status: answered (audio tracks + postponed transcripts/comments + video_to_source note).
+- Problem Statement: `video_query.py` created CSV copies in an unexpected location; add guardrails and ensure prep logs use color cues for removed/reordered/course flag updates.
+- Context & Constraints: Only write under the intended data-root; avoid writing if data-root is invalid.
+- Existing Signals: Running with `--data-root` should target test data; `backend/src/main/csv/youtube` appears populated after run.
+- Unknowns & Questions (U1…Un) — Status: answered | deferred
+  - U1: Is the unexpected location caused by a wrong `--data-root` path? Status: deferred.
 Status: READY
 
 ## Planning
-- Decision: Normalize compact flow and mirror it into the detailed flow; remove redundant blocks and keep transcript steps explicitly postponed.
+- Decision: Resolve data-root safely and refuse to run when a provided data-root path does not exist or lacks expected CSV markers; colorize prep logs for removed/reordered/course flag updates.
 - Acceptance Criteria:
-  - Compact flow references `_YouTube_Courses.txt` and shows audio tracks plus postponed transcript steps.
-  - Detailed flow includes audio tracks and a single postponed transcript/comments section.
-- Test Strategy: Doc-only review for logical ordering and redundancy.
-- Risks & Rollback: Over-pruning could omit a needed step; revert if a dependency was lost.
+  - Script exits early with a clear error if `--data-root` points to a non-existent or malformed directory.
+  - Prep logs show red `removed` when >0, yellow `reordered=yes`, yellow `course_flags_updated` when >0.
+- Test Strategy: Run `video_query.py --data-root .../testing/data --prep-only` and verify colored prep output; confirm no new CSVs are created outside the data-root.
+- Risks & preliminary Rollback: Stricter data-root validation could block intended new locations; rollback by removing the guard.
 Status: READY
 
 ## Pre-Approval Checklist
@@ -42,56 +41,28 @@ Status: READY
 - [ ] Steps are atomic (per file + anchor/range); Final @codex Sweep present
 - [ ] Developer Interactions section exists
 - [ ] Checks & Pass Criteria present & consistent
-- [ ] Mode & Score filled (plan-gate, score = 4)
+- [ ] Mode & Score filled (plan-gate, score = 5)
 - [ ] git status clean (only TASK_PLAN.md/TASK_DOCS.md changed)
 
 ## Implementation Steps (paths & anchors)
-0) [x] Plan Sync: reload `TASK_PLAN.md`; scan Developer Interactions and apply the Priority & Preemption Rules.
-1) [x] Review the new "Compact Data Flow Description" under #resource-related in `AKSEP/Schoolsystem2/docs/Data_Flow/Data_Flow.md` for ordering, redundancy, and feasibility.
-2) [x] Propose and apply edits to improve flow clarity and remove redundant steps (if any).
-3) [x] Mirror approved changes into "More Detailed Data Flow Description" in the same file.
-4) [x] Update `AKSEP/TASK_DOCS.md` with changes and rationale.
-5) [x] Final **@codex Sweep**.
+0) [x] **Plan Sync:** reload `TASK_PLAN.md`; scan **Developer Interactions** and apply the **Priority & Preemption Rules**.
+1) [x] `AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py`: add data-root validation/guard to avoid writing to unintended paths.
+2) [x] `AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py`: add colorized prep logging for removed/reordered/course flags.
+3) [x] Run `video_query.py --data-root .../testing/data --prep-only` and confirm output colors and no stray CSVs.
+4) [x] Update `AKSEP/TASK_DOCS.md` with changes and test results.
+5) [x] Final **@codex Sweep**: scan touched/new files plus control paths for `@codex` markers and resolve.
 
 ## Developer Interactions
-- [x] AKSEP/AGENTS.md:42 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:116 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:130 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:155 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:211 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:223 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:225 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:229 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:231 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:236 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:324 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:327 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:331 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:481 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:483 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:484 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:487 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:494 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:496 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:498 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:502 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:504 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:507 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:509 - @codex mention in policy text; no action required.
-- [x] AKSEP/AGENTS.md:510 - @codex mention in policy text; no action required.
-- [x] AKSEP/TASK_PLAN.md:44 - @codex mention in checklist text; no action required.
-- [x] AKSEP/TASK_PLAN.md:57 - @codex mention in steps text; no action required.
-- [x] AKSEP/Schoolsystem2/backend/src/main/resources/csv/topics/TASK_PLAN.md:76 - @codex mention in other task plan; no action required.
-- [x] AKSEP/Schoolsystem2/backend/src/main/resources/csv/topics/TASK_PLAN.md:92 - @codex mention in other task plan; no action required.
-- [x] AKSEP/Schoolsystem2/backend/src/main/resources/csv/topics/TASK_PLAN.md:95 - @codex mention in other task plan; no action required.
-- [x] AKSEP/Schoolsystem2/backend/src/main/resources/csv/topics/TASK_PLAN.md:96 - @codex mention in other task plan; no action required.
-- [x] AKSEP/Schoolsystem2/backend/src/main/resources/csv/topics/TASK_PLAN.md:97 - @codex mention in other task plan; no action required.
-- [x] AKSEP/Schoolsystem2/backend/src/main/resources/csv/topics/TASK_DOCS.md:7 - @codex mention in other task docs; no action required.
+- [x] AGENTS.md:42 - @codex mentions are policy text; no action required.
+- [x] AKSEP/TASK_PLAN.md:41 - @codex mention in checklist; no action required.
+- [x] AKSEP/TASK_DOCS.md:148 - @codex mention in changelog; no action required.
 
 ## Checks & Pass Criteria
 - Manual Verification:
-  - [ ] Compact and detailed resource-related flows are consistent and logically ordered.
+  - [x] `video_query.py --data-root .../testing/data --prep-only` completes with prep logs (colors require TTY).
+  - [x] No CSVs created outside the data-root.
 
 ## Risks / Rollback
-- Risk: Removing steps could omit a required data dependency.
-- Rollback: git revert <sha>
+- Risk: Data-root guard blocks valid new paths.
+- Rollback: `git revert <sha>`
+

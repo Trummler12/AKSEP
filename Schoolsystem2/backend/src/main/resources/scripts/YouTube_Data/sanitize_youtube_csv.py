@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 PATTERNS = [
-    (re.compile(r"AWSAccessKeyId=[^&\"\\s]+"), "AWSAccessKeyId=REDACTED"),
-    (re.compile(r"Signature=[^&\"\\s]+"), "Signature=REDACTED"),
+    (re.compile(r"AWSAccessKeyId=[A-Z0-9]{20}"), "AWSAccessKeyId=REDACTED"),
+    (re.compile(r"Signature=[A-Za-z0-9%+=/_-]+"), "Signature=REDACTED"),
 ]
 
 
@@ -27,7 +27,14 @@ def sanitize_file(input_path: Path, output_path: Path) -> int:
         return 1
 
     original = input_path.read_text(encoding="utf-8")
-    sanitized, counts = sanitize_text(original)
+    counts: dict[str, int] = {pattern.pattern: 0 for pattern, _ in PATTERNS}
+    sanitized_lines = []
+    for line in original.splitlines(keepends=True):
+        sanitized_line, line_counts = sanitize_text(line)
+        for pattern, count in line_counts.items():
+            counts[pattern] = counts.get(pattern, 0) + count
+        sanitized_lines.append(sanitized_line)
+    sanitized = "".join(sanitized_lines)
 
     for pattern, count in counts.items():
         print(f"replaced {count} occurrence(s) for: {pattern}")

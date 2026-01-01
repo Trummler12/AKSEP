@@ -1019,34 +1019,71 @@ For each entry in `\csv\youtube\videos.csv`:
 0) **Seed video categories**
 => `\csv\youtube\videoCategories.csv` (seed once from docs snapshot or API)
 
-For each entry in **`\csv\youtube\_YouTube_Channels.csv`**:
-1) **Channel bootstrap**
-- If channel not yet present in `\csv\youtube\channels.csv`:
-  => `\csv\youtube\channels.csv` + `\csv\youtube\channels_local.csv`
-- track progress via a `last_updated` field in `channels.csv`.
+**Preparation phase (no API calls)**
+1) **Normalize existing CSV order and prune unknown entries**
+- For each file below, remove rows whose primary key no longer matches the reference file, then reorder to mirror the reference order.
+- Prefer an efficient in-memory sort/merge (no manual “split groups” workflow required).
+- Log: removed count + whether any reordering occurred.
 
-2) **Videos (primary script, Data API)**
-- Use the uploads playlist (`channels.contentDetails.relatedPlaylists.uploads`) and `playlistItems.list` pagination.
-- Avoid date-filtered `search.list` because it is quota-expensive; use pagination and stop when known IDs are hit.
-- New channel: paginate (newest-first) but store `videos.csv` sorted by `published_at` ascending.
-- Known channel: fetch newest batches until the oldest video in a batch is already in `videos.csv`, then stop.
-=> `\csv\youtube\videos.csv` + `\csv\youtube\videos_local.csv`
+Reference chain (in this order):
+- `\csv\youtube\channels.csv` based on `\csv\youtube\_YouTube_Channels.csv` (match by `channel_id`, `custom_url`, or `title`).
+- `\csv\youtube\channels_local.csv` based on `\csv\youtube\channels.csv`.
+- `\csv\youtube\videos.csv` based on `\csv\youtube\channels.csv`.
+- `\csv\youtube\videos_local.csv` based on `\csv\youtube\videos.csv`.
+- `\csv\youtube\playlists.csv` based on `\csv\youtube\channels.csv` + course flags in `\csv\youtube\_YouTube_Courses.txt`.
+- `\csv\youtube\playlists_local.csv` based on `\csv\youtube\playlists.csv`.
+- `\csv\youtube\playlistItems.csv` based on `\csv\youtube\playlists.csv`.
+- `\csv\youtube\audiotracks.csv` based on `\csv\youtube\videos.csv`.
+- `\csv\youtube\t_source_OLD.csv` + `\csv\youtube\t_source_PLANNING.csv` based on `\csv\youtube\videos.csv` and `\csv\youtube\audiotracks.csv` for `dubbed`/`ai_dubbed`.
 
-3) **Playlists (primary script, Data API)**
-- Fetch all playlists (`playlists.list`).
-- `playlists.snippet.publishedAt` is the creation time (not a last-updated timestamp), so change detection should compare title/description/itemCount (and local fields if present).
-- If playlist is new or changed: refresh `playlistItems.csv` for that playlist.
-=> `\csv\youtube\playlists.csv` + `\csv\youtube\playlists_local.csv`
-=> `\csv\youtube\playlistItems.csv`
+Course flag reconciliation for `playlists.csv`:
+- If a playlist appears in `_YouTube_Courses.txt`, ensure `playlist_type_id` is `course`.
+- If `playlist_type_id` is `course` but playlist is missing from `_YouTube_Courses.txt`, flip to `playlist`.
 
-4) **Audio tracks (secondary script)**
+**Update phase (YouTube Data API)**
+For each entry in **`\csv\youtube\_YouTube_Channels.csv`** (in file order):
+
+2) **Channel placeholders (deferred fill)**
+- If channel is missing from `channels.csv`, insert a placeholder row at the correct position.
+- Defer full channel details until the final batch refresh (see “Finalization”).
+- Track progress with `last_updated`.
+
+3) **Videos**
+- Page newest uploads via the uploads playlist (`playlistItems.list`), never `search.list`.
+- Fetch batches until the newest video in the newest page is already known.
+- Let `$oldest_known` be the oldest video in the fetched batch that already exists.
+- Replace the contiguous channel block from `$oldest_known` to `$youngest_known` with the freshly fetched batch, preserving channel order and publishing order.
+- Update `videos_local.csv` for the same fetched videos (replace rows for those video IDs).
+- Warn if any existing rows inside the replaced block are missing from the fetched batch.
+
+4) **Playlists**
+- Fetch all playlists for the channel (`playlists.list`).
+- For each playlist, compare `title`, `description`, `published_at`, `item_count`, `default_language` (and localizations if present in the response).
+  - If unchanged: continue.
+  - If changed or new: refresh that playlist’s items.
+- Playlist items refresh:
+  - Fetch all items for the playlist.
+  - Replace all existing rows for that `playlist_id` (insert at the correct channel-ordered position).
+  - Only after playlistItems write succeeds, update `playlists.csv` and `playlists_local.csv` to avoid false “no-change” on resume.
+- Remove any playlist rows (and their local/items rows) that are no longer present in the fetched playlist set for this channel.
+
+**Finalization**
+5) **Channels batch refresh**
+- After processing all channels, fetch channel details in batches of 50 and update:
+  - `channels.csv`
+  - `channels_local.csv`
+
+6) **Sanitize output**
+- Run `\scripts\YouTube_Data\sanitize_youtube_csv.py` once at the end to redact secret-like query params.
+
+**Audio tracks (secondary script)**
 - Run **`\scripts\YouTube_Data\audiotrack_query.py`** on `\csv\youtube\videos.csv`.
 => `\csv\youtube\audiotracks.csv` (used later to define language versions of resources).
 
 **Audio tracks (open limitation)**
 - The Data API does not expose a list of available audio tracks. Only `defaultAudioLanguage` is available, so multi-audio detection likely needs a non-Data-API approach.
 
-5) **Transcripts & comments (postponed)**
+**Transcripts & comments (postponed)**
 // POSTONED until a working solution for Video Transcripts has been found
 // "THRESHOLD" = Desired length of the video transcript; if the transcript is shorter, the rest will be supplemented with comments.
 **`\scripts\video_to_source.py`** [PLANNED]
