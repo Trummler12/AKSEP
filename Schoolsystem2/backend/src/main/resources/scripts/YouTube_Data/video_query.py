@@ -117,9 +117,22 @@ def read_csv_rows(path: Path) -> list[dict]:
         return list(csv.DictReader(f))
 
 
-def write_local_rows(path: Path, header: list[str], rows_by_key: dict[tuple[str, str], dict]) -> None:
+def write_local_rows(
+    path: Path,
+    header: list[str],
+    rows_by_key: dict[tuple[str, str], dict],
+    order_index: dict[str, int] | None = None,
+) -> None:
     rows = list(rows_by_key.values())
-    rows.sort(key=lambda item: (item.get(header[0], ""), item.get(header[1], "")))
+    if order_index:
+        rows.sort(
+            key=lambda item: (
+                order_index.get(item.get(header[0], ""), 9999),
+                item.get(header[1], ""),
+            )
+        )
+    else:
+        rows.sort(key=lambda item: (item.get(header[0], ""), item.get(header[1], "")))
     write_csv_rows(path, header, rows)
 
 
@@ -1013,6 +1026,9 @@ def main() -> int:
                 item.get("published_at", ""),
             )
         )
+        video_order_index = {
+            row.get("video_id", ""): idx for idx, row in enumerate(merged_videos) if row.get("video_id")
+        }
         write_csv_rows(youtube_csv_dir / "videos.csv", CSV_HEADERS["videos.csv"].split(","), merged_videos)
         old_ids = {row.get("video_id", "") for row in old_segment if row.get("video_id")}
         new_ids = {row.get("video_id", "") for row in video_rows if row.get("video_id")}
@@ -1194,11 +1210,13 @@ def main() -> int:
                 youtube_csv_dir / "videos_local.csv",
                 CSV_HEADERS["videos_local.csv"].split(","),
                 videos_local_by_key,
+                order_index=video_order_index,
             )
             write_local_rows(
                 youtube_csv_dir / "playlists_local.csv",
                 CSV_HEADERS["playlists_local.csv"].split(","),
                 playlists_local_by_key,
+                order_index=playlist_index,
             )
 
         if args.include_comments and args.comment_video_limit > 0:
@@ -1295,6 +1313,7 @@ def main() -> int:
             youtube_csv_dir / "channels_local.csv",
             CSV_HEADERS["channels_local.csv"].split(","),
             channels_local_by_key,
+            order_index=channel_order,
         )
 
     run_sanitizer(script_dir, youtube_csv_dir)

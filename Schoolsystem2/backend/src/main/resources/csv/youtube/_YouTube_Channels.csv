@@ -18,6 +18,7 @@ channelID,videoID0,title,custom_url,channel_id
 793,793000,Memory Leek DE,@MemoryLeekDE,UCLU6joL-_qmLi4FdxS0pNkg
 730,730000,What Da Math,@whatdamath,UCciQ8wFcVoIIMi-lfu8-cjQ
 ,,Drew's Campfire,@drewscampfire,UCkJo2GTo_77e2Rk5Dnqvp5Q
+,,Cleo Abram,@CleoAbram,UC415bOPUcGSamy543abLmRA
 
 ### Multidisciplinary Courses & Surveys
 33,33000,CrashCourse,@crashcourse,UCX6b17PVsYBQ0ip5gyeme-Q
@@ -84,6 +85,7 @@ channelID,videoID0,title,custom_url,channel_id
 
 ### CS & Engineering Education (tutorials)
 7,190000,Neso Academy,@nesoacademy,UCQYMhOMi_Cdj1CEAU-fv80A
+,,MyOnlineTrainingHub,@MyOnlineTrainingHub,UCiYjpuUaSfkvdZkmtDU7JRw
 
 # Technology & Engineering
 ## Technology / Engineering
@@ -116,12 +118,15 @@ channelID,videoID0,title,custom_url,channel_id
 60137,60137,minutephysics,@MinutePhysics,UCUHW94eEFW7hkUMVaZz4eDg
 1618,161803,Physics Girl,@physicsgirl,UC7DdEm33SyaTDtWYGO2CwdA
 60,6000,Sixty Symbols,@sixtysymbols,UCvBqzzvUBLCs8Y7Axb-jZew
+,,FloatHeadPhysics,@Mahesh_Shenoy,UCGfFUc6eWxfbtjYeun6r9xg
 
 ### Experimental Physics / Lab Demos (placeholder)
 
 ### Relativity & Cosmology (placeholder)
 
 ## Astronomy / Space
+,,Sciencephile the AI,@SciencephiletheAI,UC7BhHN8NyMMru2RUygnDXSg
+
 ### Astronomy News / Cosmology (placeholder)
 
 ### Astrophysics (placeholder)
@@ -195,6 +200,7 @@ channelID,videoID0,title,custom_url,channel_id
 
 ## Archaeology
 ### Archaeology / Ancient Civilizations
+,,Miniminuteman,@miniminuteman773,UC-SrCCzkGq0wmSAuRs7EBFg
 720,720000,Stefan Milo,@StefanMilo,UCZ9jWH_8tJ-Nmaj8dSQdEYA
 721,721000,NORTH 02,@NORTH02,UCmJf6_W7W-Q7rTd5skVEgqA
 722,722000,Ancient Americas,@AncientAmericas,UCEqNbbsx0i7fhwRt0saYIcQ
@@ -259,6 +265,8 @@ channelID,videoID0,title,custom_url,channel_id
 
 # Arts
 ## Music Theory / Music Technology
+,,Cadence Hira,@CadenceHira,UCR1ATYyCJML6dxqgQhwIKZg
+
 ### Composition / Analysis / Advanced Theory
 791,791000,Samuel Andreyev,@samuel_andreyev,UCI_dcH8Zr2UqNT1EqvMNgTg
 

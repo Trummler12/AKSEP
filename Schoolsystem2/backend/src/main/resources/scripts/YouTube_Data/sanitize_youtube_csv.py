@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 PATTERNS = [
-    (re.compile(r"AWSAccessKeyId=[A-Z0-9]{20}"), "AWSAccessKeyId=REDACTED"),
-    (re.compile(r"Signature=[A-Za-z0-9%+=/_-]+"), "Signature=REDACTED"),
+    (re.compile(r"AWSAccessKeyId=(?!REDACTED)[A-Z0-9]{20}"), "AWSAccessKeyId=REDACTED"),
+    (re.compile(r"Signature=(?!REDACTED)[^&\\s]+"), "Signature=REDACTED"),
 ]
 
 

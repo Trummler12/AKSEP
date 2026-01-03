@@ -322,6 +322,44 @@ Mode: no-plan, Score: 1 (factors: single file, doc comment)
 
 ---
 
+# Task Docs: Tighten sanitizer double-redaction guard
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single file)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/sanitize_youtube_csv.py: avoid re-redacting already redacted values and stop Signature replacement at `&`/whitespace.
+
+## Checks & Results
+- Not run (pattern change only).
+
+## Manual Verification (if no tests)
+- [ ] Re-run `sanitize_youtube_csv.py` on a sample CSV and confirm `Signature=REDACTED` stays unchanged.
+
+## Follow-ups / Risks
+- If signatures contain spaces (unexpected), adjust the delimiter class.
+
+---
+
+# Task Docs: Stable ordering for localizations
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single file)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: order `channels_local`, `videos_local`, and `playlists_local` rows using channel/video/playlist order instead of lexicographic IDs.
+
+## Checks & Results
+- Not run (ordering logic change only).
+
+## Manual Verification (if no tests)
+- [ ] Run `video_query.py` and confirm new local rows remain in channel/playlist/video order after prep.
+
+## Follow-ups / Risks
+- None noted.
+
+---
+
 # Task Docs: video_query safe CSV write fallback
 
 ## Mode & Score
