@@ -259,3 +259,117 @@ Mode: plan-gate, Score: 5 (factors: >2 files, cross-file coupling, no tests cove
 
 ## Follow-ups / Risks
 - Data-root guard will refuse fresh empty directories; create the CSV set before running with a new location.
+
+---
+
+# Task Docs: video_query update summary accuracy
+
+## Mode & Score
+Mode: plan-gate, Score: 4 (factors: >2 files, cross-file coupling)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: fix localization change detection to avoid inflating update counts; include per-channel totals in summary.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: normalize playlist `item_count` to string so unchanged playlists are not reprocessed.
+- AKSEP/TASK_PLAN.md: step completion tracking and @codex sweep notes.
+
+## Checks & Results
+- manual: `video_query.py --data-root .../testing/data --channel-limit 1 --video-page-limit 1 --playlist-page-limit 1` => OK (no unexpected playlist updates)
+
+## Manual Verification (if no tests)
+- [ ] Run a single-channel update and confirm summary counts align with actual changes.
+
+## Follow-ups / Risks
+- If other fields still cause false playlist changes, compare the per-field diffs and normalize types.
+
+---
+
+# Task Docs: Pre-fill channel_id in _YouTube_Channels.csv
+
+## Mode & Score
+Mode: plan-gate, Score: 4 (factors: >2 files, cross-file coupling)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: add a pre-prep step to backfill missing or mismatched `channel_id` entries in `_YouTube_Channels.csv` using low-quota `channels.list` calls (`forHandle` / `forUsername`) and existing `channels.csv` matches.
+- AKSEP/TASK_PLAN.md: step completion tracking and @codex sweep notes.
+
+## Checks & Results
+- manual: `video_query.py --data-root .../testing/data --prep-only` => OK (backfill summary printed; prep completes)
+
+## Manual Verification (if no tests)
+- [ ] Confirm `_YouTube_Channels.csv` gained channel_id values after prep-only run.
+
+## Follow-ups / Risks
+- If `forUsername` yields incorrect IDs for legacy custom URLs, consider disabling that path.
+
+---
+
+# Task Docs: video_query CLI quick reference
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single file, doc comment)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: added a short CLI argument reference block with the base command.
+
+## Checks & Results
+- Not run (docs-only change).
+
+## Manual Verification (if no tests)
+- [ ] Skim the top of `video_query.py` to confirm all supported flags are listed.
+
+## Follow-ups / Risks
+- Keep the list in sync if new flags are added.
+
+---
+
+# Task Docs: video_query safe CSV write fallback
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single file change)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: write CSVs via temp file fallback on Windows `Errno 22` to avoid invalid-argument write failures.
+
+## Checks & Results
+- manual: `video_query.py` run aborted by user (no full completion).
+
+## Manual Verification (if no tests)
+- [ ] Run `video_query.py` without args and confirm no `Errno 22` on CSV writes.
+
+## Follow-ups / Risks
+- If the error persists, check for external file locks (e.g., CSV open in another editor).
+
+---
+
+# Task Docs: Restructure YouTube channels taxonomy
+
+## Mode & Score
+Mode: no-plan, Score: 2 (factors: estimated diff >50 LOC, no tests cover data file)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/Educational YouTube Channels (Responses) - Approved Channels.csv: rebuilt H1/H2/H3 structure, added placeholder subtopics for uncovered disciplines, and reassigned channels using public channel descriptions.
+
+## Checks & Results
+- Not run (data-only edit).
+
+## Manual Verification (if no tests)
+- [ ] Open the CSV and confirm each channel is under the intended H2/H3 and the Primary Topic order matches the rules.
+
+## Follow-ups / Risks
+- AGENTS.md reality check: missing map paths (projects/AKSEP, projects/AKSEP-ALT, projects/schoolsystem_DB, docs/index.html).
+
+---
+
+# Task Docs: Recheck channel placements
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single file, no tests cover data file)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/Educational YouTube Channels (Responses) - Approved Channels.csv: adjusted placements for broad channels (umbrella vs primary vs subtopic), moved Daedalus Community to broad CS, moved Emergent Garden to Algorithms/Simulation, moved Atlas Pro + Henry the PaleoGuy under Natural Sciences umbrella, and shifted Jackson Crawford to Historical Linguistics.
+
+## Checks & Results
+- Not run (data-only edit).
+
+## Manual Verification (if no tests)
+- [ ] Spot-check the moved channels and confirm they align with the breadth rules for umbrella/primary/subtopic.

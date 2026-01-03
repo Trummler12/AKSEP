@@ -1,6 +1,7 @@
 import argparse
 import csv
 import datetime as dt
+import io
 import json
 import os
 import subprocess
@@ -11,6 +12,21 @@ from urllib.request import urlopen
 
 from video_query_helpers import prep as prep_helpers
 
+# CLI quick reference:
+# - Base: python AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py
+# - --mode (update|discover|new): Update all channels, or only new ones.
+# - --start-from <id>: Start from a channel matching sauthorID/title/custom_url/channel_id (repeatable, comma-separated).
+# - --channel-limit N: Process only N channels (0 = no limit).
+# - --video-page-limit N: Limit uploads playlist pages per channel (0 = no limit).
+# - --playlist-page-limit N: Limit playlist pages per channel (0 = no limit).
+# - --skip-localizations: Do not fetch localizations.
+# - --include-comments: Fetch comments (requires --comment-video-limit > 0).
+# - --comment-video-limit N: Number of videos per channel to fetch comments for.
+# - --print-json: Print raw API JSON responses.
+# - --data-root PATH: Use alternate CSV root (must contain _YouTube_Channels.csv).
+# - --prep-clean-source: Remove t_source rows with unknown video references.
+# - --prep-only: Run prep phase only, then exit.
+# - --no-color: Disable ANSI colors in output.
 
 API_BASE = "https://www.googleapis.com/youtube/v3"
 
@@ -109,10 +125,22 @@ def write_local_rows(path: Path, header: list[str], rows_by_key: dict[tuple[str,
 
 def write_csv_rows(path: Path, header: list[str], rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", newline="", encoding="utf-8") as f:
+    try:
+        with path.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=header)
+            writer.writeheader()
+            writer.writerows(rows)
+        return
+    except OSError as exc:
+        if exc.errno != 22:
+            raise
+    # Fallback: write to a temp file and replace (handles rare Windows path errors).
+    temp_path = path.with_suffix(path.suffix + ".tmp")
+    with temp_path.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=header)
         writer.writeheader()
         writer.writerows(rows)
+    os.replace(temp_path, path)
 
 
 def ensure_csvs(data_dir: Path) -> None:
@@ -140,6 +168,137 @@ def read_channel_sources(path: Path) -> list[dict]:
         rows.append(row)
     return rows
 
+
+def load_channel_source_lines(path: Path) -> tuple[list[str], list[str], list[tuple[int, dict]], bool]:
+    text = path.read_text(encoding="utf-8")
+    had_trailing_newline = text.endswith("\n")
+    lines = text.splitlines()
+    header_fields: list[str] = []
+    header_idx = -1
+    for idx, line in enumerate(lines):
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        header_idx = idx
+        header_fields = next(csv.reader([line]))
+        break
+    if header_idx < 0:
+        return lines, header_fields, [], had_trailing_newline
+
+    row_items: list[tuple[int, dict]] = []
+    for idx in range(header_idx + 1, len(lines)):
+        line = lines[idx]
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        values = next(csv.reader([line]))
+        row = {header_fields[i]: (values[i] if i < len(values) else "") for i in range(len(header_fields))}
+        row_items.append((idx, row))
+    return lines, header_fields, row_items, had_trailing_newline
+
+
+def render_csv_row(fields: list[str], row: dict) -> str:
+    output = io.StringIO()
+    writer = csv.DictWriter(output, fieldnames=fields, lineterminator="\n")
+    writer.writerow({field: row.get(field, "") for field in fields})
+    return output.getvalue().rstrip("\n")
+
+
+def resolve_channel_id(api_key: str, handle: str, username: str) -> tuple[str, str]:
+    if handle:
+        data = api_get("channels", {"part": "snippet", "forHandle": handle, "key": api_key})
+        items = data.get("items", [])
+        if items:
+            return items[0].get("id", ""), "forHandle"
+    if username:
+        data = api_get("channels", {"part": "snippet", "forUsername": username, "key": api_key})
+        items = data.get("items", [])
+        if items:
+            return items[0].get("id", ""), "forUsername"
+    return "", ""
+
+
+def backfill_channel_ids(channel_source_csv: Path, channels_csv: Path, api_key: str) -> dict[str, int]:
+    counts = {
+        "updated": 0,
+        "from_channels": 0,
+        "from_api": 0,
+        "unresolved": 0,
+        "skipped": 0,
+    }
+    if not channel_source_csv.exists():
+        return counts
+
+    lines, fields, row_items, had_trailing_newline = load_channel_source_lines(channel_source_csv)
+    if not fields or "channel_id" not in fields:
+        return counts
+
+    existing_channels = read_csv_rows(channels_csv)
+    handle_to_id = {
+        normalize_identifier(row.get("custom_url", "")): row.get("channel_id", "")
+        for row in existing_channels
+        if row.get("custom_url") and row.get("channel_id")
+    }
+
+    changed_lines: dict[int, str] = {}
+    for idx, row in row_items:
+        current_id = (row.get("channel_id") or "").strip()
+        custom_url = (row.get("custom_url") or "").strip()
+        handle = normalize_handle(custom_url)
+        handle_norm = normalize_identifier(handle)
+        expected_id = handle_to_id.get(handle_norm, "")
+        updated = False
+
+        if expected_id and current_id != expected_id:
+            row["channel_id"] = expected_id
+            counts["from_channels"] += 1
+            updated = True
+        elif not current_id:
+            if expected_id:
+                row["channel_id"] = expected_id
+                counts["from_channels"] += 1
+                updated = True
+            elif api_key:
+                username_candidate = ""
+                if custom_url and not custom_url.startswith("@"):
+                    username_candidate = normalize_handle(custom_url)
+                resolved_id, _method = resolve_channel_id(api_key, handle, username_candidate)
+                if resolved_id:
+                    row["channel_id"] = resolved_id
+                    counts["from_api"] += 1
+                    updated = True
+                else:
+                    counts["unresolved"] += 1
+            else:
+                counts["unresolved"] += 1
+        else:
+            if not current_id.startswith("UC") and api_key:
+                username_candidate = ""
+                if custom_url and not custom_url.startswith("@"):
+                    username_candidate = normalize_handle(custom_url)
+                resolved_id, _method = resolve_channel_id(api_key, handle, username_candidate)
+                if resolved_id and resolved_id != current_id:
+                    row["channel_id"] = resolved_id
+                    counts["from_api"] += 1
+                    updated = True
+                else:
+                    counts["skipped"] += 1
+            else:
+                counts["skipped"] += 1
+
+        if updated:
+            counts["updated"] += 1
+            changed_lines[idx] = render_csv_row(fields, row)
+
+    if changed_lines:
+        for idx, new_line in changed_lines.items():
+            lines[idx] = new_line
+        content = "\n".join(lines)
+        if had_trailing_newline:
+            content = f"{content}\n"
+        channel_source_csv.write_text(content, encoding="utf-8")
+
+    return counts
 
 
 def parse_course_blocks(path: Path) -> dict[str, list[str]]:
@@ -449,12 +608,18 @@ def record_change(changes: dict[str, int], key: str, amount: int = 1) -> None:
     changes[key] = changes.get(key, 0) + amount
 
 
+def record_total(totals: dict[str, int], key: str, amount: int) -> None:
+    if amount <= 0:
+        return
+    totals[key] = totals.get(key, 0) + amount
+
+
 def has_changes(changes: dict[str, int]) -> bool:
     return any(value > 0 for value in changes.values())
 
 
-def format_change_summary(changes: dict[str, int]) -> str:
-    return format_change_summary_colored(changes, use_color=False)
+def format_change_summary(changes: dict[str, int], totals: dict[str, int] | None = None) -> str:
+    return format_change_summary_colored(changes, totals, use_color=False)
 
 
 def use_ansi_color(enabled: bool) -> bool:
@@ -477,12 +642,21 @@ def color_for_change_key(key: str) -> str:
     return ""
 
 
-def format_change_summary_colored(changes: dict[str, int], use_color: bool) -> str:
+def format_change_summary_colored(
+    changes: dict[str, int],
+    totals: dict[str, int] | None,
+    use_color: bool,
+) -> str:
+    totals = totals or {}
     parts = []
     for key, value in changes.items():
         if not value:
             continue
-        part = f"{key}={value}"
+        total_value = totals.get(key, 0)
+        if total_value:
+            part = f"{key}={value}/{total_value}"
+        else:
+            part = f"{key}={value}"
         color = color_for_change_key(key)
         if use_color and color:
             part = f"{color}{part}{ANSI_RESET}"
@@ -532,7 +706,21 @@ def main() -> int:
     ensure_csvs(youtube_csv_dir)
     ensure_playlist_type_csv(youtube_csv_dir / "playlist_type.csv")
 
+    api_key = get_api_key()
     color_enabled = use_ansi_color(not args.no_color)
+    if not api_key:
+        print("WARN: Missing YOUTUBE_DATA_API_KEY; channel_id backfill skipped.", file=sys.stderr)
+    else:
+        backfill_counts = backfill_channel_ids(channel_source_csv, youtube_csv_dir / "channels.csv", api_key)
+        if backfill_counts["updated"] or backfill_counts["unresolved"]:
+            print(
+                "PREP _YouTube_Channels.csv:\t"
+                f"channel_id_backfilled={backfill_counts['updated']}, "
+                f"from_channels={backfill_counts['from_channels']}, "
+                f"from_api={backfill_counts['from_api']}, "
+                f"unresolved={backfill_counts['unresolved']}"
+            )
+
     channel_source_rows = read_channel_sources(channel_source_csv)
     also_prep_clean_source_csv_prep_files = args.prep_clean_source
     run_prep_phase(
@@ -546,7 +734,6 @@ def main() -> int:
         print("OK: prep-only run complete.")
         return 0
 
-    api_key = get_api_key()
     if not api_key:
         print("Missing YOUTUBE_DATA_API_KEY.", file=sys.stderr)
         return 2
@@ -610,6 +797,7 @@ def main() -> int:
         channel_id = row.get("channel_id", "")
         handle = normalize_handle(row.get("custom_url", ""))
         changes: dict[str, int] = {}
+        totals: dict[str, int] = {}
 
         if not channel_id and handle:
             data = api_get("channels", {"part": "snippet", "forHandle": handle, "key": api_key})
@@ -773,11 +961,14 @@ def main() -> int:
                 }
                 video_rows.append(row_data)
                 if include_localizations:
-                    for key in list(videos_local_by_key.keys()):
-                        if key[0] == row_data["video_id"]:
-                            videos_local_by_key.pop(key, None)
-                    for lang, localized in item.get("localizations", {}).items():
-                        existing_local = videos_local_by_key.get((row_data["video_id"], lang), {})
+                    existing_keys = [key for key in videos_local_by_key.keys() if key[0] == row_data["video_id"]]
+                    existing_by_lang = {key[1]: videos_local_by_key[key] for key in existing_keys}
+                    new_langs: set[str] = set()
+                    localizations = item.get("localizations", {})
+                    record_total(totals, "videos_local_updated", len(localizations))
+                    for lang, localized in localizations.items():
+                        new_langs.add(lang)
+                        existing_local = existing_by_lang.get(lang, {})
                         videos_local_by_key[(row_data["video_id"], lang)] = {
                             "video_id": row_data["video_id"],
                             "language_code": lang,
@@ -785,6 +976,9 @@ def main() -> int:
                         }
                         if existing_local.get("title") != localized.get("title", ""):
                             record_change(changes, "videos_local_updated", 1)
+                    for key in existing_keys:
+                        if key[1] not in new_langs:
+                            videos_local_by_key.pop(key, None)
 
         video_rows.sort(key=lambda item: item.get("published_at", ""))
 
@@ -869,6 +1063,7 @@ def main() -> int:
             )
 
         changed_playlist_ids = set()
+        record_total(totals, "playlists_updated", len(playlists_items))
         for item in playlists_items:
             snippet = item.get("snippet", {})
             row_data = {
@@ -878,24 +1073,29 @@ def main() -> int:
                 "title": snippet.get("title", ""),
                 "description": snippet.get("description", ""),
                 "published_at": snippet.get("publishedAt", ""),
-                "item_count": item.get("contentDetails", {}).get("itemCount", ""),
+                "item_count": str(item.get("contentDetails", {}).get("itemCount", "")),
                 "default_language": snippet.get("defaultLanguage", ""),
                 "playlist_type_id": "2" if item.get("id", "") in course_set else "1",
             }
             existing = existing_playlists_by_id.get(row_data["playlist_id"])
             local_changed = False
             if include_localizations and item.get("localizations"):
-                for lang, localized in item.get("localizations", {}).items():
-                    existing_local = playlists_local_by_key.get((row_data["playlist_id"], lang), {})
+                existing_keys = [key for key in playlists_local_by_key.keys() if key[0] == row_data["playlist_id"]]
+                existing_by_lang = {key[1]: playlists_local_by_key[key] for key in existing_keys}
+                new_langs: set[str] = set()
+                localizations = item.get("localizations", {})
+                for lang, localized in localizations.items():
+                    new_langs.add(lang)
+                    existing_local = existing_by_lang.get(lang, {})
                     if (
                         existing_local.get("title") != localized.get("title", "")
                         or existing_local.get("description") != localized.get("description", "")
                     ):
                         local_changed = True
-                for key in list(playlists_local_by_key.keys()):
-                    if key[0] == row_data["playlist_id"]:
+                for key in existing_keys:
+                    if key[1] not in new_langs:
                         playlists_local_by_key.pop(key, None)
-                for lang, localized in item.get("localizations", {}).items():
+                for lang, localized in localizations.items():
                     playlists_local_by_key[(row_data["playlist_id"], lang)] = {
                         "playlist_id": row_data["playlist_id"],
                         "language_code": lang,
@@ -904,11 +1104,6 @@ def main() -> int:
                     }
                 if local_changed:
                     record_change(changes, "playlists_local_updated", 1)
-                    if (
-                        existing_local.get("title") != localized.get("title", "")
-                        or existing_local.get("description") != localized.get("description", "")
-                    ):
-                        record_change(changes, "channels_local_updated", 1)
             if not existing or any(existing.get(k, "") != row_data.get(k, "") for k in row_data.keys()) or local_changed:
                 changed_playlist_ids.add(row_data["playlist_id"])
             existing_playlists_by_id[row_data["playlist_id"]] = row_data
@@ -943,7 +1138,7 @@ def main() -> int:
         }
 
         if changed_playlist_ids:
-            record_change(changes, "playlists_changed", len(changed_playlist_ids))
+            record_change(changes, "playlists_updated", len(changed_playlist_ids))
             updated_playlist_items = [
                 row_data
                 for row_data in existing_playlist_items
@@ -1048,7 +1243,7 @@ def main() -> int:
         existing_channels_by_id[channel_id]["last_updated"] = today
         processed_channels += 1
         if has_changes(changes):
-            summary = format_change_summary_colored(changes, use_color=color_enabled)
+            summary = format_change_summary_colored(changes, totals, use_color=color_enabled)
             print(f"UPDATED channel {channel_id}: {summary}")
 
     all_channel_ids = [row.get("channel_id", "") for row in existing_channels_by_id.values() if row.get("channel_id")]

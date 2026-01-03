@@ -1,38 +1,42 @@
-# Task Plan: [AKSEP] video_query data-root guard + prep colors
+# Task Plan: [AKSEP] prefill channel_id in _YouTube_Channels
 
 ## Mode & Score
-Mode: plan-gate, Score: 5 (classifier: reasons touches >2 files, cross-file coupling, no tests cover area)
+Mode: plan-gate, Score: 4 (classifier: reasons touches >2 files, cross-file coupling)
 
 ## Task Scope Paths
 - AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/**
-- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/testing/data/**
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/_YouTube_Channels.csv
 - AKSEP/TASK_PLAN.md
 - AKSEP/TASK_DOCS.md
 
 ## Scope (verbatim)
-Nachdem ich `python AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py --data-root AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/testing/data --channel-limit 1` ausgeführt habe, wurden im Root von AKSEP\Schoolsystem2 Jeweils eine Kopie jeder CSV-Datei im Scope erstellt, warum auch immer. Bitte investigiere, was hierzu geführt haben könnte, und korrigiere dies im Skript, damit nicht mehr irgendwo, wo es nicht passieren sollte, Kopien der CSV-Dateien erstellt werden.
-Die farbliche Hervorhebung der verschiedenen Response-Typen dagegen funktioniert soweit einwandfrei! Jedoch würde ich mir wünschen, dass auch die Prep-Phase farbliche Markierungen erhalten würde:
-- `removed=n` mit n>0 => rot
-- `reordered=yes` => gelb
-- `course_flags_updated=n` mti n>0 => gelb
-mehr braucht es jedoch nicht
-**Scope-Hash**: `bfe8d319a343a32fbc22dddc3f7bd0cbbdcb9287b5b1a8664a52d49f0a458c32`
+Und was ich mir auch überlegt habe: wir haben ja in AKSEP\Schoolsystem2\backend\src\main\resources\csv\youtube\_YouTube_Channels.csv unsere initiale Sammlung aller YouTube-Kanäle, die wir abarbeiten lassen wollen;
+Aber ist es nun nicht so, dass wenn wir provisorisch Einträge erstellen, nur mit Kanalnamen und Custom-URL, dass es dann gar nicht möglich ist, die Daten der Channels und was hinter den Channels liegt, Quota-günstig ziehen zu können? Weil Quota-günstig wäre es ja, wenn wir die Daten auf Basis der Channel-IDs uns ziehen wollen. Und Queries über Search kostet ja ungemein viel mehr als Suchen über die IDs. Dies ist zwar nur eine Vermutung, aber falls es tatsächlich so ist, dass wenn ein Channel neu ist und wir in unserer Channels.csv dann keine Channel-ID vorliegen haben, sondern nur Custom-URL und Name, dann wäre dies vermutlich nicht allzu intelligent für das weitere *möglichst quota-effiziente* Vorgehen.
+Und an dieser Stelle kam mir folgende Gedanke: Wir könnten den Beginn der Vorbereitungsphase erweitern damit, dass für jeden Channel-Datensatz in unserer AKSEP\Schoolsystem2\backend\src\main\resources\csv\youtube\_YouTube_Channels.csv geschaut wird:
+1. Prüfe:
+  a) ist eine channel_id angegeben?
+  b) Stimmt die channel_id mit der channel_id in der channels.csv überein?
+2. Falls a oder spätestens b falsch ist: Merke dir diesen Eintrag; Gehe zum nächsten Eintrag.
+3. Alle noch nicht mit einer gültigen channel_id versehenen Einträge werden per API-Call mit einer entsprechenden channel_id versehen (Suche bitte nach der Quota-günstigsten Möglichkeit, dies zu bewerkstelligen)
+4. (bestehende Vorbereitungsphase)
+5. (Update-Phase, in welcher nun auch eine gültige channel_id in den provisorischen Datensätzen unserer channels.csv landen)
+**Scope-Hash**: `6f3f1e2b8c6a4d6b9cc8f0b2f5f4a73a1b3fbcaf30eaa41d1828a0a43b8b63b7`
 
 ## Discovery
-- Problem Statement: `video_query.py` created CSV copies in an unexpected location; add guardrails and ensure prep logs use color cues for removed/reordered/course flag updates.
-- Context & Constraints: Only write under the intended data-root; avoid writing if data-root is invalid.
-- Existing Signals: Running with `--data-root` should target test data; `backend/src/main/csv/youtube` appears populated after run.
+- Problem Statement: Ensure _YouTube_Channels.csv entries have valid channel_id to avoid expensive search calls; fill missing/invalid IDs early.
+- Context & Constraints: Prefer quota-cheap API calls (channels.list by forHandle/handle or username) over search.list.
+- Existing Signals: video_query currently resolves handles on-the-fly per channel; prep phase does not validate or backfill _YouTube_Channels.csv.
 - Unknowns & Questions (U1…Un) — Status: answered | deferred
-  - U1: Is the unexpected location caused by a wrong `--data-root` path? Status: deferred.
+  - U1: Best low-quota API path for resolving channel_id from handle/custom URL? Status: deferred.
 Status: READY
 
 ## Planning
-- Decision: Resolve data-root safely and refuse to run when a provided data-root path does not exist or lacks expected CSV markers; colorize prep logs for removed/reordered/course flag updates.
+- Decision: Add a prep step to resolve missing/invalid channel_id in _YouTube_Channels.csv using cheapest available API (channels.list with forHandle where possible) and update the CSV before the existing prep phase.
 - Acceptance Criteria:
-  - Script exits early with a clear error if `--data-root` points to a non-existent or malformed directory.
-  - Prep logs show red `removed` when >0, yellow `reordered=yes`, yellow `course_flags_updated` when >0.
-- Test Strategy: Run `video_query.py --data-root .../testing/data --prep-only` and verify colored prep output; confirm no new CSVs are created outside the data-root.
-- Risks & preliminary Rollback: Stricter data-root validation could block intended new locations; rollback by removing the guard.
+  - Missing/invalid channel_id values are filled when possible.
+  - No search.list usage is introduced.
+- Test Strategy: Run prep-only on testing data and confirm _YouTube_Channels.csv gains channel_id where missing.
+- Risks & preliminary Rollback: If handle resolution fails, entries remain unchanged; rollback by restoring CSV from backup.
 Status: READY
 
 ## Pre-Approval Checklist
@@ -41,15 +45,15 @@ Status: READY
 - [ ] Steps are atomic (per file + anchor/range); Final @codex Sweep present
 - [ ] Developer Interactions section exists
 - [ ] Checks & Pass Criteria present & consistent
-- [ ] Mode & Score filled (plan-gate, score = 5)
+- [ ] Mode & Score filled (plan-gate, score = 4)
 - [ ] git status clean (only TASK_PLAN.md/TASK_DOCS.md changed)
 
 ## Implementation Steps (paths & anchors)
 0) [x] **Plan Sync:** reload `TASK_PLAN.md`; scan **Developer Interactions** and apply the **Priority & Preemption Rules**.
-1) [x] `AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py`: add data-root validation/guard to avoid writing to unintended paths.
-2) [x] `AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py`: add colorized prep logging for removed/reordered/course flags.
-3) [x] Run `video_query.py --data-root .../testing/data --prep-only` and confirm output colors and no stray CSVs.
-4) [x] Update `AKSEP/TASK_DOCS.md` with changes and test results.
+1) [x] `AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py`: add a pre-prep step that validates/backfills channel_id in `_YouTube_Channels.csv` using quota-cheap API calls (no search.list).
+2) [x] `AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py`: update logging to note how many channel_ids were backfilled.
+3) [x] Run `video_query.py --data-root .../testing/data --prep-only` and confirm channel_id backfill behavior.
+4) [x] Update `AKSEP/TASK_DOCS.md` with changes and results.
 5) [x] Final **@codex Sweep**: scan touched/new files plus control paths for `@codex` markers and resolve.
 
 ## Developer Interactions
@@ -59,10 +63,9 @@ Status: READY
 
 ## Checks & Pass Criteria
 - Manual Verification:
-  - [x] `video_query.py --data-root .../testing/data --prep-only` completes with prep logs (colors require TTY).
-  - [x] No CSVs created outside the data-root.
+  - [x] Missing channel_id values are filled when possible.
 
 ## Risks / Rollback
-- Risk: Data-root guard blocks valid new paths.
+- Risk: Incorrect ID resolution from ambiguous handles.
 - Rollback: `git revert <sha>`
 

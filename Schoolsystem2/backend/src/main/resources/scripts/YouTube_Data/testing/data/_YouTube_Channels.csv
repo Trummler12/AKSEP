@@ -1,113 +1,370 @@
-sauthorID,sourceID0,title,custom_url,channel_id
-# General Science & Multidisciplinary
-## Science & Philosophy Explainers
-1,10000,Vsauce,@Vsauce,
-12,12013,Kurzgesagt – In a Nutshell,@kurzgesagt,
-13,13013,Dinge Erklärt – Kurzgesagt,@KurzgesagtDE,
-14,14013,En Pocas Palabras – Kurzgesagt,@kurzgesagt_es,
-15,15013,Tout Simplement – Kurzgesagt,@kurzgesagt_fr,
-16,16013,Em Poucas Palavras – Kurzgesagt,@kurzgesagt_br,
-17,17013,بكل بساطة – Kurzgesagt,@kurzgesagt_ar,
-18,18013,आसान शब्दों में — Kurzgesagt,@kurzgesagt_hi,
-19,19013,世界をわかりやすく – Kurzgesagt,@kurzgesagt_jp,
-2,20000,Vsauce2,@Vsauce2,
-5300,53000,CGP Grey,@CGPGrey,
+channelID,videoID0,title,custom_url,channel_id
+# Foundations & Multidisciplinary
+## General Science / Multidisciplinary
+### Broad Science Explainers
+1,10000,Vsauce,@Vsauce,UC6nSFpj9HTCZ5t-N3Rm3-HA
+12,12013,Kurzgesagt – In a Nutshell,@kurzgesagt,UCsXVk37bltHxD1rDPwtNM8Q
+13,13013,Dinge Erklärt – Kurzgesagt,@KurzgesagtDE,UCwRH985XgMYXQ6NxXDo8npw
+14,14013,En Pocas Palabras – Kurzgesagt,@kurzgesagt_es,UCZcvCpFcLxOKGbMocVgLjEA
+15,15013,Tout Simplement – Kurzgesagt,@kurzgesagt_fr,UCzMHLUJ8xTqDq6xsk0N5IdQ
+16,16013,Em Poucas Palavras – Kurzgesagt,@kurzgesagt_br,UCCYb8bp7v9maNk5n3nfw-Lg
+17,17013,بكل بساطة – Kurzgesagt,@kurzgesagt_ar,UCn5ASYdp7CzbFH2qtqjIJ9w
+18,18013,आसान शब्दों में — Kurzgesagt,@kurzgesagt_hi,UCIR1LQvYrHOWBpOGq5nFo0Q
+19,19013,世界をわかりやすく – Kurzgesagt,@kurzgesagt_jp,UCzw2KK537iRgsrYnWaEMs8Q
+42,42000,Veritasium,@veritasium,UCHnyfMqiRRG1u-2MsSQLbXA
+43,43000,2veritasium,@derek,UC2LZO6swZ9SLUEOks3WnsfA
+5300,53000,CGP Grey,@CGPGrey,UC2C_jShtL725hvbm1arSV9w
+58,39801,Zogg from Betelgeuse,@ZoggFromBetelgeuse,UCKY00CSQo1MoC27bdGd-w_g
+793,793000,Memory Leek DE,@MemoryLeekDE,UCLU6joL-_qmLi4FdxS0pNkg
+730,730000,What Da Math,@whatdamath,UCciQ8wFcVoIIMi-lfu8-cjQ
+,,Drew's Campfire,@drewscampfire,UCkJo2GTo_77e2Rk5Dnqvp5Q
 
-# Physics & Astronomy (Moved upwards for testing)
+### Multidisciplinary Courses & Surveys
+33,33000,CrashCourse,@crashcourse,UCX6b17PVsYBQ0ip5gyeme-Q
+
+### Cross-Topic STEM (Math/Physics/CS)
+745,745000,Abide By Reason,@AbideByReason,UCR5oNJW45ALErR_OL5bpi_w
+748,748000,Jerboa app,@Jerboa-app,UCP3KhLhmG3Z1CMWyLkn7pbQ
+
+# Formal & Computational Sciences
+## Mathematics
+### Broad / Recreational Math
+31,31000,3Blue1Brown,@3blue1brown,UCYO_jab_esuFRV4b17AJtAw
+2718,271828,Numberphile,@numberphile,UCoxcjq-8xIDTYp3uz647V5A
+314,314159,Stand-up Maths,@standupmaths,UCSju5G2aFaWMqn-_0YBtq5A
+2,20000,Vsauce2,@Vsauce2,UCqmugCqELzhIMNYnsjScXXw
+,,DorFuchs,@DorFuchs,UC97dp7op_ZjSCNp3DRLGymQ
+,,Prime Logic,@PrimeLogic,UCLEXLDx0V0hdhRblDUXRWCg
+
+### University / Advanced Math (analysis, topology, algebra, etc.)
+740,740000,Dr. Trefor Bazett,@DrTrefor,UC9rTsvTxJnx1DNrDA3Rqa6A
+741,741000,Sheafification Of G,@SheafificationOfG,UC6_J0wZdqcoRVs0Mck922SQ
+742,742000,Jason Bramburger,@jasonbramburger,UCdf2-sP9uBkJMi7OJV6SS8w
+743,743000,Zunda Theorem (EN),@zunda-theorem-en,UC0QsIj9Ay0tWBT-aedecraw
+744,744000,Dan Renshaw (dwrensha),@dwrensha,UChK06HeqIYUM1QpKsR4ke3A
+749,749000,Aleph-0,@Aleph0,UCzBjutX2PmitNF4avysL-vg
+750,750000,almost sure,@almostsure,UCsH8tLb43SivpDFmtyMeb5g
+
+### Discrete Mathematics / Combinatorics
+747,747000,Nemean,@Nemean,UCtJPeNYnAXhB1-_h8xbIX_Q
+
+### Geometry
+,,Artem Yashin,@ArtemYashin,UCSW_6zSlR7mn6Gqh-njFWFw
+
+### Applied Mathematics (placeholder)
+
+### Probability & Stochastic Processes (placeholder)
+
+## Statistics / Data Science
+### Statistics / Probability
+746,746000,Mihai Nica Math,@MihaiNicaMath,UCbszj0H0UGQcTOXcFdpAfYA
+751,751000,very normal,@very-normal,UCPb7xe-MQ0KiJpaKBWFZtTA
+
+### Probabilistic Modeling / Simulation
+1248,124816,Primer,@PrimerBlobs,UCKzJFdi57J53Vr_BkTfN3uQ
+
+### Data Science / ML (statistics) (placeholder)
+
+### Causal Inference (placeholder)
+
+### Data Visualization (placeholder)
+
+## Computer Science / AI
+774,774000,Daedalus Community,@DaedalusCommunity,UCuWLGQB4WRBKvW1C26zA2og
+
+### Machine Learning / Deep Learning
+777,777000,Andrej Karpathy,@AndrejKarpathy,UCXUPKJO5MZQN11PqgIvyuvQ
+772,772000,Ariseff AI,@ariseffai,UCIxertsVDip8QHpnhinkAow
+771,771000,Dr Waku,@DrWaku,UCZf5IX90oe5gdPppMXGImwg
+
+### AI Safety / Alignment
+780,780000,Robert Miles (AI Safety),@RobertMilesAI,UCLB7AzTwc6VFZrBsO2ucBMg
+
+### Algorithms / Simulation
+,,carykh,@carykh,UC9z7EZAbkphEMg0SP7rw44A
+,,Emergent Garden,@EmergentGarden,UCwBhBDsqiQflTMLy2epbQVw
+
+### General CS / Software Engineering
+770,770000,Laurie Wired,@lauriewired,UCJXa3_WNNmIpewOtCHf3B0g
+776,776000,cacharle,@cacharle,UC_XDaRJhEt_LIE3Mp1FYzsA
+
+### CS & Engineering Education (tutorials)
+7,190000,Neso Academy,@nesoacademy,UCQYMhOMi_Cdj1CEAU-fv80A
+
+### Programming Languages / Compilers (placeholder)
+
+### Systems / Networking (placeholder)
+
+### Cybersecurity (placeholder)
+
+### HCI / UX (placeholder)
+
+# Technology & Engineering
+## Technology / Engineering
+### General Engineering / Making / Experimentation
+1234,123456,SmarterEveryDay,@smartereveryday,UC6107grRI4m0o2-emgoDnAA
+2345,234567,Smarter Every Day 2,@SmarterEveryDay2,UC8VkNBOwvsTlFjoSnNSMmxw
+50,50135,Steve Mould,@SteveMould,UCEIwxahdLz7bap-VDs9h35A
+
+### Software Development / Graphics / Game Dev
+782,782000,simon dev,@simondev758,UCEwhtpXrg5MmwlH04ANpL8A
+779,779000,Developer Voices,@DeveloperVoices,UC-0fWjosItIOD4ThhS6oyfA
+773,773000,Szymon Ozog,@szymonozog7862,UC5Obl4eU2zVQwuXv91mypeQ
+775,775000,Rico Picone,@RicoPicone,UC_TamoS5Wzm6gsWjSJ5LZ6A
+778,778000,Navek Engineering,@navekeng,UC3XrWeEDHIHomiDZ1gSV38g
+,,optozorax,@optozorax_en,UC7EUiC7Jl-1rzwuepuIz5vw
+,,оптозоракс,@optozorax,UCIsVwdLhYrrs3K8MOXEZdhQ
+
+781,781000,What's A Creel,@WhatsACreel,UCq7dxy_qYNEBcHqQVCbc20w
+
+### Hardware / Embedded Systems (placeholder)
+
+### Robotics & Control (placeholder)
+
+### Electrical / Mechanical Engineering (placeholder)
+
+### Aerospace / Space Engineering (placeholder)
+
+### Materials Science (placeholder)
+
+# Natural Sciences
+40076,40076,Atlas Pro,@AtlasPro1,UCz1oFxMrgrQ82-276UCOU9w
+713,713000,Henry the PaleoGuy,@HenrythePaleoGuy,UCN1rSOJNzfjzPOsPXRI-hGA
+
 ## Physics
-60,6000,Sixty Symbols,@sixtysymbols,
-60137,60137,minutephysics,@MinutePhysics,
-42,42000,Veritasium,@veritasium,
-43,43000,2veritasium,@derek,
-50,50135,Steve Mould,@SteveMould,
-1234,123456,SmarterEveryDay,@smartereveryday,
-2345,234567,Smarter Every Day 2,@SmarterEveryDay2,
-1618,161803,Physics Girl,@physicsgirl,
+### Conceptual & Visual Physics
+60137,60137,minutephysics,@MinutePhysics,UCUHW94eEFW7hkUMVaZz4eDg
+1618,161803,Physics Girl,@physicsgirl,UC7DdEm33SyaTDtWYGO2CwdA
+60,6000,Sixty Symbols,@sixtysymbols,UCvBqzzvUBLCs8Y7Axb-jZew
 
-## Astronomy & Space
-730,730000,"What Da Math",@whatdamath,
+### Experimental Physics / Lab Demos (placeholder)
 
-# Mathematics
-## Pure & Applied Mathematics
-31,31000,3Blue1Brown,@3blue1brown,
-2718,271828,Numberphile,@numberphile,
-314,314159,Stand-up Maths,@standupmaths,
-740,740000,"Dr Trefor",@DrTrefor,
-741,741000,"Sheafification Of G",@SheafificationOfG,
-742,742000,"Jason Bramburger",@jasonbramburger,
-743,743000,"Zunda Theorem (EN)",@zunda-theorem-en,
-744,744000,"Dan Renshaw (dwrensha)",@dwrensha,
-746,746000,"Mihai Nica Math",@MihaiNicaMath,
-747,747000,"Nemean",@Nemean,
-749,749000,"Aleph-0",@Aleph0,
- 
-## Probability & Statistics
-745,745000,"Abide By Reason",@AbideByReason,
-750,750000,"almost sure",@almostsure,
-751,751000,"very normal",@very-normal,
- 
-# Earth & Environmental Science
-40076,40076,Atlas Pro,@AtlasPro1,
-60365,525600,MinuteEarth,@MinuteEarth,
-732,732000,"potholer54",@potholer54,
- 
-# Biology & Zoology
-711,711000,"Animalogic",@animalogic,
-712,712000,"My Wild Backyard",@MyWildBackyard,
-713,713000,"Henry the PaleoGuy",@HenrythePaleoGuy,
-714,714000,"Travis McEnery (Arachnology)",@travismcenery2919,
- 
-# History & Anthropology
-33,33000,CrashCourse,@crashcourse,
-720,720000,"Stefan Milo",@StefanMilo,
-721,721000,"NORTH 02",@NORTH02,
-722,722000,"Ancient Americas",@AncientAmericas,
-723,723000,"premodernist history",@premodernist_history,
- 
-# Religious Studies & Esotericism
-700,700000,"Religion for Breakfast",@ReligionForBreakfast,
-701,701000,"Crecganford",@Crecganford,
-702,702000,"Let's Talk Religion",@LetsTalkReligion,
-703,703000,"The Esoterica Channel",@TheEsotericaChannel,
-710,710000,"Moth Light Media",@mothlightmedia1936,
-790,790000,"Prof. Jeffrey Kaplan",@profjeffreykaplan,
+### Theoretical Physics (placeholder)
 
-# Linguistics & Philology
-## Historical Linguistics & Philology
-760,760000,"Graham Amscheper",@grahamamscheper,
-761,761000,"Jackson Crawford",@JacksonCrawford,
+### Quantum Mechanics (placeholder)
 
-## General Linguistics
-762,762000,"Language Jones",@languagejones,
+### Relativity & Cosmology (placeholder)
 
-# Computer Science & Software Engineering
-## Core Computer Science & Systems
-7,190000,Neso Academy,@nesoacademy,
-770,770000,"Laurie Wired",@lauriewired,
-774,774000,"Daedalus Community",@DaedalusCommunity,
-776,776000,"cacharle",@cacharle,
-781,781000,"What's A Creel",@WhatsACreel,
-778,778000,"Navek Engineering",@navekeng,
+## Astronomy / Space
+### Astronomy News / Cosmology (placeholder)
 
-## Software Engineering, Tools & Dev Culture
-775,775000,"Rico Picone",@RicoPicone,
-782,782000,"simon dev",@simondev758,
-779,779000,"Developer Voices",@DeveloperVoices,
-793,793000,"Memory Leek DE",@MemoryLeekDE,
-748,748000,"Jerboa app",@Jerboa-app,
+### Astrophysics (placeholder)
 
-# Artificial Intelligence & Machine Learning
-771,771000,"Dr Waku",@DrWaku,
-772,772000,"Ariseff AI",@ariseffai,
-773,773000,"Szymon Ozog",@szymonozog7862,
-777,777000,"Andrej Karpathy",@AndrejKarpathy,
-780,780000,"Robert Miles (AI Safety)",@RobertMilesAI,
+### Space Engineering / Missions (placeholder)
 
-# Psychology, Neuroscience & Learning Science
-58,39801,Zogg from Betelgeuse,@ZoggFromBetelgeuse,
-733,733000,"Benjamin Keep",@benjaminkeep,
-792,792000,"Artem Kirsanov (Neuroscience)",@ArtemKirsanov,
+### Planetary Science (placeholder)
 
-# Music & Arts
-731,731000,"Benn Jordan",@BennJordan,
-791,791000,"Samuel Andreyev",@samuel_andreyev,
+## Chemistry
+### General Chemistry
+,,That Chemist,@That_Chemist,UC0nEDA3uRd5YuvBfMwQNteg
+,,ChemicalForce,@ChemicalForce,UCqONNjBkukcc2yXbmHL8niQ
+
+### Organic Chemistry (placeholder)
+
+### Inorganic Chemistry (placeholder)
+
+### Physical Chemistry (placeholder)
+
+### Biochemistry (placeholder)
+
+## Earth Science / Geology / Climate
+### Earth Systems / Geography
+60365,525600,MinuteEarth,@MinuteEarth,UCeiYXex_fwgYDonaTcSIk6w
+
+### Geology / Tectonics (placeholder)
+
+### Meteorology (placeholder)
+
+### Oceanography (placeholder)
+
+### Climate Science & Debunking
+732,732000,potholer54,@potholer54,UCljE1ODdSF7LS9xx9eWq0GQ
+
+### Geophysics (placeholder)
+
+## Biology / Evolution
+### Evolutionary Biology (placeholder)
+
+### Genetics (placeholder)
+
+### Molecular Biology (placeholder)
+
+### Microbiology (placeholder)
+
+### Cell Biology (placeholder)
+
+### Physiology (placeholder)
+
+### Botany (placeholder)
+
+## Ecology / Zoology
+### Animal Biology / Natural History
+711,711000,Animalogic,@animalogic,UCwg6_F2hDHYrqbNSGjmar4w
+712,712000,My Wild Backyard,@MyWildBackyard,UC5lYMhQxYsgZTjQ4kDyOzOA
+
+### Arachnology
+714,714000,Travis McEnery (Arachnology),@travismcenery2919,UCUSUdvFASRi8Xs3gjPXWaKg
+
+### Marine Biology (placeholder)
+
+### Entomology (placeholder)
+
+### Ornithology (placeholder)
+
+### Herpetology (placeholder)
+
+### Ichthyology (placeholder)
+
+## Paleontology
+### Paleontology / Deep Time
+710,710000,Moth Light Media,@mothlightmedia1936,UCOh5Ht3eB4914hMUfJkKa9g
+
+### Dinosaur Paleontology (placeholder)
+
+### Paleoecology (placeholder)
+
+## Neuroscience
+### Neuroscience (research / explanations)
+792,792000,Artem Kirsanov (Neuroscience),@ArtemKirsanov,UCR2uRTQ53V_egXKFflMMaaw
+
+### Cognitive Neuroscience (placeholder)
+
+### Computational Neuroscience (placeholder)
+
+### Neuroanatomy (placeholder)
+
+## Medicine / Public Health
+### Public Health & Epidemiology (placeholder)
+
+### Clinical Medicine (placeholder)
+
+### Anatomy & Physiology (placeholder)
+
+### Pharmacology (placeholder)
+
+### Nursing / Allied Health (placeholder)
+
+# Social Sciences & Humanities
+## Psychology / Cognitive Science / Learning Science
+### Learning How to Learn
+733,733000,Benjamin Keep,@benjaminkeep,UChY0i0rm9FSA5_M6pADke1w
+
+### Cognitive Psychology (placeholder)
+
+### Behavioral Psychology (placeholder)
+
+### Educational Psychology (placeholder)
+
+### Cognitive Science (placeholder)
+
+## Archaeology
+### Archaeology / Ancient Civilizations
+720,720000,Stefan Milo,@StefanMilo,UCZ9jWH_8tJ-Nmaj8dSQdEYA
+721,721000,NORTH 02,@NORTH02,UCmJf6_W7W-Q7rTd5skVEgqA
+722,722000,Ancient Americas,@AncientAmericas,UCEqNbbsx0i7fhwRt0saYIcQ
+
+### Bioarchaeology (placeholder)
+
+### Ancient Technology (placeholder)
+
+## History
+### General History
+723,723000,premodernist history,@premodernist_history,UC2xHMABk_sX2aC14-D7OhIw
+
+### Ancient History (placeholder)
+
+### Medieval History (placeholder)
+
+### Early Modern History (placeholder)
+
+### Modern History (placeholder)
+
+### Regional History (placeholder)
+
+## Economics
+### Microeconomics (placeholder)
+
+### Macroeconomics (placeholder)
+
+### Econometrics (placeholder)
+
+### Behavioral Economics (placeholder)
+
+### Political Economy (placeholder)
+
+## Sociology / Anthropology
+### Cultural Anthropology (placeholder)
+
+### Social Theory (placeholder)
+
+### Ethnography (placeholder)
+
+### Human Evolution (placeholder)
+
+## Mythology / Religious Studies
+### Comparative Religion / Mythology
+700,700000,Religion for Breakfast,@ReligionForBreakfast,UCct9aR7HC79Cv2g-9oDOTLw
+702,702000,Let's Talk Religion,@LetsTalkReligion,UC9dRb4fbJQIbQ3KHJZF_z0g
+703,703000,The Esoterica Channel,@TheEsotericaChannel,UCoydhtfFSk1fZXNRnkGnneQ
+701,701000,Crecganford,@Crecganford,UChhMB_J0kz8eBJECy4d5uSQ
+
+### Theology (placeholder)
+
+### Esotericism (placeholder)
+
+## Linguistics / Literature
+### Linguistics
+762,762000,Language Jones,@languagejones,UCVwfqPkv08OTuHzkPU3EaDw
+760,760000,Graham Amscheper,@grahamamscheper,UCSd7OM0r5LPkb4Rcp-wlK9g
+
+### Historical Linguistics
+761,761000,Jackson Crawford,@JacksonCrawford,UCXCxNFxw6iq-Mh4uIjYvufg
+
+### Phonetics / Phonology (placeholder)
+
+### Syntax / Semantics / Pragmatics (placeholder)
+
+### Literature
+,,Bookfox,@Bookfox,UCWp90fsJtx4BScXsxRoCMoA
+
+### Creative Writing (placeholder)
+
+## Philosophy / Ethics
+### Academic Philosophy
+790,790000,Prof. Jeffrey Kaplan,@profjeffreykaplan,UC_hukbByJP7OZ3Xm2tszacQ
+
+### Ethics / Applied Ethics
+,,Unsolicited advice,@unsolicitedadvice9198,UCW71hQg1kDxmFIfijA8dL0Q
+
+### Political Philosophy (placeholder)
+
+### Logic (placeholder)
+
+### Philosophy of Mind / Science (placeholder)
+
+## Political Science / Law
+### Political Theory (placeholder)
+
+### International Relations (placeholder)
+
+### Comparative Politics (placeholder)
+
+### Public Policy (placeholder)
+
+### Law (Constitutional / Criminal / Civil) (placeholder)
+
+# Arts (Music)
+## Music Theory / Music Technology
+### Composition / Analysis / Advanced Theory
+791,791000,Samuel Andreyev,@samuel_andreyev,UCI_dcH8Zr2UqNT1EqvMNgTg
+
+### Audio Engineering / Music Technology
+731,731000,Benn Jordan,@BennJordan,UCshObcm-nLhbu8MY50EZ5Ng
+
+### Music Production (placeholder)
+
+### Ethnomusicology (placeholder)
+
+# Other
+## Other:
+### Miscellaneous (placeholder)
