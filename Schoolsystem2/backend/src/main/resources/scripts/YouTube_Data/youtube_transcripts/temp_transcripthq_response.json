@@ -1,0 +1,2651 @@
+{
+  "completed_at": "2026-01-03T16:07:18.392000",
+  "created_at": "2026-01-03T16:07:09.590000",
+  "credits_used": 1,
+  "job_id": "69593eade50e34d325f8f47e",
+  "service_type": "youtube",
+  "status": "completed",
+  "summary": {
+    "done": 1,
+    "failed": 0,
+    "pending": 0,
+    "processing": 1,
+    "total": 1,
+    "transcribing": -1
+  },
+  "total_duration_seconds": 180,
+  "videos": [
+    {
+      "channel": "Vsauce",
+      "description": "",
+      "duration_seconds": 1298.6090000000002,
+      "is_generated": true,
+      "is_native": true,
+      "language": "en",
+      "segments": [
+        {
+          "duration": 6.09,
+          "end": 8.57,
+          "start": 2.48,
+          "text": "[Music]"
+        },
+        {
+          "duration": 7.92,
+          "end": 17.08,
+          "start": 9.16,
+          "text": "hey esauce Michael here do you have a"
+        },
+        {
+          "duration": 8.88,
+          "end": 21.04,
+          "start": 12.16,
+          "text": "best friend who is there for you 247"
+        },
+        {
+          "duration": 6.48,
+          "end": 23.56,
+          "start": 17.08,
+          "text": "365 sorry that's not really good enough"
+        },
+        {
+          "duration": 5.84,
+          "end": 26.88,
+          "start": 21.04,
+          "text": "if your friend truly had your back they"
+        },
+        {
+          "duration": 3.32,
+          "end": 26.88,
+          "start": 23.56,
+          "text": "would be there for you"
+        },
+        {
+          "duration": 3.96,
+          "end": 32.92,
+          "start": 28.96,
+          "text": "24.6 7"
+        },
+        {
+          "duration": 4.08,
+          "end": 35.48,
+          "start": 31.4,
+          "text": "365."
+        },
+        {
+          "duration": 8.0,
+          "end": 40.92,
+          "start": 32.92,
+          "text": "2421"
+        },
+        {
+          "duration": 8.4,
+          "end": 43.88,
+          "start": 35.48,
+          "text": "891 also George Washington was born on"
+        },
+        {
+          "duration": 7.2,
+          "end": 48.12,
+          "start": 40.92,
+          "text": "February 22nd"
+        },
+        {
+          "duration": 6.68,
+          "end": 50.56,
+          "start": 43.88,
+          "text": "1732 at least that's what we're told"
+        },
+        {
+          "duration": 5.68,
+          "end": 53.8,
+          "start": 48.12,
+          "text": "however his family Bible says he was"
+        },
+        {
+          "duration": 8.44,
+          "end": 59.0,
+          "start": 50.56,
+          "text": "born on February 11th"
+        },
+        {
+          "duration": 7.32,
+          "end": 61.12,
+          "start": 53.8,
+          "text": "1731 slash two so which is it Mr I"
+        },
+        {
+          "duration": 5.0,
+          "end": 64.0,
+          "start": 59.0,
+          "text": "cannot tell a lie"
+        },
+        {
+          "duration": 7.72,
+          "end": 68.84,
+          "start": 61.12,
+          "text": "oh and don't even ask about"
+        },
+        {
+          "duration": 6.92,
+          "end": 70.92,
+          "start": 64.0,
+          "text": "1752 in Russia 1752 looked pretty normal"
+        },
+        {
+          "duration": 4.96,
+          "end": 73.8,
+          "start": 68.84,
+          "text": "but check out what the British Empire"
+        },
+        {
+          "duration": 8.32,
+          "end": 79.24,
+          "start": 70.92,
+          "text": "was up to that year nothing really out"
+        },
+        {
+          "duration": 9.04,
+          "end": 82.84,
+          "start": 73.8,
+          "text": "of the ordinary except Ember the second"
+        },
+        {
+          "duration": 5.0,
+          "end": 84.24,
+          "start": 79.24,
+          "text": "was followed by the 14th were 11 days"
+        },
+        {
+          "duration": 5.32,
+          "end": 88.16,
+          "start": 82.84,
+          "text": "just"
+        },
+        {
+          "duration": 6.4,
+          "end": 90.64,
+          "start": 84.24,
+          "text": "deleted where' they go what happened"
+        },
+        {
+          "duration": 3.72,
+          "end": 91.88,
+          "start": 88.16,
+          "text": "then it is time"
+        },
+        {
+          "duration": 5.84,
+          "end": 96.48,
+          "start": 90.64,
+          "text": "to"
+        },
+        {
+          "duration": 7.24,
+          "end": 99.12,
+          "start": 91.88,
+          "text": "question time and how the Earth moves"
+        },
+        {
+          "duration": 6.04,
+          "end": 102.52,
+          "start": 96.48,
+          "text": "reconciling both of these things has led"
+        },
+        {
+          "duration": 6.32,
+          "end": 105.44,
+          "start": 99.12,
+          "text": "to some pretty strange"
+        },
+        {
+          "duration": 6.28,
+          "end": 108.8,
+          "start": 102.52,
+          "text": "things we all love time-lapse videos of"
+        },
+        {
+          "duration": 6.92,
+          "end": 112.36,
+          "start": 105.44,
+          "text": "the Stars moving across the sky but"
+        },
+        {
+          "duration": 6.0,
+          "end": 114.8,
+          "start": 108.8,
+          "text": "really we are the ones who are moving"
+        },
+        {
+          "duration": 5.2,
+          "end": 117.56,
+          "start": 112.36,
+          "text": "tumbling Through the Universe on a giant"
+        },
+        {
+          "duration": 6.16,
+          "end": 120.96,
+          "start": 114.8,
+          "text": "wet Rock vehicle called Earth with a"
+        },
+        {
+          "duration": 6.0,
+          "end": 123.56,
+          "start": 117.56,
+          "text": "windshield called the sky as viewed from"
+        },
+        {
+          "duration": 5.72,
+          "end": 126.68,
+          "start": 120.96,
+          "text": "above the North Pole we spin"
+        },
+        {
+          "duration": 4.56,
+          "end": 128.12,
+          "start": 123.56,
+          "text": "counterclockwise West chases East I"
+        },
+        {
+          "duration": 4.56,
+          "end": 131.24,
+          "start": 126.68,
+          "text": "always remember this by thinking of the"
+        },
+        {
+          "duration": 6.56,
+          "end": 134.68,
+          "start": 128.12,
+          "text": "us as a weird main headed animal with"
+        },
+        {
+          "duration": 7.68,
+          "end": 138.92,
+          "start": 131.24,
+          "text": "Texas and Florida legs running forward"
+        },
+        {
+          "duration": 7.76,
+          "end": 142.44,
+          "start": 134.68,
+          "text": "but we don't just spin we also revolve"
+        },
+        {
+          "duration": 8.88,
+          "end": 147.8,
+          "start": 138.92,
+          "text": "around the sun on a plane tilted"
+        },
+        {
+          "duration": 8.56,
+          "end": 151.0,
+          "start": 142.44,
+          "text": "23.4 de relative to our spin it's kind"
+        },
+        {
+          "duration": 4.68,
+          "end": 152.48,
+          "start": 147.8,
+          "text": "of nauseating at this scale but from"
+        },
+        {
+          "duration": 4.4,
+          "end": 155.4,
+          "start": 151.0,
+          "text": "this perspective you can see that the"
+        },
+        {
+          "duration": 6.04,
+          "end": 158.52,
+          "start": 152.48,
+          "text": "sun rising and setting is just the Earth"
+        },
+        {
+          "duration": 7.12,
+          "end": 162.52,
+          "start": 155.4,
+          "text": "pointing you towards and then away from"
+        },
+        {
+          "duration": 6.0,
+          "end": 164.52,
+          "start": 158.52,
+          "text": "the Sun this motion causes your Sunrise"
+        },
+        {
+          "duration": 6.24,
+          "end": 168.76,
+          "start": 162.52,
+          "text": "your noon the moment when the sun is"
+        },
+        {
+          "duration": 6.0,
+          "end": 170.52,
+          "start": 164.52,
+          "text": "highest in your sky before your Sunset"
+        },
+        {
+          "duration": 5.16,
+          "end": 173.92,
+          "start": 168.76,
+          "text": "to more closely investigate this"
+        },
+        {
+          "duration": 6.24,
+          "end": 176.76,
+          "start": 170.52,
+          "text": "movement let's talk about"
+        },
+        {
+          "duration": 5.72,
+          "end": 179.64,
+          "start": 173.92,
+          "text": "meridians you are on one at this very"
+        },
+        {
+          "duration": 4.96,
+          "end": 181.72,
+          "start": 176.76,
+          "text": "moment your Meridian is just align from"
+        },
+        {
+          "duration": 5.12,
+          "end": 184.76,
+          "start": 179.64,
+          "text": "where where you are right now straight"
+        },
+        {
+          "duration": 5.72,
+          "end": 187.44,
+          "start": 181.72,
+          "text": "towards the North and South Poles it's a"
+        },
+        {
+          "duration": 5.08,
+          "end": 189.84,
+          "start": 184.76,
+          "text": "line of longitude as opposed to the"
+        },
+        {
+          "duration": 5.28,
+          "end": 192.72,
+          "start": 187.44,
+          "text": "horizontal lines that lay flat when"
+        },
+        {
+          "duration": 4.04,
+          "end": 193.88,
+          "start": 189.84,
+          "text": "North or South is up that we call"
+        },
+        {
+          "duration": 5.68,
+          "end": 198.4,
+          "start": 192.72,
+          "text": "flatitude"
+        },
+        {
+          "duration": 7.16,
+          "end": 201.04,
+          "start": 193.88,
+          "text": "or actually latitude the sun is highest"
+        },
+        {
+          "duration": 5.56,
+          "end": 203.96,
+          "start": 198.4,
+          "text": "in the sky to you your noon when your"
+        },
+        {
+          "duration": 4.92,
+          "end": 205.96,
+          "start": 201.04,
+          "text": "Meridian is pointed right at the Sun a"
+        },
+        {
+          "duration": 4.44,
+          "end": 208.4,
+          "start": 203.96,
+          "text": "cool thing happens at this moment all"
+        },
+        {
+          "duration": 5.04,
+          "end": 211.0,
+          "start": 205.96,
+          "text": "Shadows around you point directly"
+        },
+        {
+          "duration": 7.6,
+          "end": 216.0,
+          "start": 208.4,
+          "text": "towards one of Earth's poles"
+        },
+        {
+          "duration": 7.32,
+          "end": 218.32,
+          "start": 211.0,
+          "text": "unless you're on the subsolar point the"
+        },
+        {
+          "duration": 5.76,
+          "end": 221.76,
+          "start": 216.0,
+          "text": "subsolar point is the point on Earth's"
+        },
+        {
+          "duration": 4.96,
+          "end": 223.28,
+          "start": 218.32,
+          "text": "surface directly below the Sun It's"
+        },
+        {
+          "duration": 3.72,
+          "end": 225.48,
+          "start": 221.76,
+          "text": "Always Somewhere you can check its"
+        },
+        {
+          "duration": 5.96,
+          "end": 229.24,
+          "start": 223.28,
+          "text": "current location online links as always"
+        },
+        {
+          "duration": 7.52,
+          "end": 233.0,
+          "start": 225.48,
+          "text": "in the description on The subsolar Point"
+        },
+        {
+          "duration": 7.28,
+          "end": 236.52,
+          "start": 229.24,
+          "text": "Shadows Fall straight down so they can"
+        },
+        {
+          "duration": 6.12,
+          "end": 239.12,
+          "start": 233.0,
+          "text": "easily disappear twice a year the"
+        },
+        {
+          "duration": 4.28,
+          "end": 240.8,
+          "start": 236.52,
+          "text": "subsolar point crosses over Hawaii the"
+        },
+        {
+          "duration": 4.48,
+          "end": 243.6,
+          "start": 239.12,
+          "text": "only place in in the US where it hits"
+        },
+        {
+          "duration": 7.52,
+          "end": 248.32,
+          "start": 240.8,
+          "text": "land and when it does it is called"
+        },
+        {
+          "duration": 7.12,
+          "end": 250.72,
+          "start": 243.6,
+          "text": "lahina noon meaning cruel Sun straight"
+        },
+        {
+          "duration": 4.52,
+          "end": 252.84,
+          "start": 248.32,
+          "text": "vertical objects look unnatural during"
+        },
+        {
+          "duration": 4.44,
+          "end": 255.16,
+          "start": 250.72,
+          "text": "this brief time like they don't belong"
+        },
+        {
+          "duration": 5.44,
+          "end": 258.28,
+          "start": 252.84,
+          "text": "as if they were photoshopped in without"
+        },
+        {
+          "duration": 5.24,
+          "end": 260.4,
+          "start": 255.16,
+          "text": "regard for reality in Honolulu a"
+        },
+        {
+          "duration": 5.52,
+          "end": 263.8,
+          "start": 258.28,
+          "text": "sculpture by isamu naguchi called"
+        },
+        {
+          "duration": 7.24,
+          "end": 267.64,
+          "start": 260.4,
+          "text": "skygate casts a twisted Shadow all day"
+        },
+        {
+          "duration": 7.08,
+          "end": 270.88,
+          "start": 263.8,
+          "text": "every day except during lahina noon when"
+        },
+        {
+          "duration": 5.8,
+          "end": 273.44,
+          "start": 267.64,
+          "text": "its shadow is a perfect"
+        },
+        {
+          "duration": 5.8,
+          "end": 276.68,
+          "start": 270.88,
+          "text": "Circle you may not live in a place where"
+        },
+        {
+          "duration": 5.88,
+          "end": 279.32,
+          "start": 273.44,
+          "text": "the sun ever appears directly overhead"
+        },
+        {
+          "duration": 5.64,
+          "end": 282.32,
+          "start": 276.68,
+          "text": "but once every earth rotation the"
+        },
+        {
+          "duration": 6.92,
+          "end": 286.24,
+          "start": 279.32,
+          "text": "subsolar point Falls somewhere on your"
+        },
+        {
+          "duration": 7.04,
+          "end": 289.36,
+          "start": 282.32,
+          "text": "Meridian making it noon for you the"
+        },
+        {
+          "duration": 6.8,
+          "end": 293.04,
+          "start": 286.24,
+          "text": "technical name for this noon for you is"
+        },
+        {
+          "duration": 6.16,
+          "end": 295.52,
+          "start": 289.36,
+          "text": "local apparent solar noon the clock on"
+        },
+        {
+          "duration": 5.24,
+          "end": 298.28,
+          "start": 293.04,
+          "text": "your wrist and the clock on your phone"
+        },
+        {
+          "duration": 5.8,
+          "end": 301.32,
+          "start": 295.52,
+          "text": "don't tell you your local apparent solar"
+        },
+        {
+          "duration": 6.08,
+          "end": 304.36,
+          "start": 298.28,
+          "text": "time because long ago we realized that"
+        },
+        {
+          "duration": 5.96,
+          "end": 307.28,
+          "start": 301.32,
+          "text": "if every Meridian had its own time a"
+        },
+        {
+          "duration": 5.0,
+          "end": 309.36,
+          "start": 304.36,
+          "text": "person just a few kilometers away seeing"
+        },
+        {
+          "duration": 5.08,
+          "end": 312.36,
+          "start": 307.28,
+          "text": "different shadows than you did would"
+        },
+        {
+          "duration": 6.16,
+          "end": 315.52,
+          "start": 309.36,
+          "text": "disagree with you on what time it was so"
+        },
+        {
+          "duration": 5.88,
+          "end": 318.24,
+          "start": 312.36,
+          "text": "towns adopted their own time now later"
+        },
+        {
+          "duration": 5.8,
+          "end": 321.32,
+          "start": 315.52,
+          "text": "on this trick was standardized and time"
+        },
+        {
+          "duration": 5.68,
+          "end": 323.92,
+          "start": 318.24,
+          "text": "zones as we know them today came about"
+        },
+        {
+          "duration": 6.32,
+          "end": 327.64,
+          "start": 321.32,
+          "text": "but that's not all we didn't like about"
+        },
+        {
+          "duration": 6.96,
+          "end": 330.88,
+          "start": 323.92,
+          "text": "shadow-based sundal time to explore"
+        },
+        {
+          "duration": 4.52,
+          "end": 332.16,
+          "start": 327.64,
+          "text": "deeper we have to begin by asking"
+        },
+        {
+          "duration": 3.92,
+          "end": 334.8,
+          "start": 330.88,
+          "text": "what's a"
+        },
+        {
+          "duration": 5.36,
+          "end": 337.52,
+          "start": 332.16,
+          "text": "day I mean obviously it's just the time"
+        },
+        {
+          "duration": 6.56,
+          "end": 341.36,
+          "start": 334.8,
+          "text": "it takes the Earth to turn around once"
+        },
+        {
+          "duration": 6.68,
+          "end": 344.2,
+          "start": 337.52,
+          "text": "right but according to what everything"
+        },
+        {
+          "duration": 4.4,
+          "end": 345.76,
+          "start": 341.36,
+          "text": "else in space is moving in some way too"
+        },
+        {
+          "duration": 3.84,
+          "end": 348.04,
+          "start": 344.2,
+          "text": "the universe doesn't include a"
+        },
+        {
+          "duration": 6.12,
+          "end": 351.88,
+          "start": 345.76,
+          "text": "convenient sheet of graph paper at"
+        },
+        {
+          "duration": 5.84,
+          "end": 353.88,
+          "start": 348.04,
+          "text": "Absolute rest we can trace paths on the"
+        },
+        {
+          "duration": 5.6,
+          "end": 357.48,
+          "start": 351.88,
+          "text": "best we can do on that front is to look"
+        },
+        {
+          "duration": 5.92,
+          "end": 359.8,
+          "start": 353.88,
+          "text": "at very very far far far away Stars so"
+        },
+        {
+          "duration": 4.8,
+          "end": 362.28,
+          "start": 357.48,
+          "text": "far away like distant features of the"
+        },
+        {
+          "duration": 5.92,
+          "end": 365.72,
+          "start": 359.8,
+          "text": "landscape out the window of a moving car"
+        },
+        {
+          "duration": 6.12,
+          "end": 368.4,
+          "start": 362.28,
+          "text": "they barely move as Earth does now to"
+        },
+        {
+          "duration": 5.8,
+          "end": 371.52,
+          "start": 365.72,
+          "text": "them a Meridian on earth completes a"
+        },
+        {
+          "duration": 4.64,
+          "end": 373.04,
+          "start": 368.4,
+          "text": "trip around about once every"
+        },
+        {
+          "duration": 5.88,
+          "end": 377.4,
+          "start": 371.52,
+          "text": "23.9"
+        },
+        {
+          "duration": 8.24,
+          "end": 381.28,
+          "start": 373.04,
+          "text": "hours this is called a siderial day"
+        },
+        {
+          "duration": 5.96,
+          "end": 383.36,
+          "start": 377.4,
+          "text": "siderial means pertaining to the Stars"
+        },
+        {
+          "duration": 5.24,
+          "end": 386.52,
+          "start": 381.28,
+          "text": "even though the siderial day seems"
+        },
+        {
+          "duration": 5.68,
+          "end": 389.04,
+          "start": 383.36,
+          "text": "pretty clear it's not what our calendars"
+        },
+        {
+          "duration": 4.72,
+          "end": 391.24,
+          "start": 386.52,
+          "text": "and clocks are based on because there's"
+        },
+        {
+          "duration": 5.12,
+          "end": 394.16,
+          "start": 389.04,
+          "text": "a near star whose position relative to"
+        },
+        {
+          "duration": 6.16,
+          "end": 397.4,
+          "start": 391.24,
+          "text": "us has a bigger effect on our"
+        },
+        {
+          "duration": 5.88,
+          "end": 400.04,
+          "start": 394.16,
+          "text": "lives the sun looking down on the North"
+        },
+        {
+          "duration": 5.0,
+          "end": 402.4,
+          "start": 397.4,
+          "text": "Pole at Earth's counterclockwise spin"
+        },
+        {
+          "duration": 5.92,
+          "end": 405.96,
+          "start": 400.04,
+          "text": "the Earth also moves counterclockwise"
+        },
+        {
+          "duration": 5.84,
+          "end": 408.24,
+          "start": 402.4,
+          "text": "around the Sun after a siderial day the"
+        },
+        {
+          "duration": 4.76,
+          "end": 410.72,
+          "start": 405.96,
+          "text": "Earth has moved a bit along its orbit so"
+        },
+        {
+          "duration": 4.64,
+          "end": 412.88,
+          "start": 408.24,
+          "text": "some more rotation is required for the"
+        },
+        {
+          "duration": 5.84,
+          "end": 416.56,
+          "start": 410.72,
+          "text": "same Meridian to point back towards the"
+        },
+        {
+          "duration": 6.24,
+          "end": 419.12,
+          "start": 412.88,
+          "text": "sun again this longer definition of one"
+        },
+        {
+          "duration": 6.92,
+          "end": 423.48,
+          "start": 416.56,
+          "text": "rotation is what the modern calendar and"
+        },
+        {
+          "duration": 7.56,
+          "end": 426.68,
+          "start": 419.12,
+          "text": "clock is based on it is called the solar"
+        },
+        {
+          "duration": 5.28,
+          "end": 428.76,
+          "start": 423.48,
+          "text": "day but here's the thing exactly how"
+        },
+        {
+          "duration": 6.88,
+          "end": 433.56,
+          "start": 426.68,
+          "text": "long the Earth has to rotate to complete"
+        },
+        {
+          "duration": 7.0,
+          "end": 435.76,
+          "start": 428.76,
+          "text": "a solar day changes day to day our"
+        },
+        {
+          "duration": 4.52,
+          "end": 438.08,
+          "start": 433.56,
+          "text": "clocks are just based on the average"
+        },
+        {
+          "duration": 5.4,
+          "end": 441.16,
+          "start": 435.76,
+          "text": "amount of time this takes so throughout"
+        },
+        {
+          "duration": 5.96,
+          "end": 444.04,
+          "start": 438.08,
+          "text": "the year they fall ahead and behind the"
+        },
+        {
+          "duration": 5.0,
+          "end": 446.16,
+          "start": 441.16,
+          "text": "sun this is a solar graph a picture of"
+        },
+        {
+          "duration": 4.48,
+          "end": 448.52,
+          "start": 444.04,
+          "text": "the sun's path across the sky every"
+        },
+        {
+          "duration": 5.04,
+          "end": 451.2,
+          "start": 446.16,
+          "text": "single day if our clocks actually told"
+        },
+        {
+          "duration": 4.72,
+          "end": 453.24,
+          "start": 448.52,
+          "text": "us local apparent solar time if you took"
+        },
+        {
+          "duration": 5.04,
+          "end": 456.24,
+          "start": 451.2,
+          "text": "a picture of the sky every day at noon"
+        },
+        {
+          "duration": 5.36,
+          "end": 458.6,
+          "start": 453.24,
+          "text": "you should get a line of suns but this"
+        },
+        {
+          "duration": 4.64,
+          "end": 460.88,
+          "start": 456.24,
+          "text": "is what really happens over the course"
+        },
+        {
+          "duration": 5.16,
+          "end": 463.76,
+          "start": 458.6,
+          "text": "of a year it will appear as though your"
+        },
+        {
+          "duration": 5.8,
+          "end": 466.68,
+          "start": 460.88,
+          "text": "clock is running slow and then fast and"
+        },
+        {
+          "duration": 5.16,
+          "end": 468.92,
+          "start": 463.76,
+          "text": "then slow again and then fast again this"
+        },
+        {
+          "duration": 6.0,
+          "end": 472.68,
+          "start": 466.68,
+          "text": "problem was known since at least ancient"
+        },
+        {
+          "duration": 6.52,
+          "end": 475.44,
+          "start": 468.92,
+          "text": "times even if its cause wasn't in order"
+        },
+        {
+          "duration": 5.44,
+          "end": 478.12,
+          "start": 472.68,
+          "text": "to reconcile the two the equation of"
+        },
+        {
+          "duration": 4.8,
+          "end": 480.24,
+          "start": 475.44,
+          "text": "time was constructed in this sense"
+        },
+        {
+          "duration": 4.32,
+          "end": 482.44,
+          "start": 478.12,
+          "text": "equation means to"
+        },
+        {
+          "duration": 4.36,
+          "end": 484.6,
+          "start": 480.24,
+          "text": "reconcile the equation of time was"
+        },
+        {
+          "duration": 5.68,
+          "end": 488.12,
+          "start": 482.44,
+          "text": "applied to what a clock said in order to"
+        },
+        {
+          "duration": 7.12,
+          "end": 491.72,
+          "start": 484.6,
+          "text": "compute the real time the solar time a"
+        },
+        {
+          "duration": 6.12,
+          "end": 494.24,
+          "start": 488.12,
+          "text": "sundial would show now some fancy clocks"
+        },
+        {
+          "duration": 5.76,
+          "end": 497.48,
+          "start": 491.72,
+          "text": "called equation Clocks Were Made that"
+        },
+        {
+          "duration": 6.64,
+          "end": 500.88,
+          "start": 494.24,
+          "text": "would do this for you but eventually we"
+        },
+        {
+          "duration": 6.24,
+          "end": 503.72,
+          "start": 497.48,
+          "text": "gave up we gave up and just said no the"
+        },
+        {
+          "duration": 6.4,
+          "end": 507.28,
+          "start": 500.88,
+          "text": "real time isn't what the sun says it's"
+        },
+        {
+          "duration": 5.96,
+          "end": 509.68,
+          "start": 503.72,
+          "text": "what our inventions say now this"
+        },
+        {
+          "duration": 4.84,
+          "end": 512.12,
+          "start": 507.28,
+          "text": "transition was a big one it was human"
+        },
+        {
+          "duration": 4.2,
+          "end": 513.88,
+          "start": 509.68,
+          "text": "ity growing up it was like the first"
+        },
+        {
+          "duration": 6.0,
+          "end": 518.12,
+          "start": 512.12,
+          "text": "time you realize you're stronger than"
+        },
+        {
+          "duration": 8.52,
+          "end": 522.4,
+          "start": 513.88,
+          "text": "your parents we realized our time pieces"
+        },
+        {
+          "duration": 8.4,
+          "end": 526.52,
+          "start": 518.12,
+          "text": "were more regular and turned our backs"
+        },
+        {
+          "duration": 7.12,
+          "end": 529.52,
+          "start": 522.4,
+          "text": "on the time pieces nature had but what"
+        },
+        {
+          "duration": 6.52,
+          "end": 533.04,
+          "start": 526.52,
+          "text": "causes this disagreement in the first"
+        },
+        {
+          "duration": 6.8,
+          "end": 536.32,
+          "start": 529.52,
+          "text": "place as it turns out the answer"
+        },
+        {
+          "duration": 5.76,
+          "end": 538.8,
+          "start": 533.04,
+          "text": "revolves around revolving the way the"
+        },
+        {
+          "duration": 5.16,
+          "end": 541.48,
+          "start": 536.32,
+          "text": "Earth revolves around the Sun if the"
+        },
+        {
+          "duration": 4.68,
+          "end": 543.48,
+          "start": 538.8,
+          "text": "equator faced the sun all the time and"
+        },
+        {
+          "duration": 4.92,
+          "end": 546.4,
+          "start": 541.48,
+          "text": "the Earth always orbited at the same"
+        },
+        {
+          "duration": 4.48,
+          "end": 547.96,
+          "start": 543.48,
+          "text": "speed the subsolar point would just stay"
+        },
+        {
+          "duration": 3.68,
+          "end": 550.08,
+          "start": 546.4,
+          "text": "right there on the equator throughout"
+        },
+        {
+          "duration": 4.32,
+          "end": 552.28,
+          "start": 547.96,
+          "text": "the year and the amount of extra time"
+        },
+        {
+          "duration": 4.6,
+          "end": 554.68,
+          "start": 550.08,
+          "text": "spent rotating the Earth needed to do to"
+        },
+        {
+          "duration": 5.48,
+          "end": 557.76,
+          "start": 552.28,
+          "text": "finish a solar day would always be the"
+        },
+        {
+          "duration": 6.16,
+          "end": 560.84,
+          "start": 554.68,
+          "text": "same but those two things aren't the"
+        },
+        {
+          "duration": 6.44,
+          "end": 564.2,
+          "start": 557.76,
+          "text": "case first of all the Earth's orbit is"
+        },
+        {
+          "duration": 6.0,
+          "end": 566.84,
+          "start": 560.84,
+          "text": "slightly elliptical so its speed varies"
+        },
+        {
+          "duration": 4.36,
+          "end": 568.56,
+          "start": 564.2,
+          "text": "throughout the year when it's moving"
+        },
+        {
+          "duration": 3.12,
+          "end": 569.96,
+          "start": 566.84,
+          "text": "around the Sun faster around the"
+        },
+        {
+          "duration": 3.48,
+          "end": 572.04,
+          "start": 568.56,
+          "text": "beginning of January"
+        },
+        {
+          "duration": 5.04,
+          "end": 575.0,
+          "start": 569.96,
+          "text": "the amount of extra turning time needed"
+        },
+        {
+          "duration": 5.0,
+          "end": 577.04,
+          "start": 572.04,
+          "text": "to complete the solar day is longer than"
+        },
+        {
+          "duration": 3.48,
+          "end": 578.48,
+          "start": 575.0,
+          "text": "when it's further away from the Sun and"
+        },
+        {
+          "duration": 4.56,
+          "end": 581.6,
+          "start": 577.04,
+          "text": "moving more"
+        },
+        {
+          "duration": 5.88,
+          "end": 584.36,
+          "start": 578.48,
+          "text": "slowly there's more because the Earth is"
+        },
+        {
+          "duration": 4.48,
+          "end": 586.08,
+          "start": 581.6,
+          "text": "tilted the subsolar point is dragged"
+        },
+        {
+          "duration": 3.76,
+          "end": 588.12,
+          "start": 584.36,
+          "text": "throughout the year in a circle around"
+        },
+        {
+          "duration": 5.4,
+          "end": 591.48,
+          "start": 586.08,
+          "text": "Earth that's not the Equator so it"
+        },
+        {
+          "duration": 6.24,
+          "end": 594.36,
+          "start": 588.12,
+          "text": "changes Direction moving Northeast then"
+        },
+        {
+          "duration": 5.84,
+          "end": 597.32,
+          "start": 591.48,
+          "text": "leveling out and going Southeast before"
+        },
+        {
+          "duration": 4.4,
+          "end": 598.76,
+          "start": 594.36,
+          "text": "leveling out and going Northeast again"
+        },
+        {
+          "duration": 3.44,
+          "end": 600.76,
+          "start": 597.32,
+          "text": "during times of the year when the"
+        },
+        {
+          "duration": 5.52,
+          "end": 604.28,
+          "start": 598.76,
+          "text": "subsolar point is being dragged by"
+        },
+        {
+          "duration": 7.32,
+          "end": 608.08,
+          "start": 600.76,
+          "text": "Earth's orbit mostly East it gains"
+        },
+        {
+          "duration": 7.0,
+          "end": 611.28,
+          "start": 604.28,
+          "text": "against Earth's spin faster more time is"
+        },
+        {
+          "duration": 5.72,
+          "end": 613.8,
+          "start": 608.08,
+          "text": "required for the day to finish Now by"
+        },
+        {
+          "duration": 4.68,
+          "end": 615.96,
+          "start": 611.28,
+          "text": "coincidence we are alive at a time when"
+        },
+        {
+          "duration": 5.12,
+          "end": 618.92,
+          "start": 613.8,
+          "text": "both of these phenomena lengthen and"
+        },
+        {
+          "duration": 6.36,
+          "end": 622.32,
+          "start": 615.96,
+          "text": "shorten days at roughly the same time so"
+        },
+        {
+          "duration": 6.4,
+          "end": 625.32,
+          "start": 618.92,
+          "text": "they add up making September 18th almost"
+        },
+        {
+          "duration": 4.8,
+          "end": 627.12,
+          "start": 622.32,
+          "text": "a minute shorter than the longest day of"
+        },
+        {
+          "duration": 4.6,
+          "end": 629.92,
+          "start": 625.32,
+          "text": "the year December"
+        },
+        {
+          "duration": 4.96,
+          "end": 632.08,
+          "start": 627.12,
+          "text": "22nd for northern hemisphere experience"
+        },
+        {
+          "duration": 5.24,
+          "end": 635.16,
+          "start": 629.92,
+          "text": "December has the shortest periods of"
+        },
+        {
+          "duration": 6.12,
+          "end": 638.2,
+          "start": 632.08,
+          "text": "daylight but the whole Solar day from"
+        },
+        {
+          "duration": 5.44,
+          "end": 640.6,
+          "start": 635.16,
+          "text": "sunrise to Sunrise is for everyone on"
+        },
+        {
+          "duration": 3.56,
+          "end": 641.76,
+          "start": 638.2,
+          "text": "Earth the longest of the year on"
+        },
+        {
+          "duration": 4.4,
+          "end": 645.0,
+          "start": 640.6,
+          "text": "December"
+        },
+        {
+          "duration": 5.32,
+          "end": 647.08,
+          "start": 641.76,
+          "text": "22nd people in the north just spend most"
+        },
+        {
+          "duration": 5.84,
+          "end": 650.84,
+          "start": 645.0,
+          "text": "of it in"
+        },
+        {
+          "duration": 6.4,
+          "end": 653.48,
+          "start": 647.08,
+          "text": "darkness Earth's Tilt it doesn't just"
+        },
+        {
+          "duration": 5.6,
+          "end": 656.44,
+          "start": 650.84,
+          "text": "affect how long a day is it also affects"
+        },
+        {
+          "duration": 6.52,
+          "end": 660.0,
+          "start": 653.48,
+          "text": "how long a year is this is because the"
+        },
+        {
+          "duration": 5.92,
+          "end": 662.36,
+          "start": 656.44,
+          "text": "Earth's Tilt is what causes the season"
+        },
+        {
+          "duration": 4.68,
+          "end": 664.68,
+          "start": 660.0,
+          "text": "for the half of the earth tilted towards"
+        },
+        {
+          "duration": 5.24,
+          "end": 667.6,
+          "start": 662.36,
+          "text": "the Sun the same amount of solar"
+        },
+        {
+          "duration": 4.68,
+          "end": 669.36,
+          "start": 664.68,
+          "text": "radiation is spread across less space"
+        },
+        {
+          "duration": 5.24,
+          "end": 672.84,
+          "start": 667.6,
+          "text": "than it is on the other half so there's"
+        },
+        {
+          "duration": 6.72,
+          "end": 676.08,
+          "start": 669.36,
+          "text": "more heat energy laid down per area this"
+        },
+        {
+          "duration": 6.04,
+          "end": 678.88,
+          "start": 672.84,
+          "text": "causes what we call summer and winter"
+        },
+        {
+          "duration": 5.24,
+          "end": 681.32,
+          "start": 676.08,
+          "text": "for the other half the amount of time"
+        },
+        {
+          "duration": 5.6,
+          "end": 684.48,
+          "start": 678.88,
+          "text": "from one of these seasonal orientations"
+        },
+        {
+          "duration": 8.08,
+          "end": 689.4,
+          "start": 681.32,
+          "text": "of the earth to its occurrence again is"
+        },
+        {
+          "duration": 6.68,
+          "end": 691.16,
+          "start": 684.48,
+          "text": "called a solar year or a tropical year"
+        },
+        {
+          "duration": 3.88,
+          "end": 693.28,
+          "start": 689.4,
+          "text": "it's a very useful way to define a year"
+        },
+        {
+          "duration": 4.24,
+          "end": 695.4,
+          "start": 691.16,
+          "text": "because it contains every single season"
+        },
+        {
+          "duration": 5.2,
+          "end": 698.48,
+          "start": 693.28,
+          "text": "exactly since it's based on the very"
+        },
+        {
+          "duration": 6.0,
+          "end": 701.4,
+          "start": 695.4,
+          "text": "orientations that cause them but the"
+        },
+        {
+          "duration": 6.44,
+          "end": 704.92,
+          "start": 698.48,
+          "text": "problem is this the number of solar days"
+        },
+        {
+          "duration": 7.08,
+          "end": 708.48,
+          "start": 701.4,
+          "text": "that occur in a solar year is not a"
+        },
+        {
+          "duration": 7.28,
+          "end": 712.2,
+          "start": 704.92,
+          "text": "whole number it's almost"
+        },
+        {
+          "duration": 6.6,
+          "end": 715.08,
+          "start": 708.48,
+          "text": "365 but after that many solar days about"
+        },
+        {
+          "duration": 6.4,
+          "end": 718.6,
+          "start": 712.2,
+          "text": "a quarter of a day more happens before"
+        },
+        {
+          "duration": 6.04,
+          "end": 721.12,
+          "start": 715.08,
+          "text": "the solar year starts again this makes"
+        },
+        {
+          "duration": 5.92,
+          "end": 724.52,
+          "start": 718.6,
+          "text": "designing a a calendar more like"
+        },
+        {
+          "duration": 6.56,
+          "end": 727.68,
+          "start": 721.12,
+          "text": "designing a"
+        },
+        {
+          "duration": 7.2,
+          "end": 731.72,
+          "start": 724.52,
+          "text": "calend if your calendar only ever has"
+        },
+        {
+          "duration": 6.12,
+          "end": 733.8,
+          "start": 727.68,
+          "text": "365 days in a year over time those dates"
+        },
+        {
+          "duration": 5.0,
+          "end": 736.72,
+          "start": 731.72,
+          "text": "will Drift from the seasonal positions"
+        },
+        {
+          "duration": 6.2,
+          "end": 740.0,
+          "start": 733.8,
+          "text": "they used to occur during"
+        },
+        {
+          "duration": 6.84,
+          "end": 743.56,
+          "start": 736.72,
+          "text": "unless H this extra quarter of a turn"
+        },
+        {
+          "duration": 6.32,
+          "end": 746.32,
+          "start": 740.0,
+          "text": "adds up to a full day after 4 years see"
+        },
+        {
+          "duration": 5.88,
+          "end": 749.44,
+          "start": 743.56,
+          "text": "March 1st is coming a Day Too Soon now"
+        },
+        {
+          "duration": 5.76,
+          "end": 752.08,
+          "start": 746.32,
+          "text": "so if we just delay march by adding an"
+        },
+        {
+          "duration": 6.6,
+          "end": 756.04,
+          "start": 749.44,
+          "text": "extra day at the end of February every 4"
+        },
+        {
+          "duration": 7.04,
+          "end": 759.12,
+          "start": 752.08,
+          "text": "years a leap day we're back on track"
+        },
+        {
+          "duration": 4.44,
+          "end": 760.48,
+          "start": 756.04,
+          "text": "leap days do not add days to your life"
+        },
+        {
+          "duration": 3.72,
+          "end": 762.84,
+          "start": 759.12,
+          "text": "you're still going to live the same"
+        },
+        {
+          "duration": 5.32,
+          "end": 765.8,
+          "start": 760.48,
+          "text": "number of them they just change what we"
+        },
+        {
+          "duration": 5.84,
+          "end": 768.68,
+          "start": 762.84,
+          "text": "call them but really who cares about"
+        },
+        {
+          "duration": 4.48,
+          "end": 770.28,
+          "start": 765.8,
+          "text": "being one day earlier every 4 years I"
+        },
+        {
+          "duration": 5.6,
+          "end": 774.28,
+          "start": 768.68,
+          "text": "mean one day isn't much you'd hardly"
+        },
+        {
+          "duration": 6.84,
+          "end": 777.12,
+          "start": 770.28,
+          "text": "notice it but over time well if"
+        },
+        {
+          "duration": 5.2,
+          "end": 779.48,
+          "start": 774.28,
+          "text": "America's Founders had declared not only"
+        },
+        {
+          "duration": 4.44,
+          "end": 781.56,
+          "start": 777.12,
+          "text": "independence from Britain but also from"
+        },
+        {
+          "duration": 6.72,
+          "end": 786.2,
+          "start": 779.48,
+          "text": "leap days and abolished them from"
+        },
+        {
+          "duration": 6.96,
+          "end": 788.52,
+          "start": 781.56,
+          "text": "happening today 240 years later their"
+        },
+        {
+          "duration": 4.52,
+          "end": 790.72,
+          "start": 786.2,
+          "text": "calendar would be a full 2 months ahead"
+        },
+        {
+          "duration": 5.48,
+          "end": 794.0,
+          "start": 788.52,
+          "text": "of Earth's position putting America's"
+        },
+        {
+          "duration": 7.32,
+          "end": 798.04,
+          "start": 790.72,
+          "text": "coldest winter days in April and its"
+        },
+        {
+          "duration": 6.92,
+          "end": 800.92,
+          "start": 794.0,
+          "text": "hottest summer days in October adding a"
+        },
+        {
+          "duration": 7.08,
+          "end": 805.12,
+          "start": 798.04,
+          "text": "day every 4 years is what the famous"
+        },
+        {
+          "duration": 7.24,
+          "end": 808.16,
+          "start": 800.92,
+          "text": "Julian calendar does introduced in 46 BC"
+        },
+        {
+          "duration": 7.0,
+          "end": 812.12,
+          "start": 805.12,
+          "text": "by Julius Caesar it was the de facto"
+        },
+        {
+          "duration": 6.36,
+          "end": 814.52,
+          "start": 808.16,
+          "text": "standardized West calendar for a very"
+        },
+        {
+          "duration": 6.6,
+          "end": 818.72,
+          "start": 812.12,
+          "text": "long time more than a"
+        },
+        {
+          "duration": 7.36,
+          "end": 821.88,
+          "start": 814.52,
+          "text": "millennium but it's not perfect look"
+        },
+        {
+          "duration": 8.0,
+          "end": 826.72,
+          "start": 818.72,
+          "text": "closely leap days actually move the"
+        },
+        {
+          "duration": 10.68,
+          "end": 832.56,
+          "start": 821.88,
+          "text": "calendar just slightly too far each time"
+        },
+        {
+          "duration": 8.24,
+          "end": 834.96,
+          "start": 826.72,
+          "text": "because I lied 365 and a quar solar days"
+        },
+        {
+          "duration": 4.84,
+          "end": 837.4,
+          "start": 832.56,
+          "text": "don't occur within one solar year the"
+        },
+        {
+          "duration": 4.4,
+          "end": 839.36,
+          "start": 834.96,
+          "text": "real number is slightly less and"
+        },
+        {
+          "duration": 4.36,
+          "end": 841.76,
+          "start": 837.4,
+          "text": "fluctuates year to year based on on"
+        },
+        {
+          "duration": 4.68,
+          "end": 844.04,
+          "start": 839.36,
+          "text": "long-term changes to Earth and the sun's"
+        },
+        {
+          "duration": 5.16,
+          "end": 846.92,
+          "start": 841.76,
+          "text": "movements which means adding one day"
+        },
+        {
+          "duration": 7.56,
+          "end": 851.6,
+          "start": 844.04,
+          "text": "every four years is just a Teensy wey"
+        },
+        {
+          "duration": 7.52,
+          "end": 854.44,
+          "start": 846.92,
+          "text": "too many by 1582 Julian calendar dates"
+        },
+        {
+          "duration": 4.72,
+          "end": 856.32,
+          "start": 851.6,
+          "text": "were 10 days behind the seasons compared"
+        },
+        {
+          "duration": 4.24,
+          "end": 858.68,
+          "start": 854.44,
+          "text": "to where they used to be now that's not"
+        },
+        {
+          "duration": 7.0,
+          "end": 863.32,
+          "start": 856.32,
+          "text": "bad 10 days and more than a millennium"
+        },
+        {
+          "duration": 6.4,
+          "end": 865.08,
+          "start": 858.68,
+          "text": "and a half but the Catholic Church cared"
+        },
+        {
+          "duration": 4.92,
+          "end": 868.24,
+          "start": 863.32,
+          "text": "because they wanted Easter to occur"
+        },
+        {
+          "duration": 4.72,
+          "end": 869.8,
+          "start": 865.08,
+          "text": "exactly when it used to centuries ago"
+        },
+        {
+          "duration": 3.68,
+          "end": 871.92,
+          "start": 868.24,
+          "text": "astronomers at the time time realized"
+        },
+        {
+          "duration": 4.68,
+          "end": 874.48,
+          "start": 869.8,
+          "text": "that if leap days pushed the calendar"
+        },
+        {
+          "duration": 4.4,
+          "end": 876.32,
+          "start": 871.92,
+          "text": "too far behind the seasons we would just"
+        },
+        {
+          "duration": 4.6,
+          "end": 879.08,
+          "start": 874.48,
+          "text": "need to celebrate fewer of them to fix"
+        },
+        {
+          "duration": 6.16,
+          "end": 882.48,
+          "start": 876.32,
+          "text": "the problem specifically we would need"
+        },
+        {
+          "duration": 5.76,
+          "end": 884.84,
+          "start": 879.08,
+          "text": "three fewer leap days every four"
+        },
+        {
+          "duration": 4.52,
+          "end": 887.0,
+          "start": 882.48,
+          "text": "centuries the rule they wrote to achieve"
+        },
+        {
+          "duration": 4.76,
+          "end": 889.6,
+          "start": 884.84,
+          "text": "this stated that every 4 years would"
+        },
+        {
+          "duration": 6.32,
+          "end": 893.32,
+          "start": 887.0,
+          "text": "continue to be a leap year except if it"
+        },
+        {
+          "duration": 7.04,
+          "end": 896.64,
+          "start": 889.6,
+          "text": "was divisible by 100 unless it was also"
+        },
+        {
+          "duration": 7.56,
+          "end": 900.88,
+          "start": 893.32,
+          "text": "evenly divisible by 400 this removes"
+        },
+        {
+          "duration": 7.4,
+          "end": 904.04,
+          "start": 896.64,
+          "text": "three every 400 years on October 4th"
+        },
+        {
+          "duration": 6.8,
+          "end": 907.68,
+          "start": 900.88,
+          "text": "Pope Gregory V 13th introduced this new"
+        },
+        {
+          "duration": 6.6,
+          "end": 910.64,
+          "start": 904.04,
+          "text": "calendar it took his name the Gregorian"
+        },
+        {
+          "duration": 4.92,
+          "end": 912.6,
+          "start": 907.68,
+          "text": "calendar he also undid the drift that"
+        },
+        {
+          "duration": 5.08,
+          "end": 915.72,
+          "start": 910.64,
+          "text": "had occurred since the early days of the"
+        },
+        {
+          "duration": 5.92,
+          "end": 918.52,
+          "start": 912.6,
+          "text": "Julian and declared on October 4th that"
+        },
+        {
+          "duration": 6.72,
+          "end": 922.44,
+          "start": 915.72,
+          "text": "tomorrow would be October"
+        },
+        {
+          "duration": 5.52,
+          "end": 924.04,
+          "start": 918.52,
+          "text": "15th October 5th to the 14th never"
+        },
+        {
+          "duration": 4.4,
+          "end": 926.84,
+          "start": 922.44,
+          "text": "happened in"
+        },
+        {
+          "duration": 5.36,
+          "end": 929.4,
+          "start": 924.04,
+          "text": "1582 in countries that listened to the"
+        },
+        {
+          "duration": 5.88,
+          "end": 932.72,
+          "start": 926.84,
+          "text": "pope it took the rest of the world"
+        },
+        {
+          "duration": 5.84,
+          "end": 935.24,
+          "start": 929.4,
+          "text": "centuries to hop on board England and"
+        },
+        {
+          "duration": 5.52,
+          "end": 938.24,
+          "start": 932.72,
+          "text": "its colonies like the soon to be United"
+        },
+        {
+          "duration": 5.12,
+          "end": 940.36,
+          "start": 935.24,
+          "text": "States of America adopted the Gregorian"
+        },
+        {
+          "duration": 4.96,
+          "end": 943.2,
+          "start": 938.24,
+          "text": "in September of"
+        },
+        {
+          "duration": 5.64,
+          "end": 946.0,
+          "start": 940.36,
+          "text": "1752 by which point their Julian dates"
+        },
+        {
+          "duration": 4.68,
+          "end": 947.88,
+          "start": 943.2,
+          "text": "were off from the seasons by 11 days"
+        },
+        {
+          "duration": 4.96,
+          "end": 950.96,
+          "start": 946.0,
+          "text": "hence the disappearing of the 3rd"
+        },
+        {
+          "duration": 5.12,
+          "end": 953.0,
+          "start": 947.88,
+          "text": "through 13th when adopted the first of"
+        },
+        {
+          "duration": 4.64,
+          "end": 955.6,
+          "start": 950.96,
+          "text": "the year was also moved from March to"
+        },
+        {
+          "duration": 6.88,
+          "end": 959.88,
+          "start": 953.0,
+          "text": "January 1st this explains why George"
+        },
+        {
+          "duration": 6.36,
+          "end": 961.96,
+          "start": 955.6,
+          "text": "Washington's birthday has two answers"
+        },
+        {
+          "duration": 4.64,
+          "end": 964.52,
+          "start": 959.88,
+          "text": "although more closely hitched to the"
+        },
+        {
+          "duration": 4.8,
+          "end": 966.76,
+          "start": 961.96,
+          "text": "seasons than the Julian the Gregorian"
+        },
+        {
+          "duration": 4.88,
+          "end": 969.4,
+          "start": 964.52,
+          "text": "calendar still isn't perfect its"
+        },
+        {
+          "duration": 7.08,
+          "end": 973.84,
+          "start": 966.76,
+          "text": "difference causes dates to become one"
+        },
+        {
+          "duration": 4.44,
+          "end": 973.84,
+          "start": 969.4,
+          "text": "day off from the seasons Every"
+        },
+        {
+          "duration": 5.6,
+          "end": 979.48,
+          "start": 973.88,
+          "text": "3,216 years other calendars have been"
+        },
+        {
+          "duration": 3.88,
+          "end": 981.24,
+          "start": 977.36,
+          "text": "proposed like the one standup maths"
+        },
+        {
+          "duration": 4.72,
+          "end": 984.2,
+          "start": 979.48,
+          "text": "calculated that drifts off even more"
+        },
+        {
+          "duration": 7.08,
+          "end": 988.32,
+          "start": 981.24,
+          "text": "slowly his video is a great watch by the"
+        },
+        {
+          "duration": 6.8,
+          "end": 991.0,
+          "start": 984.2,
+          "text": "way but enough of all of this let's sit"
+        },
+        {
+          "duration": 6.16,
+          "end": 994.48,
+          "start": 988.32,
+          "text": "back and enjoy Earth's movement without"
+        },
+        {
+          "duration": 5.8,
+          "end": 996.8,
+          "start": 991.0,
+          "text": "trying to divide it up and name it as a"
+        },
+        {
+          "duration": 4.96,
+          "end": 999.44,
+          "start": 994.48,
+          "text": "caveat keep in mind that Earth's oceans"
+        },
+        {
+          "duration": 5.16,
+          "end": 1001.96,
+          "start": 996.8,
+          "text": "and liquid insides and other celestial"
+        },
+        {
+          "duration": 5.04,
+          "end": 1004.48,
+          "start": 999.44,
+          "text": "bodies are always pulling and tugging"
+        },
+        {
+          "duration": 4.52,
+          "end": 1006.48,
+          "start": 1001.96,
+          "text": "and sloshing around minutely changing"
+        },
+        {
+          "duration": 4.16,
+          "end": 1008.64,
+          "start": 1004.48,
+          "text": "Earth's movements their effect is"
+        },
+        {
+          "duration": 4.28,
+          "end": 1010.76,
+          "start": 1006.48,
+          "text": "measurable but difficult to notice at"
+        },
+        {
+          "duration": 4.8,
+          "end": 1013.44,
+          "start": 1008.64,
+          "text": "Big scales and also don't look like much"
+        },
+        {
+          "duration": 5.8,
+          "end": 1016.56,
+          "start": 1010.76,
+          "text": "in the short term short like the length"
+        },
+        {
+          "duration": 6.12,
+          "end": 1019.56,
+          "start": 1013.44,
+          "text": "of a human life looking from above the"
+        },
+        {
+          "duration": 6.64,
+          "end": 1023.2,
+          "start": 1016.56,
+          "text": "North Pole the equator SP"
+        },
+        {
+          "duration": 7.64,
+          "end": 1027.2,
+          "start": 1019.56,
+          "text": "counterclockwise at about 1670"
+        },
+        {
+          "duration": 5.96,
+          "end": 1029.16,
+          "start": 1023.2,
+          "text": "kmph relative to the sun earth orbits"
+        },
+        {
+          "duration": 7.32,
+          "end": 1034.52,
+          "start": 1027.2,
+          "text": "counterclockwise at"
+        },
+        {
+          "duration": 7.96,
+          "end": 1037.12,
+          "start": 1029.16,
+          "text": "108,000 kmph along a path tilted 23.4 de"
+        },
+        {
+          "duration": 5.56,
+          "end": 1040.08,
+          "start": 1034.52,
+          "text": "to its spin within our local"
+        },
+        {
+          "duration": 6.68,
+          "end": 1043.8,
+          "start": 1037.12,
+          "text": "neighborhood of stars our entire solar"
+        },
+        {
+          "duration": 5.16,
+          "end": 1045.24,
+          "start": 1040.08,
+          "text": "system is drifting 70,000 km per hour"
+        },
+        {
+          "duration": 5.56,
+          "end": 1049.36,
+          "start": 1043.8,
+          "text": "roughly in the direction of the bright"
+        },
+        {
+          "duration": 7.36,
+          "end": 1052.6,
+          "start": 1045.24,
+          "text": "star Vega in the constellation of lra"
+        },
+        {
+          "duration": 6.68,
+          "end": 1056.04,
+          "start": 1049.36,
+          "text": "and our solar system is part of a giant"
+        },
+        {
+          "duration": 6.64,
+          "end": 1059.24,
+          "start": 1052.6,
+          "text": "Galaxy called the Milky Way on a plane"
+        },
+        {
+          "duration": 5.44,
+          "end": 1061.48,
+          "start": 1056.04,
+          "text": "tilted about 60\u00b0 approximately like the"
+        },
+        {
+          "duration": 5.12,
+          "end": 1064.36,
+          "start": 1059.24,
+          "text": "windshield of a car looking from above"
+        },
+        {
+          "duration": 5.8,
+          "end": 1067.28,
+          "start": 1061.48,
+          "text": "Earth's north pole our entire solar"
+        },
+        {
+          "duration": 5.64,
+          "end": 1070.0,
+          "start": 1064.36,
+          "text": "system races clockwise around the"
+        },
+        {
+          "duration": 8.76,
+          "end": 1076.04,
+          "start": 1067.28,
+          "text": "galactic center at about"
+        },
+        {
+          "duration": 8.56,
+          "end": 1078.56,
+          "start": 1070.0,
+          "text": "792 th000 km per hour our whole galaxy"
+        },
+        {
+          "duration": 4.76,
+          "end": 1080.8,
+          "start": 1076.04,
+          "text": "is also moving through the universe we"
+        },
+        {
+          "duration": 5.72,
+          "end": 1084.28,
+          "start": 1078.56,
+          "text": "know know this because when the universe"
+        },
+        {
+          "duration": 6.52,
+          "end": 1087.32,
+          "start": 1080.8,
+          "text": "was very young it was so hot electrons"
+        },
+        {
+          "duration": 6.2,
+          "end": 1090.48,
+          "start": 1084.28,
+          "text": "and protons jumped around and photons of"
+        },
+        {
+          "duration": 5.44,
+          "end": 1092.76,
+          "start": 1087.32,
+          "text": "light scattered constantly they couldn't"
+        },
+        {
+          "duration": 6.2,
+          "end": 1096.68,
+          "start": 1090.48,
+          "text": "travel very far before scattering again"
+        },
+        {
+          "duration": 7.64,
+          "end": 1100.4,
+          "start": 1092.76,
+          "text": "so the universe was opaque but then"
+        },
+        {
+          "duration": 6.48,
+          "end": 1103.16,
+          "start": 1096.68,
+          "text": "around 380,000 years after the big bang"
+        },
+        {
+          "duration": 5.88,
+          "end": 1106.28,
+          "start": 1100.4,
+          "text": "the universe cooled just enough for"
+        },
+        {
+          "duration": 6.16,
+          "end": 1109.32,
+          "start": 1103.16,
+          "text": "electrons and protons to form"
+        },
+        {
+          "duration": 5.32,
+          "end": 1111.6,
+          "start": 1106.28,
+          "text": "hydrogen suddenly abruptly"
+        },
+        {
+          "duration": 4.52,
+          "end": 1113.84,
+          "start": 1109.32,
+          "text": "photons decoupled from this obstacle"
+        },
+        {
+          "duration": 4.96,
+          "end": 1116.56,
+          "start": 1111.6,
+          "text": "course and could travel relatively"
+        },
+        {
+          "duration": 6.04,
+          "end": 1119.88,
+          "start": 1113.84,
+          "text": "unencumbered the universe became"
+        },
+        {
+          "duration": 6.4,
+          "end": 1122.96,
+          "start": 1116.56,
+          "text": "transparent to light and since that"
+        },
+        {
+          "duration": 6.32,
+          "end": 1126.2,
+          "start": 1119.88,
+          "text": "moment those early photons have been"
+        },
+        {
+          "duration": 6.04,
+          "end": 1129.0,
+          "start": 1122.96,
+          "text": "propagating through space every day"
+        },
+        {
+          "duration": 5.04,
+          "end": 1131.24,
+          "start": 1126.2,
+          "text": "ancient photons that last scattered off"
+        },
+        {
+          "duration": 4.56,
+          "end": 1133.56,
+          "start": 1129.0,
+          "text": "this opaque fog at the moment of"
+        },
+        {
+          "duration": 5.56,
+          "end": 1136.8,
+          "start": 1131.24,
+          "text": "decoupling a light day further from"
+        },
+        {
+          "duration": 5.6,
+          "end": 1139.16,
+          "start": 1133.56,
+          "text": "where Earth currently is reach us they"
+        },
+        {
+          "duration": 5.04,
+          "end": 1141.84,
+          "start": 1136.8,
+          "text": "are part of the cosmic micro wave"
+        },
+        {
+          "duration": 5.04,
+          "end": 1144.2,
+          "start": 1139.16,
+          "text": "background radiation it is visible in"
+        },
+        {
+          "duration": 4.0,
+          "end": 1145.84,
+          "start": 1141.84,
+          "text": "every direction microwave because"
+        },
+        {
+          "duration": 4.32,
+          "end": 1148.52,
+          "start": 1144.2,
+          "text": "although they used to be more energetic"
+        },
+        {
+          "duration": 4.92,
+          "end": 1150.76,
+          "start": 1145.84,
+          "text": "the universe's expansion has redshifted"
+        },
+        {
+          "duration": 4.56,
+          "end": 1153.08,
+          "start": 1148.52,
+          "text": "them now some parts of this radiation"
+        },
+        {
+          "duration": 5.52,
+          "end": 1156.28,
+          "start": 1150.76,
+          "text": "are more redshifted than others because"
+        },
+        {
+          "duration": 4.84,
+          "end": 1157.92,
+          "start": 1153.08,
+          "text": "of our own movement through the universe"
+        },
+        {
+          "duration": 3.84,
+          "end": 1160.12,
+          "start": 1156.28,
+          "text": "controlling for the movements we've"
+        },
+        {
+          "duration": 4.6,
+          "end": 1162.52,
+          "start": 1157.92,
+          "text": "already talked about relative to this"
+        },
+        {
+          "duration": 5.48,
+          "end": 1165.6,
+          "start": 1160.12,
+          "text": "infinite cooling baby picture of the"
+        },
+        {
+          "duration": 5.96,
+          "end": 1168.48,
+          "start": 1162.52,
+          "text": "universe the first and oldest detectable"
+        },
+        {
+          "duration": 5.44,
+          "end": 1171.04,
+          "start": 1165.6,
+          "text": "light we are headed riding along in the"
+        },
+        {
+          "duration": 5.0,
+          "end": 1173.48,
+          "start": 1168.48,
+          "text": "middle Milky Way in the direction that"
+        },
+        {
+          "duration": 8.08,
+          "end": 1179.12,
+          "start": 1171.04,
+          "text": "the constellations of Leo and Virgo are"
+        },
+        {
+          "duration": 9.4,
+          "end": 1182.88,
+          "start": 1173.48,
+          "text": "to us at a speed of 2.1 million kilm"
+        },
+        {
+          "duration": 9.12,
+          "end": 1188.24,
+          "start": 1179.12,
+          "text": "hour towards a thing we don't fully"
+        },
+        {
+          "duration": 5.36,
+          "end": 1188.24,
+          "start": 1182.88,
+          "text": "understand yet simply called the Great"
+        },
+        {
+          "duration": 7.36,
+          "end": 1195.68,
+          "start": 1188.32,
+          "text": "attractor this is how you on Earth's"
+        },
+        {
+          "duration": 7.24,
+          "end": 1199.64,
+          "start": 1192.4,
+          "text": "surface are moving through the universe"
+        },
+        {
+          "duration": 9.68,
+          "end": 1205.36,
+          "start": 1195.68,
+          "text": "aboard spaceship earth"
+        },
+        {
+          "duration": 8.76,
+          "end": 1208.4,
+          "start": 1199.64,
+          "text": "okay now stop this is roughly 100 Years"
+        },
+        {
+          "duration": 5.4,
+          "end": 1210.76,
+          "start": 1205.36,
+          "text": "of Earth's movement through space this"
+        },
+        {
+          "duration": 4.64,
+          "end": 1213.04,
+          "start": 1208.4,
+          "text": "path we've traced from where we began"
+        },
+        {
+          "duration": 5.6,
+          "end": 1216.36,
+          "start": 1210.76,
+          "text": "here is the path you will take through"
+        },
+        {
+          "duration": 6.44,
+          "end": 1219.48,
+          "start": 1213.04,
+          "text": "the universe in your lifetime you didn't"
+        },
+        {
+          "duration": 5.16,
+          "end": 1221.52,
+          "start": 1216.36,
+          "text": "buy a ticket for this ride your parents"
+        },
+        {
+          "duration": 5.72,
+          "end": 1225.2,
+          "start": 1219.48,
+          "text": "signed you up without asking but"
+        },
+        {
+          "duration": 5.76,
+          "end": 1227.28,
+          "start": 1221.52,
+          "text": "nonetheless it is quite literally the"
+        },
+        {
+          "duration": 7.24,
+          "end": 1232.44,
+          "start": 1225.2,
+          "text": "ride of your"
+        },
+        {
+          "duration": 5.16,
+          "end": 1232.44,
+          "start": 1227.28,
+          "text": "life and as always thanks for"
+        },
+        {
+          "duration": 5.8,
+          "end": 1244.4,
+          "start": 1238.6,
+          "text": "watching it is now time for a major"
+        },
+        {
+          "duration": 4.0,
+          "end": 1246.12,
+          "start": 1242.12,
+          "text": "Vsauce announcement you know how for the"
+        },
+        {
+          "duration": 5.48,
+          "end": 1249.88,
+          "start": 1244.4,
+          "text": "last couple of years we've released a"
+        },
+        {
+          "duration": 8.28,
+          "end": 1254.4,
+          "start": 1246.12,
+          "text": "holiday box well introducing the"
+        },
+        {
+          "duration": 7.2,
+          "end": 1257.08,
+          "start": 1249.88,
+          "text": "Curiosity Box by Vsauce we created this"
+        },
+        {
+          "duration": 5.32,
+          "end": 1259.72,
+          "start": 1254.4,
+          "text": "thing as a quarterly box this comes to"
+        },
+        {
+          "duration": 5.16,
+          "end": 1262.24,
+          "start": 1257.08,
+          "text": "you four times a year year and it comes"
+        },
+        {
+          "duration": 4.84,
+          "end": 1264.56,
+          "start": 1259.72,
+          "text": "packed with amazing exclusive bauce"
+        },
+        {
+          "duration": 6.16,
+          "end": 1268.4,
+          "start": 1262.24,
+          "text": "merchandise and incredible geeky toys"
+        },
+        {
+          "duration": 5.48,
+          "end": 1270.04,
+          "start": 1264.56,
+          "text": "picked by myself Kevin and Jake plus as"
+        },
+        {
+          "duration": 3.56,
+          "end": 1271.96,
+          "start": 1268.4,
+          "text": "always a portion of the proceeds from"
+        },
+        {
+          "duration": 4.0,
+          "end": 1274.04,
+          "start": 1270.04,
+          "text": "this box goes to funding Alzheimer's"
+        },
+        {
+          "duration": 5.88,
+          "end": 1277.84,
+          "start": 1271.96,
+          "text": "research you can get your own by"
+        },
+        {
+          "duration": 6.68,
+          "end": 1280.72,
+          "start": 1274.04,
+          "text": "subscribing atth curiosity box.com I'm"
+        },
+        {
+          "duration": 7.52,
+          "end": 1285.36,
+          "start": 1277.84,
+          "text": "incredibly proud of this go check it out"
+        },
+        {
+          "duration": 4.64,
+          "end": 1285.36,
+          "start": 1280.72,
+          "text": "and as always thanks for watching"
+        },
+        {
+          "duration": 11.23,
+          "end": 1298.61,
+          "start": 1287.38,
+          "text": "[Music]"
+        }
+      ],
+      "status": "done",
+      "title": "How Earth Moves",
+      "transcript": "[Music] hey esauce Michael here do you have a best friend who is there for you 247 365 sorry that's not really good enough if your friend truly had your back they would be there for you 24.6 7 365. 2421 891 also George Washington was born on February 22nd 1732 at least that's what we're told however his family Bible says he was born on February 11th 1731 slash two so which is it Mr I cannot tell a lie oh and don't even ask about 1752 in Russia 1752 looked pretty normal but check out what the British Empire was up to that year nothing really out of the ordinary except Ember the second was followed by the 14th were 11 days just deleted where' they go what happened then it is time to question time and how the Earth moves reconciling both of these things has led to some pretty strange things we all love time-lapse videos of the Stars moving across the sky but really we are the ones who are moving tumbling Through the Universe on a giant wet Rock vehicle called Earth with a windshield called the sky as viewed from above the North Pole we spin counterclockwise West chases East I always remember this by thinking of the us as a weird main headed animal with Texas and Florida legs running forward but we don't just spin we also revolve around the sun on a plane tilted 23.4 de relative to our spin it's kind of nauseating at this scale but from this perspective you can see that the sun rising and setting is just the Earth pointing you towards and then away from the Sun this motion causes your Sunrise your noon the moment when the sun is highest in your sky before your Sunset to more closely investigate this movement let's talk about meridians you are on one at this very moment your Meridian is just align from where where you are right now straight towards the North and South Poles it's a line of longitude as opposed to the horizontal lines that lay flat when North or South is up that we call flatitude or actually latitude the sun is highest in the sky to you your noon when your Meridian is pointed right at the Sun a cool thing happens at this moment all Shadows around you point directly towards one of Earth's poles unless you're on the subsolar point the subsolar point is the point on Earth's surface directly below the Sun It's Always Somewhere you can check its current location online links as always in the description on The subsolar Point Shadows Fall straight down so they can easily disappear twice a year the subsolar point crosses over Hawaii the only place in in the US where it hits land and when it does it is called lahina noon meaning cruel Sun straight vertical objects look unnatural during this brief time like they don't belong as if they were photoshopped in without regard for reality in Honolulu a sculpture by isamu naguchi called skygate casts a twisted Shadow all day every day except during lahina noon when its shadow is a perfect Circle you may not live in a place where the sun ever appears directly overhead but once every earth rotation the subsolar point Falls somewhere on your Meridian making it noon for you the technical name for this noon for you is local apparent solar noon the clock on your wrist and the clock on your phone don't tell you your local apparent solar time because long ago we realized that if every Meridian had its own time a person just a few kilometers away seeing different shadows than you did would disagree with you on what time it was so towns adopted their own time now later on this trick was standardized and time zones as we know them today came about but that's not all we didn't like about shadow-based sundal time to explore deeper we have to begin by asking what's a day I mean obviously it's just the time it takes the Earth to turn around once right but according to what everything else in space is moving in some way too the universe doesn't include a convenient sheet of graph paper at Absolute rest we can trace paths on the best we can do on that front is to look at very very far far far away Stars so far away like distant features of the landscape out the window of a moving car they barely move as Earth does now to them a Meridian on earth completes a trip around about once every 23.9 hours this is called a siderial day siderial means pertaining to the Stars even though the siderial day seems pretty clear it's not what our calendars and clocks are based on because there's a near star whose position relative to us has a bigger effect on our lives the sun looking down on the North Pole at Earth's counterclockwise spin the Earth also moves counterclockwise around the Sun after a siderial day the Earth has moved a bit along its orbit so some more rotation is required for the same Meridian to point back towards the sun again this longer definition of one rotation is what the modern calendar and clock is based on it is called the solar day but here's the thing exactly how long the Earth has to rotate to complete a solar day changes day to day our clocks are just based on the average amount of time this takes so throughout the year they fall ahead and behind the sun this is a solar graph a picture of the sun's path across the sky every single day if our clocks actually told us local apparent solar time if you took a picture of the sky every day at noon you should get a line of suns but this is what really happens over the course of a year it will appear as though your clock is running slow and then fast and then slow again and then fast again this problem was known since at least ancient times even if its cause wasn't in order to reconcile the two the equation of time was constructed in this sense equation means to reconcile the equation of time was applied to what a clock said in order to compute the real time the solar time a sundial would show now some fancy clocks called equation Clocks Were Made that would do this for you but eventually we gave up we gave up and just said no the real time isn't what the sun says it's what our inventions say now this transition was a big one it was human ity growing up it was like the first time you realize you're stronger than your parents we realized our time pieces were more regular and turned our backs on the time pieces nature had but what causes this disagreement in the first place as it turns out the answer revolves around revolving the way the Earth revolves around the Sun if the equator faced the sun all the time and the Earth always orbited at the same speed the subsolar point would just stay right there on the equator throughout the year and the amount of extra time spent rotating the Earth needed to do to finish a solar day would always be the same but those two things aren't the case first of all the Earth's orbit is slightly elliptical so its speed varies throughout the year when it's moving around the Sun faster around the beginning of January the amount of extra turning time needed to complete the solar day is longer than when it's further away from the Sun and moving more slowly there's more because the Earth is tilted the subsolar point is dragged throughout the year in a circle around Earth that's not the Equator so it changes Direction moving Northeast then leveling out and going Southeast before leveling out and going Northeast again during times of the year when the subsolar point is being dragged by Earth's orbit mostly East it gains against Earth's spin faster more time is required for the day to finish Now by coincidence we are alive at a time when both of these phenomena lengthen and shorten days at roughly the same time so they add up making September 18th almost a minute shorter than the longest day of the year December 22nd for northern hemisphere experience December has the shortest periods of daylight but the whole Solar day from sunrise to Sunrise is for everyone on Earth the longest of the year on December 22nd people in the north just spend most of it in darkness Earth's Tilt it doesn't just affect how long a day is it also affects how long a year is this is because the Earth's Tilt is what causes the season for the half of the earth tilted towards the Sun the same amount of solar radiation is spread across less space than it is on the other half so there's more heat energy laid down per area this causes what we call summer and winter for the other half the amount of time from one of these seasonal orientations of the earth to its occurrence again is called a solar year or a tropical year it's a very useful way to define a year because it contains every single season exactly since it's based on the very orientations that cause them but the problem is this the number of solar days that occur in a solar year is not a whole number it's almost 365 but after that many solar days about a quarter of a day more happens before the solar year starts again this makes designing a a calendar more like designing a calend if your calendar only ever has 365 days in a year over time those dates will Drift from the seasonal positions they used to occur during unless H this extra quarter of a turn adds up to a full day after 4 years see March 1st is coming a Day Too Soon now so if we just delay march by adding an extra day at the end of February every 4 years a leap day we're back on track leap days do not add days to your life you're still going to live the same number of them they just change what we call them but really who cares about being one day earlier every 4 years I mean one day isn't much you'd hardly notice it but over time well if America's Founders had declared not only independence from Britain but also from leap days and abolished them from happening today 240 years later their calendar would be a full 2 months ahead of Earth's position putting America's coldest winter days in April and its hottest summer days in October adding a day every 4 years is what the famous Julian calendar does introduced in 46 BC by Julius Caesar it was the de facto standardized West calendar for a very long time more than a millennium but it's not perfect look closely leap days actually move the calendar just slightly too far each time because I lied 365 and a quar solar days don't occur within one solar year the real number is slightly less and fluctuates year to year based on on long-term changes to Earth and the sun's movements which means adding one day every four years is just a Teensy wey too many by 1582 Julian calendar dates were 10 days behind the seasons compared to where they used to be now that's not bad 10 days and more than a millennium and a half but the Catholic Church cared because they wanted Easter to occur exactly when it used to centuries ago astronomers at the time time realized that if leap days pushed the calendar too far behind the seasons we would just need to celebrate fewer of them to fix the problem specifically we would need three fewer leap days every four centuries the rule they wrote to achieve this stated that every 4 years would continue to be a leap year except if it was divisible by 100 unless it was also evenly divisible by 400 this removes three every 400 years on October 4th Pope Gregory V 13th introduced this new calendar it took his name the Gregorian calendar he also undid the drift that had occurred since the early days of the Julian and declared on October 4th that tomorrow would be October 15th October 5th to the 14th never happened in 1582 in countries that listened to the pope it took the rest of the world centuries to hop on board England and its colonies like the soon to be United States of America adopted the Gregorian in September of 1752 by which point their Julian dates were off from the seasons by 11 days hence the disappearing of the 3rd through 13th when adopted the first of the year was also moved from March to January 1st this explains why George Washington's birthday has two answers although more closely hitched to the seasons than the Julian the Gregorian calendar still isn't perfect its difference causes dates to become one day off from the seasons Every 3,216 years other calendars have been proposed like the one standup maths calculated that drifts off even more slowly his video is a great watch by the way but enough of all of this let's sit back and enjoy Earth's movement without trying to divide it up and name it as a caveat keep in mind that Earth's oceans and liquid insides and other celestial bodies are always pulling and tugging and sloshing around minutely changing Earth's movements their effect is measurable but difficult to notice at Big scales and also don't look like much in the short term short like the length of a human life looking from above the North Pole the equator SP counterclockwise at about 1670 kmph relative to the sun earth orbits counterclockwise at 108,000 kmph along a path tilted 23.4 de to its spin within our local neighborhood of stars our entire solar system is drifting 70,000 km per hour roughly in the direction of the bright star Vega in the constellation of lra and our solar system is part of a giant Galaxy called the Milky Way on a plane tilted about 60\u00b0 approximately like the windshield of a car looking from above Earth's north pole our entire solar system races clockwise around the galactic center at about 792 th000 km per hour our whole galaxy is also moving through the universe we know know this because when the universe was very young it was so hot electrons and protons jumped around and photons of light scattered constantly they couldn't travel very far before scattering again so the universe was opaque but then around 380,000 years after the big bang the universe cooled just enough for electrons and protons to form hydrogen suddenly abruptly photons decoupled from this obstacle course and could travel relatively unencumbered the universe became transparent to light and since that moment those early photons have been propagating through space every day ancient photons that last scattered off this opaque fog at the moment of decoupling a light day further from where Earth currently is reach us they are part of the cosmic micro wave background radiation it is visible in every direction microwave because although they used to be more energetic the universe's expansion has redshifted them now some parts of this radiation are more redshifted than others because of our own movement through the universe controlling for the movements we've already talked about relative to this infinite cooling baby picture of the universe the first and oldest detectable light we are headed riding along in the middle Milky Way in the direction that the constellations of Leo and Virgo are to us at a speed of 2.1 million kilm hour towards a thing we don't fully understand yet simply called the Great attractor this is how you on Earth's surface are moving through the universe aboard spaceship earth okay now stop this is roughly 100 Years of Earth's movement through space this path we've traced from where we began here is the path you will take through the universe in your lifetime you didn't buy a ticket for this ride your parents signed you up without asking but nonetheless it is quite literally the ride of your life and as always thanks for watching it is now time for a major Vsauce announcement you know how for the last couple of years we've released a holiday box well introducing the Curiosity Box by Vsauce we created this thing as a quarterly box this comes to you four times a year year and it comes packed with amazing exclusive bauce merchandise and incredible geeky toys picked by myself Kevin and Jake plus as always a portion of the proceeds from this box goes to funding Alzheimer's research you can get your own by subscribing atth curiosity box.com I'm incredibly proud of this go check it out and as always thanks for watching [Music]",
+      "url": "https://www.youtube.com/watch?v=IJhgZBn-LHg",
+      "video_id": "IJhgZBn-LHg",
+      "word_count": 2902
+    }
+  ]
+}

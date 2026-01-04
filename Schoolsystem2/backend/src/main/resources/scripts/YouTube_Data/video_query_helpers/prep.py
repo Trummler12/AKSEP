@@ -185,6 +185,15 @@ def reorder_audiotracks(
     return _ordered_rows(rows, key_fn, video_index)
 
 
+def reorder_videos_transcripts(
+    rows: list[dict], video_index: dict[str, int]
+) -> tuple[list[dict], int, bool]:
+    def key_fn(row: dict) -> str:
+        return row.get("video_id", "")
+
+    return _ordered_rows(rows, key_fn, video_index)
+
+
 def reorder_t_source(
     rows: list[dict], video_index: dict[str, int], keep_unmatched: bool = False
 ) -> tuple[list[dict], int, bool]:

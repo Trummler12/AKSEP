@@ -100,6 +100,47 @@ Notes:
 - Recommended approach: keep requests low-volume, add retries with exponential backoff, and consider proxy rotation only if necessary and compliant.
 - Decision (for now): **do not** fetch transcripts during testing runs; only record the presence/absence once we confirm acceptable rate limits.
 
+## Current video_query.py quota profile (full run)
+This section summarizes the **highest-cost calls** performed by the current `video_query.py` implementation and how they scale.
+All costs below assume the standard **1 unit per list request** rule.
+
+### Cost drivers (ordered by typical impact)
+1) **videos.list** (per 50 video IDs)
+   - Trigger: metadata fetch for uploaded videos per channel.
+   - Cost = `ceil(video_count / 50)` per channel.
+2) **playlistItems.list** (per page)
+   - Trigger A: paging through the channel uploads playlist (video ID discovery).
+   - Trigger B: paging through playlist items for any playlists marked as changed.
+   - Cost = `upload_pages + sum(playlist_pages_changed)` per channel.
+3) **playlists.list** (per page)
+   - Trigger: list playlists for each channel.
+   - Cost = `playlist_pages` per channel.
+4) **channels.list** (per 50 channel IDs)
+   - Trigger A: resolve `forHandle` for channels without IDs (rare).
+   - Trigger B: end-of-run refresh for all channels (batched by 50).
+   - Cost = `ceil(channel_count / 50)` for the final refresh.
+5) **commentThreads.list** (optional)
+   - Trigger: only when `--include-comments` and `--comment-video-limit > 0`.
+   - Cost = `comment_video_limit * comment_pages_per_video` per channel.
+
+### Per-channel cost formula (approx.)
+```
+channels.list     = ceil(channel_count / 50)  # final refresh (global)
+videos.list       = ceil(video_count / 50)
+uploads list      = upload_pages
+playlists.list    = playlist_pages
+playlistItems.list= sum(playlist_pages_changed)
+commentThreads    = comment_video_limit * comment_pages_per_video  (optional)
+```
+
+### Notes
+- The **dominant costs** in a full run are almost always **videos.list** and **playlistItems.list** (uploads + changed playlists).
+- **search.list** is not used in the current script (avoids 100‑unit requests).
+- If you want to reduce quota usage, the best levers are:
+  - limit `--video-page-limit` or `--playlist-page-limit`,
+  - reduce playlist‑item refresh by tightening the “changed” detection,
+  - avoid `--include-comments` unless needed.
+
 ## Sources
 - https://developers.google.com/youtube/v3/determine_quota_cost
 - https://developers.google.com/youtube/v3/docs/videos/list

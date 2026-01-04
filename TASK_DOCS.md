@@ -360,6 +360,51 @@ Mode: no-plan, Score: 1 (factors: single file)
 
 ---
 
+# Task Docs: MyOnlineTrainingHub ordering regression test
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/_YouTube_Channels.csv: temporarily removed and re-added the MyOnlineTrainingHub entry for the regression test.
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/channels.csv: updated after re-adding the channel.
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/videos.csv: updated after re-adding the channel; sanitizer redacted one Signature occurrence.
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/videos_local.csv: updated for the re-added channel’s localizations.
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/playlists.csv: updated for the re-added channel’s playlists.
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/playlistItems.csv: updated for the re-added channel’s playlist items.
+- AKSEP/TASK_PLAN.md: step completion tracking and @codex sweep notes.
+
+## Checks & Results
+- manual: `video_query.py --prep-only` => OK (prep removed the channel’s rows)
+- manual: `video_query.py` => OK (full run completed; updates applied)
+
+## Manual Verification (if no tests)
+- [ ] Spot-check `channels_local.csv`, `videos_local.csv`, and `playlists_local.csv` ordering after the re-add.
+
+## Follow-ups / Risks
+- Git reported LF→CRLF warnings for some CSVs; consider normalizing line endings if needed.
+
+---
+
+# Task Docs: Document video_query quota profile
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: docs-only)
+
+## Changes
+- AKSEP/Schoolsystem2/docs/Data_Flow/YouTube_Data_Quota.md: added a section summarizing current `video_query.py` quota cost drivers and scaling.
+
+## Checks & Results
+- Not run (docs-only update).
+
+## Manual Verification (if no tests)
+- [ ] Review the new section for alignment with the current script call pattern.
+
+## Follow-ups / Risks
+- If `video_query.py` adds/removes endpoints, update the cost summary.
+
+---
+
 # Task Docs: video_query safe CSV write fallback
 
 ## Mode & Score
@@ -411,3 +456,239 @@ Mode: no-plan, Score: 1 (factors: single file, no tests cover data file)
 
 ## Manual Verification (if no tests)
 - [ ] Spot-check the moved channels and confirm they align with the breadth rules for umbrella/primary/subtopic.
+
+---
+
+# Task Docs: Transcript query parity review
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- No code changes; reviewed current TranscriptHQ implementation against the original plan.
+
+## Checks & Results
+- Not run (analysis only).
+
+## Manual Verification (if no tests)
+- [ ] Decide whether to adjust defaults (batch size / max total batch size) based on the gap analysis.
+
+## Follow-ups / Risks
+- Default DEFAULT_BATCH_SIZE=100 differs from early test expectation of batch size 1; consider whether to make test defaults smaller or keep scale defaults.
+
+---
+
+# Task Docs: Transcript whitelist default + ordering
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/transcript_query.py: add DEFAULT_WHITELIST_VIDEOS_IN_PLAYLISTS=true with BooleanOptionalAction flag; write transcripts in videos.csv order via ordered upsert.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/youtube_transcripts/csv_utils.py: add ordered upsert utilities for transcript rows.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/prep.py: add videos_transcripts ordering helper.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: order videos_transcripts in prep and ignore extra fields during CSV writes.
+
+## Checks & Results
+- transcript_query: python .../transcript_query.py --max-total-batch-size 1 --batch-size 1 --video-ids i2ZDbHKIW_E => OK (playlist whitelist loaded; warned ID not found in videos.csv).
+- prep-only: python .../video_query.py --prep-only => OK (videos_transcripts prep runs).
+
+## Manual Verification (if no tests)
+- [ ] Run transcript_query with a known video_id from videos.csv to confirm ordered upsert.
+
+## Follow-ups / Risks
+- Prep removed many audiotracks rows; verify if expected before committing data changes.
+
+---
+
+# Task Docs: Preserve videos_transcripts headers in prep
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: use the on-disk videos_transcripts.csv header when reordering; warn if it differs from defaults; error if required header missing.
+
+## Checks & Results
+- prep-only: python .../video_query.py --prep-only => OK (warning emitted when header differs from defaults).
+
+## Manual Verification (if no tests)
+- [ ] Confirm videos_transcripts.csv keeps all columns after prep.
+
+## Follow-ups / Risks
+- If the header mismatch warning is expected, update CSV_HEADERS to match the new column set.
+
+---
+
+# Task Docs: Support single-video ingestion
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/csv/youtube/_YouTube_Videos.csv: sorted by published date and normalized names with release year before language.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: add _YouTube_Videos.csv ingestion after channel processing; append new video/channel rows at end; include localizations and channel placeholders.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: extend prep to keep channels referenced in videos.csv even if not in _YouTube_Channels.csv.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/prep.py: include channels from videos.csv when building channel order in prep.
+
+## Checks & Results
+- prep-only: python .../video_query.py --prep-only => OK.
+
+## Manual Verification (if no tests)
+- [ ] Run video_query end-to-end to confirm single-video rows append to bottom and channel placeholders are filled by final channel refresh.
+
+## Follow-ups / Risks
+- Single-video ingestion still uses API calls even if channel already in _YouTube_Channels.csv (video metadata is fetched before filtering).
+
+---
+
+# Task Docs: Single-video channel IDs + video_query refactor
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: refactored into a small orchestrator; added early `_YouTube_Videos.csv` channel_id prefetch/cache, extended channel order, and kept single-video ingestion after channel processing.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/channel_processing.py: extracted channel loop; delegates playlist work; preserves update summaries.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/playlist_processing.py: new helper for playlist + playlistItems fetching and writes.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/single_video.py: resolves single-video channel_id values and caches video responses for reuse.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/prep_phase.py: prep ordering now accepts single-video channel IDs; keeps t_source update call.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/{constants.py,csv_io.py,env_utils.py,http_utils.py,normalize.py,utils.py,summary.py,sanitizer.py,course.py}: new helper modules to keep each file <= 500 LOC.
+
+## Checks & Results
+- prep-only: `python .../video_query.py --data-root .../testing/data --prep-only` => OK (chunk fb1c7d)
+- limited: `python .../video_query.py --data-root .../testing/data --channel-limit 1 --video-page-limit 1 --playlist-page-limit 1` => OK (chunk 7c726f)
+
+## Manual Verification (if no tests)
+- [ ] Confirm `_YouTube_Videos.csv` channel_id values are filled in the main CSV set (testing data did not include this file).
+- [ ] Confirm channels from `_YouTube_Videos.csv` appear after source channels in `channels.csv` ordering.
+- [ ] Confirm single-video ingestion appends videos/localizations at the bottom when `_YouTube_Videos.csv` contains IDs not in `videos.csv`.
+
+## Follow-ups / Risks
+- If playlist localizations are written twice (playlist helper + channel loop), consider removing the redundant write for clarity.
+
+---
+
+# Task Docs: Move video_query defaults back to root
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query.py: restored API/ANSI/CSV header defaults at top-level; wired config setters and passed `CSV_HEADERS` into prep/CSV init.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/http_utils.py: added `set_api_base` and local API base default.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/summary.py: added `set_ansi_colors` and local ANSI defaults.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/csv_io.py: `ensure_csvs` now accepts `csv_headers`.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/prep_phase.py: added `set_prep_colors`, accepts `csv_headers`, removed constants import.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/video_query_helpers/constants.py: removed (no longer needed).
+
+## Checks & Results
+- prep-only: `python .../video_query.py --prep-only` => OK (chunk d2eb18)
+- full run: `python .../video_query.py` => OK (chunk 4dbd64)
+
+## Manual Verification (if no tests)
+- [ ] Review any large CSV diffs to confirm only expected channel/video updates are present.
+
+## Follow-ups / Risks
+- None noted.
+
+---
+
+# Task Docs: Transcript query debug stats
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single-file change)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/transcript_query.py: expanded playlist whitelist and duration debug output with unique counts, in-videos totals, and eligibility stats.
+
+## Checks & Results
+- Not run (logging-only change).
+
+## Manual Verification (if no tests)
+- [ ] Run `transcript_query.py` and confirm the new INFO lines show unique playlist IDs, in-videos counts, duration buckets, and eligible totals.
+
+## Follow-ups / Risks
+- None noted.
+
+---
+
+# Task Docs: Transcript debug test runs
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single-file logging tests)
+
+## Changes
+- No code changes beyond DEFAULT_MIN_DURATION toggles for test runs (restored to 10m).
+
+## Checks & Results
+- transcript_query @ 3m: INFO counts logged (chunk 2c6724); batch submission started; run interrupted.
+- transcript_query @ 30m: INFO counts logged (chunk eb74f2); batch submission started; run interrupted.
+- transcript_query @ 10m: INFO counts logged (chunk 7afeb5); batch submission started; run interrupted.
+
+## Manual Verification (if no tests)
+- [ ] Optional: run `transcript_query.py` with `--max-total-batch-size 1` to avoid long polls while inspecting logs.
+
+## Follow-ups / Risks
+- Interrupts were manual to avoid long TranscriptHQ polling; no data validation performed beyond log output.
+
+---
+
+# Task Docs: TranscriptHQ skip-metadata check + error pruning
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single-file change)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/transcript_query.py: set DEFAULT_MAX_TOTAL_BATCH_SIZE back to 5, add startup log for skip_metadata/native_only, and prune `transcripthq_error` rows before selecting candidates.
+
+## Checks & Results
+- Not run (logic-only change).
+
+## Manual Verification (if no tests)
+- [ ] Run `transcript_query.py` and confirm the startup log prints skip_metadata/native_only, and that transcripthq_error rows are removed before counting existing transcripts.
+
+## Follow-ups / Risks
+- If batch-level TranscriptHQ errors persist, the API may be rejecting the entire job (HTTP error), which still maps to `transcripthq_error` for all videos.
+
+---
+
+# Task Docs: Remove TranscriptHQ timeouts
+
+## Mode & Score
+Mode: no-plan, Score: 3 (factors: cross-file coupling, no tests cover area)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/youtube_transcripts/transcripthq_client.py: allow no timeout for API calls and disable wait timeout when unset/zero.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/transcript_query.py: set DEFAULT_POLL_TIMEOUT=0 (no timeout by default).
+
+## Checks & Results
+- Not run (behavior change only).
+
+## Manual Verification (if no tests)
+- [ ] Run `transcript_query.py` and confirm polling continues without timing out.
+
+## Follow-ups / Risks
+- If the API hangs indefinitely, consider reintroducing a large timeout or manual interrupt handling.
+
+---
+
+# Task Docs: TranscriptHQ polling modes + batch timing
+
+## Mode & Score
+Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cover area, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/youtube_transcripts/transcripthq_client.py: added per-video polling (`wait_for_job_by_videos`) and helpers to evaluate terminal per-video statuses.
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/transcript_query.py: added `DEFAULT_POLLING_MODE` + `--polling-mode`, batch elapsed-time logging, per-batch status summary, and passed polling mode into the request flow.
+- AKSEP/Schoolsystem2/docs/Data_Flow/YouTube_Data_API/Video_Transcripts.md: noted summary counter issue and per-video polling recommendation.
+
+## Checks & Results
+- Not run (behavior change only).
+
+## Manual Verification (if no tests)
+- [ ] Run a small batch with `--polling-mode video_results` and confirm completion without relying on summary status.
+- [ ] Run a small batch with `--polling-mode job_status` to verify legacy path still works.
+
+## Follow-ups / Risks
+- If TranscriptHQ changes response schema, update terminal status mapping in `wait_for_job_by_videos`.
