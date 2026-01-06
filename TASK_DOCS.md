@@ -692,3 +692,22 @@ Mode: plan-gate, Score: 6 (factors: >2 files, cross-file coupling, no tests cove
 
 ## Follow-ups / Risks
 - If TranscriptHQ changes response schema, update terminal status mapping in `wait_for_job_by_videos`.
+
+---
+
+# Task Docs: Sort video transcripts by topic complexity
+
+## Mode & Score
+Mode: no-plan, Score: 1 (factors: single file, estimated diff >50 LOC)
+
+## Changes
+- AKSEP/Schoolsystem2/backend/src/main/resources/scripts/YouTube_Data/testing/data/videos_transcripts.csv: reordered rows by estimated reading-grade complexity (Flesch-Kincaid heuristic on transcript text).
+
+## Checks & Results
+- Not run (data reorder only).
+
+## Manual Verification (if no tests)
+- [ ] Spot-check the first and last 5 rows to confirm simpler topics appear near the top and more technical topics near the bottom.
+
+## Follow-ups / Risks
+- Reality check: AGENTS.md map entries missing at repo root: projects/AKSEP, projects/AKSEP-ALT, projects/schoolsystem_DB, docs/index.html.
