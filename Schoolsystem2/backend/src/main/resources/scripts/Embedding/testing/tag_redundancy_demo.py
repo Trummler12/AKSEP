@@ -87,7 +87,7 @@ def load_tags_from_csv(csv_path: Path) -> List[str]:
 
 def main() -> None:
     # Beispiel-Tags (absichtlich mit möglichen Redundanzen)
-    csv_path = Path(__file__).resolve() / "data" / "t_tag_PLANNING.csv"
+    csv_path = Path(__file__).resolve().parent / "data" / "t_tag_PLANNING.txt"
     tags = load_tags_from_csv(csv_path)
 
     model_name = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
