@@ -1,12 +1,8 @@
-﻿{
+{
 	"folders": [
   {
     "name": "AKSEP",
     "path": "."
-  },
-  {
-    "name": "Schoolsystem2",
-    "path": "Schoolsystem2"
   }
 ],
 	"settings": {
