@@ -6,6 +6,8 @@
   }
 ],
 	"settings": {
+		"python.defaultInterpreterPath": "Schoolsystem2\\backend\\.venv\\Scripts\\python.exe",
+		"python.terminal.activateEnvironment": true,
 		"files.associations": {
 			"*.embeddedhtml": "html",
 			"M122.1.C": "cpp"

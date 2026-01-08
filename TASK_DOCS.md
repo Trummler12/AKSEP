@@ -1,18 +1,18 @@
-﻿# Task Docs: AKSEP workspace + Schoolsystem2 interpreter
+# Task Docs: Tag redundancy demo enhancements
 
 ## Mode & Score
-Mode: no-plan, Score: 3 (factors: >2 files touched, adds >1 new file)
+Mode: no-plan, Score: 1 (factors: single file, config-only change)
 
 ## Changes
-- AKSEP/AKSEP.code-workspace: add AKSEP workspace file with AKSEP + Schoolsystem2 folders (SHA n/a)
-- AKSEP/Schoolsystem2/.vscode/settings.json: set Python interpreter for Schoolsystem2 .venv (SHA n/a)
+- Schoolsystem2/backend/src/main/resources/scripts/embedding/testing/tag_redundancy_demo.py: added configurable output settings, deduped redundancy groups, and printed loneliest tags.
 
 ## Checks & Results
-- Not run (config-only change).
+- Pre-change: `Schoolsystem2\backend\.venv\Scripts\python.exe ...\tag_redundancy_demo.py` => success.
+- Post-change: `Schoolsystem2\backend\.venv\Scripts\python.exe ...\tag_redundancy_demo.py` => success.
+- Note: `python ...\tag_redundancy_demo.py` failed before changes due to missing `numpy` on system Python.
 
 ## Manual Verification (if no tests)
-- [ ] Open `AKSEP/AKSEP.code-workspace` in VSCode and select a Python file under `Schoolsystem2`; confirm the Run button uses `Schoolsystem2\\.venv`.
-- [ ] Open a Python file outside `Schoolsystem2` and confirm the interpreter does not auto-switch.
+- [x] Ran the script before and after the change using the backend venv.
 
 ## Follow-ups / Risks
-- AGENTS.md map mismatch: missing projects/AKSEP, projects/AKSEP-ALT, projects/schoolsystem_DB, docs/index.html.
+- None.
