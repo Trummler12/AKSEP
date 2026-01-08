@@ -1,4 +1,142 @@
 {
   "java.configuration.updateBuildConfiguration": "automatic",
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "java.debug.settings.onBuildFailureProceed": true,
+  "files.associations": { "*.puml": "plantuml" },
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+
+  // Copilot: Vorschläge erst nach 2s
+  "editor.inlineSuggest.minShowDelay": 2000,
+
+  // Global KEIN Format-on-Save (wir erlauben es nur gezielt pro Sprache)
+  "editor.formatOnSave": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dprint.dprint",
+    "editor.formatOnSave": false
+  },
+  // Markdown: nur Tabellen hübschen + punktuelle Lint-Fixes; Hard-Breaks behalten
+  "[markdown]": {
+    // 👉 Tabellen-Formatter
+    "editor.defaultFormatter": "darkriszty.markdown-table-prettify",
+    "editor.formatOnSave": false,
+    // Hard-Breaks (2 Spaces) NICHT abräumen:
+    "files.trimTrailingWhitespace": false,
+    // 👉 Nur markdownlint-Fixes, die wir erlauben (siehe unten Konfig)
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "never"
+    }
+  },
+
+  // Global keine FixAll-Aktionen
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "never"
+  },
+
+  // Kein Auto-Format bei Tippen/Einfügen
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+
+  // markdownlint: generierte Bereiche ausschließen
+  "markdownlint.lintWorkspaceGlobs": [
+    "**/*.md",
+    "!docs/projects/**",
+    "!docs/changelog/index.html"
+  ],
+  "markdownlint.focusMode": true,
+  "markdownlint.config": {
+    // Marker-Stil *nicht* erzwingen (sonst * ↔ - wird „genormt“)
+    "MD004": false,
+
+    "MD005": false,
+
+    "MD007": false,
+
+    // Optional: trailing spaces-Logik feiner steuern (Hard-Breaks)
+    "MD009": { "br_spaces": 2, "strict": false },
+
+    // Mehrere Leerzeilen erlauben
+    "MD012": false,
+
+    // Keine Pflicht-Leerzeile *nach* Überschrift
+    // NACHTRAG: lines_above muss auch auf 0, sonst kann man <a>-Elemente nicht sinnvoll nutzen
+    "MD022": { "lines_above": 0, "lines_below": 0 },
+
+    // Headings müssen NICHT auf Krampf unterschiedlich heissen
+    "MD024": false,
+
+    "MD026": { "punctuation": ",;:!。，；：！" },
+
+    "MD029": false,
+
+    // Außerdem NICHT anfassen:
+    // MD030 (Spacing nach Marker) → default lassen/kein Fix
+
+    // Um Codeblöcke herum braucht es keine Leerzeilen
+    "MD031": false,
+
+    // Um Listen braucht es keine Leerzeilen
+    "MD032": false,
+
+    "MD033": { "allowed_elements": ["n", "br", "kbd", "sub", "sup", "a", "input", "style", "img", "strong", "i"] },
+
+    "MD036": false,
+
+    // Kursivstil auf "_" vereinheitlichen
+    "MD049": { "style": "underscore" },
+    // Fettstil auf "**" vereinheitlichen
+    "MD050": { "style": "asterisk" },
+
+    // Also ja, eigentlich sinnvoll, aber wenn vor 'ner Tabelle 'ne Leerzeile ist,
+    // dann werden HTML-Elemente nicht mehr hübsch farbig angezeigt - warum auch immer
+    "MD058": false,
+  },
+
+  "plantuml.render": "Local",
+
+  // Spell checking: limit to docs-focused languages
+  "cSpell.caseSensitive": false,
+  "cSpell.numSuggestions": 6,
+  "cSpell.enabledFileTypes": {
+    "markdown": true,
+    "plaintext": true,
+    "git-commit": true,
+    "git-rebase": true,
+    "yaml": true,
+    "code-workspace": false,
+    "puml": false
+  },
+  "cSpell.ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.next/**",
+    "**/coverage/**",
+    "**/*-lock.json"
+  ],
+  "cSpell.diagnosticLevel": "Hint",
+  
+  "markdown-preview-enhanced.usePandocParser": false,
+  "markdown-preview-enhanced.enableScriptExecution": true,
 }
