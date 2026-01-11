@@ -8,10 +8,45 @@ from typing import Iterable, List, Sequence, Tuple
 
 # Run-button arrays (additive to CLI arguments)
 # Example:
-# RUN_REMOVE = [1, "biology", "chemistry"]
-RUN_REMOVE: List[object] = [
+# TAGS_TO_REMOVE = [1, "biology", "chemistry"]
+TAGS_TO_REMOVE: List[object] = [
     "ethics (applied)", "gardening (advanced)", "exercise", "oceanography",
     "security studies", "economics", "games", "mechanics (hands on)"
+]
+TAGS_TO_ADD: List[object] = [
+
+]
+
+BASE_TAG_ORDER = [
+    "Biology",
+    "Chemistry",
+    "Earth science",
+    "Astronomy",
+    "Physics",
+    "Technology",
+    "Computer science",
+    "Mathematics",
+    "Statistics",
+    "Logic",
+    "Scientific thinking",
+    "Information science",
+    "Communication",
+    "Psychology",
+    "Sociology",
+    "Economics",
+    "Politics",
+    "Law",
+    "Ethics",
+    "Philosophy",
+    "Religion",
+    "Culture",
+    "Geography",
+    "History",
+    "Linguistics",
+    "Literature",
+    "Visual arts",
+    "Performing arts",
+    "Music",
 ]
 
 
@@ -121,13 +156,13 @@ def main() -> None:
     args = parser.parse_args()
 
     cli_tokens = split_cli_groups(args.remove)
-    run_tokens = parse_tokens(RUN_REMOVE)
+    run_tokens = parse_tokens(TAGS_TO_REMOVE)
     all_tokens: List[object] = []
     all_tokens.extend(run_tokens)
     all_tokens.extend(cli_tokens)
 
     if not all_tokens:
-        print("No removals specified. Use --remove or edit the RUN_REMOVE arrays.")
+        print("No removals specified. Use --remove or edit the TAGS_TO_REMOVE arrays.")
         return
 
     ids_to_remove, names_to_remove = classify_targets(all_tokens)
