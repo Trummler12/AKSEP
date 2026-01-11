@@ -7,41 +7,41 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 # User-configurable output settings
-TOP_SIMILAR_PAIRS = 20
+TOP_SIMILAR_PAIRS = 40
 REDUNDANCY_THRESHOLD = 0.78
 TOP_LONELIEST_TAGS = 12
 
-OVERRIDE_WITH_SAMPLE = True
+OVERRIDE_WITH_SAMPLE = False
 SAMPLE_TAGS = [
     "Music",
     "Performing arts",
     "Visual arts",
-    "Law",
-    "Logic",
+    "Literature",
+    "Communication",
+    "Linguistics",
+    "History",
+    "Geography",
+    "Culture",
+    "Religion",
     "Philosophy",
     "Ethics",
-    "Religion",
-    "Literature",
-    "Linguistics",
-    "Communication",
-    "Geography",
-    "Psychology",
-    "Culture",
-    "Scientific thinking",
-    "Information science",
-    "Computer science",
-    "Technology",
-    "Mathematics",
-    "Physics",
-    "Astronomy",
-    "Chemistry",
-    "Biology",
-    "Earth science",
+    "Law",
+    "Politics",
     "Economics",
     "Sociology",
+    "Psychology",
+    "Biology",
+    "Chemistry",
+    "Earth science",
+    "Astronomy",
+    "Physics",
+    "Scientific thinking",
+    "Technology",
+    "Computer science",
+    "Information science",
     "Statistics",
-    "History",
-    "Politics",
+    "Mathematics",
+    "Logic",
 ]
 
 def cosine_sim_matrix(x: np.ndarray) -> np.ndarray:
