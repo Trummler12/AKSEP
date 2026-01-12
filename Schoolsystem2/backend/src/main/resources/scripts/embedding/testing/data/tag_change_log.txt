@@ -1,0 +1,263 @@
+[2026-01-12T08:41:12]
+- books (collecting)
+- art history
+- ethics in research
+- stamps (collecting)
+- coins (collecting)
+- electronics projects
+- materials engineering
+- mechanical engineering
+- galaxies
+- meteorology
++ books
++ coins
++ military
++ stamps
++ surgery
++ war
+[2026-01-12T09:07:20]
+- literature
+- coffee
+- horses
+- stamps
+- camping
+- anthropology
+- tea
+- philosophy of science
+- civil engineering
+- signal processing
+- uncertainty
+- data structures
+- open source
+- deep learning
+- running
+- cats
+- debugging
+- systems engineering
+- game development
+- web development
+- electrical engineering
+- industrial design
+- power grid
+- mobile development
+- electric vehicles
+- batteries
+- automotive
+- cycling
+- chemical engineering
+- pharmacology
+- dogs
++ industry
++ civics
++ crafting
++ vehicles
++ health
++ hardware
++ software
++ frontend
++ backend
++ humans
++ science
++ mobile devices
+[2026-01-12T09:52:15]
+- tabletop roleplaying
+- 3d printing
+- graphic design
+- languages (general)
+- linguistics
+- hiking
+- baking
+- knitting
+- banking
+- team sports
+- frontend
+- product management
+- user experience
+- backend
+- blockchain
+- scientific method
+- data analysis
+- card games
+- board games
+- accounting
+- coins
+- viruses
+- software engineering
+- cybersecurity
+- operating systems
+- embedded systems
+- sensors
+- mobile devices
+- metalworking
+- wind energy
+- water sports
+- swimming
+- science
+- earthquakes
+- hydrology
+- ecology
+- microbiology
+- biology
++ 2d
++ 3d
++ sports
++ production
++ language
++ textiles
++ protection
++ northern africa
++ eastern africa
++ middle africa
++ southern africa
++ western africa
++ carribean
++ central america
++ south america
++ northern america
++ central asia
++ eastern asia
++ southeastern asia
++ southern asia
++ western asia
++ eastern europe
++ northern europe
++ southern europe
++ western europe
++ australia and new zealand
++ melanesia
++ micronesia
++ polynesia
++ antarctica
++ prehistory
++ antiquity
++ middle ages
++ currency
++ small life
++ big life
++ diseases
++ printing
++ wind
++ tabletop
++ desasters
++ prevention
++ wood
++ synthetic
+[2026-01-12T11:20:42]
+- woodworking
+- northern africa
+- southeastern asia
+- northern america
+- central asia
+- northern europe
+- middle africa
+- southern asia
+- southern africa
+- western africa
+- eastern africa
+- southern europe
+- eastern europe
+- eastern asia
+- western asia
+- australia and new zealand
+- central america
+- western europe
+- south america
+- micronesia
+- polynesia
+- crafts
+- melanesia
++ america
++ africa
++ europe
++ asia
++ oceania
+[2026-01-12T11:39:02]
+- creativity
+- big life
+- small life
+- waste
+- democracy
+- motivation
+- negotiation
+- railways
+- devops
+- sql
+- sewing
+- winter sports
+- tabletop
++ community
++ large
++ small
++ efficiency
++ winter
++ spring
++ summer
++ autumn
+[2026-01-12T12:30:32]
+- language learning
+- natural language processing
+- urban planning
+- oceania
+- summer
+- ethics of technology
+- immunity
+- political science
+- small
+- time management
+- efficiency
+- machine learning
+- large
+- version control
+- winter
+- solar energy
+- autumn
+- spring
++ politics
++ big
++ sun
++ time
++ immune system
++ australasia
++ polynesia
++ micronesia
+[2026-01-12T12:51:19]
+- geopolitics
+- australasia
+- asia
+- recycling
+- first aid
+- behavior change
+- home improvement
+- international relations
+- big
+- quality
+- desasters
+- testing
+- microcontrollers
+- circuits
+- energy
+- space exploration
+- volcanoes
+- production
+- fermentation
+- cells
++ exploration
++ blood
++ organs
++ limbs
++ bones
++ children
++ group activities
++ teeth
++ reproduction
++ disasters
++ western asia
++ eastern asia
++ instruments
++ strings
++ percussion
++ therapy
++ help
++ international
++ relationship
++ australia

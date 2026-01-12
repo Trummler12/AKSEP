@@ -11,8 +11,17 @@ TOP_SIMILAR_PAIRS = 40
 REDUNDANCY_THRESHOLD = 0.78
 TOP_TAGS_PER_TOPIC = 5
 TOPICS_PER_RANK_OUTPUT = 30
+TOP_TAG_SUMMARY = 20
 EXCLUDED_TOP_PAIRS = [
-    ("docs", "pets"),
+    ("climate", "climate change"),
+    ("weather", "climate"),
+    ("animals", "animal behavior"),
+    ("hardware", "electronics"),
+    ("gardening", "plants"),
+    ("pets", "animals"),
+    ("archaeology", "antiquity"),
+    ("2d", "3d"),
+    ("eastern asia", "western asia"),
 ]
 
 OVERRIDE_WITH_SAMPLE = False
@@ -173,8 +182,49 @@ def format_tag_group(
     if not indices:
         return ""
     return ",\t".join(
-        f"({score_by_index[idx]:0.3f}) {tag_labels[idx]}" for idx in indices
+        f"({score_by_index[idx]:0.3f}) {tag_labels[idx]}" for idx in indices    
     )
+
+
+def summarize_tag_assignments(
+    top_sets: List[Tuple[float, str, List[int], List[float]]],
+    tag_labels: List[str],
+    top_n: int,
+    top_m: int,
+) -> None:
+    if not top_sets:
+        return
+
+    limit = min(top_n, len(tag_labels))
+    place1_counts = [0] * len(tag_labels)
+    weighted_counts = [0.0] * len(tag_labels)
+    for _, _, top_indices, _ in top_sets:
+        for rank, tag_idx in enumerate(top_indices[:limit], start=1):
+            if rank == 1:
+                place1_counts[tag_idx] += 1
+            weighted_counts[tag_idx] += 1.0 / rank
+
+    place1 = [(count, tag_labels[idx]) for idx, count in enumerate(place1_counts)]
+    weighted = [(count, tag_labels[idx]) for idx, count in enumerate(weighted_counts)]
+
+    place1_sorted = sorted(place1, key=lambda item: (-item[0], item[1]))
+    place1_least = sorted(place1, key=lambda item: (item[0], item[1]))
+    weighted_sorted = sorted(weighted, key=lambda item: (-item[0], item[1]))
+    weighted_least = sorted(weighted, key=lambda item: (item[0], item[1]))
+
+    print("\nTag-Zuordnungen (Place-1 haeufigste):")
+    for count, tag in place1_sorted[:top_m]:
+        print(f"{count:3d}  {tag}")
+    print("\nTag-Zuordnungen (Place-1 seltenste):")
+    for count, tag in place1_least[:top_m]:
+        print(f"{count:3d}  {tag}")
+
+    print("\nTag-Zuordnungen (gewichtete Top-N, haeufigste):")
+    for count, tag in weighted_sorted[:top_m]:
+        print(f"{count:6.2f}  {tag}")
+    print("\nTag-Zuordnungen (gewichtete Top-N, seltenste):")
+    for count, tag in weighted_least[:top_m]:
+        print(f"{count:6.2f}  {tag}")
 
 
 def redundancy_groups(sim: np.ndarray, labels: List[str], threshold: float) -> List[List[str]]:
@@ -330,6 +380,13 @@ def main() -> None:
                     print(f"\t<-> {tags_str_b}")
                 if tags_str_c:
                     print(f"\t<-> {tags_str_c}")
+
+            summarize_tag_assignments(
+                top_sets=top_sets,
+                tag_labels=tags,
+                top_n=TOP_TAGS_PER_TOPIC,
+                top_m=TOP_TAG_SUMMARY,
+            )
 
     # Optional: vollstaendige Matrix ausgeben (fuer kleine n)
     # print("\nSimilarity Matrix:\n", np.round(sim, 3))

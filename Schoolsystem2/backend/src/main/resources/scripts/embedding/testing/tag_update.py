@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Iterable, List, Sequence, Tuple
 
@@ -14,10 +15,12 @@ from sentence_transformers import SentenceTransformer
 # TAGS_TO_REMOVE = ["biology", "chemistry"]
 # TAGS_TO_ADD = ["new tag"]
 TAGS_TO_REMOVE: List[object] = [
-    "mechanical engineering",
-    "electronics projects"
+    "relationship"
 ]
-TAGS_TO_ADD: List[object] = []
+TAGS_TO_ADD: List[object] = [
+    "exploration", "blood", "organs", "limbs", "bones", "children", "group activities", "teeth", "reproduction", "brain", "disasters",
+    "western asia", "eastern asia", "instruments", "strings", "percussion", "therapy", "help", "international", "relationship", "australia"
+]
 
 BASE_TAG_ORDER = [
     "Music",
@@ -56,6 +59,7 @@ TAG_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_tag_PLANNING.txt"
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
 EXACT_MATCH_CUTOFF = 0.98
 EPS = 1e-6
+LOG_PATH = Path(__file__).resolve().parent / "data" / "tag_change_log.txt"
 
 
 def parse_name_tokens(values: Iterable[object]) -> List[str]:
@@ -170,6 +174,22 @@ def add_tags(rows: List[dict], fieldnames: List[str], tags_to_add: Iterable[str]
         existing[name] = new_row
         added.append(name)
     return added
+
+
+def append_change_log(
+    log_path: Path,
+    removed_names: List[str],
+    added_names: List[str],
+) -> None:
+    if not removed_names and not added_names:
+        return
+    timestamp = datetime.now().isoformat(timespec="seconds")
+    with log_path.open("a", encoding="utf-8") as handle:
+        handle.write(f"[{timestamp}]\n")
+        for name in removed_names:
+            handle.write(f"- {name}\n")
+        for name in added_names:
+            handle.write(f"+ {name}\n")
 
 
 def compute_adjusted_similarity(tag_emb: np.ndarray, base_emb: np.ndarray) -> np.ndarray:
@@ -331,6 +351,8 @@ def main() -> None:
         print("Removed tags:", ", ".join(removed_names))
     if added:
         print("Added tags:", ", ".join(added))
+
+    append_change_log(LOG_PATH, removed_names, added)
 
 
 if __name__ == "__main__":
