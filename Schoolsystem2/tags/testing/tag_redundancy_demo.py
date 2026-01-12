@@ -14,16 +14,9 @@ TOPICS_PER_RANK_OUTPUT = 30
 TOP_TAG_SUMMARY = 20
 EXCLUDED_TOP_PAIRS = [
     ("climate", "climate change"),
-    ("weather", "climate"),
-    ("animals", "animal behavior"),
-    ("hardware", "electronics"),
-    ("gardening", "plants"),
-    ("pets", "animals"),
-    ("archaeology", "antiquity"),
-    ("2d", "3d"),
 ]
 
-OVERRIDE_WITH_SAMPLE = False
+OVERRIDE_WITH_SAMPLE = True
 SAMPLE_TAGS = [
     "Music",
     "Performing arts",
@@ -57,8 +50,7 @@ SAMPLE_TAGS = [
 ]
 
 TAGS_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_tag_PLANNING.txt"
-RESOURCES_ROOT = Path(__file__).resolve().parents[3]
-TOPICS_CSV_PATH = RESOURCES_ROOT / "csv" / "topics" / "t_topic_PLANNING.csv"
+TOPICS_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_topic_PLANNING.csv"
 
 
 def top_pairs(sim: np.ndarray, labels: List[str], k: int = 10) -> List[Tuple[float, str, str]]:

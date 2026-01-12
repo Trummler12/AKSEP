@@ -261,3 +261,17 @@
 + international
 + relationship
 + australia
+[2026-01-12T14:19:02]
+- western asia
+- relationship
++ middle east
++ relationship
+[2026-01-12T14:45:06]
++ hard discipline
++ soft discipline
++ pure discipline
++ applied discipline
++ atomistic discipline
++ holistic discipline
++ investigative
++ artistic

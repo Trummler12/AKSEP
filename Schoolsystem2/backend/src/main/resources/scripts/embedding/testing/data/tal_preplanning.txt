@@ -1,0 +1,28 @@
+"geographic",
+"america", "africa", "europe", "middle east", "eastern asia", "antarctica", "islands",
+
+"artistic",
+"musical", "visual", "performing", "literary", "sculptural", "photographic", "instrumental",
+
+"linguistic"
+
+"economic",
+
+"industrial", "engineering",
+
+"psychological", "sociological", "cultural", "political", "religious",
+
+"historical",
+"prehistorical", "ancient", "medieval", "modern"
+
+"natural",
+"biological", "chemical", "physical", "environmental", "ecological", "geological",
+"preserving", "destroying", "developing", "reverting",
+
+"active",
+"indoors", "outdoors", "exploratory",
+
+"theoretical", "applied", "urban", "rural",
+
+"animals", "plants", "fungi"
+
