@@ -15,11 +15,11 @@ from sentence_transformers import SentenceTransformer
 # TAGS_TO_REMOVE = ["biology", "chemistry"]
 # TAGS_TO_ADD = ["new tag"]
 TAGS_TO_REMOVE: List[object] = [
-    "relationship"
+    "relationship","western asia"
 ]
 TAGS_TO_ADD: List[object] = [
     "exploration", "blood", "organs", "limbs", "bones", "children", "group activities", "teeth", "reproduction", "brain", "disasters",
-    "western asia", "eastern asia", "instruments", "strings", "percussion", "therapy", "help", "international", "relationship", "australia"
+    "middle east", "eastern asia", "instruments", "strings", "percussion", "therapy", "help", "international", "relationship", "australia"
 ]
 
 BASE_TAG_ORDER = [
