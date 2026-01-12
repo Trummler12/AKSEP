@@ -77,7 +77,7 @@ Status: READY FOR APPROVAL
 5) Final **@codex Sweep**: scan all touched/new files plus Control Paths for `@codex` comments; update **Developer Interactions** and resolve.
 
 ## Developer Interactions
-- [ ]
+- [x] Schoolsystem2/backend/src/main/resources/scripts/embedding/testing/tag_update.py:14 - @codex note about no IDs in TAGS_TO_REMOVE; enforced and replied.
 
 ## Checks & Pass Criteria
 - Manual Verification:

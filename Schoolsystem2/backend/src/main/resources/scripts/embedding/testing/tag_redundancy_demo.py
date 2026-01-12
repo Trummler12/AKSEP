@@ -11,6 +11,9 @@ TOP_SIMILAR_PAIRS = 40
 REDUNDANCY_THRESHOLD = 0.78
 TOP_TAGS_PER_TOPIC = 5
 TOPICS_PER_RANK_OUTPUT = 30
+EXCLUDED_TOP_PAIRS = [
+    ("docs", "pets"),
+]
 
 OVERRIDE_WITH_SAMPLE = False
 SAMPLE_TAGS = [
@@ -18,7 +21,6 @@ SAMPLE_TAGS = [
     "Performing arts",
     "Visual arts",
     "Literature",
-    "Communication",
     "Linguistics",
     "History",
     "Geography",
@@ -31,18 +33,19 @@ SAMPLE_TAGS = [
     "Economics",
     "Sociology",
     "Psychology",
-    "Biology",
-    "Chemistry",
-    "Earth science",
-    "Astronomy",
-    "Physics",
-    "Scientific thinking",
-    "Technology",
-    "Computer science",
+    "Communication",
     "Information science",
+    "Scientific thinking",
+    "Logic",
     "Statistics",
     "Mathematics",
-    "Logic",
+    "Computer science",
+    "Technology",
+    "Physics",
+    "Astronomy",
+    "Earth science",
+    "Chemistry",
+    "Biology",
 ]
 
 TAGS_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_tag_PLANNING.txt"
@@ -52,10 +55,16 @@ TOPICS_CSV_PATH = RESOURCES_ROOT / "csv" / "topics" / "t_topic_PLANNING.csv"
 
 def top_pairs(sim: np.ndarray, labels: List[str], k: int = 10) -> List[Tuple[float, str, str]]:
     """Return top-k most similar distinct pairs (i<j)."""
+    excluded = {
+        frozenset((a.casefold(), b.casefold())) for a, b in EXCLUDED_TOP_PAIRS
+    }
     n = sim.shape[0]
     pairs: List[Tuple[float, str, str]] = []
     for i in range(n):
         for j in range(i + 1, n):
+            pair_key = frozenset((labels[i].casefold(), labels[j].casefold()))
+            if pair_key in excluded:
+                continue
             pairs.append((float(sim[i, j]), labels[i], labels[j]))
     pairs.sort(key=lambda t: t[0], reverse=True)
     return pairs[:k]
