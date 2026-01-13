@@ -16,7 +16,7 @@ EXCLUDED_TOP_PAIRS = [
     ("climate", "climate change"),
 ]
 
-OVERRIDE_WITH_SAMPLE = True
+OVERRIDE_WITH_SAMPLE = False
 SAMPLE_TAGS = [
     "Music",
     "Performing arts",
@@ -272,12 +272,6 @@ def load_tags_from_csv(csv_path: Path) -> List[str]:
             name = (row.get("name") or "").strip().lower()
             if not name:
                 continue
-            synonyms_raw = (row.get("synonyms") or "").strip()
-            if synonyms_raw:
-                synonyms = [part.strip() for part in synonyms_raw.split(",") if part.strip()]
-                if synonyms:
-                    tags.append(f"{name} ({', '.join(synonyms)})")
-                    continue
             tags.append(name)
     return tags
 
