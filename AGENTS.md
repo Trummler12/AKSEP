@@ -43,7 +43,8 @@ After implementation, add/update **`TASK_DOCS.md`** summarizing the final delta.
 - `## Developer Interactions` exists (may be empty).
 - `## Checks & Pass Criteria` present and consistent with Planning.
 - `## Mode & Score` present with the current classifier output.
-- Within **Task Scope Paths** (see “Task Scope Isolation”), `git status --porcelain -- <paths…>` shows only docs-only changes (`TASK_PLAN.md` / `TASK_DOCS.md` / optional `zzMeta-Infos/test-log.txt`).  
+- Within **Task Scope Paths** (see “Task Scope Isolation”), `git status --porcelain -- <paths…>` shows only docs-only changes (`TASK_PLAN.md` / `TASK_DOCS.md` / optional `zzMeta-Infos/test-log.txt`).
+  - **Baseline exception (user-confirmed only):** If the user explicitly confirms pre-existing baseline files inside Task Scope Paths, you may proceed with plan approval even if those files are present. Record the confirmation and list the baseline files in `TASK_DOCS.md` under “Prompt override / deviations.”
   Changes **outside** Task Scope Paths (e.g., other modules you are editing manually) may exist and **must not** be modified or stashed by the agent; at most, mention them in the summary.
 
 **Approval format (unchanged)**
@@ -53,6 +54,7 @@ After implementation, add/update **`TASK_DOCS.md`** summarizing the final delta.
 **Rules**
 - Do **not** request approval while `Discovery` or `Planning` is `DRAFT`.
 - If non-doc files under **Task Scope Paths** changed during planning, **revert or stash them pathspec-limited** (never repo-wide), log it in `TASK_DOCS.md` under “Prompt override / deviations”, and return to planning.
+- If baseline files inside Task Scope Paths were present before the task and the user confirms this, treat them as read-only baseline and do not block plan approval; still document them in `TASK_DOCS.md`.
 
 #### Task Scope Isolation (submodule safety)
 - Derive **Task Scope Paths** from the user prompt & Project Map (e.g., `projects/AKSEP/**`, `docs/**`, `Values.txt`) plus `TASK_PLAN.md` and `TASK_DOCS.md`. List them in the plan (see template).
@@ -482,6 +484,7 @@ For significant restructures, propose first:
 - Applies to any agent editing this repository.
 - Treat any comment containing @codex (case-insensitive) as a live developer instruction, even when it appears after code, inside block comments, or uses the wrong comment delimiter (//, #, /* */, <!-- -->, --, etc.). If the delimiter does not match the file's language, rewrite the developer line to the idiomatic comment style before replying (keep the original text intact).
 - Never delete, rewrite, or move lines containing @codex or @developer unless the human explicitly asks you to do so.
+- **Exclusions:** Do **not** add exemplar or reference-only mentions of `@codex` to `## Developer Interactions` (e.g., policy docs, templates, or examples). Only list actionable @codex directives intended for the current task.
 
 **Mandatory in `TASK_PLAN.md`:**
 - Always include a top-level section **`## Developer Interactions`** (initially empty). Developers may add lines like `@codex see <path[:line]>`.  
@@ -510,6 +513,7 @@ For significant restructures, propose first:
        - PowerShell 7+: `Get-ChildItem -Recurse -File | Select-String -SimpleMatch '@codex'`
          PowerShell 5: run `chcp 65001` first or use `git grep`.
   2) List each location under `## Developer Interactions` in `TASK_PLAN.md` (format: `[ ] <path:line> - <short note>`).
+     - Exclude non-actionable references (policy/docs/template examples) from the list.
   3) Process the list; mark `[x]` when done. If awaiting a developer reply, add a reminder at the bottom; on revisit without reply, you may mark `[x]` and note pending response in the session summary.
   4) Repeat until no markers remain.
 
