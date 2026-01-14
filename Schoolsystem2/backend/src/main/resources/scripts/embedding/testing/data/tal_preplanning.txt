@@ -1,28 +1,34 @@
-"geographic",
-"america", "africa", "europe", "middle east", "eastern asia", "antarctica", "islands",
 
-"artistic",
-"musical", "visual", "performing", "literary", "sculptural", "photographic", "instrumental",
+    "geographic",
+    "america", "africa", "europe", "middle east", "eastern asia", "antarctica",
 
-"linguistic"
+    "artistic",
+    "music", "visual", "performing", "literary", "photographic", "instrumental",
 
-"economic",
+    "linguistic",
+    "martial", "fighting", "diplomatic",
+    "economic",
 
-"industrial", "engineering",
+    "lawful", "chaotic", "evil",
+    "water", "earth", "air", "solar", "nuclear",
 
-"psychological", "sociological", "cultural", "political", "religious",
+    "industrial", "engineering", "electrical", "digital", "logistical", "mechanical", "energetic",
+    "productive", "projects",
 
-"historical",
-"prehistorical", "ancient", "medieval", "modern"
+    "philosophical", "psychological", "sociological", "cultural", "political", "religious", "ethical", "spiritual", "esoterical",
+    "intelligent", "juvenile", "adult",
+    "human", "animalistic",
 
-"natural",
-"biological", "chemical", "physical", "environmental", "ecological", "geological",
-"preserving", "destroying", "developing", "reverting",
+    "historical", "ancient",
 
-"active",
-"indoors", "outdoors", "exploratory",
+    "natural", "artificial", "technological", "experimental", "analytical", "logical",
+    "biological", "chemical", "physical", "environmental", "ecological", "geological", "mathematical", "astronomical",
+    "healthy", "genetic", "surgical", "clinical", "medical", "nutritious", "neural", "bloody", "dental",
+    "preservative", "developing", "evolutionary", "progressive",
 
-"theoretical", "applied", "urban", "rural",
+    "active", "passive", "practical",
+    "indoors", "outdoors", "exploratory",
 
-"animals", "plants", "fungi"
+    "applied", "urban", "rural",
 
+    "plants", "fungi",

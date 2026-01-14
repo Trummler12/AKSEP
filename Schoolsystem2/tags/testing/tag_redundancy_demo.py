@@ -16,37 +16,44 @@ EXCLUDED_TOP_PAIRS = [
     ("climate", "climate change"),
 ]
 
-OVERRIDE_WITH_SAMPLE = False
+USE_TOPIC_NAMES = True
+USE_TOPIC_DESCRIPTIONS = False
+
+OVERRIDE_WITH_SAMPLE = True
 SAMPLE_TAGS = [
-    "Music",
-    "Performing arts",
-    "Visual arts",
-    "Literature",
-    "Linguistics",
-    "History",
-    "Geography",
-    "Culture",
-    "Religion",
-    "Philosophy",
-    "Ethics",
-    "Law",
-    "Politics",
-    "Economics",
-    "Sociology",
-    "Psychology",
-    "Communication",
-    "Information science",
-    "Scientific thinking",
-    "Logic",
-    "Statistics",
-    "Mathematics",
-    "Computer science",
-    "Technology",
-    "Physics",
-    "Astronomy",
-    "Earth science",
-    "Chemistry",
-    "Biology",
+    "geographic",
+    "america", "africa", "europe", "middle east", "eastern asia", "antarctica",
+
+    "artistic",
+    "music", "visual", "performing", "literary", "photographic", "instrumental",
+
+    "linguistic",
+    "martial", "fighting", "diplomatic",
+    "economic",
+
+    "lawful", "chaotic", "evil",
+    "water", "earth", "air", "solar", "nuclear",
+
+    "industrial", "engineering", "electrical", "digital", "logistical", "mechanical", "energetic",
+    "productive", "projects",
+
+    "philosophical", "psychological", "sociological", "cultural", "political", "religious", "ethical", "spiritual", "esoterical",
+    "intelligent", "juvenile", "adult",
+    "human", "animalistic",
+
+    "historical", "ancient",
+
+    "natural", "artificial", "technological", "experimental", "analytical", "logical",
+    "biological", "chemical", "physical", "environmental", "ecological", "geological", "mathematical", "astronomical",
+    "healthy", "genetic", "surgical", "clinical", "medical", "nutritious", "neural", "bloody", "dental",
+    "preservative", "developing", "evolutionary", "progressive",
+
+    "active", "passive", "practical",
+    "indoors", "outdoors", "exploratory",
+
+    "applied", "urban", "rural",
+
+    "plants", "fungi",
 ]
 
 TAGS_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_tag_PLANNING.txt"
@@ -282,8 +289,11 @@ def load_topics_from_csv(csv_path: Path) -> List[str]:
         reader = csv.DictReader(handle)
         for row in reader:
             name = (row.get("name") or "").strip().lower()
+            description = (row.get("description") or "").strip().lower()
             if name:
-                topics.append(name)
+                topics.append(name if USE_TOPIC_NAMES and not USE_TOPIC_DESCRIPTIONS
+                              else description if USE_TOPIC_DESCRIPTIONS and not USE_TOPIC_NAMES
+                              else f"{name}, {description}")
     return topics
 
 
