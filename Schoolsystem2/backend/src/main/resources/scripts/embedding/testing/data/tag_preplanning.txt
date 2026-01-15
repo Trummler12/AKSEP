@@ -1,0 +1,56 @@
+    "geographic",
+    "american", "african", "european", "middle east", "eastern asia",
+
+    "artistic", "musical", "visual", "performing", "literary", "photographic", "instrumental", "entertaining",
+
+    "linguistic",
+    "martial", "dangerous", "diplomatic", "cooperative", "competitive",
+    "monetary",
+
+    "lawful", "evil",
+    "watery", "earthy", "airy", "solar", "nuclear",
+
+    "industrial", "engineering", "electrical", "digital", "logistical", "mechanical", "energetic",
+    "productive", "projects",
+
+    "philosophical", "psychological", "social", "cultural", "political", "religious", "ethical", "spiritual", "esoterical",
+    "intelligent", "juvenile", "adult",
+    "animalistic",
+
+    "historical", "ancient",
+
+    "natural", "artificial", "technological", "experimental", "analytical", "logical",
+    "biological", "chemical", "physical", "environmental", "ecological", "geological", "numerical", "astronomical",
+    "healthy", "genetic", "surgical", "clinical", "medical", "nutritious", "neural", "bloody", "dental",
+    "preservative", "developing", "evolutionary", "progressive",
+
+    "athletic", "practical",
+    "outdoors", "exploratory",
+
+    "applied", "urban", "rural",
+
+    "plants", "fungi",
+
+
+
+
+    "geographic",
+    "artistic",
+    "linguistic",
+    "martial",
+    "monetary",
+    "technical",
+    "mechanical",
+    "digital",
+    "experimental",
+    "philosophical", "meta-analytical", "psychological", "social", "cultural", "political", "religious", "ethical",
+    "animalistic",
+    "historical",
+    "biological", "chemical", "physical", "environmental", "numerical", "astronomical",
+    "healthy", "medical", "surgical", "logistical",
+    "athletic", "coordinative", "project-oriented"
+
+
+
+
+"theoretical", "applied", "empirical", "experimental", "computational", "quantitative", "qualitative", "historical", "normative", "descriptive", "natural", "social", "creative"

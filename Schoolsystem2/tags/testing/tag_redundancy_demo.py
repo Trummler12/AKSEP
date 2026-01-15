@@ -11,9 +11,11 @@ TOP_SIMILAR_PAIRS = 40
 REDUNDANCY_THRESHOLD = 0.78
 TOP_TAGS_PER_TOPIC = 5
 TOPICS_PER_RANK_OUTPUT = 30
+SORT_BY_RANK = 2
 TOP_TAG_SUMMARY = 20
 EXCLUDED_TOP_PAIRS = [
     ("climate", "climate change"),
+    ("water", "air"),
 ]
 
 USE_TOPIC_NAMES = True
@@ -22,39 +24,24 @@ USE_TOPIC_DESCRIPTIONS = False
 OVERRIDE_WITH_SAMPLE = True
 SAMPLE_TAGS = [
     "geographic",
-    "america", "africa", "europe", "middle east", "eastern asia", "antarctica",
-
     "artistic",
-    "music", "visual", "performing", "literary", "photographic", "instrumental",
-
     "linguistic",
-    "martial", "fighting", "diplomatic",
-    "economic",
-
-    "lawful", "chaotic", "evil",
-    "water", "earth", "air", "solar", "nuclear",
-
-    "industrial", "engineering", "electrical", "digital", "logistical", "mechanical", "energetic",
-    "productive", "projects",
-
-    "philosophical", "psychological", "sociological", "cultural", "political", "religious", "ethical", "spiritual", "esoterical",
-    "intelligent", "juvenile", "adult",
-    "human", "animalistic",
-
-    "historical", "ancient",
-
-    "natural", "artificial", "technological", "experimental", "analytical", "logical",
-    "biological", "chemical", "physical", "environmental", "ecological", "geological", "mathematical", "astronomical",
-    "healthy", "genetic", "surgical", "clinical", "medical", "nutritious", "neural", "bloody", "dental",
-    "preservative", "developing", "evolutionary", "progressive",
-
-    "active", "passive", "practical",
-    "indoors", "outdoors", "exploratory",
-
-    "applied", "urban", "rural",
-
-    "plants", "fungi",
+    "martial", "strategic",
+    "monetary",
+    "technical",
+    "mechanical",
+    "digital",
+    "experimental",
+    "philosophical", "psychological", "social", "cultural", "political", "religious", "ethical",
+    "animalistic",
+    "historical",
+    "biological", "chemical", "physical", "environmental", "numerical", "astronomical",
+    "healthy", "medical", "surgical", "logistical",
+    "athletic", "coordinative",
 ]
+TAG_PREFIX = ""
+TAG_SUFFIX = " field of study"
+USE_TAG_AFFIXES = True
 
 TAGS_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_tag_PLANNING.txt"
 TOPICS_CSV_PATH = Path(__file__).resolve().parent / "data" / "t_topic_PLANNING.csv"
@@ -299,7 +286,8 @@ def load_topics_from_csv(csv_path: Path) -> List[str]:
 
 def main() -> None:
     # Beispiel-Tags (absichtlich mit moeglichen Redundanzen)
-    tags = load_tags_from_csv(TAGS_CSV_PATH) if not OVERRIDE_WITH_SAMPLE else SAMPLE_TAGS
+    tags_raw = load_tags_from_csv(TAGS_CSV_PATH) if not OVERRIDE_WITH_SAMPLE else SAMPLE_TAGS
+    tags = [f"{TAG_PREFIX}{tag}{TAG_SUFFIX}" for tag in tags_raw] if USE_TAG_AFFIXES else tags_raw
     topics = load_topics_from_csv(TOPICS_CSV_PATH)
 
     model_name = "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
