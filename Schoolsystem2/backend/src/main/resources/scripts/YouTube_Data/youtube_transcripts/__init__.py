@@ -1,1 +1,0 @@
-"""Transcript provider helpers."""
