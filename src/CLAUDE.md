@@ -1,6 +1,6 @@
-# AGENTS.md — AKSEP Website (Vite Version)
+# CLAUDE.md — AKSEP Website (Vite Version)
 
-**Scope:** Gilt für alle Dateien unterhalb von `src/` (Teil der Vite-Webseite). Root-Regeln aus `AGENTS.md` gelten weiterhin.
+**Scope:** Gilt für alle Dateien unterhalb von `src/` (Teil der Vite-Webseite). Root-Regeln aus `CLAUDE.md` gelten weiterhin.
 
 ---
 

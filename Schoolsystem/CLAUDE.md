@@ -1,4 +1,4 @@
-# AGENTS.md — Schoolsuite (Unterrichtsressourcen)
+# CLAUDE.md — Schoolsuite (Unterrichtsressourcen)
 
 **Scope:** Gilt für alle Dateien unter `projects/schoolsystem_DB` (später `Schoolsystem/`).
 
