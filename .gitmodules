@@ -1,3 +1,6 @@
 [submodule "Schoolsystem2"]
 	path = Schoolsystem2
 	url = https://github.com/Trummler12/Schoolsystem2
+[submodule "Schoolsystem3"]
+	path = Schoolsystem3
+	url = https://github.com/Trummler12/Schoolsystem3.git
